@@ -1,0 +1,535 @@
+# Descrevendo populações e amostras  {#posicao}
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+## População, amostra e unidade amostral
+
+Em estatística, **população** se refere a todos os elementos sobre os quais queremos tirar conclusões. É comum a confusão entre os termos população estatística e população biológica (nas ciências naturais) ou população humana (em ciências sociais). No entanto, **população estatística** refere-se ao **conjunto de medidas** que podem ser obtidas como resultado de um experimento ou de um estudo observacional e não pode ser confundido com conjuntos de pessoas ou organismos. As medidas que compõem a população estatística portanto, podem ser pesos, temperaturas, velocidades, tempos de reação, entre outras, a depender das características de um estudo particula. A abrangência da população estatística depende do contexto e do escopo da pergunta que se pretende responder.
+
+Suponha um estudo para descrever o comprimento do lambari *Deuterodon iguape* em riachos do litoral de São Paulo. A população estatística não são os peixes em si, mas o **comprimento** de cada indivíduo. Dado o escopo do estudo, a população estatística abrange **somente** comprimentos dos organismos que habitam bacias do litoral de São Paulo. Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um **índice de diversidade** calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não tem qualquer relação com população biológica, mas sim com uma medida obtida do conjunto de espécies que habitam cada bacia.
+
+Nos dois exemplos acima é inviável obtermos informações de todos os elementos que compõem a população estaística. Para o exemplo dos comprimento, temos provavelmente alguns milhares de peixes na Bacia e consequentemente, o mesmo número de comprimentos individuais. O número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um **censo** ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática em estatística lida com a maioria dos casos em que mensuramos um **subconjunto** da população estatística, definido como uma **amostra**. 
+
+Finalmente, **unidade amostral** é definida como um **único** elemento da população estatística. A unidade amostral deve ser a menor unidade **independente** associada ao estudo. A necessidade das unidades amostrais constituirem elementos independentes é um dos pressupostos centrais da estatística e suas implicações ficarão mais claras quando tratarmos do processo de amostragem. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécies de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada os valores de diversidade calculado para cada bacia.
+
+
+
+> **População estatística**: todos os elementos que podem compor uma amostra. Podem ser medidas como comprimentos, temperaturas, velocidades, etc.
+
+> **Unidade amostral**: um único elemento da população.
+      
+> **Censo**: o levantamento de *todos* os elementos da população.
+
+> **Amostra**: um subconjunto extraído da população.
+      
+> **Tamanho populacional** (*N*): o número de elementos da população.
+      
+> **Tamanho amostral** (*n*): o número de elementos da amostra.
+
+## Distribuições de frequência
+
+Os valores da população estatística não são idênticos. Os lambaris do exemplo anterior não têm todos o mesmo comprimento, assim como a diversidade de espécies não é a mesma para todas as bacias costeiras do estado de São Paulo. Dizemos que existe uma **distribuição** de valores. Os comprimentos de *Deuterodon iguape* devem variar de alguns milímetros (pós-larva) a cerca de 20 cm (adulto). Da mesma forma, nem todos os comprimentos são igaulente representados. Provavelmente existem mais lambaris pequenos e médios que grandes. Se fosse possível observar todos os elementos da população estatística, poderíamos organizá-los em uma **distribuição de frequências**, onde veríamos que algumas classes de valores são mais comuns que outras. 
+
+
+```{r distrfreq, fig.cap = "Distribuição de frequência seguindo um modelo Gaussiano", fig.width=5, fig.height=5, fig.align = "center"}
+set.seed(1)
+CP = rnorm(n = 1000, mean = 10, sd = 2.5)
+hist(CP, xlab = "Classes de valores", ylab = "Frequência", col = "grey", main = "", xlim = c(0, 21), axes = F)
+axis(2, las = 2)
+axis(1, at = seq(0, 20, by = 2))
+box()
+```
+
+Vemos que existem mais valores entre 8 e 12 por exemplo, e poucas observações extremas.
+
+Este exemplo é fictício e segue  uma **distribuição normal** de probabilidades. A distribuição normal, é uma das mais importantes em estatística. É uma distribuição **simétrica**, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média), apresenta uma forma de sino e também é chamada de distribuição **Gaussiana** em homenagem a [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a **Teoria da distribuição dos erros observacionais**, tópico central ao desenvolvimento da estatística e do método científico.
+
+A distribuição normal será estudada em detalhes nos tópicos de inferência estatística e probabilidade. Voltaremos a ela também após falarmos dos descritores de tendêncoia central, posição e variação e de amostragem.
+
+## Parâmetros e estimadores
+
+Um conjunto de observações costuma ser caracterizada por dois tipos de descritores, **medidas de tendência central** e **medidas de dispersão**.
+
+Considere a questão levantada anteriormente: Qual o comprimento de **Deuterodon iguape** em riachos do litoral de São Paulo? Geralmente, entendemos esta questão como: - Qual o comprimento de um lambari **típico**; sendo que um lambari típico pode ser entendido como aquele de **comprimento médio**.
+
+Se o comprimento médio for calculado calculado a partir de **todos** os elementos da população, teremos o **parâmetro**, um descritor da população estatística. Os parâmetros só podem ser obtidos por meio de um censo, pois para serem calculados requerem que todos os elementos da população sejam mensurados. Por outro lado, se fizermos uma **amostragem** da população estatística, e tomarmos a média de 30 lambaris, teremos um **descritor da amostra**. Os descritores de uma amostra são conhecidos como **estimadores** ou **estatísticas**.
+
+> **Parâmetro**: a medida que descreve uma característica da \textit{população}. Ex.: a média ($\mu$) ou a variância ($\sigma^2$) populacional.
+
+> **Estimador** ou **Estatística**: Uma medida que descreve uma característica da \textit{amostra}. Ex.: a média amostral ($\overline{X}$) ou a variância amostral ($s^2$).
+
+> **Estimativa**: é o valor numérico assumido pelo estimador. Ex. o valor número da média ou variância amostral.
+
+## Amostragem e inferência
+
+Uma vez definida a população estística, deve ser definido o procedimento amostral que iremos utilizar para acessar seus elementos. Em última instância, não estamos interessados na amostra em si, mas nas características da população da qual ela é proveniente. Tendo essa premisa em mente, a importância do processo de **amostragem** está no fato de que, na impossibilidade de observar toda a população, a amostra é nossa **única** fonte de informação disponível. Uma amostragem mal conduzida pode nos trazer informações inúteis sobre a população. Dizemos então que uma amostra deve **representativa** da população de origem. 
+
+Tendo em mãos uma amostra representativa, calculamos estatísticas que são os **estimadores** dos parâmetros populacionais. A **inferência** é o processo inverso da amostragem, i.e. aquele que nos permite tirar conclusões sobre a população de origem a partir das informações contidas na amostra. 
+
+
+```{r amostr, fig.cap = "Processo de amostragem e inferência estatística", fig.align='center'}
+amostr <- image_read("figs/amostragem_inferencia.png")
+grid.arrange(rasterGrob(amostr), nrow = 1, ncol = 1)
+```
+
+## Medidas de tendência central
+
+Uma distribuição de frequência pode ser descrita a partir de uma **medida de tendência central** que indica o valor ao redor dos quais a maior parte das observações está concentrada. Iremos apresentar quatro destas medidas: a **média aritmética**, a **mediana**, a **moda** e o **ponto médio**.
+
+A média aritmética é a medida de tendência central mais comum. Para uma população estatística de tamanho **N**, com $X_1$, $X_2$, $X_3$, $\cdots, X_N$ elementos, ela é referida como a **média populacional**, indicada pela letra grega $\mu$, onde: 
+
+$$\mu=\frac{X_1+X_2+X_3+\cdots+X_N}{N}=\frac{\sum_{i=1}^N{X_i}}{N}$$
+
+Quando nos referimos a uma amostra com **n** elementos, a média aritmética **amostral** ($\overline{X}$) é dada por:
+
+$$\overline{X}=\frac{X_1+X_2+X_3+\cdots+X_n}{n}=\frac{\sum_{i=1}^n{X_i}}{n}$$
+
+
+
+A **mediana** é outra medida de centro que pode ser definida como o valor do meio de uma distribuição, de modo que metade dos valores estão abaixo e metade está acima da mediana. A mediana, ao contrário da média, é pouco influenciada por valores extremos.
+
+A **moda** é definida como o valor mais frequente de uma distribuição e finalmente, o **ponto médio** é calculado com base em somente dois valores da distribuição - o máximo e o mínimo, sendo obtido por:
+
+$$P_{medio}=\frac{X_{maximo} + X_{minimo}}{2}$$
+
+Valores extremos não têm influência sobre a moda porém têm grande efeito sobre o ponto médio.
+
+
+Um conjunto de dados pode ser representado por uma distribuição de frequências e por medidas de tendencia central. Existe uma relação entre o formato de uma distribuição de frequência e a posição relativa da média aritmética, da mediana e da moda. Em um gráfico simétrico, onde as observações estão dispersas igualmente acima e abaixo do ponto central, os valores da média, mediana e moda coincidem. Este tipo de distribuição é dita **simétrica**. Por outro lado, pode ocorrer que a distribuição de valores seja **assimétrica**. Neste caso, a posição relativa da média, mediana e moda depende se a assimetria é à **direita** ou à  **esquerda**. Esta discrepância ocorre devido à sensibilidade destas medidas a valores extremos na distribuição, em que a média é mais sensível que a mediana e a moda [@triola2017introduccao].
+
+```{r assimetr, fig.cap="Efeito da assimetria de uma distribuição sobre a média aritmética, a mediana e a moda", fig.align='center', echo=FALSE, fig.width=12, fig.height=4}
+i = 2
+set.seed(2); y1 = rlnorm(n = 1000, mean = 2, sd = 0.4)
+set.seed(2); y2 = rnorm(n = 1000)
+set.seed(2); y3 = rbeta(n = 1000, shape1 = 30, shape2 = 3)
+
+layout(mat = matrix(1:3, nr = 1, nc = 3))
+hist(y1, xlim = c(0, 25), ylim = c(0, 0.2), col = "gray", main = "", prob = T, axes = T, 
+     xlab = "Assimétrica a esquerda", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+arrows(y0 = 0.2, y1 = 0.15, x0 = 7, x1 = 7, col  = "red", lwd = 3)
+text(x = 8, y = 0.19, label = "Moda", cex = 1.7, pos = 4)
+arrows(y0 = 0.16, y1 = 0.11, x0 = 10, x1 = 10, col  = "red", lwd = 3)
+text(x = 11, y = 0.15, label = "Mediana", cex = 1.7, pos = 4)
+arrows(y0 = 0.12, y1 = 0.07, x0 = 12, x1 = 12, col  = "red", lwd = 3)
+text(x = 13, y = 0.09, label = "Média", cex = 1.7, pos = 4)
+
+hist(y2, xlim = c(-5, 5), ylim = c(0, 0.6), col = "gray", main = "", prob = T, axes = T,
+     xlab = "Simétrica", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+arrows(y0 = 0.6, y1 = 0.45, x0 = mean(y2), x1 = mean(y2), col  = "red", lwd = 3)
+text(x = 0.5, y = 0.6, label = "Moda", cex = 1.7, pos = 4)
+text(x = 0.5, y = 0.55, label = "Mediana", cex = 1.7, pos = 4)
+text(x = 0.5, y = 0.50, label = "Média", cex = 1.7, pos = 4)
+
+
+hist(y3, xlim = c(0.65, 1.0), ylim = c(0, 15), col = "gray", main = "", prob = T, axes = T,
+     xlab = "Assimétrica a direita", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+arrows(y0 = 15, y1 = 11, x0 = 0.93, x1 = 0.93, col  = "red", lwd = 3)
+text(x = 0.88, y = 16, label = "Moda", cex = 1.7, pos = 1)
+arrows(y0 = 13, y1 = 9, x0 = 0.90, x1 = 0.90, col  = "red", lwd = 3)
+text(x = 0.85, y =14, label = "Mediana", cex = 1.7, pos = 1)
+arrows(y0 = 11, y1 = 7, x0 = 0.87, x1 = 0.87, col  = "red", lwd = 3)
+text(x = 0.82, y = 11, label = "Média", cex = 1.7, pos = 1)
+```
+
+> **Média**: utiliza todo o conjunto de dados. Sensível a valores extremos. Dentre todos os estimadores de tendência central é o menos variável;
+
+> **Mediana**: o valor do meio. Metade dos pontos está acima e metade abaixo da mediana. A mediana é uma medida *resistente* a valores extremos;
+      
+> **Moda**: valor mais frequente. Se mais de um valor tem a mesma frequência, os dados têm uma distribuição *multimodal*;
+
+> **Ponto médio**: considera somente os valores máximos e mínimos. O ponto médio é fácil de calcular porém não utiliza a maioria do conjunto de dados e é *muito sensível a valores extremos*.
+
+## Medidas de variação
+
+Diferente das medidas de tendência central, as **medidas de variação** indicam o grau de dispersão das observações. Distribuições com observações muito próximas à média têm *baixo grau de dispersão*, enquanto aquelas com observações muito distantes da média têm *alto grau de dispersão*. Vamos apresentar quatro índices que medem o grau de dispersão: a **variância**, o **desvio padrão**, o **coeficiente de variação** e a **amplitude de variação**.
+
+A variância mede quão distante os valores estão da média aritmética. A **variância populacional** é indicada pela letra grega $\sigma^2$, onde: 
+
+$$\sigma^2=\frac{\sum_{i=1}^N{(X_i - \mu)^2}}{N}$$
+
+Quando nos referimos a uma amostra, a **variância amostral** é indicada por $s^2$ e dada por: 
+
+$$s^2=\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}$$
+
+Note que para a variância amostral, utilizamos $\overline{X}$ e não $\mu$, porque estamos medindo a dispersão das observações ao redor da média **amostral**. O denominador da equação também muda para *n-1* pois agora estamos nos referindo à uma amostra com **n** elementos. A subtração por *n-1* é necessária para que $s^2$ seja um estimador **não viciado** de $\sigma^2$.
+
+Outra medida de dispersão é o **desvio padrão** que é simplesmente a raiz quadrada da variância e portanto, dado na mesma escala de mensuração das observações originais. O desvio padrão populacional ($\sigma$) é dado por:
+
+$$\sigma=\sqrt{\frac{\sum_{i=1}^N{(X_i - \mu)^2}}{N}}$$
+
+enquanto para a amostra ($s$) é:
+
+$$s=\sqrt{\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}}$$
+
+O **coeficiente de variação** (cv) relaciona o desvio padrão à média, sendo definido por:
+
+$$cv = s/\overline{X}$$ ou $$cv_{\%}  = s/\overline{X}\cdot 100$$
+
+O coeficiente de variação amostral descrito acima, é um estimador do coeficiente de variação da população, onde $s$ é substituído por $\sigma$, e $\overline{X}$ por $\mu$.
+
+Finalmente, a **amplitude de variação** é a diferença entre os pontos máximo e mínimo de um grupo de observações
+
+Amplitude de variação  = $X_{maximo} - X_{minimo}$
+
+### Exempificando os cálculos
+
+Considere uma amostra do comprimento da carapaça de 10 caranguejos $\textit{Menipe nodifrons}$:
+
+$X_i$ (em centímetros): 4.0, 4.1, 4.5, 4.9, 5.0, 5.0, 6.6, 7.0, 7.7, 7.9
+
+#### Média
+
+$\overline{X}=\frac{4.0+4.1+4.5+4.9+5.0+5.0+6.6+7.0+7.7+7.9}{10}=56.7/10=5.67$
+
+#### Mediana
+
+4.0, 4.1, 4.5, 4.9, **5.0, 5.0**, 6.6, 7.0, 7.7, 7.9    
+
+
+Mediana = $\frac{5 + 5}{2} = 5$
+
+#### Moda
+
+Moda = 5 (o único número que se repete mais de uma vez na distribuição)
+
+#### Ponto médio
+
+$P_{medio}=\frac{7.9 + 4.0}{2} = 5.95$
+
+
+#### Variância
+
+$s^2=\frac{(4.0-5.67+4.1-5.67+4.5-5.67+4.9-5.67+5.0-5.67+5.0-5.67+6.6-5.67+7.0-5.67+7.7-5.67+7.9-5.67)^2}{10-1}$
+
+$s^2 = 19.84/9 = 2.20$
+
+#### Desvio padrão
+
+$s=\sqrt{2.20} = 1.48$
+
+#### Coeficiente de variação
+
+$cv = 1.48/5.95 \cdot 100 = 26.19\%$ 
+
+
+## Medidas de posição
+
+A média, mediana, moda e ponto médio são um tipo de **medidas de posição** que indicam uma posição particular, a posição central ao redor da qual os dados estão dispersos. Existem outras medidas de posição que indicam posições particulares. Vamos abordar aqui as posições dos **quartis** e o **índice Z**. Estas são as medidas mais utilizadas em análise e interpretação de dados.
+
+### Quartis
+
+Os quartis de uma distribuição de valores são obtidos após ordenarmos os dados em ordem crescente e em seguida dividí-los dados em partes iguais, contendo cada uma 25% do número total de observações. Se temos 20 observações, cada parte conterá portanto cinco observações, $20 \times 0.25 = 5$ e os quartis são as posições que dividem estas partes.
+
+Os quartis podem ser indicados por $Q_1$, $Q_2$ e $Q_3$, conforme a figura abaixo.
+
+```{r quartisfig, fig.cap = "Divisão de uma distribuição de valores em quartis", fig.align='center'}
+quartis <- image_read("figs/Quartis.png")
+grid.arrange(rasterGrob(quartis), nrow = 1, ncol = 1)
+```
+
+
+> $Q_{1}$ O ponto que separa os 25% **menores** valores do restante da distribuição.
+
+> $Q_{2}$: O ponto que separa os 50% **menores** valores dos 50% **maiores**. Este coincide com a Mediana apresentada anteriormente.
+
+> $Q_{3}$: O ponto que separa os 25% **maiores** valores do restante da distribuição.
+
+
+#### Cálculo dos quartil na posição $j$ ($Q_j$)
+
+1. Seja $n$ o número de observações em $X$, arrange a variável $X$ em ordem crescente. Deste modo $X_1$ será o menor valor e $X_n$ o maior valor. Iremos expressar um valor particular na distribuição de X em ordem crescente como $X_k$;
+
+
+2. Calcule $L = \frac{j \times (n+1)}{4}$;
+
+
+3. Defina $k$ como o maior número inteiro abaixo de $L$;
+
+
+4. Calcule $Q_j = X_k + (L - k) \times (X_{k+1}-X_k)$;
+
+$Q_j$ será um elemento entre $X_k$ e $X_{k+1}$ e se $X_k$ for um número inteiro, $Q_j = X_k$
+
+
+##### Exemplo para o cálculo de $Q_1$
+
+```{r}
+set.seed(1)
+X = round(rnorm(20, 10, 2),1)
+nX = length(X)
+```
+
+Considere a variável $X$ com $n =$ `r nX` observações.
+
+
+$X$ = `r X` 
+
+
+```{r}
+sX = sort(X)
+Posicao_k = paste(1:length(X), "a Posição", sep = "")
+kable(data.frame(Posicao_k, X_ordenado = sX), col.names = c("Posicao k", "X ordenado"))
+j1 = 1
+L1 = j1 * (nX + 1)/4
+k1 = floor(L1)
+Q1 = sX[k1] + (L1 - k1) * (sX[k1+1] - sX[k1])
+
+j2 = 2
+L2 = j2 * (nX + 1)/4
+k2 = floor(L2)
+Q2 = sX[k2] + (L2 - k2) * (sX[k2+1] - sX[k2])
+
+j3 = 3
+L3 = j3 * (nX + 1)/4
+k3 = floor(L3)
+Q3 = sX[k3] + (L3 - k3) * (sX[k3+1] - sX[k3])
+
+```
+
+1. Arrange $X$ em ordem crescente
+
+
+2. Calcule $L = \frac{`r j1` \times (`r nX`+1)}{4} = `r L1`$;
+
+
+3. Defina $k$ como o maior número inteiro abaixo de $L$. Portanto, $k = `r k1`$. Veja que a observação correspondente à `r k1`$^a$ posição é `r sX[k1]` e a `r k1+1`$^a$ posição `r sX[k1+1]`.
+
+
+4. Calcule $Q_1 = `r sX[k1]` + (`r L1` - `r k1`) \times (`r sX[k1 + 1]`-`r sX[k1]`) = `r Q1`$;
+
+
+**Observação**: Calcule $Q_2$ e $Q_3$ e verifique se os resultados são: $Q_2 = `r Q2`$ e $Q_3 = `r Q3`$
+
+#### Representando quartis em Boxplots
+
+Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de **Boxplot**. Para a variável acima o boxplot  será:
+
+```{r boxquartis, fig.cap = "Divisão em quartis de um boxplot", fig.width=3, fig.height=4, fig.align = "center"}
+PX = c(min(X), Q1, Q2, Q3, max(X))
+LegX = c("Mínimo", "Q1", "Q2 = Mediana", "Q3", "Máximo")
+boxplot(X, axes = F, ylim = c(5, 14))
+arrows(x0 = c(1.5), x1 = 1.23, 
+       y0 = PX, y1 = PX, length = 0.05)
+axis(2, at = 1:15, las = 2)
+text(x = 1.37, y = PX-0.3, labels = LegX, cex = 0.5)
+box()
+```
+
+Em um boxplot, a linha central mais expessa representa a **Mediana** ou $2^o$ quartil, os limites da caixa são o $1^o$ e $3^o$ quartis e as extremidades geralmente são os pontos máximo e mínimo da dsitribuição.
+
+Existe uma relação entre os **histogramas** e os **boxplots**. Ambos podem ser utilizados para avaliarmos o grau de **assimetria** de uma distribuição como pode ser visto abaixo. Em uma distribuição simétrica, a caixa do boxplot tende a se concentrar no meio da distribuição, enquanto que em distribuições assimétricas, a caixa tende a ficar deslocada à esquerda o à direita.
+
+
+
+```{r histbox, fig.cap = "Relação entre as representações por meio de histogramas e boxplots", fig.align='center', echo=FALSE, fig.width=10, fig.height=6}
+i = 2
+set.seed(2); y1 = rlnorm(n = 1000, mean = 2, sd = 0.4)
+set.seed(2); y2 = rnorm(n = 1000)
+set.seed(2); y3 = rbeta(n = 1000, shape1 = 30, shape2 = 3)
+
+layout(mat = matrix(1:6, nr = 2, nc = 3, byrow = T))
+hist(y1, xlim = c(0, 25), ylim = c(0, 0.2), col = "gray", main = "", prob = T, axes = T, 
+     xlab = "Assimétrica a esquerda", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+
+hist(y2, xlim = c(-5, 5), ylim = c(0, 0.6), col = "gray", main = "", prob = T, axes = T,
+     xlab = "Simétrica", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+
+hist(y3, xlim = c(0.65, 1.0), ylim = c(0, 15), col = "gray", main = "", prob = T, axes = T,
+     xlab = "Assimétrica a direita", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+
+boxplot(y1, horizontal = T, axes = F, ylim = c(0, 25), range = 100)
+axis(1, cex.lab = 2)
+
+boxplot(y2, horizontal = T, axes = F, ylim = c(-5, 5), range = 100)
+axis(1, cex.lab = 2)
+
+boxplot(y3, horizontal = T, axes = F, ylim = c(0.65, 1.0), range = 100)
+axis(1, cex.lab = 2)
+
+```
+
+### Índice Z
+
+O **Índice Z** ou **Escore Z** indica a posição de uma observação particular ($X_i$). O valor de $Z$ relaciona a posição de $X_i$ com a **média** e o **desvio padrão** da distribuição. Suponha uma população com distribuição normal com média $\mu$ e desvio padrão $\sigma$. O índice de $Z_i$ para uma obserrvação particular é calculado por:
+
+$$Z_i = \frac{X_i - \mu}{\sigma}$$
+
+Se o índice Z é calculado para uma amostra da população com média $\bar{X}$ e desvio padrão $s$, seu calculo se dá por:
+
+$$Z_i = \frac{X_i - \bar{X}}{s}$$
+
+#### Exemplo
+
+Retornemos à variável X descrita acima:
+
+$X$ = `r X` 
+
+
+```{r}
+Xm = mean(X)
+Xsd = sd(X)
+Z3 = (X[3] - Xm)/Xsd
+
+if (Z3 < 0){
+    posicao = "abaixo"
+    resultado = "negativo"
+} else if (Z3 > 0){
+    posicao = "acima"
+    resultado = "positivo"
+} else {
+    posicao = "igual"
+    resultado = "zero"
+}
+```
+
+
+A média e o desvio padrão de X são respectivamente $\bar{X} = `r round(Xm,2)`$ e $s = `r round(Xsd, 2)`$.
+
+Vamos calcular o índice Z para a observação $X = `r X[3]`$
+
+$Z = \frac{`r X[3]` - `r round(Xm,2)`}{`r round(Xsd, 2)`} = `r round(Z3,2)`$
+
+Veja que o score Z é `r resultado` e portanto, $X_i$ está `r posicao` da média.
+
+#### Interpretando o valor de Z
+
+O valor de Z indica quantos desvio padrões uma determinada observação está acima ou abaixo da média do grupo de observações. Os resultados de Z podem ser:
+
+- $Z = 0$: $X_i = \bar{X}$;
+- $Z > 0$: $X_i > \bar{X}$;
+- $Z < 0$: $X_i < \bar{X}$;
+
+Para uma distribuição com média igual 10 e desvio padrão igual a 2, uma observação X = 14 está dois desvios padrões acima da sua respectiva média. Neste caso, Z valeria 2 como pode ser verificado na equação abaixo
+
+$$Z = \frac{14 - 10}{2} = 2$$
+
+Vamos calcular os valores de Z para a variável X acima e analisar os resultados
+
+```{r fig.width=10, fig.height=5, fig.align = "center"}
+Z = (sort(X) - Xm)/Xsd
+kable(data.frame(Posicao_k, X_ordenado = sX, Z = round(Z,2)),
+      col.names = c("Posicao k", "X ordenado", "Z ordenado"))
+
+layout(mat = matrix(1:2, nr = 1, nc = 2, byrow = T))
+hist(X, breaks = 9, xlim = c(5, 14), ylim = c(0, 6), col = "gray", main = "", prob = F, axes = T, 
+     xlab = "Distribuição de X", ylab = "", cex.lab = 2)
+axis(1, at = c(5:15));axis(2, at = c(0:6))
+
+hist(Z, breaks = 9, xlim = c(-3, 2.5), ylim = c(0, 6), col = "gray", main = "", prob = F, axes = T, 
+     xlab = "Distribuição de Z", ylab = "", cex.lab = 2)
+axis(1, at = c(-3:3));axis(2, at = c(0:6))
+
+
+```
+
+Veja na tabela que conforme o valor de $X_i$ se distancia da média de $X = `r  round(Xm,2)`$ mais distante de zero será o valor Z. Neste exemplo, as observações mais extremas de X estão, respectivamente, a `r min(round(Z,2))` desvios padrões abaixo e `r max(round(Z,2))` desvios padrões acima da média.
+
+#### Valores esperados de Z em uma distribuição normal padronizada
+
+A interpretação de Z faz sentido quando desejamos comparar uma determinada observação $X_i$ à posição que esta teria dentro de uma **Distribuição Normal Padronizada** (Capítulo \@ref(normtlc)). A figura abaixo nos permite avaliar qual a probabilidade de encontrarmos uma observação a diferentes distâncias da média populacional. Suponha que tomemos uma amostra de uma distribuição normal. Existe uma probabilidade de aproximadamente 68% de que esta amostra esteja 1 desvio padrão acima ou abaixo da média. Esta probabilidade aumenta para cerca de 95% se considerarmos uma distância dois desvios padrões acima ou abaixo da média. Por outro lado, que é muito **improvável** amostrarmos um valor a mais de 3 desvios padrões da média. Isto rá ocorrer em somente de 0.2% dos casos.
+
+
+
+``` {r distrnorm, fog.cap = "Áreas de probabilidade em uma distribuição Normal", fig.width=6, fig.height=6, fig.align = "center"}
+qr = -3:3
+dqr = dnorm(x = qr)
+
+
+qrc1 = c(-1, 1, seq(1,-1, by = -0.001))
+dqrc1 = c(0, 0, dnorm(x = seq(1,-1, by = -0.001)))
+
+qrc2 = c(2, 3, seq(3,2, by = -0.001))
+dqrc2 = c(0, 0, dnorm(x = seq(3, 2, by = -0.001)))
+
+qrc2m = c(-2, -3, seq(-3,-2, by = 0.001))
+dqrc2m = c(0, 0, dnorm(x = seq(-3, -2, by = 0.001)))
+
+#eixox = expression(bar(X)-3*phi, -1.5*phi, -phi, -phi/2, 0, phi/2, phi, 2*phi, 1.5*phi)
+
+xn = paste0('bar(X)', c(rep("-", 3), "", rep("+",3)), c(3:1, 0, 1:3)  , '*s')
+xn[4] = "bar(X)"
+           
+eixoX = parse(text = xn)
+
+pqr = pnorm(q = -4:4)
+perc = diff(pqr) * 100
+
+curve(expr = dnorm(x, 0,1), from = -4, to = 4, 
+      ylab = "Densidade da distribuição normal",
+      xlab = "", ylim = c(0, 0.7), axes = F)
+axis(1, at = -5:5, labels = c("","",eixoX,"",""), cex.axis = 0.8)
+axis(2, at = seq(-1, 0.5, by = 0.1), cex.axis = 0.8)
+segments(x0 = qr, x1 = qr, y0 = 0, y1 = c(0.65, 0.55, 0.45, dnorm(0), 0.45, 0.55, 0.65), lty = 2)
+polygon(x = qrc1, y = dqrc1, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
+polygon(x = qrc2, y = dqrc2, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
+polygon(x = qrc2m, y = dqrc2m, col = rgb(red = 0.9, 0,0, alpha = 0.3))
+segments(x0 = -1, x1 = 1, y0 = 0.45, y1 = 0.45, lwd = 2)
+segments(x0 = -2, x1 = 2, y0 = 0.55, y1 = 0.55, lwd = 2)
+segments(x0 = -3, x1 = 3, y0 = 0.65, y1 = 0.65, lwd = 2)
+
+text(x = -3.5:3.5, y = c(0.05, 0.05, 0.07, 0.2, 0.2, 0.07, 0.05, 0.05),
+     labels = paste(round(perc,1), "%", sep  =''), cex = 0.7)
+text(x = 0, y = 0.67, labels = paste(round(diff(pnorm(q = c(-3,3))*100),2), "% a 3 desvios padrões da média",sep = ''), cex = 0.7)
+text(x = 0, y = 0.57, labels = paste(round(diff(pnorm(q = c(-2,2))*100),2), "% a 2 desvios padrões da média",sep = ''), cex = 0.7)
+text(x = 0, y = 0.47, labels = paste(round(diff(pnorm(q = c(-1,1))*100),2), "% a 1 desvio padrão da média",sep = ''), cex = 0.7)     
+
+```
+
+
+
+Este assunto será abordado em mais detalhes no tópico de inferêcnia estatística. No entanto, suponha por exemplo que a distribuição de altura de homens adultos siga uma distribuiçao normal com média $\mu = 175$ cm e desvio padrão de $\sigma = 20$ cm. Segundo a expectativa teórica portanto, menor de 5% dos homens adultos têm $\mu \pm 2 \times \sigma = 175 \pm 2 \times 20 = 175 \pm 40$. Ou seja, menos de 5% dos homens têm mais de 215 cm ou menos de 135 cm de altura. 
+
+## Volume dos reservatórios da Grande São Paulo: visualizando medidas de posição e variação
+
+```{r, message = FALSE}
+vol_ano <- read_csv(file = "datasets/Mananciais_anual.csv")
+```
+
+Vamos retornar aos dados sobre volume dos sistemas de abastecimento de água da Gande São Paulo (Capítulo \@ref(descrit)) e extrair a média, desvio padrão e quantis para cada sistema.
+
+```{r}
+vol_ano_descr = vol_ano %>%
+  group_by(Sistema) %>% 
+  summarize(`Média` = round(mean(Volume_medio),2),
+            `Desvio padrão` = round(sd(Volume_medio),2),
+            Q1 = quantile(Volume_medio)[2],
+            Q2 = quantile(Volume_medio)[3],
+            Q3 = quantile(Volume_medio)[4],
+            )
+#vol_ano_descr
+kable(vol_ano_descr)
+```
+
+Os Sistemas Alto Tietê e Cantareira têm, aparentemente, os menores volumes médios emquanto os Sistemas Rio Claro e Rio Grande, mantêm os maiores volumes. Veja também que o volume médio anual no Sistema Rio Grande manteve-se altamente constante ao longo dos anos, apresentando um desvio padrão de 5.13, contra valores próximos a 15 ou 20 nos demais Sistemas. Compare estes resultados com os gráficos de linha que fizemos anteriormente e com os boxplots a seguir.
+
+
+```{r fig.width=10, fig.height=4, fig.align = "center"}
+bx1 = vol_ano %>%
+  ggplot(aes(x = Sistema, y = Volume_medio)) + 
+  geom_boxplot() +
+  ylab("Volume") +
+  theme(axis.text.x = element_text(angle = 45))
+  
+bx2 = vol_ano %>%
+  ggplot(aes(x = Sistema, y = Chuva_media)) + 
+  geom_boxplot() +
+  ylab("Chuva") +
+  theme(axis.text.x = element_text(angle = 45))
+
+grid.arrange(bx1, bx2, ncol = 2)
+ 
+```
+
+Veja que novamente, os Sistemas Alto Tietê e Cantareira aparecem com menores volumes e contrastam com os demais. Os regimes de chuva são semelhantes, exceto para o Sistema Rio Claro no município de Salesópolis, com pluviosidade geralmente mais elevada.
+
+```{r, echo=FALSE}
+rm(list = ls())
+```

@@ -1,0 +1,809 @@
+# Alguns fenômenos têm distribuição normal {#normdist}
+
+```{r, echo=FALSE}
+ie = read.csv("datasets/IE_BICT_2019.csv", sep = ",", dec = ",")
+```
+
+No capítulo  \@ref(amostrmedias), a distribuição das médias amostrais foi apresentada como um histograma em forma de sino. Este histograma é **simétrico** ao redor de $\mu$. A curva teórica que representa esta distribuição é chamada de **Distribuição Normal** ou **Distribuição Gaussiana**, ou **Distribuição Normal de Probabilidades**. 
+
+Um dos motivos que tornam a distribuição normal de probabilidades central em estatística é a percepção de que muitos fenômenos naturais podem ser descritos por este padrão. Veja o histograma de alturas de `r nrow(ie)` alunos da turma de Introdução a Estatística de 2019 do curso de Bacharelado Interdisciplinar em Ciências do Mar (UNIFESP) (figura à esquerda). A linha sobre este histograma representa a distribuição normal teórica. À direita na mesma figura está um histograma da temperatura média anual em uma cidade americana, onde também foi sobreposta uma curva teórica Gaussiana. Embora estes dados descrevam fenômenos completamente distintos, a distribuição normal se adequa razoavelmente bem aos dois histogramas. 
+
+```{r, fig.align = "center", fig.height = 4, fig.width = 8, echo=FALSE, fig.cap="Altura (m) de alunos de um curso de estatística e temperatura média anual de uma cidade americana"}
+
+alt_plt <- ggplot(ie, aes(x = Altura)) +
+   geom_histogram(aes(y =..density..), 
+                  fill = 'dodgerblue4', color = 'black', bins = 10) +
+   stat_function(fun = dnorm, args = list(mean = mean(ie$Altura, na.rm = T),
+                                          sd = sd(ie$Altura, na.rm = T))) +
+   labs(x = "Alturas em metros",
+        y = "Frequencia relativa") +
+   theme_classic()
+
+temp <- data.frame(tm = datasets::nhtemp)
+temp_plt <- ggplot(temp, aes(x = tm)) +
+   geom_histogram(aes(y =..density..),
+                  fill = 'dodgerblue4', color = 'black', bins = 10) +
+   stat_function(fun = dnorm, args = list(mean = mean(temp$tm, na.rm = T),
+                                          sd = sd(temp$tm, na.rm = T))) +
+   labs(x = "Average Yearly Temperatures in New Haven - USA",
+        y = "Frequencia relativa") +
+   theme_classic()
+
+grid.arrange(alt_plt, temp_plt, ncol = 2)
+
+```
+
+As técnicas de estatística descritiva apresentadas anteriormente (capítulos \@ref(descrit) e \@ref(posicao)) nos permitem entender os padrões resultantes de fenômenos que já aconteceram. Seria interessante no entanto, se pudessemos utilizar estes padrões para realizar predições sobre o que **poderá acontecer**. Em estatística, a predição se torna possível pelo uso de **modelos probabilísticos**, dentre os quais a distribuição normal é um dos mais importantes.
+
+Modelos probabilísticos são definidos por **funções de probabilidade**. A variável envolvida neste modelo é denominada de **variável aleatória** (capítulos \@ref(va) e \@ref(vacont)). Uma variável aleatória resulta de um **experimento aleatório**. Estou utilizando o termo experimento aleatório em como um procedimento científico que nos provê informações sobre algum fenômeno de interesse. Neste sentido, medir a altura de um aluno, tomar a temperatura atual de uma cidade, medir a taxa de crescimento de uma bactéria são todos experimentos aleatórios. A questão relevante nestes experimentos é que *antes* de ser finalizado, não temos certeza sobre qual será seu resultado. Embora não saibamos qual será o resultado exato do experimento, podemos prever nos basear em algum modelo probabilidades para prever a chance deste resultado estar dentro de determinados limites. O papel de um modelo probabilísticos é portanto, delimitar a incerteza ao redor dos resultados possíveis de um experimento aleatório.
+
+Ao medir a altura de um aluno, podemos supor que existe grande probabilidade desta ficar abaixo de $1,9$ m. Supomos isto pois temos conhecimento de que a altura de maior parte das pessoas está abaixo deste limite. Entretanto, se quisermos atribuir um valor de probabilidade a esta suposição devemos:
+
+> 1. Assumir que a variável altura segue um determinado modelo de probabilidades, e
+> 2. Utilizar dados de um experimento para estimar os parâmetros deste modelo a fim de calcularmos a probabilidade $P(X \le 1,9)$. Discutiremos isto em detalhes a partir do capítulo \@ref(va) para diferentes tipos de experimentos e de modelos de probabilidades.
+
+## O modelo normal de probabilidades
+
+O modelo normal de probabilidades é uma função dada por:
+
+$f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{y-\mu}{\sigma})^2}$, $y \in \mathbb{R} | -\infty \le x \le +\infty$
+
+A expressão envolve as quantias $\mu$ e $\sigma$, definidas como os **parâmetros** da distribuição que representam respectivamente sua média e o desvio padrão. Pdemos apontar que uma variável aleatória $X$ tem distribuição normal por meio de:
+
+$X \sim \mathcal{N}(\mu,\,\sigma^2)$
+
+A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o grau de espalhamento das observações ao redor de $\mu$. Para valores baixos de $\sigma$, a maioria das observações estará próxima a $\mu$, enquanto para valores altos de $\sigma$ as observações estarão mais distantes de $\mu$. Deste modo, ao variar $\mu$ e $\sigma$ podemos ter uma infinidade de distribuições normais.
+
+```{r, fig.align = "center", fig.height = 8, fig.width = 8, echo=FALSE}
+mu1 = 0; sigma1 = 1
+mu2 = 0; sigma2 = 0.5
+mu3 = 10; sigma3 = 1
+mu4 = 10; sigma4 = 0.5
+
+layout(mat = matrix(1:4, nr = 2, byrow = T))
+
+curve(expr = dnorm(x, mu1, sigma1), from = -5, to = 5, axes = F, 
+      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
+axis(1, at = seq(-6,6), cex.axis = 0.7)
+axis(2, at = seq(-1, 1, by = 0.1), las = 2)
+text(x = -4, y = 0.35, label = bquote(mu == .(mu1)))
+text(x = -4, y = 0.30, label = bquote(sigma == .(sigma1)))
+
+curve(expr = dnorm(x, mu2, sigma2), from = -5, to = 5, axes = F, 
+      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
+axis(1, at = seq(-6,6), cex.axis = 0.7)
+axis(2, at = seq(-1, 1, by = 0.1), las = 2)
+text(x = -4, y = 0.7, label = bquote(mu == .(mu2)))
+text(x = -4, y = 0.62, label = bquote(sigma == .(sigma2)))
+
+curve(expr = dnorm(x, mu3, sigma3), from = 3, to = 16, axes = F, 
+      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
+axis(1, at = seq(-6,6)+10, cex.axis = 0.7)
+axis(2, at = seq(-1, 1, by = 0.1), las = 2)
+text(x = 6, y = 0.35, label = bquote(mu == .(mu3)))
+text(x = 6, y = 0.30, label = bquote(sigma == .(sigma3)))
+
+curve(expr = dnorm(x, mu4, sigma4), from = 3, to = 16, axes = F, 
+      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
+axis(1, at = seq(-6,6)+10, cex.axis = 0.7)
+axis(2, at = seq(-1, 1, by = 0.1), las = 2)
+text(x = 6, y = 0.7, label = bquote(mu == .(mu4)))
+text(x = 6, y = 0.62, label = bquote(sigma == .(sigma4)))
+```
+
+Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de $\mu$ e $\sigma$ e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de 2 metros ou menos de 1,5m é extremamente baixa.
+
+## Entendendo a função normal de densidade de probabilidade
+
+```{r}
+mu <- round(mean(ie$Altura, na.rm = TRUE),1)
+sd <- round(sd(ie$Altura, na.rm = TRUE), 2)
+x <- seq(1.4, 2, by = 0.05)
+dx <- dnorm(x, mean = mu, sd = sd)
+posicao <- 5
+```
+
+
+A função $f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{y-\mu}{\sigma})^2}$ não oferece diretamente a probabilidade de $x$ assumir determinado intervalo. $f(x)$ é uma **função de densidade de probabilidade**. Vamos utilizá-la para encontrar $f(x)$ utilizando os dados de altura dos alunos do BICT Mar. Vamos assumir que os parâmetros do modelo normal são:
+
+$\mu = `r mu`$
+
+$\sigma = `r sd`$
+
+Para um $x = `r x[posicao]`$:
+
+$f(`r x[posicao]`) = \frac{1}{\sqrt(2\pi \times`r sd`^2)}e^{-\frac{1}{2}(\frac{`r x[posicao]` - `r mu`}{`r sd`})^2} = `r round(dx[posicao], 3)`$
+
+Este resultado corresponde ao ponto em $x$ no gráfico da distribuição normal. Assim, se calcularmos $f(x)$ para diferentes pontos em $x$ teremos um esboço da função de densidade normal.
+
+```{r,  fig.align = "center", fig.height = 5, fig.width = 8, echo=FALSE}
+df <- data.frame(x, dx)
+df1 <- data.frame(x1 = x[posicao], x2 = x[posicao], y1 = 0, y2 = dx[posicao])
+df2 <- data.frame(x1 = x[1], x2 = x[posicao], y1 = dx[posicao], y2 = dx[posicao])
+ggplot() +
+   geom_point(data = df, aes(y = dx, x = x), size = 5) +
+   geom_segment(data = df1, aes(x = x1, y = y1, xend = x2, yend = y2),
+                                linetype = 2, color = 'red') +
+   geom_segment(data = df2, aes(x = x1, y = y1, xend = x2, yend = y2),
+                                linetype = 2, color = 'red') +
+   scale_y_continuous(
+      name = 'f(x)',
+      limits = c(0,4),
+      breaks = seq(0, 4, by = 0.2)) +
+   scale_x_continuous(
+      name = 'X',
+      limits = c(1.4,2),
+      breaks = seq(1.4, 2, by = 0.05)) +
+   annotate('text', x = 1.45, 
+            y = dx[posicao] + .2, 
+            label = bquote('f(' ~ .(x[posicao]) ~ ') = ' ~ .(round(dx[posicao],2))), 
+            color = 'red') +
+   theme_classic()
+```
+
+No R, os resultados acima podem ser obtidos com a função `dnorm`, que fornece um modo simples para calcularmos $f(x)$ para a distribuição normal. Nesta função 'd' vem de *densidade* da distribuição normal.
+
+```{r echo = TRUE}
+mu <- 1.7
+dp <- 0.11
+dnorm(1.5, mean = mu, sd = dp)
+```
+
+Se quisermos obter $f(x)$ para múltiplos valores de $x$ podemos fazer:
+
+```{r echo = TRUE}
+x <- c(1.4, 1.5, 1.6, 1.7)
+dnorm(x, mean = mu, sd = dp)
+```
+
+
+## Fazendo predições com a função normal de densidade
+
+Por ser uma função de probabilidade, a área abaixo de $f(x)$ soma 1. Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a **área abaixo da curva** para este limite. Por exemplo, a probabilidade de uma observação em $X$ estar entre $x_1$ e $x_2$ será:
+
+```{r, warning=FALSE, fig.align='center', fig.width=8, fig.height=5}
+sup <- 20
+dfc <- data.frame(X = seq(0,sup, length = 1000)) %>% 
+  mutate(dx = dnorm(X, mean = sup/2, sd = 2.05))
+gc <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
+   stat_function(fun = dnorm, args = list(mean = sup/2, sd = 2.05)) +
+   geom_area(mapping = aes(x = ifelse(test = X >=7 & X <=9, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X < 7.1, yes = X, no = 0)), fill = NA) +
+   geom_area(mapping = aes(x = ifelse(test = X >8.9, yes = X, no = 0)), fill = NA) +
+   scale_x_continuous(
+      name = 'X',
+      limits = c(1,20),
+      breaks = c(7, 9),
+      label = c('x1', 'x2')) +
+   ylab('f(x)') +
+   annotate(geom = 'text', x = 4.7, y = 0.15, label = bquote("Área = P(" ~ 'y'[1] <= ~ "X" <= ~ 'x'[2] ~")"),
+            color = '#eb4034') +
+   theme_classic()
+gc   
+
+```
+
+
+Você lembra-se que a área abaixo de uma função matemática é dada pela integral definida desta função.
+
+$$P(x_1 \le X \le x_2) = \int_{x_1}^{x_2}f(x) dx$$
+
+Usando o R, a probabilidade de amostrarmos um aluno que tenha entre menos de 1.5 metros pode ser obtida por meio da função `pnorm`:
+
+```{r echo = TRUE}
+mu <- 1.7
+dp <- 0.11
+pnorm(q = 1.5, mean = mu, sd = dp, lower.tail = TRUE)
+```
+
+Os argumentos desta função são (veja o menu de ajuda digitando `?pnorm` no Console do R):
+
+> q: o valor de $x$
+
+> mean: média $\mu$ da função normal
+
+> sd: desvio padrão $\sigma$ da função normal
+
+> lower.tail: se a função irá retornar a probabilidade abaixo (TRUE) ou acima (FALSE) de q
+
+Se quisermos a probabilidade $P(X \ge 1.5)$ alteramos o parâmetro `lower.tail`
+
+```{r echo = TRUE}
+pnorm(q = 1.5, mean = mu, sd = dp, lower.tail = FALSE)
+```
+
+Se desejamos obter a probabilidade de $x$ estar **entre** 1.5m e 1.7m podemos fazer: $$P(1.5 \le X \le 1.7) = P(X \le 1.7) - P(X \le 1.5)$$
+
+No R temos:
+
+```{r echo = TRUE}
+p1 <- pnorm(q = 1.7, mean = mu, sd = dp, lower.tail = TRUE)
+p2 <- pnorm(q = 1.5, mean = mu, sd = dp, lower.tail = TRUE)
+pfinal <- p1 - p2
+
+pfinal
+```
+
+ou simplesmente
+
+```{r echo = TRUE}
+diff(pnorm(q = c(1.7, 1.5),
+           mean = mu,
+           sd = dp,
+           lower.tail = TRUE)
+     )
+```
+
+Aqui estão representados cada um dos intervalos calculados.
+
+```{r, warning=FALSE, fig.align='center', fig.width=6, fig.height=9}
+dfc <- data.frame(X = seq(0,sup, length = 10000)) %>% 
+  mutate(dx = dnorm(X, mean = mu, sd = dp))
+
+
+gc1 <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
+   stat_function(fun = dnorm, args = list(mean = mu, sd = dp)) +
+   geom_area(mapping = aes(x = ifelse(test = X <= 1.7, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X > 1.7, yes = X, no = 0)), fill = NA) +
+   scale_x_continuous(
+      name = 'X',
+      limits = c(1.4,2),
+      breaks = seq(1.4, 2, by = 0.05)) +
+   ylab('f(x)') +
+   annotate(geom = 'text', x = 1.5, y = 3, label = bquote("P(X" <= ~ 1.7 ~")" == .(round(p1,3))),
+            color = '#eb4034') +
+   theme_classic()
+
+gc2 <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
+   stat_function(fun = dnorm, args = list(mean = mu, sd = dp)) +
+   geom_area(mapping = aes(x = ifelse(test = X <= 1.5, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X > 1.5, yes = X, no = 0)), fill = NA) +
+   scale_x_continuous(
+      name = 'X',
+      limits = c(1.4,2),
+      breaks = seq(1.4, 2, by = 0.05)) +
+   ylab('f(x)') +
+   annotate(geom = 'text', x = 1.5, y = 3, label = bquote("P(X" <= ~ 1.5 ~")" == .(round(p2,3))),
+            color = '#eb4034') +
+   theme_classic()
+
+
+gc3 <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
+   stat_function(fun = dnorm, args = list(mean = mu, sd = dp)) +
+   geom_area(mapping = aes(x = ifelse(test = X >=1.5 & X <=1.7, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X < 1.5, yes = X, no = 0)), fill = NA) +
+   geom_area(mapping = aes(x = ifelse(test = X > 1.7, yes = X, no = 0)), fill = NA) +
+   scale_x_continuous(
+      name = 'X',
+      limits = c(1.4,2),
+      breaks = seq(1.4, 2, by = 0.05)) +
+   ylab('f(x)') +
+   annotate(geom = 'text', x = 1.5, y = 3, label = bquote("P(" ~ 1.5 <= ~ "X" <= ~ 1.7 ~")" == .(round(pfinal,3))),
+            color = '#eb4034') +
+   theme_classic()
+  
+grid.arrange(gc1, gc2, gc3, nrow = 3)
+```
+
+## A distribuição normal padronizada
+
+A integral para a função normal é difícil de ser calculada pois não tem solução analítica. Isto era um problema para os cientistas até meados do século XX de precisariam calcular valores de probabilidade para diferentes combinações de $\mu$ e $\sigma$. Naquele momento, a solução para facilitar a vida dos pesquisadores foi criar uma tabela descrevendo estas probabilidades em uma distribuição normal **padronizada**, ou seja para valores particulares de $\mu$ e $\sigma$. Padronizar aqui, significa transfomar cada valor $x_i$ de modo que as observações resultantes tenham média igual a 0 e desvio padrão igual a 1. 
+
+Esta transformação é realizada transformando cada observação $x_i$ em um valor de $z_i$ por meio da expressão.
+
+$$z_i = \frac{x_i - \bar{x}}{s}$$
+Lembre-se que no capítulo \@ref(posicao) apresentamos $z_i$ como uma **medida de posição**, uma vez que representa uma medida **relativa** à média e ao desvio padrão de um conjunto de dados particular. Por exemplo, um valor de $z_i = 2$ significa que a observação original $x_i$ está 2 desvios padrões **acima** da média $\overline{x}$. 
+
+> *Releita o tópico "Interpretando o valor de Z"* (Capítulo \@ref(posicao)). 
+
+Esta transformação é útil, pois ainda que seja difícil calcular as probabilidades para uma variável aleatória $X$, após a transformação teremos uma variável $Z$ para a qual os valores de probabilidade estão **tabelados**. Deste modo, $Z$ é uma variável aleatória com $\overline{z} = 0$ e $s = 1$ tal que:
+
+$$Z \sim \mathcal{N}(0,\,1)$$
+
+Para o exemplos sobre altura dos alunos e chuva mensal temos: 
+
+```{r, fig.align = "center", fig.height = 8, fig.width = 8, echo=FALSE}
+ie <- ie %>% 
+   mutate(Altura_z = (Altura - mean(Altura, na.rm = T))/sd(Altura, na.rm = T))
+temp <- temp %>% 
+   mutate(tm_z = (tm - mean(tm, na.rm = T))/sd(tm, na.rm = T))
+
+altz_plt <- ggplot(ie, aes(x = Altura_z)) +
+   geom_histogram(aes(y =..density..), 
+                  fill = 'dodgerblue4', color = 'black', bins = 10) +
+   stat_function(fun = dnorm, args = list(mean = mean(ie$Altura_z, na.rm = T),
+                                          sd = sd(ie$Altura_z, na.rm = T))) +
+   labs(x = "Distribuição Z",
+        y = "Frequencia relativa") +
+   theme_classic()
+
+tempz_plt <- ggplot(temp, aes(x = tm_z)) +
+   geom_histogram(aes(y =..density..),
+                  fill = 'dodgerblue4', color = 'black', bins = 10) +
+   stat_function(fun = dnorm, args = list(mean = mean(temp$tm_z, na.rm = T),
+                                          sd = sd(temp$tm_z, na.rm = T))) +
+   labs(x = "Distribuição Z",
+        y = "Frequencia relativa") +
+   theme_classic()
+
+grid.arrange(alt_plt, temp_plt, 
+             altz_plt, tempz_plt, 
+             nrow = 2, ncol = 2)
+
+```
+
+
+### Probabilidades em uma distribuição normal padronizada
+
+Nos dois exemplos anteriores, verifica-se que todas as observações estão situadas, aproximadamente, entre $z = -3$ e $z = +3$. De fato, a distribuição normal padronizada ou **distribuição Z** tem propriedades bem conhecidas. Sua média é $\mu = 0$ e seu desvio padrão é $\sigma = 1$, fazendo com que a maior parte das observações fique limitada entre  $z = -3$ e $z = +3$. Para ser exato, podemos descrever as probabilidades de uma observação estar dentro de alguns limites. Por exemplo, $95\%$ das observações estará entre $z = -1.96$ e $z = +1.96$, isto é, $P(-1.96 \le Z \le +1.96) = 0.95$. De forma similar, $90\%$ da área central da curva se encontra entre $z = -1.64$ e $z = +1.64$. Estes e outros limites na distribuição normal padronizada podem ser verificados na figura abaixo.
+
+
+``` {r fig.width=8, fig.height=5, fig.align = "center", echo=FALSE}
+qr = qnorm(p = c(1-c(0.995, 0.975, 0.95),0.5,c(0.95, 0.975, 0.995)))
+dqr = dnorm(x = qr)
+
+
+qrc1 = c(qr[3], qr[5], seq(qr[5],qr[3], by = -0.001))
+dqrc1 = c(0, 0, dnorm(x = seq(qr[5],qr[3], by = -0.001)))
+
+qrc2 = c(qr[6], qr[7], seq(qr[7], qr[6], by = -0.001))
+dqrc2 = c(0, 0, dnorm(x = seq(qr[7], qr[6], by = -0.001)))
+
+qrc2m = c(qr[1], qr[2], seq(qr[2],qr[1], by = -0.001))
+dqrc2m = c(0, 0, dnorm(x = seq(qr[2],qr[1], by = -0.001)))
+
+pqr = pnorm(q = qr)
+perc = diff(pqr) * 100
+
+curve(expr = dnorm(x, 0,1), from = -4, to = 4, 
+      ylab = "Densidade da distribuição normal padronizada",
+      xlab = "Distribuição de z", ylim = c(0, 0.7), axes = F)
+axis(1, at = -5:5, cex.axis = 0.8)
+axis(2, at = seq(-1, 0.5, by = 0.1), cex.axis = 0.8)
+segments(x0 = qr, x1 = qr, y0 = 0, y1 = c(0.65, 0.55, 0.45, dnorm(0), 0.45, 0.55, 0.65), lty = 2)
+polygon(x = qrc1, y = dqrc1, col = rgb(red = 0.9, 0,0, alpha = 0.5))  
+polygon(x = qrc2, y = dqrc2, col = rgb(red = 0.9, 0,0, alpha = 0.5))  
+polygon(x = qrc2m, y = dqrc2m, col = rgb(red = 0.9, 0,0, alpha = 0.5))
+segments(x0 = qr[1], x1 = qr[7], y0 = 0.65, y1 = 0.65, lwd = 2)
+segments(x0 = qr[2], x1 = qr[6], y0 = 0.55, y1 = 0.55, lwd = 2)
+segments(x0 = qr[3], x1 = qr[5], y0 = 0.45, y1 = 0.45, lwd = 2)
+text(x = 0, y = 0.67, labels = bquote(.(round(diff(pnorm(q = c(qr[1],qr[7]))*100),0)) ~ "% entre " ~ .(round(qr[1],2)) ~ " e " ~ .(round(qr[7],2)) ~ ")"), cex = 0.7)
+text(x = 0, y = 0.57, labels = bquote(.(round(diff(pnorm(q = c(qr[2],qr[6]))*100),0)) ~ "% entre " ~ .(round(qr[2],2)) ~ " e " ~ .(round(qr[6],2)) ~ ")"), cex = 0.7)
+text(x = 0, y = 0.47, labels = bquote(.(round(diff(pnorm(q = c(qr[3],qr[5]))*100),0)) ~ "% entre " ~ .(round(qr[3],2)) ~ " e " ~ .(round(qr[5],2)) ~ ")"), cex = 0.7)    
+```
+
+Vamos exemplificar o uso da distribuição Z no cálculo de probabilidades utilizando os dados de altura dos alunos. Para estes dados, iremos encontrar $P(X \le 1.5)$. Este procedimento consiste de:
+
+```{r echo = FALSE}
+mu <- 1.7
+dp <- 0.11
+x <- 1.5
+z_1.5 <- (x - mu)/dp
+```
+
+1. Transformar $x = 1.5$ em $z_{1.5}$ por meio de $z_{1.5} = \frac{1.5 - `r mu`}{`r dp`} = `r round(z_1.5,3)`$;
+
+```{r echo = TRUE}
+mu <- 1.7
+dp <- 0.11
+x <- 1.5
+z_1.5 <- (x - mu)/dp
+
+z_1.5
+```
+
+2. Encontrar encontrar $P(Z \le z_{1.5}) = P(Z \le `r round(z_1.5,3)`)$. 
+
+```{r echo = TRUE}
+pnorm(q = z_1.5, mean = 0, sd = 1, lower.tail = TRUE)
+```
+
+Compare este resultado com o obtido anteriormente para verificar que é equivalente a $P(X \le 1.5)$. 
+
+#### A transformação $Z$
+
+Do mesmo modo, suponha uma variável aleatória $X$ nomalmente distribuída conforme $X \sim \mathcal{N}(\mu,\,\sigma^2)$. Desejamos encontrar $m$ tal que:
+
+$P(X \le m) = \alpha$
+
+> $\alpha$ aqui reprsenta um valor de probabilidade qualquer determinada pela área na distribuição normal **abaixo** de $m$.
+
+Ao aplicar a transformação $Z$ teremos:
+
+$P(\frac{X - \mu}{\sigma} \le \frac{m - \mu}{\sigma}) = \alpha$
+
+como $\frac{X - \mu}{\sigma} = Z$ temos que:
+
+$P(Z \le \frac{m - \mu}{\sigma}) = \alpha$
+
+Por meio desta expressão, você pode encontar $m$ uma vez fornecido $\alpha$ ou encontrar $\alpha$, desde que seja fornecido $m$.
+
+O mesmo vale se quisermos encontrar a probabilidade determinada por um intervalo definido de $m$ até $n$ ($m < n$). Para isto fazemos:
+
+$P(m \le X \le n) = \alpha$
+
+$P(\frac{m - \mu}{\sigma} \le \frac{X - \mu}{\sigma} \le \frac{n - \mu}{\sigma}) = \alpha$
+
+$P(\frac{m - \mu}{\sigma} \le Z \le \frac{n - \mu}{\sigma}) = \alpha$
+
+### Tabela $Z$
+
+Ao utilizarmos um software estatístico não é necessário fazer esta transformação. A transformação $Z$ era necessária na ausência de ferramentas computacionais, ou seja, quando a única opção viável era utilizarmos a Tabela Z para evitar cálculos tediosos para cada combinação de $\mu$ e $\sigma$. 
+
+A tabela disponibiliza os valores de probabilidade para um grande número de valores de $Z$ e é apresentada na grande maioria dos livros de estatística.
+
+Você pode utilizar a Tabela $Z$ para encontrar $P(X \le 1.5)$. Note que o valor transformado é $z_{1.5} = `r round(z_1.5,3)`$. Este será o valor que iremos buscar na tabela. Para isto:
+
+1. Encontre a página que oferece valores **negativos**, uma vez que $z_{1.5} < 0$;
+
+2. Na coluna 1 desta página (coluna **z**) encontre a linha **-1.8** que refere-se à unidade, e à primeira casa decimal de $z_{1.5}$;
+
+3. Encontre a coluna **0.02** (quarta coluna da tabela $Z$) que apresenta a segunda casa decimal de $z_{1.5}$. Isto nos leva ao valor mais próximo do calculado ($z_{1.5} = `r round(z_1.5,3)`$). 
+
+4. Cruze a **linha** escolhida no item 3 com a **coluna** escolhida no item 4. Você irá encontrar o valor $0,0344$. Este valor e a probabilidade de obtermos um valor de $z \le 1.5$ na distribuição normal padronizada, ou seja, $P(Z \le z_{1.5})$. A diferença entre este valor e o encontrado com o R se deve unicamente à limitação da precisão utilizando a Tabela $Z$.
+
+## Exercícios resolvidos
+
+```{r}
+rh <- read_csv('datasets/rhamdioglanis.csv')
+```
+
+
+### Distribuição de comprimento
+
+As comunidades de peixes em riachos de cabeceira são compostas por espécies de pequeno porte. *Rhamdioglanis transfasciatus* é uma destas espécies, desconhecida  do público em geral, porém muito abundante em pequenos riachos bem preservados. Dados de captura sugerem que o tamanho dos indivíduos pode ser razoavelmente bem descrito por um modelo de distribuição normal.
+
+```{r}
+ggplot(rh, aes(x = Comprimento)) +
+   geom_histogram(aes(y =..density..),
+                  fill = 'dodgerblue4', color = 'black', bins = 15) +
+   stat_function(fun = dnorm, args = list(mean = mean(rh$Comprimento),
+                                          sd = sd(rh$Comprimento))) +
+   labs(x = 'Comprimento de Rhamdioglanis transfasciatus (cm)',
+        y = 'Densidade') +
+   theme_classic()
+```
+
+```{r}
+mu <- 10
+sigma <- 3
+N <- 800
+la <- 14
+lb <- 5
+lc <- c(lb,la)
+zla <- (la - mu)/sigma
+zlb <- (lb - mu)/sigma
+zlc <- (lc - mu)/sigma
+```
+
+
+Suponha o comprimento desta espécie tenha uma distribuição normal com $\mu = `r mu`$ cm e $\sigma = `r sigma`$ cm. Encontre:
+
+i. A probabilidade de capturar um indivíduo maior de `r la` cm de comprimento, $P(X \ge `r la`)$.
+ii. A probabilidade de capturar um indivíduo menor de `r lb` cm de comprimento, $P(X \le `r lb`)$.
+iii. A probabilidade de encontrar um indivíduo **entre** `r lc[1]` e `r lc[2]` cm, $P(`r lc[1]` \le X \le `r lc[2]`)$.
+iv. Se um trecho de riacho contém 800 indivíduos, quantos são maiores que `r la` cm de comprimento.
+   
+
+**RESOLUÇÃO**
+
+Para resolver estas questões iremos utilizar a transformação $Z$.
+
+```{r}
+df <- data.frame(X = seq(0,20, l = 1000),
+                 dX = dnorm(seq(0,20, l = 1000), mean = mu, sd = sigma))
+comp_plt <- ggplot(data = df, aes(x = X, y = dX)) +
+   stat_function(fun = dnorm, args = list(mean = mu,
+                                          sd = sigma)) +
+   scale_x_continuous(name = "Comprimento em cm",
+                      breaks = seq(0,20, by = 2),
+                      limits = c(0,20)) +
+   scale_y_continuous(name = "Densidade de probabilidade",
+                      breaks = seq(0,0.2, by = 0.02),
+                      limits = c(0,0.14)) +
+   theme_classic()
+
+a_plt <- comp_plt +
+   geom_area(mapping = aes(x = ifelse(test = X >= la, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X < la, yes = X, no = 0)), fill = NA) +
+   theme(plot.title = element_text(hjust = 0.5))
+
+b_plt <- comp_plt +
+   geom_area(mapping = aes(x = ifelse(test = X <= lb, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X > lb, yes = X, no = 0)), fill = NA) +
+   theme(plot.title = element_text(hjust = 0.5))
+   
+c_plt <- comp_plt +
+   geom_area(mapping = aes(x = ifelse(test = X >= lc[1] & X <= lc[2], yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X < lc[1], yes = X, no = 0)), fill = NA) +
+   geom_area(mapping = aes(x = ifelse(test = X > lc[2], yes = X, no = 0)), fill = NA) +
+   theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+**i. Para encontrar $P(X \ge `r la`)$:**
+
+Vamos encontrar o respectivo valor de $Z$ pela transformação
+
+$z_{`r la`} = \frac{`r la` - `r mu`}{`r sigma`} = `r round(zla, 2)`$
+
+Na tabela $Z$ procuramos a linha que mostra a unidade e $1^a$ casa decimal de $`r round(zla, 2)`$ e em seguida encontramos a coluna que representa a $2^a$ casa decimal de $`r round(zla, 2)`$. Cruzando linha e coluna encontramos o valor $0,9082$. Note que este valor representa  a área **abaixo** de `r round(zla, 2)`, isto é, $P(Z \le z_{`r la`})$. No entanto, queremos $P(Z \ge z_{`r la`})$ que representa a área daa curva **acima** de $`r round(zla, 2)`$. Para isto basta fazermos $1 - 0,9082$.
+
+Deste modo, $P(Z \ge z_{`r la`}) = 1 - P(Z \le z_{`r la`}) = 1 - 0,9082 = `r 1 - 0.9082`$
+
+```{r}
+a_plt + ggtitle(label = bquote('P(X' ~ '' >= '' ~ .(la) ~ ')' == .(1 - 0.9082)))
+```
+
+**ii. Para encontrar $P(X \le `r lb`)$:**
+
+$z_{`r lb`} = \frac{`r lb` - `r mu`}{`r sigma`} = `r round(zlb, 2)`$
+
+Na tabela $Z$ procuramos a linha que mostra a unidade e $1^a$ casa decimal de $`r round(zlb, 2)`$ e em seguida encontramos a coluna que representa a $2^a$ casa decimal de $`r round(zlb, 2)`$. Cruzando linha e coluna encontramos o valor $0,0475$ que representa a área desejada.
+
+Deste modo, $P(X \le `r lb`) = P(Z \le z_{`r lb`}) = 0,0475$
+
+```{r}
+b_plt + ggtitle(label = bquote('P(X' ~ '' <= '' ~ .(lb) ~ ')' == .(0.0475)))
+```
+
+**iii. Para encontrar a área central da curva $P(`r lc[1]` \le X \le `r lc[2]`)$:**
+
+Vamos subtrair as quantias $P(Z \le `r la`) - P(Z \le `r lb`)$
+
+Estes valores já foram encontrados nos itens anteriores, de modo que basta fazermos:
+
+$P(`r lc[1]` \le X \le `r lc[2]`) = 0,9082 - 0,0475 = `r 0.9082 - 0.0475`$
+
+```{r}
+c_plt + ggtitle(label = bquote('P(' ~ .(lc[1]) ~ '' <= '' ~'X'~ '' <= '' ~ .(lc[2]) ~ ')' == .(0.9082 - 0.0475)))
+```
+
+**iv. Indivíduos maiores que `r la` cm de comprimento**
+
+Se a proporção de indivíduos acima de `r la` é $P(X > `r la`) = `r 1 - 0.9082`$ e a população tem $N = 800$ indivíduos, teremos:
+
+$`r 1 - 0.9082` \times `r N` = `r round((1 - 0.9082) * N,0)`$ indivíduos maiores que `r la` cm.
+
+___
+
+O exercício pode ser resolvido pelo R por meio da função `pnorm`.
+
+```{r, echo = TRUE, eval = FALSE}
+mu <- 10
+sigma <- 3
+N <- 800
+la <- 14
+lb <- 5
+```
+
+$P(Z \ge `r la`)$
+
+```{r, echo=TRUE}
+pnorm(q = la, mean = mu, sd = sigma, lower.tail = FALSE)
+```
+
+
+$P(Z \le `r lb`)$
+
+```{r, echo=TRUE}
+pnorm(q = lb, mean = mu, sd = sigma, lower.tail = TRUE)
+```
+
+$P(`r lc[1]` \le X \le `r lc[2]`)$
+
+```{r, echo=TRUE}
+diff(
+   pnorm(q = c(lb, la),
+         mean = mu,
+         sd = sigma,
+         lower.tail = TRUE)
+   )
+
+```
+
+Número de indivíduos maiores que $`r la`$ cm de comprimento
+
+```{r, echo=TRUE}
+pg_la <- pnorm(q = la, mean = mu, sd = sigma, lower.tail = FALSE)
+
+N * pg_la
+```
+
+
+### Intervalos em uma distribuição normal
+
+Suponha variável aleatória $X$ normalmente distribuída conforme com $\mu = 50$ e $\sigma = 10)$. Encontre:
+
+i. O valor de $a$ tal que $P(X \le a) = 0,10$.
+ii. O valor de $b$ tal que $P(X \ge b) = 0,85$.
+iii. O intervalo simétrico ao redor da média delimitado por $c$ e $d$ ($c < d$), que contém $95\%$ da área sob a curva.
+iv. O valor de $e$ tal que $P(50-e \le X \le 50+e) = 0.99$
+
+```{r}
+mu = 50
+sigma = 10
+lims <- c(20,80)
+a <- qnorm(p = 0.10, mean = mu, sd = sigma, lower.tail = TRUE)
+b <- qnorm(p = 1-0.85, mean = mu, sd = sigma, lower.tail = TRUE)
+c <- qnorm(p = (1-0.95)/2, mean = mu, sd = sigma, lower.tail = TRUE)
+d <- qnorm(p = (1-0.95)/2, mean = mu, sd = sigma, lower.tail = FALSE)
+e <- -qnorm(p = (1-0.99)/2, mean = mu, sd = sigma, lower.tail = TRUE) + 50
+
+df <- data.frame(X = seq(lims[1],lims[2], l = 1000),
+                 dX = dnorm(seq(lims[1],lims[2], l = 1000), mean = mu, sd = sigma))
+X_plt <- ggplot(data = df, aes(x = X, y = dX)) +
+   stat_function(fun = dnorm, args = list(mean = mu,
+                                          sd = sigma)) +
+   scale_x_continuous(name = "X",
+                      breaks = seq(lims[1],lims[2], by = 5),
+                      limits = c(lims[1],lims[2])) +
+   ylab("Densidade de probabilidade") +
+   theme_classic()
+
+i_plt <- X_plt +
+   geom_area(mapping = aes(x = ifelse(test = X <= a, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X > a, yes = X, no = 0)), fill = NA) +
+   annotate("label", x = 34, y = 0.005, label = "0,10") +
+   theme(plot.title = element_text(hjust = 0.5))
+
+ii_plt <- X_plt +
+   geom_area(mapping = aes(x = ifelse(test = X >= b, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X < b, yes = X, no = 0)), fill = NA) +
+   annotate("label", x = 50, y = 0.015, label = "0,85", size = 10) +
+   theme(plot.title = element_text(hjust = 0.5))
+   
+iii_plt <- X_plt +
+   geom_area(mapping = aes(x = ifelse(test = X >= c & X <= d, yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X < c, yes = X, no = 0)), fill = NA) +
+   geom_area(mapping = aes(x = ifelse(test = X > d, yes = X, no = 0)), fill = NA) +
+   annotate("label", x = 50, y = 0.015, label = "0,95", size = 10) +
+   theme(plot.title = element_text(hjust = 0.5))
+
+iv_plt <- X_plt +
+   geom_area(mapping = aes(x = ifelse(test = X >= (50-e) & X <= (50+e), yes = X, no = 0)), fill = '#eb4034') +
+   geom_area(mapping = aes(x = ifelse(test = X < (50-e), yes = X, no = 0)), fill = '#21409e') +
+   geom_area(mapping = aes(x = ifelse(test = X > (50+e), yes = X, no = 0)), fill = '#21409e') +
+   annotate("label", x = 50, y = 0.015, label = "0,99", size = 10) +
+   annotate("label", x = c(22.5, 77.5), y = 0.005, label = "0,005", size = 7, color = '#21409e') +
+   theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+
+**RESOLUÇÃO**
+
+Veja que neste exercício, foram oferecidos valores de probabilidades e solicitado que você obtivesse os limites em uma distribuição normal específica. Este processo é oposto ao do excercício anterior.
+
+**i. O valor de $a$**
+
+Se $P(X \le a) = 0,10$, a área da curva abaixo de $a$ é $0,10$. Procurando por este valor na tabela $Z$ vemos que o valor mais próximo é $0,1003$ que corresponde a um escore $z = -1,28$. Vamos utilizar este valor para encontrar sua correspondência para a variável aleatória $X$ que tem média $\mu = 50$ e desvio padrão $\sigma = 10$.
+
+$z = \frac{a - \mu}{\sigma} :: -1,28 = \frac{a - 50}{10}$
+
+$a = (-1,28 \times 10) + 50 = `r (-1.28 * 10) + 50`$
+
+```{r}
+i_plt + ggtitle(label = bquote('P(X' ~ '' <= '' ~ .(round(a,1)) ~ ') = 0,10'))
+```
+
+**ii. O valor de $b$**
+
+Se $P(X \ge b) = 0,85$, a área abaixo de $b$ que devemos encontrar na tabela $Z$ é $1 - 0,85 = `r 1 - 0.85`$. Vemos que o valor mais próximo é $0,1492$ que corresponde a $z = -1,04$. Ao utilizar este resultado na expressão abaixo temos:
+
+$z = \frac{b - \mu}{\sigma} :: -1,04 = \frac{b - 50}{10}$
+
+$b = (-1,04 \times 10) + 50 = `r (-1.04 * 10) + 50`$
+
+```{r}
+ii_plt + ggtitle(label = bquote('P(X' ~ '' >= '' ~ .(round(b,1)) ~ ') = 0,85'))
+```
+
+
+**iii. O intervalo simétrico ao redor da média delimitado por $c$ e $d$ ($c < d$), que contém $95\%$ da área sob a curva.**
+
+Se entre $c$ e $d$ está $95\%$ da área da curva, temos uma área de $1 - 0,95 = 0,05$ fora da curva. Como o intervalo é simétrico, teremos $0,025$ abaixo de $c$ e $0,025$ acima de $d$.
+
+Ao procurar na tabela $Z$ por $0,025$ encontraremos $z = -1,96$ que equivale ena distribuição de X a:
+
+$z = \frac{c - \mu}{\sigma} :: -1,96 = \frac{c - 50}{10}$
+
+$c = (-1,96 \times 10) + 50 = `r (-1.96 * 10) + 50`$
+
+Novamente, como o intervalo é simétrico e a dsitribuição de $Z$ é centrada em zero, o ponto $d$ será de +$1,96$ que resulta em:
+
+$z = \frac{d - \mu}{\sigma} :: +1,96 = \frac{d - 50}{10}$
+
+$d = (+1,96 \times 10) + 50 = `r (1.96 * 10) + 50`$
+
+```{r}
+iii_plt + ggtitle(label = bquote('P(' ~ .(round(c,1)) ~ '' <= ~ 'X' <= '' ~ .(round(d,1)) ~ ') = 0,95'))
+```
+
+**iv. O valor de $e$ tal que $P(50-e \le X \le 50+e) = 0.99$**
+
+Podemos fazer aqui:
+
+$P(50-e \le X \le 50+e) = P(\frac{50-e - \mu}{\sigma} \le \frac{X-\mu}{\sigma} \le \frac{50+e-\mu}{\sigma}) = 0.99$
+
+como $\mu = 50$ e $\sigma = 10$ temos:
+
+$P(\frac{-e}{10} \le Z \le \frac{e}{10}) = 0.90$
+
+Como a área central ocupa $0,99$ da distribuição, restam $0,005$ na cauda **superior** e $0,005$ na cauda **inferior**:
+
+```{r}
+iv_plt + ggtitle(label = bquote("P(50-e" <= ~ "X" <= ~ "50+e) = 0,99"))
+```
+
+Para encontrar $-e$ buscamos por $0,005$ na tabela $Z$ e encontramos $0,0051$ como valor mais próximo, referente a $z_{-e} = -2,57$. Substituindo na equação temos:
+
+$\frac{-e}{10} \le -2,57 :: -e = -2,57 \times 10 :: e = 25,7$
+
+*Note na figura acima que os limite das áreas em azul são: 
+
+$\mu - e = 50 - 25.7 = 24.3$ e 
+
+$\mu - e = 50 + 25.7 = 75.7$
+
+___
+
+O exercício pode ser resolvido pelo R por meio da função `qnorm`.
+
+> Em `qnorm`, o 'q' vem de *quantis* da distribuição normal.
+
+```{r, echo = TRUE}
+mu = 50
+sigma = 10
+
+(a <- qnorm(p = 0.10, mean = mu, sd = sigma, lower.tail = TRUE))
+(b <- qnorm(p = 1-0.85, mean = mu, sd = sigma, lower.tail = TRUE))
+(c <- qnorm(p = (1-0.95)/2, mean = mu, sd = sigma, lower.tail = TRUE))
+(d <- qnorm(p = (1-0.95)/2, mean = mu, sd = sigma, lower.tail = FALSE))
+(e <- -qnorm(p = (1-0.99)/2, mean = mu, sd = sigma, lower.tail = TRUE) + 50)
+
+```
+
+### Quantos desvios padrões?
+
+Suponha uma variável aleatória normalmente distribuída representada por $X \sim \mathcal{N}(\mu,\,\sigma^2)$, determine:
+
+i. O valor de $a$ tal que $P(X < a) = 0,20$.
+ii. $P(X \le \mu + 2\sigma)$.
+iii. O valor de $c$ tal que $P(\mu -c\sigma \le X \le \mu +c\sigma) = 0.99$
+
+**RESOLUÇÃO**
+
+**i. O valor de $a$ tal que $P(X < a) = 0,20$.**
+
+$P(X < a) = P(\frac{X - \mu}{\sigma} < \frac{a - \mu}{\sigma}) = P(Z < \frac{a - \mu}{\sigma}) = 0,20$
+
+Procurando pelo valor de $z$ que delimita $0,20$ da área abaixo de $a$ encontramos por $z = -0,84$, de modo que:
+
+$-0,84 = \frac{a - \mu}{\sigma}$
+
+$a = \mu -0,84\sigma$
+
+**ii. $P(X \le \mu + 2\sigma)$**
+
+A expressão $\mu + 2\sigma$ nos diz que o limite de interesse está $2$ desvios padrões **acima** de $\mu$. Ao procurar pelo valor de $z = 2,0$ na tabela $Z$, veremos que a probabilidade de interesse é $P(X \le \mu + 2\sigma) = 0,9772$
+
+**iii. O valor de $c$ tal que $P(\mu -c\sigma \le X \le \mu +c\sigma) = 0.99$**
+
+Desenvolvendo esta expressão teremos
+
+$P(-c \le \frac{X - \mu}{\sigma} \le +c) = P(-c \le Z \le +c) = 0.99$
+
+Fora deste intervalo simétrico, teremos uma área de $0,005$ na cauda inferior e $0,005$ na cauda superior da distribuição $Z$.
+
+Ao procurar por $0,005$ na tabela $Z$ encontramos $z = -2,57$, de modo que $c = 2,57$.
+
+
+## Exercícios propostos
+
+Leia o tópico **7.4.2 O Modelo Normal** em [@bussabemoretin6a] (pag. 176 a 181) e faça os exercícios 14 a 20 da página 184.
+
+
+```{r, echo=FALSE}
+rm(list = ls())
+```

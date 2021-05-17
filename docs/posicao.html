@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Descrevendo populações e amostras | Estatística nas Ciências Ambientais</title>
+  <meta name="description" content="Capítulo 2 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Capítulo 2 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
+  
+  <meta name="twitter:description" content="Capítulo 2 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
+  
+
+<meta name="author" content="Fabio Cop Ferreira" />
+<meta name="author" content="fabiocopf@gmail.com; fcferreira@unifesp.br" />
+<meta name="author" content="Instituto do Mar, Universidade Federal de São Paulo" />
+
+
+<meta name="date" content="2021-05-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="descrit.html"/>
+<link rel="next" href="amostrmedias.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estatística nas Ciências Ambientais</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Apresentação</a></li>
+<li class="part"><span><b>I Estatística descritiva</b></span></li>
+<li class="chapter" data-level="1" data-path="descrit.html"><a href="descrit.html"><i class="fa fa-check"></i><b>1</b> Apresentando informações em tabelas e gráficos</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="descrit.html"><a href="descrit.html#tipos-de-dados"><i class="fa fa-check"></i><b>1.1</b> Tipos de dados</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="descrit.html"><a href="descrit.html#dados-quantitativos-e-qualitativos"><i class="fa fa-check"></i><b>1.1.1</b> Dados quantitativos e qualitativos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="descrit.html"><a href="descrit.html#níveis-de-mensuração"><i class="fa fa-check"></i><b>1.1.2</b> Níveis de mensuração</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="descrit.html"><a href="descrit.html#tabelas-resumo"><i class="fa fa-check"></i><b>1.2</b> Tabelas resumo</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="descrit.html"><a href="descrit.html#combinando-duas-variáveis"><i class="fa fa-check"></i><b>1.2.1</b> Combinando duas variáveis</a></li>
+<li class="chapter" data-level="1.2.2" data-path="descrit.html"><a href="descrit.html#tabelas-de-frequência-para-variáveis-quantitativas"><i class="fa fa-check"></i><b>1.2.2</b> Tabelas de frequência para variáveis quantitativas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="descrit.html"><a href="descrit.html#visualização-gráfica"><i class="fa fa-check"></i><b>1.3</b> Visualização gráfica</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="descrit.html"><a href="descrit.html#gráficos-de-barras"><i class="fa fa-check"></i><b>1.3.1</b> Gráficos de barras</a></li>
+<li class="chapter" data-level="1.3.2" data-path="descrit.html"><a href="descrit.html#histogramas"><i class="fa fa-check"></i><b>1.3.2</b> Histogramas</a></li>
+<li class="chapter" data-level="1.3.3" data-path="descrit.html"><a href="descrit.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>1.3.3</b> Gráficos de linhas</a></li>
+<li class="chapter" data-level="1.3.4" data-path="descrit.html"><a href="descrit.html#gráficos-de-dispersão"><i class="fa fa-check"></i><b>1.3.4</b> Gráficos de dispersão</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="posicao.html"><a href="posicao.html"><i class="fa fa-check"></i><b>2</b> Descrevendo populações e amostras</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="posicao.html"><a href="posicao.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>2.1</b> População, amostra e unidade amostral</a></li>
+<li class="chapter" data-level="2.2" data-path="posicao.html"><a href="posicao.html#distribuições-de-frequência"><i class="fa fa-check"></i><b>2.2</b> Distribuições de frequência</a></li>
+<li class="chapter" data-level="2.3" data-path="posicao.html"><a href="posicao.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>2.3</b> Parâmetros e estimadores</a></li>
+<li class="chapter" data-level="2.4" data-path="posicao.html"><a href="posicao.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>2.4</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="2.5" data-path="posicao.html"><a href="posicao.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>2.5</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="2.6" data-path="posicao.html"><a href="posicao.html#medidas-de-variação"><i class="fa fa-check"></i><b>2.6</b> Medidas de variação</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="posicao.html"><a href="posicao.html#exempificando-os-cálculos"><i class="fa fa-check"></i><b>2.6.1</b> Exempificando os cálculos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="posicao.html"><a href="posicao.html#medidas-de-posição"><i class="fa fa-check"></i><b>2.7</b> Medidas de posição</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="posicao.html"><a href="posicao.html#quartis"><i class="fa fa-check"></i><b>2.7.1</b> Quartis</a></li>
+<li class="chapter" data-level="2.7.2" data-path="posicao.html"><a href="posicao.html#índice-z"><i class="fa fa-check"></i><b>2.7.2</b> Índice Z</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="posicao.html"><a href="posicao.html#volume-dos-reservatórios-da-grande-são-paulo-visualizando-medidas-de-posição-e-variação"><i class="fa fa-check"></i><b>2.8</b> Volume dos reservatórios da Grande São Paulo: visualizando medidas de posição e variação</a></li>
+</ul></li>
+<li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
+<li class="chapter" data-level="3" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>3</b> Amostrando uma População Estatística</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="amostrmedias.html"><a href="amostrmedias.html#amostragem-aleatória-simples"><i class="fa fa-check"></i><b>3.1</b> Amostragem aleatória simples</a></li>
+<li class="chapter" data-level="3.2" data-path="amostrmedias.html"><a href="amostrmedias.html#amostragem-aleatória-estratificada"><i class="fa fa-check"></i><b>3.2</b> Amostragem aleatória estratificada</a></li>
+<li class="chapter" data-level="3.3" data-path="amostrmedias.html"><a href="amostrmedias.html#amostragem-sistemática"><i class="fa fa-check"></i><b>3.3</b> Amostragem sistemática</a></li>
+<li class="chapter" data-level="3.4" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral-acurácia-e-precisão"><i class="fa fa-check"></i><b>3.4</b> Erro amostral, acurácia e precisão</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>3.4.1</b> Erro amostral</a></li>
+<li class="chapter" data-level="3.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>3.4.2</b> Acurácia</a></li>
+<li class="chapter" data-level="3.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão"><i class="fa fa-check"></i><b>3.4.3</b> Precisão</a></li>
+<li class="chapter" data-level="3.4.4" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-padrão-da-média"><i class="fa fa-check"></i><b>3.4.4</b> Erro padrão da média</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normdist.html"><a href="normdist.html"><i class="fa fa-check"></i><b>4</b> Alguns fenômenos têm distribuição normal</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="normdist.html"><a href="normdist.html#o-modelo-normal-de-probabilidades"><i class="fa fa-check"></i><b>4.1</b> O modelo normal de probabilidades</a></li>
+<li class="chapter" data-level="4.2" data-path="normdist.html"><a href="normdist.html#entendendo-a-função-normal-de-densidade-de-probabilidade"><i class="fa fa-check"></i><b>4.2</b> Entendendo a função normal de densidade de probabilidade</a></li>
+<li class="chapter" data-level="4.3" data-path="normdist.html"><a href="normdist.html#fazendo-predições-com-a-função-normal-de-densidade"><i class="fa fa-check"></i><b>4.3</b> Fazendo predições com a função normal de densidade</a></li>
+<li class="chapter" data-level="4.4" data-path="normdist.html"><a href="normdist.html#a-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>4.4</b> A distribuição normal padronizada</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="normdist.html"><a href="normdist.html#probabilidades-em-uma-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>4.4.1</b> Probabilidades em uma distribuição normal padronizada</a></li>
+<li class="chapter" data-level="4.4.2" data-path="normdist.html"><a href="normdist.html#tabela-z"><i class="fa fa-check"></i><b>4.4.2</b> Tabela <span class="math inline">\(Z\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="normdist.html"><a href="normdist.html#exercícios-resolvidos"><i class="fa fa-check"></i><b>4.5</b> Exercícios resolvidos</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="normdist.html"><a href="normdist.html#distribuição-de-comprimento"><i class="fa fa-check"></i><b>4.5.1</b> Distribuição de comprimento</a></li>
+<li class="chapter" data-level="4.5.2" data-path="normdist.html"><a href="normdist.html#intervalos-em-uma-distribuição-normal"><i class="fa fa-check"></i><b>4.5.2</b> Intervalos em uma distribuição normal</a></li>
+<li class="chapter" data-level="4.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>4.5.3</b> Quantos desvios padrões?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>4.6</b> Exercícios propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>5</b> Distribuição das médias amostrais</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tcl.html"><a href="tcl.html#teorema-central-do-limite"><i class="fa fa-check"></i><b>5.1</b> Teorema Central do Limite</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="tcl.html"><a href="tcl.html#probabilidades-na-amostra-original-e-na-distribuição-de-médias"><i class="fa fa-check"></i><b>5.1.1</b> Probabilidades na amostra original e na distribuição de médias</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tcl.html"><a href="tcl.html#distribuição-não-normais"><i class="fa fa-check"></i><b>5.1.2</b> Distribuição não-normais</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tcl.html"><a href="tcl.html#exercícios-resolvidos-1"><i class="fa fa-check"></i><b>5.2</b> Exercícios resolvidos:</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="tcl.html"><a href="tcl.html#tamanho-médio-de-robalos-no-mercado-de-peixes"><i class="fa fa-check"></i><b>5.2.1</b> Tamanho médio de robalos no mercado de peixes</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="tcl.html"><a href="tcl.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>5.3</b> Exercícios propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="inferenc.html"><a href="inferenc.html"><i class="fa fa-check"></i><b>6</b> Inferindo sobre uma População Estatística</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="inferenc.html"><a href="inferenc.html#estimação-pontual-e-estimação-intervalar"><i class="fa fa-check"></i><b>6.1</b> Estimação pontual e estimação intervalar</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="inferenc.html"><a href="inferenc.html#intervalo-de-confiança"><i class="fa fa-check"></i><b>6.1.1</b> Intervalo de confiança</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="inferenc.html"><a href="inferenc.html#introdução-à-suficiência-amostral"><i class="fa fa-check"></i><b>6.2</b> Introdução à suficiência amostral</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="inferenc.html"><a href="inferenc.html#nível-de-acurácia-desejado-margem-de-erro-e-nível-de-confiança-na-estimativa"><i class="fa fa-check"></i><b>6.2.1</b> Nível de acurácia desejado (margem de erro) e nível de confiança na estimativa</a></li>
+<li class="chapter" data-level="6.2.2" data-path="inferenc.html"><a href="inferenc.html#determinando-o-tamanho-de-uma-amostra"><i class="fa fa-check"></i><b>6.2.2</b> Determinando o tamanho de uma amostra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="th.html"><a href="th.html"><i class="fa fa-check"></i><b>7</b> Introdução ao Teste de Hipóteses</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="th.html"><a href="th.html#probabilidade-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>7.1</b> Probabilidade e teste de hipóteses</a></li>
+<li class="chapter" data-level="7.2" data-path="th.html"><a href="th.html#exemplificando-um-teste-de-hipóteses-o-teste-z"><i class="fa fa-check"></i><b>7.2</b> Exemplificando um teste de hipóteses: o teste z</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="th.html"><a href="th.html#tomada-de-decisão-sobre-h_0-nível-de-significância"><i class="fa fa-check"></i><b>7.2.1</b> Tomada de decisão sobre <span class="math inline">\(H_0\)</span>: nível de significância</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="th.html"><a href="th.html#erros-de-decisão-em-um-teste-de-hipóteses"><i class="fa fa-check"></i><b>7.3</b> Erros de decisão em um teste de hipóteses</a></li>
+<li class="chapter" data-level="7.4" data-path="th.html"><a href="th.html#exemplo-de-um-teste-de-hipótese-teste-t-para-uma-média-populacional"><i class="fa fa-check"></i><b>7.4</b> Exemplo de um teste de hipótese: teste t para uma média populacional</a></li>
+<li class="chapter" data-level="7.5" data-path="th.html"><a href="th.html#graus-de-liberdade"><i class="fa fa-check"></i><b>7.5</b> Graus de liberdade</a></li>
+<li class="chapter" data-level="7.6" data-path="th.html"><a href="th.html#probabilidades-no-teste-t-de-student-a-tabela-t"><i class="fa fa-check"></i><b>7.6</b> Probabilidades no teste <span class="math inline">\(t\)</span> de Student: a tabela <span class="math inline">\(t\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="testet.html"><a href="testet.html"><i class="fa fa-check"></i><b>8</b> Teste t para duas amostras</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="testet.html"><a href="testet.html#teste-t-para-comparação-de-duas-médias-independentes"><i class="fa fa-check"></i><b>8.1</b> Teste t para comparação de duas médias independentes</a></li>
+</ul></li>
+<li class="part"><span><b>III Modelos Lineares Clássicos</b></span></li>
+<li class="chapter" data-level="9" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>9</b> Regressão linear e correlação</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="regressao.html"><a href="regressao.html#modelo-geral-de-regressão"><i class="fa fa-check"></i><b>9.1</b> Modelo geral de regressão</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="regressao.html"><a href="regressao.html#porção-determinística"><i class="fa fa-check"></i><b>9.1.1</b> Porção determinística</a></li>
+<li class="chapter" data-level="9.1.2" data-path="regressao.html"><a href="regressao.html#porção-estocástica"><i class="fa fa-check"></i><b>9.1.2</b> Porção estocástica</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="regressao.html"><a href="regressao.html#ajuste-dos-dados-ao-modelo-de-regressão"><i class="fa fa-check"></i><b>9.2</b> Ajuste dos dados ao modelo de regressão</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="regressao.html"><a href="regressao.html#método-dos-mínimos-quadrados"><i class="fa fa-check"></i><b>9.2.1</b> Método dos mínimos quadrados</a></li>
+<li class="chapter" data-level="9.2.2" data-path="regressao.html"><a href="regressao.html#variâncias-covariâncias-e-coeficientes-da-regressão"><i class="fa fa-check"></i><b>9.2.2</b> Variâncias, covariâncias e coeficientes da regressão</a></li>
+<li class="chapter" data-level="9.2.3" data-path="regressao.html"><a href="regressao.html#exemplo-de-ajuste-ao-modelo-de-regressão"><i class="fa fa-check"></i><b>9.2.3</b> Exemplo de ajuste ao modelo de regressão</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="regressao.html"><a href="regressao.html#testes-de-hipóteses-na-regressão-linear-simples"><i class="fa fa-check"></i><b>9.3</b> Testes de hipóteses na regressão linear simples</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="regressao.html"><a href="regressao.html#teste-sobre-beta_1"><i class="fa fa-check"></i><b>9.3.1</b> Teste sobre <span class="math inline">\(\beta_1\)</span></a></li>
+<li class="chapter" data-level="9.3.2" data-path="regressao.html"><a href="regressao.html#análise-de-variância-da-regressão"><i class="fa fa-check"></i><b>9.3.2</b> Análise de variância da regressão</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>9.4</b> Coeficiente de determinação <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="9.5" data-path="regressao.html"><a href="regressao.html#intervalo-de-confiança-de-y"><i class="fa fa-check"></i><b>9.5</b> Intervalo de confiança de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="9.6" data-path="regressao.html"><a href="regressao.html#pressupostos-da-regressão-linear-simples"><i class="fa fa-check"></i><b>9.6</b> Pressupostos da regressão linear simples</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="regressao.html"><a href="regressao.html#relação-funcional-linear"><i class="fa fa-check"></i><b>9.6.1</b> Relação funcional linear</a></li>
+<li class="chapter" data-level="9.6.2" data-path="regressao.html"><a href="regressao.html#independência"><i class="fa fa-check"></i><b>9.6.2</b> Independência</a></li>
+<li class="chapter" data-level="9.6.3" data-path="regressao.html"><a href="regressao.html#variável-x-é-medida-sem-erros"><i class="fa fa-check"></i><b>9.6.3</b> Variável <span class="math inline">\(X\)</span> é medida sem erros</a></li>
+<li class="chapter" data-level="9.6.4" data-path="regressao.html"><a href="regressao.html#distribuição-normal-dos-resíduos"><i class="fa fa-check"></i><b>9.6.4</b> Distribuição normal dos resíduos</a></li>
+<li class="chapter" data-level="9.6.5" data-path="regressao.html"><a href="regressao.html#variância-residual-constante"><i class="fa fa-check"></i><b>9.6.5</b> Variância residual constante</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="regressao.html"><a href="regressao.html#diagnósticos-da-regressão"><i class="fa fa-check"></i><b>9.7</b> Diagnósticos da regressão</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="regressao.html"><a href="regressao.html#gráfico-de-resíduos"><i class="fa fa-check"></i><b>9.7.1</b> Gráfico de resíduos</a></li>
+<li class="chapter" data-level="9.7.2" data-path="regressao.html"><a href="regressao.html#histograma-dos-resíduos"><i class="fa fa-check"></i><b>9.7.2</b> Histograma dos resíduos</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="regressao.html"><a href="regressao.html#coeficiente-de-correlação-de-pearson-r"><i class="fa fa-check"></i><b>9.8</b> Coeficiente de correlação de Pearson <span class="math inline">\(r\)</span></a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="regressao.html"><a href="regressao.html#teste-de-hipóteses-para-r"><i class="fa fa-check"></i><b>9.8.1</b> Teste de hipóteses para <span class="math inline">\(r\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="regresmultipla.html"><a href="regresmultipla.html"><i class="fa fa-check"></i><b>10</b> Regressão linear múltipla</a></li>
+<li class="chapter" data-level="11" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>11</b> Análise de variância de um fator</a></li>
+<li class="chapter" data-level="12" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>12</b> Análise de variância fatorial</a></li>
+<li class="chapter" data-level="13" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>13</b> Análise de covariância</a></li>
+<li class="chapter" data-level="14" data-path="repanova.html"><a href="repanova.html"><i class="fa fa-check"></i><b>14</b> Análise de variância de medidas repetidas</a></li>
+<li class="part"><span><b>IV Fundamentos de probabilidade</b></span></li>
+<li class="chapter" data-level="15" data-path="espacoamostral.html"><a href="espacoamostral.html"><i class="fa fa-check"></i><b>15</b> O espaço de possibilidades de um experimento</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="espacoamostral.html"><a href="espacoamostral.html#probabilidades-de-um-evento"><i class="fa fa-check"></i><b>15.1</b> Probabilidades de um evento</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="espacoamostral.html"><a href="espacoamostral.html#estimando-as-probabilidades-de-um-evento-por-amostragem"><i class="fa fa-check"></i><b>15.1.1</b> Estimando as probabilidades de um evento por amostragem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="probregras.html"><a href="probregras.html"><i class="fa fa-check"></i><b>16</b> Combinando as probabilidades de eventos</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="probregras.html"><a href="probregras.html#eventos-complexos"><i class="fa fa-check"></i><b>16.1</b> Eventos complexos</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="probregras.html"><a href="probregras.html#representação-de-eventos-diagrama-de-venn"><i class="fa fa-check"></i><b>16.1.1</b> Representação de eventos: diagrama de Venn</a></li>
+<li class="chapter" data-level="16.1.2" data-path="probregras.html"><a href="probregras.html#probabilidade-de-eventos-simples"><i class="fa fa-check"></i><b>16.1.2</b> Probabilidade de eventos simples</a></li>
+<li class="chapter" data-level="16.1.3" data-path="probregras.html"><a href="probregras.html#probabilidade-da-união-de-eventos"><i class="fa fa-check"></i><b>16.1.3</b> Probabilidade da união de eventos</a></li>
+<li class="chapter" data-level="16.1.4" data-path="probregras.html"><a href="probregras.html#representação-de-eventos-diagrama-de-árvore"><i class="fa fa-check"></i><b>16.1.4</b> Representação de eventos: diagrama de árvore</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="probcondind.html"><a href="probcondind.html"><i class="fa fa-check"></i><b>17</b> Probabilidade condicional e independência</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="probcondind.html"><a href="probcondind.html#eventos-independentes"><i class="fa fa-check"></i><b>17.1</b> Eventos independentes</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="probcondind.html"><a href="probcondind.html#um-exemplo-de-eventos-independentes"><i class="fa fa-check"></i><b>17.1.1</b> Um exemplo de eventos independentes</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="probcondind.html"><a href="probcondind.html#eventos-independentes-vs-mutuamente-exclusivos"><i class="fa fa-check"></i><b>17.2</b> Eventos independentes <em>vs</em> mutuamente exclusivos</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="tbayes.html"><a href="tbayes.html"><i class="fa fa-check"></i><b>18</b> Teorema de Bayes: atualizando o conhecimento</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="tbayes.html"><a href="tbayes.html#teorema-de-bayes"><i class="fa fa-check"></i><b>18.1</b> Teorema de Bayes</a></li>
+<li class="chapter" data-level="18.2" data-path="tbayes.html"><a href="tbayes.html#teorema-da-probabilidade-total"><i class="fa fa-check"></i><b>18.2</b> Teorema da probabilidade total</a></li>
+<li class="chapter" data-level="18.3" data-path="tbayes.html"><a href="tbayes.html#o-problema-da-detecção-de-espécies"><i class="fa fa-check"></i><b>18.3</b> O problema da detecção de espécies</a>
+<ul>
+<li class="chapter" data-level="18.3.1" data-path="tbayes.html"><a href="tbayes.html#razão-de-verossimilhança-inferência-bayesiana-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>18.3.1</b> Razão de verossimilhança, inferência bayesiana e teste de hipóteses</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Modelos Probabilísticos, verossimilhança e inferência bayesiana</b></span></li>
+<li class="chapter" data-level="19" data-path="va.html"><a href="va.html"><i class="fa fa-check"></i><b>19</b> As variáveis são aleatórias, não imprevisíveis! - <em>Modelos discretos</em></a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>19.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
+<ul>
+<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="va.html"><a href="va.html#experimento-2-o-custo-de-1-sucesso"><i class="fa fa-check"></i><b>19.2</b> <em>Experimento 2</em>: O custo de 1 sucesso</a></li>
+<li class="chapter" data-level="19.3" data-path="va.html"><a href="va.html#experimento-3-uma-sequência-de-sucessos"><i class="fa fa-check"></i><b>19.3</b> <em>Experimento 3</em>: Uma sequência de sucessos</a></li>
+<li class="chapter" data-level="19.4" data-path="va.html"><a href="va.html#experimento-4-quantas-marcas-na-amostra"><i class="fa fa-check"></i><b>19.4</b> <em>Experimento 4</em>: Quantas marcas na amostra!</a></li>
+<li class="chapter" data-level="19.5" data-path="va.html"><a href="va.html#experimento-5-contagem-por-unidade-de-área-tempo-.."><i class="fa fa-check"></i><b>19.5</b> <em>Experimento 5</em>: Contagem por unidade de área, tempo, …..</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="vacont.html"><a href="vacont.html"><i class="fa fa-check"></i><b>20</b> As variáveis são aleatórias, não imprevisíveis! - <em>Modelos contínuos</em></a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="vacont.html"><a href="vacont.html#alguns-fenômenos-têm-distribuição-normal"><i class="fa fa-check"></i><b>20.1</b> Alguns fenômenos têm distribuição normal</a></li>
+<li class="chapter" data-level="20.2" data-path="vacont.html"><a href="vacont.html#outros-são-altamente-assimétricos"><i class="fa fa-check"></i><b>20.2</b> Outros são altamente assimétricos</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="detmodel.html"><a href="detmodel.html"><i class="fa fa-check"></i><b>21</b> Alguns modelos são determinísticos</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="detmodel.html"><a href="detmodel.html#modelo-linear"><i class="fa fa-check"></i><b>21.1</b> Modelo linear</a></li>
+<li class="chapter" data-level="21.2" data-path="detmodel.html"><a href="detmodel.html#função-potência"><i class="fa fa-check"></i><b>21.2</b> Função potência</a></li>
+<li class="chapter" data-level="21.3" data-path="detmodel.html"><a href="detmodel.html#modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii"><i class="fa fa-check"></i><b>21.3</b> Modelo de Michaelis-Menten (ou Resposta funcional do tipo II)</a></li>
+<li class="chapter" data-level="21.4" data-path="detmodel.html"><a href="detmodel.html#resposta-funcional-do-tipo-iii"><i class="fa fa-check"></i><b>21.4</b> Resposta funcional do tipo III</a></li>
+<li class="chapter" data-level="21.5" data-path="detmodel.html"><a href="detmodel.html#resposta-funcional-do-tipo-iv"><i class="fa fa-check"></i><b>21.5</b> Resposta funcional do tipo IV</a></li>
+<li class="chapter" data-level="21.6" data-path="detmodel.html"><a href="detmodel.html#função-hiperbólica"><i class="fa fa-check"></i><b>21.6</b> Função hiperbólica</a></li>
+<li class="chapter" data-level="21.7" data-path="detmodel.html"><a href="detmodel.html#função-exponencial"><i class="fa fa-check"></i><b>21.7</b> Função exponencial</a></li>
+<li class="chapter" data-level="21.8" data-path="detmodel.html"><a href="detmodel.html#função-logística"><i class="fa fa-check"></i><b>21.8</b> Função logística</a></li>
+<li class="chapter" data-level="21.9" data-path="detmodel.html"><a href="detmodel.html#modelo-monomolecular"><i class="fa fa-check"></i><b>21.9</b> Modelo monomolecular</a></li>
+<li class="chapter" data-level="21.10" data-path="detmodel.html"><a href="detmodel.html#modelo-de-ricker"><i class="fa fa-check"></i><b>21.10</b> Modelo de Ricker</a></li>
+<li class="chapter" data-level="21.11" data-path="detmodel.html"><a href="detmodel.html#modelo-de-gompertz"><i class="fa fa-check"></i><b>21.11</b> Modelo de Gompertz</a></li>
+<li class="chapter" data-level="21.12" data-path="detmodel.html"><a href="detmodel.html#modelo-de-von-bertalanffy"><i class="fa fa-check"></i><b>21.12</b> Modelo de von Bertalanffy</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="modelstat.html"><a href="modelstat.html"><i class="fa fa-check"></i><b>22</b> As partes estocásticas e determinísticas de um modelo estatístico</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="modelstat.html"><a href="modelstat.html#a-parcela-aleatória"><i class="fa fa-check"></i><b>22.1</b> A parcela aleatória</a></li>
+<li class="chapter" data-level="22.2" data-path="modelstat.html"><a href="modelstat.html#a-parcela-determinística"><i class="fa fa-check"></i><b>22.2</b> A parcela determinística</a></li>
+<li class="chapter" data-level="22.3" data-path="modelstat.html"><a href="modelstat.html#mais-um-modelo-binomial-taxa-de-mortalidade-em-testes-dose-resposta"><i class="fa fa-check"></i><b>22.3</b> Mais um modelo Binomial: taxa de mortalidade em testes dose-resposta</a></li>
+<li class="chapter" data-level="22.4" data-path="modelstat.html"><a href="modelstat.html#o-modelo-estatístico-da-regressão-linear"><i class="fa fa-check"></i><b>22.4</b> O modelo estatístico da regressão linear</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="emv.html"><a href="emv.html"><i class="fa fa-check"></i><b>23</b> Estimando os parâmetros: a ideia da Máxima Verossimilhança</a></li>
+<li class="chapter" data-level="24" data-path="aic.html"><a href="aic.html"><i class="fa fa-check"></i><b>24</b> Comparando modelos: uma questão de parcimônia</a></li>
+<li class="chapter" data-level="25" data-path="statbayes.html"><a href="statbayes.html"><i class="fa fa-check"></i><b>25</b> Da verossimilhança à estatística Bayesiana</a></li>
+<li class="chapter" data-level="26" data-path="varmodels.html"><a href="varmodels.html"><i class="fa fa-check"></i><b>26</b> Uma variedade de modelos estatísticos: modelando a variância</a></li>
+<li class="chapter" data-level="27" data-path="nindep.html"><a href="nindep.html"><i class="fa fa-check"></i><b>27</b> Uma variedade de modelos estatísticos: modelando os resíduos</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estatística nas Ciências Ambientais</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="posicao" class="section level1" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Descrevendo populações e amostras</h1>
+<div id="população-amostra-e-unidade-amostral" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> População, amostra e unidade amostral</h2>
+<p>Em estatística, <strong>população</strong> se refere a todos os elementos sobre os quais queremos tirar conclusões. É comum a confusão entre os termos população estatística e população biológica (nas ciências naturais) ou população humana (em ciências sociais). No entanto, <strong>população estatística</strong> refere-se ao <strong>conjunto de medidas</strong> que podem ser obtidas como resultado de um experimento ou de um estudo observacional e não pode ser confundido com conjuntos de pessoas ou organismos. As medidas que compõem a população estatística portanto, podem ser pesos, temperaturas, velocidades, tempos de reação, entre outras, a depender das características de um estudo particula. A abrangência da população estatística depende do contexto e do escopo da pergunta que se pretende responder.</p>
+<p>Suponha um estudo para descrever o comprimento do lambari <em>Deuterodon iguape</em> em riachos do litoral de São Paulo. A população estatística não são os peixes em si, mas o <strong>comprimento</strong> de cada indivíduo. Dado o escopo do estudo, a população estatística abrange <strong>somente</strong> comprimentos dos organismos que habitam bacias do litoral de São Paulo. Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um <strong>índice de diversidade</strong> calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não tem qualquer relação com população biológica, mas sim com uma medida obtida do conjunto de espécies que habitam cada bacia.</p>
+<p>Nos dois exemplos acima é inviável obtermos informações de todos os elementos que compõem a população estaística. Para o exemplo dos comprimento, temos provavelmente alguns milhares de peixes na Bacia e consequentemente, o mesmo número de comprimentos individuais. O número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um <strong>censo</strong> ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática em estatística lida com a maioria dos casos em que mensuramos um <strong>subconjunto</strong> da população estatística, definido como uma <strong>amostra</strong>.</p>
+<p>Finalmente, <strong>unidade amostral</strong> é definida como um <strong>único</strong> elemento da população estatística. A unidade amostral deve ser a menor unidade <strong>independente</strong> associada ao estudo. A necessidade das unidades amostrais constituirem elementos independentes é um dos pressupostos centrais da estatística e suas implicações ficarão mais claras quando tratarmos do processo de amostragem. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécies de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada os valores de diversidade calculado para cada bacia.</p>
+<blockquote>
+<p><strong>População estatística</strong>: todos os elementos que podem compor uma amostra. Podem ser medidas como comprimentos, temperaturas, velocidades, etc.</p>
+</blockquote>
+<blockquote>
+<p><strong>Unidade amostral</strong>: um único elemento da população.</p>
+</blockquote>
+<blockquote>
+<p><strong>Censo</strong>: o levantamento de <em>todos</em> os elementos da população.</p>
+</blockquote>
+<blockquote>
+<p><strong>Amostra</strong>: um subconjunto extraído da população.</p>
+</blockquote>
+<blockquote>
+<p><strong>Tamanho populacional</strong> (<em>N</em>): o número de elementos da população.</p>
+</blockquote>
+<blockquote>
+<p><strong>Tamanho amostral</strong> (<em>n</em>): o número de elementos da amostra.</p>
+</blockquote>
+</div>
+<div id="distribuições-de-frequência" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Distribuições de frequência</h2>
+<p>Os valores da população estatística não são idênticos. Os lambaris do exemplo anterior não têm todos o mesmo comprimento, assim como a diversidade de espécies não é a mesma para todas as bacias costeiras do estado de São Paulo. Dizemos que existe uma <strong>distribuição</strong> de valores. Os comprimentos de <em>Deuterodon iguape</em> devem variar de alguns milímetros (pós-larva) a cerca de 20 cm (adulto). Da mesma forma, nem todos os comprimentos são igaulente representados. Provavelmente existem mais lambaris pequenos e médios que grandes. Se fosse possível observar todos os elementos da população estatística, poderíamos organizá-los em uma <strong>distribuição de frequências</strong>, onde veríamos que algumas classes de valores são mais comuns que outras.</p>
+<div class="figure" style="text-align: center"><span id="fig:distrfreq"></span>
+<img src="probest-cambientais_files/figure-html/distrfreq-1.png" alt="Distribuição de frequência seguindo um modelo Gaussiano" width="480" />
+<p class="caption">
+Figure 2.1: Distribuição de frequência seguindo um modelo Gaussiano
+</p>
+</div>
+<p>Vemos que existem mais valores entre 8 e 12 por exemplo, e poucas observações extremas.</p>
+<p>Este exemplo é fictício e segue uma <strong>distribuição normal</strong> de probabilidades. A distribuição normal, é uma das mais importantes em estatística. É uma distribuição <strong>simétrica</strong>, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média), apresenta uma forma de sino e também é chamada de distribuição <strong>Gaussiana</strong> em homenagem a <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</a> um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a <strong>Teoria da distribuição dos erros observacionais</strong>, tópico central ao desenvolvimento da estatística e do método científico.</p>
+<p>A distribuição normal será estudada em detalhes nos tópicos de inferência estatística e probabilidade. Voltaremos a ela também após falarmos dos descritores de tendêncoia central, posição e variação e de amostragem.</p>
+</div>
+<div id="parâmetros-e-estimadores" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Parâmetros e estimadores</h2>
+<p>Um conjunto de observações costuma ser caracterizada por dois tipos de descritores, <strong>medidas de tendência central</strong> e <strong>medidas de dispersão</strong>.</p>
+<p>Considere a questão levantada anteriormente: Qual o comprimento de <strong>Deuterodon iguape</strong> em riachos do litoral de São Paulo? Geralmente, entendemos esta questão como: - Qual o comprimento de um lambari <strong>típico</strong>; sendo que um lambari típico pode ser entendido como aquele de <strong>comprimento médio</strong>.</p>
+<p>Se o comprimento médio for calculado calculado a partir de <strong>todos</strong> os elementos da população, teremos o <strong>parâmetro</strong>, um descritor da população estatística. Os parâmetros só podem ser obtidos por meio de um censo, pois para serem calculados requerem que todos os elementos da população sejam mensurados. Por outro lado, se fizermos uma <strong>amostragem</strong> da população estatística, e tomarmos a média de 30 lambaris, teremos um <strong>descritor da amostra</strong>. Os descritores de uma amostra são conhecidos como <strong>estimadores</strong> ou <strong>estatísticas</strong>.</p>
+<blockquote>
+<p><strong>Parâmetro</strong>: a medida que descreve uma característica da . Ex.: a média (<span class="math inline">\(\mu\)</span>) ou a variância (<span class="math inline">\(\sigma^2\)</span>) populacional.</p>
+</blockquote>
+<blockquote>
+<p><strong>Estimador</strong> ou <strong>Estatística</strong>: Uma medida que descreve uma característica da . Ex.: a média amostral (<span class="math inline">\(\overline{X}\)</span>) ou a variância amostral (<span class="math inline">\(s^2\)</span>).</p>
+</blockquote>
+<blockquote>
+<p><strong>Estimativa</strong>: é o valor numérico assumido pelo estimador. Ex. o valor número da média ou variância amostral.</p>
+</blockquote>
+</div>
+<div id="amostragem-e-inferência" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Amostragem e inferência</h2>
+<p>Uma vez definida a população estística, deve ser definido o procedimento amostral que iremos utilizar para acessar seus elementos. Em última instância, não estamos interessados na amostra em si, mas nas características da população da qual ela é proveniente. Tendo essa premisa em mente, a importância do processo de <strong>amostragem</strong> está no fato de que, na impossibilidade de observar toda a população, a amostra é nossa <strong>única</strong> fonte de informação disponível. Uma amostragem mal conduzida pode nos trazer informações inúteis sobre a população. Dizemos então que uma amostra deve <strong>representativa</strong> da população de origem.</p>
+<p>Tendo em mãos uma amostra representativa, calculamos estatísticas que são os <strong>estimadores</strong> dos parâmetros populacionais. A <strong>inferência</strong> é o processo inverso da amostragem, i.e. aquele que nos permite tirar conclusões sobre a população de origem a partir das informações contidas na amostra.</p>
+<div class="figure" style="text-align: center"><span id="fig:amostr"></span>
+<img src="probest-cambientais_files/figure-html/amostr-1.png" alt="Processo de amostragem e inferência estatística" width="672" />
+<p class="caption">
+Figure 2.2: Processo de amostragem e inferência estatística
+</p>
+</div>
+</div>
+<div id="medidas-de-tendência-central" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Medidas de tendência central</h2>
+<p>Uma distribuição de frequência pode ser descrita a partir de uma <strong>medida de tendência central</strong> que indica o valor ao redor dos quais a maior parte das observações está concentrada. Iremos apresentar quatro destas medidas: a <strong>média aritmética</strong>, a <strong>mediana</strong>, a <strong>moda</strong> e o <strong>ponto médio</strong>.</p>
+<p>A média aritmética é a medida de tendência central mais comum. Para uma população estatística de tamanho <strong>N</strong>, com <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, <span class="math inline">\(X_3\)</span>, <span class="math inline">\(\cdots, X_N\)</span> elementos, ela é referida como a <strong>média populacional</strong>, indicada pela letra grega <span class="math inline">\(\mu\)</span>, onde:</p>
+<p><span class="math display">\[\mu=\frac{X_1+X_2+X_3+\cdots+X_N}{N}=\frac{\sum_{i=1}^N{X_i}}{N}\]</span></p>
+<p>Quando nos referimos a uma amostra com <strong>n</strong> elementos, a média aritmética <strong>amostral</strong> (<span class="math inline">\(\overline{X}\)</span>) é dada por:</p>
+<p><span class="math display">\[\overline{X}=\frac{X_1+X_2+X_3+\cdots+X_n}{n}=\frac{\sum_{i=1}^n{X_i}}{n}\]</span></p>
+<p>A <strong>mediana</strong> é outra medida de centro que pode ser definida como o valor do meio de uma distribuição, de modo que metade dos valores estão abaixo e metade está acima da mediana. A mediana, ao contrário da média, é pouco influenciada por valores extremos.</p>
+<p>A <strong>moda</strong> é definida como o valor mais frequente de uma distribuição e finalmente, o <strong>ponto médio</strong> é calculado com base em somente dois valores da distribuição - o máximo e o mínimo, sendo obtido por:</p>
+<p><span class="math display">\[P_{medio}=\frac{X_{maximo} + X_{minimo}}{2}\]</span></p>
+<p>Valores extremos não têm influência sobre a moda porém têm grande efeito sobre o ponto médio.</p>
+<p>Um conjunto de dados pode ser representado por uma distribuição de frequências e por medidas de tendencia central. Existe uma relação entre o formato de uma distribuição de frequência e a posição relativa da média aritmética, da mediana e da moda. Em um gráfico simétrico, onde as observações estão dispersas igualmente acima e abaixo do ponto central, os valores da média, mediana e moda coincidem. Este tipo de distribuição é dita <strong>simétrica</strong>. Por outro lado, pode ocorrer que a distribuição de valores seja <strong>assimétrica</strong>. Neste caso, a posição relativa da média, mediana e moda depende se a assimetria é à <strong>direita</strong> ou à <strong>esquerda</strong>. Esta discrepância ocorre devido à sensibilidade destas medidas a valores extremos na distribuição, em que a média é mais sensível que a mediana e a moda <span class="citation">(<a href="#ref-triola2017introduccao" role="doc-biblioref">Triola 2017</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:assimetr"></span>
+<img src="probest-cambientais_files/figure-html/assimetr-1.png" alt="Efeito da assimetria de uma distribuição sobre a média aritmética, a mediana e a moda" width="1152" />
+<p class="caption">
+Figure 2.3: Efeito da assimetria de uma distribuição sobre a média aritmética, a mediana e a moda
+</p>
+</div>
+<blockquote>
+<p><strong>Média</strong>: utiliza todo o conjunto de dados. Sensível a valores extremos. Dentre todos os estimadores de tendência central é o menos variável;</p>
+</blockquote>
+<blockquote>
+<p><strong>Mediana</strong>: o valor do meio. Metade dos pontos está acima e metade abaixo da mediana. A mediana é uma medida <em>resistente</em> a valores extremos;</p>
+</blockquote>
+<blockquote>
+<p><strong>Moda</strong>: valor mais frequente. Se mais de um valor tem a mesma frequência, os dados têm uma distribuição <em>multimodal</em>;</p>
+</blockquote>
+<blockquote>
+<p><strong>Ponto médio</strong>: considera somente os valores máximos e mínimos. O ponto médio é fácil de calcular porém não utiliza a maioria do conjunto de dados e é <em>muito sensível a valores extremos</em>.</p>
+</blockquote>
+</div>
+<div id="medidas-de-variação" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Medidas de variação</h2>
+<p>Diferente das medidas de tendência central, as <strong>medidas de variação</strong> indicam o grau de dispersão das observações. Distribuições com observações muito próximas à média têm <em>baixo grau de dispersão</em>, enquanto aquelas com observações muito distantes da média têm <em>alto grau de dispersão</em>. Vamos apresentar quatro índices que medem o grau de dispersão: a <strong>variância</strong>, o <strong>desvio padrão</strong>, o <strong>coeficiente de variação</strong> e a <strong>amplitude de variação</strong>.</p>
+<p>A variância mede quão distante os valores estão da média aritmética. A <strong>variância populacional</strong> é indicada pela letra grega <span class="math inline">\(\sigma^2\)</span>, onde:</p>
+<p><span class="math display">\[\sigma^2=\frac{\sum_{i=1}^N{(X_i - \mu)^2}}{N}\]</span></p>
+<p>Quando nos referimos a uma amostra, a <strong>variância amostral</strong> é indicada por <span class="math inline">\(s^2\)</span> e dada por:</p>
+<p><span class="math display">\[s^2=\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}\]</span></p>
+<p>Note que para a variância amostral, utilizamos <span class="math inline">\(\overline{X}\)</span> e não <span class="math inline">\(\mu\)</span>, porque estamos medindo a dispersão das observações ao redor da média <strong>amostral</strong>. O denominador da equação também muda para <em>n-1</em> pois agora estamos nos referindo à uma amostra com <strong>n</strong> elementos. A subtração por <em>n-1</em> é necessária para que <span class="math inline">\(s^2\)</span> seja um estimador <strong>não viciado</strong> de <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Outra medida de dispersão é o <strong>desvio padrão</strong> que é simplesmente a raiz quadrada da variância e portanto, dado na mesma escala de mensuração das observações originais. O desvio padrão populacional (<span class="math inline">\(\sigma\)</span>) é dado por:</p>
+<p><span class="math display">\[\sigma=\sqrt{\frac{\sum_{i=1}^N{(X_i - \mu)^2}}{N}}\]</span></p>
+<p>enquanto para a amostra (<span class="math inline">\(s\)</span>) é:</p>
+<p><span class="math display">\[s=\sqrt{\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}}\]</span></p>
+<p>O <strong>coeficiente de variação</strong> (cv) relaciona o desvio padrão à média, sendo definido por:</p>
+<p><span class="math display">\[cv = s/\overline{X}\]</span> ou <span class="math display">\[cv_{\%}  = s/\overline{X}\cdot 100\]</span></p>
+<p>O coeficiente de variação amostral descrito acima, é um estimador do coeficiente de variação da população, onde <span class="math inline">\(s\)</span> é substituído por <span class="math inline">\(\sigma\)</span>, e <span class="math inline">\(\overline{X}\)</span> por <span class="math inline">\(\mu\)</span>.</p>
+<p>Finalmente, a <strong>amplitude de variação</strong> é a diferença entre os pontos máximo e mínimo de um grupo de observações</p>
+<p>Amplitude de variação = <span class="math inline">\(X_{maximo} - X_{minimo}\)</span></p>
+<div id="exempificando-os-cálculos" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Exempificando os cálculos</h3>
+<p>Considere uma amostra do comprimento da carapaça de 10 caranguejos <span class="math inline">\(\textit{Menipe nodifrons}\)</span>:</p>
+<p><span class="math inline">\(X_i\)</span> (em centímetros): 4.0, 4.1, 4.5, 4.9, 5.0, 5.0, 6.6, 7.0, 7.7, 7.9</p>
+<div id="média" class="section level4" number="2.6.1.1">
+<h4><span class="header-section-number">2.6.1.1</span> Média</h4>
+<p><span class="math inline">\(\overline{X}=\frac{4.0+4.1+4.5+4.9+5.0+5.0+6.6+7.0+7.7+7.9}{10}=56.7/10=5.67\)</span></p>
+</div>
+<div id="mediana" class="section level4" number="2.6.1.2">
+<h4><span class="header-section-number">2.6.1.2</span> Mediana</h4>
+<p>4.0, 4.1, 4.5, 4.9, <strong>5.0, 5.0</strong>, 6.6, 7.0, 7.7, 7.9</p>
+<p>Mediana = <span class="math inline">\(\frac{5 + 5}{2} = 5\)</span></p>
+</div>
+<div id="moda" class="section level4" number="2.6.1.3">
+<h4><span class="header-section-number">2.6.1.3</span> Moda</h4>
+<p>Moda = 5 (o único número que se repete mais de uma vez na distribuição)</p>
+</div>
+<div id="ponto-médio" class="section level4" number="2.6.1.4">
+<h4><span class="header-section-number">2.6.1.4</span> Ponto médio</h4>
+<p><span class="math inline">\(P_{medio}=\frac{7.9 + 4.0}{2} = 5.95\)</span></p>
+</div>
+<div id="variância" class="section level4" number="2.6.1.5">
+<h4><span class="header-section-number">2.6.1.5</span> Variância</h4>
+<p><span class="math inline">\(s^2=\frac{(4.0-5.67+4.1-5.67+4.5-5.67+4.9-5.67+5.0-5.67+5.0-5.67+6.6-5.67+7.0-5.67+7.7-5.67+7.9-5.67)^2}{10-1}\)</span></p>
+<p><span class="math inline">\(s^2 = 19.84/9 = 2.20\)</span></p>
+</div>
+<div id="desvio-padrão" class="section level4" number="2.6.1.6">
+<h4><span class="header-section-number">2.6.1.6</span> Desvio padrão</h4>
+<p><span class="math inline">\(s=\sqrt{2.20} = 1.48\)</span></p>
+</div>
+<div id="coeficiente-de-variação" class="section level4" number="2.6.1.7">
+<h4><span class="header-section-number">2.6.1.7</span> Coeficiente de variação</h4>
+<p><span class="math inline">\(cv = 1.48/5.95 \cdot 100 = 26.19\%\)</span></p>
+</div>
+</div>
+</div>
+<div id="medidas-de-posição" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Medidas de posição</h2>
+<p>A média, mediana, moda e ponto médio são um tipo de <strong>medidas de posição</strong> que indicam uma posição particular, a posição central ao redor da qual os dados estão dispersos. Existem outras medidas de posição que indicam posições particulares. Vamos abordar aqui as posições dos <strong>quartis</strong> e o <strong>índice Z</strong>. Estas são as medidas mais utilizadas em análise e interpretação de dados.</p>
+<div id="quartis" class="section level3" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Quartis</h3>
+<p>Os quartis de uma distribuição de valores são obtidos após ordenarmos os dados em ordem crescente e em seguida dividí-los dados em partes iguais, contendo cada uma 25% do número total de observações. Se temos 20 observações, cada parte conterá portanto cinco observações, <span class="math inline">\(20 \times 0.25 = 5\)</span> e os quartis são as posições que dividem estas partes.</p>
+<p>Os quartis podem ser indicados por <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> e <span class="math inline">\(Q_3\)</span>, conforme a figura abaixo.</p>
+<div class="figure" style="text-align: center"><span id="fig:quartisfig"></span>
+<img src="probest-cambientais_files/figure-html/quartisfig-1.png" alt="Divisão de uma distribuição de valores em quartis" width="672" />
+<p class="caption">
+Figure 2.4: Divisão de uma distribuição de valores em quartis
+</p>
+</div>
+<blockquote>
+<p><span class="math inline">\(Q_{1}\)</span> O ponto que separa os 25% <strong>menores</strong> valores do restante da distribuição.</p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(Q_{2}\)</span>: O ponto que separa os 50% <strong>menores</strong> valores dos 50% <strong>maiores</strong>. Este coincide com a Mediana apresentada anteriormente.</p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(Q_{3}\)</span>: O ponto que separa os 25% <strong>maiores</strong> valores do restante da distribuição.</p>
+</blockquote>
+<div id="cálculo-dos-quartil-na-posição-j-q_j" class="section level4" number="2.7.1.1">
+<h4><span class="header-section-number">2.7.1.1</span> Cálculo dos quartil na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>)</h4>
+<ol style="list-style-type: decimal">
+<li><p>Seja <span class="math inline">\(n\)</span> o número de observações em <span class="math inline">\(X\)</span>, arrange a variável <span class="math inline">\(X\)</span> em ordem crescente. Deste modo <span class="math inline">\(X_1\)</span> será o menor valor e <span class="math inline">\(X_n\)</span> o maior valor. Iremos expressar um valor particular na distribuição de X em ordem crescente como <span class="math inline">\(X_k\)</span>;</p></li>
+<li><p>Calcule <span class="math inline">\(L = \frac{j \times (n+1)}{4}\)</span>;</p></li>
+<li><p>Defina <span class="math inline">\(k\)</span> como o maior número inteiro abaixo de <span class="math inline">\(L\)</span>;</p></li>
+<li><p>Calcule <span class="math inline">\(Q_j = X_k + (L - k) \times (X_{k+1}-X_k)\)</span>;</p></li>
+</ol>
+<p><span class="math inline">\(Q_j\)</span> será um elemento entre <span class="math inline">\(X_k\)</span> e <span class="math inline">\(X_{k+1}\)</span> e se <span class="math inline">\(X_k\)</span> for um número inteiro, <span class="math inline">\(Q_j = X_k\)</span></p>
+<div id="exemplo-para-o-cálculo-de-q_1" class="section level5" number="2.7.1.1.1">
+<h5><span class="header-section-number">2.7.1.1.1</span> Exemplo para o cálculo de <span class="math inline">\(Q_1\)</span></h5>
+<p>Considere a variável <span class="math inline">\(X\)</span> com <span class="math inline">\(n =\)</span> 20 observações.</p>
+<p><span class="math inline">\(X\)</span> = 8.7, 10.4, 8.3, 13.2, 10.7, 8.4, 11, 11.5, 11.2, 9.4, 13, 10.8, 8.8, 5.6, 12.2, 9.9, 10, 11.9, 11.6, 11.2</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Posicao k</th>
+<th align="right">X ordenado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1a Posição</td>
+<td align="right">5.6</td>
+</tr>
+<tr class="even">
+<td align="left">2a Posição</td>
+<td align="right">8.3</td>
+</tr>
+<tr class="odd">
+<td align="left">3a Posição</td>
+<td align="right">8.4</td>
+</tr>
+<tr class="even">
+<td align="left">4a Posição</td>
+<td align="right">8.7</td>
+</tr>
+<tr class="odd">
+<td align="left">5a Posição</td>
+<td align="right">8.8</td>
+</tr>
+<tr class="even">
+<td align="left">6a Posição</td>
+<td align="right">9.4</td>
+</tr>
+<tr class="odd">
+<td align="left">7a Posição</td>
+<td align="right">9.9</td>
+</tr>
+<tr class="even">
+<td align="left">8a Posição</td>
+<td align="right">10.0</td>
+</tr>
+<tr class="odd">
+<td align="left">9a Posição</td>
+<td align="right">10.4</td>
+</tr>
+<tr class="even">
+<td align="left">10a Posição</td>
+<td align="right">10.7</td>
+</tr>
+<tr class="odd">
+<td align="left">11a Posição</td>
+<td align="right">10.8</td>
+</tr>
+<tr class="even">
+<td align="left">12a Posição</td>
+<td align="right">11.0</td>
+</tr>
+<tr class="odd">
+<td align="left">13a Posição</td>
+<td align="right">11.2</td>
+</tr>
+<tr class="even">
+<td align="left">14a Posição</td>
+<td align="right">11.2</td>
+</tr>
+<tr class="odd">
+<td align="left">15a Posição</td>
+<td align="right">11.5</td>
+</tr>
+<tr class="even">
+<td align="left">16a Posição</td>
+<td align="right">11.6</td>
+</tr>
+<tr class="odd">
+<td align="left">17a Posição</td>
+<td align="right">11.9</td>
+</tr>
+<tr class="even">
+<td align="left">18a Posição</td>
+<td align="right">12.2</td>
+</tr>
+<tr class="odd">
+<td align="left">19a Posição</td>
+<td align="right">13.0</td>
+</tr>
+<tr class="even">
+<td align="left">20a Posição</td>
+<td align="right">13.2</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Arrange <span class="math inline">\(X\)</span> em ordem crescente</p></li>
+<li><p>Calcule <span class="math inline">\(L = \frac{1 \times (20+1)}{4} = 5.25\)</span>;</p></li>
+<li><p>Defina <span class="math inline">\(k\)</span> como o maior número inteiro abaixo de <span class="math inline">\(L\)</span>. Portanto, <span class="math inline">\(k = 5\)</span>. Veja que a observação correspondente à 5<span class="math inline">\(^a\)</span> posição é 8.8 e a 6<span class="math inline">\(^a\)</span> posição 9.4.</p></li>
+<li><p>Calcule <span class="math inline">\(Q_1 = 8.8 + (5.25 - 5) \times (9.4-8.8) = 8.95\)</span>;</p></li>
+</ol>
+<p><strong>Observação</strong>: Calcule <span class="math inline">\(Q_2\)</span> e <span class="math inline">\(Q_3\)</span> e verifique se os resultados são: <span class="math inline">\(Q_2 = 10.75\)</span> e <span class="math inline">\(Q_3 = 11.575\)</span></p>
+</div>
+</div>
+<div id="representando-quartis-em-boxplots" class="section level4" number="2.7.1.2">
+<h4><span class="header-section-number">2.7.1.2</span> Representando quartis em Boxplots</h4>
+<p>Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de <strong>Boxplot</strong>. Para a variável acima o boxplot será:</p>
+<div class="figure" style="text-align: center"><span id="fig:boxquartis"></span>
+<img src="probest-cambientais_files/figure-html/boxquartis-1.png" alt="Divisão em quartis de um boxplot" width="288" />
+<p class="caption">
+Figure 2.5: Divisão em quartis de um boxplot
+</p>
+</div>
+<p>Em um boxplot, a linha central mais expessa representa a <strong>Mediana</strong> ou <span class="math inline">\(2^o\)</span> quartil, os limites da caixa são o <span class="math inline">\(1^o\)</span> e <span class="math inline">\(3^o\)</span> quartis e as extremidades geralmente são os pontos máximo e mínimo da dsitribuição.</p>
+<p>Existe uma relação entre os <strong>histogramas</strong> e os <strong>boxplots</strong>. Ambos podem ser utilizados para avaliarmos o grau de <strong>assimetria</strong> de uma distribuição como pode ser visto abaixo. Em uma distribuição simétrica, a caixa do boxplot tende a se concentrar no meio da distribuição, enquanto que em distribuições assimétricas, a caixa tende a ficar deslocada à esquerda o à direita.</p>
+<div class="figure" style="text-align: center"><span id="fig:histbox"></span>
+<img src="probest-cambientais_files/figure-html/histbox-1.png" alt="Relação entre as representações por meio de histogramas e boxplots" width="960" />
+<p class="caption">
+Figure 2.6: Relação entre as representações por meio de histogramas e boxplots
+</p>
+</div>
+</div>
+</div>
+<div id="índice-z" class="section level3" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Índice Z</h3>
+<p>O <strong>Índice Z</strong> ou <strong>Escore Z</strong> indica a posição de uma observação particular (<span class="math inline">\(X_i\)</span>). O valor de <span class="math inline">\(Z\)</span> relaciona a posição de <span class="math inline">\(X_i\)</span> com a <strong>média</strong> e o <strong>desvio padrão</strong> da distribuição. Suponha uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\sigma\)</span>. O índice de <span class="math inline">\(Z_i\)</span> para uma obserrvação particular é calculado por:</p>
+<p><span class="math display">\[Z_i = \frac{X_i - \mu}{\sigma}\]</span></p>
+<p>Se o índice Z é calculado para uma amostra da população com média <span class="math inline">\(\bar{X}\)</span> e desvio padrão <span class="math inline">\(s\)</span>, seu calculo se dá por:</p>
+<p><span class="math display">\[Z_i = \frac{X_i - \bar{X}}{s}\]</span></p>
+<div id="exemplo" class="section level4" number="2.7.2.1">
+<h4><span class="header-section-number">2.7.2.1</span> Exemplo</h4>
+<p>Retornemos à variável X descrita acima:</p>
+<p><span class="math inline">\(X\)</span> = 8.7, 10.4, 8.3, 13.2, 10.7, 8.4, 11, 11.5, 11.2, 9.4, 13, 10.8, 8.8, 5.6, 12.2, 9.9, 10, 11.9, 11.6, 11.2</p>
+<p>A média e o desvio padrão de X são respectivamente <span class="math inline">\(\bar{X} = 10.39\)</span> e <span class="math inline">\(s = 1.82\)</span>.</p>
+<p>Vamos calcular o índice Z para a observação <span class="math inline">\(X = 8.3\)</span></p>
+<p><span class="math inline">\(Z = \frac{8.3 - 10.39}{1.82} = -1.15\)</span></p>
+<p>Veja que o score Z é negativo e portanto, <span class="math inline">\(X_i\)</span> está abaixo da média.</p>
+</div>
+<div id="interpretando-o-valor-de-z" class="section level4" number="2.7.2.2">
+<h4><span class="header-section-number">2.7.2.2</span> Interpretando o valor de Z</h4>
+<p>O valor de Z indica quantos desvio padrões uma determinada observação está acima ou abaixo da média do grupo de observações. Os resultados de Z podem ser:</p>
+<ul>
+<li><span class="math inline">\(Z = 0\)</span>: <span class="math inline">\(X_i = \bar{X}\)</span>;</li>
+<li><span class="math inline">\(Z &gt; 0\)</span>: <span class="math inline">\(X_i &gt; \bar{X}\)</span>;</li>
+<li><span class="math inline">\(Z &lt; 0\)</span>: <span class="math inline">\(X_i &lt; \bar{X}\)</span>;</li>
+</ul>
+<p>Para uma distribuição com média igual 10 e desvio padrão igual a 2, uma observação X = 14 está dois desvios padrões acima da sua respectiva média. Neste caso, Z valeria 2 como pode ser verificado na equação abaixo</p>
+<p><span class="math display">\[Z = \frac{14 - 10}{2} = 2\]</span></p>
+<p>Vamos calcular os valores de Z para a variável X acima e analisar os resultados</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Posicao k</th>
+<th align="right">X ordenado</th>
+<th align="right">Z ordenado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1a Posição</td>
+<td align="right">5.6</td>
+<td align="right">-2.63</td>
+</tr>
+<tr class="even">
+<td align="left">2a Posição</td>
+<td align="right">8.3</td>
+<td align="right">-1.15</td>
+</tr>
+<tr class="odd">
+<td align="left">3a Posição</td>
+<td align="right">8.4</td>
+<td align="right">-1.09</td>
+</tr>
+<tr class="even">
+<td align="left">4a Posição</td>
+<td align="right">8.7</td>
+<td align="right">-0.93</td>
+</tr>
+<tr class="odd">
+<td align="left">5a Posição</td>
+<td align="right">8.8</td>
+<td align="right">-0.87</td>
+</tr>
+<tr class="even">
+<td align="left">6a Posição</td>
+<td align="right">9.4</td>
+<td align="right">-0.54</td>
+</tr>
+<tr class="odd">
+<td align="left">7a Posição</td>
+<td align="right">9.9</td>
+<td align="right">-0.27</td>
+</tr>
+<tr class="even">
+<td align="left">8a Posição</td>
+<td align="right">10.0</td>
+<td align="right">-0.21</td>
+</tr>
+<tr class="odd">
+<td align="left">9a Posição</td>
+<td align="right">10.4</td>
+<td align="right">0.01</td>
+</tr>
+<tr class="even">
+<td align="left">10a Posição</td>
+<td align="right">10.7</td>
+<td align="right">0.17</td>
+</tr>
+<tr class="odd">
+<td align="left">11a Posição</td>
+<td align="right">10.8</td>
+<td align="right">0.23</td>
+</tr>
+<tr class="even">
+<td align="left">12a Posição</td>
+<td align="right">11.0</td>
+<td align="right">0.34</td>
+</tr>
+<tr class="odd">
+<td align="left">13a Posição</td>
+<td align="right">11.2</td>
+<td align="right">0.45</td>
+</tr>
+<tr class="even">
+<td align="left">14a Posição</td>
+<td align="right">11.2</td>
+<td align="right">0.45</td>
+</tr>
+<tr class="odd">
+<td align="left">15a Posição</td>
+<td align="right">11.5</td>
+<td align="right">0.61</td>
+</tr>
+<tr class="even">
+<td align="left">16a Posição</td>
+<td align="right">11.6</td>
+<td align="right">0.66</td>
+</tr>
+<tr class="odd">
+<td align="left">17a Posição</td>
+<td align="right">11.9</td>
+<td align="right">0.83</td>
+</tr>
+<tr class="even">
+<td align="left">18a Posição</td>
+<td align="right">12.2</td>
+<td align="right">0.99</td>
+</tr>
+<tr class="odd">
+<td align="left">19a Posição</td>
+<td align="right">13.0</td>
+<td align="right">1.43</td>
+</tr>
+<tr class="even">
+<td align="left">20a Posição</td>
+<td align="right">13.2</td>
+<td align="right">1.54</td>
+</tr>
+</tbody>
+</table>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-34-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>Veja na tabela que conforme o valor de <span class="math inline">\(X_i\)</span> se distancia da média de <span class="math inline">\(X = 10.39\)</span> mais distante de zero será o valor Z. Neste exemplo, as observações mais extremas de X estão, respectivamente, a -2.63 desvios padrões abaixo e 1.54 desvios padrões acima da média.</p>
+</div>
+<div id="valores-esperados-de-z-em-uma-distribuição-normal-padronizada" class="section level4" number="2.7.2.3">
+<h4><span class="header-section-number">2.7.2.3</span> Valores esperados de Z em uma distribuição normal padronizada</h4>
+<p>A interpretação de Z faz sentido quando desejamos comparar uma determinada observação <span class="math inline">\(X_i\)</span> à posição que esta teria dentro de uma <strong>Distribuição Normal Padronizada</strong> (Capítulo <a href="#normtlc"><strong>??</strong></a>). A figura abaixo nos permite avaliar qual a probabilidade de encontrarmos uma observação a diferentes distâncias da média populacional. Suponha que tomemos uma amostra de uma distribuição normal. Existe uma probabilidade de aproximadamente 68% de que esta amostra esteja 1 desvio padrão acima ou abaixo da média. Esta probabilidade aumenta para cerca de 95% se considerarmos uma distância dois desvios padrões acima ou abaixo da média. Por outro lado, que é muito <strong>improvável</strong> amostrarmos um valor a mais de 3 desvios padrões da média. Isto rá ocorrer em somente de 0.2% dos casos.</p>
+<p><img src="probest-cambientais_files/figure-html/distrnorm-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Este assunto será abordado em mais detalhes no tópico de inferêcnia estatística. No entanto, suponha por exemplo que a distribuição de altura de homens adultos siga uma distribuiçao normal com média <span class="math inline">\(\mu = 175\)</span> cm e desvio padrão de <span class="math inline">\(\sigma = 20\)</span> cm. Segundo a expectativa teórica portanto, menor de 5% dos homens adultos têm <span class="math inline">\(\mu \pm 2 \times \sigma = 175 \pm 2 \times 20 = 175 \pm 40\)</span>. Ou seja, menos de 5% dos homens têm mais de 215 cm ou menos de 135 cm de altura.</p>
+</div>
+</div>
+</div>
+<div id="volume-dos-reservatórios-da-grande-são-paulo-visualizando-medidas-de-posição-e-variação" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Volume dos reservatórios da Grande São Paulo: visualizando medidas de posição e variação</h2>
+<p>Vamos retornar aos dados sobre volume dos sistemas de abastecimento de água da Gande São Paulo (Capítulo <a href="descrit.html#descrit">1</a>) e extrair a média, desvio padrão e quantis para cada sistema.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Sistema</th>
+<th align="right">Média</th>
+<th align="right">Desvio padrão</th>
+<th align="right">Q1</th>
+<th align="right">Q2</th>
+<th align="right">Q3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AltoTiete</td>
+<td align="right">48.62</td>
+<td align="right">16.08</td>
+<td align="right">38.8575</td>
+<td align="right">51.495</td>
+<td align="right">57.8175</td>
+</tr>
+<tr class="even">
+<td align="left">Cantareira</td>
+<td align="right">48.91</td>
+<td align="right">23.66</td>
+<td align="right">35.1350</td>
+<td align="right">48.555</td>
+<td align="right">60.2800</td>
+</tr>
+<tr class="odd">
+<td align="left">Cotia</td>
+<td align="right">78.04</td>
+<td align="right">22.28</td>
+<td align="right">71.3550</td>
+<td align="right">85.300</td>
+<td align="right">93.6450</td>
+</tr>
+<tr class="even">
+<td align="left">Guarapiranga</td>
+<td align="right">68.43</td>
+<td align="right">13.11</td>
+<td align="right">61.6175</td>
+<td align="right">72.075</td>
+<td align="right">75.2175</td>
+</tr>
+<tr class="odd">
+<td align="left">RioClaro</td>
+<td align="right">82.27</td>
+<td align="right">15.94</td>
+<td align="right">75.3100</td>
+<td align="right">87.025</td>
+<td align="right">93.1375</td>
+</tr>
+<tr class="even">
+<td align="left">RioGrande</td>
+<td align="right">87.06</td>
+<td align="right">5.13</td>
+<td align="right">84.2825</td>
+<td align="right">87.595</td>
+<td align="right">90.5875</td>
+</tr>
+</tbody>
+</table>
+<p>Os Sistemas Alto Tietê e Cantareira têm, aparentemente, os menores volumes médios emquanto os Sistemas Rio Claro e Rio Grande, mantêm os maiores volumes. Veja também que o volume médio anual no Sistema Rio Grande manteve-se altamente constante ao longo dos anos, apresentando um desvio padrão de 5.13, contra valores próximos a 15 ou 20 nos demais Sistemas. Compare estes resultados com os gráficos de linha que fizemos anteriormente e com os boxplots a seguir.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-37-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>Veja que novamente, os Sistemas Alto Tietê e Cantareira aparecem com menores volumes e contrastam com os demais. Os regimes de chuva são semelhantes, exceto para o Sistema Rio Claro no município de Salesópolis, com pluviosidade geralmente mais elevada.</p>
+
+</div>
+</div>
+
+
+
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-triola2017introduccao" class="csl-entry">
+Triola, Mario F. 2017. <em>Introdução à Estatística: Atualização Da Tecnologia</em>. Vol. 12. ltc Rio de Janeiro.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="descrit.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="amostrmedias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

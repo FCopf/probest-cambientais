@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Apresentando informações em tabelas e gráficos | Estatística nas Ciências Ambientais</title>
+  <meta name="description" content="Capítulo 1 Apresentando informações em tabelas e gráficos | Estatística nas Ciências Ambientais" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 1 Apresentando informações em tabelas e gráficos | Estatística nas Ciências Ambientais" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Capítulo 1 Apresentando informações em tabelas e gráficos | Estatística nas Ciências Ambientais" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 1 Apresentando informações em tabelas e gráficos | Estatística nas Ciências Ambientais" />
+  
+  <meta name="twitter:description" content="Capítulo 1 Apresentando informações em tabelas e gráficos | Estatística nas Ciências Ambientais" />
+  
+
+<meta name="author" content="Fabio Cop Ferreira" />
+<meta name="author" content="fabiocopf@gmail.com; fcferreira@unifesp.br" />
+<meta name="author" content="Instituto do Mar, Universidade Federal de São Paulo" />
+
+
+<meta name="date" content="2021-05-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="posicao.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estatística nas Ciências Ambientais</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Apresentação</a></li>
+<li class="part"><span><b>I Estatística descritiva</b></span></li>
+<li class="chapter" data-level="1" data-path="descrit.html"><a href="descrit.html"><i class="fa fa-check"></i><b>1</b> Apresentando informações em tabelas e gráficos</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="descrit.html"><a href="descrit.html#tipos-de-dados"><i class="fa fa-check"></i><b>1.1</b> Tipos de dados</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="descrit.html"><a href="descrit.html#dados-quantitativos-e-qualitativos"><i class="fa fa-check"></i><b>1.1.1</b> Dados quantitativos e qualitativos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="descrit.html"><a href="descrit.html#níveis-de-mensuração"><i class="fa fa-check"></i><b>1.1.2</b> Níveis de mensuração</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="descrit.html"><a href="descrit.html#tabelas-resumo"><i class="fa fa-check"></i><b>1.2</b> Tabelas resumo</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="descrit.html"><a href="descrit.html#combinando-duas-variáveis"><i class="fa fa-check"></i><b>1.2.1</b> Combinando duas variáveis</a></li>
+<li class="chapter" data-level="1.2.2" data-path="descrit.html"><a href="descrit.html#tabelas-de-frequência-para-variáveis-quantitativas"><i class="fa fa-check"></i><b>1.2.2</b> Tabelas de frequência para variáveis quantitativas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="descrit.html"><a href="descrit.html#visualização-gráfica"><i class="fa fa-check"></i><b>1.3</b> Visualização gráfica</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="descrit.html"><a href="descrit.html#gráficos-de-barras"><i class="fa fa-check"></i><b>1.3.1</b> Gráficos de barras</a></li>
+<li class="chapter" data-level="1.3.2" data-path="descrit.html"><a href="descrit.html#histogramas"><i class="fa fa-check"></i><b>1.3.2</b> Histogramas</a></li>
+<li class="chapter" data-level="1.3.3" data-path="descrit.html"><a href="descrit.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>1.3.3</b> Gráficos de linhas</a></li>
+<li class="chapter" data-level="1.3.4" data-path="descrit.html"><a href="descrit.html#gráficos-de-dispersão"><i class="fa fa-check"></i><b>1.3.4</b> Gráficos de dispersão</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="posicao.html"><a href="posicao.html"><i class="fa fa-check"></i><b>2</b> Descrevendo populações e amostras</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="posicao.html"><a href="posicao.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>2.1</b> População, amostra e unidade amostral</a></li>
+<li class="chapter" data-level="2.2" data-path="posicao.html"><a href="posicao.html#distribuições-de-frequência"><i class="fa fa-check"></i><b>2.2</b> Distribuições de frequência</a></li>
+<li class="chapter" data-level="2.3" data-path="posicao.html"><a href="posicao.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>2.3</b> Parâmetros e estimadores</a></li>
+<li class="chapter" data-level="2.4" data-path="posicao.html"><a href="posicao.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>2.4</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="2.5" data-path="posicao.html"><a href="posicao.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>2.5</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="2.6" data-path="posicao.html"><a href="posicao.html#medidas-de-variação"><i class="fa fa-check"></i><b>2.6</b> Medidas de variação</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="posicao.html"><a href="posicao.html#exempificando-os-cálculos"><i class="fa fa-check"></i><b>2.6.1</b> Exempificando os cálculos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="posicao.html"><a href="posicao.html#medidas-de-posição"><i class="fa fa-check"></i><b>2.7</b> Medidas de posição</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="posicao.html"><a href="posicao.html#quartis"><i class="fa fa-check"></i><b>2.7.1</b> Quartis</a></li>
+<li class="chapter" data-level="2.7.2" data-path="posicao.html"><a href="posicao.html#índice-z"><i class="fa fa-check"></i><b>2.7.2</b> Índice Z</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="posicao.html"><a href="posicao.html#volume-dos-reservatórios-da-grande-são-paulo-visualizando-medidas-de-posição-e-variação"><i class="fa fa-check"></i><b>2.8</b> Volume dos reservatórios da Grande São Paulo: visualizando medidas de posição e variação</a></li>
+</ul></li>
+<li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
+<li class="chapter" data-level="3" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>3</b> Amostrando uma População Estatística</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="amostrmedias.html"><a href="amostrmedias.html#amostragem-aleatória-simples"><i class="fa fa-check"></i><b>3.1</b> Amostragem aleatória simples</a></li>
+<li class="chapter" data-level="3.2" data-path="amostrmedias.html"><a href="amostrmedias.html#amostragem-aleatória-estratificada"><i class="fa fa-check"></i><b>3.2</b> Amostragem aleatória estratificada</a></li>
+<li class="chapter" data-level="3.3" data-path="amostrmedias.html"><a href="amostrmedias.html#amostragem-sistemática"><i class="fa fa-check"></i><b>3.3</b> Amostragem sistemática</a></li>
+<li class="chapter" data-level="3.4" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral-acurácia-e-precisão"><i class="fa fa-check"></i><b>3.4</b> Erro amostral, acurácia e precisão</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>3.4.1</b> Erro amostral</a></li>
+<li class="chapter" data-level="3.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>3.4.2</b> Acurácia</a></li>
+<li class="chapter" data-level="3.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão"><i class="fa fa-check"></i><b>3.4.3</b> Precisão</a></li>
+<li class="chapter" data-level="3.4.4" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-padrão-da-média"><i class="fa fa-check"></i><b>3.4.4</b> Erro padrão da média</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="normdist.html"><a href="normdist.html"><i class="fa fa-check"></i><b>4</b> Alguns fenômenos têm distribuição normal</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="normdist.html"><a href="normdist.html#o-modelo-normal-de-probabilidades"><i class="fa fa-check"></i><b>4.1</b> O modelo normal de probabilidades</a></li>
+<li class="chapter" data-level="4.2" data-path="normdist.html"><a href="normdist.html#entendendo-a-função-normal-de-densidade-de-probabilidade"><i class="fa fa-check"></i><b>4.2</b> Entendendo a função normal de densidade de probabilidade</a></li>
+<li class="chapter" data-level="4.3" data-path="normdist.html"><a href="normdist.html#fazendo-predições-com-a-função-normal-de-densidade"><i class="fa fa-check"></i><b>4.3</b> Fazendo predições com a função normal de densidade</a></li>
+<li class="chapter" data-level="4.4" data-path="normdist.html"><a href="normdist.html#a-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>4.4</b> A distribuição normal padronizada</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="normdist.html"><a href="normdist.html#probabilidades-em-uma-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>4.4.1</b> Probabilidades em uma distribuição normal padronizada</a></li>
+<li class="chapter" data-level="4.4.2" data-path="normdist.html"><a href="normdist.html#tabela-z"><i class="fa fa-check"></i><b>4.4.2</b> Tabela <span class="math inline">\(Z\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="normdist.html"><a href="normdist.html#exercícios-resolvidos"><i class="fa fa-check"></i><b>4.5</b> Exercícios resolvidos</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="normdist.html"><a href="normdist.html#distribuição-de-comprimento"><i class="fa fa-check"></i><b>4.5.1</b> Distribuição de comprimento</a></li>
+<li class="chapter" data-level="4.5.2" data-path="normdist.html"><a href="normdist.html#intervalos-em-uma-distribuição-normal"><i class="fa fa-check"></i><b>4.5.2</b> Intervalos em uma distribuição normal</a></li>
+<li class="chapter" data-level="4.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>4.5.3</b> Quantos desvios padrões?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>4.6</b> Exercícios propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>5</b> Distribuição das médias amostrais</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tcl.html"><a href="tcl.html#teorema-central-do-limite"><i class="fa fa-check"></i><b>5.1</b> Teorema Central do Limite</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="tcl.html"><a href="tcl.html#probabilidades-na-amostra-original-e-na-distribuição-de-médias"><i class="fa fa-check"></i><b>5.1.1</b> Probabilidades na amostra original e na distribuição de médias</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tcl.html"><a href="tcl.html#distribuição-não-normais"><i class="fa fa-check"></i><b>5.1.2</b> Distribuição não-normais</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tcl.html"><a href="tcl.html#exercícios-resolvidos-1"><i class="fa fa-check"></i><b>5.2</b> Exercícios resolvidos:</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="tcl.html"><a href="tcl.html#tamanho-médio-de-robalos-no-mercado-de-peixes"><i class="fa fa-check"></i><b>5.2.1</b> Tamanho médio de robalos no mercado de peixes</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="tcl.html"><a href="tcl.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>5.3</b> Exercícios propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="inferenc.html"><a href="inferenc.html"><i class="fa fa-check"></i><b>6</b> Inferindo sobre uma População Estatística</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="inferenc.html"><a href="inferenc.html#estimação-pontual-e-estimação-intervalar"><i class="fa fa-check"></i><b>6.1</b> Estimação pontual e estimação intervalar</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="inferenc.html"><a href="inferenc.html#intervalo-de-confiança"><i class="fa fa-check"></i><b>6.1.1</b> Intervalo de confiança</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="inferenc.html"><a href="inferenc.html#introdução-à-suficiência-amostral"><i class="fa fa-check"></i><b>6.2</b> Introdução à suficiência amostral</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="inferenc.html"><a href="inferenc.html#nível-de-acurácia-desejado-margem-de-erro-e-nível-de-confiança-na-estimativa"><i class="fa fa-check"></i><b>6.2.1</b> Nível de acurácia desejado (margem de erro) e nível de confiança na estimativa</a></li>
+<li class="chapter" data-level="6.2.2" data-path="inferenc.html"><a href="inferenc.html#determinando-o-tamanho-de-uma-amostra"><i class="fa fa-check"></i><b>6.2.2</b> Determinando o tamanho de uma amostra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="th.html"><a href="th.html"><i class="fa fa-check"></i><b>7</b> Introdução ao Teste de Hipóteses</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="th.html"><a href="th.html#probabilidade-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>7.1</b> Probabilidade e teste de hipóteses</a></li>
+<li class="chapter" data-level="7.2" data-path="th.html"><a href="th.html#exemplificando-um-teste-de-hipóteses-o-teste-z"><i class="fa fa-check"></i><b>7.2</b> Exemplificando um teste de hipóteses: o teste z</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="th.html"><a href="th.html#tomada-de-decisão-sobre-h_0-nível-de-significância"><i class="fa fa-check"></i><b>7.2.1</b> Tomada de decisão sobre <span class="math inline">\(H_0\)</span>: nível de significância</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="th.html"><a href="th.html#erros-de-decisão-em-um-teste-de-hipóteses"><i class="fa fa-check"></i><b>7.3</b> Erros de decisão em um teste de hipóteses</a></li>
+<li class="chapter" data-level="7.4" data-path="th.html"><a href="th.html#exemplo-de-um-teste-de-hipótese-teste-t-para-uma-média-populacional"><i class="fa fa-check"></i><b>7.4</b> Exemplo de um teste de hipótese: teste t para uma média populacional</a></li>
+<li class="chapter" data-level="7.5" data-path="th.html"><a href="th.html#graus-de-liberdade"><i class="fa fa-check"></i><b>7.5</b> Graus de liberdade</a></li>
+<li class="chapter" data-level="7.6" data-path="th.html"><a href="th.html#probabilidades-no-teste-t-de-student-a-tabela-t"><i class="fa fa-check"></i><b>7.6</b> Probabilidades no teste <span class="math inline">\(t\)</span> de Student: a tabela <span class="math inline">\(t\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="testet.html"><a href="testet.html"><i class="fa fa-check"></i><b>8</b> Teste t para duas amostras</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="testet.html"><a href="testet.html#teste-t-para-comparação-de-duas-médias-independentes"><i class="fa fa-check"></i><b>8.1</b> Teste t para comparação de duas médias independentes</a></li>
+</ul></li>
+<li class="part"><span><b>III Modelos Lineares Clássicos</b></span></li>
+<li class="chapter" data-level="9" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>9</b> Regressão linear e correlação</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="regressao.html"><a href="regressao.html#modelo-geral-de-regressão"><i class="fa fa-check"></i><b>9.1</b> Modelo geral de regressão</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="regressao.html"><a href="regressao.html#porção-determinística"><i class="fa fa-check"></i><b>9.1.1</b> Porção determinística</a></li>
+<li class="chapter" data-level="9.1.2" data-path="regressao.html"><a href="regressao.html#porção-estocástica"><i class="fa fa-check"></i><b>9.1.2</b> Porção estocástica</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="regressao.html"><a href="regressao.html#ajuste-dos-dados-ao-modelo-de-regressão"><i class="fa fa-check"></i><b>9.2</b> Ajuste dos dados ao modelo de regressão</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="regressao.html"><a href="regressao.html#método-dos-mínimos-quadrados"><i class="fa fa-check"></i><b>9.2.1</b> Método dos mínimos quadrados</a></li>
+<li class="chapter" data-level="9.2.2" data-path="regressao.html"><a href="regressao.html#variâncias-covariâncias-e-coeficientes-da-regressão"><i class="fa fa-check"></i><b>9.2.2</b> Variâncias, covariâncias e coeficientes da regressão</a></li>
+<li class="chapter" data-level="9.2.3" data-path="regressao.html"><a href="regressao.html#exemplo-de-ajuste-ao-modelo-de-regressão"><i class="fa fa-check"></i><b>9.2.3</b> Exemplo de ajuste ao modelo de regressão</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="regressao.html"><a href="regressao.html#testes-de-hipóteses-na-regressão-linear-simples"><i class="fa fa-check"></i><b>9.3</b> Testes de hipóteses na regressão linear simples</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="regressao.html"><a href="regressao.html#teste-sobre-beta_1"><i class="fa fa-check"></i><b>9.3.1</b> Teste sobre <span class="math inline">\(\beta_1\)</span></a></li>
+<li class="chapter" data-level="9.3.2" data-path="regressao.html"><a href="regressao.html#análise-de-variância-da-regressão"><i class="fa fa-check"></i><b>9.3.2</b> Análise de variância da regressão</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>9.4</b> Coeficiente de determinação <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="9.5" data-path="regressao.html"><a href="regressao.html#intervalo-de-confiança-de-y"><i class="fa fa-check"></i><b>9.5</b> Intervalo de confiança de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="9.6" data-path="regressao.html"><a href="regressao.html#pressupostos-da-regressão-linear-simples"><i class="fa fa-check"></i><b>9.6</b> Pressupostos da regressão linear simples</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="regressao.html"><a href="regressao.html#relação-funcional-linear"><i class="fa fa-check"></i><b>9.6.1</b> Relação funcional linear</a></li>
+<li class="chapter" data-level="9.6.2" data-path="regressao.html"><a href="regressao.html#independência"><i class="fa fa-check"></i><b>9.6.2</b> Independência</a></li>
+<li class="chapter" data-level="9.6.3" data-path="regressao.html"><a href="regressao.html#variável-x-é-medida-sem-erros"><i class="fa fa-check"></i><b>9.6.3</b> Variável <span class="math inline">\(X\)</span> é medida sem erros</a></li>
+<li class="chapter" data-level="9.6.4" data-path="regressao.html"><a href="regressao.html#distribuição-normal-dos-resíduos"><i class="fa fa-check"></i><b>9.6.4</b> Distribuição normal dos resíduos</a></li>
+<li class="chapter" data-level="9.6.5" data-path="regressao.html"><a href="regressao.html#variância-residual-constante"><i class="fa fa-check"></i><b>9.6.5</b> Variância residual constante</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="regressao.html"><a href="regressao.html#diagnósticos-da-regressão"><i class="fa fa-check"></i><b>9.7</b> Diagnósticos da regressão</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="regressao.html"><a href="regressao.html#gráfico-de-resíduos"><i class="fa fa-check"></i><b>9.7.1</b> Gráfico de resíduos</a></li>
+<li class="chapter" data-level="9.7.2" data-path="regressao.html"><a href="regressao.html#histograma-dos-resíduos"><i class="fa fa-check"></i><b>9.7.2</b> Histograma dos resíduos</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="regressao.html"><a href="regressao.html#coeficiente-de-correlação-de-pearson-r"><i class="fa fa-check"></i><b>9.8</b> Coeficiente de correlação de Pearson <span class="math inline">\(r\)</span></a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="regressao.html"><a href="regressao.html#teste-de-hipóteses-para-r"><i class="fa fa-check"></i><b>9.8.1</b> Teste de hipóteses para <span class="math inline">\(r\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="regresmultipla.html"><a href="regresmultipla.html"><i class="fa fa-check"></i><b>10</b> Regressão linear múltipla</a></li>
+<li class="chapter" data-level="11" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>11</b> Análise de variância de um fator</a></li>
+<li class="chapter" data-level="12" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>12</b> Análise de variância fatorial</a></li>
+<li class="chapter" data-level="13" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>13</b> Análise de covariância</a></li>
+<li class="chapter" data-level="14" data-path="repanova.html"><a href="repanova.html"><i class="fa fa-check"></i><b>14</b> Análise de variância de medidas repetidas</a></li>
+<li class="part"><span><b>IV Fundamentos de probabilidade</b></span></li>
+<li class="chapter" data-level="15" data-path="espacoamostral.html"><a href="espacoamostral.html"><i class="fa fa-check"></i><b>15</b> O espaço de possibilidades de um experimento</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="espacoamostral.html"><a href="espacoamostral.html#probabilidades-de-um-evento"><i class="fa fa-check"></i><b>15.1</b> Probabilidades de um evento</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="espacoamostral.html"><a href="espacoamostral.html#estimando-as-probabilidades-de-um-evento-por-amostragem"><i class="fa fa-check"></i><b>15.1.1</b> Estimando as probabilidades de um evento por amostragem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="probregras.html"><a href="probregras.html"><i class="fa fa-check"></i><b>16</b> Combinando as probabilidades de eventos</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="probregras.html"><a href="probregras.html#eventos-complexos"><i class="fa fa-check"></i><b>16.1</b> Eventos complexos</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="probregras.html"><a href="probregras.html#representação-de-eventos-diagrama-de-venn"><i class="fa fa-check"></i><b>16.1.1</b> Representação de eventos: diagrama de Venn</a></li>
+<li class="chapter" data-level="16.1.2" data-path="probregras.html"><a href="probregras.html#probabilidade-de-eventos-simples"><i class="fa fa-check"></i><b>16.1.2</b> Probabilidade de eventos simples</a></li>
+<li class="chapter" data-level="16.1.3" data-path="probregras.html"><a href="probregras.html#probabilidade-da-união-de-eventos"><i class="fa fa-check"></i><b>16.1.3</b> Probabilidade da união de eventos</a></li>
+<li class="chapter" data-level="16.1.4" data-path="probregras.html"><a href="probregras.html#representação-de-eventos-diagrama-de-árvore"><i class="fa fa-check"></i><b>16.1.4</b> Representação de eventos: diagrama de árvore</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="probcondind.html"><a href="probcondind.html"><i class="fa fa-check"></i><b>17</b> Probabilidade condicional e independência</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="probcondind.html"><a href="probcondind.html#eventos-independentes"><i class="fa fa-check"></i><b>17.1</b> Eventos independentes</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="probcondind.html"><a href="probcondind.html#um-exemplo-de-eventos-independentes"><i class="fa fa-check"></i><b>17.1.1</b> Um exemplo de eventos independentes</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="probcondind.html"><a href="probcondind.html#eventos-independentes-vs-mutuamente-exclusivos"><i class="fa fa-check"></i><b>17.2</b> Eventos independentes <em>vs</em> mutuamente exclusivos</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="tbayes.html"><a href="tbayes.html"><i class="fa fa-check"></i><b>18</b> Teorema de Bayes: atualizando o conhecimento</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="tbayes.html"><a href="tbayes.html#teorema-de-bayes"><i class="fa fa-check"></i><b>18.1</b> Teorema de Bayes</a></li>
+<li class="chapter" data-level="18.2" data-path="tbayes.html"><a href="tbayes.html#teorema-da-probabilidade-total"><i class="fa fa-check"></i><b>18.2</b> Teorema da probabilidade total</a></li>
+<li class="chapter" data-level="18.3" data-path="tbayes.html"><a href="tbayes.html#o-problema-da-detecção-de-espécies"><i class="fa fa-check"></i><b>18.3</b> O problema da detecção de espécies</a>
+<ul>
+<li class="chapter" data-level="18.3.1" data-path="tbayes.html"><a href="tbayes.html#razão-de-verossimilhança-inferência-bayesiana-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>18.3.1</b> Razão de verossimilhança, inferência bayesiana e teste de hipóteses</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Modelos Probabilísticos, verossimilhança e inferência bayesiana</b></span></li>
+<li class="chapter" data-level="19" data-path="va.html"><a href="va.html"><i class="fa fa-check"></i><b>19</b> As variáveis são aleatórias, não imprevisíveis! - <em>Modelos discretos</em></a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>19.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
+<ul>
+<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="va.html"><a href="va.html#experimento-2-o-custo-de-1-sucesso"><i class="fa fa-check"></i><b>19.2</b> <em>Experimento 2</em>: O custo de 1 sucesso</a></li>
+<li class="chapter" data-level="19.3" data-path="va.html"><a href="va.html#experimento-3-uma-sequência-de-sucessos"><i class="fa fa-check"></i><b>19.3</b> <em>Experimento 3</em>: Uma sequência de sucessos</a></li>
+<li class="chapter" data-level="19.4" data-path="va.html"><a href="va.html#experimento-4-quantas-marcas-na-amostra"><i class="fa fa-check"></i><b>19.4</b> <em>Experimento 4</em>: Quantas marcas na amostra!</a></li>
+<li class="chapter" data-level="19.5" data-path="va.html"><a href="va.html#experimento-5-contagem-por-unidade-de-área-tempo-.."><i class="fa fa-check"></i><b>19.5</b> <em>Experimento 5</em>: Contagem por unidade de área, tempo, …..</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="vacont.html"><a href="vacont.html"><i class="fa fa-check"></i><b>20</b> As variáveis são aleatórias, não imprevisíveis! - <em>Modelos contínuos</em></a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="vacont.html"><a href="vacont.html#alguns-fenômenos-têm-distribuição-normal"><i class="fa fa-check"></i><b>20.1</b> Alguns fenômenos têm distribuição normal</a></li>
+<li class="chapter" data-level="20.2" data-path="vacont.html"><a href="vacont.html#outros-são-altamente-assimétricos"><i class="fa fa-check"></i><b>20.2</b> Outros são altamente assimétricos</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="detmodel.html"><a href="detmodel.html"><i class="fa fa-check"></i><b>21</b> Alguns modelos são determinísticos</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="detmodel.html"><a href="detmodel.html#modelo-linear"><i class="fa fa-check"></i><b>21.1</b> Modelo linear</a></li>
+<li class="chapter" data-level="21.2" data-path="detmodel.html"><a href="detmodel.html#função-potência"><i class="fa fa-check"></i><b>21.2</b> Função potência</a></li>
+<li class="chapter" data-level="21.3" data-path="detmodel.html"><a href="detmodel.html#modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii"><i class="fa fa-check"></i><b>21.3</b> Modelo de Michaelis-Menten (ou Resposta funcional do tipo II)</a></li>
+<li class="chapter" data-level="21.4" data-path="detmodel.html"><a href="detmodel.html#resposta-funcional-do-tipo-iii"><i class="fa fa-check"></i><b>21.4</b> Resposta funcional do tipo III</a></li>
+<li class="chapter" data-level="21.5" data-path="detmodel.html"><a href="detmodel.html#resposta-funcional-do-tipo-iv"><i class="fa fa-check"></i><b>21.5</b> Resposta funcional do tipo IV</a></li>
+<li class="chapter" data-level="21.6" data-path="detmodel.html"><a href="detmodel.html#função-hiperbólica"><i class="fa fa-check"></i><b>21.6</b> Função hiperbólica</a></li>
+<li class="chapter" data-level="21.7" data-path="detmodel.html"><a href="detmodel.html#função-exponencial"><i class="fa fa-check"></i><b>21.7</b> Função exponencial</a></li>
+<li class="chapter" data-level="21.8" data-path="detmodel.html"><a href="detmodel.html#função-logística"><i class="fa fa-check"></i><b>21.8</b> Função logística</a></li>
+<li class="chapter" data-level="21.9" data-path="detmodel.html"><a href="detmodel.html#modelo-monomolecular"><i class="fa fa-check"></i><b>21.9</b> Modelo monomolecular</a></li>
+<li class="chapter" data-level="21.10" data-path="detmodel.html"><a href="detmodel.html#modelo-de-ricker"><i class="fa fa-check"></i><b>21.10</b> Modelo de Ricker</a></li>
+<li class="chapter" data-level="21.11" data-path="detmodel.html"><a href="detmodel.html#modelo-de-gompertz"><i class="fa fa-check"></i><b>21.11</b> Modelo de Gompertz</a></li>
+<li class="chapter" data-level="21.12" data-path="detmodel.html"><a href="detmodel.html#modelo-de-von-bertalanffy"><i class="fa fa-check"></i><b>21.12</b> Modelo de von Bertalanffy</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="modelstat.html"><a href="modelstat.html"><i class="fa fa-check"></i><b>22</b> As partes estocásticas e determinísticas de um modelo estatístico</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="modelstat.html"><a href="modelstat.html#a-parcela-aleatória"><i class="fa fa-check"></i><b>22.1</b> A parcela aleatória</a></li>
+<li class="chapter" data-level="22.2" data-path="modelstat.html"><a href="modelstat.html#a-parcela-determinística"><i class="fa fa-check"></i><b>22.2</b> A parcela determinística</a></li>
+<li class="chapter" data-level="22.3" data-path="modelstat.html"><a href="modelstat.html#mais-um-modelo-binomial-taxa-de-mortalidade-em-testes-dose-resposta"><i class="fa fa-check"></i><b>22.3</b> Mais um modelo Binomial: taxa de mortalidade em testes dose-resposta</a></li>
+<li class="chapter" data-level="22.4" data-path="modelstat.html"><a href="modelstat.html#o-modelo-estatístico-da-regressão-linear"><i class="fa fa-check"></i><b>22.4</b> O modelo estatístico da regressão linear</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="emv.html"><a href="emv.html"><i class="fa fa-check"></i><b>23</b> Estimando os parâmetros: a ideia da Máxima Verossimilhança</a></li>
+<li class="chapter" data-level="24" data-path="aic.html"><a href="aic.html"><i class="fa fa-check"></i><b>24</b> Comparando modelos: uma questão de parcimônia</a></li>
+<li class="chapter" data-level="25" data-path="statbayes.html"><a href="statbayes.html"><i class="fa fa-check"></i><b>25</b> Da verossimilhança à estatística Bayesiana</a></li>
+<li class="chapter" data-level="26" data-path="varmodels.html"><a href="varmodels.html"><i class="fa fa-check"></i><b>26</b> Uma variedade de modelos estatísticos: modelando a variância</a></li>
+<li class="chapter" data-level="27" data-path="nindep.html"><a href="nindep.html"><i class="fa fa-check"></i><b>27</b> Uma variedade de modelos estatísticos: modelando os resíduos</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estatística nas Ciências Ambientais</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="descrit" class="section level1" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Apresentando informações em tabelas e gráficos</h1>
+<p>Vamos analisar os dados provinientes de parte de um experimento em que foram comparadas as idades de cetáceos encontrados mortos na Espanha e Escócia. Para cada indivíduo, alguns dentes foram extraídos e seccionados. A idade destes animais foi então estimada a partir de 3 diferentes métodos de coloração. Estes dados estão na tabela <a href="https://github.com/FCopf/estatistica-livro/blob/master/datasets/Cetaceans.csv" target="_blank">Cetaceans.csv</a> e foram extraídos originalmente de: <a href="https://highstat.com/index.php/mixed-effects-models-and-extensions-in-ecology-with-r">https://highstat.com/index.php/mixed-effects-models-and-extensions-in-ecology-with-r</a>.</p>
+<div id="htmlwidget-6e39507be17f9e954da6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6e39507be17f9e954da6">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180"],[9,9,9,25,25,25,37,37,37,47,47,47,51,51,51,55,55,55,57,57,57,30,30,30,31,31,31,36,36,36,5,5,5,6,6,6,7,7,7,8,8,8,10,10,10,11,11,11,12,12,12,13,13,13,14,14,14,15,15,15,17,17,17,18,18,18,19,19,19,20,20,20,21,21,21,22,22,22,23,23,23,24,24,24,26,26,26,27,27,27,28,28,28,29,29,29,32,32,32,33,33,33,35,35,35,38,38,38,1,1,1,4,4,4,34,34,34,41,41,41,49,49,49,53,53,53,54,54,54,58,58,58,61,61,61,2,2,2,3,3,3,39,39,39,40,40,40,45,45,45,50,50,50,52,52,52,56,56,56,60,60,60,42,42,42,43,43,43,44,44,44,46,46,46,48,48,48,59,59,59],["Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Delphinus delphis","Lagenorhynchus acutus","Lagenorhynchus acutus","Lagenorhynchus acutus","Lagenorhynchus acutus","Lagenorhynchus acutus","Lagenorhynchus acutus","Lagenorhynchus acutus","Lagenorhynchus acutus","Lagenorhynchus acutus","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Phocoena phocoena","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella coeruleoalba","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Stenella frontalis","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus","Tursiops truncatus"],["Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Del_delp","Lag_acut","Lag_acut","Lag_acut","Lag_acut","Lag_acut","Lag_acut","Lag_acut","Lag_acut","Lag_acut","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Pho_phoc","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_coer","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Ste_fron","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun","Tur_trun"],[11.5,11.5,11,1.5,1.5,1.5,2,2,3,12,9,10,15,13,15,0.75,0.5,0.5,15,13,15,9.5,7.5,7,11.5,12,10,1.5,1.5,1.5,1.25,1.25,1.5,2.5,2.5,2.5,7.5,7,8,1.5,1.5,1.5,10,8.5,10,5,7.5,6.5,1.75,1.75,1.75,1.25,1.25,1.25,8,7,7.5,0.75,0.75,0.75,0.5,0.5,0.5,0.75,0.75,0.75,1.5,1.25,1.25,1.25,1.25,1.25,2,2,2,7,7.5,8,10.5,7,10,0.75,0.75,0.75,1.5,1.25,1.25,11,8,10,10,9,9,10,7.5,8,1.5,1.5,1.5,2.5,1.5,2.5,8,7,8,1.5,1.5,1.5,1.5,1.5,1.5,15,14,13,1.5,1.25,1.75,16,14,15.5,16.75,13,14,1.25,1,1.25,17,14,15,23,18,20,20,16,18,25,24,23,9.5,10,10,1.75,1,1.5,1.5,1,1,0.5,0,1.5,8,6,7,0.25,0,0.5,0.75,0.5,1,17,14,15.5,4,2,4,5,3,4,1.5,1.5,1.5,19,11,14,14,10,12,3.75,3,3],["Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Female","Female","Female","Male","Male","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Unidentified","Unidentified","Unidentified","Female","Female","Female","Female","Female","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Female","Female","Male","Male","Male","Female","Female","Female","Male","Male","Male","Female","Female","Female","Female","Female","Female","Female","Female","Female","Male","Male","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Female","Female","Female","Male","Male","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Female","Female","Female","Male","Male","Male","Female","Female","Female","Female","Female","Female"],["Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine","Mayer","Elrich","Toluidine"],["Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Spain","Spain","Spain","Spain","Spain","Spain","Scotland","Scotland","Scotland","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DolphinID<\/th>\n      <th>Species<\/th>\n      <th>Spe_code<\/th>\n      <th>Age<\/th>\n      <th>Sex<\/th>\n      <th>Stain<\/th>\n      <th>Location<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>A tabela contém 180 linhas por 7 colunas em que:</p>
+<p><strong>DolphinID</strong>: Identificação do indivíduo (61 indivíduos);</p>
+<p><strong>Species</strong>: Delphinus delphis, Lagenorhynchus acutus, Phocoena phocoena, Stenella coeruleoalba, Stenella frontalis, Tursiops truncatus;</p>
+<p><strong>Age</strong>: Idade do indivíduo;</p>
+<p><strong>Sex</strong>: Sexo (Female, Male, Unidentified);</p>
+<p><strong>Stain</strong>: Método de coloração (Elrich, Mayer, Toluidine);</p>
+<p><strong>Location</strong>: Local de captura (Scotland, Spain);</p>
+<div id="tipos-de-dados" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Tipos de dados</h2>
+<p>Métodos em estatística descritiva envolvem formas para visualizar, evidenciar e apresentar as informações mais relevantes de um conjunto de dados. Estes métodos aplicam, em grande parte, a construção de gráficos e tabelas apropriados a diferentes tipos de dados, além do cálculo de medidas de tendencia central (ex. média aritmética) e dispersão (ex. variância). Iremos discutir cada um destes tópicos neste e nos capítulos seguintes. O modo de visualização e apresentação depende da natureza dos dados. Estes pode ser basicamente de dois tipos: <strong>quantitativos</strong> ou <strong>qualitativos</strong>.</p>
+<div id="dados-quantitativos-e-qualitativos" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Dados quantitativos e qualitativos</h3>
+<p>Dados quantitativos são geralmente contagens (número de indivíduos, número de espécies, de carros, etc) ou mensurações (pesos, temperaturas, comprimentos, diversidade). Dados quantitativos podem ainda ser <strong>discretos</strong> ou <strong>contínuos.</strong> Dados discretos são representados por elementos enumeráveis. A contagem do número de pessoas em uma sala, do número de ovos em uma ninhada, número conchas no oceano. Dados discretos podem <strong>somente</strong> assumir valores inteiros (0, 1, 2,. . . ), ou seja, não existem valores fracionários como 1.5 pessoas, 2.5 conchas. Dados contínuos se referem a medidas que podem assumir infinitos valores, sem intervalos vazios. Pluviosidade, temperatura e pesos são alguns exemplos. A pluviosidade pode ser de 200 mm, 200.1 mm, 200.01 mm, 200.001 mm de chuva. O limite de precisão é aquele que podemos mensurar com os aparelhos disponíveis.</p>
+<p>Dados qualitativos representam atributos ou categorias não numéricas (cor, profissão, tipos de vegetação).</p>
+</div>
+<div id="níveis-de-mensuração" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Níveis de mensuração</h3>
+<p>Uma outra forma de organizar tipos de dados pode ser em função dos níveis de mensuração: <strong>nominal</strong>, <strong>ordinal</strong>, <strong>intervalar</strong> e <strong>razão</strong>.</p>
+<p><strong>Nível nominal</strong>: é característico de dados que possuem atributos ou categorias. Estes dados não podem ser ordenados. Ex. cor, grupo taxonômico, nomes de cidades, etc.</p>
+<p><strong>Nível ordinal</strong>: é aquele em que os atributos podem ser ordenados, embora não seja possível quantificar as diferenças entre dois níveis. Ex. i - Maratonistas podem ser classificados quanto à ordem de chegada em uma competição (1o; 2o; 3o; e assim por diante…). ii - Cidades podem ser classificadas quanto às condições de saneamento: ótimo, bom, ruim, péssimo. iii - Pessoas podem ser ordenadas em ordem alfabética. No nível ordinal, não há sentido em quantificar as diferenças entre os níveis.</p>
+<p><strong>Nível intervalar</strong>: é aquele em que além ser possível ordenar, é possível quantificar as diferenças entre duas observações. No entanto, não há um ponto inicial natural, ou seja, um ponto zero que indique ausência da quantia. Ex. i – Temperatura zero não indica ausência de temperatura, assim como dez graus não é duas vezes mais quente que 5 graus centígrados. Essas características são somente uma convenção relacionada à escala de mensuração da temperatura. ii - Ano do calendário: o ano zero é uma convenção do calendário, não significa ausência de tempo.</p>
+<p><strong>Nível de razão</strong>: é como o intervalar, porém existe um ponto zero natural. Peso igual a 0 kg indica ausência de peso e dez quilogramas é duas vezes mais pesado que 5 kg. O mesmo vale para comprimento, distância, velocidade, número de ovos. Existe uma relação entre tipo de dados e nível de mensuração. Da explicação acima, fica claro que os níveis nominal e ordinal se referem a dados qualitativos, enquanto os níveis intervalar e razão referem-se a dados quantitativos. Sempre é possível transformar dados quantitativos em qualitativos. Se temos os comprimentos em cm de peixes desembarcados (dados quantitativos, nível de mensuração razão), podemos transformá-los em atributos como peixes grandes e pequenos (qualitativo, nível de mensuração ordinal). Por outro lado, o contrário não é possível.</p>
+</div>
+</div>
+<div id="tabelas-resumo" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Tabelas resumo</h2>
+<p>No exemplo anterior, temos <code>Species</code>, <code>Stain</code>, <code>Sex</code> e <code>Location</code> como variáveis qualitativas nominais e <code>Age</code> como quantitativa contínua. A variável <code>DolphinID</code>, embora esteja codificada como um número entre 1 e 61, representa um <strong>código de identificação</strong> que não têm significado quantitativo, devendo desta forma, deve ser tratada como uma variável <strong>categórica</strong>.</p>
+<p>A tabela de frequência a seguir mostra quantos dentes de cada espécie foram analisados.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Espécie</th>
+<th align="right">Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Delphinus delphis</td>
+<td align="right">21</td>
+</tr>
+<tr class="even">
+<td align="left">Lagenorhynchus acutus</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="left">Phocoena phocoena</td>
+<td align="right">78</td>
+</tr>
+<tr class="even">
+<td align="left">Stenella coeruleoalba</td>
+<td align="right">27</td>
+</tr>
+<tr class="odd">
+<td align="left">Stenella frontalis</td>
+<td align="right">27</td>
+</tr>
+<tr class="even">
+<td align="left">Tursiops truncatus</td>
+<td align="right">18</td>
+</tr>
+</tbody>
+</table>
+<p>Esta tabela resume dados qualitativos, em que temos a contagem de cada um dos níveis da variável. Neste exemplo, temos a variável qualitativa <code>Species</code> com 6 níveis. Algumas espécies tiveram somente 9 dentes analizados e enquanto outras tiveram 78.</p>
+<p>Podemos olhar também para a <strong>frequência relativa</strong> do número de dentes observados.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Espécie</th>
+<th align="right">Frequência</th>
+<th align="right">Frequência relativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Delphinus delphis</td>
+<td align="right">21</td>
+<td align="right">0.12</td>
+</tr>
+<tr class="even">
+<td align="left">Lagenorhynchus acutus</td>
+<td align="right">9</td>
+<td align="right">0.05</td>
+</tr>
+<tr class="odd">
+<td align="left">Phocoena phocoena</td>
+<td align="right">78</td>
+<td align="right">0.43</td>
+</tr>
+<tr class="even">
+<td align="left">Stenella coeruleoalba</td>
+<td align="right">27</td>
+<td align="right">0.15</td>
+</tr>
+<tr class="odd">
+<td align="left">Stenella frontalis</td>
+<td align="right">27</td>
+<td align="right">0.15</td>
+</tr>
+<tr class="even">
+<td align="left">Tursiops truncatus</td>
+<td align="right">18</td>
+<td align="right">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Onde vemos que 43 % dos dentes analizados pertencem a espécie Phocoena phocoena, enquanto somente 5 % para Lagenorhynchus acutus. A frequência relativa nesta tabela deve somar 1.</p>
+<p>Podemos analisar também a frequência de dentes analizados por região:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Região</th>
+<th align="right">Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Scotland</td>
+<td align="right">99</td>
+</tr>
+<tr class="even">
+<td align="left">Spain</td>
+<td align="right">81</td>
+</tr>
+</tbody>
+</table>
+<p>A variável <code>Location</code> tem somente 2 categorias: Scotland e Spain.</p>
+<div id="combinando-duas-variáveis" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Combinando duas variáveis</h3>
+<p>Vamos agora montar uma tabela de frequência para a combinação de duas variáveis categóricas, <code>Location</code> e <code>Species</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Espécie</th>
+<th align="right">Scotland</th>
+<th align="right">Spain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Delphinus delphis</td>
+<td align="right">9</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">Lagenorhynchus acutus</td>
+<td align="right">9</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Phocoena phocoena</td>
+<td align="right">78</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Stenella coeruleoalba</td>
+<td align="right">3</td>
+<td align="right">24</td>
+</tr>
+<tr class="odd">
+<td align="left">Stenella frontalis</td>
+<td align="right">0</td>
+<td align="right">27</td>
+</tr>
+<tr class="even">
+<td align="left">Tursiops truncatus</td>
+<td align="right">0</td>
+<td align="right">18</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos ver também suas <strong>frequências relativas</strong>. Neste caso temos três opções: calcular as frequências relativas <strong>totais</strong>, por <strong>linhas</strong> ou por <strong>colunas</strong>.</p>
+<div id="frequências-relativas-totais" class="section level4" number="1.2.1.1">
+<h4><span class="header-section-number">1.2.1.1</span> Frequências relativas totais</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Espécie</th>
+<th align="right">Scotland</th>
+<th align="right">Spain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Delphinus delphis</td>
+<td align="right">0.05</td>
+<td align="right">0.07</td>
+</tr>
+<tr class="even">
+<td align="left">Lagenorhynchus acutus</td>
+<td align="right">0.05</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="odd">
+<td align="left">Phocoena phocoena</td>
+<td align="right">0.43</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">Stenella coeruleoalba</td>
+<td align="right">0.02</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="odd">
+<td align="left">Stenella frontalis</td>
+<td align="right">0.00</td>
+<td align="right">0.15</td>
+</tr>
+<tr class="even">
+<td align="left">Tursiops truncatus</td>
+<td align="right">0.00</td>
+<td align="right">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Se estamos interessados nas frequências totais, cada célula deve ser dividida pela <strong>soma total</strong> da tabela, ou seja, 180. A célula 1, por exemplo, fica como 9 dividido por 180, e deste modo temos que 5% dos dentes analisados eram de Delphinus delphis encontrados em Scotland. Neste tipo de tabela, a soma de <strong>todas as células</strong> deve somar 1.</p>
+</div>
+<div id="frequências-relativas-por-linhas" class="section level4" number="1.2.1.2">
+<h4><span class="header-section-number">1.2.1.2</span> Frequências relativas por Linhas</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Espécie</th>
+<th align="right">Scotland</th>
+<th align="right">Spain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Delphinus delphis</td>
+<td align="right">0.43</td>
+<td align="right">0.57</td>
+</tr>
+<tr class="even">
+<td align="left">Lagenorhynchus acutus</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="odd">
+<td align="left">Phocoena phocoena</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">Stenella coeruleoalba</td>
+<td align="right">0.11</td>
+<td align="right">0.89</td>
+</tr>
+<tr class="odd">
+<td align="left">Stenella frontalis</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+</tr>
+<tr class="even">
+<td align="left">Tursiops truncatus</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+</tr>
+</tbody>
+</table>
+<p>Neste caso estamos interessados nos valores relativos para cada linha individual. Vemos por exemplo que dos 21 dentes analizados para Delphinus delphis, 43% estão em Scotland e 57% estão em Spain. Nesta tabela, as frequências <strong>de cada linha</strong> da tabela devem somar 1 enquanto o somatório das colunas nos dá as <strong>frequências marginais</strong> de <code>Location</code>.</p>
+</div>
+<div id="frequências-relativas-por-colunas" class="section level4" number="1.2.1.3">
+<h4><span class="header-section-number">1.2.1.3</span> Frequências relativas por colunas</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Espécie</th>
+<th align="right">Scotland</th>
+<th align="right">Spain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Delphinus delphis</td>
+<td align="right">0.09</td>
+<td align="right">0.15</td>
+</tr>
+<tr class="even">
+<td align="left">Lagenorhynchus acutus</td>
+<td align="right">0.09</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="odd">
+<td align="left">Phocoena phocoena</td>
+<td align="right">0.79</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">Stenella coeruleoalba</td>
+<td align="right">0.03</td>
+<td align="right">0.30</td>
+</tr>
+<tr class="odd">
+<td align="left">Stenella frontalis</td>
+<td align="right">0.00</td>
+<td align="right">0.33</td>
+</tr>
+<tr class="even">
+<td align="left">Tursiops truncatus</td>
+<td align="right">0.00</td>
+<td align="right">0.22</td>
+</tr>
+</tbody>
+</table>
+<p>Esta opção é oposta à anterior. Estamos interessados nos valores relativos para cada coluna individual. Neste caso, as frequências <strong>de cada coluna</strong> da tabela devem somar 1 enquanto o somatorio das linhas nos dá as <strong>frequências marginais</strong> de <code>Species</code>.</p>
+</div>
+</div>
+<div id="tabelas-de-frequência-para-variáveis-quantitativas" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Tabelas de frequência para variáveis quantitativas</h3>
+<p>Para variáveis quantitativas devemos primeiramente dividir a variável em <strong>intervalos de classe</strong>. Feito isto, contamos o número de observações dentro de cada classe. Vamos montar uma tabela de frequência para a variável <code>Age</code>. Temos idades variando entre 0 e 25 anos. Vamos então dividir este intervalo em 5 classes de tamanho 5.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Classe</th>
+<th align="right">Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">[0,5]</td>
+<td align="right">97</td>
+</tr>
+<tr class="even">
+<td align="left">(5,10]</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td align="left">(10,15]</td>
+<td align="right">27</td>
+</tr>
+<tr class="even">
+<td align="left">(15,20]</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">(20,25]</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<p>A classe [0,5] tem o maior numero de dentes analisados (97 dentes) e a classe (20,25] o menor (4 dentes). Lembre-se que a variável <code>Age</code> é quantitativa. A divisão em classes de tamanho cinco foi uma escolha, de certa forma, arbitrária. Resumir uma dado quantitativo em intervalos de classe têm como objetivo principal destacar padrões no conjunto de dados.</p>
+<p>Poderíamos escolher tamanhos de classe diferentes, por exemplo de tamanho 10 anos, o que nos daria um número muito pequeno de classes a ser analisada.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Classe</th>
+<th align="right">Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">[0,10]</td>
+<td align="right">137</td>
+</tr>
+<tr class="even">
+<td align="left">(10,20]</td>
+<td align="right">39</td>
+</tr>
+<tr class="odd">
+<td align="left">(20,30]</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<p>Poderíamos por outro lado, escolher um tamanho igual a dois, o que gera um número muito maior de classes.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Classe</th>
+<th align="right">Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">[0,2]</td>
+<td align="right">82</td>
+</tr>
+<tr class="even">
+<td align="left">(2,4]</td>
+<td align="right">13</td>
+</tr>
+<tr class="odd">
+<td align="left">(4,6]</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">(6,8]</td>
+<td align="right">22</td>
+</tr>
+<tr class="odd">
+<td align="left">(8,10]</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">(10,12]</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">(12,14]</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">(14,16]</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">(16,18]</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">(18,20]</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">(22,24]</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">(24,26]</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<div id="frequências-acumuladas" class="section level4" number="1.2.2.1">
+<h4><span class="header-section-number">1.2.2.1</span> Frequências acumuladas</h4>
+<p>Uma vez que estamos trabalhando com uma variável quantivativa, faz sentido montar uma tabela de frequência acumulada, ou seja, vamos acumulando a frequências das classes inferiores à medida que avançamos para as classes maiores. No exemplo acima, uma tabela de frequência acumulada ficaria:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Classe</th>
+<th align="right">Frequência</th>
+<th align="right">Frequência acumulada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">[0,5]</td>
+<td align="right">97</td>
+<td align="right">97</td>
+</tr>
+<tr class="even">
+<td align="left">(5,10]</td>
+<td align="right">40</td>
+<td align="right">137</td>
+</tr>
+<tr class="odd">
+<td align="left">(10,15]</td>
+<td align="right">27</td>
+<td align="right">164</td>
+</tr>
+<tr class="even">
+<td align="left">(15,20]</td>
+<td align="right">12</td>
+<td align="right">176</td>
+</tr>
+<tr class="odd">
+<td align="left">(20,25]</td>
+<td align="right">4</td>
+<td align="right">180</td>
+</tr>
+</tbody>
+</table>
+<p>Nesta tabela, a <span class="math inline">\(2^a\)</span> linha da coluna de frequência acumulada é o somatório da <span class="math inline">\(1^a\)</span> e da <span class="math inline">\(2^a\)</span> da coluna de frequências. À medida que descemos nas linhas, vamos somando as frequências das classes inferiores. Deste modo, a última linha da coluna de frequências acumuladas nos dá o número total de observações na tabela, neste exemplo, 180 observações.</p>
+<p>Podemos construir uma tabela similar utilizando os dados de frequência relativa. Neste caso, a última linha deve somar 1 como visto abaixo.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Frequência</th>
+<th align="right">Frequência acumulada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.54</td>
+<td align="right">0.54</td>
+</tr>
+<tr class="even">
+<td align="right">0.22</td>
+<td align="right">0.76</td>
+</tr>
+<tr class="odd">
+<td align="right">0.15</td>
+<td align="right">0.91</td>
+</tr>
+<tr class="even">
+<td align="right">0.07</td>
+<td align="right">0.98</td>
+</tr>
+<tr class="odd">
+<td align="right">0.02</td>
+<td align="right">1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="visualização-gráfica" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Visualização gráfica</h2>
+<p>A forma de representação gráfica depende o tipo (qualitativa ou quantitativa) e do número de variáveis envolvidas na análise. Em geral temos 5 tipos básicos de gráficos utilizados em análise e interpretalção de dados, <strong>gráficos de barras</strong>, <strong>histogramas</strong>, <strong>gráficos de linhas</strong>, <strong>gráficos de dispersão</strong> e <strong>boxplots</strong>. Vamos apresentar os quatro primeiros nesta seção e deixar a discussão dos boxplots para o capítulo <a href="posicao.html#posicao">2</a> quando abordarmos <strong>distribuições de frequência</strong>, <strong>medidas de tendência central</strong>, <strong>posição</strong> e <strong>variação</strong>.</p>
+<div id="gráficos-de-barras" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Gráficos de barras</h3>
+<p>Considere novamente os dados da tabela <code>Cetaceans.csv</code> apresentada no início do capítulo.</p>
+<p>Um gráfico de barras é utilizado para representar variáveis qualitativas. O gráfico de barras nos permite mostar as mesmas informações contidas nas <strong>tabelas de frequência</strong>. Cada barra representa a contagem ou a frequência relativa dos níveis da variável.</p>
+<p>Neste exemplo, vamos representar o número de dentes analisados em função do sexo de animal. Nas figuras abaixo, vemos um número maior de machos e alguns poucos indivíduos com sexo não identificado.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-17-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>Os gráficos de barras apresentados acima descrevem o padrão observado para <strong>somente uma</strong> variável qualitativa. Podemos no entanto, utilizá-lo também para verificar a associação entre <strong>duas</strong> variáveis qualidativas. Abaixo, é descrita a abundância relativa por sexo para <strong>cada uma</strong> das localidades.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-18-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>Quando combinamos duas variáveis qualitativas no mesmo gráfico de barras, podemos organizá-las de duas formas. Na figura da esquerda agrupamos as abundâncias das duas localidades lado a lado para cada um dos sexos. Na figura da direita, agrupamos os sexos e separamos as localidades. Compare as duas figuras. Veja que as duas mostram as mesmas informações. Entretanto, a escolha entre elas irá depender do objetivo do trabalho e das relações que desejamos tornar mais clara ao leitor.</p>
+</div>
+<div id="histogramas" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Histogramas</h3>
+<p>Histogramas são utilizados para representar o padrão de distribuição de dados quantitativos, semelhante ao que fizemos com com a <strong>tabela de frequência de classes</strong>. Para isto também é necessário dividir a variável em <strong>intervalos de classes</strong>. Portanto, os histogramas mostram as mesmas informações que obtivemos nas tabelas de frequência para variáveis quantitativas.</p>
+<p>Intervalos de classes muito amplos, causam muita perda de informação a respeito da distribuição de valores, enquanto intervalos muito estreitos, são demasiadamente detalhados e dificultam a visualização de um padrão geral. Abaixo apresentamos histogramas para a variável <code>Age</code> com três intervalos de classes distintos (10, 5, e 1 anos). Deste modo, todos expressam as mesmas informações em níveis de detalhes cada vez maiores à medida que reduzimos o intervalo de classe.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-19-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráficos-de-linhas" class="section level3" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Gráficos de linhas</h3>
+<p>Um gráfico de linhas pode ser utilizado quando há uma ordem inerente ao conjunto de dados. Este tipo de dados é comumente visto para representar <strong>séries temporais</strong>, em que as medidas são tomadas ao longo do tempo. Na tabela abaixo, por exemplo, estão representados os volumes de chuva e níveis de água (média do ano) em seis sistemas de abastecimento de água da Grande São Paulo (Alto Tietê, Cantareira, Cotia, Guarapiranga, Rio Claro e Rio Grande). Os dados foram medidos entre 2003 e 2018. A tabela possui 96 linhas por 4 colunas. Cada linha representa as medidas tomadas em um dos sistemas e em cada um dos anos considerados.</p>
+<div id="htmlwidget-c5e9eac1242feed8cd20" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c5e9eac1242feed8cd20">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96"],[2003,2003,2003,2003,2003,2003,2004,2004,2004,2004,2004,2004,2005,2005,2005,2005,2005,2005,2006,2006,2006,2006,2006,2006,2007,2007,2007,2007,2007,2007,2008,2008,2008,2008,2008,2008,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2011,2011,2011,2011,2011,2011,2012,2012,2012,2012,2012,2012,2013,2013,2013,2013,2013,2013,2014,2014,2014,2014,2014,2014,2015,2015,2015,2015,2015,2015,2016,2016,2016,2016,2016,2016,2017,2017,2017,2017,2017,2017,2018,2018,2018,2018,2018,2018],["AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande","AltoTiete","Cantareira","Cotia","Guarapiranga","RioClaro","RioGrande"],[36.15,28.67,34.47,41.51,60.41,74.7,31,21.65,34.25,38.89,91.24,83.84,40.98,47.3,88.27,73.33,100.31,91.49,58.17,52.62,97.02,71.69,88.66,89.38,58.3,41.74,81.66,59.17,63.97,83.54,50.95,52.58,84.63,61.81,53.37,85.33,52.04,80.39,100.49,83.94,89.43,91.3,79.29,90.61,93.07,81.12,101.54,94.4,69.88,83.47,85.34,71.41,93.52,90.35,50.18,67.54,85.26,72.45,84.95,88.15,57.7,49.81,93.33,79.29,95.52,94.38,25.26,14.71,45.64,61.04,79.09,84.43,17.73,10.25,58.68,73.86,53.12,88.92,39.76,37.29,96.3,81.17,85.39,84.85,53.4,57.86,94.59,72.19,93.01,87.04,57.16,46.06,75.58,71.96,82.82,80.89],[83.81,80.36,85.98,69.09,140.8,81.33,122.92,126.63,108.44,101.92,176.95,143.03,107.96,131.07,113.78,119.99,183.72,143.79,120.33,128.49,119.69,123.57,156.91,148.76,108.42,120.47,85.18,132.5,149.18,123.22,121.19,130.9,95.89,91.33,145.54,108.14,149.89,171.02,130.9,140.62,214.79,140.18,131.43,131.57,129.05,130.73,214.98,154.87,106.16,120.42,80.28,92.1,171.79,133.48,122.17,120.63,86.23,121.62,177.78,157.89,108.55,90.84,90.77,92.12,225.88,141.81,87.22,80.41,63.08,100.87,183.3,105.27,134.97,136.6,107.48,133.58,204.27,128.57,111.73,128.13,114.17,99.32,145.62,101.81,94.48,108.24,101.67,121.72,156.93,126.13,60.26,75,56.2,63.84,114.36,83.06]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Ano<\/th>\n      <th>Sistema<\/th>\n      <th>Volume_medio<\/th>\n      <th>Chuva_media<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>A figura a seguir representa a variação anual no volume médio para o Sistema Cantareira, onde podemos perceber um aumento no volume em 2010, seguido de uma redução que atinge seu pico mínimo em 2015.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-21-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Na figura anterior, verificamos a relação entre duas variáveis (Ano e Volume médio) <strong>exclusivamente</strong> para o sistema Cantareira.</p>
+<p>Podemos utiliar o mesmo tipo de gráfico para associar três variáveis ao mesmo tempo: Ano, Volume médio e Sistema de abastecimento. A variável Sistema de Abastecimento é categórica e possui 6 níveis. Vamos inicialmente representar os sistemas Cantareira, na zona Norte da Grande São Paulo, e o Sistema Rio Grande na zona Sul. Podemos perceber que os padrões são distintos. O sistema Rio Grande parece manter um volume maior, ao redor de 80, enquanto o sisterma Cantareira, fica ao redor de 50. A <strong>variação</strong>, descrita pela diferênça entre os picos máximo (em 2010) e mínimo (em 2015), é maior no Sistema Cantareira. Em resumo esta figura sugere que nos últimos 15 anos, o volume médio no Sistema Rio Gande foi mais elevado e mais estável que no Sistema Cantareira.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-22-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Vamos olhar para todos os sistemas juntos. Um dos objetivos da análise gráfica, é encontrarmos padrões comuns, tendências gerais que se repetem para grupos diferentes. Na figura anterior, existem <strong>aparentemente</strong> três padrões distintos. Os sistemas Cantareira e Alto Tietê mantém níveis mais baixos e também mais variáveis, enquanto os sistemas Rio Claro e Rio Grande mantiveram níveis mais elevados e mais estáveis. Finalmente, os sistemas Cotia e Guarapiranga parecem apresentar padrões intermediários.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-23-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Vamos olhar para cada um dos grupos sugeridos em figuras separadas.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-24-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Esta é somente, uma avaliação superficial e exploratória. Poderíamos pensar em causas (<strong>hipóteses</strong>) que explicassem estes padrões aparentes como clima regional, geomeorfologia da áreas, dinâmica de vazão dos rios que abastecem o sistema, política de uso água, número de pessoas abastecidas, etc… Neste caso, estaríamos entrando no campo da <strong>Inferência Estatística</strong>.</p>
+</div>
+<div id="gráficos-de-dispersão" class="section level3" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Gráficos de dispersão</h3>
+<p>Gráficos de dispersão são utilizados para associar duas variáveis quantitativas entre si. Ao contrário do gráfico de linhas, não é necessário que exista qualquer ordem inderente no conjunto de dados. Vamos verificar por exemplo a relação entre volume médio anual e a chuva média anual entre 2003 e 2018.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-25-1.png" width="336" style="display: block; margin: auto;" /></p>
+<p>Não parece haver uma relação muito clara, o que é curioso. Como os sistemas são abastecidos pelos rios que drenam suas regiões, esperaríamos que anos de muita chuva, ressultassem em reservatórios com níveis mais elevados.</p>
+<p>Entretanto, vimos no tópico anterior que os reservatório apresentaram diferenças nos padrões de variação do volume médio anual. Vamos verificar agora se eles também diferem na <strong>relação</strong> entre o volume de chuva e nível dos sistemas. Para explorarmos esta questão, vamos inserir uma <span class="math inline">\(3^a\)</span> variável a figura (o sistema de abastecimento) como diferentes cores.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-26-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Como o número de curvas na figura dificulta a visualização de um padrão mais claro, vamos olhar para cada sistema <strong>separadamente</strong>.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-27-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Separadamente podemos ver que parece haver uma <strong>correlação positiva</strong> entre volume de chuva e nível para o Sistema Rio Grande e, <em>possivelmente</em>, para os Sistema Rio Claro. Aparentemente, estes sistemas se mantiveram mais cheios em anos mais chuvosos. Esta relação não parece existir para o sistema do Alto Tietê e é menos clara para os demais sistemas. Podemos explorar melhor esta questão inserindo uma <strong>linha de regressão</strong>.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-28-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>As linhas nos sugerem que para todos os sistemas, há uma relação <strong>positiva</strong> entre o volume do reservatório e o volume médio de chuva anual, <strong>exceto</strong> para o sistema do Alto Tietê. Neste sistema a relação parece nula, o que é uma questão interessante em se estudar! Iremos estudar o método de <strong>regressão linear</strong> no capítulo <a href="th.html#th">7</a>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="posicao.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

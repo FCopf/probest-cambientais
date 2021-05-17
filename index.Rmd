@@ -1,0 +1,53 @@
+--- 
+title: "Estatística nas Ciências Ambientais"
+author: 
+  - Fabio Cop Ferreira
+  - fabiocopf@gmail.com; fcferreira@unifesp.br
+  - Instituto do Mar, Universidade Federal de São Paulo
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Estatística nas Ciências Ambientais"
+---
+
+# Apresentação {-}
+
+Este material foi organizado para dar suporte a cursos de graduação e pós-graduação em estatística, probabilidade e análise de dados nas Ciências Ambientais. Os assuntos são divididos em: I. Estatística descritiva (capítulos \@ref(descrit) e \@ref(posicao)); II. Amostragem e Inferência Estatística (capítulos \@ref(amostrmedias) a \@ref(th)); III. Modelos Lineares Clássicos (capítulos \@ref(regressao) a \@ref(repanova)), IV. Fundamentos de probabilidade (capítulos \@ref(espacoamostral) a \@ref(tbayes)) e V - Modelos Probabilísticos, verossimilhança e inferência bayesiana (capítulos \@ref(va) a \@ref(nindep)).
+
+
+```{r include=FALSE, fig.width=5, fig.align='center'}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+
+```
+
+```{r setupP1, include=FALSE, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(vegan)
+library(ade4)
+
+library(versions)
+library(magick)
+
+library(tidyverse)
+library(lubridate)
+library(ggVennDiagram)
+
+library(knitr)
+library(grid)
+library(gridExtra)
+library(DT)
+
+require(reshape2)
+library(DiagrammeR)
+
+library(plotrix)
+library(circlize)
+
+```
+
