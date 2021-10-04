@@ -1,0 +1,119 @@
+# Estrutura e tipo de dados {#estr_dados}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+res <- read_delim('datasets/Reservatorios_Parana_parcial.csv', locale = locale(encoding = "latin1"))
+
+trofia_niveis <- factor(res$Trofia, levels = c('Oligotrófico', 'Mesotrófico', 'Eutrófico'), ordered = TRUE) %>%
+  levels() %>% 
+  paste(collapse = ' < ')
+```
+
+A estatística descritiva se utiliza de métodos para resumir e evidenciar as informações relevantes de um conjunto de dados. Em grande parte, a apresentação destas informações passa pela construção de gráficos e tabelas apropriados a diferentes tipos de dados, além do cálculo de descritores que resumem algumas características das variáveis envolvidas (ex. média aritmética, desvio padrão, frequência relativa, padrões de correlação). Iremos discutir cada um destes tópicos nesta seção e veremos que de modo geral, a forma de apresentação depende da natureza dos dados envolvidos e da relação que estabelecemos entre eles. 
+
+Neste capítulo iremos tratar da estrutura de um conjunto de dados e dos tipos de variáveis mais comuns. Considere a tabela abaixo, construída a partir do livro *Biocenoses em Reservatórios: padrões espaciais e temporais* [@rodriguesetal2005] que apresenta informações sobre `r nrow(res)` reservatórios do estado do Paraná.
+
+```{r}
+res %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+A tabela é formada por `r nrow(res)` linhas referentes a cada reservatório e `r ncol(res)` colunas em que constam informações sobre cada reservatório, sendo elas:
+
+**`r names(res)[1]`**: nome do reservatório;
+
+**`r names(res)[2]`**: bacia hidrográfica (`r str_c(levels(factor(res$Bacia)),collapse = ", ")`);
+
+**`r names(res)[3]`**: ano de formação do reservatório;
+
+**`r names(res)[4]`**: área em $km^2$;
+
+**`r names(res)[5]`**: grau de trofia (`r str_c(levels(factor(res$Trofia)),collapse = ", ")`);
+
+**`r names(res)[6]`**: pH;
+
+**`r names(res)[7]`**: condutividade;
+
+**`r names(res)[8]`**: alcalinidade;
+
+**`r names(res)[9]`**: fósforo total;
+
+**`r names(res)[10]`**: número de espécies de peixes encontrada;
+
+**`r names(res)[11]`**: captura (kg) por unidade de esforço;
+
+
+## Unidades amostrais e descritores
+
+Esta tabela está organizada em um formato muito específico em que cada linha representa uma **unidade amostral (UA)** e cada coluna representa uma **variável (VA)** que descreve determinada característica desta observação. Ao longo desta apostila veremos diversos conjuntos de dados, todos eles organizados neste formato.
+
+```{r}
+linhas = 10
+data.frame(ID = paste('UA', 1:linhas, by = ' ')) %>%
+  mutate(`UA 1` = rep('', linhas), 
+         `UA 2` = rep('', linhas),
+         `UA 3` = rep('', linhas),
+         `UA 4` = rep('', linhas),
+         `UA 5` = rep('', linhas),
+         `UA 6` = rep('', linhas),
+         `UA 7` = rep('', linhas)) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 11)
+  #kable_classic(full_width = F, html_font = "Cambria", position = 'center')
+
+```
+
+Em nosso exemplo, cada unidade amostral é um reservatório que é descrito pelas variáveis dispostas nas colunas. O reservatório de `r res$Reservatorio[1]` por exemplo faz parte da bacia do rio `r res$Bacia[1]`, foi formado no ano de `r res$Fechamento[1]`, tem área de `r res$Area[1]` $km^2$, pH igual a `r res$pH[1]` e assim por diante.
+
+*Valores faltantes*: algumas células da tabela estão preenchidas por **NA**. Isto significa que a informação naquela célula **não foi mensurada** e que temos um **dado faltante**. Você deve ter muito cuidado ao lidar com este tipo de situação. Se uma linha contém muitas células sem informação, é prudente excluir esta observação das análises. Se por outro lado, uma coluna apresenta muitos valores faltantes, talvez seja prudente excluir a variável das análises. Se você não deseja ou não pode excluir a linha ou a coluna existem métodos de preenchimento de dados faltantes. No entanto, ao optar por algum destes métodos, você deve ter ter claro quais serão os efeitos de inserir uma informação à tabela de dados que efetivamente não foi mensurada.
+
+
+## Tipos de dados
+
+Uma tabela de dados pode ser composta por variáveis **quantitativas** ou **qualitativas**.
+
+### Variáveis qualitativas
+
+São variáveis **não-numéricas** como categorias ou rótulos. Dentre as variáveis qualitativas temos aquelas do tipo **categóricas não-ordenadas** e do tipo **categóricas ordenadas**. 
+
+*Variável categórica não-ordenada*: Em nossa tabela, a variável `Bacia` classifica um reservatório como pertencente a uma determinada bacia hidrográfica. Os *níveis* da variável `Bacia` são: ``r paste(unique(res$Bacia),collapse = ', ')``. A variável é do tipo categórica não-ordenada pois estes níveis não possuem qualquer relação de ordenação natural entre si.
+
+*Variável categórica ordenada*: a variável `Trofia` ordena os reserrvatórios como função da quantidade de nutrientes em ``r trofia_niveis``. Ainda que os níveis possam ser ordenados, não é possível atribuir diferenças numéricas entre eles, fazendo desta uma variável qualotativa.
+
+### Variáveis quantitativas
+
+São variáveis *numéricas* que também podem ser sub-dividicas em dois grupos: **discretas** e **contínuas**. 
+
+*Variáveis quantitativas discretas*: envolvem quantias *enumeráveis* como a contagem de barcos que saem para pescar em um determinado dia, o número de peixes de um cardume. Em nosso exemplo, a variável `Num_especies` é quantitativa discreta pois expressa o número de espécies de peixes encontradas em cada reservatório. Este é um número inteiro que pode assumir valor mínimo igual a 0 (nenhuma espécie) e em teoria, não tem limite superior (ainda que neste exemplo, o número máximo encontrados seja de `r max(res$Num_especies)` espécies).
+
+*Variáveis quantitativas contínuas*: envolvem quantias *não-enumeráveis* como a vazão em $m^3/seg$ que verte de uma cachoeira, o volume de chuva em um determinado dia, altura da maré ou a velocidade do vento. O limite de precisão que utilizamos para representá-las depende basicamente da capacidade de mensuração dos aparelhos disponíveis. Em nosso exemplo, temos diversas variáveis deste tipo como `pH`, `Condutividade`, `Fosforo_total`.
+
+> Sempre é possível transformar variáveis quantitativas em qualitativas. Se temos a variável comprimento de peixes desembarcados dada em centímetros (variável quantitativa), é possível expressa-la de forma cetagórica em peixes grandes e pequenos (variável qualitativa). Por outro lado se tivermos somente a informação de que um peixe é grande ou pequeno, não podemos recuperar as quantias numéricas originais.
+
+## Níveis de mensuração
+
+Uma outra forma de organizar variáveis pode ser em função dos níveis de mensuração **nominal**, **ordinal**, **intervalar** e **razão**.
+
+**Nível nominal**: é característico de variáveis que possuem níveis não ordenaveis. Ex. cor, grupo taxonômico, nomes de cidades, etc.
+
+**Nível ordinal**: é aquele em que os níveis podem ser ordenados, embora não seja possível quantificar as diferenças entre dois níveis. Ex. i - Ordem de chegada de maratonistas em uma competição ($1^o$, $2^o$, $3^o$,...). ii - Condição de saneamento das cidades (ótimo, bom, ruim, péssimo). iii - Condição de saneamento das praias da baixada santista (próprio, imprórpio). No nível ordinal podemos ordenar os elementos porém não podemos quantificar as diferenças entre eles.
+
+**Nível intervalar**: é aquele em que além ser possível ordenar, é possível quantificar as diferenças entre duas observações. No entanto, não há um ponto inicial natural, ou seja, um ponto zero que indique ausência da quantia. Ex. i – *Temperatura*: $0^oC$ não indica ausência de temperatura, assim como $10^oC$ não é duas vezes mais quente que $5^oC$. Essas características são somente uma convenção relacionada à escala de mensuração da temperatura. ii - *Ano do calendário*: o ano zero é uma convenção do calendário, não significa ausência de tempo.
+
+**Nível de razão**: é como o intervalar, porém existe um ponto zero natural. Peso igual a 0 kg indica ausência de peso e dez quilogramas é duas vezes mais pesado que 5 kg. O mesmo vale para comprimento, distância, velocidade, número de ovos. 
+
+A depender do nível de mensuração, algumas operações matemáticas podem ou não fazer sentido. Por exemplo, se uma espécie tem $N_A = 100$ indivíduos na região A e $N_B = 200$ na região B, a segunda região é duas vezes mais populosa pois $\frac{N_B}{N_A} = 2$. Por outro lado, se a temperatura na região A é de $T_A = 10^oC$ enquanto na B é de $T_B = 20^oC$ não faz sentido fazer $\frac{T_B}{T_A} = 2$ e dizer que B seja duas vezes mais quente que A. Ainda que matematicamente a operação seja possível nos dois exemplos, no último sua interpretação física não tem sentido.
+
+> *Tipos de dados vs níveis de mensuração*: existe uma relação entre tipo de dados e nível de mensuração. Os níveis nominal e ordinal de mensuração se referem a variáveis qualitativas não-ordenadas e qualitativas ordenadas respectivamente. Já os níveis intervalar e razão se referem a variáveis quantitativos, podendo ser discretas ou contínuas.
+
+```{r, fig.align='center'}
+image_read('figs/Niveis_de_mensuracao.jpg') %>% image_scale("x600")
+
+```
+
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+

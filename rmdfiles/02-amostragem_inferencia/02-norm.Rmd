@@ -1,7 +1,7 @@
 # Alguns fenômenos têm distribuição normal {#normdist}
 
 ```{r, echo=FALSE}
-ie = read.csv("datasets/IE_BICT_2019.csv", sep = ",", dec = ",")
+ie = read.csv("datasets/IE_BICT_2019.csv", sep = ";", dec = ",")
 ```
 
 No capítulo  \@ref(amostrmedias), a distribuição das médias amostrais foi apresentada como um histograma em forma de sino. Este histograma é **simétrico** ao redor de $\mu$. A curva teórica que representa esta distribuição é chamada de **Distribuição Normal** ou **Distribuição Gaussiana**, ou **Distribuição Normal de Probabilidades**. 

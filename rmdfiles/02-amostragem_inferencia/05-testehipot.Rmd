@@ -189,11 +189,11 @@ $\overline{X} = \frac{\sum{X_i}}{n} = \frac{`r paste(BM, collapse = "+")`}{`r n 
 
 e um erro padrão de:
 
-$\overline{X} = \frac{\sigma}{\sqrt{n}} = \frac{`r dp`}{`r round(sqrt(n),2)`} = `r round(ep,2)`$
+$\sigma_{\mu} = \frac{\sigma}{\sqrt{n}} = \frac{`r dp`}{`r round(sqrt(n),2)`} = `r round(ep,2)`$
 
 Com estes resultados encontramos o valor correspondente de Z.
 
-$z = \frac{\overline{X} - \mu}{\sigma_{\overline{X}}} = \frac{`r round(mean(BM),2)` - `r mu`}{`r round(ep,2)`} = `r round(z,2)`$
+$z = \frac{\overline{X} - \mu}{\sigma_{\mu}} = \frac{`r round(mean(BM),2)` - `r mu`}{`r round(ep,2)`} = `r round(z,2)`$
 
 Utilizando a Tabela Z, encontramos a probabilidade de obtermos valores tão ou mais extremos que $-`r round(z,2)`$ e $+`r round(z,2)`$.
 

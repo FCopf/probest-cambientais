@@ -104,7 +104,7 @@ ggplot(data = data.frame(x = c(-4,4)),
 
 ```
 
-Para amostras pequenas ($n = `r n1`$) o formato da distribuição de $t$ é distinto da distribuição normal. No entanto, para tamanhos amostrais maiores ($n = `r n3`$) as o formato da distribuição $t$ tende a a convergir para o mesmo formato a distribuição normal. Esta característica impica que a área a partir de um determinado limite $t_i$ não é constante como na distribuição normal, mas *depende do tamanho da amostra*, como pode ser visto abaixo.
+Para amostras pequenas ($n = `r n1`$) o formato da distribuição de $t$ é distinto da distribuição normal. No entanto, para tamanhos amostrais maiores ($n = `r n3`$) as o formato da distribuição $t$ tende a a convergir para o mesmo formato a distribuição normal. Esta característica implica que a área a partir de um determinado limite $t_i$ não é constante como na distribuição normal, mas *depende do tamanho da amostra*, como pode ser visto abaixo.
 
 ```{r, fig.align = "center", fig.width = 4, fig.height = 16}
 tam <- 20

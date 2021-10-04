@@ -9,8 +9,10 @@ clean: ["estatistica-livro.bbl", "R-packages.bib"]
 rmd_files: ["index.Rmd"
 
             ,"rmdfiles/01-estatistica_descritiva/00-PART-estatdescr.Rmd"
-            ,"rmdfiles/01-estatistica_descritiva/01-descrit.Rmd"
-            ,"rmdfiles/01-estatistica_descritiva/02-posicao.Rmd"
+            ,"rmdfiles/01-estatistica_descritiva/01-estr_dados.Rmd"
+            ,"rmdfiles/01-estatistica_descritiva/02-proc_dados.Rmd"
+            ,"rmdfiles/01-estatistica_descritiva/02-descrit.Rmd"
+            ,"rmdfiles/01-estatistica_descritiva/03-posicao.Rmd"
 
             ,"rmdfiles/02-amostragem_inferencia/00-PART-inferencia.Rmd"
             ,"rmdfiles/02-amostragem_inferencia/01-amostragem.Rmd"

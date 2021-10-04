@@ -4,7 +4,7 @@ author:
   - Fabio Cop Ferreira
   - fabiocopf@gmail.com; fcferreira@unifesp.br
   - Instituto do Mar, Universidade Federal de São Paulo
-date: "`r Sys.Date()`"
+date: "Última atualização em `r format(Sys.Date(), '%d/%m/%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -42,12 +42,15 @@ library(knitr)
 library(grid)
 library(gridExtra)
 library(DT)
+library(kableExtra)
 
 require(reshape2)
 library(DiagrammeR)
 
 library(plotrix)
 library(circlize)
+
+library(palmerpenguins)
 
 ```
 
