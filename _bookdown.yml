@@ -9,8 +9,9 @@ clean: ["estatistica-livro.bbl", "R-packages.bib"]
 rmd_files: ["index.Rmd"
 
             ,"rmdfiles/01-estatistica_descritiva/00-PART-estatdescr.Rmd"
-            ,"rmdfiles/01-estatistica_descritiva/01-estr_dados.Rmd"
-            ,"rmdfiles/01-estatistica_descritiva/02-proc_dados.Rmd"
+            ,"rmdfiles/01-estatistica_descritiva/01-estrdados.Rmd"
+            ,"rmdfiles/01-estatistica_descritiva/02-procdados.Rmd"
+            ,"rmdfiles/01-estatistica_descritiva/03-resqualit.Rmd"
             ,"rmdfiles/01-estatistica_descritiva/02-descrit.Rmd"
             ,"rmdfiles/01-estatistica_descritiva/03-posicao.Rmd"
 

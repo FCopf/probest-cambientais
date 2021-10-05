@@ -1,4 +1,4 @@
-# Estrutura e tipo de dados {#estr_dados}
+# Estrutura e tipo de dados {#estrdados}
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
@@ -108,7 +108,7 @@ A depender do nível de mensuração, algumas operações matemáticas podem ou 
 > *Tipos de dados vs níveis de mensuração*: existe uma relação entre tipo de dados e nível de mensuração. Os níveis nominal e ordinal de mensuração se referem a variáveis qualitativas não-ordenadas e qualitativas ordenadas respectivamente. Já os níveis intervalar e razão se referem a variáveis quantitativos, podendo ser discretas ou contínuas.
 
 ```{r, fig.align='center'}
-image_read('figs/Niveis_de_mensuracao.jpg') %>% image_scale("x600")
+image_read('figs/Niveis_de_mensuracao.png') %>% image_scale("x600")
 
 ```
 

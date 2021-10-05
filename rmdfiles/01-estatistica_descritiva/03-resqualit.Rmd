@@ -1,0 +1,45 @@
+# Descrevendo variáveis qualitativas {#resqualit}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+```
+
+Variáveis qualitativas podem ser categóricas não-ordenadas our categóricas ordenadas. A descrição de variáveis desta natureza se dá por meio da contagem e da representação dos níveis destas variáveis por meio da contagem total, pelos valores relativos ou percentuais. 
+
+Carregue o pacote `tidyverse` e importe novamente a base de dados `Reservatorios_Parana_parcial.csv`.
+
+
+```{r}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('datasets/Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+```{r, echo = TRUE, eval=FALSE}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+Na tabela, temos 3 variáveis categóricas: `Reservatorio`, `Bacia` e `Trofia`. A primeira é individual, cada reservatório tem um nome. A segunda é uma variável categórica não-ordenada e a segunda uma variável categórica ordenada.
+
+## Representação em tabelas de frequência
+
+
+## Reordenando categorias
+
+
+## Representação gráfica
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+
