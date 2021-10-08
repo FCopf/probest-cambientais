@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.7.15)  5 OCT 2021 18:25
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.7.15)  7 OCT 2021 20:09
  restricted system commands enabled.
 **probest-cambientais.tex
 (./probest-cambientais.tex
@@ -1134,7 +1134,7 @@ trófico < Mesotrófico <
  []
 
 [16]
-<probest-cambientais_files/figure-latex/unnamed-chunk-5-1.png, id=752, 325.653p
+<probest-cambientais_files/figure-latex/unnamed-chunk-5-1.png, id=762, 325.653p
 t x 131.4pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-5-1.png Graphic file
  (type png)
@@ -1149,1208 +1149,1601 @@ Underfull \hbox (badness 1596) in paragraph at lines 322--323
 \TU/lmr/m/n/10 Tabelas de da-dos como a ap-re-sen-tada no capí-tulo []1[] são nor-mal-mente
  []
 
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 336.
 [19
 
 ]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 340.
-[20]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 393.
-[21]
-Overfull \hbox (122.25pt too wide) in paragraph at lines 463--463
+Underfull \hbox (badness 2384) in paragraph at lines 342--344
+[]\TU/lmr/m/n/10 Após criar o di-retório copie para den-tro dele a base de da-
+dos
+ []
+
+
+Underfull \hbox (badness 2376) in paragraph at lines 342--344
+\TU/lmtt/m/n/10 Reservatorios_Parana_parcial.csv\TU/lmr/m/n/10 . A base está di
+sponível no
+ []
+
+[20] [21]
+Underfull \hbox (badness 1502) in paragraph at lines 445--446
+[]\TU/lmr/m/n/10 O co-mando acima im-porta para o R os da-dos da tabela de-nom-i
+-nada
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 445--446
+\TU/lmtt/m/n/10 Reservatorios_Parana_parcial.csv \TU/lmr/m/n/10 e cria um ob-jet
+o de-nom-i-nado \TU/lmtt/m/n/10 res
+ []
+
+
+Overfull \hbox (122.25pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##    Reservatorio Bacia  Fechamento   Area Trofia          pH
  Condutividade Alcalinidade[] 
  []
 
 
-Overfull \hbox (122.25pt too wide) in paragraph at lines 463--463
+Overfull \hbox (122.25pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##    <chr>        <chr>       <dbl>  <dbl> <chr>        <dbl>
          <dbl>        <dbl>[] 
  []
 
 
-Overfull \hbox (117.0pt too wide) in paragraph at lines 463--463
+Overfull \hbox (117.0pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  1 Cavernoso    Iguacu       1965   2.9  Oligotrófico   7.
 4          33.1        140.[] 
  []
 
 
-Overfull \hbox (117.0pt too wide) in paragraph at lines 463--463
+Overfull \hbox (117.0pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  2 Curucaca     Iguacu       1982   2    Oligotrófico   7            32.4        126.[] 
  []
 
 
-Overfull \hbox (111.75pt too wide) in paragraph at lines 463--463
+Overfull \hbox (111.75pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  3 Foz do Areia Iguacu       1980 139    Oligotrófico   7.
 3          35.5         97[] 
  []
 
 
-Overfull \hbox (122.25pt too wide) in paragraph at lines 463--463
+Overfull \hbox (122.25pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  4 Irai         Iguacu       2000  15    Eutrófico      6.
 9          50.2          3.3[] 
  []
 
 
-Overfull \hbox (122.25pt too wide) in paragraph at lines 463--463
+Overfull \hbox (122.25pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  5 JMF          Iguacu       1970   0.45 Mesotrófico    7.
 3          40.2          3.7[] 
  []
 
 
-Overfull \hbox (117.0pt too wide) in paragraph at lines 463--463
+Overfull \hbox (117.0pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  6 Jordao       Iguacu       1996   3.4  Oligotrófico   7.
 1          23.7        153.[] 
  []
 
 
-Overfull \hbox (111.75pt too wide) in paragraph at lines 463--463
+Overfull \hbox (111.75pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  7 Passauna     Iguacu       1978  14    Oligotrófico   8.
 8         126.         526[] 
  []
 
 
-Overfull \hbox (122.25pt too wide) in paragraph at lines 463--463
+Overfull \hbox (122.25pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  8 Piraquara    Iguacu       1979   3.3  Oligotrófico   7.
 1          22.8         50.7[] 
  []
 
 
-Overfull \hbox (111.75pt too wide) in paragraph at lines 463--463
+Overfull \hbox (111.75pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ##  9 Salto Caxias Iguacu       1998 124    Oligotrófico   7.
 3          39.6        106[] 
  []
 
 
-Overfull \hbox (111.75pt too wide) in paragraph at lines 463--463
+Overfull \hbox (111.75pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ## 10 Salto do Vau Iguacu       1959   2.9  Oligotrófico   6.
 5          23.2        279[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 463--463
+Overfull \hbox (69.75pt too wide) in paragraph at lines 482--482
 []\TU/lmtt/m/n/10 ## # ... with 21 more rows, and 3 more variables: P.total <dbl
 >, Riqueza <dbl>,[] 
  []
 
 [22]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Reservatorio  <chr> "Cavernoso", "Curucaca", "Foz do Arei
 a", "Irai", "JMF", ~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Bacia         <chr> "Iguacu", "Iguacu", "Iguacu", "Iguacu
 ", "Iguacu", "Iguac~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Fechamento    <dbl> 1965, 1982, 1980, 2000, 1970, 1996, 
 1978, 1979, 1998, 19~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Area          <dbl> 2.90, 2.00, 139.00, 15.00, 0.45, 3.40
 , 14.00, 3.30, 124.~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Trofia        <chr> "Oligotrófico", "Oligotrófico", "Ol
 igotrófico", "Eutrófi~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ pH            <dbl> 7.4, 7.0, 7.3, 6.9, 7.3, 7.1, 8.8, 7.
 1, 7.3, 6.5, 8.6, 9~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Condutividade <dbl> 33.1, 32.4, 35.5, 50.2, 40.2, 23.7, 
 125.6, 22.8, 39.6, 2~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Alcalinidade  <dbl> 139.80, 125.70, 97.00, 3.30, 3.70, 15
 2.70, 526.00, 50.67~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ P.total       <dbl> 7.8, 4.7, 14.3, 53.4, 41.2, 3.3, 15.2
 , 4.5, 12.1, 11.0, ~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ Riqueza       <dbl> 18, 16, 19, 12, 18, 17, 11, 8, 21, 8,
  24, 21, 22, 15, 10~[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 498--498
+Overfull \hbox (85.5pt too wide) in paragraph at lines 519--519
 []\TU/lmtt/m/n/10 ## $ CPUE          <dbl> 9.22, 28.73, 11.59, 30.76, 5.95, 7.75
 , 7.51, 4.01, 20.83~[] 
  []
 
 [23]
-Overfull \hbox (133.00803pt too wide) in paragraph at lines 614--658
- [][] 
- []
-
-[24] [25] [26]
-Overfull \hbox (10.46402pt too wide) in paragraph at lines 788--832
- [][] 
- []
-
-[27] [28] [29]
-Overfull \hbox (10.46402pt too wide) in paragraph at lines 848--892
- [][] 
- []
-
-[30]
-Overfull \hbox (192.52003pt too wide) in paragraph at lines 911--926
- [][] 
+Overfull \hbox (122.25pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##    Reservatorio Bacia  Fechamento   Area Trofia          pH
+ Condutividade Alcalinidade[] 
  []
 
 
-Overfull \hbox (178.99203pt too wide) in paragraph at lines 940--975
+Overfull \hbox (122.25pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##    <chr>        <chr>       <dbl>  <dbl> <chr>        <dbl>
+         <dbl>        <dbl>[] 
+ []
+
+
+Overfull \hbox (117.0pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  1 Cavernoso    Iguacu       1965   2.9  Oligotrófico   7.
+4          33.1        140.[] 
+ []
+
+
+Overfull \hbox (117.0pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  2 Curucaca     Iguacu       1982   2    Oligotrófico   7            32.4        126.[] 
+ []
+
+
+Overfull \hbox (111.75pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  3 Foz do Areia Iguacu       1980 139    Oligotrófico   7.
+3          35.5         97[] 
+ []
+
+
+Overfull \hbox (122.25pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  4 Irai         Iguacu       2000  15    Eutrófico      6.
+9          50.2          3.3[] 
+ []
+
+
+Overfull \hbox (122.25pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  5 JMF          Iguacu       1970   0.45 Mesotrófico    7.
+3          40.2          3.7[] 
+ []
+
+
+Overfull \hbox (117.0pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  6 Jordao       Iguacu       1996   3.4  Oligotrófico   7.
+1          23.7        153.[] 
+ []
+
+
+Overfull \hbox (111.75pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  7 Passauna     Iguacu       1978  14    Oligotrófico   8.
+8         126.         526[] 
+ []
+
+
+Overfull \hbox (122.25pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  8 Piraquara    Iguacu       1979   3.3  Oligotrófico   7.
+1          22.8         50.7[] 
+ []
+
+
+Overfull \hbox (111.75pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ##  9 Salto Caxias Iguacu       1998 124    Oligotrófico   7.
+3          39.6        106[] 
+ []
+
+
+Overfull \hbox (111.75pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ## 10 Salto do Vau Iguacu       1959   2.9  Oligotrófico   6.
+5          23.2        279[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10 ## # ... with 21 more rows, and 3 more variables: P.total <dbl
+>, Riqueza <dbl>,[] 
+ []
+
+[24]
+Overfull \hbox (133.00803pt too wide) in paragraph at lines 669--713
  [][] 
  []
 
 
-Overfull \hbox (171.20804pt too wide) in paragraph at lines 993--1007
+Overfull \hbox (10.46402pt too wide) in paragraph at lines 849--893
+ [][] 
+ []
+
+[25] [26] [27] [28] [29] [30]
+Overfull \hbox (198.57603pt too wide) in paragraph at lines 911--955
+ [][] 
+ []
+
+[31]
+Overfull \hbox (192.52003pt too wide) in paragraph at lines 976--991
  [][] 
  []
 
 
-Overfull \hbox (171.20804pt too wide) in paragraph at lines 1021--1037
- [][] 
- []
-
-[31] [32]
-Overfull \hbox (231.10403pt too wide) in paragraph at lines 1055--1099
+Overfull \hbox (178.99203pt too wide) in paragraph at lines 1007--1042
  [][] 
  []
 
 
-Overfull \hbox (228.74403pt too wide) in paragraph at lines 1114--1158
+Overfull \hbox (171.20804pt too wide) in paragraph at lines 1066--1080
+ [][] 
+ []
+
+[32] [33]
+Overfull \hbox (171.20804pt too wide) in paragraph at lines 1096--1112
  [][] 
  []
 
 
-Underfull \vbox (badness 2653) has occurred while \output is active []
-
-[33] [34]
-Overfull \hbox (261.13606pt too wide) in paragraph at lines 1177--1221
+Overfull \hbox (231.10403pt too wide) in paragraph at lines 1130--1174
  [][] 
  []
 
-[35] [36
 
-]
+Overfull \hbox (228.74403pt too wide) in paragraph at lines 1192--1236
+ [][] 
+ []
+
+[34] [35] [36]
+Overfull \hbox (276.24007pt too wide) in paragraph at lines 1256--1300
+ [][] 
+ []
+
+[37] [38]
 Chapter 3.
 
-Underfull \hbox (badness 2334) in paragraph at lines 1228--1229
+Underfull \hbox (badness 2334) in paragraph at lines 1333--1334
 []\TU/lmr/m/n/10 Car-regue o pa-cote \TU/lmtt/m/n/10 tidyverse \TU/lmr/m/n/10 e im-porte no-va-mente a base de da-dos
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[37] [38]
-Chapter 4.
-<probest-cambientais_files/figure-latex/unnamed-chunk-55-1.pdf, id=883, 1003.75
-pt x 599.23875pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-55-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-55-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-5
-5-1.pdf  used on input line 1258.
-(luatex.def)             Requested size: 345.00758pt x 205.96953pt.
 [39
 
-<./probest-cambientais_files/figure-latex/unnamed-chunk-55-1.pdf>]
-Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 40 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
-EM TABELAS E GRÁ-FI-COS
+] [40]
+Overfull \hbox (3.7678pt too wide) in paragraph at lines 1452--1452
+[]\TU/lmr/bx/n/14.4 Tabelas de fre-quên-cia para var-iáveis categóri-
  []
 
-[40]
-Underfull \vbox (badness 1360) has occurred while \output is active []
+
+Overfull \hbox (53.2034pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 3.2.  TABELAS DE FRE-QUÊN-CIA PARA VAR-IÁVEIS CATEGÓRI-CAS OR
+-DE-NADAS \TU/lmr/m/n/10 41
+ []
 
 [41]
-Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 42 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
-EM TABELAS E GRÁ-FI-COS
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Reservatorio  <chr> "Cavernoso", "Curucaca", "Foz do Arei
+a", "Irai", "JMF", ~[] 
  []
 
-[42] [43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 44 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
-EM TABELAS E GRÁ-FI-COS
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Bacia         <chr> "Iguacu", "Iguacu", "Iguacu", "Iguacu
+", "Iguacu", "Iguac~[] 
  []
 
-[44]
-Underfull \vbox (badness 1831) has occurred while \output is active []
 
-[45]
-<probest-cambientais_files/figure-latex/unnamed-chunk-68-1.pdf, id=971, 722.7pt
- x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-68-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-68-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-6
-8-1.pdf  used on input line 1580.
-(luatex.def)             Requested size: 344.99533pt x 172.49767pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-69-1.pdf, id=972, 722.7pt
- x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-69-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-69-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-6
-9-1.pdf  used on input line 1584.
-(luatex.def)             Requested size: 344.99533pt x 137.99812pt.
-
-Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 46 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
-EM TABELAS E GRÁ-FI-COS
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Fechamento    <dbl> 1965, 1982, 1980, 2000, 1970, 1996, 
+1978, 1979, 1998, 19~[] 
  []
 
-[46<./probest-cambientais_files/figure-latex/unnamed-chunk-68-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-70-1.pdf, id=984, 361.35p
-t x 1084.05pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-70-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-70-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-0-1.pdf  used on input line 1595.
-(luatex.def)             Requested size: 183.33769pt x 550.01309pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[47<./probest-cambientais_files/figure-latex/unnamed-chunk-69-1.pdf>]
-Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 48 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
-EM TABELAS E GRÁ-FI-COS
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Area          <dbl> 2.90, 2.00, 139.00, 15.00, 0.45, 3.40
+, 14.00, 3.30, 124.~[] 
  []
 
-[48<./probest-cambientais_files/figure-latex/unnamed-chunk-70-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-71-1.pdf, id=1003, 1003.7
-5pt x 599.23875pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-71-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-71-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-1-1.pdf  used on input line 1602.
-(luatex.def)             Requested size: 345.00758pt x 205.96953pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-72-1.pdf, id=1004, 578.16
-pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-72-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-72-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-2-1.pdf  used on input line 1606.
-(luatex.def)             Requested size: 344.99312pt x 172.49655pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Trofia        <chr> "Oligotrófico", "Oligotrófico", "Ol
+igotrófico", "Eutrófi~[] 
+ []
 
-[49<./probest-cambientais_files/figure-latex/unnamed-chunk-71-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-73-1.pdf, id=1047, 578.16
-pt x 289.08pt>
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ pH            <dbl> 7.4, 7.0, 7.3, 6.9, 7.3, 7.1, 8.8, 7.
+1, 7.3, 6.5, 8.6, 9~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Condutividade <dbl> 33.1, 32.4, 35.5, 50.2, 40.2, 23.7, 
+125.6, 22.8, 39.6, 2~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Alcalinidade  <dbl> 139.80, 125.70, 97.00, 3.30, 3.70, 15
+2.70, 526.00, 50.67~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ P.total       <dbl> 7.8, 4.7, 14.3, 53.4, 41.2, 3.3, 15.2
+, 4.5, 12.1, 11.0, ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ Riqueza       <dbl> 18, 16, 19, 12, 18, 17, 11, 8, 21, 8,
+ 24, 21, 22, 15, 10~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10 ## $ CPUE          <dbl> 9.22, 28.73, 11.59, 30.76, 5.95, 7.75
+, 7.51, 4.01, 20.83~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Reservatorio  <chr> "Cavernoso", "Curucaca", "Foz do Arei
+a", "Irai", "JMF", ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Bacia         <chr> "Iguacu", "Iguacu", "Iguacu", "Iguacu
+", "Iguacu", "Iguac~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Fechamento    <dbl> 1965, 1982, 1980, 2000, 1970, 1996, 
+1978, 1979, 1998, 19~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Area          <dbl> 2.90, 2.00, 139.00, 15.00, 0.45, 3.40
+, 14.00, 3.30, 124.~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Trofia        <ord> Oligotrófico, Oligotrófico, Oligotr
+ófico, Eutrófico, Mes~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ pH            <dbl> 7.4, 7.0, 7.3, 6.9, 7.3, 7.1, 8.8, 7.
+1, 7.3, 6.5, 8.6, 9~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Condutividade <dbl> 33.1, 32.4, 35.5, 50.2, 40.2, 23.7, 
+125.6, 22.8, 39.6, 2~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Alcalinidade  <dbl> 139.80, 125.70, 97.00, 3.30, 3.70, 15
+2.70, 526.00, 50.67~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ P.total       <dbl> 7.8, 4.7, 14.3, 53.4, 41.2, 3.3, 15.2
+, 4.5, 12.1, 11.0, ~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ Riqueza       <dbl> 18, 16, 19, 12, 18, 17, 11, 8, 21, 8,
+ 24, 21, 22, 15, 10~[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10 ## $ CPUE          <dbl> 9.22, 28.73, 11.59, 30.76, 5.95, 7.75
+, 7.51, 4.01, 20.83~[] 
+ []
+
+[42]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1561--1561
+[]\TU/lmtt/m/n/10 ##  [1] Oligotrófico Oligotrófico Oligotrófico Eutrófico 
+   Mesotrófico[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1561--1561
+[]\TU/lmtt/m/n/10 ##  [6] Oligotrófico Oligotrófico Oligotrófico Oligotrófic
+o Oligotrófico[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1561--1561
+[]\TU/lmtt/m/n/10 ## [11] Oligotrófico Oligotrófico Oligotrófico Oligotrófic
+o Mesotrófico[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1561--1561
+[]\TU/lmtt/m/n/10 ## [16] Oligotrófico Oligotrófico Oligotrófico Mesotrófico
+  Oligotrófico[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1561--1561
+[]\TU/lmtt/m/n/10 ## [21] Oligotrófico Oligotrófico Oligotrófico <NA>       
+  Oligotrófico[] 
+ []
+
+
+Overfull \hbox (53.2034pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 3.2.  TABELAS DE FRE-QUÊN-CIA PARA VAR-IÁVEIS CATEGÓRI-CAS OR
+-DE-NADAS \TU/lmr/m/n/10 43
+ []
+
+[43]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1652.
+<probest-cambientais_files/figure-latex/unnamed-chunk-73-1.pdf, id=917, 469.755
+pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-73-1.pdf Graphic fil
 e (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-73-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-3-1.pdf  used on input line 1612.
-(luatex.def)             Requested size: 344.99312pt x 172.49655pt.
-
-Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 50 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
-EM TABELAS E GRÁ-FI-COS
- []
-
-[50<./probest-cambientais_files/figure-latex/unnamed-chunk-72-1.pdf><./probest-c
-ambientais_files/figure-latex/unnamed-chunk-73-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-74-1.pdf, id=1060, 578.16
-pt x 289.08pt>
+3-1.pdf  used on input line 1668.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[44]
+<probest-cambientais_files/figure-latex/unnamed-chunk-74-1.pdf, id=927, 469.755
+pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-74-1.pdf Graphic fil
 e (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-74-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-4-1.pdf  used on input line 1616.
-(luatex.def)             Requested size: 344.99312pt x 172.49655pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-75-1.pdf, id=1061, 433.62
-pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-75-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-75-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-5-1.pdf  used on input line 1620.
-(luatex.def)             Requested size: 275.01482pt x 550.02965pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[51<./probest-cambientais_files/figure-latex/unnamed-chunk-74-1.pdf>]
-Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 52 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
-EM TABELAS E GRÁ-FI-COS
- []
-
-[52<./probest-cambientais_files/figure-latex/unnamed-chunk-75-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-76-1.pdf, id=1079, 252.94
-5pt x 216.81pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-76-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-76-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-6-1.pdf  used on input line 1629.
-(luatex.def)             Requested size: 252.94823pt x 216.81276pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-77-1.pdf, id=1080, 361.35
-pt x 216.81pt>
+4-1.pdf  used on input line 1695.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[45<./probest-cambientais_files/figure-latex/unnamed-chunk-73-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-77-1.pdf, id=936, 469.755
+pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-77-1.pdf Graphic fil
 e (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-77-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-7-1.pdf  used on input line 1635.
-(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
-[53<./probest-cambientais_files/figure-latex/unnamed-chunk-76-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-78-1.pdf, id=1091, 361.35
-pt x 505.89pt>
+7-1.pdf  used on input line 1724.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[46<./probest-cambientais_files/figure-latex/unnamed-chunk-74-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-78-1.pdf, id=945, 469.755
+pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-78-1.pdf Graphic fil
 e (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-78-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-8-1.pdf  used on input line 1639.
+8-1.pdf  used on input line 1735.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[47<./probest-cambientais_files/figure-latex/unnamed-chunk-77-1.pdf><./probest-c
+ambientais_files/figure-latex/unnamed-chunk-78-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf, id=958, 469.755
+pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
+9-1.pdf  used on input line 1753.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-80-1.pdf, id=959, 469.755
+pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-80-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-80-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
+0-1.pdf  used on input line 1766.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[48<./probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-81-1.pdf, id=968, 469.755
+pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-81-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-81-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
+1-1.pdf  used on input line 1778.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[49<./probest-cambientais_files/figure-latex/unnamed-chunk-80-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-82-1.pdf, id=977, 469.755
+pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-82-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-82-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
+2-1.pdf  used on input line 1797.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[50<./probest-cambientais_files/figure-latex/unnamed-chunk-81-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-83-1.pdf, id=986, 469.755
+pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-83-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-83-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
+3-1.pdf  used on input line 1808.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[51<./probest-cambientais_files/figure-latex/unnamed-chunk-82-1.pdf><./probest-c
+ambientais_files/figure-latex/unnamed-chunk-83-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf, id=1000, 469.75
+5pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
+5-1.pdf  used on input line 1837.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[52<./probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-86-1.pdf, id=1009, 469.75
+5pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-86-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-86-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
+6-1.pdf  used on input line 1850.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[53<./probest-cambientais_files/figure-latex/unnamed-chunk-86-1.pdf>] [54
+
+]
+Chapter 4.
+
+Underfull \hbox (badness 2334) in paragraph at lines 1859--1860
+[]\TU/lmr/m/n/10 Car-regue o pa-cote \TU/lmtt/m/n/10 tidyverse \TU/lmr/m/n/10 e im-porte no-va-mente a base de da-dos
+ []
+
+[55] [56
+
+]
+Chapter 5.
+<probest-cambientais_files/figure-latex/unnamed-chunk-94-1.pdf, id=1033, 1003.7
+5pt x 599.23875pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-94-1.pdf Graphic fil
+e (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-94-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-9
+4-1.pdf  used on input line 1880.
+(luatex.def)             Requested size: 345.00758pt x 205.96953pt.
+[57<./probest-cambientais_files/figure-latex/unnamed-chunk-94-1.pdf>]
+Overfull \hbox (27.5145pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 58 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+EM TABELAS E GRÁ-FI-COS
+ []
+
+[58]
+Underfull \vbox (badness 1360) has occurred while \output is active []
+
+[59]
+Overfull \hbox (27.5145pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 60 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+EM TABELAS E GRÁ-FI-COS
+ []
+
+[60] [61]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (27.5145pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 62 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+EM TABELAS E GRÁ-FI-COS
+ []
+
+[62]
+Underfull \vbox (badness 1831) has occurred while \output is active []
+
+[63]
+<probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf, id=1121, 722.7
+pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+07-1.pdf  used on input line 2202.
+(luatex.def)             Requested size: 344.99533pt x 172.49767pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf, id=1122, 722.7
+pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+08-1.pdf  used on input line 2206.
+(luatex.def)             Requested size: 344.99533pt x 137.99812pt.
+
+Overfull \hbox (27.5145pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 64 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+EM TABELAS E GRÁ-FI-COS
+ []
+
+[64<./probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-109-1.pdf, id=1134, 361.3
+5pt x 1084.05pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-109-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-109-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+09-1.pdf  used on input line 2217.
+(luatex.def)             Requested size: 183.33769pt x 550.01309pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[65<./probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf>]
+Overfull \hbox (27.5145pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 66 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+EM TABELAS E GRÁ-FI-COS
+ []
+
+[66<./probest-cambientais_files/figure-latex/unnamed-chunk-109-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf, id=1153, 1003.
+75pt x 599.23875pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+10-1.pdf  used on input line 2224.
+(luatex.def)             Requested size: 345.00758pt x 205.96953pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-111-1.pdf, id=1154, 578.1
+6pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-111-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-111-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+11-1.pdf  used on input line 2228.
+(luatex.def)             Requested size: 344.99312pt x 172.49655pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[67<./probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-112-1.pdf, id=1197, 578.1
+6pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-112-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-112-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+12-1.pdf  used on input line 2234.
+(luatex.def)             Requested size: 344.99312pt x 172.49655pt.
+
+Overfull \hbox (27.5145pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 68 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+EM TABELAS E GRÁ-FI-COS
+ []
+
+[68<./probest-cambientais_files/figure-latex/unnamed-chunk-111-1.pdf><./probest-
+cambientais_files/figure-latex/unnamed-chunk-112-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf, id=1210, 578.1
+6pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+13-1.pdf  used on input line 2238.
+(luatex.def)             Requested size: 344.99312pt x 172.49655pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-114-1.pdf, id=1211, 433.6
+2pt x 867.24pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-114-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-114-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+14-1.pdf  used on input line 2242.
+(luatex.def)             Requested size: 275.01482pt x 550.02965pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[69<./probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf>]
+Overfull \hbox (27.5145pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 70 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+EM TABELAS E GRÁ-FI-COS
+ []
+
+[70<./probest-cambientais_files/figure-latex/unnamed-chunk-114-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-115-1.pdf, id=1228, 252.9
+45pt x 216.81pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-115-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-115-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+15-1.pdf  used on input line 2251.
+(luatex.def)             Requested size: 252.94823pt x 216.81276pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-116-1.pdf, id=1229, 361.3
+5pt x 216.81pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-116-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-116-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+16-1.pdf  used on input line 2257.
+(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
+[71<./probest-cambientais_files/figure-latex/unnamed-chunk-115-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-117-1.pdf, id=1241, 361.3
+5pt x 505.89pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-117-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-117-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+17-1.pdf  used on input line 2261.
 (luatex.def)             Requested size: 345.00084pt x 483.00116pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 54 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+\TU/lmr/m/n/10 72 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
 EM TABELAS E GRÁ-FI-COS
  []
 
-[54<./probest-cambientais_files/figure-latex/unnamed-chunk-77-1.pdf>] [55<./prob
-est-cambientais_files/figure-latex/unnamed-chunk-78-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf, id=1108, 361.35
-pt x 505.89pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-7
-9-1.pdf  used on input line 1643.
+[72<./probest-cambientais_files/figure-latex/unnamed-chunk-116-1.pdf>] [73<./pro
+best-cambientais_files/figure-latex/unnamed-chunk-117-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf, id=1258, 361.3
+5pt x 505.89pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+18-1.pdf  used on input line 2265.
 (luatex.def)             Requested size: 345.00084pt x 483.00116pt.
 
 Underfull \vbox (badness 3271) has occurred while \output is active []
 
 
 Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 56 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+\TU/lmr/m/n/10 74 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
 EM TABELAS E GRÁ-FI-COS
  []
 
-[56<./probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf>] [57]
+[74<./probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf>] [75]
 Overfull \hbox (27.5145pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 58 \TU/lmr/m/sl/10 CHAP-TER 4.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
+\TU/lmr/m/n/10 76 \TU/lmr/m/sl/10 CHAP-TER 5.  AP-RE-SEN-TANDO IN-FOR-MAÇÕES 
 EM TABELAS E GRÁ-FI-COS
  []
 
-[58
+[76
 
 ]
-Chapter 5.
-[59]
-<probest-cambientais_files/figure-latex/distrfreq-1.pdf, id=1133, 361.35pt x 36
+Chapter 6.
+[77]
+<probest-cambientais_files/figure-latex/distrfreq-1.pdf, id=1283, 361.35pt x 36
 1.35pt>
 File: probest-cambientais_files/figure-latex/distrfreq-1.pdf Graphic file (type
  pdf)
 <use probest-cambientais_files/figure-latex/distrfreq-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/distrfreq-1.pdf
-  used on input line 1692.
+  used on input line 2314.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
-[60] [61
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.5.1
+[78] [79
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.1
 '
 <./probest-cambientais_files/figure-latex/distrfreq-1.pdf>]
-Underfull \hbox (badness 1642) in paragraph at lines 1710--1711
+Underfull \hbox (badness 1642) in paragraph at lines 2332--2333
 []\TU/lmr/m/n/10 Con-sidere a questão lev-an-tada an-te-ri-or-mente: Qual o com
 -pri-mento de
  []
 
-[62]
-<probest-cambientais_files/figure-latex/amostr-1.pdf, id=1158, 469.755pt x 325.
+[80]
+<probest-cambientais_files/figure-latex/amostr-1.pdf, id=1307, 469.755pt x 325.
 215pt>
 File: probest-cambientais_files/figure-latex/amostr-1.pdf Graphic file (type pd
 f)
 <use probest-cambientais_files/figure-latex/amostr-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/amostr-1.pdf  u
-sed on input line 1735.
+sed on input line 2357.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[63
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.5.2
+[81
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.2
 '
 <./probest-cambientais_files/figure-latex/amostr-1.pdf>]
-<probest-cambientais_files/figure-latex/assimetr-1.pdf, id=1170, 867.24pt x 289
+<probest-cambientais_files/figure-latex/assimetr-1.pdf, id=1320, 867.24pt x 289
 .08pt>
 File: probest-cambientais_files/figure-latex/assimetr-1.pdf Graphic file (type 
 pdf)
 <use probest-cambientais_files/figure-latex/assimetr-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/assimetr-1.pdf 
- used on input line 1767.
+ used on input line 2389.
 (luatex.def)             Requested size: 344.99754pt x 114.99918pt.
-[64] [65
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.5.3
+[82] [83
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.3
 '
-<./probest-cambientais_files/figure-latex/assimetr-1.pdf>] [66]
-Overfull \hbox (39.68695pt too wide) in paragraph at lines 1855--1856
+<./probest-cambientais_files/figure-latex/assimetr-1.pdf>] [84]
+Overfull \hbox (39.68695pt too wide) in paragraph at lines 2477--2478
 $\TU/latinmodern-math.otf(1)/m/n/10 𝑠[] = []$ 
  []
 
-[67]
-<probest-cambientais_files/figure-latex/quartisfig-1.pdf, id=1214, 469.755pt x 
+[85]
+<probest-cambientais_files/figure-latex/quartisfig-1.pdf, id=1364, 469.755pt x 
 325.215pt>
 File: probest-cambientais_files/figure-latex/quartisfig-1.pdf Graphic file (typ
 e pdf)
 <use probest-cambientais_files/figure-latex/quartisfig-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/quartisfig-1.pd
-f  used on input line 1883.
+f  used on input line 2505.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[68
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.5.4
+[86
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.4
 '
-<./probest-cambientais_files/figure-latex/quartisfig-1.pdf>] [69]
-<probest-cambientais_files/figure-latex/boxquartis-1.pdf, id=1240, 216.81pt x 2
+<./probest-cambientais_files/figure-latex/quartisfig-1.pdf>] [87]
+<probest-cambientais_files/figure-latex/boxquartis-1.pdf, id=1390, 216.81pt x 2
 89.08pt>
 File: probest-cambientais_files/figure-latex/boxquartis-1.pdf Graphic file (typ
 e pdf)
 <use probest-cambientais_files/figure-latex/boxquartis-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/boxquartis-1.pd
-f  used on input line 1993.
+f  used on input line 2615.
 (luatex.def)             Requested size: 216.81938pt x 289.09251pt.
-<probest-cambientais_files/figure-latex/histbox-1.pdf, id=1241, 722.7pt x 433.6
+<probest-cambientais_files/figure-latex/histbox-1.pdf, id=1391, 722.7pt x 433.6
 2pt>
 File: probest-cambientais_files/figure-latex/histbox-1.pdf Graphic file (type p
 df)
 <use probest-cambientais_files/figure-latex/histbox-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/histbox-1.pdf  
-used on input line 2006.
+used on input line 2628.
 (luatex.def)             Requested size: 344.99533pt x 206.9972pt.
-[70
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.5.5
+[88
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.5
 '
-<./probest-cambientais_files/figure-latex/boxquartis-1.pdf>] [71
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.5.6
+<./probest-cambientais_files/figure-latex/boxquartis-1.pdf>] [89
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.6
 '
 <./probest-cambientais_files/figure-latex/histbox-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf, id=1267, 722.7p
-t x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
-5-1.pdf  used on input line 2106.
+<probest-cambientais_files/figure-latex/unnamed-chunk-124-1.pdf, id=1416, 722.7
+pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-124-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-124-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+24-1.pdf  used on input line 2728.
 (luatex.def)             Requested size: 344.99533pt x 172.49767pt.
-[72]
-Underfull \hbox (badness 2799) in paragraph at lines 2111--2111
+[90]
+Underfull \hbox (badness 2799) in paragraph at lines 2733--2733
 []\TU/lmr/bx/n/10 Val-ores es-per-a-dos de Z em uma dis-tribuição nor-mal
  []
 
 
-LaTeX Warning: Reference `normtlc' on page 73 undefined on input line 2113.
+LaTeX Warning: Reference `normtlc' on page 91 undefined on input line 2735.
 
-<probest-cambientais_files/figure-latex/distrnorm-1.pdf, id=1274, 433.62pt x 43
+<probest-cambientais_files/figure-latex/distrnorm-1.pdf, id=1423, 433.62pt x 43
 3.62pt>
 File: probest-cambientais_files/figure-latex/distrnorm-1.pdf Graphic file (type
  pdf)
 <use probest-cambientais_files/figure-latex/distrnorm-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/distrnorm-1.pdf
-  used on input line 2115.
+  used on input line 2737.
 (luatex.def)             Requested size: 345.01738pt x 345.01738pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[73<./probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf>] [74<./prob
-est-cambientais_files/figure-latex/distrnorm-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-88-1.pdf, id=1299, 722.7p
-t x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-88-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-88-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-8
-8-1.pdf  used on input line 2144.
+[91<./probest-cambientais_files/figure-latex/unnamed-chunk-124-1.pdf>] [92<./pro
+best-cambientais_files/figure-latex/distrnorm-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-127-1.pdf, id=1450, 722.7
+pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-127-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-127-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+27-1.pdf  used on input line 2766.
 (luatex.def)             Requested size: 344.99533pt x 137.99812pt.
 
 Overfull \hbox (229.1879pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 5.8.  VOL-UME DOS RESER-VATÓRIOS DA GRANDE SÃO PAULO: VI-SU-AL
--IZANDO ME-DI-DAS DE POSIÇÃO E VARI-AÇÃO \TU/lmr/m/n/10 75
+\TU/lmr/m/sl/10 6.8.  VOL-UME DOS RESER-VATÓRIOS DA GRANDE SÃO PAULO: VI-SU-AL
+-IZANDO ME-DI-DAS DE POSIÇÃO E VARI-AÇÃO \TU/lmr/m/n/10 93
  []
 
-[75<./probest-cambientais_files/figure-latex/unnamed-chunk-88-1.pdf>] [76
+[93<./probest-cambientais_files/figure-latex/unnamed-chunk-127-1.pdf>] [94
 
-] [77] [78]
-Chapter 6.
-[79
+] [95] [96]
+Chapter 7.
+[97
 
-] [80] [81]
-<probest-cambientais_files/figure-latex/unnamed-chunk-92-1.pdf, id=1339, 469.75
-5pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-92-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-92-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-9
-2-1.pdf  used on input line 2202.
+] [98] [99]
+<probest-cambientais_files/figure-latex/unnamed-chunk-131-1.pdf, id=1488, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-131-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-131-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+31-1.pdf  used on input line 2824.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[82
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.1
+[100
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.7.1
 '
-<./probest-cambientais_files/figure-latex/unnamed-chunk-92-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-93-1.pdf, id=1350, 469.75
-5pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-93-1.pdf Graphic fil
-e (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-93-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-9
-3-1.pdf  used on input line 2229.
+<./probest-cambientais_files/figure-latex/unnamed-chunk-131-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-132-1.pdf, id=1499, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-132-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-132-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+32-1.pdf  used on input line 2851.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[83] [84
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.2
+[101] [102
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.7.2
 '
-<./probest-cambientais_files/figure-latex/unnamed-chunk-93-1.pdf>]
+<./probest-cambientais_files/figure-latex/unnamed-chunk-132-1.pdf>]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 2270.
+(amsmath)                 on input line 2892.
 
 
-Overfull \hbox (77.1199pt too wide) in paragraph at lines 2300--2339
+Overfull \hbox (77.1199pt too wide) in paragraph at lines 2922--2961
 [][] 
  []
 
 
 Underfull \vbox (badness 1412) has occurred while \output is active []
 
-[85]
-<probest-cambientais_files/figure-latex/unnamed-chunk-100-1.pdf, id=1374, 361.3
+[103]
+<probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf, id=1524, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-100-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-100-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-00-1.pdf  used on input line 2344.
+39-1.pdf  used on input line 2966.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[86] [87<./probest-cambientais_files/figure-latex/unnamed-chunk-100-1.pdf>]
-Overfull \hbox (16.75992pt too wide) in paragraph at lines 2357--2380
+[104] [105<./probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf>]
+Overfull \hbox (16.75992pt too wide) in paragraph at lines 2979--3002
 [][] 
  []
 
-<probest-cambientais_files/figure-latex/unnamed-chunk-103-1.pdf, id=1390, 361.3
+<probest-cambientais_files/figure-latex/unnamed-chunk-142-1.pdf, id=1540, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-103-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-142-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-103-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-142-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-03-1.pdf  used on input line 2381.
+42-1.pdf  used on input line 3003.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[88] [89<./probest-cambientais_files/figure-latex/unnamed-chunk-103-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-104-1.pdf, id=1406, 469.7
+[106] [107<./probest-cambientais_files/figure-latex/unnamed-chunk-142-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-143-1.pdf, id=1556, 469.7
 55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-104-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-143-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-104-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-143-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-04-1.pdf  used on input line 2404.
+43-1.pdf  used on input line 3026.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[90] [91
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.6.3
+[108] [109
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.7.3
 '
-<./probest-cambientais_files/figure-latex/unnamed-chunk-104-1.pdf>] [92
+<./probest-cambientais_files/figure-latex/unnamed-chunk-143-1.pdf>] [110
 
 ]
-Chapter 7.
-<probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf, id=1426, 578.1
+Chapter 8.
+<probest-cambientais_files/figure-latex/unnamed-chunk-146-1.pdf, id=1575, 578.1
 6pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-146-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-146-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-07-1.pdf  used on input line 2420.
+46-1.pdf  used on input line 3042.
 (luatex.def)             Requested size: 344.99312pt x 172.49655pt.
-[93] [94
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.7.1
+[111] [112
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.8.1
 '
-<./probest-cambientais_files/figure-latex/unnamed-chunk-107-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf, id=1451, 578.1
+<./probest-cambientais_files/figure-latex/unnamed-chunk-146-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf, id=1601, 578.1
 6pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-08-1.pdf  used on input line 2457.
+47-1.pdf  used on input line 3079.
 (luatex.def)             Requested size: 344.99312pt x 344.99312pt.
-[95<./probest-cambientais_files/figure-latex/unnamed-chunk-108-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf, id=1461, 578.1
+[113<./probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf, id=1611, 578.1
 6pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-10-1.pdf  used on input line 2476.
+49-1.pdf  used on input line 3098.
 (luatex.def)             Requested size: 344.99312pt x 215.6207pt.
-[96<./probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf, id=1472, 578.1
+[114<./probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-152-1.pdf, id=1622, 578.1
 6pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-152-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-152-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-13-1.pdf  used on input line 2510.
+52-1.pdf  used on input line 3132.
 (luatex.def)             Requested size: 344.99312pt x 215.6207pt.
 
-Overfull \hbox (6.6023pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 7.3.  FAZENDO PREDIÇÕES COM A FUNÇÃO NOR-MAL DE DEN-SI-DADE \TU/lmr/m/n/10 97
+Overfull \hbox (11.6023pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.3.  FAZENDO PREDIÇÕES COM A FUNÇÃO NOR-MAL DE DEN-SI-DADE \TU/lmr/m/n/10 115
  []
 
-[97<./probest-cambientais_files/figure-latex/unnamed-chunk-113-1.pdf>] [98]
-<probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf, id=1487, 433.6
+[115<./probest-cambientais_files/figure-latex/unnamed-chunk-152-1.pdf>] [116]
+<probest-cambientais_files/figure-latex/unnamed-chunk-157-1.pdf, id=1637, 433.6
 2pt x 650.43pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-157-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-157-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-18-1.pdf  used on input line 2596.
+57-1.pdf  used on input line 3218.
 (luatex.def)             Requested size: 345.01738pt x 517.52608pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (6.6023pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 7.3.  FAZENDO PREDIÇÕES COM A FUNÇÃO NOR-MAL DE DEN-SI-DADE \TU/lmr/m/n/10 99
+Overfull \hbox (11.6023pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 8.3.  FAZENDO PREDIÇÕES COM A FUNÇÃO NOR-MAL DE DEN-SI-DADE \TU/lmr/m/n/10 117
  []
 
-[99]
+[117]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[100<./probest-cambientais_files/figure-latex/unnamed-chunk-118-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-119-1.pdf, id=1504, 578.1
+[118<./probest-cambientais_files/figure-latex/unnamed-chunk-157-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-158-1.pdf, id=1654, 578.1
 6pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-119-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-158-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-119-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-158-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-19-1.pdf  used on input line 2618.
+58-1.pdf  used on input line 3240.
 (luatex.def)             Requested size: 344.99312pt x 344.99312pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[101]
-Underfull \hbox (badness 10000) in paragraph at lines 2621--2621
+[119]
+Underfull \hbox (badness 10000) in paragraph at lines 3243--3243
 []\TU/lmr/bx/n/12 Prob-a-bil-i-dades em uma dis-tribuição nor-mal
  []
 
-<probest-cambientais_files/figure-latex/unnamed-chunk-120-1.pdf, id=1511, 578.1
+<probest-cambientais_files/figure-latex/unnamed-chunk-159-1.pdf, id=1660, 578.1
 6pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-120-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-159-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-120-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-159-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-20-1.pdf  used on input line 2625.
+59-1.pdf  used on input line 3247.
 (luatex.def)             Requested size: 344.99312pt x 215.6207pt.
 
 Underfull \vbox (badness 1910) has occurred while \output is active []
 
-[102<./probest-cambientais_files/figure-latex/unnamed-chunk-119-1.pdf>] [103<./p
-robest-cambientais_files/figure-latex/unnamed-chunk-120-1.pdf>] [104]
-<probest-cambientais_files/figure-latex/unnamed-chunk-125-1.pdf, id=1545, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-125-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-125-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-25-1.pdf  used on input line 2729.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[105<./probest-cambientais_files/figure-latex/unnamed-chunk-125-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-128-1.pdf, id=1561, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-128-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-128-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-28-1.pdf  used on input line 2760.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[106<./probest-cambientais_files/figure-latex/unnamed-chunk-128-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-129-1.pdf, id=1574, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-129-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-129-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-29-1.pdf  used on input line 2770.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-130-1.pdf, id=1575, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-130-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-130-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-30-1.pdf  used on input line 2780.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[107<./probest-cambientais_files/figure-latex/unnamed-chunk-129-1.pdf>] [108<./p
-robest-cambientais_files/figure-latex/unnamed-chunk-130-1.pdf>] [109]
-<probest-cambientais_files/figure-latex/unnamed-chunk-137-1.pdf, id=1604, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-137-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-137-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-37-1.pdf  used on input line 2887.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-138-1.pdf, id=1605, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-138-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-138-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-38-1.pdf  used on input line 2897.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[110<./probest-cambientais_files/figure-latex/unnamed-chunk-137-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf, id=1615, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-39-1.pdf  used on input line 2915.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[111<./probest-cambientais_files/figure-latex/unnamed-chunk-138-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-140-1.pdf, id=1626, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-140-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-140-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-40-1.pdf  used on input line 2929.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[112<./probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf>] [113<./p
-robest-cambientais_files/figure-latex/unnamed-chunk-140-1.pdf>] [114] [115] [11
-6
-
-]
-Chapter 8.
-<probest-cambientais_files/figure-latex/unnamed-chunk-144-1.pdf, id=1670, 433.6
-2pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-144-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-144-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-44-1.pdf  used on input line 3056.
-(luatex.def)             Requested size: 433.61894pt x 361.34912pt.
-
-Overfull \hbox (88.61894pt too wide) in paragraph at lines 3056--3057
- [][] 
- []
-
-<probest-cambientais_files/figure-latex/unnamed-chunk-145-1.pdf, id=1671, 867.2
-4pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-145-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-145-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-45-1.pdf  used on input line 3067.
-(luatex.def)             Requested size: 825.03786pt x 550.02522pt.
-
-Overfull \hbox (480.03786pt too wide) in paragraph at lines 3067--3068
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 24.08522pt on input line 3072.
-
-[117] [118
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.8.1
-'
-<./probest-cambientais_files/figure-latex/unnamed-chunk-144-1.pdf>] [119
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.8.2
-'
-<./probest-cambientais_files/figure-latex/unnamed-chunk-145-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf, id=1703, 289.0
-8pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-47-1.pdf  used on input line 3096.
-(luatex.def)             Requested size: 183.3432pt x 550.02965pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[120] [121<./probest-cambientais_files/figure-latex/unnamed-chunk-147-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf, id=1722, 867.2
-4pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-49-1.pdf  used on input line 3109.
-(luatex.def)             Requested size: 344.99754pt x 229.99835pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[122]
-<probest-cambientais_files/figure-latex/unnamed-chunk-151-1.pdf, id=1733, 252.9
-45pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-151-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-151-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-51-1.pdf  used on input line 3119.
-(luatex.def)             Requested size: 252.95595pt x 289.09251pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[123<./probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-153-1.pdf, id=1750, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-153-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-153-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-53-1.pdf  used on input line 3125.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[124<./probest-cambientais_files/figure-latex/unnamed-chunk-151-1.pdf>] [125
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.8.3
-'
-<./probest-cambientais_files/figure-latex/unnamed-chunk-153-1.pdf>] [126] [127]
-[128]
-Chapter 9.
-[129
-
-]
-
-LaTeX Warning: Reference `normtlc' on page 130 undefined on input line 3306.
-
-<probest-cambientais_files/figure-latex/unnamed-chunk-161-1.pdf, id=1806, 433.6
-2pt x 433.62pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-161-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-161-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-61-1.pdf  used on input line 3308.
-(luatex.def)             Requested size: 345.01738pt x 345.01738pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[130] [131<./probest-cambientais_files/figure-latex/unnamed-chunk-161-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-162-1.pdf, id=1829, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-162-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-162-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-62-1.pdf  used on input line 3327.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-163-1.pdf, id=1830, 289.0
-8pt x 1156.32pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-163-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-163-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-63-1.pdf  used on input line 3331.
-(luatex.def)             Requested size: 137.49968pt x 549.99876pt.
-[132<./probest-cambientais_files/figure-latex/unnamed-chunk-162-1.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[133<./probest-cambientais_files/figure-latex/unnamed-chunk-163-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf, id=1848, 469.7
+[120<./probest-cambientais_files/figure-latex/unnamed-chunk-158-1.pdf>] [121<./p
+robest-cambientais_files/figure-latex/unnamed-chunk-159-1.pdf>] [122]
+<probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf, id=1695, 469.7
 55pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-64-1.pdf  used on input line 3344.
+64-1.pdf  used on input line 3351.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[134<./probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-165-1.pdf, id=1858, 433.6
-2pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-165-1.pdf Graphic fi
+[123<./probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-167-1.pdf, id=1711, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-167-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-165-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-167-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-65-1.pdf  used on input line 3363.
-(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[135] [136<./probest-cambientais_files/figure-latex/unnamed-chunk-165-1.pdf>] [
-137] [138
-
-]
-Chapter 10.
-[139] [140]
-<probest-cambientais_files/figure-latex/unnamed-chunk-169-1.pdf, id=1898, 433.6
-2pt x 289.08pt>
+67-1.pdf  used on input line 3382.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[124<./probest-cambientais_files/figure-latex/unnamed-chunk-167-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-168-1.pdf, id=1724, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-168-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-168-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+68-1.pdf  used on input line 3392.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-169-1.pdf, id=1725, 469.7
+55pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-169-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-169-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-69-1.pdf  used on input line 3454.
-(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
+69-1.pdf  used on input line 3402.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[141]
-<probest-cambientais_files/figure-latex/unnamed-chunk-170-1.pdf, id=1905, 867.2
-4pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-170-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-170-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-70-1.pdf  used on input line 3458.
-(luatex.def)             Requested size: 344.99754pt x 114.99918pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[142<./probest-cambientais_files/figure-latex/unnamed-chunk-169-1.pdf><./probest
--cambientais_files/figure-latex/unnamed-chunk-170-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-172-1.pdf, id=1927, 433.6
-2pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-172-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-172-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-72-1.pdf  used on input line 3497.
-(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
-
-Underfull \vbox (badness 1043) has occurred while \output is active []
-
-[143] [144<./probest-cambientais_files/figure-latex/unnamed-chunk-172-1.pdf>] [
-145]
-<probest-cambientais_files/figure-latex/unnamed-chunk-174-1.pdf, id=1953, 433.6
-2pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-174-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-174-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-74-1.pdf  used on input line 3565.
-(luatex.def)             Requested size: 345.01738pt x 287.51448pt.
-[146<./probest-cambientais_files/figure-latex/unnamed-chunk-174-1.pdf>]
-Overfull \hbox (116.76898pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 10.4.  EX-EM-PLO DE UM TESTE DE HIPÓTESE: TESTE T PARA UMA M
-É-DIA POP-U-LA-CIONAL \TU/lmr/m/n/10 147
- []
-
-[147]
-<probest-cambientais_files/figure-latex/unnamed-chunk-176-1.pdf, id=1974, 433.6
-2pt x 289.08pt>
+[125<./probest-cambientais_files/figure-latex/unnamed-chunk-168-1.pdf>] [126<./p
+robest-cambientais_files/figure-latex/unnamed-chunk-169-1.pdf>] [127]
+<probest-cambientais_files/figure-latex/unnamed-chunk-176-1.pdf, id=1754, 469.7
+55pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-176-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-176-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-76-1.pdf  used on input line 3604.
-(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
-[148<./probest-cambientais_files/figure-latex/unnamed-chunk-176-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf, id=1986, 469.7
+76-1.pdf  used on input line 3509.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-177-1.pdf, id=1755, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-177-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-177-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+77-1.pdf  used on input line 3519.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[128<./probest-cambientais_files/figure-latex/unnamed-chunk-176-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf, id=1765, 469.7
 55pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-78-1.pdf  used on input line 3639.
+78-1.pdf  used on input line 3537.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[149]
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 3642.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 3642.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 3642.
-[150<./probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf>] [151] [
-152
-
-]
-Chapter 11.
-<probest-cambientais_files/figure-latex/unnamed-chunk-182-1.pdf, id=2013, 289.0
-8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-182-1.pdf Graphic fi
+[129<./probest-cambientais_files/figure-latex/unnamed-chunk-177-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-179-1.pdf, id=1775, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-179-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-182-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-179-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-82-1.pdf  used on input line 3674.
-(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
+79-1.pdf  used on input line 3551.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[153] [154<./probest-cambientais_files/figure-latex/unnamed-chunk-182-1.pdf>]
-Overfull \hbox (27.17229pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 11.1.  TESTE T PARA COM-PARA-ÇÃO DE DUAS MÉ-DIAS IN-DE-PEN-DE
-NTES \TU/lmr/m/n/10 155
+[130<./probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf>] [131<./p
+robest-cambientais_files/figure-latex/unnamed-chunk-179-1.pdf>] [132] [133] [13
+4
+
+]
+Chapter 9.
+<probest-cambientais_files/figure-latex/unnamed-chunk-183-1.pdf, id=1820, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-183-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-183-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+83-1.pdf  used on input line 3678.
+(luatex.def)             Requested size: 469.78969pt x 325.23901pt.
+
+Overfull \hbox (124.78969pt too wide) in paragraph at lines 3678--3679
+ [][] 
  []
 
-[155] [156
+<probest-cambientais_files/figure-latex/unnamed-chunk-184-1.pdf, id=1821, 289.0
+8pt x 867.24pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-184-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-184-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+84-1.pdf  used on input line 3689.
+(luatex.def)             Requested size: 183.3432pt x 550.02965pt.
 
-] [157] [158]
-Chapter 12.
+LaTeX Warning: Float too large for page by 24.08965pt on input line 3694.
+
+[135] [136
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.9.1
+'
+<./probest-cambientais_files/figure-latex/unnamed-chunk-183-1.pdf>] [137
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.9.2
+'
+<./probest-cambientais_files/figure-latex/unnamed-chunk-184-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-186-1.pdf, id=1851, 289.0
+8pt x 867.24pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-186-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-186-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
+86-1.pdf  used on input line 3718.
+(luatex.def)             Requested size: 183.3432pt x 550.02965pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[159
-
-]
-<probest-cambientais_files/figure-latex/unnamed-chunk-188-1.pdf, id=2053, 289.0
-8pt x 289.08pt>
+[138] [139<./probest-cambientais_files/figure-latex/unnamed-chunk-186-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-188-1.pdf, id=1869, 867.2
+4pt x 578.16pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-188-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-188-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-88-1.pdf  used on input line 3780.
-(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[160<./probest-cambientais_files/figure-latex/unnamed-chunk-188-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-189-1.pdf, id=2063, 289.0
-8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-189-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-189-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-89-1.pdf  used on input line 3786.
-(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[161<./probest-cambientais_files/figure-latex/unnamed-chunk-189-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-190-1.pdf, id=2074, 252.9
-45pt x 289.08pt>
+88-1.pdf  used on input line 3731.
+(luatex.def)             Requested size: 344.99754pt x 229.99835pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[140]
+<probest-cambientais_files/figure-latex/unnamed-chunk-190-1.pdf, id=1880, 469.7
+55pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-190-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-190-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-90-1.pdf  used on input line 3816.
-(luatex.def)             Requested size: 252.94823pt x 289.0837pt.
+90-1.pdf  used on input line 3741.
+(luatex.def)             Requested size: 469.78969pt x 325.23901pt.
+
+Overfull \hbox (124.78969pt too wide) in paragraph at lines 3741--3742
+[][] 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[162]
-<probest-cambientais_files/figure-latex/unnamed-chunk-191-1.pdf, id=2082, 289.0
-8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-191-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-191-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-91-1.pdf  used on input line 3823.
-(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[163<./probest-cambientais_files/figure-latex/unnamed-chunk-190-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-192-1.pdf, id=2095, 216.8
-1pt x 216.81pt>
+[141<./probest-cambientais_files/figure-latex/unnamed-chunk-188-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-192-1.pdf, id=1898, 469.7
+55pt x 325.215pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-192-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-192-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-92-1.pdf  used on input line 3827.
+92-1.pdf  used on input line 3747.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[142<./probest-cambientais_files/figure-latex/unnamed-chunk-190-1.pdf>] [143
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.9.3
+'
+<./probest-cambientais_files/figure-latex/unnamed-chunk-192-1.pdf>] [144] [145]
+[146]
+Chapter 10.
+[147
+
+]
+
+LaTeX Warning: Reference `normtlc' on page 148 undefined on input line 3928.
+
+<probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf, id=1953, 433.6
+2pt x 433.62pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+00-1.pdf  used on input line 3930.
+(luatex.def)             Requested size: 345.01738pt x 345.01738pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[148] [149<./probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf, id=1974, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+01-1.pdf  used on input line 3949.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf, id=1975, 289.0
+8pt x 1156.32pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+02-1.pdf  used on input line 3953.
+(luatex.def)             Requested size: 137.49968pt x 549.99876pt.
+[150<./probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[151<./probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-203-1.pdf, id=1994, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-203-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-203-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+03-1.pdf  used on input line 3966.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[152<./probest-cambientais_files/figure-latex/unnamed-chunk-203-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-204-1.pdf, id=2004, 433.6
+2pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-204-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-204-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+04-1.pdf  used on input line 3985.
+(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[153] [154<./probest-cambientais_files/figure-latex/unnamed-chunk-204-1.pdf>] [
+155] [156
+
+]
+Chapter 11.
+[157] [158]
+<probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf, id=2044, 433.6
+2pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+08-1.pdf  used on input line 4076.
+(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[159]
+<probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf, id=2050, 867.2
+4pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+09-1.pdf  used on input line 4080.
+(luatex.def)             Requested size: 344.99754pt x 114.99918pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[160<./probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf><./probest
+-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf, id=2072, 433.6
+2pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+11-1.pdf  used on input line 4119.
+(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+[161] [162<./probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf>] [
+163]
+<probest-cambientais_files/figure-latex/unnamed-chunk-213-1.pdf, id=2099, 433.6
+2pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-213-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-213-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+13-1.pdf  used on input line 4187.
+(luatex.def)             Requested size: 345.01738pt x 287.51448pt.
+[164<./probest-cambientais_files/figure-latex/unnamed-chunk-213-1.pdf>]
+Overfull \hbox (116.76898pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 11.4.  EX-EM-PLO DE UM TESTE DE HIPÓTESE: TESTE T PARA UMA M
+É-DIA POP-U-LA-CIONAL \TU/lmr/m/n/10 165
+ []
+
+[165]
+<probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf, id=2120, 433.6
+2pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+15-1.pdf  used on input line 4226.
+(luatex.def)             Requested size: 345.01738pt x 230.01158pt.
+[166<./probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf, id=2132, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+17-1.pdf  used on input line 4261.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[167]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 4264.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 14.4013pt on input line 4264.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 14.39845pt on input line 4264.
+[168<./probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf>] [169] [
+170
+
+]
+Chapter 12.
+<probest-cambientais_files/figure-latex/unnamed-chunk-221-1.pdf, id=2158, 289.0
+8pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-221-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-221-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+21-1.pdf  used on input line 4296.
+(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[171] [172<./probest-cambientais_files/figure-latex/unnamed-chunk-221-1.pdf>]
+Overfull \hbox (27.17229pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 12.1.  TESTE T PARA COM-PARA-ÇÃO DE DUAS MÉ-DIAS IN-DE-PEN-DE
+NTES \TU/lmr/m/n/10 173
+ []
+
+[173] [174
+
+] [175] [176]
+Chapter 13.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[177
+
+]
+<probest-cambientais_files/figure-latex/unnamed-chunk-227-1.pdf, id=2200, 289.0
+8pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-227-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-227-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+27-1.pdf  used on input line 4402.
+(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
+[178<./probest-cambientais_files/figure-latex/unnamed-chunk-227-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf, id=2209, 289.0
+8pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+28-1.pdf  used on input line 4408.
+(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
+[179<./probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-229-1.pdf, id=2219, 252.9
+45pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-229-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-229-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+29-1.pdf  used on input line 4438.
+(luatex.def)             Requested size: 252.94823pt x 289.0837pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[180]
+<probest-cambientais_files/figure-latex/unnamed-chunk-230-1.pdf, id=2227, 289.0
+8pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-230-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-230-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+30-1.pdf  used on input line 4445.
+(luatex.def)             Requested size: 289.09251pt x 289.09251pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[181<./probest-cambientais_files/figure-latex/unnamed-chunk-229-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf, id=2241, 216.8
+1pt x 216.81pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+31-1.pdf  used on input line 4449.
 (luatex.def)             Requested size: 216.81938pt x 216.81938pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[164<./probest-cambientais_files/figure-latex/unnamed-chunk-191-1.pdf>]
+[182<./probest-cambientais_files/figure-latex/unnamed-chunk-230-1.pdf>]
 Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
-<probest-cambientais_files/figure-latex/unnamed-chunk-193-1.pdf, id=2108, 433.6
+<probest-cambientais_files/figure-latex/unnamed-chunk-232-1.pdf, id=2254, 433.6
 2pt x 216.81pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-193-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-232-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-193-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-93-1.pdf  used on input line 3845.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-232-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+32-1.pdf  used on input line 4467.
 (luatex.def)             Requested size: 345.01738pt x 172.50868pt.
-[165<./probest-cambientais_files/figure-latex/unnamed-chunk-192-1.pdf>]
+[183<./probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf>]
 Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
-[166<./probest-cambientais_files/figure-latex/unnamed-chunk-193-1.pdf>]
+[184<./probest-cambientais_files/figure-latex/unnamed-chunk-232-1.pdf>]
 Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
-[167]
-<probest-cambientais_files/figure-latex/unnamed-chunk-196-1.pdf, id=2139, 361.3
+[185]
+<probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf, id=2285, 361.3
 5pt x 216.81pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-196-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-196-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-96-1.pdf  used on input line 3929.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+35-1.pdf  used on input line 4551.
 (luatex.def)             Requested size: 345.00084pt x 207.00049pt.
-[168<./probest-cambientais_files/figure-latex/unnamed-chunk-196-1.pdf>]
-Overfull \hbox (422.20998pt too wide) in paragraph at lines 3945--3968
+[186<./probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf>]
+Overfull \hbox (422.20998pt too wide) in paragraph at lines 4567--4590
 [][] 
  []
 
 Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
-<probest-cambientais_files/figure-latex/unnamed-chunk-198-1.pdf, id=2151, 361.3
+<probest-cambientais_files/figure-latex/unnamed-chunk-237-1.pdf, id=2297, 361.3
 5pt x 216.81pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-198-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-237-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-198-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-1
-98-1.pdf  used on input line 3981.
-(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
-[169] [170<./probest-cambientais_files/figure-latex/unnamed-chunk-198-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf, id=2167, 433.6
-2pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-237-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-00-1.pdf  used on input line 4023.
+37-1.pdf  used on input line 4603.
+(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
+[187] [188<./probest-cambientais_files/figure-latex/unnamed-chunk-237-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf, id=2313, 433.6
+2pt x 289.08pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+39-1.pdf  used on input line 4645.
 (luatex.def)             Requested size: 345.01738pt x 230.01158pt.
 
 Underfull \vbox (badness 7468) has occurred while \output is active []
 
-[171]
+[189]
 Missing character: There is no ã (U+00E3) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no ã (U+00E3) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
-[172<./probest-cambientais_files/figure-latex/unnamed-chunk-200-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf, id=2186, 578.1
+[190<./probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-240-1.pdf, id=2332, 578.1
 6pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-240-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-240-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-01-1.pdf  used on input line 4049.
+40-1.pdf  used on input line 4671.
 (luatex.def)             Requested size: 344.99312pt x 172.49655pt.
 
-Overfull \hbox (5.59105pt too wide) in paragraph at lines 4064--4064
+Overfull \hbox (5.59105pt too wide) in paragraph at lines 4686--4686
 \TU/lmr/m/n/10 gressão|  
  []
 
@@ -2360,7 +2753,7 @@ Missing character: There is no ã (U+00E3) in font lmmi7!
 Missing character: There is no ã (U+00E3) in font lmmi5!
 Missing character: There is no ã (U+00E3) in font lmmi5!
 
-Overfull \hbox (10.37851pt too wide) in paragraph at lines 4064--4064
+Overfull \hbox (10.37851pt too wide) in paragraph at lines 4686--4686
  []|$\TU/latinmodern-math.otf(1)/m/n/10 𝑄𝑀[] = 
  []
 
@@ -2372,7 +2765,7 @@ Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi5!
 Missing character: There is no í (U+00ED) in font lmmi5!
 
-Overfull \hbox (4.0295pt too wide) in paragraph at lines 4065--4065
+Overfull \hbox (4.0295pt too wide) in paragraph at lines 4687--4687
  []|$\TU/latinmodern-math.otf(1)/m/n/10 𝑄𝑀[] = 
  []
 
@@ -2380,1083 +2773,1083 @@ Missing character: There is no ã (U+00E3) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
 Missing character: There is no ã (U+00E3) in font lmmi7!
 Missing character: There is no í (U+00ED) in font lmmi7!
-[173<./probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf, id=2204, 289.0
+[191<./probest-cambientais_files/figure-latex/unnamed-chunk-240-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-241-1.pdf, id=2350, 289.0
 8pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-02-1.pdf  used on input line 4081.
-(luatex.def)             Requested size: 183.3432pt x 550.02965pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[174] [175<./probest-cambientais_files/figure-latex/unnamed-chunk-202-1.pdf>]
-Missing character: There is no ã (U+00E3) in font lmmi7!
-Missing character: There is no í (U+00ED) in font lmmi7!
-Missing character: There is no ã (U+00E3) in font lmmi7!
-Missing character: There is no í (U+00ED) in font lmmi7!
-Missing character: There is no í (U+00ED) in font lmmi7!
-[176] [177]
-Overfull \hbox (109.34996pt too wide) in paragraph at lines 4170--4193
-[][] 
- []
-
-<probest-cambientais_files/figure-latex/unnamed-chunk-206-1.pdf, id=2238, 361.3
-5pt x 216.81pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-206-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-206-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-06-1.pdf  used on input line 4196.
-(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-207-1.pdf, id=2239, 361.3
-5pt x 216.81pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-207-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-207-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-07-1.pdf  used on input line 4200.
-(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
-[178<./probest-cambientais_files/figure-latex/unnamed-chunk-206-1.pdf>] [179<./p
-robest-cambientais_files/figure-latex/unnamed-chunk-207-1.pdf>] [180]
-<probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf, id=2286, 722.7
-pt x 1445.4pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-08-1.pdf  used on input line 4263.
-(luatex.def)             Requested size: 275.00378pt x 550.00758pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[181] [182<./probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf, id=2310, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-09-1.pdf  used on input line 4278.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[183]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[184<./probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf, id=2333, 722.7
-pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-11-1.pdf  used on input line 4317.
-(luatex.def)             Requested size: 344.99533pt x 172.49767pt.
-[185<./probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-212-1.pdf, id=2342, 433.6
-2pt x 144.54pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-212-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-212-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-12-1.pdf  used on input line 4336.
-(luatex.def)             Requested size: 345.01738pt x 115.00577pt.
-[186<./probest-cambientais_files/figure-latex/unnamed-chunk-212-1.pdf>] [187] [
-188
-
-]
-Chapter 13.
-<probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf, id=2363, 361.3
-5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-15-1.pdf  used on input line 4360.
-(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
-[189<./probest-cambientais_files/figure-latex/unnamed-chunk-215-1.pdf>] [190
-
-]
-Chapter 14.
-
-LaTeX Warning: Reference `@' on page 191 undefined on input line 4378.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[191]
-Underfull \hbox (badness 10000) in paragraph at lines 4386--4387
-[][]$\TU/lmr/m/n/10 https://sites.google.com/site/ecolsampling/modelos-lineares/
-analise-de-
- []
-
-[192
-Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:+tlig;!
-Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:+tlig;!
-]
-Chapter 15.
-<probest-cambientais_files/figure-latex/unnamed-chunk-216-1.pdf, id=2390, 361.3
-5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-216-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-216-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-16-1.pdf  used on input line 4395.
-(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
-[193
-
-<./probest-cambientais_files/figure-latex/unnamed-chunk-216-1.pdf>] [194
-
-]
-Chapter 16.
-<probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf, id=2403, 361.3
-5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-17-1.pdf  used on input line 4400.
-(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
-[195<./probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf>] [196
-
-]
-Chapter 17.
-<probest-cambientais_files/figure-latex/unnamed-chunk-218-1.pdf, id=2416, 361.3
-5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-218-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-218-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-18-1.pdf  used on input line 4405.
-(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[197]
-Overfull \vbox (28.00084pt too high) has occurred while \output is active []
-
-[198<./probest-cambientais_files/figure-latex/unnamed-chunk-218-1.pdf>] [199
-
-] [200]
-Chapter 18.
-Missing character: There is no ã (U+00E3) in font lmmi10!
-Missing character: There is no ã (U+00E3) in font lmmi10!
-[201
-
-]
-Missing character: There is no ã (U+00E3) in font lmmi10!
-Missing character: There is no ã (U+00E3) in font lmmi10!
-Missing character: There is no ã (U+00E3) in font lmmi10!
-Missing character: There is no ã (U+00E3) in font lmmi10!
-Missing character: There is no ã (U+00E3) in font lmmi10!
-Missing character: There is no ã (U+00E3) in font lmmi10!
-
-Overfull \hbox (11.06339pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 202 \TU/lmr/m/sl/10 CHAP-TER 18.  O ES-PAÇO DE POS-SI-BIL-I-DADE
-S DE UM EX-PER-I-MENTO
- []
-
-[202]
-<probest-cambientais_files/figure-latex/unnamed-chunk-222-1.pdf, id=2455, 1003.
-75pt x 599.23875pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-222-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-222-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-22-1.pdf  used on input line 4470.
-(luatex.def)             Requested size: 345.00758pt x 205.96953pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-223-1.pdf, id=2456, 505.8
-9pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-223-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-223-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-23-1.pdf  used on input line 4476.
-(luatex.def)             Requested size: 345.00414pt x 246.43153pt.
-[203<./probest-cambientais_files/figure-latex/unnamed-chunk-222-1.pdf>]
-Overfull \hbox (11.06339pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 204 \TU/lmr/m/sl/10 CHAP-TER 18.  O ES-PAÇO DE POS-SI-BIL-I-DADE
-S DE UM EX-PER-I-MENTO
- []
-
-[204<./probest-cambientais_files/figure-latex/unnamed-chunk-223-1.pdf>]
-
-LaTeX Warning: Reference `statmodel' on page 205 undefined on input line 4490.
-
-[205]
-Overfull \hbox (11.06339pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 206 \TU/lmr/m/sl/10 CHAP-TER 18.  O ES-PAÇO DE POS-SI-BIL-I-DADE
-S DE UM EX-PER-I-MENTO
- []
-
-[206
-
-]
-Chapter 19.
-[207]
-<probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf, id=2529, 578.1
-6pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-28-1.pdf  used on input line 4523.
-(luatex.def)             Requested size: 344.99312pt x 215.6207pt.
-[208<./probest-cambientais_files/figure-latex/unnamed-chunk-228-1.pdf>] [209]
-<probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf, id=2555, 1003.
-75pt x 582.175pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-31-1.pdf  used on input line 4590.
-(luatex.def)             Requested size: 345.00758pt x 200.1044pt.
-[210<./probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf>]
-Chapter 20.
-<probest-cambientais_files/figure-latex/unnamed-chunk-233-1.pdf, id=2576, 578.1
-6pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-233-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-233-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-33-1.pdf  used on input line 4611.
-(luatex.def)             Requested size: 344.99312pt x 215.6207pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[211
-
-]
-Overfull \hbox (1.8567pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 212 \TU/lmr/m/sl/10 CHAP-TER 20.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
-ÊN-CIA
- []
-
-[212<./probest-cambientais_files/figure-latex/unnamed-chunk-233-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-234-1.pdf, id=2594, 578.1
-6pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-234-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-234-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-34-1.pdf  used on input line 4649.
-(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
-
-Underfull \vbox (badness 7504) has occurred while \output is active []
-
-[213]
-Overfull \hbox (1.8567pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 214 \TU/lmr/m/sl/10 CHAP-TER 20.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
-ÊN-CIA
- []
-
-[214<./probest-cambientais_files/figure-latex/unnamed-chunk-234-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf, id=2611, 1003.
-75pt x 582.175pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-35-1.pdf  used on input line 4682.
-(luatex.def)             Requested size: 345.00758pt x 200.1044pt.
-[215<./probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf>]
-Overfull \hbox (1.8567pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 216 \TU/lmr/m/sl/10 CHAP-TER 20.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
-ÊN-CIA
- []
-
-[216]
-<probest-cambientais_files/figure-latex/unnamed-chunk-238-1.pdf, id=2633, 361.3
-5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-238-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-238-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-38-1.pdf  used on input line 4775.
-(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
-[217<./probest-cambientais_files/figure-latex/unnamed-chunk-238-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf, id=2644, 469.7
-55pt x 325.215pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-39-1.pdf  used on input line 4813.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Overfull \hbox (1.8567pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 218 \TU/lmr/m/sl/10 CHAP-TER 20.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
-ÊN-CIA
- []
-
-[218<./probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf>] [219]
-Overfull \hbox (1.8567pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 220 \TU/lmr/m/sl/10 CHAP-TER 20.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
-ÊN-CIA
- []
-
-[220
-
-]
-Chapter 21.
-[221]
-<probest-cambientais_files/figure-latex/unnamed-chunk-241-1.pdf, id=2672, 578.1
-6pt x 578.16pt>
 File: probest-cambientais_files/figure-latex/unnamed-chunk-241-1.pdf Graphic fi
 le (type pdf)
 <use probest-cambientais_files/figure-latex/unnamed-chunk-241-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-41-1.pdf  used on input line 4869.
-(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
+41-1.pdf  used on input line 4703.
+(luatex.def)             Requested size: 183.3432pt x 550.02965pt.
 
-Overfull \hbox (25.4856pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 222 \TU/lmr/m/sl/10 CHAP-TER 21.  TEO-REMA DE BAYES: AT-U-AL-IZAN
-DO O CON-HEC-I-MENTO
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[192] [193<./probest-cambientais_files/figure-latex/unnamed-chunk-241-1.pdf>]
+Missing character: There is no ã (U+00E3) in font lmmi7!
+Missing character: There is no í (U+00ED) in font lmmi7!
+Missing character: There is no ã (U+00E3) in font lmmi7!
+Missing character: There is no í (U+00ED) in font lmmi7!
+Missing character: There is no í (U+00ED) in font lmmi7!
+[194] [195]
+Overfull \hbox (109.34996pt too wide) in paragraph at lines 4792--4815
+[][] 
  []
 
-[222<./probest-cambientais_files/figure-latex/unnamed-chunk-241-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-242-1.pdf, id=2683, 433.6
-2pt x 433.62pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-242-1.pdf Graphic fi
+<probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf, id=2384, 361.3
+5pt x 216.81pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-242-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-42-1.pdf  used on input line 4896.
-(luatex.def)             Requested size: 345.01738pt x 345.01738pt.
+45-1.pdf  used on input line 4818.
+(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf, id=2385, 361.3
+5pt x 216.81pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+46-1.pdf  used on input line 4822.
+(luatex.def)             Requested size: 345.00084pt x 207.00049pt.
+[196<./probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf>] [197<./p
+robest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf>] [198]
+<probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf, id=2432, 722.7
+pt x 1445.4pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+47-1.pdf  used on input line 4885.
+(luatex.def)             Requested size: 275.00378pt x 550.00758pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[199] [200<./probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf, id=2455, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+48-1.pdf  used on input line 4900.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[201]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[202<./probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf, id=2479, 722.7
+pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+50-1.pdf  used on input line 4939.
+(luatex.def)             Requested size: 344.99533pt x 172.49767pt.
+[203<./probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf, id=2488, 433.6
+2pt x 144.54pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+51-1.pdf  used on input line 4958.
+(luatex.def)             Requested size: 345.01738pt x 115.00577pt.
+[204<./probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf>] [205] [
+206
+
+]
+Chapter 14.
+<probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf, id=2509, 361.3
+5pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+54-1.pdf  used on input line 4982.
+(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
+[207<./probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf>] [208
+
+]
+Chapter 15.
+
+LaTeX Warning: Reference `@' on page 209 undefined on input line 5000.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[209]
+Underfull \hbox (badness 10000) in paragraph at lines 5008--5009
+[][]$\TU/lmr/m/n/10 https://sites.google.com/site/ecolsampling/modelos-lineares/
+analise-de-
+ []
+
+[210
+Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:+tlig;!
+Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:+tlig;!
+]
+Chapter 16.
+<probest-cambientais_files/figure-latex/unnamed-chunk-255-1.pdf, id=2535, 361.3
+5pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-255-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-255-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+55-1.pdf  used on input line 5017.
+(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
+[211
+
+<./probest-cambientais_files/figure-latex/unnamed-chunk-255-1.pdf>] [212
+
+]
+Chapter 17.
+<probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf, id=2549, 361.3
+5pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+56-1.pdf  used on input line 5022.
+(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
+[213<./probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf>] [214
+
+]
+Chapter 18.
+<probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf, id=2562, 361.3
+5pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+57-1.pdf  used on input line 5027.
+(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[215]
+Overfull \vbox (28.00084pt too high) has occurred while \output is active []
+
+[216<./probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf>] [217
+
+] [218]
+Chapter 19.
+Missing character: There is no ã (U+00E3) in font lmmi10!
+Missing character: There is no ã (U+00E3) in font lmmi10!
+[219
+
+]
+Missing character: There is no ã (U+00E3) in font lmmi10!
+Missing character: There is no ã (U+00E3) in font lmmi10!
+Missing character: There is no ã (U+00E3) in font lmmi10!
+Missing character: There is no ã (U+00E3) in font lmmi10!
+Missing character: There is no ã (U+00E3) in font lmmi10!
+Missing character: There is no ã (U+00E3) in font lmmi10!
+
+Overfull \hbox (11.06339pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 220 \TU/lmr/m/sl/10 CHAP-TER 19.  O ES-PAÇO DE POS-SI-BIL-I-DADE
+S DE UM EX-PER-I-MENTO
+ []
+
+[220]
+<probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf, id=2600, 1003.
+75pt x 599.23875pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+61-1.pdf  used on input line 5092.
+(luatex.def)             Requested size: 345.00758pt x 205.96953pt.
+<probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf, id=2601, 505.8
+9pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+62-1.pdf  used on input line 5098.
+(luatex.def)             Requested size: 345.00414pt x 246.43153pt.
+[221<./probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf>]
+Overfull \hbox (11.06339pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 222 \TU/lmr/m/sl/10 CHAP-TER 19.  O ES-PAÇO DE POS-SI-BIL-I-DADE
+S DE UM EX-PER-I-MENTO
+ []
+
+[222<./probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf>]
+
+LaTeX Warning: Reference `statmodel' on page 223 undefined on input line 5112.
+
 [223]
-Overfull \hbox (25.4856pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 224 \TU/lmr/m/sl/10 CHAP-TER 21.  TEO-REMA DE BAYES: AT-U-AL-IZAN
-DO O CON-HEC-I-MENTO
+Overfull \hbox (11.06339pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 224 \TU/lmr/m/sl/10 CHAP-TER 19.  O ES-PAÇO DE POS-SI-BIL-I-DADE
+S DE UM EX-PER-I-MENTO
  []
 
 [224
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.21.
-1'
-<./probest-cambientais_files/figure-latex/unnamed-chunk-242-1.pdf>] [225]
+
+]
+Chapter 20.
+[225]
+<probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf, id=2675, 578.1
+6pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+67-1.pdf  used on input line 5145.
+(luatex.def)             Requested size: 344.99312pt x 215.6207pt.
+[226<./probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf>] [227]
+<probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf, id=2701, 1003.
+75pt x 582.175pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+70-1.pdf  used on input line 5212.
+(luatex.def)             Requested size: 345.00758pt x 200.1044pt.
+[228<./probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf>]
+Chapter 21.
+<probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf, id=2722, 578.1
+6pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+72-1.pdf  used on input line 5233.
+(luatex.def)             Requested size: 344.99312pt x 215.6207pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[229
+
+]
+Overfull \hbox (1.8567pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 230 \TU/lmr/m/sl/10 CHAP-TER 21.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
+ÊN-CIA
+ []
+
+[230<./probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf, id=2739, 578.1
+6pt x 578.16pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+73-1.pdf  used on input line 5271.
+(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
+
+Underfull \vbox (badness 7504) has occurred while \output is active []
+
+[231]
+Overfull \hbox (1.8567pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 232 \TU/lmr/m/sl/10 CHAP-TER 21.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
+ÊN-CIA
+ []
+
+[232<./probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf, id=2757, 1003.
+75pt x 582.175pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+74-1.pdf  used on input line 5304.
+(luatex.def)             Requested size: 345.00758pt x 200.1044pt.
+[233<./probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf>]
+Overfull \hbox (1.8567pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 234 \TU/lmr/m/sl/10 CHAP-TER 21.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
+ÊN-CIA
+ []
+
+[234]
+<probest-cambientais_files/figure-latex/unnamed-chunk-277-1.pdf, id=2779, 361.3
+5pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-277-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-277-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+77-1.pdf  used on input line 5397.
+(luatex.def)             Requested size: 345.00084pt x 345.00084pt.
+[235<./probest-cambientais_files/figure-latex/unnamed-chunk-277-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-278-1.pdf, id=2790, 469.7
+55pt x 325.215pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-278-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-278-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+78-1.pdf  used on input line 5435.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Overfull \hbox (1.8567pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 236 \TU/lmr/m/sl/10 CHAP-TER 21.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
+ÊN-CIA
+ []
+
+[236<./probest-cambientais_files/figure-latex/unnamed-chunk-278-1.pdf>] [237]
+Overfull \hbox (1.8567pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 238 \TU/lmr/m/sl/10 CHAP-TER 21.  PROB-A-BIL-I-DADE CONDI-CIONAL E IN-DE-PEND
+ÊN-CIA
+ []
+
+[238
+
+]
+Chapter 22.
+[239]
+<probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf, id=2817, 578.1
+6pt x 578.16pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+80-1.pdf  used on input line 5491.
+(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
+
 Overfull \hbox (25.4856pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 226 \TU/lmr/m/sl/10 CHAP-TER 21.  TEO-REMA DE BAYES: AT-U-AL-IZAN
+\TU/lmr/m/n/10 240 \TU/lmr/m/sl/10 CHAP-TER 22.  TEO-REMA DE BAYES: AT-U-AL-IZAN
 DO O CON-HEC-I-MENTO
  []
 
-[226] [227]
-Overfull \hbox (0.63452pt too wide) detected at line 5018
+[240<./probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf, id=2828, 433.6
+2pt x 433.62pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+81-1.pdf  used on input line 5518.
+(luatex.def)             Requested size: 345.01738pt x 345.01738pt.
+[241]
+Overfull \hbox (25.4856pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 242 \TU/lmr/m/sl/10 CHAP-TER 22.  TEO-REMA DE BAYES: AT-U-AL-IZAN
+DO O CON-HEC-I-MENTO
+ []
+
+[242
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.22.
+1'
+<./probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf>] [243]
+Overfull \hbox (25.4856pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 244 \TU/lmr/m/sl/10 CHAP-TER 22.  TEO-REMA DE BAYES: AT-U-AL-IZAN
+DO O CON-HEC-I-MENTO
+ []
+
+[244] [245]
+Overfull \hbox (0.63452pt too wide) detected at line 5640
 \TU/latinmodern-math.otf(1)/m/n/10 𝑃(𝑂|𝐷) = [] = [] × [] = [] ≈ 0, 
 91
  []
 
 
-Overfull \hbox (0.58452pt too wide) detected at line 5022
+Overfull \hbox (0.58452pt too wide) detected at line 5644
 \TU/latinmodern-math.otf(1)/m/n/10 𝑃([]|𝐷) = [] = [] × [] = [] ≈ 0, 09
  []
 
 
 Overfull \hbox (25.4856pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 228 \TU/lmr/m/sl/10 CHAP-TER 21.  TEO-REMA DE BAYES: AT-U-AL-IZAN
+\TU/lmr/m/n/10 246 \TU/lmr/m/sl/10 CHAP-TER 22.  TEO-REMA DE BAYES: AT-U-AL-IZAN
 DO O CON-HEC-I-MENTO
  []
 
-[228] [229]
+[246] [247]
 Overfull \hbox (25.4856pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 230 \TU/lmr/m/sl/10 CHAP-TER 21.  TEO-REMA DE BAYES: AT-U-AL-IZAN
+\TU/lmr/m/n/10 248 \TU/lmr/m/sl/10 CHAP-TER 22.  TEO-REMA DE BAYES: AT-U-AL-IZAN
 DO O CON-HEC-I-MENTO
  []
 
-[230
+[248
 
-] [231] [232]
-Chapter 22.
-<probest-cambientais_files/figure-latex/unnamed-chunk-243-1.pdf, id=2753, 361.3
+] [249] [250]
+Chapter 23.
+<probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf, id=2898, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-243-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-243-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-43-1.pdf  used on input line 5042.
+82-1.pdf  used on input line 5664.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[233
+[251
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 234 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 252 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[234<./probest-cambientais_files/figure-latex/unnamed-chunk-243-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-244-1.pdf, id=2772, 867.2
+[252<./probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf, id=2918, 867.2
 4pt x 433.62pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-244-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-244-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-44-1.pdf  used on input line 5051.
+83-1.pdf  used on input line 5673.
 (luatex.def)             Requested size: 344.99754pt x 172.49876pt.
 Missing character: There is no ã (U+00E3) in font lmmi10!
-[235<./probest-cambientais_files/figure-latex/unnamed-chunk-244-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf, id=2781, 1003.
+[253<./probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf, id=2927, 1003.
 75pt x 822.07124pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-45-1.pdf  used on input line 5065.
+84-1.pdf  used on input line 5687.
 (luatex.def)             Requested size: 345.00758pt x 282.5612pt.
 
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 236 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 254 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[236<./probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf>] [237]
-<probest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf, id=2830, 433.6
+[254<./probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf>] [255]
+<probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf, id=2976, 433.6
 2pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-46-1.pdf  used on input line 5150.
+85-1.pdf  used on input line 5772.
 (luatex.def)             Requested size: 345.01738pt x 287.51448pt.
 
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 238 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 256 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[238]
-<probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf, id=2841, 867.2
+[256]
+<probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf, id=2987, 867.2
 4pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-47-1.pdf  used on input line 5164.
+86-1.pdf  used on input line 5786.
 (luatex.def)             Requested size: 344.99754pt x 143.74896pt.
 
 Underfull \vbox (badness 1681) has occurred while \output is active []
 
-[239<./probest-cambientais_files/figure-latex/unnamed-chunk-246-1.pdf>]
+[257<./probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf>]
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 240 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 258 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[240<./probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf, id=2868, 867.2
+[258<./probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf, id=3014, 867.2
 4pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-48-1.pdf  used on input line 5202.
+87-1.pdf  used on input line 5824.
 (luatex.def)             Requested size: 344.99754pt x 344.99754pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[241]
+[259]
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 242 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 260 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[242<./probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-249-1.pdf, id=2886, 578.1
+[260<./probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf, id=3031, 578.1
 6pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-249-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-249-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-49-1.pdf  used on input line 5234.
+88-1.pdf  used on input line 5856.
 (luatex.def)             Requested size: 344.99312pt x 517.4897pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[243]
+[261]
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 244 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 262 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[244<./probest-cambientais_files/figure-latex/unnamed-chunk-249-1.pdf>] [245]
-<probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf, id=2905, 867.2
+[262<./probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf>] [263]
+<probest-cambientais_files/figure-latex/unnamed-chunk-289-1.pdf, id=3051, 867.2
 4pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-289-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-289-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-50-1.pdf  used on input line 5286.
+89-1.pdf  used on input line 5908.
 (luatex.def)             Requested size: 344.99754pt x 344.99754pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 246 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 264 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[246]
-Underfull \hbox (badness 4467) in paragraph at lines 5295--5295
+[264]
+Underfull \hbox (badness 4467) in paragraph at lines 5917--5917
 []\TU/lmr/bx/it/14.4 Ex-per-i-mento 4\TU/lmr/bx/n/14.4 : Quan-tas mar-cas na
  []
 
-[247<./probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf, id=2920, 867.2
+[265<./probest-cambientais_files/figure-latex/unnamed-chunk-289-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-290-1.pdf, id=3066, 867.2
 4pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-290-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-290-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-51-1.pdf  used on input line 5319.
+90-1.pdf  used on input line 5941.
 (luatex.def)             Requested size: 344.99754pt x 344.99754pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 248 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 266 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[248]
+[266]
 Overfull \hbox (30.4695pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 22.5.  \TU/lmr/m/n/10 EX-PER-I-MENTO 5\TU/lmr/m/sl/10 : CON-TAGE
-M POR UNIDADE DE ÁREA, TEMPO, ….. \TU/lmr/m/n/10 249
+\TU/lmr/m/sl/10 23.5.  \TU/lmr/m/n/10 EX-PER-I-MENTO 5\TU/lmr/m/sl/10 : CON-TAGE
+M POR UNIDADE DE ÁREA, TEMPO, ….. \TU/lmr/m/n/10 267
  []
 
-[249<./probest-cambientais_files/figure-latex/unnamed-chunk-251-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-252-1.pdf, id=2935, 867.2
+[267<./probest-cambientais_files/figure-latex/unnamed-chunk-290-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-291-1.pdf, id=3081, 867.2
 4pt x 867.24pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-252-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-291-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-252-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-291-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-52-1.pdf  used on input line 5336.
+91-1.pdf  used on input line 5958.
 (luatex.def)             Requested size: 344.99754pt x 344.99754pt.
 
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 250 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 268 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[250<./probest-cambientais_files/figure-latex/unnamed-chunk-252-1.pdf>]
+[268<./probest-cambientais_files/figure-latex/unnamed-chunk-291-1.pdf>]
 Overfull \hbox (30.4695pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 22.5.  \TU/lmr/m/n/10 EX-PER-I-MENTO 5\TU/lmr/m/sl/10 : CON-TAGE
-M POR UNIDADE DE ÁREA, TEMPO, ….. \TU/lmr/m/n/10 251
+\TU/lmr/m/sl/10 23.5.  \TU/lmr/m/n/10 EX-PER-I-MENTO 5\TU/lmr/m/sl/10 : CON-TAGE
+M POR UNIDADE DE ÁREA, TEMPO, ….. \TU/lmr/m/n/10 269
  []
 
-[251]
+[269]
 Overfull \hbox (132.77448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 252 \TU/lmr/m/sl/10 CHAP-TER 22.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+\TU/lmr/m/n/10 270 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
 , NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS DIS-CRE-TOS
  []
 
-[252
+[270
 
 ]
-Chapter 23.
-<probest-cambientais_files/figure-latex/unnamed-chunk-253-1.pdf, id=2957, 722.7
-pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-253-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-253-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-53-1.pdf  used on input line 5360.
-(luatex.def)             Requested size: 344.99533pt x 172.49767pt.
-[253]
-Overfull \hbox (135.68448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 254 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
-, NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS CON-TÍN-UOS
- []
-
-[254<./probest-cambientais_files/figure-latex/unnamed-chunk-253-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf, id=2978, 578.1
-6pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-54-1.pdf  used on input line 5392.
-(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
-[255<./probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf, id=2989, 578.1
-6pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-56-1.pdf  used on input line 5396.
-(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
-
-Overfull \hbox (135.68448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 256 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
-, NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS CON-TÍN-UOS
- []
-
-[256<./probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf, id=3000, 578.1
-6pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf Graphic fi
-le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-57-1.pdf  used on input line 5415.
-(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
-[257<./probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf>]
-Overfull \hbox (135.68448pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 258 \TU/lmr/m/sl/10 CHAP-TER 23.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
-, NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS CON-TÍN-UOS
- []
-
-[258]
 Chapter 24.
-[259
+<probest-cambientais_files/figure-latex/unnamed-chunk-292-1.pdf, id=3102, 722.7
+pt x 361.35pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-292-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-292-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+92-1.pdf  used on input line 5982.
+(luatex.def)             Requested size: 344.99533pt x 172.49767pt.
+[271]
+Overfull \hbox (135.68448pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 272 \TU/lmr/m/sl/10 CHAP-TER 24.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+, NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS CON-TÍN-UOS
+ []
+
+[272<./probest-cambientais_files/figure-latex/unnamed-chunk-292-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-293-1.pdf, id=3124, 578.1
+6pt x 578.16pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-293-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-293-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+93-1.pdf  used on input line 6014.
+(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
+[273<./probest-cambientais_files/figure-latex/unnamed-chunk-293-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-295-1.pdf, id=3135, 578.1
+6pt x 578.16pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-295-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-295-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+95-1.pdf  used on input line 6018.
+(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
+
+Overfull \hbox (135.68448pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 274 \TU/lmr/m/sl/10 CHAP-TER 24.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+, NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS CON-TÍN-UOS
+ []
+
+[274<./probest-cambientais_files/figure-latex/unnamed-chunk-295-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-296-1.pdf, id=3146, 578.1
+6pt x 578.16pt>
+File: probest-cambientais_files/figure-latex/unnamed-chunk-296-1.pdf Graphic fi
+le (type pdf)
+<use probest-cambientais_files/figure-latex/unnamed-chunk-296-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
+96-1.pdf  used on input line 6037.
+(luatex.def)             Requested size: 344.99312pt x 344.99312pt.
+[275<./probest-cambientais_files/figure-latex/unnamed-chunk-296-1.pdf>]
+Overfull \hbox (135.68448pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 276 \TU/lmr/m/sl/10 CHAP-TER 24.  AS VAR-IÁVEIS SÃO ALEATÓRIAS
+, NÃO IM-PRE-VISÍVEIS! - \TU/lmr/m/n/10 MOD-E-LOS CON-TÍN-UOS
+ []
+
+[276]
+Chapter 25.
+[277
 
 ]
-<probest-cambientais_files/figure-latex/unnamed-chunk-260-1.pdf, id=3026, 289.0
+<probest-cambientais_files/figure-latex/unnamed-chunk-299-1.pdf, id=3172, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-260-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-299-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-260-1.pdf>
+<use probest-cambientais_files/figure-latex/unnamed-chunk-299-1.pdf>
 Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-60-1.pdf  used on input line 5463.
+99-1.pdf  used on input line 6085.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[260<./probest-cambientais_files/figure-latex/unnamed-chunk-260-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf, id=3039, 289.0
+[278<./probest-cambientais_files/figure-latex/unnamed-chunk-299-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-300-1.pdf, id=3185, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-300-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-61-1.pdf  used on input line 5490.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-300-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+00-1.pdf  used on input line 6112.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[261<./probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf, id=3050, 289.0
+[279<./probest-cambientais_files/figure-latex/unnamed-chunk-300-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-301-1.pdf, id=3195, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-301-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-62-1.pdf  used on input line 5528.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-301-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+01-1.pdf  used on input line 6150.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[262] [263<./probest-cambientais_files/figure-latex/unnamed-chunk-262-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-263-1.pdf, id=3070, 289.0
+[280] [281<./probest-cambientais_files/figure-latex/unnamed-chunk-301-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-302-1.pdf, id=3216, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-263-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-302-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-263-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-63-1.pdf  used on input line 5610.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-302-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+02-1.pdf  used on input line 6232.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[264] [265<./probest-cambientais_files/figure-latex/unnamed-chunk-263-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-264-1.pdf, id=3090, 289.0
+[282] [283<./probest-cambientais_files/figure-latex/unnamed-chunk-302-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-303-1.pdf, id=3236, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-264-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-303-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-264-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-64-1.pdf  used on input line 5635.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-303-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+03-1.pdf  used on input line 6257.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[266<./probest-cambientais_files/figure-latex/unnamed-chunk-264-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-265-1.pdf, id=3104, 289.0
+[284<./probest-cambientais_files/figure-latex/unnamed-chunk-303-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-304-1.pdf, id=3250, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-265-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-304-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-265-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-65-1.pdf  used on input line 5669.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-304-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+04-1.pdf  used on input line 6291.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[267<./probest-cambientais_files/figure-latex/unnamed-chunk-265-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-266-1.pdf, id=3115, 578.1
+[285<./probest-cambientais_files/figure-latex/unnamed-chunk-304-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-305-1.pdf, id=3261, 578.1
 6pt x 578.16pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-266-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-305-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-266-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-66-1.pdf  used on input line 5713.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-305-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+05-1.pdf  used on input line 6335.
 (luatex.def)             Requested size: 344.99312pt x 344.99312pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[268]
+[286]
 Overfull \hbox (66.61119pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 24.3.  MOD-ELO DE MICHAELIS-MENTEN (OU RE-SPOSTA FUN-CIONAL DO 
-TIPO II) \TU/lmr/m/n/10 269
+\TU/lmr/m/sl/10 25.3.  MOD-ELO DE MICHAELIS-MENTEN (OU RE-SPOSTA FUN-CIONAL DO 
+TIPO II) \TU/lmr/m/n/10 287
  []
 
-[269<./probest-cambientais_files/figure-latex/unnamed-chunk-266-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf, id=3130, 289.0
+[287<./probest-cambientais_files/figure-latex/unnamed-chunk-305-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-306-1.pdf, id=3276, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-306-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-67-1.pdf  used on input line 5746.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-306-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+06-1.pdf  used on input line 6368.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[270] [271<./probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-268-1.pdf, id=3145, 289.0
+[288] [289<./probest-cambientais_files/figure-latex/unnamed-chunk-306-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-307-1.pdf, id=3290, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-268-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-307-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-268-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-68-1.pdf  used on input line 5773.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-307-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+07-1.pdf  used on input line 6395.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[272<./probest-cambientais_files/figure-latex/unnamed-chunk-268-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-269-1.pdf, id=3155, 289.0
+[290<./probest-cambientais_files/figure-latex/unnamed-chunk-307-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-308-1.pdf, id=3300, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-269-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-308-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-269-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-69-1.pdf  used on input line 5802.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-308-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+08-1.pdf  used on input line 6424.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[273<./probest-cambientais_files/figure-latex/unnamed-chunk-269-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf, id=3165, 289.0
+[291<./probest-cambientais_files/figure-latex/unnamed-chunk-308-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-309-1.pdf, id=3311, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-309-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-70-1.pdf  used on input line 5827.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-309-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+09-1.pdf  used on input line 6449.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[274] [275<./probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-271-1.pdf, id=3179, 578.1
+[292] [293<./probest-cambientais_files/figure-latex/unnamed-chunk-309-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-310-1.pdf, id=3325, 578.1
 6pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-271-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-310-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-271-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-71-1.pdf  used on input line 5854.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-310-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+10-1.pdf  used on input line 6476.
 (luatex.def)             Requested size: 344.99312pt x 172.49655pt.
-[276<./probest-cambientais_files/figure-latex/unnamed-chunk-271-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf, id=3189, 289.0
+[294<./probest-cambientais_files/figure-latex/unnamed-chunk-310-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-311-1.pdf, id=3335, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-311-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-72-1.pdf  used on input line 5881.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-311-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+11-1.pdf  used on input line 6503.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[277<./probest-cambientais_files/figure-latex/unnamed-chunk-272-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf, id=3199, 289.0
+[295<./probest-cambientais_files/figure-latex/unnamed-chunk-311-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-312-1.pdf, id=3345, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-312-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-73-1.pdf  used on input line 5905.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-312-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+12-1.pdf  used on input line 6527.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[278<./probest-cambientais_files/figure-latex/unnamed-chunk-273-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf, id=3209, 289.0
+[296<./probest-cambientais_files/figure-latex/unnamed-chunk-312-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-313-1.pdf, id=3355, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-313-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-74-1.pdf  used on input line 5928.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-313-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+13-1.pdf  used on input line 6550.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[279<./probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-275-1.pdf, id=3219, 289.0
+[297<./probest-cambientais_files/figure-latex/unnamed-chunk-313-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-314-1.pdf, id=3365, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-275-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-314-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-275-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-75-1.pdf  used on input line 5951.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-314-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+14-1.pdf  used on input line 6573.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[280<./probest-cambientais_files/figure-latex/unnamed-chunk-275-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-276-1.pdf, id=3230, 289.0
+[298<./probest-cambientais_files/figure-latex/unnamed-chunk-314-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-315-1.pdf, id=3376, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-276-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-315-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-276-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-76-1.pdf  used on input line 5975.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-315-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+15-1.pdf  used on input line 6597.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-[281<./probest-cambientais_files/figure-latex/unnamed-chunk-276-1.pdf>] [282
+[299<./probest-cambientais_files/figure-latex/unnamed-chunk-315-1.pdf>] [300
 
 ]
-Chapter 25.
-[283]
+Chapter 26.
+[301]
 Overfull \hbox (138.29118pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 284 \TU/lmr/m/sl/10 CHAP-TER 25.  AS PARTES ES-TOCÁS-TI-CAS E DE
+\TU/lmr/m/n/10 302 \TU/lmr/m/sl/10 CHAP-TER 26.  AS PARTES ES-TOCÁS-TI-CAS E DE
 -TER-MINÍS-TI-CAS DE UM MOD-ELO ES-TATÍS-TICO
  []
 
-[284]
-<probest-cambientais_files/figure-latex/unnamed-chunk-279-1.pdf, id=3262, 578.1
+[302]
+<probest-cambientais_files/figure-latex/unnamed-chunk-318-1.pdf, id=3408, 578.1
 6pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-279-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-318-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-279-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-79-1.pdf  used on input line 6092.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-318-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+18-1.pdf  used on input line 6714.
 (luatex.def)             Requested size: 344.99312pt x 172.49655pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[285<./probest-cambientais_files/figure-latex/unnamed-chunk-279-1.pdf>]
-Underfull \hbox (badness 1448) in paragraph at lines 6105--6106
+[303<./probest-cambientais_files/figure-latex/unnamed-chunk-318-1.pdf>]
+Underfull \hbox (badness 1448) in paragraph at lines 6727--6728
 \TU/lmr/m/n/10 Se as-sumir-mos que $\TU/latinmodern-math.otf(1)/m/n/10 𝑔(
 𝑥)$ \TU/lmr/m/n/10 de-v-erá ser uma função cres-cente da el-e-vação,
  []
 
-<probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf, id=3274, 289.0
+<probest-cambientais_files/figure-latex/unnamed-chunk-319-1.pdf, id=3420, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-319-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-80-1.pdf  used on input line 6126.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-319-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+19-1.pdf  used on input line 6748.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
 
 Underfull \vbox (badness 3439) has occurred while \output is active []
 
 
 Overfull \hbox (138.29118pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 286 \TU/lmr/m/sl/10 CHAP-TER 25.  AS PARTES ES-TOCÁS-TI-CAS E DE
+\TU/lmr/m/n/10 304 \TU/lmr/m/sl/10 CHAP-TER 26.  AS PARTES ES-TOCÁS-TI-CAS E DE
 -TER-MINÍS-TI-CAS DE UM MOD-ELO ES-TATÍS-TICO
  []
 
-[286] [287<./probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf, id=3292, 289.0
+[304] [305<./probest-cambientais_files/figure-latex/unnamed-chunk-319-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-320-1.pdf, id=3438, 289.0
 8pt x 289.08pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-320-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-81-1.pdf  used on input line 6152.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-320-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+20-1.pdf  used on input line 6774.
 (luatex.def)             Requested size: 289.09251pt x 289.09251pt.
-<probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf, id=3293, 216.8
+<probest-cambientais_files/figure-latex/unnamed-chunk-321-1.pdf, id=3439, 216.8
 1pt x 216.81pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-321-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-82-1.pdf  used on input line 6156.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-321-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+21-1.pdf  used on input line 6778.
 (luatex.def)             Requested size: 216.81938pt x 216.81938pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (138.29118pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 288 \TU/lmr/m/sl/10 CHAP-TER 25.  AS PARTES ES-TOCÁS-TI-CAS E DE
+\TU/lmr/m/n/10 306 \TU/lmr/m/sl/10 CHAP-TER 26.  AS PARTES ES-TOCÁS-TI-CAS E DE
 -TER-MINÍS-TI-CAS DE UM MOD-ELO ES-TATÍS-TICO
  []
 
-[288<./probest-cambientais_files/figure-latex/unnamed-chunk-281-1.pdf>]
+[306<./probest-cambientais_files/figure-latex/unnamed-chunk-320-1.pdf>]
 Overfull \hbox (119.97118pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 25.3.  MAIS UM MOD-ELO BI-NO-MIAL: TAXA DE MOR-TAL-I-DADE EM TES
-TES DOSE-RESPOSTA \TU/lmr/m/n/10 289
+\TU/lmr/m/sl/10 26.3.  MAIS UM MOD-ELO BI-NO-MIAL: TAXA DE MOR-TAL-I-DADE EM TES
+TES DOSE-RESPOSTA \TU/lmr/m/n/10 307
  []
 
-[289<./probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf>]
-<probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf, id=3310, 361.3
+[307<./probest-cambientais_files/figure-latex/unnamed-chunk-321-1.pdf>]
+<probest-cambientais_files/figure-latex/unnamed-chunk-322-1.pdf, id=3456, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-322-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-83-1.pdf  used on input line 6194.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-322-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+22-1.pdf  used on input line 6816.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (138.29118pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 290 \TU/lmr/m/sl/10 CHAP-TER 25.  AS PARTES ES-TOCÁS-TI-CAS E DE
+\TU/lmr/m/n/10 308 \TU/lmr/m/sl/10 CHAP-TER 26.  AS PARTES ES-TOCÁS-TI-CAS E DE
 -TER-MINÍS-TI-CAS DE UM MOD-ELO ES-TATÍS-TICO
  []
 
-[290] [291<./probest-cambientais_files/figure-latex/unnamed-chunk-283-1.pdf>]
+[308] [309<./probest-cambientais_files/figure-latex/unnamed-chunk-322-1.pdf>]
 Overfull \hbox (138.29118pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 292 \TU/lmr/m/sl/10 CHAP-TER 25.  AS PARTES ES-TOCÁS-TI-CAS E DE
+\TU/lmr/m/n/10 310 \TU/lmr/m/sl/10 CHAP-TER 26.  AS PARTES ES-TOCÁS-TI-CAS E DE
 -TER-MINÍS-TI-CAS DE UM MOD-ELO ES-TATÍS-TICO
  []
 
-[292
+[310
 
 ]
-Chapter 26.
-<probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf, id=3329, 361.3
+Chapter 27.
+<probest-cambientais_files/figure-latex/unnamed-chunk-323-1.pdf, id=3474, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-323-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-84-1.pdf  used on input line 6199.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-323-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+23-1.pdf  used on input line 6821.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[293]
+[311]
 Overfull \vbox (58.00084pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (104.2434pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 294 \TU/lmr/m/sl/10 CHAP-TER 26.  ES-TI-MANDO OS PARÂMET-ROS: A IDEIA DA M
+\TU/lmr/m/n/10 312 \TU/lmr/m/sl/10 CHAP-TER 27.  ES-TI-MANDO OS PARÂMET-ROS: A IDEIA DA M
 ÁX-IMA VEROSSIM-IL-HANÇA
  []
 
-[294<./probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf>]
-Chapter 27.
-<probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf, id=3341, 361.3
+[312<./probest-cambientais_files/figure-latex/unnamed-chunk-323-1.pdf>]
+Chapter 28.
+<probest-cambientais_files/figure-latex/unnamed-chunk-324-1.pdf, id=3487, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-324-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-85-1.pdf  used on input line 6204.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-324-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+24-1.pdf  used on input line 6826.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[295
+[313
 
 ]
 Overfull \vbox (28.00084pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (36.61559pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 296 \TU/lmr/m/sl/10 CHAP-TER 27.  COM-PARA-NDO MOD-E-LOS: UMA QUE
+\TU/lmr/m/n/10 314 \TU/lmr/m/sl/10 CHAP-TER 28.  COM-PARA-NDO MOD-E-LOS: UMA QUE
 STÃO DE PARCIMÔ-NIA
  []
 
-[296<./probest-cambientais_files/figure-latex/unnamed-chunk-285-1.pdf>]
-Chapter 28.
-<probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf, id=3354, 361.3
+[314<./probest-cambientais_files/figure-latex/unnamed-chunk-324-1.pdf>]
+Chapter 29.
+<probest-cambientais_files/figure-latex/unnamed-chunk-325-1.pdf, id=3501, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-325-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-86-1.pdf  used on input line 6209.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-325-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+25-1.pdf  used on input line 6831.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[297
+[315
 
 ]
 Overfull \vbox (28.00084pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (0.1956pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 298 \TU/lmr/m/sl/10 CHAP-TER 28.  DA VEROSSIM-IL-HANÇA À ES-TAT
+\TU/lmr/m/n/10 316 \TU/lmr/m/sl/10 CHAP-TER 29.  DA VEROSSIM-IL-HANÇA À ES-TAT
 ÍS-TICA BAYESIANA
  []
 
-[298<./probest-cambientais_files/figure-latex/unnamed-chunk-286-1.pdf>]
-Chapter 29.
-<probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf, id=3368, 361.3
+[316<./probest-cambientais_files/figure-latex/unnamed-chunk-325-1.pdf>]
+Chapter 30.
+<probest-cambientais_files/figure-latex/unnamed-chunk-326-1.pdf, id=3514, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-326-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-87-1.pdf  used on input line 6214.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-326-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+26-1.pdf  used on input line 6836.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[299
+[317
 
 ]
 Overfull \vbox (58.00084pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (117.58339pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 300 \TU/lmr/m/sl/10 CHAP-TER 29.  UMA VAR-IEDADE DE MOD-E-LOS ES-
+\TU/lmr/m/n/10 318 \TU/lmr/m/sl/10 CHAP-TER 30.  UMA VAR-IEDADE DE MOD-E-LOS ES-
 TATÍS-TI-COS: MOD-E-LANDO A VAR-IÂN-CIA
  []
 
-[300<./probest-cambientais_files/figure-latex/unnamed-chunk-287-1.pdf>]
-Chapter 30.
-<probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf, id=3381, 361.3
+[318<./probest-cambientais_files/figure-latex/unnamed-chunk-326-1.pdf>]
+Chapter 31.
+<probest-cambientais_files/figure-latex/unnamed-chunk-327-1.pdf, id=3527, 361.3
 5pt x 361.35pt>
-File: probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf Graphic fi
+File: probest-cambientais_files/figure-latex/unnamed-chunk-327-1.pdf Graphic fi
 le (type pdf)
-<use probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf>
-Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-2
-88-1.pdf  used on input line 6219.
+<use probest-cambientais_files/figure-latex/unnamed-chunk-327-1.pdf>
+Package luatex.def Info: probest-cambientais_files/figure-latex/unnamed-chunk-3
+27-1.pdf  used on input line 6841.
 (luatex.def)             Requested size: 345.00084pt x 345.00084pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[301
+[319
 
 ]
 Overfull \vbox (58.00084pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (117.05338pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 302 \TU/lmr/m/sl/10 CHAP-TER 30.  UMA VAR-IEDADE DE MOD-E-LOS ES-
+\TU/lmr/m/n/10 320 \TU/lmr/m/sl/10 CHAP-TER 31.  UMA VAR-IEDADE DE MOD-E-LOS ES-
 TATÍS-TI-COS: MOD-E-LANDO OS RESÍ-DUOS
  []
 
-[302<./probest-cambientais_files/figure-latex/unnamed-chunk-288-1.pdf>] (./prob
-est-cambientais.bbl [303
+[320<./probest-cambientais_files/figure-latex/unnamed-chunk-327-1.pdf>] (./prob
+est-cambientais.bbl [321
 
-]) [304] (./probest-cambientais.aux)
+]) [322] (./probest-cambientais.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `probest-cambientais.out' has not changed.
-(rerunfilecheck)             Checksum: 7D3EF800F7F13959F6EBE3538A57A2F9;29601.
+(rerunfilecheck)             Checksum: 2ACCBF2F78620CC82740C0F2C92713EC;30237.
 )
 
 Here is how much of LuaTeX's memory you used:
- 22364 strings out of 478095
- 156265,1144653 words of node,token memory allocated
+ 22522 strings out of 478095
+ 156268,1144653 words of node,token memory allocated
  1323 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 175 attribute, 67 glue_spe
 c, 175 attribute_list, 1 write, 1 user_defined, 14 pdf_action nodes
-   avail lists: 1:3,2:3594,3:1115,4:574,5:1151,6:73,7:11930,8:109,9:2625,10:23,1
+   avail lists: 1:1,2:4685,3:1241,4:574,5:1109,6:70,7:11929,8:109,9:2636,10:23,1
 1:585
- 40356 multiletter control sequences out of 65536+600000
- 115 fonts using 24016371 bytes
+ 40426 multiletter control sequences out of 65536+600000
+ 114 fonts using 23928331 bytes
  87i,11n,120p,1322b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmmo
 no10-italic.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentyp
 e/public/lm/lmmonolt10-bold.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-di
 st/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/f_cop/AppData/Ro
-aming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/Users
-/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman8-regu
-lar.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public
-/lm/lmroman10-bolditalic.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/
-fonts/opentype/public/lm/lmroman10-italic.otf><c:/Users/f_cop/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/f_
-cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern
--math.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
-ic/lm/lmromanslant10-regular.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-d
+aming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/Users
+/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-bol
+ditalic.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/pu
+blic/lm/lmroman10-italic.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/
+fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/f_cop/AppData/Roami
+ng/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Use
+rs/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmromanslan
+t10-regular.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentyp
+e/public/lm/lmmono10-regular.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-d
 ist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/Users/f_cop/AppData/Roaming/
 TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/Users/f_cop/A
 ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmr
 oman12-regular.otf><c:/Users/f_cop/AppData/Roaming/TinyTeX/texmf-dist/fonts/open
 type/public/lm/lmroman17-regular.otf>
-Output written on probest-cambientais.pdf (304 pages, 26052756 bytes).
+Output written on probest-cambientais.pdf (322 pages, 26127443 bytes).
 
-PDF statistics: 3532 PDF objects out of 3580 (max. 8388607)
- 2799 compressed objects within 28 object streams
- 826 named destinations out of 1000 (max. 131072)
- 1001 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 3680 PDF objects out of 4296 (max. 8388607)
+ 2905 compressed objects within 30 object streams
+ 848 named destinations out of 1000 (max. 131072)
+ 1017 words of extra memory for PDF output out of 10000 (max. 100000000)
 

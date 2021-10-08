@@ -1,10 +1,10 @@
-# Descrevendo variáveis qualitativas {#resqualit}
+# Descrevendo variáveis quantitativas {#varquant}
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
 ```
 
-Variáveis qualitativas podem ser categóricas não-ordenadas our categóricas ordenadas. A descrição de variáveis desta natureza se dá por meio da contagem e da representação dos níveis destas variáveis por meio da contagem total, pelos valores relativos ou percentuais. 
+Variáveis quantitativas podem ser discretas ou contínuas. A descrição dos padrões de distribuição destes tipos de variáveis pode ser feita por tabelas de frequência, tabelas de frequência acumulada, histogramas ou gráficos de frequência acumulada. 
 
 Carregue o pacote `tidyverse` e importe novamente a base de dados `Reservatorios_Parana_parcial.csv`.
 
@@ -29,15 +29,8 @@ res = read_delim('Reservatorios_Parana_parcial.csv',
                                   encoding = 'latin1'))
 ```
 
-Na tabela, temos 3 variáveis categóricas: `Reservatorio`, `Bacia` e `Trofia`. A primeira é individual, cada reservatório tem um nome. A segunda é uma variável categórica não-ordenada e a segunda uma variável categórica ordenada.
 
-## Representação em tabelas de frequência
-
-
-## Reordenando categorias
-
-
-## Representação gráfica
+___
 
 ```{r echo = FALSE}
 rm(list = ls())

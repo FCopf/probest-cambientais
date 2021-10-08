@@ -1,0 +1,440 @@
+# Processamento de dados {#procdados}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+```
+
+Tabelas de dados como a apresentada no capítulo \@ref(estrdados) são normalmente armazenadas em planilhas eletrônicas. Os formatos mais comuns para armazenamento são arquivos do tipo `.xlsx`, `.csv`, `.txt` e mais recentemente planilhas em nuvem (ex. google sheets). Os programas para visualização e destes tipos de arquivos são apropriados para inserção e armazenamendo de dados, mas apresentam limitações para o processamento, descrição e visualização.
+
+Neste capítulo iremos utilizar a linguagem estatística [R](https://www.r-project.org/) e o ambiente de trabalho [RStudio](https://rstudio.com/) para iniciar um projeto de análise de dados. Veremos como preparar um novo projeto na linguagem R, organizar as base de dados no diretório de trabalho, importá-las para o ambiente R e aplicar algumas ações comuns ao processamento de dados inicial. O objetivo é a base de dados original permaneça inalterada no diretório de trabalho e que todo o processamento seja feito em uma *versão da base de dados* que será importada para o ambiente R. Isto evita que sejam feitas alterações equivocadas diretamente na base de dados, resultando na perda da informação original.
+
+> Para mais detalhes sobre programação e processamento de dados no R veja: [Introdução ao Ambiente R de Programação](https://fcopf.github.io/probest-introR/).
+
+## Criando o diretório de trabalho
+
+Inicialmente, vamos criar um diretório de trabalho, um local em nosso computador onde iremos colocar todos os arquivos necessários ao projeto (ex. as tabelas de dados), bem como os arquivos gerados durante o projeto (planilhas, gráficos, figuras, slides, arquivos `.pdf`, etc.).
+
+## Iniciando o projeto `Intro_estatistica`
+
++ Na pasta *Documentos* crie um diretório denominado `Intro_estatistica`.
+
++ Após criar o diretório copie para dentro dele a base de dados `Reservatorios_Parana_parcial.csv`. A base está disponível no link do [GitHub](https://github.com/FCopf/probest-cambientais/blob/master/datasets/Reservatorios_Parana_parcial.csv). Após entra no link, a janela de seu navegador irá mostrar um arquivo texto com os dados da planilha. Estes são os mesmo dados que apresentamod no capítulo \@ref(estrdados).
+
++ Abra o R studio e em seguida crie um novo Script em: `File --> New File --> RScript`. Antes de qualquer ação, salve o novo arquivo como: `aula_01.R`. A partir de agora, todos os comandos desta aula deverão ser digitados dentro deste arquivo. Para rodar cada comando, pressione o botão `Run` no RStudio ou digite as teclas de atalho `Ctrl + Enter`. Não se esqueça de salvar o arquivo texto à medida que adiciona novos comandos.
+
++ Vamos dizer ao R onde procurar os arquivos relacionados a este projeto. Na primeira linha de seu arquivo novo digite o comando abaixo e depois pressione `Run`:
+
+```{r, echo = TRUE, eval = FALSE}
+# Dewfinindo a localização do projeto em seu cmputador
+setwd("C:/Users/f_cop/Documents/Intro_estatistica")
+```
+
+
+____
+> O caminho digitado acima é o caminho do meu diretório de trabalho. Você deve substituir pelo caminho do projeto em seu computador. Se você utiliza o Windows, note que o R utiliza a barra **invertida (/)** para separação dos pastas.
+
+____
+
+
++ Para verificar se o comando foi bem sucedido, digite o seguinte comando no **Console** do RStudio:
+
+```{r, echo = TRUE, eval=FALSE}
+getwd()
+```
+
+```{r, echo = FALSE, include = TRUE}
+cat('[1] "C:/Users/f_cop/Documents/Intro_estatistica"')
+```
+
+Como resultado, você deverá obter uma saída parecida com a apresentada acima, contendo o caminho do projeto **em seu computador**.
+
++ Finalmente, para verificar se o R está lendo corretamente os arquivos em seu diretório, digite o comando `dir()` no console do RStudio:
+
+```{r, echo = TRUE, eval=FALSE}
+dir()
+```
+
+```{r, echo = FALSE, include = TRUE}
+cat('[1] "Intro_estatistica.Rproj"', '\n', '[2] "Reservatorios_Parana_parcial.csv"')
+```
+
+Se tudo estiver correto, o resultado deste comando deve listar os dois arquivos presentes em sua pasta de trabalho: `Intro_estatistica.Rproj` e `Reservatorios_Parana_parcial.csv`.
+
+## Instalação de pacotes
+
+O R possui vários pacotes (ou bibliotecas) pré-instalados, porém é comum que tenhamos que utilizar alguns que não venham na instalação padrão. Neste projeto utilizaremos o pacote `tidyverse`. Para instalar o pacote, digite o seguinte comando no Console do RStudio:
+
+```{r, echo = TRUE, eval=FALSE}
+install.packages("tidyverse")
+```
+
+Para mais detalhes sobre o pacote, acesse a [apostila do R](https://fcopf.github.io/probest-introR/tidy.html) e veja o [site oficial](https://www.tidyverse.org/).
+
+Um pacote necessita ser instalado somente uma vez em seu computador. Feito isto ele estará sempre disponível, bastando carregá-lo a cada vez que você abrir uma seção do R.
+
+## Carregando os pacotes
+
+Antes de iniciar as análises, insira este comando em seu arquivo texto:
+
+```{r, echo = T, eval = FALSE}
+# Carrega pacotes
+library(tidyverse)
+```
+
+Ao rodar este comando você habilita as funções do pacote para serem utilizados em sua seção do R.  Sempre que você iniciar uma nova seção do R você deverá carregar os pacotes necessários com o comando `library`.
+
+## Importanto a base de dados
+
+A base de dados está disponível em nosso diretório, porém ainda não a importamos para o ambiente R. Para isto, utilize o comando `read_delim`:
+
+```{r}
+# Importa base de dados 
+res = read_delim('datasets/Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+```{r, echo = TRUE, eval=FALSE}
+# Importa base de dados 
+res = read_delim('Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+O comando acima importa para o R os dados da tabela denominada `Reservatorios_Parana_parcial.csv` e cria um objeto denominado `res` contendo estas informações. A partir de agora, qualquer modificação que fizermos no objeto `res`, não irá alterar o arquivo `.csv` original.
+
+Vamos entender alguns argumentos do comando `read_delim`:
+
++ `delim = ','`: utilizado para dizer ao R que cada coluna na base de dados está separada das demais por uma vírgula. Se no arquivo `.csv` as colunas estivessem seperadas por *ponto-e-vígula*, deveríamos escrever `delim = ';'`.
+
++ `decimal_mark = '.'`: informa ao R que o símbolo *ponto* é utilizado como um separador decimal. Se no arquivo `.csv` os números decimais utilizassem a vírgula, o argumento deveria ser `decimal_mark = ','`.
+
++ `encoding = 'latin1'`: indica a forma de codificação. A necessidade de seu uso depende do sistema operacional de seu computador. Outras formas de codificação além de são por exemplo `UTF-8`, `ISO-8859-1`. Geralmente, o argumento é necessário quando existem caracteres especiais na base de dados como acentos e cedilhas.
+
+Podemos visualizar a base de dados digitando:
+
+```{r, echo = TRUE}
+res
+```
+
+Fazendo isso você verá somente parte da base de dados, a depender do tamanho de sua janela do RStudio. Caso queira ver a tabela completa digite:
+
+```{r, echo = TRUE, eval = FALSE}
+View(res)
+```
+
+A base de dados é simplesmente uma **tabela**, em que cada linha trás uma observação e cada coluna uma variável. Vamos realizar algumas operações para entender como explorar as informações na tabela.
+
+## Verificando a base de dados
+
+O comando abaixo informa alguns detalhes sobre cada coluna da tabela e dos tipos de dados:
+
+```{r, echo = TRUE}
+glimpse(res)
+```
+
+Vemos dois tipos de dados: `chr` identificando que a coluna contém uma variável **qualitativa** e `dbl`, identificando que a coluna contém uma variável **quantitativa**.
+
+## Reorganizando a base de dados
+
+A tabela contém uma coluna denominada `Fechamento`, que mostra o ano em que o reservatório foi formado. Vamos visualizar em ordem crescente do ano de formação, do mais antigo para o mais novo:
+
+```{r, echo = TRUE, eval = FALSE}
+res %>% 
+  arrange(Fechamento) %>% 
+  View()
+```
+
+O reservatório mais antigo é de `r min(res$Fechamento, na.rm = T)` e o mais novo de `r max(res$Fechamento, na.rm = T)`. Três reservatórios estão ao final da tabela pois para estes a variável `Fechamento` consta como faltante.
+
+> Ao rodar esta função não alteramos o objeto `res`, apenas o visualizamos em uma ordem diferente.
+
+Digite o nome do objeto e verá que a ordem permanece inalterada. 
+
+```{r, echo = TRUE}
+res
+```
+
+Se desejarmos visualizar a tabela em ordem **decresente**, basta fazermos:
+
+```{r, echo = TRUE, eval = FALSE}
+res %>% 
+  arrange(desc(Fechamento)) %>% 
+  View()
+```
+
+Se utilizarmos as função `arrange()` com uma variável **nominal**, a tabela será organizada em ordem alfabética para esta variável.
+
+```{r, echo = TRUE, eval = FALSE}
+res %>% 
+  arrange(Bacia) %>% 
+  View()
+```
+
+## Selecionando colunas da tabela
+
+É interessante, sobretudo para grandes bases de dados, se pudermos selecionar sub-grupos de colunas, excluindo outras que não nos interessam. Podemos fazer isto facilmente utilizando a função `select()`.
+
+Por exemplo, para selecionar somente as colunas `Reservatório`, `Area` e `Riqueza`:
+
+```{r, echo = TRUE, eval = FALSE}
+res_new = res %>% 
+  select(Reservatorio, Area, Riqueza)
+
+rew_new
+```
+
+```{r}
+res %>% 
+  select(Reservatorio, Area, Riqueza) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 12)
+```
+
+O que fizemos aqui foi cirar um **novo** objeto (`res_new`), contendo somente as colunas selecionadas.
+
+Se quisermos selecionar todas as variáveis **exceto** `Reservatório` fazemos:
+
+```{r, echo = TRUE, eval = FALSE}
+rew_new = res %>% 
+  select(-Reservatorio)
+
+rew_new
+```
+
+```{r}
+res %>% 
+  select(-Reservatorio) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+Podemos fazer também uma seleção que vá desde uma coluna inicial até uma coluna final. Podemos selecionar, por exemplo, todas as colunas desde `pH` **até** `P.total`. Para isto fazemos:
+
+```{r, echo = TRUE, eval = FALSE}
+res_new = res %>% 
+  select(pH:P.total)
+
+res_new
+```
+
+```{r}
+res %>% 
+  select(pH:P.total) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 12)
+```
+
+Podemos ainda selecionar todas as variáveis categóricas:
+
+```{r, echo = TRUE, eval = FALSE}
+rew_new = res %>% 
+  select_if(is.character)
+
+rew_new
+```
+
+```{r}
+res %>% 
+  select_if(is.character) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 12)
+```
+
+Ou todas as variáveis numéricas:
+
+```{r, echo = TRUE, eval = FALSE}
+rew_new = res %>% 
+  select_if(is.numeric)
+
+rew_new
+```
+
+```{r}
+res %>% 
+  select_if(is.numeric) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+Finalmente, podemos alterar a ordem das colunas:
+
+```{r, echo = TRUE, eval = FALSE}
+nova_ordem = c('Fechamento', 'Area', 'Bacia', 'Reservatorio', 'CPUE', 'Riqueza',
+               'Trofia', 'Condutividade', 'pH', 'P.total', 'Alcalinidade')
+res_new = res %>% 
+  select(nova_ordem)
+
+res_new
+```
+
+```{r}
+nova_ordem = c('Fechamento', 'Area', 'Bacia', 'Reservatorio', 'CPUE', 'Riqueza',
+               'Trofia', 'Condutividade', 'pH', 'P.total', 'Alcalinidade')
+res %>% 
+  select(nova_ordem) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+## Filtrando linhas da tabela
+
+Podemos fazer algo similar com as linhas utilizando a função `filter()`.
+
+Se quisermos selecionar somente os reservatórios da bacia do rio Paranapanema podemos fazer:
+
+```{r, echo = TRUE, eval = F}
+res_paranapanema = res %>% 
+  filter(Bacia == 'Paranapanema')
+
+res_paranapanema
+```
+
+```{r}
+res %>% 
+  filter(Bacia == 'Paranapanema') %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+Ou todos os reservatório **exceto** os da bacia do rio Paranapanema.
+
+```{r, echo = TRUE, eval = F}
+res_outros = res %>% 
+  filter(Bacia != 'Paranapanema')
+
+res_outros
+```
+
+```{r}
+res %>% 
+  filter(Bacia != 'Paranapanema') %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+___
+
+> A função `filter()` utiliza operadores lógicos (retornam VERDADEIRO ou FALSO). Para aprender sobre este operadores no R veja [Operadores lógicos](https://fcopf.github.io/probest-introR/intro.html#operadores-l%C3%B3gicos)
+
+___
+
+Podemos realizar operações análogas para variáveis numéricas. Vamos selecionar somente os reservatórios com pH **menor** que $7.0$.
+
+```{r, echo = TRUE, eval = F}
+res_acidos = res %>% 
+  filter(pH < 7)
+
+res_acidos
+```
+
+```{r}
+res %>% 
+  filter(pH < 7) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+Se quisermos pH's **menores ou iguais** a $7.0$ fazemos:
+
+```{r, echo = TRUE, eval = F}
+res_acidos = res %>% 
+  filter(pH <= 7)
+
+res_acidos
+```
+
+```{r}
+res %>% 
+  filter(pH <= 7) %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+## Adicionando ou modificando colunas
+
+Podemos adicionar novas colunas, assim como fazemos em uma planilha excel. Temos por exemplo, o ano de formação do reservatório. Assumindo que estes dados são de 2005, podemos criar uma coluna indicando a idade do reservatório no momento da tomada de dados. Para criar uma nova coluna usamos a função `mutate()`.
+
+```{r, echo = TRUE, eval = F}
+res = res %>% 
+  mutate(Idade = 2005 - Fechamento)
+res
+```
+
+```{r}
+res = res %>% 
+  mutate(Idade = 2005 - Fechamento)
+res %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+Note que aqui, nós **re-escrevemos** o objeto `res` adicionando uma coluna `Idade`. A partir de agora, o objeto `res` tem uma coluna a mais. *Mas lembre-se que nossa base de dados original `.csv` permanece inalterada*.
+
+Podemos também fazer alterações em uma coluna existente usando a mesma função `mutate`. Por exemplo, a variável `Area` é dada em $km^2$. Podemos transformá-la em **Hectares** multiplicando os valores por $100$.
+
+```{r, echo = TRUE, eval = F}
+res = res %>% 
+  mutate(Area = Area * 100)
+
+res
+```
+
+```{r}
+res = res %>% 
+  mutate(Area = Area * 100)
+res %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+
+## Renomeando colunas
+
+Finalmente, podemos renomear colunas para facilitar a leitura dos dados. A coluna `P.total`, por exemplo, indica a quantidade de fósforo total, enquanto a variável `CPUE` é a captura em kg. Podemos renomear estas colunas usando a função `rename`:
+
+```{r, echo = TRUE, eval = F}
+res = res %>% 
+  rename(Fosforo_total = P.total,
+         Captura_kg = CPUE)
+
+res
+```
+
+```{r}
+res = res %>% 
+  rename(Fosforo_total = P.total,
+         Captura_kg = CPUE)
+res %>% 
+  kableExtra::kable(booktabs = TRUE) %>%
+  kable_styling(font_size = 8)
+```
+
+## Outras operações para processamento e transformação de dados
+
+Existem muitas outras operações possíveis para processar conjuntos de dados. A maioria faz parte do conjunto de pacotes `tidyverse` (veja [aqui](https://fcopf.github.io/probest-introR/format.html)).
+
+Neste capítulo vimos funções para:
+
++ Importar arquivos `.csv`: `read_delim`;
+
++ Verificar os tipos de dados de uma tabela: `glimpse`;
+
++ Reorganizar informações: `arrange`;
+
++ Selecionar colunas: `select`;
+
++ Filtrar linhas: `filter`;
+
++ Adicionar/modificar colunas: `mutate`;
+
++ Renomear colunas: `rename`.
+
+A partir dos próximos capítulos iremos nos dedicar a aspectos da estatística descritiva, apresentando novas funções à medida que forem necessárias.
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+

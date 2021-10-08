@@ -2,7 +2,7 @@
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
-res <- read_delim('datasets/Reservatorios_Parana_parcial.csv', locale = locale(encoding = "latin1"))
+res = read_delim('datasets/Reservatorios_Parana_parcial.csv', locale = locale(encoding = "latin1"))
 
 trofia_niveis <- factor(res$Trofia, levels = c('Oligotrófico', 'Mesotrófico', 'Eutrófico'), ordered = TRUE) %>%
   levels() %>% 
@@ -83,13 +83,13 @@ São variáveis **não-numéricas** como categorias ou rótulos. Dentre as vari�
 
 ### Variáveis quantitativas
 
-São variáveis *numéricas* que também podem ser sub-dividicas em dois grupos: **discretas** e **contínuas**. 
+São variáveis *numéricas* que também podem ser sub-divididas em dois grupos: **discretas** e **contínuas**. 
 
-*Variáveis quantitativas discretas*: envolvem quantias *enumeráveis* como a contagem de barcos que saem para pescar em um determinado dia, o número de peixes de um cardume. Em nosso exemplo, a variável `Num_especies` é quantitativa discreta pois expressa o número de espécies de peixes encontradas em cada reservatório. Este é um número inteiro que pode assumir valor mínimo igual a 0 (nenhuma espécie) e em teoria, não tem limite superior (ainda que neste exemplo, o número máximo encontrados seja de `r max(res$Num_especies)` espécies).
+*Variáveis quantitativas discretas*: envolvem quantias *enumeráveis* como a contagem de barcos que saem para pescar em um determinado dia, o número de peixes de um cardume. Em nosso exemplo, a variável `Riqueza` é quantitativa discreta pois expressa o número de espécies de peixes encontradas em cada reservatório. Este é um número inteiro que pode assumir valor mínimo igual a 0 (nenhuma espécie) e em teoria, não tem limite superior (ainda que neste exemplo, o número máximo encontrados seja de `r max(res$Riqueza)` espécies).
 
 *Variáveis quantitativas contínuas*: envolvem quantias *não-enumeráveis* como a vazão em $m^3/seg$ que verte de uma cachoeira, o volume de chuva em um determinado dia, altura da maré ou a velocidade do vento. O limite de precisão que utilizamos para representá-las depende basicamente da capacidade de mensuração dos aparelhos disponíveis. Em nosso exemplo, temos diversas variáveis deste tipo como `pH`, `Condutividade`, `Fosforo_total`.
 
-> Sempre é possível transformar variáveis quantitativas em qualitativas. Se temos a variável comprimento de peixes desembarcados dada em centímetros (variável quantitativa), é possível expressa-la de forma cetagórica em peixes grandes e pequenos (variável qualitativa). Por outro lado se tivermos somente a informação de que um peixe é grande ou pequeno, não podemos recuperar as quantias numéricas originais.
+> Sempre é possível transformar variáveis quantitativas em qualitativas. Se temos a variável comprimento de peixes desembarcados dada em centímetros (variável quantitativa), é possível expressá-la de forma categórica em peixes grandes e pequenos (variável qualitativa). Por outro lado, se tivermos somente a informação de que um peixe é grande ou pequeno, não podemos recuperar as quantias numéricas originais.
 
 ## Níveis de mensuração
 

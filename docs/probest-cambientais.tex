@@ -138,7 +138,7 @@
 
 \title{Estatística nas Ciências Ambientais}
 \author{Fabio Cop Ferreira \and \href{mailto:fabiocopf@gmail.com}{\nolinkurl{fabiocopf@gmail.com}}; \href{mailto:fcferreira@unifesp.br}{\nolinkurl{fcferreira@unifesp.br}} \and Instituto do Mar, Universidade Federal de São Paulo}
-\date{Última atualização em 05/10/2021}
+\date{Última atualização em 07/10/2021}
 
 \begin{document}
 \maketitle
@@ -285,14 +285,14 @@ São variáveis \textbf{não-numéricas} como categorias ou rótulos. Dentre as 
 \hypertarget{variuxe1veis-quantitativas}{%
 \subsection{Variáveis quantitativas}\label{variuxe1veis-quantitativas}}
 
-São variáveis \emph{numéricas} que também podem ser sub-dividicas em dois grupos: \textbf{discretas} e \textbf{contínuas}.
+São variáveis \emph{numéricas} que também podem ser sub-divididas em dois grupos: \textbf{discretas} e \textbf{contínuas}.
 
-\emph{Variáveis quantitativas discretas}: envolvem quantias \emph{enumeráveis} como a contagem de barcos que saem para pescar em um determinado dia, o número de peixes de um cardume. Em nosso exemplo, a variável \texttt{Num\_especies} é quantitativa discreta pois expressa o número de espécies de peixes encontradas em cada reservatório. Este é um número inteiro que pode assumir valor mínimo igual a 0 (nenhuma espécie) e em teoria, não tem limite superior (ainda que neste exemplo, o número máximo encontrados seja de \ensuremath{-\infty{}} espécies).
+\emph{Variáveis quantitativas discretas}: envolvem quantias \emph{enumeráveis} como a contagem de barcos que saem para pescar em um determinado dia, o número de peixes de um cardume. Em nosso exemplo, a variável \texttt{Riqueza} é quantitativa discreta pois expressa o número de espécies de peixes encontradas em cada reservatório. Este é um número inteiro que pode assumir valor mínimo igual a 0 (nenhuma espécie) e em teoria, não tem limite superior (ainda que neste exemplo, o número máximo encontrados seja de 40 espécies).
 
 \emph{Variáveis quantitativas contínuas}: envolvem quantias \emph{não-enumeráveis} como a vazão em \(m^3/seg\) que verte de uma cachoeira, o volume de chuva em um determinado dia, altura da maré ou a velocidade do vento. O limite de precisão que utilizamos para representá-las depende basicamente da capacidade de mensuração dos aparelhos disponíveis. Em nosso exemplo, temos diversas variáveis deste tipo como \texttt{pH}, \texttt{Condutividade}, \texttt{Fosforo\_total}.
 
 \begin{quote}
-Sempre é possível transformar variáveis quantitativas em qualitativas. Se temos a variável comprimento de peixes desembarcados dada em centímetros (variável quantitativa), é possível expressa-la de forma cetagórica em peixes grandes e pequenos (variável qualitativa). Por outro lado se tivermos somente a informação de que um peixe é grande ou pequeno, não podemos recuperar as quantias numéricas originais.
+Sempre é possível transformar variáveis quantitativas em qualitativas. Se temos a variável comprimento de peixes desembarcados dada em centímetros (variável quantitativa), é possível expressá-la de forma categórica em peixes grandes e pequenos (variável qualitativa). Por outro lado, se tivermos somente a informação de que um peixe é grande ou pequeno, não podemos recuperar as quantias numéricas originais.
 \end{quote}
 
 \hypertarget{nuxedveis-de-mensurauxe7uxe3o}{%
@@ -321,25 +321,51 @@ A depender do nível de mensuração, algumas operações matemáticas podem ou 
 
 Tabelas de dados como a apresentada no capítulo \ref{estrdados} são normalmente armazenadas em planilhas eletrônicas. Os formatos mais comuns para armazenamento são arquivos do tipo \texttt{.xlsx}, \texttt{.csv}, \texttt{.txt} e mais recentemente planilhas em nuvem (ex. google sheets). Os programas para visualização e destes tipos de arquivos são apropriados para inserção e armazenamendo de dados, mas apresentam limitações para o processamento, descrição e visualização.
 
-Neste capítulo iremos utilizar a linguagem estatística \href{https://www.r-project.org/}{R} e o ambiente de trabalho \href{https://rstudio.com/}{RStudio} para aplicar algumas ações comuns ao processamento inicial de dados. O objetivo é que a base de dados original permaneça inalterada e que todo o processamento seja feito em uma versão da base de dados que será importada para o programa R. Isto evita que sejam feitas alterações equivocadas diretamente na base de dados resultando na perda da informação original.
+Neste capítulo iremos utilizar a linguagem estatística \href{https://www.r-project.org/}{R} e o ambiente de trabalho \href{https://rstudio.com/}{RStudio} para iniciar um projeto de análise de dados. Veremos como preparar um novo projeto na linguagem R, organizar as base de dados no diretório de trabalho, importá-las para o ambiente R e aplicar algumas ações comuns ao processamento de dados inicial. O objetivo é a base de dados original permaneça inalterada no diretório de trabalho e que todo o processamento seja feito em uma \emph{versão da base de dados} que será importada para o ambiente R. Isto evita que sejam feitas alterações equivocadas diretamente na base de dados, resultando na perda da informação original.
 
 \begin{quote}
-Neste capítulo veremos como preparar um novo projeto na linguagem R. Para mais detalhes veja apostila: \href{https://fcopf.github.io/probest-introR/}{Introdução ao Ambiente R de Programação}.
+Para mais detalhes sobre programação e processamento de dados no R veja: \href{https://fcopf.github.io/probest-introR/}{Introdução ao Ambiente R de Programação}.
 \end{quote}
 
-\hypertarget{criando-seu-projeto-de-trabalho-no-rstudio}{%
-\section{Criando seu projeto de trabalho no RStudio}\label{criando-seu-projeto-de-trabalho-no-rstudio}}
+\hypertarget{criando-o-diretuxf3rio-de-trabalho}{%
+\section{Criando o diretório de trabalho}\label{criando-o-diretuxf3rio-de-trabalho}}
 
-Se você utiliza o RStudio com ambiente de trabalho para a linguagem R, o modo mais organizado de gerenciar suas análises é criando um \textbf{Projeto}. Você pode criar um projeto via menu: \texttt{File}, escolhendo a opção \texttt{New\ Project}. Ao abrir a janela, escolha novamente \texttt{New\ Project}. Em \texttt{Directory\ name:} escreva o nome de seu projeto e em \texttt{Create\ a\ project\ as\ subdirectory\ of:} escolha diretório de seu computador em que o projeto será criado. Finalmente pressione \texttt{Create\ Project}.
-
-Ao fazer isto, será criada uma nova pasta com o nome que você escolheu para o projeto. Dentro desta pasta você encontrará um arquivo de extensão \texttt{.Rproj} com o nome de seu projeto.
-
-A partir deste momento, sempre que você for trabalhar neste projeto, abra o RStudio pressionando duas vezes o mouse sobre o arquivo \texttt{.Rproj}. Ao fazer isto, o R saberá qual diretório de trabalho você está utilizando e onde estarão os documentos relacionados ao projeto. Utilizar projetos no RStudio torna mais simples a organização dos arquivos, pois todas as base de dados bem como o material gerado (figuras, slides, arquivos \texttt{.pdf}, etc) podem ser organizados em sub-diretórios do projeto.
+Inicialmente, vamos criar um diretório de trabalho, um local em nosso computador onde iremos colocar todos os arquivos necessários ao projeto (ex. as tabelas de dados), bem como os arquivos gerados durante o projeto (planilhas, gráficos, figuras, slides, arquivos \texttt{.pdf}, etc.).
 
 \hypertarget{iniciando-o-projeto-intro_estatistica}{%
-\subsection{\texorpdfstring{Iniciando o projeto \texttt{Intro\_estatistica}}{Iniciando o projeto Intro\_estatistica}}\label{iniciando-o-projeto-intro_estatistica}}
+\section{\texorpdfstring{Iniciando o projeto \texttt{Intro\_estatistica}}{Iniciando o projeto Intro\_estatistica}}\label{iniciando-o-projeto-intro_estatistica}}
 
-Na pasta \emph{Documentos} crie um projeto denominado \texttt{Intro\_estatistica}. Após criar o projeto, verifique se o R está realmente direcionado para este local. Vá ao console do RStudioo e digitre o comando \texttt{getwd()}.
+\begin{itemize}
+\item
+  Na pasta \emph{Documentos} crie um diretório denominado \texttt{Intro\_estatistica}.
+\item
+  Após criar o diretório copie para dentro dele a base de dados \texttt{Reservatorios\_Parana\_parcial.csv}. A base está disponível no link do \href{https://github.com/FCopf/probest-cambientais/blob/master/datasets/Reservatorios_Parana_parcial.csv}{GitHub}. Após entra no link, a janela de seu navegador irá mostrar um arquivo texto com os dados da planilha. Estes são os mesmo dados que apresentamod no capítulo \ref{estrdados}.
+\item
+  Abra o R studio e em seguida crie um novo Script em: \texttt{File\ -\/-\textgreater{}\ New\ File\ -\/-\textgreater{}\ RScript}. Antes de qualquer ação, salve o novo arquivo como: \texttt{aula\_01.R}. A partir de agora, todos os comandos desta aula deverão ser digitados dentro deste arquivo. Para rodar cada comando, pressione o botão \texttt{Run} no RStudio ou digite as teclas de atalho \texttt{Ctrl\ +\ Enter}. Não se esqueça de salvar o arquivo texto à medida que adiciona novos comandos.
+\item
+  Vamos dizer ao R onde procurar os arquivos relacionados a este projeto. Na primeira linha de seu arquivo novo digite o comando abaixo e depois pressione \texttt{Run}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Dewfinindo a localização do projeto em seu cmputador}
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"C:/Users/f\_cop/Documents/Intro\_estatistica"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+O caminho digitado acima é o caminho do meu diretório de trabalho. Você deve substituir pelo caminho do projeto em seu computador. Se você utiliza o Windows, note que o R utiliza a barra \textbf{invertida (/)} para separação dos pastas.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  Para verificar se o comando foi bem sucedido, digite o seguinte comando no \textbf{Console} do RStudio:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -351,16 +377,13 @@ Na pasta \emph{Documentos} crie um projeto denominado \texttt{Intro\_estatistica
 ## [1] "C:/Users/f_cop/Documents/Intro_estatistica"
 \end{verbatim}
 
-Como resultado você verá uma saída parecida com a apresentada acima, contendo o caminho do projeto em seu computador.
+Como resultado, você deverá obter uma saída parecida com a apresentada acima, contendo o caminho do projeto \textbf{em seu computador}.
 
-\hypertarget{inserindo-uma-base-de-dados-no-diretuxf3rio-do-projeto}{%
-\section{Inserindo uma base de dados no diretório do projeto}\label{inserindo-uma-base-de-dados-no-diretuxf3rio-do-projeto}}
-
-Vá ao no link do \href{https://github.com/FCopf/probest-cambientais/blob/master/datasets/Reservatorios_Parana_parcial.csv}{GitHub} para acessar a base de dados que iremos utilizar neste capítulo. Após clicar, a janela do navegador irá mostrar um arquivo texto com os dados da planilha \texttt{Reservatorios\_Parana\_parcial.csv} que discutimos no capítulo \ref{estrdados}. A primeira linha corresponde ao nome de cada variável, enquanto as demais linhas contém os dados de cada reservatório.
-
-Abra um bloco de notas em seu computador, copie os dados do arquivo texto (inclusive o nome das colunas) selecionando-os com o mouse e copie no bloco de notas. Em seguida salve seu bloco de notas com o nome \texttt{Reservatorios\_Parana\_parcial.csv} dentro da pasta \texttt{Intro\_estatistica}.
-
-Agora, você já tem a base de dados em sua pasta de trabalho. Para garantir que tudo esteja correto, verifique se o R reconhece este arquivo, digitando o comando \texttt{dir()} no console do RStudio:
+\begin{itemize}
+\tightlist
+\item
+  Finalmente, para verificar se o R está lendo corretamente os arquivos em seu diretório, digite o comando \texttt{dir()} no console do RStudio:
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -373,14 +396,12 @@ Agora, você já tem a base de dados em sua pasta de trabalho. Para garantir que
 ##  [2] "Reservatorios_Parana_parcial.csv"
 \end{verbatim}
 
-Se tudo estiver correto, sua pasta de trabalho deve conter dois arquivos: \texttt{Intro\_estatistica.Rproj} e \texttt{Reservatorios\_Parana\_parcial.csv}.
+Se tudo estiver correto, o resultado deste comando deve listar os dois arquivos presentes em sua pasta de trabalho: \texttt{Intro\_estatistica.Rproj} e \texttt{Reservatorios\_Parana\_parcial.csv}.
 
-\hypertarget{preparando-o-ambiente-de-trabalho}{%
-\section{Preparando o ambiente de trabalho}\label{preparando-o-ambiente-de-trabalho}}
+\hypertarget{instalauxe7uxe3o-de-pacotes}{%
+\section{Instalação de pacotes}\label{instalauxe7uxe3o-de-pacotes}}
 
-\textbf{Instalação de pacotes}
-
-Caso ainda não tenha feito, instale o pacote \texttt{tidyverse}. Para isto digite:
+O R possui vários pacotes (ou bibliotecas) pré-instalados, porém é comum que tenhamos que utilizar alguns que não venham na instalação padrão. Neste projeto utilizaremos o pacote \texttt{tidyverse}. Para instalar o pacote, digite o seguinte comando no Console do RStudio:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -388,16 +409,14 @@ Caso ainda não tenha feito, instale o pacote \texttt{tidyverse}. Para isto digi
 \end{Highlighting}
 \end{Shaded}
 
-Para mais detalhes sobre o pacote acesse a \href{https://fcopf.github.io/probest-introR/tidy.html}{apostila do R} e o \href{https://www.tidyverse.org/}{site oficial}.
+Para mais detalhes sobre o pacote, acesse a \href{https://fcopf.github.io/probest-introR/tidy.html}{apostila do R} e veja o \href{https://www.tidyverse.org/}{site oficial}.
 
-\textbf{Novo script \texttt{.R}}
-
-No RStudio vá em \texttt{File\ -\/-\textgreater{}\ New\ File\ -\/-\textgreater{}\ RScript} para criar um novo arquivo e após criado, salve-o como \texttt{aula\_01.R}. A partir de agora, todos os comandos desta aula serão digitados dentro deste arquivo texto. Para rodar cada comando, pressione o botão \texttt{Run} no RStudio ou digite as teclas de atalho \texttt{Ctrl\ +\ Enter}. Não se esqueça de salvar o arquivo texto à medida que adiciona novos comandos.
+Um pacote necessita ser instalado somente uma vez em seu computador. Feito isto ele estará sempre disponível, bastando carregá-lo a cada vez que você abrir uma seção do R.
 
 \hypertarget{carregando-os-pacotes}{%
 \section{Carregando os pacotes}\label{carregando-os-pacotes}}
 
-Antes de iniciar com os comandos, carregue o pacote \texttt{tidyverse}
+Antes de iniciar as análises, insira este comando em seu arquivo texto:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -406,12 +425,12 @@ Antes de iniciar com os comandos, carregue o pacote \texttt{tidyverse}
 \end{Highlighting}
 \end{Shaded}
 
-Sempre que você iniciar uma seção do R deverá carregar os pacotes necessários. Para esta aula utilizaremos somente algumas funções inseridas no pacote \texttt{tidyverse}.
+Ao rodar este comando você habilita as funções do pacote para serem utilizados em sua seção do R. Sempre que você iniciar uma nova seção do R você deverá carregar os pacotes necessários com o comando \texttt{library}.
 
 \hypertarget{importanto-a-base-de-dados}{%
 \section{Importanto a base de dados}\label{importanto-a-base-de-dados}}
 
-Use a função \texttt{read\_delim}
+A base de dados está disponível em nosso diretório, porém ainda não a importamos para o ambiente R. Para isto, utilize o comando \texttt{read\_delim}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -423,17 +442,17 @@ Use a função \texttt{read\_delim}
 \end{Highlighting}
 \end{Shaded}
 
-Ao rodar este comando, o R terá uma tabela denominada \texttt{res} com as informações lidas da base de dados.
+O comando acima importa para o R os dados da tabela denominada \texttt{Reservatorios\_Parana\_parcial.csv} e cria um objeto denominado \texttt{res} contendo estas informações. A partir de agora, qualquer modificação que fizermos no objeto \texttt{res}, não irá alterar o arquivo \texttt{.csv} original.
 
-Vamos entender alguns argumentos:
+Vamos entender alguns argumentos do comando \texttt{read\_delim}:
 
 \begin{itemize}
 \item
-  \texttt{delim\ =\ \textquotesingle{},\textquotesingle{}}: utilizado para dizer ao R que cada coluna na base de dados é separada por uma vírgula. Se o arquivo \texttt{.csv} estivesse separando as colunas por \emph{ponto-e-vígula} como também é comum, deveríamos escrever \texttt{delim\ =\ \textquotesingle{};\textquotesingle{}}.
+  \texttt{delim\ =\ \textquotesingle{},\textquotesingle{}}: utilizado para dizer ao R que cada coluna na base de dados está separada das demais por uma vírgula. Se no arquivo \texttt{.csv} as colunas estivessem seperadas por \emph{ponto-e-vígula}, deveríamos escrever \texttt{delim\ =\ \textquotesingle{};\textquotesingle{}}.
 \item
-  \texttt{decimal\_mark\ =\ \textquotesingle{}.\textquotesingle{}}: diz para o R entender o símbolo \emph{ponto} como um separador decimal. Se no arquivo \texttt{.csv} estivesse separando os números decimais com uma vírgula, o argumento seria \texttt{decimal\_mark\ =\ \textquotesingle{},\textquotesingle{}}.
+  \texttt{decimal\_mark\ =\ \textquotesingle{}.\textquotesingle{}}: informa ao R que o símbolo \emph{ponto} é utilizado como um separador decimal. Se no arquivo \texttt{.csv} os números decimais utilizassem a vírgula, o argumento deveria ser \texttt{decimal\_mark\ =\ \textquotesingle{},\textquotesingle{}}.
 \item
-  \texttt{encoding\ =\ \textquotesingle{}latin1\textquotesingle{}} indica a forma de codificação. A necessidade de seu uso depende do sistema operacional de seu computador. Outras formas de codificação além de \texttt{latim1} são \texttt{UTF-8}, \texttt{ISO-8859-1}, entre outros. O argumento é necessário geralmente quando há caracteres especiais na base de dados como acentos e cedilhas.
+  \texttt{encoding\ =\ \textquotesingle{}latin1\textquotesingle{}}: indica a forma de codificação. A necessidade de seu uso depende do sistema operacional de seu computador. Outras formas de codificação além de são por exemplo \texttt{UTF-8}, \texttt{ISO-8859-1}. Geralmente, o argumento é necessário quando existem caracteres especiais na base de dados como acentos e cedilhas.
 \end{itemize}
 
 Podemos visualizar a base de dados digitando:
@@ -462,7 +481,7 @@ Podemos visualizar a base de dados digitando:
 ## #   CPUE <dbl>
 \end{verbatim}
 
-Fazendo isso você verá somente parte da base de dados a depender do tamanho de sua janela do RStudio. Caso queira ver a tabela completa digite:
+Fazendo isso você verá somente parte da base de dados, a depender do tamanho de sua janela do RStudio. Caso queira ver a tabela completa digite:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -470,10 +489,12 @@ Fazendo isso você verá somente parte da base de dados a depender do tamanho de
 \end{Highlighting}
 \end{Shaded}
 
-A base de dados é simplesmente uma tabela em que cada linha trás uma observação e cada coluna uma variável. Vamos realizar algumas operações para entender como explorar as informações na tabela.
+A base de dados é simplesmente uma \textbf{tabela}, em que cada linha trás uma observação e cada coluna uma variável. Vamos realizar algumas operações para entender como explorar as informações na tabela.
 
 \hypertarget{verificando-a-base-de-dados}{%
 \section{Verificando a base de dados}\label{verificando-a-base-de-dados}}
+
+O comando abaixo informa alguns detalhes sobre cada coluna da tabela e dos tipos de dados:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -497,12 +518,12 @@ A base de dados é simplesmente uma tabela em que cada linha trás uma observaç
 ## $ CPUE          <dbl> 9.22, 28.73, 11.59, 30.76, 5.95, 7.75, 7.51, 4.01, 20.83~
 \end{verbatim}
 
-O comando acima mostra cada uma das colunas e dados. Nesta tabela vemos dois tipos de dados \texttt{chr} identificando a coluna como uma variável qualitativa e \texttt{dbl} identificando uma variável quantitativa.
+Vemos dois tipos de dados: \texttt{chr} identificando que a coluna contém uma variável \textbf{qualitativa} e \texttt{dbl}, identificando que a coluna contém uma variável \textbf{quantitativa}.
 
-\hypertarget{visualizando-a-base-de-dados}{%
-\section{Visualizando a base de dados}\label{visualizando-a-base-de-dados}}
+\hypertarget{reorganizando-a-base-de-dados}{%
+\section{Reorganizando a base de dados}\label{reorganizando-a-base-de-dados}}
 
-A tabela contém uma coluna denominada \texttt{Fechamento} que mostra a idade em que o reservatório foi formado. Vamos visualizar a tabela em ordem de idade, o mais antigo ao mais novo:
+A tabela contém uma coluna denominada \texttt{Fechamento}, que mostra o ano em que o reservatório foi formado. Vamos visualizar em ordem crescente do ano de formação, do mais antigo para o mais novo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -514,6 +535,36 @@ A tabela contém uma coluna denominada \texttt{Fechamento} que mostra a idade em
 
 O reservatório mais antigo é de 1909 e o mais novo de 2000. Três reservatórios estão ao final da tabela pois para estes a variável \texttt{Fechamento} consta como faltante.
 
+\begin{quote}
+Ao rodar esta função não alteramos o objeto \texttt{res}, apenas o visualizamos em uma ordem diferente.
+\end{quote}
+
+Digite o nome do objeto e verá que a ordem permanece inalterada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 31 x 11
+##    Reservatorio Bacia  Fechamento   Area Trofia          pH Condutividade Alcalinidade
+##    <chr>        <chr>       <dbl>  <dbl> <chr>        <dbl>         <dbl>        <dbl>
+##  1 Cavernoso    Iguacu       1965   2.9  Oligotrófico   7.4          33.1        140. 
+##  2 Curucaca     Iguacu       1982   2    Oligotrófico   7            32.4        126. 
+##  3 Foz do Areia Iguacu       1980 139    Oligotrófico   7.3          35.5         97  
+##  4 Irai         Iguacu       2000  15    Eutrófico      6.9          50.2          3.3
+##  5 JMF          Iguacu       1970   0.45 Mesotrófico    7.3          40.2          3.7
+##  6 Jordao       Iguacu       1996   3.4  Oligotrófico   7.1          23.7        153. 
+##  7 Passauna     Iguacu       1978  14    Oligotrófico   8.8         126.         526  
+##  8 Piraquara    Iguacu       1979   3.3  Oligotrófico   7.1          22.8         50.7
+##  9 Salto Caxias Iguacu       1998 124    Oligotrófico   7.3          39.6        106  
+## 10 Salto do Vau Iguacu       1959   2.9  Oligotrófico   6.5          23.2        279  
+## # ... with 21 more rows, and 3 more variables: P.total <dbl>, Riqueza <dbl>,
+## #   CPUE <dbl>
+\end{verbatim}
+
 Se desejarmos visualizar a tabela em ordem \textbf{decresente}, basta fazermos:
 
 \begin{Shaded}
@@ -524,9 +575,7 @@ Se desejarmos visualizar a tabela em ordem \textbf{decresente}, basta fazermos:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{quote}
-Se utilizarmos as funções \texttt{arrange()} e/ou \texttt{desc()} com uma variável nominal, a tabela será organizada em ordem alfabética para esta variável.
-\end{quote}
+Se utilizarmos as função \texttt{arrange()} com uma variável \textbf{nominal}, a tabela será organizada em ordem alfabética para esta variável.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -539,19 +588,21 @@ Se utilizarmos as funções \texttt{arrange()} e/ou \texttt{desc()} com uma vari
 \hypertarget{selecionando-colunas-da-tabela}{%
 \section{Selecionando colunas da tabela}\label{selecionando-colunas-da-tabela}}
 
-É interessante, sobretudo para grandes bases de dados se pudermos selecionar sub-grupos de colunas. Podemos fazer isto facilmente utilizando a função \texttt{select()}.
+É interessante, sobretudo para grandes bases de dados, se pudermos selecionar sub-grupos de colunas, excluindo outras que não nos interessam. Podemos fazer isto facilmente utilizando a função \texttt{select()}.
 
-Para selecionar por exemplo somente as colunas \texttt{Reservatório}, \texttt{Area} e \texttt{Riqueza}:
+Por exemplo, para selecionar somente as colunas \texttt{Reservatório}, \texttt{Area} e \texttt{Riqueza}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{res\_new }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(Reservatorio, Area, Riqueza)}
+
+\NormalTok{rew\_new}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{table}
-\centering\begingroup\fontsize{10}{12}\selectfont
+\centering\begingroup\fontsize{12}{14}\selectfont
 
 \begin{tabular}{lrr}
 \toprule
@@ -599,12 +650,16 @@ Harmonia & NA & 7\\
 \endgroup{}
 \end{table}
 
-Ou se quisermos selecionar todas as variáveis \textbf{exceto} \texttt{Reservatório}
+O que fizemos aqui foi cirar um \textbf{novo} objeto (\texttt{res\_new}), contendo somente as colunas selecionadas.
+
+Se quisermos selecionar todas as variáveis \textbf{exceto} \texttt{Reservatório} fazemos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{rew\_new }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Reservatorio)}
+
+\NormalTok{rew\_new}
 \end{Highlighting}
 \end{Shaded}
 
@@ -657,17 +712,19 @@ Tibagi & NA & NA & Oligotrófico & 8.3 & 31.0 & 113.30 & 8.6 & 7 & 24.88\\
 \endgroup{}
 \end{table}
 
-Podemos também fazer uma seleção que vai desde uma coluna inicial até uma coluna final. Por exemplo, podemos selecionar todas as colunas desde \texttt{pH} \textbf{até} \texttt{P.total}. Para isto fazemos:
+Podemos fazer também uma seleção que vá desde uma coluna inicial até uma coluna final. Podemos selecionar, por exemplo, todas as colunas desde \texttt{pH} \textbf{até} \texttt{P.total}. Para isto fazemos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{res\_new }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(pH}\SpecialCharTok{:}\NormalTok{P.total)}
+
+\NormalTok{res\_new}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{table}
-\centering\begingroup\fontsize{8}{10}\selectfont
+\centering\begingroup\fontsize{12}{14}\selectfont
 
 \begin{tabular}{rrrr}
 \toprule
@@ -719,13 +776,15 @@ Podemos ainda selecionar todas as variáveis categóricas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{rew\_new }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select\_if}\NormalTok{(is.character)}
+
+\NormalTok{rew\_new}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{table}
-\centering\begingroup\fontsize{8}{10}\selectfont
+\centering\begingroup\fontsize{12}{14}\selectfont
 
 \begin{tabular}{lll}
 \toprule
@@ -777,8 +836,10 @@ Ou todas as variáveis numéricas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{rew\_new }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select\_if}\NormalTok{(is.numeric)}
+
+\NormalTok{rew\_new}
 \end{Highlighting}
 \end{Shaded}
 
@@ -837,55 +898,57 @@ Finalmente, podemos alterar a ordem das colunas:
 \begin{Highlighting}[]
 \NormalTok{nova\_ordem }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Fechamento\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Area\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Bacia\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Reservatorio\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}CPUE\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Riqueza\textquotesingle{}}\NormalTok{,}
                \StringTok{\textquotesingle{}Trofia\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Condutividade\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}pH\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P.total\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Alcalinidade\textquotesingle{}}\NormalTok{)}
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{res\_new }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(nova\_ordem)}
+
+\NormalTok{res\_new}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{table}
 \centering\begingroup\fontsize{8}{10}\selectfont
 
-\begin{tabular}{rrrrrrrr}
+\begin{tabular}{rrllrrlrrrr}
 \toprule
-Fechamento & Area & pH & Condutividade & Alcalinidade & P.total & Riqueza & CPUE\\
+Fechamento & Area & Bacia & Reservatorio & CPUE & Riqueza & Trofia & Condutividade & pH & P.total & Alcalinidade\\
 \midrule
-1965 & 2.90 & 7.4 & 33.1 & 139.80 & 7.8 & 18 & 9.22\\
-1982 & 2.00 & 7.0 & 32.4 & 125.70 & 4.7 & 16 & 28.73\\
-1980 & 139.00 & 7.3 & 35.5 & 97.00 & 14.3 & 19 & 11.59\\
-2000 & 15.00 & 6.9 & 50.2 & 3.30 & 53.4 & 12 & 30.76\\
-1970 & 0.45 & 7.3 & 40.2 & 3.70 & 41.2 & 18 & 5.95\\
+1965 & 2.90 & Iguacu & Cavernoso & 9.22 & 18 & Oligotrófico & 33.1 & 7.4 & 7.8 & 139.80\\
+1982 & 2.00 & Iguacu & Curucaca & 28.73 & 16 & Oligotrófico & 32.4 & 7.0 & 4.7 & 125.70\\
+1980 & 139.00 & Iguacu & Foz do Areia & 11.59 & 19 & Oligotrófico & 35.5 & 7.3 & 14.3 & 97.00\\
+2000 & 15.00 & Iguacu & Irai & 30.76 & 12 & Eutrófico & 50.2 & 6.9 & 53.4 & 3.30\\
+1970 & 0.45 & Iguacu & JMF & 5.95 & 18 & Mesotrófico & 40.2 & 7.3 & 41.2 & 3.70\\
 \addlinespace
-1996 & 3.40 & 7.1 & 23.7 & 152.70 & 3.3 & 17 & 7.75\\
-1978 & 14.00 & 8.8 & 125.6 & 526.00 & 15.2 & 11 & 7.51\\
-1979 & 3.30 & 7.1 & 22.8 & 50.67 & 4.5 & 8 & 4.01\\
-1998 & 124.00 & 7.3 & 39.6 & 106.00 & 12.1 & 21 & 20.83\\
-1959 & 2.90 & 6.5 & 23.2 & 279.00 & 11.0 & 8 & 2.43\\
+1996 & 3.40 & Iguacu & Jordao & 7.75 & 17 & Oligotrófico & 23.7 & 7.1 & 3.3 & 152.70\\
+1978 & 14.00 & Iguacu & Passauna & 7.51 & 11 & Oligotrófico & 125.6 & 8.8 & 15.2 & 526.00\\
+1979 & 3.30 & Iguacu & Piraquara & 4.01 & 8 & Oligotrófico & 22.8 & 7.1 & 4.5 & 50.67\\
+1998 & 124.00 & Iguacu & Salto Caxias & 20.83 & 21 & Oligotrófico & 39.6 & 7.3 & 12.1 & 106.00\\
+1959 & 2.90 & Iguacu & Salto do Vau & 2.43 & 8 & Oligotrófico & 23.2 & 6.5 & 11.0 & 279.00\\
 \addlinespace
-1975 & 51.00 & 8.6 & 38.9 & 233.30 & 3.4 & 24 & 12.55\\
-1979 & 208.00 & 9.2 & 39.5 & 117.60 & 13.1 & 21 & 11.73\\
-1992 & 82.50 & 7.0 & 34.5 & 165.20 & 6.4 & 22 & 13.72\\
-1964 & 11.30 & 8.1 & 23.3 & 56.55 & 7.1 & 15 & 16.50\\
-NA & 1.30 & 6.9 & 46.0 & 180.10 & 39.2 & 10 & 4.71\\
+1975 & 51.00 & Iguacu & Salto Osorio & 12.55 & 24 & Oligotrófico & 38.9 & 8.6 & 3.4 & 233.30\\
+1979 & 208.00 & Iguacu & Salto Santiago & 11.73 & 21 & Oligotrófico & 39.5 & 9.2 & 13.1 & 117.60\\
+1992 & 82.50 & Iguacu & Segredo & 13.72 & 22 & Oligotrófico & 34.5 & 7.0 & 6.4 & 165.20\\
+1964 & 11.30 & Ivai & Mourao & 16.50 & 15 & Oligotrófico & 23.3 & 8.1 & 7.1 & 56.55\\
+NA & 1.30 & Ivai & Patos & 4.71 & 10 & Mesotrófico & 46.0 & 6.9 & 39.2 & 180.10\\
 \addlinespace
-1957 & 7.00 & 7.4 & 27.9 & 83.72 & 12.4 & 12 & 7.95\\
-1970 & 12.00 & 7.7 & 63.6 & 259.20 & 16.9 & 12 & 13.12\\
-NA & 0.10 & 6.9 & 37.4 & 147.10 & 17.1 & 11 & 16.10\\
-1949 & 5.10 & 7.3 & 39.8 & 156.00 & 21.9 & 14 & 11.74\\
-1999 & 30.85 & 7.4 & 63.3 & 234.90 & 9.9 & 35 & 17.95\\
+1957 & 7.00 & Litoranea & Guaricana & 7.95 & 12 & Oligotrófico & 27.9 & 7.4 & 12.4 & 83.72\\
+1970 & 12.00 & Litoranea & Parigot Souza & 13.12 & 12 & Oligotrófico & 63.6 & 7.7 & 16.9 & 259.20\\
+NA & 0.10 & Litoranea & Salto do Meio & 16.10 & 11 & Oligotrófico & 37.4 & 6.9 & 17.1 & 147.10\\
+1949 & 5.10 & Litoranea & Vossoroca & 11.74 & 14 & Mesotrófico & 39.8 & 7.3 & 21.9 & 156.00\\
+1999 & 30.85 & Paranapanema & Canoas I & 17.95 & 35 & Oligotrófico & 63.3 & 7.4 & 9.9 & 234.90\\
 \addlinespace
-1992 & 22.50 & 7.8 & 61.2 & NA & 9.0 & 40 & 13.86\\
-1975 & 419.30 & 7.5 & 58.6 & 196.00 & 5.5 & 34 & 13.04\\
-1970 & 400.00 & 7.6 & 57.8 & 211.80 & 7.8 & 23 & 7.35\\
-1986 & 220.00 & 7.7 & 58.2 & 202.40 & NA & 30 & 20.92\\
-1958 & 12.00 & 7.1 & 62.3 & 230.10 & 10.3 & 24 & 13.67\\
+1992 & 22.50 & Paranapanema & Canoas II & 13.86 & 40 & Oligotrófico & 61.2 & 7.8 & 9.0 & NA\\
+1975 & 419.30 & Paranapanema & Capivara & 13.04 & 34 & Oligotrófico & 58.6 & 7.5 & 5.5 & 196.00\\
+1970 & 400.00 & Paranapanema & Chavantes & 7.35 & 23 & Oligotrófico & 57.8 & 7.6 & 7.8 & 211.80\\
+1986 & 220.00 & Paranapanema & Rosana & 20.92 & 30 & NA & 58.2 & 7.7 & NA & 202.40\\
+1958 & 12.00 & Paranapanema & Salto Grande & 13.67 & 24 & Oligotrófico & 62.3 & 7.1 & 10.3 & 230.10\\
 \addlinespace
-1989 & 80.10 & 7.9 & 57.0 & 191.80 & 4.5 & 33 & 21.82\\
-1962 & 0.10 & 6.8 & 34.0 & 68.37 & 66.9 & 12 & 6.29\\
-NA & 0.07 & 6.8 & 41.7 & 480.10 & 14.9 & 7 & 9.40\\
-1909 & 7.20 & 7.6 & 41.7 & 172.20 & 19.9 & 7 & 5.60\\
-1958 & NA & NA & NA & NA & NA & 10 & 2.05\\
+1989 & 80.10 & Paranapanema & Taquarucu & 21.82 & 33 & Oligotrófico & 57.0 & 7.9 & 4.5 & 191.80\\
+1962 & 0.10 & Piriqui & Melissa & 6.29 & 12 & Eutrófico & 34.0 & 6.8 & 66.9 & 68.37\\
+NA & 0.07 & Piriqui & Santa Maria & 9.40 & 7 & Oligotrófico & 41.7 & 6.8 & 14.9 & 480.10\\
+1909 & 7.20 & Tibagi & Alagados & 5.60 & 7 & Oligotrófico & 41.7 & 7.6 & 19.9 & 172.20\\
+1958 & NA & Tibagi & Apucaraninha & 2.05 & 10 & NA & NA & NA & NA & NA\\
 \addlinespace
-NA & NA & 8.3 & 31.0 & 113.30 & 8.6 & 7 & 24.88\\
+NA & NA & Tibagi & Harmonia & 24.88 & 7 & Oligotrófico & 31.0 & 8.3 & 8.6 & 113.30\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -896,12 +959,14 @@ NA & NA & 8.3 & 31.0 & 113.30 & 8.6 & 7 & 24.88\\
 
 Podemos fazer algo similar com as linhas utilizando a função \texttt{filter()}.
 
-Digamos que queremos selecionar somente os reservatórios da bacia do rio Paranapanema:
+Se quisermos selecionar somente os reservatórios da bacia do rio Paranapanema podemos fazer:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{res\_paranapanema }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{filter}\NormalTok{(Bacia }\SpecialCharTok{==} \StringTok{\textquotesingle{}Paranapanema\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{res\_paranapanema}
 \end{Highlighting}
 \end{Shaded}
 
@@ -925,12 +990,14 @@ Taquarucu & Paranapanema & 1989 & 80.10 & Oligotrófico & 7.9 & 57.0 & 191.8 & 4
 \endgroup{}
 \end{table}
 
-Ou todos \textbf{exceto} os da bacia do rio Paranapanema.
+Ou todos os reservatório \textbf{exceto} os da bacia do rio Paranapanema.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{res\_outros }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{filter}\NormalTok{(Bacia }\SpecialCharTok{!=} \StringTok{\textquotesingle{}Paranapanema\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{res\_outros}
 \end{Highlighting}
 \end{Shaded}
 
@@ -974,16 +1041,22 @@ Harmonia & Tibagi & NA & NA & Oligotrófico & 8.3 & 31.0 & 113.30 & 8.6 & 7 & 24
 \endgroup{}
 \end{table}
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \begin{quote}
 A função \texttt{filter()} utiliza operadores lógicos (retornam VERDADEIRO ou FALSO). Para aprender sobre este operadores no R veja \href{https://fcopf.github.io/probest-introR/intro.html\#operadores-l\%C3\%B3gicos}{Operadores lógicos}
 \end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 Podemos realizar operações análogas para variáveis numéricas. Vamos selecionar somente os reservatórios com pH \textbf{menor} que \(7.0\).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{res\_acidos }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{filter}\NormalTok{(pH }\SpecialCharTok{\textless{}} \DecValTok{7}\NormalTok{)}
+
+\NormalTok{res\_acidos}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1010,8 +1083,10 @@ Se quisermos pH's \textbf{menores ou iguais} a \(7.0\) fazemos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{res\_acidos }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{filter}\NormalTok{(pH }\SpecialCharTok{\textless{}=} \DecValTok{7}\NormalTok{)}
+
+\NormalTok{res\_acidos}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1039,7 +1114,7 @@ Santa Maria & Piriqui & NA & 0.07 & Oligotrófico & 6.8 & 41.7 & 480.10 & 14.9 &
 \hypertarget{adicionando-ou-modificando-colunas}{%
 \section{Adicionando ou modificando colunas}\label{adicionando-ou-modificando-colunas}}
 
-Podemos adicionar novas colunas assim como fazemos em uma planilha excel. Temos o ano de formação do reservatório. Assumindo que estes dados são de 2005, podemos criar uma coluna indicando a idade do reservatório no momento da tomada de dados. Para criar novas colunas usamos a função \texttt{mutate()}.
+Podemos adicionar novas colunas, assim como fazemos em uma planilha excel. Temos por exemplo, o ano de formação do reservatório. Assumindo que estes dados são de 2005, podemos criar uma coluna indicando a idade do reservatório no momento da tomada de dados. Para criar uma nova coluna usamos a função \texttt{mutate()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1098,12 +1173,15 @@ Harmonia & Tibagi & NA & NA & Oligotrófico & 8.3 & 31.0 & 113.30 & 8.6 & 7 & 24
 \endgroup{}
 \end{table}
 
-A variável \texttt{Area} é dada em \(km^2\). Podemos Hectares multiploicando os valores por 100.
+Note que aqui, nós \textbf{re-escrevemos} o objeto \texttt{res} adicionando uma coluna \texttt{Idade}. A partir de agora, o objeto \texttt{res} tem uma coluna a mais. \emph{Mas lembre-se que nossa base de dados original \texttt{.csv} permanece inalterada}.
+
+Podemos também fazer alterações em uma coluna existente usando a mesma função \texttt{mutate}. Por exemplo, a variável \texttt{Area} é dada em \(km^2\). Podemos transformá-la em \textbf{Hectares} multiplicando os valores por \(100\).
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{res }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Area =}\NormalTok{ Area }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+
 \NormalTok{res}
 \end{Highlighting}
 \end{Shaded}
@@ -1160,13 +1238,14 @@ Harmonia & Tibagi & NA & NA & Oligotrófico & 8.3 & 31.0 & 113.30 & 8.6 & 7 & 24
 \hypertarget{renomeando-colunas}{%
 \section{Renomeando colunas}\label{renomeando-colunas}}
 
-Finalmente podemos renomear colunas para facilitar nossa compressão dos dados. A coluna \texttt{P.total} indica a quantidade de fósforo total e a variável \texttt{CPUE} é a captura. Podemos renomera estas colunas como:
+Finalmente, podemos renomear colunas para facilitar a leitura dos dados. A coluna \texttt{P.total}, por exemplo, indica a quantidade de fósforo total, enquanto a variável \texttt{CPUE} é a captura em kg. Podemos renomear estas colunas usando a função \texttt{rename}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{res }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{rename}\NormalTok{(}\AttributeTok{Fosforo\_total =}\NormalTok{ P.total,}
-         \AttributeTok{Captura =}\NormalTok{ CPUE)}
+         \AttributeTok{Captura\_kg =}\NormalTok{ CPUE)}
+
 \NormalTok{res}
 \end{Highlighting}
 \end{Shaded}
@@ -1176,7 +1255,7 @@ Finalmente podemos renomear colunas para facilitar nossa compressão dos dados. 
 
 \begin{tabular}{llrrlrrrrrrr}
 \toprule
-Reservatorio & Bacia & Fechamento & Area & Trofia & pH & Condutividade & Alcalinidade & Fosforo\_total & Riqueza & Captura & Idade\\
+Reservatorio & Bacia & Fechamento & Area & Trofia & pH & Condutividade & Alcalinidade & Fosforo\_total & Riqueza & Captura\_kg & Idade\\
 \midrule
 Cavernoso & Iguacu & 1965 & 290 & Oligotrófico & 7.4 & 33.1 & 139.80 & 7.8 & 18 & 9.22 & 40\\
 Curucaca & Iguacu & 1982 & 200 & Oligotrófico & 7.0 & 32.4 & 125.70 & 4.7 & 16 & 28.73 & 23\\
@@ -1220,10 +1299,36 @@ Harmonia & Tibagi & NA & NA & Oligotrófico & 8.3 & 31.0 & 113.30 & 8.6 & 7 & 24
 \endgroup{}
 \end{table}
 
-\hypertarget{resqualit}{%
-\chapter{Descrevendo variáveis qualitativas}\label{resqualit}}
+\hypertarget{outras-operauxe7uxf5es-para-processamento-e-transformauxe7uxe3o-de-dados}{%
+\section{Outras operações para processamento e transformação de dados}\label{outras-operauxe7uxf5es-para-processamento-e-transformauxe7uxe3o-de-dados}}
 
-Variáveis qualitativas podem ser categóricas não-ordenadas our categóricas ordenadas. A descrição de variáveis desta natureza se dá por meio da contagem e da representação dos níveis destas variáveis por meio da contagem total, pelos valores relativos ou percentuais.
+Existem muitas outras operações possíveis para processar conjuntos de dados. A maioria faz parte do conjunto de pacotes \texttt{tidyverse} (veja \href{https://fcopf.github.io/probest-introR/format.html}{aqui}).
+
+Neste capítulo vimos funções para:
+
+\begin{itemize}
+\item
+  Importar arquivos \texttt{.csv}: \texttt{read\_delim};
+\item
+  Verificar os tipos de dados de uma tabela: \texttt{glimpse};
+\item
+  Reorganizar informações: \texttt{arrange};
+\item
+  Selecionar colunas: \texttt{select};
+\item
+  Filtrar linhas: \texttt{filter};
+\item
+  Adicionar/modificar colunas: \texttt{mutate};
+\item
+  Renomear colunas: \texttt{rename}.
+\end{itemize}
+
+A partir dos próximos capítulos iremos nos dedicar a aspectos da estatística descritiva, apresentando novas funções à medida que forem necessárias.
+
+\hypertarget{varqualit}{%
+\chapter{Descrevendo variáveis qualitativas}\label{varqualit}}
+
+Variáveis qualitativas podem ser categóricas não-ordenadas ou categóricas ordenadas. A descrição de variáveis desta natureza se dá por meio da contagem e da representação dos níveis destas variáveis por meio da contagem total, pelos valores relativos ou percentuais.
 
 Carregue o pacote \texttt{tidyverse} e importe novamente a base de dados \texttt{Reservatorios\_Parana\_parcial.csv}.
 
@@ -1239,23 +1344,540 @@ Carregue o pacote \texttt{tidyverse} e importe novamente a base de dados \texttt
 \end{Highlighting}
 \end{Shaded}
 
-Na tabela, temos 3 variáveis categóricas: \texttt{Reservatorio}, \texttt{Bacia} e \texttt{Trofia}. A primeira é individual, cada reservatório tem um nome. A segunda é uma variável categórica não-ordenada e a segunda uma variável categórica ordenada.
+Na tabela, temos 3 variáveis categóricas: \texttt{Reservatorio}, \texttt{Bacia} e \texttt{Trofia}. A primeira identifica cada reservatório pelo seu nome. A segunda é uma variável categórica não-ordenada (nível de mensuração nominal) e a terceira uma variável categórica ordenada (nível de mensuração ordinal).
 
 \hypertarget{representauxe7uxe3o-em-tabelas-de-frequuxeancia}{%
 \section{Representação em tabelas de frequência}\label{representauxe7uxe3o-em-tabelas-de-frequuxeancia}}
 
-\hypertarget{reordenando-categorias}{%
-\section{Reordenando categorias}\label{reordenando-categorias}}
+Como discutimos no capítulo \ref{estrdados}, se uma variável é descrita no nível de mensuração nominal, como é o caso de \texttt{Bacia}, nossa única ação possível é a contagem da frequência com que cada um dos níveis aparece na variável. Essa contagem pode ser obtda por meio de uma \emph{tabela de frequências}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fbacia }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Bacia) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Frequencia =} \FunctionTok{n}\NormalTok{())}
+
+\NormalTok{fbacia}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r}
+\hline
+Bacia & Frequencia\\
+\hline
+Iguacu & 13\\
+\hline
+Ivai & 2\\
+\hline
+Litoranea & 4\\
+\hline
+Paranapanema & 7\\
+\hline
+Piriqui & 2\\
+\hline
+Tibagi & 3\\
+\hline
+\end{tabular}
+
+O resultado mostra que existem 13 reservatórios na tabela pertancentes à bacia do rio 13, 2 à bacia do rio 2 e assim por diante.
+
+As linhas da tabela estão organizadas em ordem alfabética. Como esata é uma variável não-ordenada, isto em sí não é um problerma. No entanto, para facilitar a visualização, podemos ordená-las de modo decrescente como função do número de reservatórios por bacia:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fbacia }\OtherTok{=}\NormalTok{ fbacia }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(Frequencia))}
+
+\NormalTok{fbacia}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r}
+\hline
+Bacia & Frequencia\\
+\hline
+Iguacu & 13\\
+\hline
+Paranapanema & 7\\
+\hline
+Litoranea & 4\\
+\hline
+Tibagi & 3\\
+\hline
+Ivai & 2\\
+\hline
+Piriqui & 2\\
+\hline
+\end{tabular}
+
+Podemos olhar também para a \textbf{frequência relativa} do número de reservatórios por bacia.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fbacia\_rel }\OtherTok{=}\NormalTok{ fbacia }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Freq\_relativa =}\NormalTok{ Frequencia }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(Frequencia))}
+
+\NormalTok{fbacia\_rel}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r|r}
+\hline
+Bacia & Frequencia & Freq\_relativa\\
+\hline
+Iguacu & 13 & 0.4193548\\
+\hline
+Paranapanema & 7 & 0.2258065\\
+\hline
+Litoranea & 4 & 0.1290323\\
+\hline
+Tibagi & 3 & 0.0967742\\
+\hline
+Ivai & 2 & 0.0645161\\
+\hline
+Piriqui & 2 & 0.0645161\\
+\hline
+\end{tabular}
+
+A característica da frequência relativa, é que o somatório da coluna deve ser igual a \(1\), enquanto a frequência numérica tem o somatório igual ao número de linhas na tabela.
+
+\begin{verbatim}
+## # A tibble: 1 x 2
+##   Frequencia Freq_relativa
+##        <int>         <dbl>
+## 1         31             1
+\end{verbatim}
+
+\hypertarget{tabelas-de-frequuxeancia-para-variuxe1veis-categuxf3ricas-ordenadas}{%
+\section{Tabelas de frequência para variáveis categóricas ordenadas}\label{tabelas-de-frequuxeancia-para-variuxe1veis-categuxf3ricas-ordenadas}}
+
+A característica da variável \texttt{Trofia} difere da anterior unicamente por ser uma variável categórica ordenada que no caso, expressa o grau de eutrofização dos reservatórios. Neste sentido, a única mudança na representação da variável se deve ao fato de que existe uma sequência natural para representar os níveis. Podemos indicar que uma determinada variável é categórica ordenada fazendo uma pequena alteração na base de dados.
+
+Se montarmos uma tabela de frequência da variável trofia, teremos as linhas organizadas em ordem alfabética:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ftrofia }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Trofia) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Frequencia =} \FunctionTok{n}\NormalTok{())}
+
+\NormalTok{ftrofia}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r}
+\hline
+Trofia & Frequencia\\
+\hline
+Eutrófico & 2\\
+\hline
+Mesotrófico & 3\\
+\hline
+Oligotrófico & 24\\
+\hline
+NA & 2\\
+\hline
+\end{tabular}
+
+Se desejarmos que as colunas apareçam como função do nível de Eutrofização, devemos primeiro transformar a variável bacia em um \textbf{fator ordenado} que é o modo como o R interpreta uma \textbf{variável categórica ordenada}.
+
+Use o comando:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 31
+## Columns: 11
+## $ Reservatorio  <chr> "Cavernoso", "Curucaca", "Foz do Areia", "Irai", "JMF", ~
+## $ Bacia         <chr> "Iguacu", "Iguacu", "Iguacu", "Iguacu", "Iguacu", "Iguac~
+## $ Fechamento    <dbl> 1965, 1982, 1980, 2000, 1970, 1996, 1978, 1979, 1998, 19~
+## $ Area          <dbl> 2.90, 2.00, 139.00, 15.00, 0.45, 3.40, 14.00, 3.30, 124.~
+## $ Trofia        <chr> "Oligotrófico", "Oligotrófico", "Oligotrófico", "Eutrófi~
+## $ pH            <dbl> 7.4, 7.0, 7.3, 6.9, 7.3, 7.1, 8.8, 7.1, 7.3, 6.5, 8.6, 9~
+## $ Condutividade <dbl> 33.1, 32.4, 35.5, 50.2, 40.2, 23.7, 125.6, 22.8, 39.6, 2~
+## $ Alcalinidade  <dbl> 139.80, 125.70, 97.00, 3.30, 3.70, 152.70, 526.00, 50.67~
+## $ P.total       <dbl> 7.8, 4.7, 14.3, 53.4, 41.2, 3.3, 15.2, 4.5, 12.1, 11.0, ~
+## $ Riqueza       <dbl> 18, 16, 19, 12, 18, 17, 11, 8, 21, 8, 24, 21, 22, 15, 10~
+## $ CPUE          <dbl> 9.22, 28.73, 11.59, 30.76, 5.95, 7.75, 7.51, 4.01, 20.83~
+\end{verbatim}
+
+para verificar que o R entende a variável \texttt{Trofia} como um \emph{character} (\texttt{\textless{}chr\textgreater{}}).
+
+Iremos transformar esta variável para que o R a interprete como uma variável categórica ordenada fazendo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Trofia =} \FunctionTok{factor}\NormalTok{(Trofia, }\AttributeTok{ordered =} \ConstantTok{TRUE}\NormalTok{, }
+                         \AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Oligotrófico\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Mesotrófico\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Eutrófico\textquotesingle{}}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+Após aplicarmos este comando, vemos que agora o R reconhece esta variável como do tipo \texttt{\textless{}ord\textgreater{}}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 31
+## Columns: 11
+## $ Reservatorio  <chr> "Cavernoso", "Curucaca", "Foz do Areia", "Irai", "JMF", ~
+## $ Bacia         <chr> "Iguacu", "Iguacu", "Iguacu", "Iguacu", "Iguacu", "Iguac~
+## $ Fechamento    <dbl> 1965, 1982, 1980, 2000, 1970, 1996, 1978, 1979, 1998, 19~
+## $ Area          <dbl> 2.90, 2.00, 139.00, 15.00, 0.45, 3.40, 14.00, 3.30, 124.~
+## $ Trofia        <ord> Oligotrófico, Oligotrófico, Oligotrófico, Eutrófico, Mes~
+## $ pH            <dbl> 7.4, 7.0, 7.3, 6.9, 7.3, 7.1, 8.8, 7.1, 7.3, 6.5, 8.6, 9~
+## $ Condutividade <dbl> 33.1, 32.4, 35.5, 50.2, 40.2, 23.7, 125.6, 22.8, 39.6, 2~
+## $ Alcalinidade  <dbl> 139.80, 125.70, 97.00, 3.30, 3.70, 152.70, 526.00, 50.67~
+## $ P.total       <dbl> 7.8, 4.7, 14.3, 53.4, 41.2, 3.3, 15.2, 4.5, 12.1, 11.0, ~
+## $ Riqueza       <dbl> 18, 16, 19, 12, 18, 17, 11, 8, 21, 8, 24, 21, 22, 15, 10~
+## $ CPUE          <dbl> 9.22, 28.73, 11.59, 30.76, 5.95, 7.75, 7.51, 4.01, 20.83~
+\end{verbatim}
+
+E se fizermos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res}\SpecialCharTok{$}\NormalTok{Trofia}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] Oligotrófico Oligotrófico Oligotrófico Eutrófico    Mesotrófico 
+##  [6] Oligotrófico Oligotrófico Oligotrófico Oligotrófico Oligotrófico
+## [11] Oligotrófico Oligotrófico Oligotrófico Oligotrófico Mesotrófico 
+## [16] Oligotrófico Oligotrófico Oligotrófico Mesotrófico  Oligotrófico
+## [21] Oligotrófico Oligotrófico Oligotrófico <NA>         Oligotrófico
+## [26] Oligotrófico Eutrófico    Oligotrófico Oligotrófico <NA>        
+## [31] Oligotrófico
+## Levels: Oligotrófico < Mesotrófico < Eutrófico
+\end{verbatim}
+
+Temos agora a indicação de que: \texttt{Oligotrófico\ \textless{}\ Mesotrófico\ \textless{}\ Eutrófico}, expressando a sequência que definimos para esta variável ordinal.
+
+A partir de agora, se extrairmos uma tabela de frequência relativa, as linhas apareceram na ordem pré-definida.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ftrofia }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Trofia) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Frequencia =} \FunctionTok{n}\NormalTok{())}
+
+\NormalTok{ftrofia}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r}
+\hline
+Trofia & Frequencia\\
+\hline
+Oligotrófico & 24\\
+\hline
+Mesotrófico & 3\\
+\hline
+Eutrófico & 2\\
+\hline
+NA & 2\\
+\hline
+\end{tabular}
+
+Caso você não queira representar os dados faltantes (\texttt{NA}), é possível utilizar a função \texttt{drop\_na()} para excluir linhas com \texttt{NA}s.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Exclui linhas da tabela referentes aos dados faltantes em \textasciigrave{}Trofia\textasciigrave{}}
+\NormalTok{ftrofia }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{drop\_na}\NormalTok{(Trofia) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Trofia) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Frequencia =} \FunctionTok{n}\NormalTok{())}
+
+\NormalTok{ftrofia}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r}
+\hline
+Trofia & Frequencia\\
+\hline
+Oligotrófico & 24\\
+\hline
+Mesotrófico & 3\\
+\hline
+Eutrófico & 2\\
+\hline
+\end{tabular}
+
+Podemos adicionar uma uma coluna de frequência relativa como fizemos anteriormente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ftrofia\_rel }\OtherTok{=}\NormalTok{ ftrofia }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Freq\_relativa =}\NormalTok{ Frequencia }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(Frequencia))}
+
+\NormalTok{ftrofia\_rel}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r|r}
+\hline
+Trofia & Frequencia & Freq\_relativa\\
+\hline
+Oligotrófico & 24 & 0.8275862\\
+\hline
+Mesotrófico & 3 & 0.1034483\\
+\hline
+Eutrófico & 2 & 0.0689655\\
+\hline
+\end{tabular}
 
 \hypertarget{representauxe7uxe3o-gruxe1fica}{%
 \section{Representação gráfica}\label{representauxe7uxe3o-gruxe1fica}}
+
+Variáveis categóricas não-ordenadas ou ordenadas podem ser representadas por \textbf{gráficos de barras}.
+
+Utilizaremos o pacote \texttt{ggplot2} para representar graficamente as variáveis. O \texttt{ggplot2} é instalado e habilitado juntamente com o \texttt{tidyverse}, de modo que neste momento você já o tem habilitado em sua seção do R.
+
+\begin{quote}
+Para uma rápida explicação do ggplot2 veja \href{https://fcopf.github.io/probest-introR/ggplot2.html}{aqui}. Para uma explicação detalhada veja o site oficial (\href{https://ggplot2.tidyverse.org/}{ggplot2}) e o livro \href{https://ggplot2-book.org/}{ggplot2: Elegant Graphics for Data Analysis}.
+\end{quote}
+
+\hypertarget{criando-um-gruxe1fico-no-ggplot2}{%
+\subsection{\texorpdfstring{Criando um gráfico no \texttt{ggplot2}}{Criando um gráfico no ggplot2}}\label{criando-um-gruxe1fico-no-ggplot2}}
+
+Um gráfico no \texttt{ggplot2} é feito em camadas que devem ter minimamente: a definição da tabela de dados, a estética gráfica (quais serão as variáveis envolvidas e suas posições no gráficos) e o formato (gráficos de pontos, linhas, barras, etc.). Esta abordagem permite que tenhamos um método consistente para construir diferentes tipos gráficos.
+
+\textbf{Gráfico de frequência}
+
+Um gráfico de barras da variável \texttt{Bacia} ficaria:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ res) }\SpecialCharTok{+}
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-73-1.pdf}
+
+Vamos entender o comando:
+
+\begin{itemize}
+\item
+  \texttt{ggplot(res)}: define a tabela de dados que será utilizada.
+\item
+  \texttt{aes(x\ =\ Bacia)}: define que o eixo \(x\) deste gráfico deverá contém os níveis da variável \texttt{Bacia}.
+\item
+  \texttt{geom\_bar()}: define o tipo gráfico (no \texttt{ggplot2} é denominado de \emph{geometria} gráfica)
+\end{itemize}
+
+Estes argumentos devem ser inseridos sequencialmente separtados pelo símbolo \texttt{+}.
+
+O argumento \texttt{geom\_bar()} espera como argumento uma variável qualitativa em um dos eixos e, por padrão, fará a contagem dos níveis dentro da variável e apresentará esta contagem no outro eixo.
+
+Deste modo, poderíamos ter feito o mesmo gráfico de barras indicando que a variável \texttt{Bacia} seria representada no eixo \(y\) o que resultaria em um gráfico de barras invertido conforme abaixo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ res) }\SpecialCharTok{+}
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Bacia) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-74-1.pdf}
+
+A estética gráfica (comando \texttt{aes()}) não precisa estar em uma linha separada. Também não é obrigatório escrevermos \texttt{data\ =\ res}. De fato, é mais comun escrevermos esta sequência de argumentos como:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+ou simplesmente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Finalmente, poderíamos organizar os barras em ordem decrescente como fizemos com as tabelas de frequência, utilizando a função \texttt{fct\_infreq()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{fct\_infreq}\NormalTok{(Bacia))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-77-1.pdf}
+
+ou em ordem crescente revertendo o comando anterior, com a função \texttt{fct\_rev()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{fct\_rev}\NormalTok{(}\FunctionTok{fct\_infreq}\NormalTok{(Bacia)))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-78-1.pdf}
+
+\textbf{Formatanto a figura}
+
+Para tormar a figura mais auto-explicativa, podemos adicionar camadas identificando os eixos e fornecendo, título, subtítulo e outras informações:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Reservatórios do Estado do Paraná\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Reservatórios por bacia hidrográfica\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{caption =} \StringTok{\textquotesingle{}Dados obtidos do livro: Biocenoses em Reservatórios\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Bacia hidrográfica\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Frequência\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-79-1.pdf}
+
+\textbf{Gráfico de frequência relativa}
+
+Utilizando o \texttt{ggplot2} é simples construir um gráfico de frequência relativa.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia, }\AttributeTok{y =}\NormalTok{ ..prop.., }\AttributeTok{group =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-80-1.pdf}
+
+Veja que para isto transformou as contagens em proporções. Se quisermos transformar em percentuais então:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia, }\AttributeTok{y =}\NormalTok{ ..prop.., }\AttributeTok{group =} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\NormalTok{percent)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-81-1.pdf}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Outras opções para construir um gráfico de barras}
+
+As figuras que acabamos de fazer apresentam, do modo gráfico, as mesmas informações das tabelas de frequência vistas no início do capítulo sem que fosse necessário contruir a tabela de frequencia, pois o comando \texttt{geom\_bar()} já realiza esta contagem.
+
+Entretanto, caso já tivéssemos a tabela de frequência também poderíamos utilizá-la diretamente. No início do capítulo, contruímos a tabela \texttt{fbacia\_rel} onde tínhamos 3 colunas: Bacia, Frequencia, Freq\_relativa.
+
+Podemos construir gráficos de barras das tabelas \texttt{Frequencia} ou \texttt{Freq\_relativa} da seguinte forma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(fbacia\_rel, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia, }\AttributeTok{y =}\NormalTok{ Frequencia)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-82-1.pdf}
+
+e
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(fbacia\_rel, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Bacia, }\AttributeTok{y =}\NormalTok{ Freq\_relativa)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{\textquotesingle{}identity\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-83-1.pdf}
+
+Para utilizar diretamente uma tabela de frequências, devemos oferecer a variável do eixo \(x\), do eixo \(y\) e no comando \texttt{geom\_bar()} adicionar o argumento \texttt{stat\ =\ \textquotesingle{}identity\textquotesingle{}}. Feito isso, o comando utiliza diretamente os números disponíveis em cada linha da coluna \texttt{Frequencia}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Gráfico de frequência para variáveis categóricas ordenadas}
+
+Para variáveis categóricas ordenadas valem os mesmos comandos apresentados acima. Usamos a função \texttt{geom\_bar()} para construir os gráficos de barras. A diferença é que antes da construção, é necessário que a variável em questão tenha sido transformada para um \textbf{fator ordenado}.
+
+Lembrando o que fizemos no início do capítulo, esta transformação pode ser feita para a variável \texttt{Trofia} com os comandos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res }\OtherTok{=}\NormalTok{ res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Trofia =} \FunctionTok{factor}\NormalTok{(Trofia, }\AttributeTok{ordered =} \ConstantTok{TRUE}\NormalTok{, }
+                         \AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Oligotrófico\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Mesotrófico\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Eutrófico\textquotesingle{}}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+Feito isto, o comando \texttt{geom\_bar()} vai organizar os níveis de acordo com a sequência definida:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(res, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Trofia)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-85-1.pdf}
+
+E caso seja necessário retirar reservatórios com dados faltantes em \texttt{Trofia}, podemos fazer:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{drop\_na}\NormalTok{(Trofia) }\SpecialCharTok{\%\textgreater{}\%} 
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Trofia)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-86-1.pdf}
+
+No comando acima, a tabela de dados não entra dentro do comando \texttt{ggplot()}, ela é inicialmente processada e usamos o operador \texttt{\%\textgreater{}\%} para inserir o resultado do processamento no comnado gráfico. Esta é outra maneira de combinar capacidade de processamento de dados e apresentação gráfica com o conjunto de pacotes em \texttt{tidyverse}.
+
+\hypertarget{varquant}{%
+\chapter{Descrevendo variáveis quantitativas}\label{varquant}}
+
+Variáveis quantitativas podem ser discretas ou contínuas. A descrição dos padrões de distribuição destes tipos de variáveis pode ser feita por tabelas de frequência, tabelas de frequência acumulada, histogramas ou gráficos de frequência acumulada.
+
+Carregue o pacote \texttt{tidyverse} e importe novamente a base de dados \texttt{Reservatorios\_Parana\_parcial.csv}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Carrega pacotes}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\CommentTok{\# Importa base de dados }
+\NormalTok{res }\OtherTok{=} \FunctionTok{read\_delim}\NormalTok{(}\StringTok{\textquotesingle{}Reservatorios\_Parana\_parcial.csv\textquotesingle{}}\NormalTok{,}
+                  \AttributeTok{delim =} \StringTok{\textquotesingle{},\textquotesingle{}}\NormalTok{,}
+                  \AttributeTok{locale =} \FunctionTok{locale}\NormalTok{(}\AttributeTok{decimal\_mark =} \StringTok{\textquotesingle{}.\textquotesingle{}}\NormalTok{,}
+                                  \AttributeTok{encoding =} \StringTok{\textquotesingle{}latin1\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{descrit}{%
 \chapter{Apresentando informações em tabelas e gráficos}\label{descrit}}
 
 Vamos analisar os dados provinientes de parte de um experimento em que foram comparadas as idades de cetáceos encontrados mortos na Espanha e Escócia. Para cada indivíduo, alguns dentes foram extraídos e seccionados. A idade destes animais foi então estimada a partir de 3 diferentes métodos de coloração. Estes dados estão na tabela Cetaceans.csv e foram extraídos originalmente de: \url{https://highstat.com/index.php/mixed-effects-models-and-extensions-in-ecology-with-r}.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-55-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-94-1.pdf}
 
 A tabela contém 180 linhas por 7 colunas em que:
 
@@ -1577,11 +2199,11 @@ Um gráfico de barras é utilizado para representar variáveis qualitativas. O g
 
 Neste exemplo, vamos representar o número de dentes analisados em função do sexo de animal. Nas figuras abaixo, vemos um número maior de machos e alguns poucos indivíduos com sexo não identificado.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-68-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-107-1} \end{center}
 
 Os gráficos de barras apresentados acima descrevem o padrão observado para \textbf{somente uma} variável qualitativa. Podemos no entanto, utilizá-lo também para verificar a associação entre \textbf{duas} variáveis qualidativas. Abaixo, é descrita a abundância relativa por sexo para \textbf{cada uma} das localidades.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-69-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-108-1} \end{center}
 
 Quando combinamos duas variáveis qualitativas no mesmo gráfico de barras, podemos organizá-las de duas formas. Na figura da esquerda agrupamos as abundâncias das duas localidades lado a lado para cada um dos sexos. Na figura da direita, agrupamos os sexos e separamos as localidades. Compare as duas figuras. Veja que as duas mostram as mesmas informações. Entretanto, a escolha entre elas irá depender do objetivo do trabalho e das relações que desejamos tornar mais clara ao leitor.
 
@@ -1592,32 +2214,32 @@ Histogramas são utilizados para representar o padrão de distribuição de dado
 
 Intervalos de classes muito amplos, causam muita perda de informação a respeito da distribuição de valores, enquanto intervalos muito estreitos, são demasiadamente detalhados e dificultam a visualização de um padrão geral. Abaixo apresentamos histogramas para a variável \texttt{Age} com três intervalos de classes distintos (10, 5, e 1 anos). Deste modo, todos expressam as mesmas informações em níveis de detalhes cada vez maiores à medida que reduzimos o intervalo de classe.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-70-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-109-1} \end{center}
 
 \hypertarget{gruxe1ficos-de-linhas}{%
 \subsection{Gráficos de linhas}\label{gruxe1ficos-de-linhas}}
 
 Um gráfico de linhas pode ser utilizado quando há uma ordem inerente ao conjunto de dados. Este tipo de dados é comumente visto para representar \textbf{séries temporais}, em que as medidas são tomadas ao longo do tempo. Na tabela abaixo, por exemplo, estão representados os volumes de chuva e níveis de água (média do ano) em seis sistemas de abastecimento de água da Grande São Paulo (Alto Tietê, Cantareira, Cotia, Guarapiranga, Rio Claro e Rio Grande). Os dados foram medidos entre 2003 e 2018. A tabela possui 96 linhas por 4 colunas. Cada linha representa as medidas tomadas em um dos sistemas e em cada um dos anos considerados.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-71-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-110-1.pdf}
 
 A figura a seguir representa a variação anual no volume médio para o Sistema Cantareira, onde podemos perceber um aumento no volume em 2010, seguido de uma redução que atinge seu pico mínimo em 2015.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-72-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-111-1} \end{center}
 
 Na figura anterior, verificamos a relação entre duas variáveis (Ano e Volume médio) \textbf{exclusivamente} para o sistema Cantareira.
 
 Podemos utiliar o mesmo tipo de gráfico para associar três variáveis ao mesmo tempo: Ano, Volume médio e Sistema de abastecimento. A variável Sistema de Abastecimento é categórica e possui 6 níveis. Vamos inicialmente representar os sistemas Cantareira, na zona Norte da Grande São Paulo, e o Sistema Rio Grande na zona Sul. Podemos perceber que os padrões são distintos. O sistema Rio Grande parece manter um volume maior, ao redor de 80, enquanto o sisterma Cantareira, fica ao redor de 50. A \textbf{variação}, descrita pela diferênça entre os picos máximo (em 2010) e mínimo (em 2015), é maior no Sistema Cantareira. Em resumo esta figura sugere que nos últimos 15 anos, o volume médio no Sistema Rio Gande foi mais elevado e mais estável que no Sistema Cantareira.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-73-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-112-1} \end{center}
 
 Vamos olhar para todos os sistemas juntos. Um dos objetivos da análise gráfica, é encontrarmos padrões comuns, tendências gerais que se repetem para grupos diferentes. Na figura anterior, existem \textbf{aparentemente} três padrões distintos. Os sistemas Cantareira e Alto Tietê mantém níveis mais baixos e também mais variáveis, enquanto os sistemas Rio Claro e Rio Grande mantiveram níveis mais elevados e mais estáveis. Finalmente, os sistemas Cotia e Guarapiranga parecem apresentar padrões intermediários.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-74-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-113-1} \end{center}
 
 Vamos olhar para cada um dos grupos sugeridos em figuras separadas.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-75-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-114-1} \end{center}
 
 Esta é somente, uma avaliação superficial e exploratória. Poderíamos pensar em causas (\textbf{hipóteses}) que explicassem estes padrões aparentes como clima regional, geomeorfologia da áreas, dinâmica de vazão dos rios que abastecem o sistema, política de uso água, número de pessoas abastecidas, etc\ldots{} Neste caso, estaríamos entrando no campo da \textbf{Inferência Estatística}.
 
@@ -1626,21 +2248,21 @@ Esta é somente, uma avaliação superficial e exploratória. Poderíamos pensar
 
 Gráficos de dispersão são utilizados para associar duas variáveis quantitativas entre si. Ao contrário do gráfico de linhas, não é necessário que exista qualquer ordem inderente no conjunto de dados. Vamos verificar por exemplo a relação entre volume médio anual e a chuva média anual entre 2003 e 2018.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-76-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-115-1} \end{center}
 
 Não parece haver uma relação muito clara, o que é curioso. Como os sistemas são abastecidos pelos rios que drenam suas regiões, esperaríamos que anos de muita chuva, ressultassem em reservatórios com níveis mais elevados.
 
 Entretanto, vimos no tópico anterior que os reservatório apresentaram diferenças nos padrões de variação do volume médio anual. Vamos verificar agora se eles também diferem na \textbf{relação} entre o volume de chuva e nível dos sistemas. Para explorarmos esta questão, vamos inserir uma \(3^a\) variável a figura (o sistema de abastecimento) como diferentes cores.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-77-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-116-1} \end{center}
 
 Como o número de curvas na figura dificulta a visualização de um padrão mais claro, vamos olhar para cada sistema \textbf{separadamente}.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-78-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-117-1} \end{center}
 
 Separadamente podemos ver que parece haver uma \textbf{correlação positiva} entre volume de chuva e nível para o Sistema Rio Grande e, \emph{possivelmente}, para os Sistema Rio Claro. Aparentemente, estes sistemas se mantiveram mais cheios em anos mais chuvosos. Esta relação não parece existir para o sistema do Alto Tietê e é menos clara para os demais sistemas. Podemos explorar melhor esta questão inserindo uma \textbf{linha de regressão}.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-79-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-118-1} \end{center}
 
 As linhas nos sugerem que para todos os sistemas, há uma relação \textbf{positiva} entre o volume do reservatório e o volume médio de chuva anual, \textbf{exceto} para o sistema do Alto Tietê. Neste sistema a relação parece nula, o que é uma questão interessante em se estudar! Iremos estudar o método de \textbf{regressão linear} no capítulo \ref{th}.
 
@@ -2103,7 +2725,7 @@ Posicao k & X ordenado & Z ordenado\\
 \hline
 \end{tabular}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-85-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-124-1} \end{center}
 
 Veja na tabela que conforme o valor de \(X_i\) se distancia da média de \(X = 10.39\) mais distante de zero será o valor Z. Neste exemplo, as observações mais extremas de X estão, respectivamente, a -2.63 desvios padrões abaixo e 1.54 desvios padrões acima da média.
 
@@ -2141,7 +2763,7 @@ RioGrande & 87.06 & 5.13 & 84.2825 & 87.595 & 90.5875\\
 
 Os Sistemas Alto Tietê e Cantareira têm, aparentemente, os menores volumes médios emquanto os Sistemas Rio Claro e Rio Grande, mantêm os maiores volumes. Veja também que o volume médio anual no Sistema Rio Grande manteve-se altamente constante ao longo dos anos, apresentando um desvio padrão de 5.13, contra valores próximos a 15 ou 20 nos demais Sistemas. Compare estes resultados com os gráficos de linha que fizemos anteriormente e com os boxplots a seguir.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-88-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-127-1} \end{center}
 
 Veja que novamente, os Sistemas Alto Tietê e Cantareira aparecem com menores volumes e contrastam com os demais. Os regimes de chuva são semelhantes, exceto para o Sistema Rio Claro no município de Salesópolis, com pluviosidade geralmente mais elevada.
 
@@ -2199,11 +2821,11 @@ Em nossa amostragem de \emph{Rhizophora mangle}, poderíamos ordenar as árvores
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-92-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-131-1} 
 
 }
 
-\caption{Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação.}\label{fig:unnamed-chunk-92}
+\caption{Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação.}\label{fig:unnamed-chunk-131}
 \end{figure}
 
 A escolha da amostragem sistemática ao invés de uma amostragem aleatória simples, se deve à sua praticidade. Se a característica de interesse das unidades amostrais estiver disposta de forma aleatória ao longo do transecto escolhido, os dois métodos irão gerar resultados similares. Na maioria dos casos, é isto que o pesquisador assume (ainda que implicitamente) quando opta por uma amostragem sistemática. Por outro lado, se houver um gradiente justamente na direção do transecto, a variância amostral irá \textbf{superestimar} a variância populacional equanto, se houver uma periodicidade que coincida com o intervalo escolhido, a variância amostral irá \textbf{subestimar} a variância populacional.
@@ -2226,11 +2848,11 @@ O objetivo da amostragem é obter estimativas precisas e acuradas. Porém, na im
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-93-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-132-1} 
 
 }
 
-\caption{Representação dos conceitos de precisão e acurácia.}\label{fig:unnamed-chunk-93}
+\caption{Representação dos conceitos de precisão e acurácia.}\label{fig:unnamed-chunk-132}
 \end{figure}
 
 \hypertarget{erro-amostral}{%
@@ -2341,7 +2963,7 @@ A menor e maior médias possíveis são 14.6 e 36.6 respectivamente. Estes valor
 
 Podemos avaliar graficamente a distribuição das médias amostrais através de um histograma. A grande maioria das médias amostrais concentra-se na porção intermediária do gráfico entre estes limites. Por exemplo, somente 3.2\% das observações estão acima de 33.8. Da mesma forma, somente 3.2\% das observações estão abaixo de 17.4
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-100-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-139-1} \end{center}
 
 Se calcularmos a \textbf{média das médias} (\(\overline{\overline{X}}\)), ou seja, somarmos todos estes valores e dividirmos por 252, o resultado será 25.6, que é exatamente o valor da média populacional \(\mu\). Isto têm uma implicação central em inferência estatística. Significa que a média amostral \(\overline{X}\) é um estimador \textbf{acurado} (= \textbf{não-viciado}), pois tende a estimar corretamente o valor da média populacional \(\mu\). Ou seja, o histograma acima está centrado ao redor de \(\mu\), o que significa que \textbf{em média} uma amostra particular tem maior probabilidade de expressar um \(\overline{X}\) próxima ao valor populacional.
 
@@ -2378,7 +3000,7 @@ amostras diferentes de tamanho \(n = 7\) que podem ser retiradas de uma populaç
 \hline
 \end{tabular}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-103-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-142-1} \end{center}
 
 Se compararmos os histogramas com \(n = 5\) e \(n = 7\), veremos que as duas geram estimativas acuradas, pois \(\overline{\overline{X}} = \mu\). No entando, o \textbf{intervalo de variação} é menor para amostras de tamanho \(n = 7\). Para esta figura, os valores estão mais concentrados ao redor da média. Portanto, à medida que aumenta o tamanhol amostral, diminui a disparsão das médias amostrais ao redor de \(\mu\). Assim, para amostras grandes torna-se mais \textbf{improvável} obter uma média amostral distante da média populacional. Disemoz então que Conforme aumenta o tamanho amostral, aumenta a precisão do estimador.
 
@@ -2401,11 +3023,11 @@ Após esta discussão, podemos representar os conceitos de precisão e acurária
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-104-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-143-1} 
 
 }
 
-\caption{Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas.}\label{fig:unnamed-chunk-104}
+\caption{Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas.}\label{fig:unnamed-chunk-143}
 \end{figure}
 
 \hypertarget{normdist}{%
@@ -2417,11 +3039,11 @@ Um dos motivos que tornam a distribuição normal de probabilidades central em e
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-107-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-146-1} 
 
 }
 
-\caption{Altura (m) de alunos de um curso de estatística e temperatura média anual de uma cidade americana}\label{fig:unnamed-chunk-107}
+\caption{Altura (m) de alunos de um curso de estatística e temperatura média anual de uma cidade americana}\label{fig:unnamed-chunk-146}
 \end{figure}
 
 As técnicas de estatística descritiva apresentadas anteriormente (capítulos \ref{descrit} e \ref{posicao}) nos permitem entender os padrões resultantes de fenômenos que já aconteceram. Seria interessante no entanto, se pudessemos utilizar estes padrões para realizar predições sobre o que \textbf{poderá acontecer}. Em estatística, a predição se torna possível pelo uso de \textbf{modelos probabilísticos}, dentre os quais a distribuição normal é um dos mais importantes.
@@ -2454,7 +3076,7 @@ A expressão envolve as quantias \(\mu\) e \(\sigma\), definidas como os \textbf
 
 A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o grau de espalhamento das observações ao redor de \(\mu\). Para valores baixos de \(\sigma\), a maioria das observações estará próxima a \(\mu\), enquanto para valores altos de \(\sigma\) as observações estarão mais distantes de \(\mu\). Deste modo, ao variar \(\mu\) e \(\sigma\) podemos ter uma infinidade de distribuições normais.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-108-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-147-1} \end{center}
 
 Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de \(\mu\) e \(\sigma\) e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de 2 metros ou menos de 1,5m é extremamente baixa.
 
@@ -2473,7 +3095,7 @@ Para um \(x = 1.6\):
 
 Este resultado corresponde ao ponto em \(x\) no gráfico da distribuição normal. Assim, se calcularmos \(f(x)\) para diferentes pontos em \(x\) teremos um esboço da função de densidade normal.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-110-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-149-1} \end{center}
 
 No R, os resultados acima podem ser obtidos com a função \texttt{dnorm}, que fornece um modo simples para calcularmos \(f(x)\) para a distribuição normal. Nesta função `d' vem de \emph{densidade} da distribuição normal.
 
@@ -2507,7 +3129,7 @@ Se quisermos obter \(f(x)\) para múltiplos valores de \(x\) podemos fazer:
 
 Por ser uma função de probabilidade, a área abaixo de \(f(x)\) soma 1. Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a \textbf{área abaixo da curva} para este limite. Por exemplo, a probabilidade de uma observação em \(X\) estar entre \(x_1\) e \(x_2\) será:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-113-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-152-1} \end{center}
 
 Você lembra-se que a área abaixo de uma função matemática é dada pela integral definida desta função.
 
@@ -2593,7 +3215,7 @@ ou simplesmente
 
 Aqui estão representados cada um dos intervalos calculados.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-118-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-157-1} \end{center}
 
 \hypertarget{a-distribuiuxe7uxe3o-normal-padronizada}{%
 \section{A distribuição normal padronizada}\label{a-distribuiuxe7uxe3o-normal-padronizada}}
@@ -2615,14 +3237,14 @@ Esta transformação é útil, pois ainda que seja difícil calcular as probabil
 
 Para o exemplos sobre altura dos alunos e chuva mensal temos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-119-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-158-1} \end{center}
 
 \hypertarget{probabilidades-em-uma-distribuiuxe7uxe3o-normal-padronizada}{%
 \subsection{Probabilidades em uma distribuição normal padronizada}\label{probabilidades-em-uma-distribuiuxe7uxe3o-normal-padronizada}}
 
 Nos dois exemplos anteriores, verifica-se que todas as observações estão situadas, aproximadamente, entre \(z = -3\) e \(z = +3\). De fato, a distribuição normal padronizada ou \textbf{distribuição Z} tem propriedades bem conhecidas. Sua média é \(\mu = 0\) e seu desvio padrão é \(\sigma = 1\), fazendo com que a maior parte das observações fique limitada entre \(z = -3\) e \(z = +3\). Para ser exato, podemos descrever as probabilidades de uma observação estar dentro de alguns limites. Por exemplo, \(95\%\) das observações estará entre \(z = -1.96\) e \(z = +1.96\), isto é, \(P(-1.96 \le Z \le +1.96) = 0.95\). De forma similar, \(90\%\) da área central da curva se encontra entre \(z = -1.64\) e \(z = +1.64\). Estes e outros limites na distribuição normal padronizada podem ser verificados na figura abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-120-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-159-1} \end{center}
 
 Vamos exemplificar o uso da distribuição Z no cálculo de probabilidades utilizando os dados de altura dos alunos. Para estes dados, iremos encontrar \(P(X \le 1.5)\). Este procedimento consiste de:
 
@@ -2726,7 +3348,7 @@ Você pode utilizar a Tabela \(Z\) para encontrar \(P(X \le 1.5)\). Note que o v
 
 As comunidades de peixes em riachos de cabeceira são compostas por espécies de pequeno porte. \emph{Rhamdioglanis transfasciatus} é uma destas espécies, desconhecida do público em geral, porém muito abundante em pequenos riachos bem preservados. Dados de captura sugerem que o tamanho dos indivíduos pode ser razoavelmente bem descrito por um modelo de distribuição normal.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-125-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf}
 
 Suponha o comprimento desta espécie tenha uma distribuição normal com \(\mu = 10\) cm e \(\sigma = 3\) cm. Encontre:
 
@@ -2757,7 +3379,7 @@ Na tabela \(Z\) procuramos a linha que mostra a unidade e \(1^a\) casa decimal d
 
 Deste modo, \(P(Z \ge z_{14}) = 1 - P(Z \le z_{14}) = 1 - 0,9082 = 0.0918\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-128-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-167-1.pdf}
 
 \textbf{ii. Para encontrar \(P(X \le 5)\):}
 
@@ -2767,7 +3389,7 @@ Na tabela \(Z\) procuramos a linha que mostra a unidade e \(1^a\) casa decimal d
 
 Deste modo, \(P(X \le 5) = P(Z \le z_{5}) = 0,0475\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-129-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-168-1.pdf}
 
 \textbf{iii. Para encontrar a área central da curva \(P(5 \le X \le 14)\):}
 
@@ -2777,7 +3399,7 @@ Estes valores já foram encontrados nos itens anteriores, de modo que basta faze
 
 \(P(5 \le X \le 14) = 0,9082 - 0,0475 = 0.8607\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-130-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-169-1.pdf}
 
 \textbf{iv. Indivíduos maiores que 14 cm de comprimento}
 
@@ -2884,7 +3506,7 @@ Se \(P(X \le a) = 0,10\), a área da curva abaixo de \(a\) é \(0,10\). Procuran
 
 \(a = (-1,28 \times 10) + 50 = 37.2\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-137-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-176-1.pdf}
 
 \textbf{ii. O valor de \(b\)}
 
@@ -2894,7 +3516,7 @@ Se \(P(X \ge b) = 0,85\), a área abaixo de \(b\) que devemos encontrar na tabel
 
 \(b = (-1,04 \times 10) + 50 = 39.6\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-138-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-177-1.pdf}
 
 \textbf{iii. O intervalo simétrico ao redor da média delimitado por \(c\) e \(d\) (\(c < d\)), que contém \(95\%\) da área sob a curva.}
 
@@ -2912,7 +3534,7 @@ Novamente, como o intervalo é simétrico e a dsitribuição de \(Z\) é centrad
 
 \(d = (+1,96 \times 10) + 50 = 69.6\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-139-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf}
 
 \textbf{iv. O valor de \(e\) tal que \(P(50-e \le X \le 50+e) = 0.99\)}
 
@@ -2926,7 +3548,7 @@ como \(\mu = 50\) e \(\sigma = 10\) temos:
 
 Como a área central ocupa \(0,99\) da distribuição, restam \(0,005\) na cauda \textbf{superior} e \(0,005\) na cauda \textbf{inferior}:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-140-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-179-1.pdf}
 
 Para encontrar \(-e\) buscamos por \(0,005\) na tabela \(Z\) e encontramos \(0,0051\) como valor mais próximo, referente a \(z_{-e} = -2,57\). Substituindo na equação temos:
 
@@ -3053,22 +3675,22 @@ Vamos retomar algumas ideias discutidas nos capítulos \ref{posicao} e \ref{amos
 
 \begin{figure}
 
-{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-144-1} 
+{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-183-1} 
 
 }
 
-\caption{Processo de amostragem e inferência estatística}\label{fig:unnamed-chunk-144}
+\caption{Processo de amostragem e inferência estatística}\label{fig:unnamed-chunk-183}
 \end{figure}
 
 Neste processo, o resultado de um experimento pode ser visto como uma observação particular de uma \textbf{população de experimentos} que podem ser reproduzidos sob as mesmas condições. A estimativa obtida deste experimento é portanto, somente uma entre uma \textbf{população de estimativas} que o experimento pode gerar. A inferência estatística é possível se pudermos entender o que é esperado como resultados desta população de experimentos.
 
 \begin{figure}
 
-{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-145-1} 
+{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-184-1} 
 
 }
 
-\caption{Distribuição das médias amostrais provinientes de um experimento}\label{fig:unnamed-chunk-145}
+\caption{Distribuição das médias amostrais provinientes de um experimento}\label{fig:unnamed-chunk-184}
 \end{figure}
 
 \hypertarget{teorema-central-do-limite}{%
@@ -3093,7 +3715,7 @@ Note que a variância de \(\overline{X}\) depende do tamanho amostral \(n\). Ist
 
 Seja uma variável \(X\) qualquer com \(\mu = 50\) e \(\sigma = 10\). As figuras abaixo comparam as probabilidades acima de \(x_1 = 55\) para as observações originais e para as distribuições de médias amostrais de tamanho \(n_1 = 2\) e \(n_2 = 10\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-147-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-186-1} \end{center}
 
 Note que existe uma probabilidade razoável de que uma determinada observação em \(X\) esteja acima de \(55\), \(P(X \leq 55) = 0.309\). No entando se tomarmos \emph{ao acaso} uma amostra de tamanho \(n_1 = 2\), a probabilidade de que \textbf{a média} destas duas amostras esteja acima de \(55\) diminui para \(P(\overline{X} \leq 55) = 0.24\). Se tormarmos uma amostra ainda maior (\(n_2 = 10\)), a probabilidade se reduz ainda mais para \(P(\overline{X} \leq 55) = 0.057\).
 
@@ -3106,7 +3728,7 @@ O TCL é válido inclusive para distribuições não-normais. Isto torna a distr
 
 A figura abaixo por exemplo, simula a distribuição de médias amostrais para variáveis com diferentes distribuições de probabiidades e tamanhos crescentes de \(n\). Podemos observar que \emph{independente} do formato da distribuição original, a distribuição das médias amostrais \emph{tende à normalidade}. O padrão normal aparece mais rápido se a distribuição original é \textbf{simétrica}. Por outro lado, para populações estatísticas com distribuições \textbf{assimétricas}, será necessário um tamanho amostral maior para que se alcance a normalidade.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-149-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-188-1.pdf}
 
 \hypertarget{exercuxedcios-resolvidos-1}{%
 \section{Exercícios resolvidos:}\label{exercuxedcios-resolvidos-1}}
@@ -3116,14 +3738,14 @@ A figura abaixo por exemplo, simula a distribuição de médias amostrais para v
 
 Em 2014 no estuário do rio Itanhaém - SP foi pescado o \emph{``maior robalo já encontrado''} \href{http://g1.globo.com/sp/santos-regiao/noticia/2014/11/pescador-fisga-em-itanhaem-o-maior-robalo-ja-encontrado-briguei-com-ele.html}{(G1 Santos)}. O peixe tinha \(133\) cm e \(27,8\) kg . Em 2018 em Bertioga, também no litoral de SP \emph{``Robalo `gigante' quebra recordes e vira atração''} \href{https://g1.globo.com/sp/santos-regiao/noticia/robalo-gigante-quebra-recordes-e-vira-atracao-durante-pescaria-em-sp.ghtml}{(G1 Santos)} pesando \(33\) kg. Em ``\emph{uma das salas da Colônia de Pesca Z2 de Atafona}'' RJ está uma imagem de um robalo de \(28\) kg capturado muitas décadas atrás \href{http://ambientecult.blogspot.com/2010/10/ponto-de-memoria-foto-da-pesca.html}{(Ambiente Cult)}.
 
-\includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-151-1}
+\includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-190-1}
 
 Estas capturas viram notícias pois são certamente inusitadas. Dados de desembarque sugerem que a distribuição de tamanho de robalos comumente capturados está muito abaixo destes limites \citep{ximanes-carvalo2006} ( \href{http://repositorio.ufc.br/bitstream/riufc/1312/1/2006_dis_moxcarvalho.pdf}{Acesse aqui o trabalho completo} ).
 
 \begin{figure}
 \centering
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-153-1.pdf}
-\caption{\label{fig:unnamed-chunk-153}Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006.}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-192-1.pdf}
+\caption{\label{fig:unnamed-chunk-192}Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006.}
 \end{figure}
 
 Esta distribuição é altamente assimétrica e claramente \textbf{não-normal}. Um dos motivos para este forte grau de assimetria deve-se ao limite inferior de captura. A captura e comercialização de animais muito pequenos é proibida. Suponha que o comprimento de robalos (\(L\)) disponíveis para compra tenha média \(\mu = 44.1\) e desvio padrão \(\sigma = 13.4\). Você compra 10 robalos escolhidos ao acaso dos que estão disponíveis. Qual a probabilidade de que:
@@ -3305,7 +3927,7 @@ O valor \(z_{\alpha/2} = 1.96\) foi retirado da Tabela Z como o módulo do valor
 
 Se queremos um nível de confiança diferente, basta ajustar o valor de \(\alpha\). Por exemplo, se queremos um nível de significância a 99\%, fixamos \(\alpha\) em \(0.01\) e portanto \(z = 2.58\). Da mesma forma, o \(IC_{90\%}\) poderá ser obtido com \(\alpha = 0.10\) e consequentemente \(z = 1.64\). Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (Capítulo \ref{normtlc}), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem inclusos nas \textbf{Tabelas Z}, encontradas na grande maioria dos livros de estatística básica. Os valores de Z são os mesmos discutidos no tópico \textbf{Medidas de posição} quando discutimos os \textbf{Índice Z} (Capítulo \ref{posicao})
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-161-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-200-1} \end{center}
 
 Para o cálculo do intervalo de confiança, estamos assumindo que as médias amostrais têm \textbf{Distribuição Normal} com média \(\mu\) e desvio padrão \(\frac{\sigma}{\sqrt{n}}\). Fazendo isto, estamos no \textbf{Teorema Central do Limite (TCL)} (Capítulo \ref{tcl}). Geralmente não temos os valores de \(\mu\) e \(\sigma\), de modo que utilizamos os valores de \(\overline{X}\) e \(s\) calculados a partir de nossa amostra. Quando as amostras são grandes (\(n\ge{30}\)) não há problema em utilizar o valor de \(z_{\alpha/2}\), e assim:
 
@@ -3324,11 +3946,11 @@ Em que \(\alpha\) continua sendo o nível de significância e \(gl\) é definido
 
 O formato da distribuição \(t\) de student não é constante. À medida que o tamanho amostral aumenta, o formado da distribuição \(t\) converge para a distribuição normal. Isto faz com que na prática \textbf{raremente} usaremos a distribuição de Z, substituindo-a pela distribuição \(t\) de Student.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-162-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-201-1.pdf}
 
 Para amostras pequenas (\(n = 2\)) o formato da distribuição de \(t\) é distinto da distribuição normal. No entanto, para tamanhos amostrais maiores (\(n = 30\)) as o formato da distribuição \(t\) tende a a convergir para o mesmo formato a distribuição normal. Esta característica implica que a área a partir de um determinado limite \(t_i\) não é constante como na distribuição normal, mas \emph{depende do tamanho da amostra}, como pode ser visto abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-163-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-202-1} \end{center}
 
 \hypertarget{introduuxe7uxe3o-uxe0-suficiuxeancia-amostral}{%
 \section{Introdução à suficiência amostral}\label{introduuxe7uxe3o-uxe0-suficiuxeancia-amostral}}
@@ -3341,7 +3963,7 @@ Por outro lado, partir de um determinado tamanho amostral o ganho em precisão t
 
 Veja o que ocorre com o erro padrão de uma amostra à medida que aumenta o tamanho \(n\).
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-164-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-203-1.pdf}
 
 Neste exemplo, para amostras de tamanho 1, \(\sigma_{\overline{X}} = 4\). Se tivermos agora amostras de tamanho 10, \(\sigma_{\overline{X}} = 1.2\), uma redução de mais de 50\%. No entanto aumentarmos o tamanho amostral para 50 o erro padrão cai somente de 1.2 para 0.56. Isto significa que a partir de determinado ponto (neste exemplo a partir de 10 ou 20 amostras), a redução no erro padrão torna-se mínima. Neste momento podemos podemos refletir sobre o custo de continuar aumentando o tamanho amostral para obter um ganho cada vez menor em precisão.
 
@@ -3360,7 +3982,7 @@ O nível de confiança na estimativa nos garante que nossa estimativa estará de
 
 Uma representação esquemática do erro amostral e do nível de confiança na distribuição de \(z\) pode ser vista abaixo:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-165-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-204-1} \end{center}
 
 A definição da margem de erro e do nível de confiança depende de estimativas prévias dos parâmetros populacionais \(\mu\) e \(\sigma\). Estas estimativas podem ser obtidas na literatura, buscando estudos similares, ou por meio de um \textbf{projeto piloto}. Em um experimento piloto, o pesquisador irá conduzir seu plano de amostragem com um tamanho mínimo, justamente para avaliar a eficiência metodológica, adequabilidade dos resultados e prever o esforço amostral adequado. As informações de um pequeno estudo piloto, se bem aproveitadas, podem evitar erros simples de delineamento, além de invariavelmente, permitir economia de recusros e consequentemente ganho em qualidade.
 
@@ -3451,11 +4073,11 @@ O valor de \(z\) calculato é chamado de \textbf{estatśitica do teste}. Com o u
 
 Como nossa pergunta se refere à \textbf{distância} entre \(\overline{X}\) e \(\mu\), devemos encontar também \(P(Z \le -z)\), de modo que a probabilidade que nos interessa será representada pela área destacada na figura abaixo que nos dá \(P(Z \ge |z|)\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-169-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-208-1} \end{center}
 
 Valores de \(\overline{X}\) muito próximos a \(\mu\) resultarão em valores de \(z\) próximos a \textbf{zero}. Neste caso, a probabilidade de \(\overline{X}\) estar tão ou mais distante de \(\mu\) é alta. Se \(\overline{X}\) estiver muito \textbf{distante} de \(\mu\) o valor calculado \(z\) será grande e, consequentemente, estará associado a uma probabilidade muito baixa:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-170-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-209-1} \end{center}
 
 Iremos aceitar ou rejeitar \(H_0\) na medida que esta probabilidade estiver acima (aceita \(H_0\)) ou abaixo (rejeita \(H_0\)) de um limite \emph{pré-estabelecido} que denominamos de \textbf{nível de significância - \(\alpha\)}.
 
@@ -3494,7 +4116,7 @@ Com estes resultados encontramos o valor correspondente de Z.
 
 Utilizando a Tabela Z, encontramos a probabilidade de obtermos valores tão ou mais extremos que \(-0.75\) e \(+0.75\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-172-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-211-1} \end{center}
 
 Com isto, a probabilidade de encontarmos valores tão ou mais extermos que \(\overline{X} = 66.73\) foi calculada em \(0.227 + 0.227 =\) \textbf{0.453}.
 
@@ -3562,7 +4184,7 @@ Um outra situação ocorre quando aceitamos erroneamente a hipótese nula que é
 
 As figuras abaixo representam as distribuições das médias amostrais e os erros do tipos I e II quando o \(H_0\) é verdadeira (\(\mu_a = \mu\)) e quando \(H_0\) é falsa (\(\mu_a > \mu\)).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-174-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-213-1} \end{center}
 
 Idealmente em um teste estatístico, seria interessante reduzir ao máximo os erros do tipo I e II. Ao reduzirmos o erro do tipo I, diminuindo \(\alpha\) teremos um teste mais rigoroso que raramente iria errar ao rejeitar um \(H_0\) verdadeiro (Figura A). Entretanto, este teste também \textbf{raramente} iria rejeitar \(H_0\) ainda que ele seja falso (Figura B). Consequentemente, ao diminuir o valor de \(\alpha\) ficamos menos propensos a cometer o erro do tipo I, porém \textbf{mais propensos} a incorrer no erro tipo II, isto é, não rejeitar uma \(H_0\) falsa.
 
@@ -3601,7 +4223,7 @@ Para este exemplo, temos uma amostra de tamanho \(n = 8\) com média \(\overline
 
 Assim como fizemos para a distribuição \(Z\), devemos encontrar a probabilidade de obtermos um valor tão ou maior que o módulo de \(t_c\). Na figura abaixo, nosso resultado fica:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-176-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-215-1} \end{center}
 
 A probabilidade de encontrarmos um valor de \(t_c\) tão ou mais extremo segundo a hipótese nula foi de \(p = 0.028\). Uma vez que este valor é \textbf{menor} que o nível crítico \(\alpha = 0,05\), concluímos que existe evidência suficiente para \textbf{rejeitar} \(H_0\) e \textbf{aceitar} a hipótese alternativa de que as moedas de \(10\) centavos \textbf{não} provém de uma população estatística com \(\mu = 4,8\) gramas. Nossa conclusão é portanto, que as moedas de \(R\$ 0,10\) são mais \textbf{pesadas} que \(4,8\) gramas.
 
@@ -3636,7 +4258,7 @@ A distribuição \(t\) como várias outras distribuições amostrais utilizadas 
 
 À medida que os graus de liberdade aumentam, o formato da distribuição \(t\) se assemelha ao formato da distribuição Normal padronizada. De fato, para graus de liberdades altos (ex. \(n \ge 30\)), os formatos das distribuições \(Z\) e \(t\) são praticamente indistinguíveis. Na prática, isto faz que as distribuição \(Z\) \textbf{raramente} seja utilizada.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-178-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-217-1.pdf}
 
 \hypertarget{probabilidades-no-teste-t-de-student-a-tabela-t}{%
 \section{\texorpdfstring{Probabilidades no teste \(t\) de Student: a tabela \(t\)}{Probabilidades no teste t de Student: a tabela t}}\label{probabilidades-no-teste-t-de-student-a-tabela-t}}
@@ -3671,7 +4293,7 @@ Os dados abaixo mostram o tempo de coagulação sanguínea (em minutos) em ratos
 
 Inicialmente, vamos fazer um gráfico de dispersão para verificar a distribuição do tempo de coagulação para cada droga
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-182-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-221-1} \end{center}
 
 As médias, desvios padrões e tamanhos amostrais de cada grupo são:
 
@@ -3777,13 +4399,13 @@ Year & FlowR & RainR & Year & FlowR & RainR\\
 
 É razoável supor que em anos de mais chuva, seriam esperadas maiores vazões e que anos mais secos resultassem menores volumes de vazão. Para verificar esta suposição vamos fazer um gráfico de dispersão entre vazão e chuva.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-188-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-227-1} \end{center}
 
 O gráfico sugere que a suposição faz sentido. Volumes baixos de chuva estão associados a volumes baixos de vazão e vice versa. O gráfico sugrere ainda que a relação funcional é \textbf{linear}. Nestas condições, faz sentido tentar modelar a relação entre estas variáveis por meio de um modelo de regressão linear simples.
 
 Ao ajustar um modelo de regressão, vemos que a linha em azul é a que melhor descreve a relação linear entre as variáveis.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-189-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-228-1} \end{center}
 
 Esta linha nos permite obter uma estimativa sobre a vazão esperada (\(Y\)) para qualquer \textbf{dado} volume de chuva (\(X\)). Neste exemplo, a equação que melhor associa vazão e chuva é:
 
@@ -3813,18 +4435,18 @@ A porção determinística é um modelo matemático que descreve a relação fun
 
 Na regressão linear simples, o parâmetro \(\beta_1\) é geralmente o de maior interesse. Este parâmetro nos dirá se a relação será crescente (\(\beta_1 > 0\)), decrescente (\(\beta_1 < 0\)) ou nula (\(\beta_1 = 0\)). \(\beta_0\) é o \(\textbf{intercepto}\) e expressa o ponto em \(Y\) em que a reta cruza o eixo das ordenadas.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-190-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-229-1} \end{center}
 
 \hypertarget{poruxe7uxe3o-estocuxe1stica}{%
 \subsection{Porção estocástica}\label{poruxe7uxe3o-estocuxe1stica}}
 
 A porção estocástica, é representada pelo \textbf{resíduo} ou \textbf{erro}. A cada observação \(Y_i\) está associado um valor de resíduo correspondente (\(\epsilon_i\)), dado pela distância vertical entre \(Y_i\) e o valor predito \(\hat{Y_i}\) sobre a reta de regressão.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-191-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-230-1} \end{center}
 
 No modelo de regressão linear que veremos aqui, os resídos são uma \textbf{variável aleatória} prevenientes de uma distribuição normal de probabilidades com média \(\mu = 0\) e variância \(\sigma^2\) constante ao longo da reta de regressão, \(N(0, \sigma^2)\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-192-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-231-1} \end{center}
 
 \hypertarget{ajuste-dos-dados-ao-modelo-de-regressuxe3o}{%
 \section{Ajuste dos dados ao modelo de regressão}\label{ajuste-dos-dados-ao-modelo-de-regressuxe3o}}
@@ -3842,7 +4464,7 @@ O \textbf{Método dos Mínimos Quadrados} (\(MMQ\)) é uma das formas disponíve
 
 \[SQ_{Resíduo} = \sum{(Y_i-\hat{Y_ i})^2} = \sum{(Y_i-(\hat{\beta_0} + \hat{\beta_1}X_i))^2}\]
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-193-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-232-1} \end{center}
 
 Nas figuras acima, a linha da esquerda (\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 37\)) está claramente melhor ajustada à nuvem de pontos, o que se expressa em um menor somatório dos quadrados dos resíduos (\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 37\)) quando comparado com o ajuste da figura à direita (\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 145\)).
 
@@ -3926,7 +4548,7 @@ Richness & NAP\\
 
 O gráfico de dispersão sugere uma relação negativa e possivelmente linear, em que a riqueza de espécies diminui com o aumento no grau de exposição. Vamos ajustar um modelo de regressão a estes pontos calculando \(\hat{\beta_0}\), \(\hat{\beta_1}\) e \(\hat{\sigma}^2\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-196-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-235-1} \end{center}
 
 Os passos intermediários envolvem o cálculo do somatórios dos quadrados de X:
 
@@ -3978,7 +4600,7 @@ De modo que a melhor reta de regressão é dada por:
 
 \[Richness = 5.94 -2.58 \times NAP\]
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-198-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-237-1} \end{center}
 
 \hypertarget{testes-de-hipuxf3teses-na-regressuxe3o-linear-simples}{%
 \section{Testes de hipóteses na regressão linear simples}\label{testes-de-hipuxf3teses-na-regressuxe3o-linear-simples}}
@@ -4020,7 +4642,7 @@ No exemplo sobre a fauna praial estamos interessados em testar a hipótese de qu
 
 Que na distribuição de t fica:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-200-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-239-1} \end{center}
 
 Se nosso nível de significancia \(\alpha = 0.05\), então a probabilidade \(p = 0.011 + 0.011 = 0.022\) indica que devemos \textbf{rejeitar} \(H_0\) e aceitar que \textbf{existe} uma relação entre Riqueza de espécies e NAP.
 
@@ -4046,7 +4668,7 @@ Pode-se mostrar ainda que vale a expressão:
 \[SQ_Y = SQ_{Regressão} + SQ_{Resíduo}\]
 A decomposição destas quantias é conhecida \textbf{partição das somas dos quadrados} e nos permitem comparar a influência de \(X\) com a influência do puro acaso sobre a variabilidade em \(Y\). Se todos os pontos estiverem perfeitamente sobre a reta, então toda a variação em \(Y\) seria atribuída à influência de \(X\). Por outro lado, à medida que aumenta a distância média dos pontos acima e abaixo da curva, aumenta a parcela atribuída ao \textbf{acaso}.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-201-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-240-1} \end{center}
 
 Estes \textbf{componentes de variação} podem ser organizados em uma Tabela de \textbf{Análise de Variância (ANOVA)}. \(n\) se refere ao número de amostras.
 
@@ -4078,7 +4700,7 @@ O valor de \(F\) na tabela se refere a \textbf{distribuição de probabilidade F
 O símbolo \(F\) foi dado em homenagem a Ronald Aylmer Fisher o estatístico e geneticista Britânico do início do séc. XX, que entre inúmeras outras contribuições, desenvolveu a Análise de Variância. Fisher é descrito como \emph{``a genius who almost single-handedly created the foundations for modern statistical science''} \citep{halt1998history} e como \emph{``the single most important figure in 20th century statistics''} \citep{efron1998r}. Ver \href{https://en.wikipedia.org/wiki/Ronald_Fisher}{Ronald Aylmer Fisher}.
 \end{quote}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-202-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-241-1} \end{center}
 
 Os resultados da ANOVA para os dados da fauna praial nos dá os seguintes valores. \emph{Confira os cálculos}.
 
@@ -4193,11 +4815,11 @@ Richness & NAP & \$\textbackslash{}hat\{Y\}\$ & \$\textbackslash{}hat\{\textback
 
 E representá-los graficamente, juntamente com os valores ajustados de Y.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-206-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-245-1} \end{center}
 
 Note que na figura acima, estão representados os valores observados de riqueza de espécies (em preto), os valores ajustados (azul) e os intervalos a 95\% (vermelho). Os valores ajustados são aqueles utilizados para construir a \textbf{reta de regressão}. O intervalo não costuma ser representados por pontos individuais, mas por uma banda que delimita a área que restringe o intervalo de confiança ao nível \(1 - \alpha\) como na figura abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-207-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-246-1} \end{center}
 
 A banda mais estreita próxima ao ponto médio de \(X\), reflete o ponto comentado anteriormente, de que quanto mais próximo ao centro da distibuição de pontos, mais confiança temos sobre os limites máximos e mínimos que um valor de \(Y\) pode assumir. Do mesmo modo, esta confiança \textbf{diminui} à medida que nos aproximamos dos extremos dos valores observados em \(X\).
 
@@ -4260,7 +4882,7 @@ O diagnóstivo da regressão é composto por observações e testes que ajudam a
 
 O primeiro diagnóstico da regressão é conhecido como \textbf{gráfico de resíduos}, que consiste em um gráfico de dispersão entre os resíduos e o valor ajustado \(\hat{Y}\). Abaixo estão os gráficos de resíduos que surge quando ajustamos uma reta a dados que apresentam uma \textbf{relação linear}, uma \textbf{função potência}, uma \textbf{função assintótica} e uma relação linear porém comm \textbf{variância heterogênea}.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-208-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-247-1.pdf}
 
 Nas primeiras duas figuras, em que a relação é linear, vemos um padrão crescente de \(Y\) como função de \(X\) (figura da esquerda), em que os pontos estão aleatóriamente acima e abaixo da reta de regressão. Este padrão se reflete em um gráfico de resíduos (figura da direita) em que os pontos ficam aleatóriamente acima e abaixo de zero expressando resíduos positivos e negativos respectivamente. Em uma situação em que os pontos estivessem \textbf{perfeitamente} sobre a reta, os resíduos seriam todos iguais a zero e o gráfico de resíduos mostraria todos os pontos alinhados horizontalmente em zero.
 
@@ -4275,7 +4897,7 @@ No último exemplo (variância heterogênea) os pontos tendem a se afastar consi
 
 Outro diagnóstico da regressão consiste em fazer um histograma dos gráficos de resíduos. Um histograma, aproximadamente simétrico ao redor de zero o que sugere que o pressuposto de normalidade dos resíduos é válido neste caso. Existem testes formais de normalidade cmo o teste de \textbf{Kolmogorov Smirnov} ou o teste de \textbf{Shapiro-Wilk}.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-209-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-248-1.pdf}
 
 \hypertarget{coeficiente-de-correlauxe7uxe3o-de-pearson-r}{%
 \section{\texorpdfstring{Coeficiente de correlação de Pearson \(r\)}{Coeficiente de correlação de Pearson r}}\label{coeficiente-de-correlauxe7uxe3o-de-pearson-r}}
@@ -4314,7 +4936,7 @@ Ano & Camarão tigre & Camarão rei\\
 \hline
 \end{tabular}
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-211-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-250-1.pdf}
 
 Veja nas figuras acima que a captura em toneladas do camarão tigre é sempre mais elevada. Entretanto, a figura da direita sugere haver uma relação linear entre as capturas. Nos anos em que houve maiores capturas do camarão tigre parece ter havido também um aumento nas capturas do camarão rei. Dizemos que existe uma \textbf{correlação positiva} entre a captura das duas espécies. Em nenhum momento estamos dizendo que a abundância de uma espécie é a \textbf{causa} do aumento na captura da outra. Muito provavelmente, as abundâncias das duas espécies estão relacionadas a um terceiro fator que gera um comportamento similar na variação das capturas ano a ano. Portanto, aqui não há como se falar em variável dependente e independente. Podemos no referir apenas a uma correlação aparentemente linear entre duas variáveis.
 
@@ -4333,7 +4955,7 @@ A obtenção do coeficiente de correlação \(r\) também parte do cálculo da c
 
 A expressão acima, nos dá um índice que pode variar entre +1 (correlação perfeitamente linear e \textbf{positiva}) e -1 (correlação perfeitamente linear e \textbf{negativa}), e que se aproxima de zero quando não existe correlação.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-212-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-251-1} \end{center}
 
 Em nosso exemplo a intensidade da correlação linear entre as abudâncias dos camarões tigre e rei é \(r = 0.82\) (\textbf{confira os cálculos}).
 
@@ -4357,7 +4979,7 @@ Quando comparado à distribuição t, a área da curva aos extremos de 4.53 e -4
 \hypertarget{regresmultipla}{%
 \chapter{Regressão linear múltipla}\label{regresmultipla}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-215-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-254-1} \end{center}
 
 \hypertarget{anova}{%
 \chapter{Análise de variância de um fator}\label{anova}}
@@ -4392,17 +5014,17 @@ A ANOVA faz a \textbf{partição da soma dos quadrados totais} para quantificar 
 \hypertarget{anovafatorial}{%
 \chapter{Análise de variância fatorial}\label{anovafatorial}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-216-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-255-1} \end{center}
 
 \hypertarget{ancova}{%
 \chapter{Análise de covariância}\label{ancova}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-217-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-256-1} \end{center}
 
 \hypertarget{repanova}{%
 \chapter{Análise de variância de medidas repetidas}\label{repanova}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-218-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-257-1} \end{center}
 
 \hypertarget{part-fundamentos-de-probabilidade}{%
 \part{Fundamentos de probabilidade}\label{part-fundamentos-de-probabilidade}}
@@ -4467,13 +5089,13 @@ O valor acima descreve o resultado para a observação de um único indivíduo e
 
 Suponha então que o experimento seja repetido em 30 dias diferentes de observação e que os resultados fossem:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-222-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-261-1.pdf}
 
 Com base nestes resultados temos estimativas que variam entre 0 e 0.23. Veja que em 6 dias não foi observada nenhuma captura, \(\hat{P}(captura) = 0\). Isto não significa que a captura seja impossível, mas que neste dia em particular, o sucesso foi muito baixo. Tivemos também dias com elevada captura, por exemplo \(\hat{P}(captura) = 0.23\). Isto não significa que o sucesso é sempre desta forma. Na realidade tamanho sucesso parece ser improvável.
 
 Diante destes resultados, poderíamos estimar que \emph{em média} a probabilidade de captura esteja em \(\overline{P}(captura) = 0.09\)
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-223-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-262-1} \end{center}
 
 A estimativa de \(\overline{P}(captura) = 0.09\) resulta de um número \textbf{finito} de repetições do experimento, é portanto uma \textbf{estimativa} da verdadeira probabilidade de captura. Lembre-se que:
 
@@ -4520,7 +5142,7 @@ Uma forma de visualizar o espaço amostral e eventos deste espaço é pela const
 
 Observando os eventos \(A\) e \(B\) em um \textbf{Diagrama de Venn} temos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-228-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-267-1} \end{center}
 
 Cada um destes eventos é denominado de \textbf{evento complexo}, pois pode ser obtido pela combinação de eventos simples. O evento \(B\) por exemplo, pode ocorrer quando é encontrado uma folha \textbf{OU} um galho com mais de 3 itens, enquanto o evento \(A\) ocorre quando é encontrada uma folha com \(0\) \textbf{OU} \(1\) \textbf{OU} \(2\) \textbf{OU} \(3\) \textbf{OU} \(4\) \textbf{OU} \(5\) \textbf{OU} \(6\) itens.
 
@@ -4587,7 +5209,7 @@ Considere agora o experimento \emph{``virar duas estruturas e verificar o tipo d
 
 E pode ser representado visualmente por um diagrama de árvore.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-231-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-270-1.pdf}
 
 O diagrama de árvore é útil quando desejamos representar os resultados possíveis de um experimento que consiste de múltiplas etapas consecutivas, possivelmente composto por mais de uma caminho possível. Utilizaremos novamente este tipo de diagrama para falarmos em probabilidade condicional (Capítulo \ref{probcondind}) e do Teorema de Bayes (Capítulo \ref{tbayes}).
 
@@ -4608,7 +5230,7 @@ E \(B\) \emph{``encontar mais de 3 itens''}:
 
 Representados no diagrama de Venn abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-233-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-272-1} \end{center}
 
 Nos capítulos anteriores obtivemos as probabilidades \(P(A)\), \(P(B)\), \(P(A \cup B)\) e \(P(A \cap B)\). Digamos agora que, ao virar uma estrutura, \textbf{sabemos} que a estrutura era uma folha. A pergunta é:
 
@@ -4646,7 +5268,7 @@ Esta expressão nos dá também uma forma de calcularmos a probabilidade da inte
 
 Uma vez que probabilidade condicional se refere ao cálculo de probabilidades em eventos complexos \textbf{sequenciais}, podemos fazer a mesma representação de um experimento complexo utilizando um diagrama de árvore onde estão indicadas as probabilidades de ocorrência de cada evento, bem como as probabilidades condicionais.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-234-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-273-1} \end{center}
 
 Neste esquema, podemos ler as probabilidades de obtenção de cada resultado da seguinte forma. A primeira etapa do experimento, pode resultar na ocorrencia do evento \(A\) com probabilidade \(P(A)\), ou de seu \textbf{complemento}, com probabilidade \(P(\overline{A})\). Na segunda etapa, os resultados podem ser dar da seguinte forma:
 
@@ -4679,7 +5301,7 @@ Estas ocorrências denotam as probabilidades de \textbf{todos os eventos possív
 
 Vamos expressar numericamente todas as probabilidades representadas no diagrama de árvore acima:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-235-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-274-1.pdf}
 
 \emph{Obs.}: Refaça os cálculos e confira os resultados
 
@@ -4772,7 +5394,7 @@ de modo que,
 
 Eventos mutuamente exclusivos são representados no diagrama de Venn abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-238-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-277-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4810,7 +5432,7 @@ Deste modo, para dois eventos dependentes, \(P(B) \ne P(B|A)\).
 
 Representando eventos mutuamente exclusivos em um diagrama de árvore teremos:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-239-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-278-1.pdf}
 
 Ao saber que \(A\) ocorreu, veja que \(P(B|A)\) tem probabilidade igual a zero, de modo que eventos mutuamente exclusivos são necessariamente \textbf{dependentes}.
 
@@ -4866,7 +5488,7 @@ o que nos leva à expressão que define o \textbf{Teorema de Bayes} e nos fornec
 
 Veja novamente a esquema concentual de um diagrama de árvore:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-241-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-280-1} \end{center}
 
 Podemos perceber que dois caminhos nos levam à ocorrência de \(A\). Um caminho em que \(B\) \textbf{também ocorre} - com probabilidade \(P(A \cap B)\) - \textbf{ou} um caminho em que \(B\) \emph{não ocorre} - com probabilidade \(P(A \cap \overline{B})\). Uma vez que estas rotas são mutuamente exclusivas, \(P(A)\) pode ser calculado por:
 
@@ -4893,11 +5515,11 @@ As probabilidades descritas neste problema podem ser organizadas em um diagrama 
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-242-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-281-1} 
 
 }
 
-\caption{Diagrama de árvore representando as probabilidades de ocorrência P(O) e detecção P(D) de uma espécie.}\label{fig:unnamed-chunk-242}
+\caption{Diagrama de árvore representando as probabilidades de ocorrência P(O) e detecção P(D) de uma espécie.}\label{fig:unnamed-chunk-281}
 \end{figure}
 
 No diagrama, cada bifurcação representa as possíveis saídas de um estágio do experimento. Por exemplo, em uma determinada poça a espécie está ou não está presente, com probabilidades \(0,05\) e \(0,95\) respectivamente. O segundo estágio do experimento consiste na tentativa de detecção da espécie. Neste caso, as possibilidades são as seguintes:
@@ -5039,7 +5661,7 @@ Portanto, as duas abordagens serão equivalentes \textbf{somente} quando utiliza
 
 Nos capítulos \ref{espacoamostral} a \ref{tbayes} apresentamos conceitos básicos que regem as leis de probabilidade aplicadas à ocorrência de eventos simples e complexos. No entanto, ao conduzir um experimento, muitas vezes não estamos interessados nos eventos em si, mas em \textbf{quantias numéricas} que expressam a ocorrência destes eventos. Definiremos estas quantias aqui como \textbf{variáveis aleatórias}.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-243-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-282-1} \end{center}
 
 Variáveis aleatórias são funções matemáticas que associam cada evento do espaço amostral a uma quantia numérica. Embora expressem resultados probabilísticos, as variáveis aleatórias como funções matemáticas, têm estruturas previssíveis como \textbf{média}, \textbf{variância}, \textbf{grau de assimetria}, etc. Estas estruturas são as utilizadas para fazermos predições sobre eventos futuros. Neste sentido, as variáveis aleatórias compõem os modelos probabilísticos sobre os quais nos baseamos para fazer predições sobre fenômenos naturais. Estas variáveis são subdivididas em variáveis aleatórias \textbf{discretas} e \textbf{contínuas}, a depender da natureza da informação que está sendo mensurada. As diferências entre dados discretos e contínuos é discutida no capítulo \ref{descrit}. A seguir serão exemplificados diferentes modelos de variáveis aleatórias associados a diferentes tipos de experimentos aleatórios.
 
@@ -5048,7 +5670,7 @@ Variáveis aleatórias são funções matemáticas que associam cada evento do e
 
 \emph{Rhamdioglanis transfasciatus} é um peixe endêmico de riachos costeiros de Mata Atlântica do sudeste do Brasil, particularmente abundante em pequenos riachos, rasos, com boa cobertura vegetal e de fundo predregoso. A captura é feita buscando os indivíduos ocultos sob rochas e troncos, que são o micro-habitats que a espécie ocupa. Geralmente esta busca é feita percorrendo um trecho de algumas dezenas de metros de extensão em um dado riacho.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-244-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-283-1} \end{center}
 
 Suponha que a probabilidade de ocorrência da espécie em riachos da região seja de \(P(O) = 0.4\). Suponha também que não existam falsos positivos ou falsos negativos. Isto é, se a espécie estiver presente no trecho ela certamente será capturada e, se não estiver, não há a possibilidade de falso registro. Neste caso, se fizermos uma busca, é esperado que a captura seja feita em 40\% dos riachos selecionados.
 
@@ -5062,7 +5684,7 @@ Vamos denominar de \textbf{sucesso} a escolha de um riacho em a espécie esteja 
 
 Este experimento consiste portanto de 4 etapas, isto é, a amostragem do \(1^o\), \(2^o\), \(3^o\) e \(4^o\) riacho, verificando em cada um a ocorrẽncia da espécie. Se representarmos por \(O\) o evento de ocorrência e por \(\overline{O}\) o evento não-ocorrência, os possíveis resultados do experimento seriam:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-245-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-284-1.pdf}
 
 A tabela acima apresenta os 16 eventos possíveis deste experimento, em que cada riacho pode ou não conter a espécie. A pirmeira linha por exemplo, descreve a situação em que a espécie \textbf{não-ocorre} em nenhum riacho, enquanto a última descreve a situação em que a espécie ocorre em todos os riachos.
 
@@ -5147,7 +5769,7 @@ o que é condizente com o resultado obtido anteriormente.
 
 Se fizermos os cálculos para todos os valores de \(Y\) e os expressarmos em um gráfico de barras (Capítulo \ref{descrit}) veremos a figura abaixo:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-246-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-285-1} \end{center}
 
 Vemos que as probabilidades de selecionarmos 1 ou 2 riachos contendo a espécie são maiores que as probabilidades de que nenhum ou de que todos os riachos contenham a espécie.
 
@@ -5161,7 +5783,7 @@ Obtida \(p_Y\) para cada valor particular, podemos obter as probabilidades acumu
 
 Se comparamos \(F(y)\) e \(p(y)\) graficamente teremos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-247-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-286-1} \end{center}
 
 A barra laranja em 1 por exemplo, é o somatório das duas primeiras barras em azul da distribuição de \(p(y)\). Veja que \(F(Y)\) necessariamente termina em \(1\) expressando a soma de todos os valores possíveis de \(p(y)\).
 
@@ -5199,7 +5821,7 @@ Em nosso exemplo, temos \(E(Y) = 4 \times 0.4 = 0.16\) e \(VAR(Y) = 4 \times 0,4
 
 Em nosso exemplo, esperamos encontrar a espécie na maior parte das vezes em 1 ou 2. De fato, a esperança de \(Y\) será \(E(Y) = 1.6\). O que aconteceria para outros valores de \(n\) ou de \(p\). Veja as figuras abaixo:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-248-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-287-1} \end{center}
 
 Na medida em que \(p\) é baixo, a distribuição de probabilidade é assimétrica para a esquerda, denotando que é mais provável a ocorrência de um número baixo de sucessos. Para \(p = 0.5\) a distribuição de probabilidade é simétrica ao redor do valor esperado, e as proporções de sucessos e fracassos são idênticas. Finalmente, para valores elevados de \(p\) a distribuição é assimétrica para a direita e a probabilidade de obtermos um número elevado de sucessos aumenta.
 
@@ -5231,7 +5853,7 @@ Generalizando, a distribuição de probabilidade para o modelo geométrico é:
 
 A distribuição de probabilidade e as funções de distribuição acumulada para o modelo geométrico têm os seguintes formatos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-249-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-288-1} \end{center}
 
 Quando \(p = 0.05\), por exemplo, existe uma probabilidade de cerca de 0.45 que seja necesária a busca em 10 riachos até que a espécie seja observada. Para valores altos de \(p\) por outro lado, a probabilidade de encontrar a espécie logo nos primeiros riachos é alta (ex. para \(p = 0.4\), \(F(3) = 0.8704\)).
 
@@ -5283,7 +5905,7 @@ r - 1
 
 As funções de distribuição de probabilidade e a função acumulada tem os seguintes formatos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-250-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-289-1} \end{center}
 
 No modelo binomial negativo, a esperança matemática e a variância são definidas por:
 
@@ -5316,7 +5938,7 @@ Os parâmetros da distribuição hipergeométrica são:
 
 Vejam que a variável aleatória \(Y\) tem \(0\) como valor mínimo, quando \textbf{nenhum} dos indivíduos na amostra estiver marcado. O valor máximo será o maior número entre \(m\) e \(n\). Vejamos o formato da distribuição hipergeométrica para um tamanho \(N = 30\) e diferentes valores de \(m\) e \(n\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-251-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-290-1} \end{center}
 
 No modelo hipergeométrico podemos definir o valor esperado e a variância por:
 
@@ -5333,7 +5955,7 @@ Neste último experimento, o riacho foi subdividido em 30 unidades de \(1m^2\). 
 
 O formato da distribuição é assimétrico para valores baixos de \(\lambda\), tornado-se simétrico ao redor da média à medida que \(\lambda\) aumenta.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-252-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-291-1} \end{center}
 
 Este é um modelo particular em que o valor esperado é igual à variância, ambos dados por:
 
@@ -5357,7 +5979,7 @@ Para variáveis contínuas podemos expressar somente a probabilidade de que um e
 
 Portanto, para as variáveis contínuas, o conceito de somatório dos valores individuais para \(y\) é substituído pelo conceito de \emph{integração} em um intervalo definido e a probabilidade deste intervalo equivale à área sob a curva de probabilidade.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-253-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-292-1} \end{center}
 
 \hypertarget{esperanuxe7a-e-variuxe2ncia-em-modelos-contuxednuos}{%
 \subsubsection*{Esperança e variância em modelos contínuos}\label{esperanuxe7a-e-variuxe2ncia-em-modelos-contuxednuos}}
@@ -5389,11 +6011,11 @@ Em que os parâmetros da função são \(\mu\) e \(\sigma\) representam respecti
 
 Após o término deste tópico é importante que você leia também o que foi apresentado no capítulo \ref{normdist} sobre distribuição normal.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-254-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-293-1} \end{center}
 
 Por exemplo, se o comprimento segue uma distribuição normal com \(\mu = 10\) e \(\sigma = 2\) veremos que a proporção de individuos iguais ou maiores que 16 cm de comprimento é muito baixa, neste caso \(P(Y \ge 16) = 0.0013\). Por outro lado, para \(\sigma = 4\), esperamos encontrar mais indivíduos nos extremos da distribuição em que a proporção de individuos iguais ou maiores que 16 cm seria de \(P(Y \ge 16) = 0.0668\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-256-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-295-1} \end{center}
 
 \hypertarget{outros-suxe3o-altamente-assimuxe9tricos}{%
 \section{Outros são altamente assimétricos}\label{outros-suxe3o-altamente-assimuxe9tricos}}
@@ -5412,7 +6034,7 @@ enquanto a variância é dada por:
 
 \[VAR(Y) = \sigma^2 = \frac{1}{\lambda^2}\]
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-257-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-296-1} \end{center}
 
 No modelo exponencial, o único parâmetro é \(\lambda\). O modelo é altamente assimétrico, com maior densidade na porção esquerda da curva. Assim, para um fenômeno que possa ser descrito por um modelo exponencial, a maioria das observações será composta de valores baixos, ainda que valores extremamente elevados possam surgir ocasionalmente.
 
@@ -5460,7 +6082,7 @@ Vamos a um exemplo no R.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-260-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-299-1} \end{center}
 
 Na figura acima, temos cada um dos pontos em \(Y\) como função linear de \(X\). Os comandos cima são entendidos como:
 
@@ -5487,7 +6109,7 @@ Vamos substituir com uma figura em formato de linha
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-261-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-300-1} \end{center}
 
 No exemplo acima, temos os parâmetros \(\beta_0 = 0\) e \(\beta_1 = 2\). Isto significa que para \(X = 0\) o valor em \(Y = 0\). Conforme aumentamos \(X\) em uma unidade, \(Y\) aumenta em 2 unidades. No modelo linear, \(\beta_0\) é interpretado portanto como a altura em \(Y\) em que a reta cruza o eixo das ordenadas, enquanto \(\beta_1\) representa a taxa de incremento em \(Y\) para o aumento de \textbf{uma unidade} em \(X\).
 
@@ -5525,7 +6147,7 @@ Vamos inserir duas outras curvas à figura anterior modificando os valores de \(
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-262-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-301-1} \end{center}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -5607,7 +6229,7 @@ Veja que agora o modelo tem 4 parâmetros \(\beta_0\), \(\beta_1\), \(\beta_2\) 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-263-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-302-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-potuxeancia}{%
 \section{Função potência}\label{funuxe7uxe3o-potuxeancia}}
@@ -5632,7 +6254,7 @@ Uma relação potência é exemplo de modelo \textbf{não-linear} descrito por:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-264-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-303-1} \end{center}
 
 \hypertarget{a-representauxe7uxe3o-linear-da-funuxe7uxe3o-potuxeancia}{%
 \subsubsection*{A representação linear da função potência}\label{a-representauxe7uxe3o-linear-da-funuxe7uxe3o-potuxeancia}}
@@ -5666,7 +6288,7 @@ Veja a relação gráfica descrita por \(log(Y)\) e \(log(X)\) após as trnasfor
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-265-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-304-1} \end{center}
 
 \hypertarget{as-vuxe1rias-formas-da-funuxe7uxe3o-potuxeancia}{%
 \subsubsection*{As várias formas da função potência}\label{as-vuxe1rias-formas-da-funuxe7uxe3o-potuxeancia}}
@@ -5710,7 +6332,7 @@ Na função potência temos diferentes formatos possíveis, dependendo dos valor
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-266-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-305-1} \end{center}
 
 \hypertarget{modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii}{%
 \section{Modelo de Michaelis-Menten (ou Resposta funcional do tipo II)}\label{modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii}}
@@ -5743,7 +6365,7 @@ Vamos ao gráfico da função:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-267-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-306-1} \end{center}
 
 \hypertarget{resposta-funcional-do-tipo-iii}{%
 \section{Resposta funcional do tipo III}\label{resposta-funcional-do-tipo-iii}}
@@ -5770,7 +6392,7 @@ Compare este modelo com o anterior modificando os valores para os parâmetros \(
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-268-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-307-1} \end{center}
 
 \hypertarget{resposta-funcional-do-tipo-iv}{%
 \section{Resposta funcional do tipo IV}\label{resposta-funcional-do-tipo-iv}}
@@ -5799,7 +6421,7 @@ Varie os valores de \(\beta_2\) e compare os padrões com os modelos de resposta
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-269-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-308-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-hiperbuxf3lica}{%
 \section{Função hiperbólica}\label{funuxe7uxe3o-hiperbuxf3lica}}
@@ -5824,7 +6446,7 @@ Que tem o formato de:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-270-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-309-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-exponencial}{%
 \section{Função exponencial}\label{funuxe7uxe3o-exponencial}}
@@ -5851,7 +6473,7 @@ O modelo exponencial á amplamente utilizado em ecologia. As aplicações mais s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-271-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-310-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-loguxedstica}{%
 \section{Função logística}\label{funuxe7uxe3o-loguxedstica}}
@@ -5878,7 +6500,7 @@ Varie os dois parâmetros e veja o que ocorre com a figura abaixo.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-272-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-311-1} \end{center}
 
 \hypertarget{modelo-monomolecular}{%
 \section{Modelo monomolecular}\label{modelo-monomolecular}}
@@ -5902,7 +6524,7 @@ Tem um formato similar ao da função de Michaelis-Menten com assintota em \(\be
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-273-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-312-1} \end{center}
 
 \hypertarget{modelo-de-ricker}{%
 \section{Modelo de Ricker}\label{modelo-de-ricker}}
@@ -5925,7 +6547,7 @@ O modelo de Ricker é uma opção para descrever o crescimento populacional dens
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-274-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-313-1} \end{center}
 
 \hypertarget{modelo-de-gompertz}{%
 \section{Modelo de Gompertz}\label{modelo-de-gompertz}}
@@ -5948,7 +6570,7 @@ O modelo de Gompertz é outra alternativa ao modelo Logístico. \(Y\) se aproxim
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-275-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-314-1} \end{center}
 
 \hypertarget{modelo-de-von-bertalanffy}{%
 \section{Modelo de von Bertalanffy}\label{modelo-de-von-bertalanffy}}
@@ -5972,7 +6594,7 @@ O modelo de von Bertalanffy é uma opção para modelar o \emph{crescimento de o
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-276-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-315-1} \end{center}
 
 \hypertarget{modelstat}{%
 \chapter{As partes estocásticas e determinísticas de um modelo estatístico}\label{modelstat}}
@@ -6089,7 +6711,7 @@ Aumente gradativamente o número de repetições e compare a frequência com que
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-279-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-318-1} \end{center}
 
 \hypertarget{a-parcela-determinuxedstica}{%
 \section{A parcela determinística}\label{a-parcela-determinuxedstica}}
@@ -6123,7 +6745,7 @@ Se assumirmos que \(g(x)\) deverá ser uma função crescente da elevação, pod
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-280-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-319-1} \end{center}
 
 Veja que este modelo tem uma limitação importante para ser utilizado neste situação. O parâmetro \(p\) por ser uma probabilidade, deve estar restrido ao limites entre \(0\) e \(1\). Entretanto, a função linear é sempre crescente e permite tanto valores negativos quando acima de \(1\) o que não faz sentido para oproblema em questão.
 
@@ -6149,11 +6771,11 @@ que assume o formato:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-281-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-320-1} \end{center}
 
 De fato, a equação logística seria a primeira a ser considerada em uma situação deste tipo, ainda que outros modelos possam ser aplicados. Ao assumir a equação logística, nosso \textbf{modelo estatístico} está completo, em que \(Y\) é uma variável aleatória Binomial (porção aleatória), que tem o parâmetro \(p\) como uma função logística da elevação \(X\) (porção detrminística) e \(n\) é o número de riachos selecionados para um dado valor de elevação.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-282-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-321-1} \end{center}
 
 O modelo estatístico apropriado para prever a ocorrência da espécie em um dado riacho poderia ser escrito como:
 
@@ -6191,32 +6813,32 @@ Em experimento deste tipo, um dos principais interesse é saber o nível de polu
 \hypertarget{o-modelo-estatuxedstico-da-regressuxe3o-linear}{%
 \section{O modelo estatístico da regressão linear}\label{o-modelo-estatuxedstico-da-regressuxe3o-linear}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-283-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-322-1} \end{center}
 
 \hypertarget{emv}{%
 \chapter{Estimando os parâmetros: a ideia da Máxima Verossimilhança}\label{emv}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-284-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-323-1} \end{center}
 
 \hypertarget{aic}{%
 \chapter{Comparando modelos: uma questão de parcimônia}\label{aic}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-285-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-324-1} \end{center}
 
 \hypertarget{statbayes}{%
 \chapter{Da verossimilhança à estatística Bayesiana}\label{statbayes}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-286-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-325-1} \end{center}
 
 \hypertarget{varmodels}{%
 \chapter{Uma variedade de modelos estatísticos: modelando a variância}\label{varmodels}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-287-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-326-1} \end{center}
 
 \hypertarget{nindep}{%
 \chapter{Uma variedade de modelos estatísticos: modelando os resíduos}\label{nindep}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-288-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-327-1} \end{center}
 
   \bibliography{book.bib,packages.bib}
 
