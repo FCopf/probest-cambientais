@@ -1,0 +1,16 @@
+# Análise bidimensional: variáveis qualitativas {#biquali}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+```
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+

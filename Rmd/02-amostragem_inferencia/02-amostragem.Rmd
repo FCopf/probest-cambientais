@@ -33,7 +33,7 @@ A amostra seria **tão aleatória** é válida do ponto de vista amostral quanto
 
 **Amostra 2**: `r  Am2`
 
-Isto significa que uma amostra aleatória pode não ser **necessariamente** representativa da população. Amostras pequenas por exemplo, têm uma chance maior de selecionar apenas valores extremos, ou seja, os maiores ou menores elementos da população. A média amostral ($\bar{X}$) calculada para estas amostras estará distante da média populacional ($\mu$). 
+Isto significa que uma amostra aleatória pode não ser **necessariamente** representativa da população. Amostras pequenas por exemplo, têm uma chance maior de selecionar apenas valores extremos, ou seja, os maiores ou menores elementos da população. A média amostral ($\overline{X}$) calculada para estas amostras estará distante da média populacional ($\mu$). 
 No entanto, a importância central da amostragem aleatória em estatística está no fato de que a aleatoriedade produz, **em média**, amostras representativas da população. Deste modo, é esperado que na maioria das vezes, uma amostra aleatória gere médias amostrais próximas à média populacional. Por este motivo, é fundamental prezar pela aleatoriedade no processo amostral, pois de outro modo não poderemos garantir que a inferência seja válida com base nas leis de probabilidade. 
 
 O modo mais direto de se obter uma amostra aleatória é por meio de sorteio. Após atribuir números de 1 a $N$ a cada unidade amostral, estas unidades são sorteadas até que seja atingido o tamanho $n$ desejado. Na prática, nem sempre é possível obtermos uma amostra aleatória nestes moldes. Para o exemplo do DAP de *Rhizophora mangle*, não seria viável primeiramente enumerar todas as árvores para, após um sorteio, tomar as medidas somente das árvores que foram selecionadas. Entretanto, se tivermos as coordenadas geográficas da área, poderíamos sortear $n$ posições no espaço e, chegando ao local desejado, escolher a árvore mais próxima da coordenada sorteada. Este procedimento nos daria um resultado igualmente válido, no sentido de garantir uma escolha aleatória das unidades amostrais. Outras dificuldades práticas obviamente seriam possíveis neste procedimento, como garantir acesso irrestrito à toda a área ou tempo disponível para percorrer a toda região. Questões como estas não desmerecem o requisito básico de se obter uma amostra aleatória, mas nos auxiliam a decidir como conciliar a prática experimental com a necessidade da aleatorização em um experimento.
@@ -57,8 +57,12 @@ Uma amostragem sistemática é possível quando as unidades amostrais podem ser 
 Em nossa amostragem de *Rhizophora mangle*, poderíamos ordenar as árvores da menor para a maior, selecionar uma árvore inicial (p. ex. a $5^a$) e um intervalo (por exemplo a cada 10 árvores). A amostragem iria consistir da $5^a$, $15^a$, $25^a$, $35^a$, $\cdots$ árvores, até chegarmos ao maior indivíduo. Deste modo, saberíamos que todo o intervalo de DAPs estaria representado na amostra. Obviamente este exemplo é inviável, pois necessitaríamos de uma lista de **prévia** do tamanho e posição de todas as árvores antes de conduzirmos a amostragem. Um exemplo de amostragem sistemática mais factível, seria definir alguns transectos lineares e dispor $n$ pontos equidistantes. A amostra iria consistir dos DAPs mensurados nas árvores imediatamente mais próximas a cada um dos pontos. Se o comprimento e direção dos transectos forem bem escolhidos, garantimos que toda a área de estudo seja abrangida. Neste caso, o protocolo de amostragem não visou exatamente atingir todos os comprimentos, mas permitir um acesso mais homogêneo a toda a àrea de distribuição dos indivíduos, **assumindo** que de alguma forma, isto também nos permita acessar toda a variação de tamanho dos indivíduos presentes na região.
 
 ```{r fig.cap = "Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação.", fig.align='center', echo=FALSE}
-estrat <- image_read_pdf("figs/Apostila_Estatistica_BICT-estrat1.pdf", density = 72)
-grid.arrange(rasterGrob(estrat), nrow = 1, ncol = 1)
+image_read_pdf("figs/Apostila_Estatistica_BICT-estrat1.pdf", 
+               density = 72) %>% 
+  image_scale('x1000')
+
+# estrat <- image_read_pdf("figs/Apostila_Estatistica_BICT-estrat1.pdf", density = 72)
+# grid.arrange(rasterGrob(estrat), nrow = 1, ncol = 1)
 ```
 
 A escolha da amostragem sistemática ao invés de uma amostragem aleatória simples, se deve à sua praticidade. Se a característica de interesse das unidades amostrais estiver disposta de forma aleatória ao longo do transecto escolhido, os dois métodos irão gerar resultados similares. Na maioria dos casos, é isto que o pesquisador assume (ainda que implicitamente) quando opta por uma amostragem sistemática. Por outro lado, se houver um gradiente justamente na direção do transecto, a variância amostral irá **superestimar** a variância populacional equanto, se houver uma periodicidade que coincida com o intervalo escolhido, a variância amostral irá **subestimar** a variância populacional.
@@ -78,8 +82,11 @@ O objetivo da amostragem é obter estimativas precisas e acuradas. Porém, na im
 > *O paradoxo central da amostragem* é que é impossível saber, a partir da observação da amostra, se ela é ou não uma boa amostra, no sentido de que seja livre de viés [@stuart1984ideas]".
 
 ```{r fig.cap = "Representação dos conceitos de precisão e acurácia.", fig.align='center', echo=FALSE}
-precacu <- image_read_pdf("figs/Precisao-Acuracia-eps-converted-to.pdf", density = 72)
-grid.arrange(rasterGrob(precacu), nrow = 1, ncol = 1)
+image_read_pdf("figs/Precisao-Acuracia-eps-converted-to.pdf", 
+               density = 72) %>% 
+  image_scale('x500')
+# precacu <- image_read_pdf("figs/Precisao-Acuracia-eps-converted-to.pdf", density = 72)
+# grid.arrange(rasterGrob(precacu), nrow = 1, ncol = 1)
 ```
 
 ### Erro amostral
@@ -243,8 +250,13 @@ onde $s$ é o desvio padrão da amostra particular.
 Após esta discussão, podemos representar os conceitos de precisão e acurária mostrados utilizando histogramas de distribuição de frequência para as médias amostrais. Vemos portanto que precisão e acurária têm relação respectivamente, com o **grau de variabilidade** das médias amostrais e com as **distâncias esperadas** de $\mu$.
 
 ```{r fig.cap = "Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas.", fig.align='center', echo=FALSE}
-hisprecacu <- image_read_pdf("figs/Apostila_Estatistica_BICT-hist-prec-ac.pdf", density = 72)
-grid.arrange(rasterGrob(hisprecacu), nrow = 1, ncol = 1)
+image_read_pdf("figs/Apostila_Estatistica_BICT-hist-prec-ac.pdf",
+               density = 72) %>% 
+  image_scale('x1000')
+
+
+# hisprecacu <- image_read_pdf("figs/Apostila_Estatistica_BICT-hist-prec-ac.pdf", density = 72)
+# grid.arrange(rasterGrob(hisprecacu), nrow = 1, ncol = 1)
 ```
 
 

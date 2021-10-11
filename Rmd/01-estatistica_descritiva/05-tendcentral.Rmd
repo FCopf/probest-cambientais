@@ -1,0 +1,335 @@
+# Medidas de tendência central {#tendcentral}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE, warning = FALSE)
+```
+
+Tabelas de frequência e histogramas (capítulo \@ref(varquant)) permitem a visualização dos padrões de distribuição de uma variável quantitativa, evidenciando limites inferiores e superiores, faixas de valores mais ou menos frequentes etc. Neste capítulo, veremos medidas-resumo que possibilitam descrever a **tendência central** de um conjunto de dados. Estas medidas são a **média aritmética**, a **mediana**, a **moda** e o **ponto médio**.
+
+
+## Média aritmética
+
+Considere a variável $X$ com $n$ elementos $X_1$, $X_2$, $X_3$, $\cdots, X_n$. A média aritmética ($\overline{X}$) é dada por:
+
+$$\overline{X}=\frac{X_1+X_2+X_3+\cdots+X_n}{n}=\frac{\sum_{i=1}^n{X_i}}{n}$$
+
+**Exemplo**
+
+```{r}
+n = 5
+set.seed(1)
+X = sample(x = 1:10, size = n, rep = TRUE)
+```
+
+Seja a variável $X$ com `r n` observações:
+
+$X =$ \{`r paste(X, collapse = ', ')`\}
+
+
+$\overline{X}=\frac{`r paste(X, collapse = ' + ')`}{`r length(X)`}$
+
+$\overline{X}=\frac{`r sum(X)`}{`r length(X)`} = `r mean(X)`$
+
+___
+
+**obs**: o símbolo $\overline{X}$ refere-se à média aritmética de uma amostra. Na seção sobre *inferência estatística* (Capítulos \@ref(amostrmedias) a \@ref(testet)) faremos distinção entre **média amostral** ($\overline{X}$) e a **média populacional** ($\mu$).
+
+___
+
+## Mediana
+
+É definida como o valor do meio de uma distribuição, de modo que metade dos valores estão abaixo e metade está acima da mediana. Se organizarmos a variável $X$ em ordem crescente teremos:
+
+```{r}
+X = sort(X)
+Xmed = median(X)
+```
+
+$X =$ \{`r paste(paste(X[X<Xmed], collapse = ','), ',', Xmed, ',', paste(X[X>Xmed], collapse = ','), collapse = '')`\}
+
+sendo a mediana igual a $`r Xmed`$.
+
+```{r}
+set.seed(1)
+X = sample(x = 1:10, size = 6, rep = TRUE)
+```
+
+Neste exemplo, temos $n = `r length(X)`$ observações. Se tivermos um número *par* de observações, teremos duas na posição central. Por exemplo se:
+
+$X =$ \{`r paste(X, collapse = ', ')`\}
+
+vemos que após ordenarmos $X$:
+
+$X =$ \{`r paste(sort(X), collapse = ', ')`\}
+
+teremos o $`r sort(X)[3]`$ e o $`r sort(X)[4]`$ como valores do meio.
+
+Neste caso, a mediana fica como sendo:
+
+$\frac{`r sort(X)[3]` + `r sort(X)[4]`}{2} = `r median(X)`$
+
+## Moda
+
+É definida como o valor mais frequente de uma distribuição.
+
+```{r}
+set.seed(1)
+X = sample(x = 1:10, size = 6, rep = TRUE)
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+```
+
+
+Para $X =$ \{`r paste(X, collapse = ', ')`\} a moda é `r getmode(X)`, o valor que mais se repete na distribuição.
+
++ A moda nem sempre existe. Caso cada valor se repita uma única vez, não haverá moda. 
+
++ Se vários valores repetem-se igualmente, teremos mais de uma moda na distribuição.
+
+## Ponto médio 
+
+É calculado com base nos dois valores extremos da distribuição (mínimo e máximo), sendo obtido por:
+
+$$P_{medio}=\frac{X_{minimo} + X_{maximo}}{2}$$
+
+Para $X =$ \{`r paste(X, collapse = ', ')`\} o ponto médio é:
+
+$PM = \frac{`r min(X)` + `r max(X)`}{2} = \frac{`r sum(range(X))`}{2} = `r  sum(range(X))/2`$
+
+## Efeito da assimetria sobre os descritores de tendência central
+
+Cada um dos drescitores de tendência central descritos acima é mais ou menos sensível ao grau de assimetria de uma distribuiçãol. Em uma distribuição **perfeitamente simétrica**, onde as observações estão igualmente dispersas acima e abaixo do ponto central, os valores da média, mediana, moda e ponto médio coincidem. Por outro lado, pode ocorrer da distribuição ser **assimétrica**. Neste caso, a posição relativa dos descritores irá depender se a assimetria é à **direita** ou à  **esquerda**. Esta discrepância ocorre devido à sensibilidade destes descritores a valores *extremos* na distribuição. O ponto médio é o mais sensível à presença de pontos extremos, seguido da média, mediana e a moda.
+
+```{r fig.cap="Efeito da assimetria de uma distribuição sobre o ponto médio, a média aritmética, a mediana e a moda", fig.align='center', fig.width=12, fig.height=4}
+set.seed(2)
+df = data.frame(x1 = rlnorm(n = 1000, mean = 2, sd = 0.4),
+                x2 = rnorm(n = 1000),
+                x3 = rbeta(n = 1000, shape1 = 30, shape2 = 3))
+
+h1 = ggplot(df, aes(x = x1, y = ..count../sum(..count..)))
+h2 = ggplot(df, aes(x = x2, y = ..count../sum(..count..)))
+h3 = ggplot(df, aes(x = x3, y = ..count../sum(..count..)))
+
+p1 = h1 + 
+  geom_histogram(bins = 15, 
+                 fill = 'darkblue', 
+                 color = 'white') +
+  annotate(geom = 'segment', 
+           x = c(mean(range(df$x1)),
+                 mean(df$x1),
+                 median(df$x1),
+                 getmode(df$x1) + 1),
+           xend = c(mean(range(df$x1)),
+                 mean(df$x1),
+                 median(df$x1),
+                 getmode(df$x1) + 1),
+           y = c(0.22, 0.24, 0.26, 0.28),
+           yend = c(0.06, 0.21, 0.22, 0.23),
+           color = 'darkred', size = 1.2, 
+           arrow=arrow(length = unit(0.2, "inches"))) +
+  annotate(geom = 'label', 
+           x = c(mean(range(df$x1)),
+                 mean(df$x1),
+                 median(df$x1),
+                 getmode(df$x1)), 
+           y = c(0.23, 0.25, 0.27, 0.29), 
+           label = c('Ponto médio',
+                     'Média',
+                     'Mediana',
+                     'Moda'), 
+           size = 4, hjust = 0) +
+  theme_void() + 
+  theme(axis.line.x = element_line(),
+        axis.line.y = element_line())
+  
+p2 = h2 + 
+  geom_histogram(bins = 15, 
+                 fill = 'darkblue', 
+                 color = 'white') +
+  annotate(geom = 'segment', 
+           x = median(df$x2),
+           xend = median(df$x2),
+           y = 0.26,
+           yend = 0.22,
+           color = 'darkred', size = 1.2, 
+           arrow=arrow(length = unit(0.2, "inches"))) +
+  annotate(geom = 'label', 
+           x = median(df$x2), 
+           y = 0.27, 
+           label = c('Ponto médio = Média = Mediana = Moda'), 
+           size = 4) +
+  theme_void() + 
+  theme(axis.line.x = element_line(),
+        axis.line.y = element_line())
+
+p3 = h3 + 
+  geom_histogram(bins = 15, 
+                 fill = 'darkblue', 
+                 color = 'white') +
+  annotate(geom = 'segment', 
+           x = c(mean(range(df$x3)),
+                 mean(df$x3),
+                 median(df$x3),
+                 getmode(df$x3)-0.05),
+           xend = c(mean(range(df$x3)),
+                 mean(df$x3),
+                 median(df$x3),
+                 getmode(df$x3)-0.05),
+           y = c(0.22, 0.24, 0.26, 0.28),
+           yend = c(0.06, 0.21, 0.22, 0.215),
+           color = 'darkred', size = 1.2, 
+           arrow=arrow(length = unit(0.2, "inches"))) +
+  annotate(geom = 'label', 
+           x = c(mean(range(df$x3)),
+                 mean(df$x3),
+                 median(df$x3),
+                 getmode(df$x3)-0.05), 
+           y = c(0.23, 0.25, 0.27, 0.29), 
+           label = c('Ponto médio',
+                     'Média',
+                     'Mediana',
+                     'Moda'), 
+           size = 4, hjust = c(0.2,1,0.4,0.3)) +
+  theme_void() + 
+  theme(axis.line.x = element_line(),
+        axis.line.y = element_line())
+  
+p1 + p2 + p3
+
+```
+
+___
+
+> **Média aritmética**: utiliza todo o conjunto de dados. Relativamente sensível a valores extremos;
+
+> **Mediana**: o valor do meio. Metade dos pontos está acima e metade abaixo da mediana. A mediana é uma medida *resistente* a valores extremos;
+      
+> **Moda**: valor mais frequente. Se mais de um valor aparece com a mesma frequência, os dados têm uma distribuição *multimodal*;
+
+> **Ponto médio**: considera somente o valor mínimo e máximo. O ponto médio é fácil de calcular porém não utiliza a maioria do conjunto de dados e é *muito sensível a valores extremos*.
+
+___
+
+## Obtendo medidas de uma tabela de dados 
+
+Carregue o pacote `tidyverse` e importe novamente a base de dados `Reservatorios_Parana_parcial.csv`.
+
+
+```{r}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('datasets/Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+```{r, echo = TRUE, eval=FALSE}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+Medidas-resumo pode ser obtidas geralmente pela função `summarise`
+
+Vamos encontrar a média aritmética e a mediana da variável `CPUE`.
+
+```{r echo = T, eval = F}
+res %>% 
+  summarise(CPUE_medio = mean(CPUE),
+            CPUE_mediana = median(CPUE))
+```
+
+```{r}
+res %>% 
+  summarise(CPUE_medio = mean(CPUE),
+            CPUE_mediana = median(CPUE)) %>% 
+  knitr::kable()
+```
+
+Os valores são parecidos, porém a média é um pouco superior. Provavelmente a distribuição deva ser ligeiramente assimétrica à direita. Podemos verificar isto por meio de um histograma de disdribuição:
+
+```{r echp = TRUE}
+cl_cpue = seq(0, 35, by = 5)
+
+ggplot(res, aes(x = CPUE)) +
+  geom_histogram(breaks = cl_cpue, color = 'white')
+```
+
+Neste caso, alguns valores de captura próximos a $30$ kg estão fazendo com que a média esteja um pouco acima da mediana.
+
+Vamos verificar agora a média e a media da `Area` dos reservatórios:
+
+```{r echo = TRUE, eval = FALSE}
+res %>% 
+  summarise(CPUE_medio = mean(Area, na.rm = TRUE),
+            CPUE_mediana = median(Area, na.rm = TRUE))
+```
+
+```{r}
+res %>% 
+  summarise(CPUE_medio = mean(Area, na.rm = TRUE),
+            CPUE_mediana = median(Area, na.rm = TRUE)) %>% 
+  knitr::kable()
+```
+
+Para esta variável a discrepância é muito maior e a causa disto pode ser compreendida observando o histograma da distribuição.
+
+**obs**: tivemos que utilizar o argumento `na.rm = TRUE` para excluir do cálculo reservatórios com dados faltantes para `Area`. 
+
+```{r echo = TRUE}
+cl_area = seq(0, 500, by = 50)
+
+ggplot(res, aes(x = Area)) +
+  geom_histogram(breaks = cl_area, color = 'white')
+```
+
+Existe uma grande concentração de reservatórios com área até $50$ $km^2$, porém poucos reservatórios muito grandes com mais de $200$ $km^2$. Este valores *deslocam* a média aritmética à direita.
+
+Podemos ver quem são estes reservatórios utilizando a função `filter`
+
+```{r, echo = TRUE, eval = FALSE}
+res %>% 
+  filter(Area >= 200) %>% 
+  select(Reservatorio, Area)
+```
+
+```{r}
+r_grandes = res %>% 
+  filter(Area >= 200) %>% 
+  select(Reservatorio, Area)
+
+knitr::kable(r_grandes)
+```
+
+Vemos que dentro os `r nrow(res)` temos `r nrow(r_grandes)` com área acima de $200$ $km^2$, os reservatórios de `r paste(r_grandes$Reservatorio, collapse = ', ')`.
+
+A influência destes reservatórios é maior para a média aritmética que é mais sensível a valores extremos, do que para a mediana. Se calcularmos o ponto médio, veremos que esta influência é ainda maior.
+
+
+```{r echo = TRUE, eval = FALSE}
+res %>% 
+  summarise(CPUE_medio = mean(Area, na.rm = TRUE),
+            CPUE_mediana = median(Area, na.rm = TRUE),
+            P_medio = sum(range(Area, na.rm = TRUE))/2)
+```
+
+```{r}
+res %>% 
+  summarise(CPUE_medio = mean(Area, na.rm = TRUE),
+            CPUE_mediana = median(Area, na.rm = TRUE),
+            P_medio = sum(range(Area, na.rm = TRUE))/2) %>% 
+  knitr::kable()
+```
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+

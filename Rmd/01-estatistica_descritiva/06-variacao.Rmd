@@ -1,0 +1,140 @@
+# Medidas de variação {#variacao}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+```
+
+As **medidas de variação** indicam o grau de dispersão das observações. Distribuições com observações muito próximas à média têm *baixo grau de dispersão*, enquanto aquelas com observações muito distantes da média têm *alto grau de dispersão*. Vamos apresentar quatro índices que medem o grau de dispersão: a **variância**, o **desvio padrão**, o **coeficiente de variação** e a **amplitude de variação**.
+
+
+## Variância
+
+A variância descrita pelo símbolo $s^2$ mede quão distante as observações em uma variável estão de sua média aritmética. O $s^2$ se refere à **variância amostral**. Na seção sobre *inferência estatística* (Capítulos \@ref(amostrmedias) a \@ref(testet)) faremos distinção com o conceito de **variância populacional** ($\sigma^2$).
+
+Para um conjunto de $n$ observações, a variância amostral é dada por:
+
+$$s^2=\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}$$
+
+```{r}
+n = 5
+set.seed(1)
+X = sample(x = 1:10, size = n, rep = TRUE)
+```
+
+Seja a variável $X$ com `r n` observações:
+
+$X =$ \{`r paste(X, collapse = ', ')`\}
+
+Para calcularmos a variância devemos inicialmente, obter a média de $X$, que neste caso é:
+
+$\overline{X} = `r mean(X)`$
+
+E subtrair cada observação da média:
+
+```{r}
+df = data.frame(X) %>% 
+  mutate(dif = X - mean(X))
+
+df %>% 
+  knitr::kable(col.names = c('X', '$X - \\overline{X}$'))
+
+```
+
+Em seguida, elevamos cada a diferença ao quadrado:
+
+```{r}
+df = df %>% 
+  mutate(dif = X - mean(X)) %>% 
+  mutate(dif2 = dif^2)
+
+df %>% 
+  knitr::kable(col.names = c('X', 
+                             '$X - \\overline{X}$',
+                             '${(X - \\overline{X})}^{2}$'))
+
+```
+
+Somamos esta quantia e dividimos por $n - 1$
+
+$s^2 = \frac{`r paste(df[,3], collapse = ' + ')`}{`r n` - 1} = \frac{`r sum((X - mean(X))^2)`}{`r n - 1`} = `r var(X)`$
+
+## Desvio padrão
+
+O desvio padrão ($s$) é simplesmente a raiz quadrada da variância.
+
+$$s=\sqrt{\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}}$$
+
+E em nosso exemplo:
+
+$s = \sqrt{`r var(X)`} = `r round(sd(X),2)`$
+
+## Coeficiente de variação
+
+O **coeficiente de variação** (cv) relaciona o desvio padrão à média, sendo definido por:
+
+$$cv = s/\overline{X}$$ ou $$cv_{\%}  = s/\overline{X}\cdot 100$$
+
+Em nosso exemplo:
+
+$cv = \frac{`r round(sd(X),2)`}{`r mean(X)`} \cdot 100 = `r round(sd(X)/mean(X) * 100,2)`$
+
+## Amplitude de variação 
+
+É a diferença entre os pontos máximo e mínimo de um grupo de observações
+
+Amplitude de variação  = $X_{maximo} - X_{minimo}$
+
+que em nosso exemplo é
+
+Amplitude de variação  = $`r max(X)` - `r min(X)` = `r max(X) - min(X)`$
+
+
+## Obtendo medidas variação de uma tabela de dados 
+
+Carregue o pacote `tidyverse` e importe novamente a base de dados `Reservatorios_Parana_parcial.csv`.
+
+
+```{r}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('datasets/Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+```{r, echo = TRUE, eval=FALSE}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+Assim como fizemos no capítulo \@ref(tendcentral) usaremos a função `summarise` para obter descritores de variação para a variável `CPUE`.
+
+```{r echo = TRUE, eval = FALSE}
+res %>% 
+  summarise(CPUE_var = var(CPUE),
+            CPUE_dp = sd(CPUE),
+            CPUE_cv = sd(CPUE)/mean(CPUE) * 100,
+            CPUE_amplutide = max(CPUE) - min(CPUE))
+```
+
+```{r}
+res %>% 
+  summarise(CPUE_var = var(CPUE),
+            CPUE_dp = sd(CPUE),
+            CPUE_cv = sd(CPUE)/mean(CPUE) * 100,
+            CPUE_amplutide = max(CPUE) - min(CPUE)) %>% 
+  knitr::kable()
+```
+
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+

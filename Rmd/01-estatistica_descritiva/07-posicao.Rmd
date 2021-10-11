@@ -1,0 +1,287 @@
+# Medidas de posição {#posicao}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+```
+
+A média, mediana, moda e ponto médio são um tipo de **medidas de posição** que indicam uma posição particular, a posição central ao redor da qual os dados estão dispersos. Existem no entanto, outras medidas de posição. Vamos abordar aqui os **quartis** e o **índice Z** medidas comumente utilizadas em análise e interpretação de dados.
+
+## Quartis
+
+Os quartis de uma distribuição de valores são obtidos após ordenarmos os dados em ordem crescente e em seguida agrupá-los em partes iguais, contendo cada uma 25% do número total de observações. Se temos 20 observações, cada parte conterá portanto cinco observações, $20 \times 0.25 = 5$ e os quartis são as posições que dividem estas partes.
+
+Os quartis podem ser indicados por $Q_1$, $Q_2$ e $Q_3$, conforme a figura abaixo.
+
+```{r fig.cap = "Divisão de uma distribuição de valores em quartis", fig.align='center'}
+image_read("figs/Quartis.png") %>% 
+  image_scale("x600")
+```
+
+
+___
+
+> $Q_{1}$ O ponto que separa os 25% **menores** valores do restante da distribuição.
+
+> $Q_{2}$: O ponto que separa os 50% **menores** valores dos 50% **maiores**. Este coincide com a Mediana apresentada anteriormente.
+
+> $Q_{3}$: O ponto que separa os 25% **maiores** valores do restante da distribuição.
+
+___
+
+### Cálculo dos quartil na posição $j$ ($Q_j$)
+
+1. Seja $n$ o número de observações em $X$. Re-organize $X$ em ordem crescente. Deste modo $X_1$ será o menor valor e $X_n$ o maior valor. Iremos expressar um valor particular na distribuição de $X$ em ordem crescente como $X_k$;
+
+
+2. Calcule $L = \frac{j \times (n+1)}{4}$;
+
+
+3. Defina $k$ como o maior número inteiro abaixo de $L$;
+
+
+4. Calcule $Q_j = X_k + (L - k) \times (X_{k+1}-X_k)$;
+
+$Q_j$ será um elemento entre $X_k$ e $X_{k+1}$ e se $X_k$ for um número inteiro, $Q_j = X_k$
+
+
+**Exemplo para o cálculo de $Q_1$**
+
+```{r}
+set.seed(1)
+X = round(rnorm(20, 10, 2),1)
+nX = length(X)
+```
+
+Considere a variável $X$ com $n =$ `r nX` observações.
+
+
+$X$ = `r X` 
+
+
+```{r}
+sX = sort(X)
+Posicao_k = paste(1:length(X), "a Posição", sep = "")
+kable(data.frame(Posicao_k, X_ordenado = sX), col.names = c("Posicao k", "X ordenado"))
+j1 = 1
+L1 = j1 * (nX + 1)/4
+k1 = floor(L1)
+Q1 = sX[k1] + (L1 - k1) * (sX[k1+1] - sX[k1])
+
+j2 = 2
+L2 = j2 * (nX + 1)/4
+k2 = floor(L2)
+Q2 = sX[k2] + (L2 - k2) * (sX[k2+1] - sX[k2])
+
+j3 = 3
+L3 = j3 * (nX + 1)/4
+k3 = floor(L3)
+Q3 = sX[k3] + (L3 - k3) * (sX[k3+1] - sX[k3])
+
+```
+
+1. Arrange $X$ em ordem crescente
+
+
+2. Calcule $L = \frac{`r j1` \times (`r nX`+1)}{4} = `r L1`$;
+
+
+3. Defina $k$ como o maior número inteiro abaixo de $L$. Portanto, $k = `r k1`$. Veja que a observação correspondente à `r k1`$^a$ posição é `r sX[k1]` e a `r k1+1`$^a$ posição `r sX[k1+1]`.
+
+
+4. Calcule $Q_1 = `r sX[k1]` + (`r L1` - `r k1`) \times (`r sX[k1 + 1]`-`r sX[k1]`) = `r Q1`$;
+
+
+**Observação**: Calcule $Q_2$ e $Q_3$ e verifique se os resultados são: $Q_2 = `r Q2`$ e $Q_3 = `r Q3`$
+
+### Regresentação gráfica: Boxplots
+
+Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de **Boxplot**. Para a variável acima o boxplot  será:
+
+```{r boxquartis, fig.cap = "Divisão em quartis de um boxplot", fig.width=4, fig.height=6, fig.align = "center"}
+PX = c(min(X), Q1, Q2, Q3, max(X))
+LegX = c("Mínimo", "Q1", "Q2 = Mediana", "Q3", "Máximo")
+boxplot(X, axes = F, ylim = c(5, 14))
+arrows(x0 = c(1.5), x1 = 1.23, 
+       y0 = PX, y1 = PX, length = 0.05)
+axis(2, at = 1:15, las = 2)
+text(x = 1.37, y = PX-0.3, labels = LegX, cex = 0.5)
+box()
+```
+
+Em um boxplot, a linha central mais expessa representa a **Mediana** ou $2^o$ quartil, os limites da caixa são o $1^o$ e $3^o$ quartis e as extremidades geralmente são os pontos máximo e mínimo da dsitribuição.
+
+Existe uma relação entre os **histogramas** e os **boxplots**. Ambos podem ser utilizados para avaliarmos o grau de **assimetria** de uma distribuição como pode ser visto abaixo. Em uma distribuição simétrica, a caixa do boxplot tende a se concentrar no meio da distribuição, enquanto que em distribuições assimétricas, a caixa tende a ficar deslocada à esquerda o à direita.
+
+
+
+```{r, fig.cap = "Relação entre as representações por meio de histogramas e boxplots", fig.align='center', echo=FALSE, fig.width=10, fig.height=6}
+i = 2
+set.seed(2); y1 = rlnorm(n = 1000, mean = 2, sd = 0.4)
+set.seed(2); y2 = rnorm(n = 1000)
+set.seed(2); y3 = rbeta(n = 1000, shape1 = 30, shape2 = 3)
+
+layout(mat = matrix(1:6, nr = 2, nc = 3, byrow = T))
+hist(y1, xlim = c(0, 25), ylim = c(0, 0.2), col = "gray", main = "", prob = T, axes = T, 
+     xlab = "Assimétrica a esquerda", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+
+hist(y2, xlim = c(-5, 5), ylim = c(0, 0.6), col = "gray", main = "", prob = T, axes = T,
+     xlab = "Simétrica", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+
+hist(y3, xlim = c(0.65, 1.0), ylim = c(0, 15), col = "gray", main = "", prob = T, axes = T,
+     xlab = "Assimétrica a direita", ylab = "", cex.lab = 2)
+axis(1, at = c(-10,40));axis(2, at = c(-10,30))
+
+boxplot(y1, horizontal = T, axes = F, ylim = c(0, 25), range = 100)
+axis(1, cex.lab = 2)
+
+boxplot(y2, horizontal = T, axes = F, ylim = c(-5, 5), range = 100)
+axis(1, cex.lab = 2)
+
+boxplot(y3, horizontal = T, axes = F, ylim = c(0.65, 1.0), range = 100)
+axis(1, cex.lab = 2)
+
+```
+
+## Índice $Z$
+
+O **Índice $Z$** ou **Escore $Z$** indica a posição de uma observação particular ($X_i$). O valor de $Z$ relaciona a posição de $X_i$ com a **média** e o **desvio padrão** da distribuição. Suponha variável com média $\overline{X}$ e desvio padrão $s$. O índice de $Z_i$ para uma observação $i$ particular é calculado por:
+
+$$Z_i = \frac{X_i - \overline{X}}{s}$$
+
+**Exemplo**
+
+Retornemos à variável $X$ descrita acima:
+
+$X$ = `r X` 
+
+
+```{r}
+Xm = mean(X)
+Xsd = sd(X)
+Z3 = (X[3] - Xm)/Xsd
+
+if (Z3 < 0){
+    posicao = "abaixo"
+    resultado = "negativo"
+} else if (Z3 > 0){
+    posicao = "acima"
+    resultado = "positivo"
+} else {
+    posicao = "igual"
+    resultado = "zero"
+}
+```
+
+
+A média e o desvio padrão de $X$ são respectivamente $\overline{X} = `r round(Xm,2)`$ e $s = `r round(Xsd, 2)`$.
+
+Vamos calcular o índice $Z$ para a observação $X = `r X[3]`$
+
+$Z = \frac{`r X[3]` - `r round(Xm,2)`}{`r round(Xsd, 2)`} = `r round(Z3,2)`$
+
+Veja que o score $Z$ é `r resultado` e portanto $X_i$ está `r round(Z3,2)` desvios padrões `r posicao` da média.
+
+### Interpretando o valor de $Z$
+
+O valor de $Z$ indica quantos desvio padrões uma determinada observação está acima ou abaixo da média do grupo de observações. Os resultados de $Z$ podem ser:
+
+- $Z = 0$: $X_i = \overline{X}$;
+- $Z > 0$: $X_i > \overline{X}$;
+- $Z < 0$: $X_i < \overline{X}$;
+
+Para uma distribuição com média igual 10 e desvio padrão igual a 3, uma observação $X = 16$ está dois desvios padrões acima da sua respectiva média pois neste caso, $Z = 2$ como pode ser verificado na equação abaixo?
+
+$$Z = \frac{16 - 10}{3} = 2$$
+
+Vamos calcular os valores de $Z$ para a variável $X$ acima e discutir os resultados.
+
+```{r fig.width=10, fig.height=5, fig.align = "center"}
+Z = (sort(X) - Xm)/Xsd
+kable(data.frame(Posicao_k, X_ordenado = sX, Z = round(Z,2)),
+      col.names = c("Posicao k", "X ordenado", "Z ordenado"))
+
+layout(mat = matrix(1:2, nr = 1, nc = 2, byrow = T))
+hist(X, breaks = 9, xlim = c(5, 14), ylim = c(0, 6), col = "gray", main = "", prob = F, axes = T, 
+     xlab = "Distribuição de X", ylab = "", cex.lab = 2)
+axis(1, at = c(5:15));axis(2, at = c(0:6))
+
+hist(Z, breaks = 9, xlim = c(-3, 2.5), ylim = c(0, 6), col = "gray", main = "", prob = F, axes = T, 
+     xlab = "Distribuição de Z", ylab = "", cex.lab = 2)
+axis(1, at = c(-3:3));axis(2, at = c(0:6))
+
+
+```
+
+Veja na tabela que conforme o valor de $X_i$ se distancia da média de $X = `r  round(Xm,2)`$ mais distante de zero será o valor $Z$. Neste exemplo, as observações mais extremas de $X$ estão, respectivamente, a `r min(round(Z,2))` desvios padrões abaixo e `r max(round(Z,2))` desvios padrões acima da média.
+
+### Valores esperados de $Z$ em uma distribuição normal padronizada
+
+A interpretação de $Z$ faz sentido quando desejamos comparar uma determinada observação $X_i$ à posição que esta teria dentro de uma **Distribuição Normal Padronizada** (Capítulo \@ref(normtlc)). A figura abaixo nos permite avaliar qual a probabilidade de encontrarmos uma observação a diferentes distâncias da média populacional. Suponha que tomemos uma amostra de uma distribuição normal. Existe uma probabilidade de aproximadamente 68% de que esta amostra esteja 1 desvio padrão acima ou abaixo da média. Esta probabilidade aumenta para cerca de 95% se considerarmos uma distância dois desvios padrões acima ou abaixo da média. Por outro lado, que é muito **improvável** amostrarmos um valor a mais de 3 desvios padrões da média. Isto rá ocorrer em somente de 0.2% dos casos.
+
+
+``` {r, fog.cap = "Áreas de probabilidade em uma distribuição Normal", fig.width=6, fig.height=6, fig.align = "center"}
+qr = -3:3
+dqr = dnorm(x = qr)
+
+
+qrc1 = c(-1, 1, seq(1,-1, by = -0.001))
+dqrc1 = c(0, 0, dnorm(x = seq(1,-1, by = -0.001)))
+
+qrc2 = c(2, 3, seq(3,2, by = -0.001))
+dqrc2 = c(0, 0, dnorm(x = seq(3, 2, by = -0.001)))
+
+qrc2m = c(-2, -3, seq(-3,-2, by = 0.001))
+dqrc2m = c(0, 0, dnorm(x = seq(-3, -2, by = 0.001)))
+
+#eixox = expression(bar(X)-3*phi, -1.5*phi, -phi, -phi/2, 0, phi/2, phi, 2*phi, 1.5*phi)
+
+xn = paste0('bar(X)', c(rep("-", 3), "", rep("+",3)), c(3:1, 0, 1:3)  , '*s')
+xn[4] = "bar(X)"
+           
+eixoX = parse(text = xn)
+
+pqr = pnorm(q = -4:4)
+perc = diff(pqr) * 100
+
+curve(expr = dnorm(x, 0,1), from = -4, to = 4, 
+      ylab = "Densidade da distribuição normal",
+      xlab = "", ylim = c(0, 0.7), axes = F)
+axis(1, at = -5:5, labels = c("","",eixoX,"",""), cex.axis = 0.8)
+axis(2, at = seq(-1, 0.5, by = 0.1), cex.axis = 0.8)
+segments(x0 = qr, x1 = qr, y0 = 0, y1 = c(0.65, 0.55, 0.45, dnorm(0), 0.45, 0.55, 0.65), lty = 2)
+polygon(x = qrc1, y = dqrc1, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
+polygon(x = qrc2, y = dqrc2, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
+polygon(x = qrc2m, y = dqrc2m, col = rgb(red = 0.9, 0,0, alpha = 0.3))
+segments(x0 = -1, x1 = 1, y0 = 0.45, y1 = 0.45, lwd = 2)
+segments(x0 = -2, x1 = 2, y0 = 0.55, y1 = 0.55, lwd = 2)
+segments(x0 = -3, x1 = 3, y0 = 0.65, y1 = 0.65, lwd = 2)
+
+text(x = -3.5:3.5, y = c(0.05, 0.05, 0.07, 0.2, 0.2, 0.07, 0.05, 0.05),
+     labels = paste(round(perc,1), "%", sep  =''), cex = 0.7)
+text(x = 0, y = 0.67, labels = paste(round(diff(pnorm(q = c(-3,3))*100),2), "% a 3 desvios padrões da média",sep = ''), cex = 0.7)
+text(x = 0, y = 0.57, labels = paste(round(diff(pnorm(q = c(-2,2))*100),2), "% a 2 desvios padrões da média",sep = ''), cex = 0.7)
+text(x = 0, y = 0.47, labels = paste(round(diff(pnorm(q = c(-1,1))*100),2), "% a 1 desvio padrão da média",sep = ''), cex = 0.7)     
+
+```
+
+
+Suponha por exemplo que a distribuição de altura de homens adultos siga uma distribuição normal com média $\mu = 175$ cm e desvio padrão de $\sigma = 20$ cm. 
+
+Neste caso, 
+
+$\mu - 2 \times \sigma = 175 - 2 \times 20 = 135$
+
+e
+
+$\mu + 2 \times \sigma = 175 + 2 \times 20 = 215$
+
+Sugerindo que menos de 5% dos homens adultos teriam têm mais de 215 cm ou menos de 135 cm de altura.
+
+Este assunto será abordado em mais detalhes na seção sobre inferênia estatística (Capítulos \@ref(amostrmedias) a \@ref(testet)).
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+
