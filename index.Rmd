@@ -16,9 +16,9 @@ description: "Estatística nas Ciências Ambientais"
 # Índice {-}
 
 
-I. Estatística descritiva (capítulos \@ref(descrit) e \@ref(posicao))
+I. Estatística descritiva (capítulos \@ref(estrdados) e \@ref(biquantquali))
 
-II. Amostragem e Inferência Estatística (capítulos \@ref(amostrmedias) a \@ref(th))
+II. Amostragem e Inferência Estatística (capítulos \@ref(popamostra) a \@ref(testet))
 
 III. Modelos Lineares Clássicos (capítulos \@ref(regressao) a \@ref(repanova))
 
@@ -43,7 +43,6 @@ library(magick)
 library(patchwork)
 library(gridExtra)
 library(grid)
-
 
 library(vegan)
 library(ade4)

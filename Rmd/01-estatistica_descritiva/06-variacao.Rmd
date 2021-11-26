@@ -13,7 +13,7 @@ A variância descrita pelo símbolo $s^2$ mede quão distante as observações e
 
 Para um conjunto de $n$ observações, a variância amostral é dada por:
 
-$$s^2=\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}$$
+$$s^2=\frac{\sum_{i=1}^n{(X_i - \overline{X})^2}}{n-1}$$
 
 ```{r}
 n = 5
@@ -62,7 +62,7 @@ $s^2 = \frac{`r paste(df[,3], collapse = ' + ')`}{`r n` - 1} = \frac{`r sum((X -
 
 O desvio padrão ($s$) é simplesmente a raiz quadrada da variância.
 
-$$s=\sqrt{\frac{\sum_{i=1}^N{(X_i - \overline{X})^2}}{n-1}}$$
+$$s=\sqrt{\frac{\sum_{i=1}^n{(X_i - \overline{X})^2}}{n-1}}$$
 
 E em nosso exemplo:
 

@@ -34,7 +34,7 @@
   
 <link rel="prev" href="estrdados.html"/>
 <link rel="next" href="varqualit.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -58,12 +58,12 @@
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.19/datatables.js"></script>
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
@@ -556,20 +556,20 @@ div.csl-indent {
 </ul>
 <p>Podemos visualizar a base de dados digitando:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="procdados.html#cb9-1" aria-hidden="true" tabindex="-1"></a>res</span></code></pre></div>
-<pre><code>## # A tibble: 31 x 11
-##    Reservatorio Bacia  Fechamento   Area Trofia          pH Condutividade Alcalinidade
-##    &lt;chr&gt;        &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;
-##  1 Cavernoso    Iguacu       1965   2.9  Oligotrófico   7.4          33.1        140. 
-##  2 Curucaca     Iguacu       1982   2    Oligotrófico   7            32.4        126. 
-##  3 Foz do Areia Iguacu       1980 139    Oligotrófico   7.3          35.5         97  
-##  4 Irai         Iguacu       2000  15    Eutrófico      6.9          50.2          3.3
-##  5 JMF          Iguacu       1970   0.45 Mesotrófico    7.3          40.2          3.7
-##  6 Jordao       Iguacu       1996   3.4  Oligotrófico   7.1          23.7        153. 
-##  7 Passauna     Iguacu       1978  14    Oligotrófico   8.8         126.         526  
-##  8 Piraquara    Iguacu       1979   3.3  Oligotrófico   7.1          22.8         50.7
-##  9 Salto Caxias Iguacu       1998 124    Oligotrófico   7.3          39.6        106  
-## 10 Salto do Vau Iguacu       1959   2.9  Oligotrófico   6.5          23.2        279  
-## # ... with 21 more rows, and 3 more variables: P.total &lt;dbl&gt;, Riqueza &lt;dbl&gt;,
+<pre><code>## # A tibble: 31 × 11
+##    Reservatorio Bacia  Fechamento   Area Trofia    pH Condutividade Alcalinidade
+##    &lt;chr&gt;        &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Cavernoso    Iguacu       1965   2.9  Oligo…   7.4          33.1        140. 
+##  2 Curucaca     Iguacu       1982   2    Oligo…   7            32.4        126. 
+##  3 Foz do Areia Iguacu       1980 139    Oligo…   7.3          35.5         97  
+##  4 Irai         Iguacu       2000  15    Eutró…   6.9          50.2          3.3
+##  5 JMF          Iguacu       1970   0.45 Mesot…   7.3          40.2          3.7
+##  6 Jordao       Iguacu       1996   3.4  Oligo…   7.1          23.7        153. 
+##  7 Passauna     Iguacu       1978  14    Oligo…   8.8         126.         526  
+##  8 Piraquara    Iguacu       1979   3.3  Oligo…   7.1          22.8         50.7
+##  9 Salto Caxias Iguacu       1998 124    Oligo…   7.3          39.6        106  
+## 10 Salto do Vau Iguacu       1959   2.9  Oligo…   6.5          23.2        279  
+## # … with 21 more rows, and 3 more variables: P.total &lt;dbl&gt;, Riqueza &lt;dbl&gt;,
 ## #   CPUE &lt;dbl&gt;</code></pre>
 <p>Fazendo isso você verá somente parte da base de dados, a depender do tamanho de sua janela do RStudio. Caso queira ver a tabela completa digite:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="procdados.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(res)</span></code></pre></div>
@@ -581,17 +581,17 @@ div.csl-indent {
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="procdados.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(res)</span></code></pre></div>
 <pre><code>## Rows: 31
 ## Columns: 11
-## $ Reservatorio  &lt;chr&gt; &quot;Cavernoso&quot;, &quot;Curucaca&quot;, &quot;Foz do Areia&quot;, &quot;Irai&quot;, &quot;JMF&quot;, ~
-## $ Bacia         &lt;chr&gt; &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguac~
-## $ Fechamento    &lt;dbl&gt; 1965, 1982, 1980, 2000, 1970, 1996, 1978, 1979, 1998, 19~
-## $ Area          &lt;dbl&gt; 2.90, 2.00, 139.00, 15.00, 0.45, 3.40, 14.00, 3.30, 124.~
-## $ Trofia        &lt;chr&gt; &quot;Oligotrófico&quot;, &quot;Oligotrófico&quot;, &quot;Oligotrófico&quot;, &quot;Eutrófi~
-## $ pH            &lt;dbl&gt; 7.4, 7.0, 7.3, 6.9, 7.3, 7.1, 8.8, 7.1, 7.3, 6.5, 8.6, 9~
-## $ Condutividade &lt;dbl&gt; 33.1, 32.4, 35.5, 50.2, 40.2, 23.7, 125.6, 22.8, 39.6, 2~
-## $ Alcalinidade  &lt;dbl&gt; 139.80, 125.70, 97.00, 3.30, 3.70, 152.70, 526.00, 50.67~
-## $ P.total       &lt;dbl&gt; 7.8, 4.7, 14.3, 53.4, 41.2, 3.3, 15.2, 4.5, 12.1, 11.0, ~
-## $ Riqueza       &lt;dbl&gt; 18, 16, 19, 12, 18, 17, 11, 8, 21, 8, 24, 21, 22, 15, 10~
-## $ CPUE          &lt;dbl&gt; 9.22, 28.73, 11.59, 30.76, 5.95, 7.75, 7.51, 4.01, 20.83~</code></pre>
+## $ Reservatorio  &lt;chr&gt; &quot;Cavernoso&quot;, &quot;Curucaca&quot;, &quot;Foz do Areia&quot;, &quot;Irai&quot;, &quot;JMF&quot;, …
+## $ Bacia         &lt;chr&gt; &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguacu&quot;, &quot;Iguac…
+## $ Fechamento    &lt;dbl&gt; 1965, 1982, 1980, 2000, 1970, 1996, 1978, 1979, 1998, 19…
+## $ Area          &lt;dbl&gt; 2.90, 2.00, 139.00, 15.00, 0.45, 3.40, 14.00, 3.30, 124.…
+## $ Trofia        &lt;chr&gt; &quot;Oligotrófico&quot;, &quot;Oligotrófico&quot;, &quot;Oligotrófico&quot;, &quot;Eutrófi…
+## $ pH            &lt;dbl&gt; 7.4, 7.0, 7.3, 6.9, 7.3, 7.1, 8.8, 7.1, 7.3, 6.5, 8.6, 9…
+## $ Condutividade &lt;dbl&gt; 33.1, 32.4, 35.5, 50.2, 40.2, 23.7, 125.6, 22.8, 39.6, 2…
+## $ Alcalinidade  &lt;dbl&gt; 139.80, 125.70, 97.00, 3.30, 3.70, 152.70, 526.00, 50.67…
+## $ P.total       &lt;dbl&gt; 7.8, 4.7, 14.3, 53.4, 41.2, 3.3, 15.2, 4.5, 12.1, 11.0, …
+## $ Riqueza       &lt;dbl&gt; 18, 16, 19, 12, 18, 17, 11, 8, 21, 8, 24, 21, 22, 15, 10…
+## $ CPUE          &lt;dbl&gt; 9.22, 28.73, 11.59, 30.76, 5.95, 7.75, 7.51, 4.01, 20.83…</code></pre>
 <p>Vemos dois tipos de dados: <code>chr</code> identificando que a coluna contém uma variável <strong>qualitativa</strong> e <code>dbl</code>, identificando que a coluna contém uma variável <strong>quantitativa</strong>.</p>
 </div>
 <div id="reorganizando-a-base-de-dados" class="section level2" number="2.7">
@@ -606,20 +606,20 @@ div.csl-indent {
 </blockquote>
 <p>Digite o nome do objeto e verá que a ordem permanece inalterada.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="procdados.html#cb15-1" aria-hidden="true" tabindex="-1"></a>res</span></code></pre></div>
-<pre><code>## # A tibble: 31 x 11
-##    Reservatorio Bacia  Fechamento   Area Trofia          pH Condutividade Alcalinidade
-##    &lt;chr&gt;        &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;
-##  1 Cavernoso    Iguacu       1965   2.9  Oligotrófico   7.4          33.1        140. 
-##  2 Curucaca     Iguacu       1982   2    Oligotrófico   7            32.4        126. 
-##  3 Foz do Areia Iguacu       1980 139    Oligotrófico   7.3          35.5         97  
-##  4 Irai         Iguacu       2000  15    Eutrófico      6.9          50.2          3.3
-##  5 JMF          Iguacu       1970   0.45 Mesotrófico    7.3          40.2          3.7
-##  6 Jordao       Iguacu       1996   3.4  Oligotrófico   7.1          23.7        153. 
-##  7 Passauna     Iguacu       1978  14    Oligotrófico   8.8         126.         526  
-##  8 Piraquara    Iguacu       1979   3.3  Oligotrófico   7.1          22.8         50.7
-##  9 Salto Caxias Iguacu       1998 124    Oligotrófico   7.3          39.6        106  
-## 10 Salto do Vau Iguacu       1959   2.9  Oligotrófico   6.5          23.2        279  
-## # ... with 21 more rows, and 3 more variables: P.total &lt;dbl&gt;, Riqueza &lt;dbl&gt;,
+<pre><code>## # A tibble: 31 × 11
+##    Reservatorio Bacia  Fechamento   Area Trofia    pH Condutividade Alcalinidade
+##    &lt;chr&gt;        &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Cavernoso    Iguacu       1965   2.9  Oligo…   7.4          33.1        140. 
+##  2 Curucaca     Iguacu       1982   2    Oligo…   7            32.4        126. 
+##  3 Foz do Areia Iguacu       1980 139    Oligo…   7.3          35.5         97  
+##  4 Irai         Iguacu       2000  15    Eutró…   6.9          50.2          3.3
+##  5 JMF          Iguacu       1970   0.45 Mesot…   7.3          40.2          3.7
+##  6 Jordao       Iguacu       1996   3.4  Oligo…   7.1          23.7        153. 
+##  7 Passauna     Iguacu       1978  14    Oligo…   8.8         126.         526  
+##  8 Piraquara    Iguacu       1979   3.3  Oligo…   7.1          22.8         50.7
+##  9 Salto Caxias Iguacu       1998 124    Oligo…   7.3          39.6        106  
+## 10 Salto do Vau Iguacu       1959   2.9  Oligo…   6.5          23.2        279  
+## # … with 21 more rows, and 3 more variables: P.total &lt;dbl&gt;, Riqueza &lt;dbl&gt;,
 ## #   CPUE &lt;dbl&gt;</code></pre>
 <p>Se desejarmos visualizar a tabela em ordem <strong>decresente</strong>, basta fazermos:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="procdados.html#cb17-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">%&gt;%</span> </span>
