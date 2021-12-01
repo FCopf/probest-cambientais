@@ -243,8 +243,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="posicao.html"><a href="posicao.html#quartis"><i class="fa fa-check"></i><b>7.1</b> Quartis</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartil-na-posição-j-q_j"><i class="fa fa-check"></i><b>7.1.1</b> Cálculo dos quartil na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>)</a></li>
-<li class="chapter" data-level="7.1.2" data-path="posicao.html"><a href="posicao.html#regresentação-gráfica-boxplots"><i class="fa fa-check"></i><b>7.1.2</b> Regresentação gráfica: Boxplots</a></li>
+<li class="chapter" data-level="7.1.1" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3"><i class="fa fa-check"></i><b>7.1.1</b> Cálculo dos quartis na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>, para <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(2\)</span> e <span class="math inline">\(3\)</span>)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartis-no-r"><i class="fa fa-check"></i><b>7.1.2</b> Cálculo dos quartis no R</a></li>
+<li class="chapter" data-level="7.1.3" data-path="posicao.html"><a href="posicao.html#regresentação-gráfica-dos-quartis-boxplots"><i class="fa fa-check"></i><b>7.1.3</b> Regresentação gráfica dos quartis: Boxplots</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="posicao.html"><a href="posicao.html#índice-z"><i class="fa fa-check"></i><b>7.2</b> Índice <span class="math inline">\(Z\)</span></a>
 <ul>
@@ -817,10 +818,10 @@ RainR
 </tbody>
 </table>
 <p>É razoável supor que em anos de mais chuva, seriam esperadas maiores vazões e que anos mais secos resultassem menores volumes de vazão. Para verificar esta suposição vamos fazer um gráfico de dispersão entre vazão e chuva.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-263-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-267-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>O gráfico sugere que a suposição faz sentido. Volumes baixos de chuva estão associados a volumes baixos de vazão e vice versa. O gráfico sugrere ainda que a relação funcional é <strong>linear</strong>. Nestas condições, faz sentido tentar modelar a relação entre estas variáveis por meio de um modelo de regressão linear simples.</p>
 <p>Ao ajustar um modelo de regressão, vemos que a linha em azul é a que melhor descreve a relação linear entre as variáveis.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-264-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-268-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Esta linha nos permite obter uma estimativa sobre a vazão esperada (<span class="math inline">\(Y\)</span>) para qualquer <strong>dado</strong> volume de chuva (<span class="math inline">\(X\)</span>). Neste exemplo, a equação que melhor associa vazão e chuva é:</p>
 <p><span class="math display">\[Y_i = -571.98 + 1.05 X_i\]</span></p>
 <p>O valor de <span class="math inline">\(\beta_1 = 1.05\)</span> nos diz que para um aumento de 1 mm/area/ano de chuva, a vazão aumentará 1.05 mm/area/ano. <span class="math inline">\(\beta_1\)</span> é conhecido como <strong>coeficiente de inclinação da reta</strong> e nos fornece magnitude da variação em <span class="math inline">\(Y\)</span> para um aumento de <strong>1 unidade</strong> em <span class="math inline">\(X\)</span>.</p>
@@ -836,14 +837,14 @@ RainR
 <h3><span class="header-section-number">18.1.1</span> Porção determinística</h3>
 <p>A porção determinística é um modelo matemático que descreve a relação funcional entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Os parâmetros <span class="math inline">\(\beta\)</span>’s determinam a intensidade do efeito de <span class="math inline">\(X\)</span> sobre <span class="math inline">\(Y\)</span>. Na regressão linear <strong>simples</strong> temos somente uma variável <span class="math inline">\(X\)</span>, e a relação funcional é dada pela <strong>equação da reta</strong>. No modelo de regressão linear <strong>múltipla</strong> existe mais de uma variável <span class="math inline">\(X\)</span>. Finalmente, nos modelos de regressão <strong>não-lineares</strong> a relação funcional pode ser representada por outros modelos matemáticos (ex. função potência <span class="math inline">\(Y = \beta_0X^{\beta_1}\)</span>).</p>
 <p>Na regressão linear simples, o parâmetro <span class="math inline">\(\beta_1\)</span> é geralmente o de maior interesse. Este parâmetro nos dirá se a relação será crescente (<span class="math inline">\(\beta_1 &gt; 0\)</span>), decrescente (<span class="math inline">\(\beta_1 &lt; 0\)</span>) ou nula (<span class="math inline">\(\beta_1 = 0\)</span>). <span class="math inline">\(\beta_0\)</span> é o <span class="math inline">\(\textbf{intercepto}\)</span> e expressa o ponto em <span class="math inline">\(Y\)</span> em que a reta cruza o eixo das ordenadas.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-265-1.png" width="336" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-269-1.png" width="336" style="display: block; margin: auto;" /></p>
 </div>
 <div id="porção-estocástica" class="section level3" number="18.1.2">
 <h3><span class="header-section-number">18.1.2</span> Porção estocástica</h3>
 <p>A porção estocástica, é representada pelo <strong>resíduo</strong> ou <strong>erro</strong>. A cada observação <span class="math inline">\(Y_i\)</span> está associado um valor de resíduo correspondente (<span class="math inline">\(\epsilon_i\)</span>), dado pela distância vertical entre <span class="math inline">\(Y_i\)</span> e o valor predito <span class="math inline">\(\hat{Y_i}\)</span> sobre a reta de regressão.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-266-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-270-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>No modelo de regressão linear que veremos aqui, os resídos são uma <strong>variável aleatória</strong> prevenientes de uma distribuição normal de probabilidades com média <span class="math inline">\(\mu = 0\)</span> e variância <span class="math inline">\(\sigma^2\)</span> constante ao longo da reta de regressão, <span class="math inline">\(N(0, \sigma^2)\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-267-1.png" width="288" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-271-1.png" width="288" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="ajuste-dos-dados-ao-modelo-de-regressão" class="section level2" number="18.2">
@@ -855,7 +856,7 @@ RainR
 <h3><span class="header-section-number">18.2.1</span> Método dos mínimos quadrados</h3>
 <p>O <strong>Método dos Mínimos Quadrados</strong> (<span class="math inline">\(MMQ\)</span>) é uma das formas disponíveis para calcularmos <span class="math inline">\(\hat{\beta_0}\)</span>, <span class="math inline">\(\hat{\beta_1}\)</span> e <span class="math inline">\(\hat{\sigma}^2\)</span>. O <span class="math inline">\(MMQ\)</span> envolve encontrar a combinação de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que minimiza a <strong>Soma dos Quadrados dos Resíduos</strong> (<span class="math inline">\(SQ_{Resíduo}\)</span>), ou seja, que minimizam a quantia:</p>
 <p><span class="math display">\[SQ_{Resíduo} = \sum{(Y_i-\hat{Y_ i})^2} = \sum{(Y_i-(\hat{\beta_0} + \hat{\beta_1}X_i))^2}\]</span></p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-268-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-272-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Nas figuras acima, a linha da esquerda (<span class="math inline">\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 37\)</span>) está claramente melhor ajustada à nuvem de pontos, o que se expressa em um menor somatório dos quadrados dos resíduos (<span class="math inline">\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 37\)</span>) quando comparado com o ajuste da figura à direita (<span class="math inline">\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 145\)</span>).</p>
 </div>
 <div id="variâncias-covariâncias-e-coeficientes-da-regressão" class="section level3" number="18.2.2">
@@ -974,7 +975,7 @@ NAP
 </tbody>
 </table>
 <p>O gráfico de dispersão sugere uma relação negativa e possivelmente linear, em que a riqueza de espécies diminui com o aumento no grau de exposição. Vamos ajustar um modelo de regressão a estes pontos calculando <span class="math inline">\(\hat{\beta_0}\)</span>, <span class="math inline">\(\hat{\beta_1}\)</span> e <span class="math inline">\(\hat{\sigma}^2\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-271-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-275-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Os passos intermediários envolvem o cálculo do somatórios dos quadrados de X:</p>
 <p><span class="math display">\[SQ_X = \sum{(X_i - \overline{X})^2}\]</span></p>
 <p>de Y:</p>
@@ -1224,7 +1225,7 @@ NAP
 <p><span class="math display">\[\hat{\sigma}^2 = QM_{Resíduo} = \frac{SQ_{Resíduo}}{n-2} = \frac{\sum{(Y_i-\hat{Y_ i})^2}}{n-2} = \frac{53.11}{7} = 7.59\]</span></p>
 <p>De modo que a melhor reta de regressão é dada por:</p>
 <p><span class="math display">\[Richness = 5.94 -2.58 \times NAP\]</span></p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-273-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-277-1.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="testes-de-hipóteses-na-regressão-linear-simples" class="section level2" number="18.3">
@@ -1248,7 +1249,7 @@ NAP
 <p>No exemplo sobre a fauna praial estamos interessados em testar a hipótese de que a riqueza de espécies esteja associada ao grau de exposição às ondas. Em regressão linear, esta hipótese pode ser expressa por:</p>
 <p><span class="math display">\[t = \frac{\hat{\beta_1}}{s_{\hat{\beta_1}}} = \frac{-2.58}{0.88} = -2.944\]</span></p>
 <p>Que na distribuição de t fica:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-275-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-279-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Se nosso nível de significancia <span class="math inline">\(\alpha = 0.05\)</span>, então a probabilidade <span class="math inline">\(p = 0.011 + 0.011 = 0.022\)</span> indica que devemos <strong>rejeitar</strong> <span class="math inline">\(H_0\)</span> e aceitar que <strong>existe</strong> uma relação entre Riqueza de espécies e NAP.</p>
 </div>
 <div id="análise-de-variância-da-regressão" class="section level3" number="18.3.2">
@@ -1263,7 +1264,7 @@ NAP
 <p>Pode-se mostrar ainda que vale a expressão:</p>
 <p><span class="math display">\[SQ_Y = SQ_{Regressão} + SQ_{Resíduo}\]</span>
 A decomposição destas quantias é conhecida <strong>partição das somas dos quadrados</strong> e nos permitem comparar a influência de <span class="math inline">\(X\)</span> com a influência do puro acaso sobre a variabilidade em <span class="math inline">\(Y\)</span>. Se todos os pontos estiverem perfeitamente sobre a reta, então toda a variação em <span class="math inline">\(Y\)</span> seria atribuída à influência de <span class="math inline">\(X\)</span>. Por outro lado, à medida que aumenta a distância média dos pontos acima e abaixo da curva, aumenta a parcela atribuída ao <strong>acaso</strong>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-276-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-280-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Estes <strong>componentes de variação</strong> podem ser organizados em uma Tabela de <strong>Análise de Variância (ANOVA)</strong>. <span class="math inline">\(n\)</span> se refere ao número de amostras.</p>
 <table>
 <colgroup>
@@ -1318,7 +1319,7 @@ A decomposição destas quantias é conhecida <strong>partição das somas dos q
 <blockquote>
 <p>O símbolo <span class="math inline">\(F\)</span> foi dado em homenagem a Ronald Aylmer Fisher o estatístico e geneticista Britânico do início do séc. XX, que entre inúmeras outras contribuições, desenvolveu a Análise de Variância. Fisher é descrito como <em>“a genius who almost single-handedly created the foundations for modern statistical science”</em> <span class="citation">(<a href="#ref-halt1998history" role="doc-biblioref">Halt 1998</a>)</span> e como <em>“the single most important figure in 20th century statistics”</em> <span class="citation">(<a href="#ref-efron1998r" role="doc-biblioref">Efron 1998</a>)</span>. Ver <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Aylmer Fisher</a>.</p>
 </blockquote>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-277-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-281-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Os resultados da ANOVA para os dados da fauna praial nos dá os seguintes valores. <em>Confira os cálculos</em>.</p>
 <table>
 <thead>
@@ -1655,9 +1656,9 @@ NAP
 </tbody>
 </table>
 <p>E representá-los graficamente, juntamente com os valores ajustados de Y.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-281-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-285-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Note que na figura acima, estão representados os valores observados de riqueza de espécies (em preto), os valores ajustados (azul) e os intervalos a 95% (vermelho). Os valores ajustados são aqueles utilizados para construir a <strong>reta de regressão</strong>. O intervalo não costuma ser representados por pontos individuais, mas por uma banda que delimita a área que restringe o intervalo de confiança ao nível <span class="math inline">\(1 - \alpha\)</span> como na figura abaixo.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-282-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-286-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>A banda mais estreita próxima ao ponto médio de <span class="math inline">\(X\)</span>, reflete o ponto comentado anteriormente, de que quanto mais próximo ao centro da distibuição de pontos, mais confiança temos sobre os limites máximos e mínimos que um valor de <span class="math inline">\(Y\)</span> pode assumir. Do mesmo modo, esta confiança <strong>diminui</strong> à medida que nos aproximamos dos extremos dos valores observados em <span class="math inline">\(X\)</span>.</p>
 </div>
 <div id="pressupostos-da-regressão-linear-simples" class="section level2" number="18.6">
@@ -1699,7 +1700,7 @@ NAP
 <div id="gráfico-de-resíduos" class="section level3" number="18.7.1">
 <h3><span class="header-section-number">18.7.1</span> Gráfico de resíduos</h3>
 <p>O primeiro diagnóstico da regressão é conhecido como <strong>gráfico de resíduos</strong>, que consiste em um gráfico de dispersão entre os resíduos e o valor ajustado <span class="math inline">\(\hat{Y}\)</span>. Abaixo estão os gráficos de resíduos que surge quando ajustamos uma reta a dados que apresentam uma <strong>relação linear</strong>, uma <strong>função potência</strong>, uma <strong>função assintótica</strong> e uma relação linear porém comm <strong>variância heterogênea</strong>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-283-1.png" width="960" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-287-1.png" width="960" /></p>
 <p>Nas primeiras duas figuras, em que a relação é linear, vemos um padrão crescente de <span class="math inline">\(Y\)</span> como função de <span class="math inline">\(X\)</span> (figura da esquerda), em que os pontos estão aleatóriamente acima e abaixo da reta de regressão. Este padrão se reflete em um gráfico de resíduos (figura da direita) em que os pontos ficam aleatóriamente acima e abaixo de zero expressando resíduos positivos e negativos respectivamente. Em uma situação em que os pontos estivessem <strong>perfeitamente</strong> sobre a reta, os resíduos seriam todos iguais a zero e o gráfico de resíduos mostraria todos os pontos alinhados horizontalmente em zero.</p>
 <p>Quando a relação é potência e tentamos ajustar uma reta sobre, vemos que inicialmente os resíduos sao positivos, o seja, estão acima da reta. Os resíduos se tornam negativos no centro da nuvem de pontos e novamente positivos ao final do gráfico. Este padrão é mais evidente no gráfico de resíduos, que mostra um componente <strong>sistemático</strong> dos resíduos como fução do valor ajustado. Ao usar uma regressão linear neste caso, iríamos subestimar <strong>consistentemente</strong> os valores de Y nos extremos da figura e superestimlá-los no trecho central. Portanto, uma reta de regressão, quando ajustada a um conjunto de dados que expressa um padrão <strong>não-linear</strong>, não é capaz de isolar adequadamente as parcelas aleatórias e sistemáticas da relação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span>. Isto pode ser corrigido aplicando-se uma regressão <strong>não-linear</strong> aos dados.</p>
 <p>Quando a relação é assintótica, o resultado do ajuste foi inverso ao anterior. De fato, resultados análogos serão observados senpre que tentarmos ajustra uma regressão linear a dados que expressam padrões não-lineares.</p>
@@ -1708,7 +1709,7 @@ NAP
 <div id="histograma-dos-resíduos" class="section level3" number="18.7.2">
 <h3><span class="header-section-number">18.7.2</span> Histograma dos resíduos</h3>
 <p>Outro diagnóstico da regressão consiste em fazer um histograma dos gráficos de resíduos. Um histograma, aproximadamente simétrico ao redor de zero o que sugere que o pressuposto de normalidade dos resíduos é válido neste caso. Existem testes formais de normalidade cmo o teste de <strong>Kolmogorov Smirnov</strong> ou o teste de <strong>Shapiro-Wilk</strong>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-284-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-288-1.png" width="672" /></p>
 </div>
 </div>
 <div id="coeficiente-de-correlação-de-pearson-r" class="section level2" number="18.8">
@@ -1864,7 +1865,7 @@ Camarão rei
 </tr>
 </tbody>
 </table>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-286-1.png" width="960" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-290-1.png" width="960" /></p>
 <p>Veja nas figuras acima que a captura em toneladas do camarão tigre é sempre mais elevada. Entretanto, a figura da direita sugere haver uma relação linear entre as capturas. Nos anos em que houve maiores capturas do camarão tigre parece ter havido também um aumento nas capturas do camarão rei. Dizemos que existe uma <strong>correlação positiva</strong> entre a captura das duas espécies. Em nenhum momento estamos dizendo que a abundância de uma espécie é a <strong>causa</strong> do aumento na captura da outra. Muito provavelmente, as abundâncias das duas espécies estão relacionadas a um terceiro fator que gera um comportamento similar na variação das capturas ano a ano. Portanto, aqui não há como se falar em variável dependente e independente. Podemos no referir apenas a uma correlação aparentemente linear entre duas variáveis.</p>
 <p>Quando estamos interessados em medir o grau de correlação entre duas variáveis utilizamos o <strong>coeficiente de correlação de Pearson</strong> (<strong><span class="math inline">\(r\)</span></strong>). O coeficiente <span class="math inline">\(r\)</span> mede a intensidade da correlação linear entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span>. Como não há variável dependente e independente, pouco importa no exemplo acima, a quem chamaremos de <span class="math inline">\(Y\)</span> ou de <span class="math inline">\(X\)</span>. De fato, seria mais correto denominarmos simplesmente as variáveis de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, porém vamos seguir utilizando a nomenclatura que vimos ao longo do capítulo.</p>
 <p>Vimos que a <strong>covariância amostral</strong> (<span class="math inline">\(\sigma_{YX}\)</span>) mede a intensidade de uma associação linear entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span>. A covariância entretanto, não tem limite superior ou inferior. Vimos também que valor de <span class="math inline">\(\beta_1\)</span> é dado pela covariância entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span> padronizada pela variância de <span class="math inline">\(X\)</span> o que expressa a noções de dependência de <span class="math inline">\(Y\)</span> como função de <span class="math inline">\(X\)</span>.</p>
@@ -1875,7 +1876,7 @@ Camarão rei
 \sqrt{\frac{\sum{(X_i - \overline{X})^2}}{n-1}}}\]</span></p>
 <p><span class="math display">\[r = \frac{\sum{(Y_i - \overline{Y})(X_i - \overline{X})}}{\sqrt{\sum{(Y_i - \overline{Y})^2 \sum{(X_i - \overline{X})^2}}}}\]</span></p>
 <p>A expressão acima, nos dá um índice que pode variar entre +1 (correlação perfeitamente linear e <strong>positiva</strong>) e -1 (correlação perfeitamente linear e <strong>negativa</strong>), e que se aproxima de zero quando não existe correlação.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-287-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-291-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Em nosso exemplo a intensidade da correlação linear entre as abudâncias dos camarões tigre e rei é <span class="math inline">\(r = 0.82\)</span> (<strong>confira os cálculos</strong>).</p>
 <div id="teste-de-hipóteses-para-r" class="section level3" number="18.8.1">
 <h3><span class="header-section-number">18.8.1</span> Teste de hipóteses para <span class="math inline">\(r\)</span></h3>

@@ -28,21 +28,21 @@ ___
 
 ___
 
-### Cálculo dos quartil na posição $j$ ($Q_j$)
+### Cálculo dos quartis na posição $j$ ($Q_j$, para $j = 1$, $2$ e $3$)
 
-1. Seja $n$ o número de observações em $X$. Re-organize $X$ em ordem crescente. Deste modo $X_1$ será o menor valor e $X_n$ o maior valor. Iremos expressar um valor particular na distribuição de $X$ em ordem crescente como $X_k$;
+1. Re-organize $X$ em ordem crescente de $k = 1$ a $k = n$. Seja $n$ o número de observações em $X$, teremos portantro $X_k$ como o valor observado na posição $k$ em ordem crescente. Deste modo, para $k = 1$ teremos $X_1$ como o menor valor e para $k = n$ teremos $X_n$ como o maior valor.
 
+2. Calcule 
 
-2. Calcule $L = \frac{j \times (n+1)}{4}$;
+$L = \frac{j \times (n+1)}{4}$;
 
+3. Defina $k$ como o maior número inteiro **abaixo** de $L$;
 
-3. Defina $k$ como o maior número inteiro abaixo de $L$;
+4. Calcule 
 
+$Q_j = X_k + (L - k) \times (X_{k+1}-X_k)$;
 
-4. Calcule $Q_j = X_k + (L - k) \times (X_{k+1}-X_k)$;
-
-$Q_j$ será um elemento entre $X_k$ e $X_{k+1}$ e se $X_k$ for um número inteiro, $Q_j = X_k$
-
+5. $Q_j$ será um elemento entre $X_k$ e $X_{k+1}$. Se $X_k$ for um número inteiro, $Q_j = X_k$
 
 **Exemplo para o cálculo de $Q_1$**
 
@@ -60,8 +60,7 @@ $X$ = `r X`
 
 ```{r}
 sX = sort(X)
-Posicao_k = paste(1:length(X), "a Posição", sep = "")
-kable(data.frame(Posicao_k, X_ordenado = sX), col.names = c("Posicao k", "X ordenado"))
+
 j1 = 1
 L1 = j1 * (nX + 1)/4
 k1 = floor(L1)
@@ -79,21 +78,74 @@ Q3 = sX[k3] + (L3 - k3) * (sX[k3+1] - sX[k3])
 
 ```
 
-1. Arrange $X$ em ordem crescente
+1. Arrange $X$ em ordem **crescente** para determinar $X$ nas posições $k$.
+
+```{r}
+Posicao_k = paste(1:length(X), "a Posição", sep = "")
+kable(data.frame(Posicao_k, X_ordenado = sX), col.names = c("Posicao k", "X ordenado"))
+```
+
+2. Para $j = 1$ ($Q_1$) calcule:
+
+$L = \frac{`r j1` \times (`r nX`+1)}{4} = `r L1`$;
+
+3. Defina $k$ como o maior número inteiro abaixo de $L$. Portanto, se $L = `r L1`$, $k = `r k1`$.
 
 
-2. Calcule $L = \frac{`r j1` \times (`r nX`+1)}{4} = `r L1`$;
+4. Do item anterior, note que a observação correspondente à $k = `r k1`$ (`r k1`$^a$ posição) é `r sX[k1]`, enquanto a observação correspondente à $k = `r k1` + 1 = 6$ (`r k1+1`$^a$ posição) é `r sX[k1+1]`. Deste modo, calcule 
 
+$Q_1 = `r sX[k1]` + (`r L1` - `r k1`) \times (`r sX[k1 + 1]`-`r sX[k1]`) = `r Q1`$;
 
-3. Defina $k$ como o maior número inteiro abaixo de $L$. Portanto, $k = `r k1`$. Veja que a observação correspondente à `r k1`$^a$ posição é `r sX[k1]` e a `r k1+1`$^a$ posição `r sX[k1+1]`.
+Vemos então que para a variável $X$ em questão, o primeiro quartil é:
 
+$Q_1 = `r Q1`$
 
-4. Calcule $Q_1 = `r sX[k1]` + (`r L1` - `r k1`) \times (`r sX[k1 + 1]`-`r sX[k1]`) = `r Q1`$;
+**Exercício**: Calcule agora os valores corrspondentes a $Q_2$ e $Q_3$ e verifique que os resultados são: $Q_2 = `r Q2`$ e $Q_3 = `r Q3`$
 
+### Cálculo dos quartis no R
 
-**Observação**: Calcule $Q_2$ e $Q_3$ e verifique se os resultados são: $Q_2 = `r Q2`$ e $Q_3 = `r Q3`$
+Podemos programar a sequência de funções acima no R com os seguintes comandos:
 
-### Regresentação gráfica: Boxplots
+```{r echo = TRUE}
+X = c(8.7, 10.4, 8.3, 13.2, 10.7, 8.4, 11, 11.5, 11.2, 9.4, 
+      13, 10.8, 8.8, 5.6, 12.2, 9.9, 10, 11.9, 11.6, 11.2)
+
+# Ordenando X em ordem crescente
+sX = sort(X, decreasing = FALSE)
+# Encontrando o número de observações em X
+n = length(X) 
+# Encontrando os quartis (Q1, Q2 e Q3)
+j = c(1, 2, 3)
+L = j * (n + 1)/4
+k = floor(L)
+Q = sX[k] + (L - k) * (sX[k+1] - sX[k])
+names(Q) = c('Q1', 'Q2', 'Q3')
+
+# Vizualizando os quartis
+Q
+```
+
+Existe uma função no R denominada `quantile`. Consirderando a variável $X$ acima, a função pode ser utilizada da seguinte forma:
+
+```{r, echo = TRUE}
+quantile(X, probs = c(0.25, 0.50, 0.75))
+```
+
+**Observações**
+
++ Lembre que o quartil $Q_1$ delimita a posição $25\%$, $Q_2$ delimita $50\%$ ($=$mediana) e $Q_3$ delimita $75\%$. Por este motivo utilizamos na função o argumento `probs = c(0.25, 0.50, 0.75)`. Deste modo, a função `quantile` é mais geral que a rotina passada anteriormente uma vez que permite o cálculo para qualquer posição entre os percentis $0\%$ e $100\%$.
+
++ Note também que os resultados foram *ligeiramente* diferentes uma vez que existem diferentes algoritmos para o cálculo dos quartis. A função `quantile` permite a escolha entre $9$ algoritmos diferentes e por padrão, utiliza o `type = 7`. O passo-a-passo que mostramos nesta apostila corresponde ao `type = 6`. Você pode verificar que se digitar:
+
+```{r, echo = TRUE}
+quantile(X, probs = c(0.25, 0.50, 0.75), type = 6)
+```
+
++ Ainda que cada algoritmo possa resultar em pequenas diferenças, estas diferenças diminuem à medida que o tamanho amostral aumenta.
+
+Os resultados serão os mesmos que calculamos manualmente.
+
+### Regresentação gráfica dos quartis: Boxplots
 
 Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de **Boxplot**. Para a variável acima o boxplot  será:
 

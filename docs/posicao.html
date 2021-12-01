@@ -243,8 +243,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="posicao.html"><a href="posicao.html#quartis"><i class="fa fa-check"></i><b>7.1</b> Quartis</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartil-na-posição-j-q_j"><i class="fa fa-check"></i><b>7.1.1</b> Cálculo dos quartil na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>)</a></li>
-<li class="chapter" data-level="7.1.2" data-path="posicao.html"><a href="posicao.html#regresentação-gráfica-boxplots"><i class="fa fa-check"></i><b>7.1.2</b> Regresentação gráfica: Boxplots</a></li>
+<li class="chapter" data-level="7.1.1" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3"><i class="fa fa-check"></i><b>7.1.1</b> Cálculo dos quartis na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>, para <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(2\)</span> e <span class="math inline">\(3\)</span>)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartis-no-r"><i class="fa fa-check"></i><b>7.1.2</b> Cálculo dos quartis no R</a></li>
+<li class="chapter" data-level="7.1.3" data-path="posicao.html"><a href="posicao.html#regresentação-gráfica-dos-quartis-boxplots"><i class="fa fa-check"></i><b>7.1.3</b> Regresentação gráfica dos quartis: Boxplots</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="posicao.html"><a href="posicao.html#índice-z"><i class="fa fa-check"></i><b>7.2</b> Índice <span class="math inline">\(Z\)</span></a>
 <ul>
@@ -509,18 +510,27 @@ Figure 7.1: Divisão de uma distribuição de valores em quartis
 <p><span class="math inline">\(Q_{3}\)</span>: O ponto que separa os 25% <strong>maiores</strong> valores do restante da distribuição.</p>
 </blockquote>
 <hr />
-<div id="cálculo-dos-quartil-na-posição-j-q_j" class="section level3" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Cálculo dos quartil na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>)</h3>
+<div id="cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Cálculo dos quartis na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>, para <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(2\)</span> e <span class="math inline">\(3\)</span>)</h3>
 <ol style="list-style-type: decimal">
-<li><p>Seja <span class="math inline">\(n\)</span> o número de observações em <span class="math inline">\(X\)</span>. Re-organize <span class="math inline">\(X\)</span> em ordem crescente. Deste modo <span class="math inline">\(X_1\)</span> será o menor valor e <span class="math inline">\(X_n\)</span> o maior valor. Iremos expressar um valor particular na distribuição de <span class="math inline">\(X\)</span> em ordem crescente como <span class="math inline">\(X_k\)</span>;</p></li>
-<li><p>Calcule <span class="math inline">\(L = \frac{j \times (n+1)}{4}\)</span>;</p></li>
-<li><p>Defina <span class="math inline">\(k\)</span> como o maior número inteiro abaixo de <span class="math inline">\(L\)</span>;</p></li>
-<li><p>Calcule <span class="math inline">\(Q_j = X_k + (L - k) \times (X_{k+1}-X_k)\)</span>;</p></li>
+<li><p>Re-organize <span class="math inline">\(X\)</span> em ordem crescente de <span class="math inline">\(k = 1\)</span> a <span class="math inline">\(k = n\)</span>. Seja <span class="math inline">\(n\)</span> o número de observações em <span class="math inline">\(X\)</span>, teremos portantro <span class="math inline">\(X_k\)</span> como o valor observado na posição <span class="math inline">\(k\)</span> em ordem crescente. Deste modo, para <span class="math inline">\(k = 1\)</span> teremos <span class="math inline">\(X_1\)</span> como o menor valor e para <span class="math inline">\(k = n\)</span> teremos <span class="math inline">\(X_n\)</span> como o maior valor.</p></li>
+<li><p>Calcule</p></li>
 </ol>
-<p><span class="math inline">\(Q_j\)</span> será um elemento entre <span class="math inline">\(X_k\)</span> e <span class="math inline">\(X_{k+1}\)</span> e se <span class="math inline">\(X_k\)</span> for um número inteiro, <span class="math inline">\(Q_j = X_k\)</span></p>
+<p><span class="math inline">\(L = \frac{j \times (n+1)}{4}\)</span>;</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Defina <span class="math inline">\(k\)</span> como o maior número inteiro <strong>abaixo</strong> de <span class="math inline">\(L\)</span>;</p></li>
+<li><p>Calcule</p></li>
+</ol>
+<p><span class="math inline">\(Q_j = X_k + (L - k) \times (X_{k+1}-X_k)\)</span>;</p>
+<ol start="5" style="list-style-type: decimal">
+<li><span class="math inline">\(Q_j\)</span> será um elemento entre <span class="math inline">\(X_k\)</span> e <span class="math inline">\(X_{k+1}\)</span>. Se <span class="math inline">\(X_k\)</span> for um número inteiro, <span class="math inline">\(Q_j = X_k\)</span></li>
+</ol>
 <p><strong>Exemplo para o cálculo de <span class="math inline">\(Q_1\)</span></strong></p>
 <p>Considere a variável <span class="math inline">\(X\)</span> com <span class="math inline">\(n =\)</span> 20 observações.</p>
 <p><span class="math inline">\(X\)</span> = 8.7, 10.4, 8.3, 13.2, 10.7, 8.4, 11, 11.5, 11.2, 9.4, 13, 10.8, 8.8, 5.6, 12.2, 9.9, 10, 11.9, 11.6, 11.2</p>
+<ol style="list-style-type: decimal">
+<li>Arrange <span class="math inline">\(X\)</span> em ordem <strong>crescente</strong> para determinar <span class="math inline">\(X\)</span> nas posições <span class="math inline">\(k\)</span>.</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -695,16 +705,59 @@ X ordenado
 </tr>
 </tbody>
 </table>
-<ol style="list-style-type: decimal">
-<li><p>Arrange <span class="math inline">\(X\)</span> em ordem crescente</p></li>
-<li><p>Calcule <span class="math inline">\(L = \frac{1 \times (20+1)}{4} = 5.25\)</span>;</p></li>
-<li><p>Defina <span class="math inline">\(k\)</span> como o maior número inteiro abaixo de <span class="math inline">\(L\)</span>. Portanto, <span class="math inline">\(k = 5\)</span>. Veja que a observação correspondente à 5<span class="math inline">\(^a\)</span> posição é 8.8 e a 6<span class="math inline">\(^a\)</span> posição 9.4.</p></li>
-<li><p>Calcule <span class="math inline">\(Q_1 = 8.8 + (5.25 - 5) \times (9.4-8.8) = 8.95\)</span>;</p></li>
+<ol start="2" style="list-style-type: decimal">
+<li>Para <span class="math inline">\(j = 1\)</span> (<span class="math inline">\(Q_1\)</span>) calcule:</li>
 </ol>
-<p><strong>Observação</strong>: Calcule <span class="math inline">\(Q_2\)</span> e <span class="math inline">\(Q_3\)</span> e verifique se os resultados são: <span class="math inline">\(Q_2 = 10.75\)</span> e <span class="math inline">\(Q_3 = 11.575\)</span></p>
+<p><span class="math inline">\(L = \frac{1 \times (20+1)}{4} = 5.25\)</span>;</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Defina <span class="math inline">\(k\)</span> como o maior número inteiro abaixo de <span class="math inline">\(L\)</span>. Portanto, se <span class="math inline">\(L = 5.25\)</span>, <span class="math inline">\(k = 5\)</span>.</p></li>
+<li><p>Do item anterior, note que a observação correspondente à <span class="math inline">\(k = 5\)</span> (5<span class="math inline">\(^a\)</span> posição) é 8.8, enquanto a observação correspondente à <span class="math inline">\(k = 5 + 1 = 6\)</span> (6<span class="math inline">\(^a\)</span> posição) é 9.4. Deste modo, calcule</p></li>
+</ol>
+<p><span class="math inline">\(Q_1 = 8.8 + (5.25 - 5) \times (9.4-8.8) = 8.95\)</span>;</p>
+<p>Vemos então que para a variável <span class="math inline">\(X\)</span> em questão, o primeiro quartil é:</p>
+<p><span class="math inline">\(Q_1 = 8.95\)</span></p>
+<p><strong>Exercício</strong>: Calcule agora os valores corrspondentes a <span class="math inline">\(Q_2\)</span> e <span class="math inline">\(Q_3\)</span> e verifique que os resultados são: <span class="math inline">\(Q_2 = 10.75\)</span> e <span class="math inline">\(Q_3 = 11.575\)</span></p>
 </div>
-<div id="regresentação-gráfica-boxplots" class="section level3" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Regresentação gráfica: Boxplots</h3>
+<div id="cálculo-dos-quartis-no-r" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Cálculo dos quartis no R</h3>
+<p>Podemos programar a sequência de funções acima no R com os seguintes comandos:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="posicao.html#cb84-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">8.7</span>, <span class="fl">10.4</span>, <span class="fl">8.3</span>, <span class="fl">13.2</span>, <span class="fl">10.7</span>, <span class="fl">8.4</span>, <span class="dv">11</span>, <span class="fl">11.5</span>, <span class="fl">11.2</span>, <span class="fl">9.4</span>, </span>
+<span id="cb84-2"><a href="posicao.html#cb84-2" aria-hidden="true" tabindex="-1"></a>      <span class="dv">13</span>, <span class="fl">10.8</span>, <span class="fl">8.8</span>, <span class="fl">5.6</span>, <span class="fl">12.2</span>, <span class="fl">9.9</span>, <span class="dv">10</span>, <span class="fl">11.9</span>, <span class="fl">11.6</span>, <span class="fl">11.2</span>)</span>
+<span id="cb84-3"><a href="posicao.html#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-4"><a href="posicao.html#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenando X em ordem crescente</span></span>
+<span id="cb84-5"><a href="posicao.html#cb84-5" aria-hidden="true" tabindex="-1"></a>sX <span class="ot">=</span> <span class="fu">sort</span>(X, <span class="at">decreasing =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb84-6"><a href="posicao.html#cb84-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Encontrando o número de observações em X</span></span>
+<span id="cb84-7"><a href="posicao.html#cb84-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(X) </span>
+<span id="cb84-8"><a href="posicao.html#cb84-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Encontrando os quartis (Q1, Q2 e Q3)</span></span>
+<span id="cb84-9"><a href="posicao.html#cb84-9" aria-hidden="true" tabindex="-1"></a>j <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb84-10"><a href="posicao.html#cb84-10" aria-hidden="true" tabindex="-1"></a>L <span class="ot">=</span> j <span class="sc">*</span> (n <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">4</span></span>
+<span id="cb84-11"><a href="posicao.html#cb84-11" aria-hidden="true" tabindex="-1"></a>k <span class="ot">=</span> <span class="fu">floor</span>(L)</span>
+<span id="cb84-12"><a href="posicao.html#cb84-12" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">=</span> sX[k] <span class="sc">+</span> (L <span class="sc">-</span> k) <span class="sc">*</span> (sX[k<span class="sc">+</span><span class="dv">1</span>] <span class="sc">-</span> sX[k])</span>
+<span id="cb84-13"><a href="posicao.html#cb84-13" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Q) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Q1&#39;</span>, <span class="st">&#39;Q2&#39;</span>, <span class="st">&#39;Q3&#39;</span>)</span>
+<span id="cb84-14"><a href="posicao.html#cb84-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-15"><a href="posicao.html#cb84-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Vizualizando os quartis</span></span>
+<span id="cb84-16"><a href="posicao.html#cb84-16" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div>
+<pre><code>##     Q1     Q2     Q3 
+##  8.950 10.750 11.575</code></pre>
+<p>Existe uma função no R denominada <code>quantile</code>. Consirderando a variável <span class="math inline">\(X\)</span> acima, a função pode ser utilizada da seguinte forma:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="posicao.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>))</span></code></pre></div>
+<pre><code>##    25%    50%    75% 
+##  9.250 10.750 11.525</code></pre>
+<p><strong>Observações</strong></p>
+<ul>
+<li><p>Lembre que o quartil <span class="math inline">\(Q_1\)</span> delimita a posição <span class="math inline">\(25\%\)</span>, <span class="math inline">\(Q_2\)</span> delimita <span class="math inline">\(50\%\)</span> (<span class="math inline">\(=\)</span>mediana) e <span class="math inline">\(Q_3\)</span> delimita <span class="math inline">\(75\%\)</span>. Por este motivo utilizamos na função o argumento <code>probs = c(0.25, 0.50, 0.75)</code>. Deste modo, a função <code>quantile</code> é mais geral que a rotina passada anteriormente uma vez que permite o cálculo para qualquer posição entre os percentis <span class="math inline">\(0\%\)</span> e <span class="math inline">\(100\%\)</span>.</p></li>
+<li><p>Note também que os resultados foram <em>ligeiramente</em> diferentes uma vez que existem diferentes algoritmos para o cálculo dos quartis. A função <code>quantile</code> permite a escolha entre <span class="math inline">\(9\)</span> algoritmos diferentes e por padrão, utiliza o <code>type = 7</code>. O passo-a-passo que mostramos nesta apostila corresponde ao <code>type = 6</code>. Você pode verificar que se digitar:</p></li>
+</ul>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="posicao.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>), <span class="at">type =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##    25%    50%    75% 
+##  8.950 10.750 11.575</code></pre>
+<ul>
+<li>Ainda que cada algoritmo possa resultar em pequenas diferenças, estas diferenças diminuem à medida que o tamanho amostral aumenta.</li>
+</ul>
+<p>Os resultados serão os mesmos que calculamos manualmente.</p>
+</div>
+<div id="regresentação-gráfica-dos-quartis-boxplots" class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Regresentação gráfica dos quartis: Boxplots</h3>
 <p>Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de <strong>Boxplot</strong>. Para a variável acima o boxplot será:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:boxquartis"></span>
 <img src="probest-cambientais_files/figure-html/boxquartis-1.png" alt="Divisão em quartis de um boxplot" width="384" />
@@ -714,8 +767,8 @@ Figure 7.2: Divisão em quartis de um boxplot
 </div>
 <p>Em um boxplot, a linha central mais expessa representa a <strong>Mediana</strong> ou <span class="math inline">\(2^o\)</span> quartil, os limites da caixa são o <span class="math inline">\(1^o\)</span> e <span class="math inline">\(3^o\)</span> quartis e as extremidades geralmente são os pontos máximo e mínimo da dsitribuição.</p>
 <p>Existe uma relação entre os <strong>histogramas</strong> e os <strong>boxplots</strong>. Ambos podem ser utilizados para avaliarmos o grau de <strong>assimetria</strong> de uma distribuição como pode ser visto abaixo. Em uma distribuição simétrica, a caixa do boxplot tende a se concentrar no meio da distribuição, enquanto que em distribuições assimétricas, a caixa tende a ficar deslocada à esquerda o à direita.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-147"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-147-1.png" alt="Relação entre as representações por meio de histogramas e boxplots" width="960" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-151"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-151-1.png" alt="Relação entre as representações por meio de histogramas e boxplots" width="960" />
 <p class="caption">
 Figure 7.3: Relação entre as representações por meio de histogramas e boxplots
 </p>
@@ -981,13 +1034,13 @@ Z ordenado
 </tr>
 </tbody>
 </table>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-149-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-153-1.png" width="960" style="display: block; margin: auto;" /></p>
 <p>Veja na tabela que conforme o valor de <span class="math inline">\(X_i\)</span> se distancia da média de <span class="math inline">\(X = 10.39\)</span> mais distante de zero será o valor <span class="math inline">\(Z\)</span>. Neste exemplo, as observações mais extremas de <span class="math inline">\(X\)</span> estão, respectivamente, a -2.63 desvios padrões abaixo e 1.54 desvios padrões acima da média.</p>
 </div>
 <div id="valores-esperados-de-z-em-uma-distribuição-normal-padronizada" class="section level3" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Valores esperados de <span class="math inline">\(Z\)</span> em uma distribuição normal padronizada</h3>
 <p>A interpretação de <span class="math inline">\(Z\)</span> faz sentido quando desejamos comparar uma determinada observação <span class="math inline">\(X_i\)</span> à posição que esta teria dentro de uma <strong>Distribuição Normal Padronizada</strong> (Capítulo <a href="#normtlc"><strong>??</strong></a>). A figura abaixo nos permite avaliar qual a probabilidade de encontrarmos uma observação a diferentes distâncias da média populacional. Suponha que tomemos uma amostra de uma distribuição normal. Existe uma probabilidade de aproximadamente 68% de que esta amostra esteja 1 desvio padrão acima ou abaixo da média. Esta probabilidade aumenta para cerca de 95% se considerarmos uma distância dois desvios padrões acima ou abaixo da média. Por outro lado, que é muito <strong>improvável</strong> amostrarmos um valor a mais de 3 desvios padrões da média. Isto rá ocorrer em somente de 0.2% dos casos.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-150-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-154-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Suponha por exemplo que a distribuição de altura de homens adultos siga uma distribuição normal com média <span class="math inline">\(\mu = 175\)</span> cm e desvio padrão de <span class="math inline">\(\sigma = 20\)</span> cm.</p>
 <p>Neste caso,</p>
 <p><span class="math inline">\(\mu - 2 \times \sigma = 175 - 2 \times 20 = 135\)</span></p>

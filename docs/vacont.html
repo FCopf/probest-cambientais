@@ -243,8 +243,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="posicao.html"><a href="posicao.html#quartis"><i class="fa fa-check"></i><b>7.1</b> Quartis</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartil-na-posição-j-q_j"><i class="fa fa-check"></i><b>7.1.1</b> Cálculo dos quartil na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>)</a></li>
-<li class="chapter" data-level="7.1.2" data-path="posicao.html"><a href="posicao.html#regresentação-gráfica-boxplots"><i class="fa fa-check"></i><b>7.1.2</b> Regresentação gráfica: Boxplots</a></li>
+<li class="chapter" data-level="7.1.1" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3"><i class="fa fa-check"></i><b>7.1.1</b> Cálculo dos quartis na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>, para <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(2\)</span> e <span class="math inline">\(3\)</span>)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="posicao.html"><a href="posicao.html#cálculo-dos-quartis-no-r"><i class="fa fa-check"></i><b>7.1.2</b> Cálculo dos quartis no R</a></li>
+<li class="chapter" data-level="7.1.3" data-path="posicao.html"><a href="posicao.html#regresentação-gráfica-dos-quartis-boxplots"><i class="fa fa-check"></i><b>7.1.3</b> Regresentação gráfica dos quartis: Boxplots</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="posicao.html"><a href="posicao.html#índice-z"><i class="fa fa-check"></i><b>7.2</b> Índice <span class="math inline">\(Z\)</span></a>
 <ul>
@@ -494,7 +495,7 @@ div.csl-indent {
 Para variáveis contínuas podemos expressar somente a probabilidade de que um experimento resulte em um <strong>intervalo</strong> de valores entre <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span>, ou seja, <span class="math inline">\(P(a \le y \le b)\)</span>. Deste modo temos que:</p>
 <p><span class="math display">\[P(-\infty \le Y \le +\infty) = \int_{-\infty}^{+\infty}p(y) dy = 1\]</span></p>
 <p>Portanto, para as variáveis contínuas, o conceito de somatório dos valores individuais para <span class="math inline">\(y\)</span> é substituído pelo conceito de <em>integração</em> em um intervalo definido e a probabilidade deste intervalo equivale à área sob a curva de probabilidade.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-328-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-332-1.png" width="960" style="display: block; margin: auto;" /></p>
 <div id="esperança-e-variância-em-modelos-contínuos" class="section level4 unnumbered">
 <h4>Esperança e variância em modelos contínuos</h4>
 <p>Vimos que o valor esperado para uma variável aleatória discreta é dado por:</p>
@@ -512,9 +513,9 @@ Para uma variável aleatória contínua, podemos definir o valor esperado como:<
 <p><span class="math display">\[f(y|\mu,\sigma) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{y-\mu}{\sigma})^2}\]</span></p>
 <p>Em que os parâmetros da função são <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> representam respectivamente a média e o desvio padrão de <span class="math inline">\(y\)</span>. Novamente nos referimos aos símbolos da média e desvio padrão conforme a notação utilizada para descrever a população estatística de um experimento (Capítulo <a href="posicao.html#posicao">7</a>). Na função de densidade estes parâmetros determiman a prosição central e o grau de achatamento da curva.</p>
 <p>Após o término deste tópico é importante que você leia também o que foi apresentado no capítulo <a href="normdist.html#normdist">13</a> sobre distribuição normal.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-329-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-333-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Por exemplo, se o comprimento segue uma distribuição normal com <span class="math inline">\(\mu = 10\)</span> e <span class="math inline">\(\sigma = 2\)</span> veremos que a proporção de individuos iguais ou maiores que 16 cm de comprimento é muito baixa, neste caso <span class="math inline">\(P(Y \ge 16) = 0.0013\)</span>. Por outro lado, para <span class="math inline">\(\sigma = 4\)</span>, esperamos encontrar mais indivíduos nos extremos da distribuição em que a proporção de individuos iguais ou maiores que 16 cm seria de <span class="math inline">\(P(Y \ge 16) = 0.0668\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-331-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-335-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="outros-são-altamente-assimétricos" class="section level2" number="29.2">
 <h2><span class="header-section-number">29.2</span> Outros são altamente assimétricos</h2>
@@ -525,7 +526,7 @@ Para uma variável aleatória contínua, podemos definir o valor esperado como:<
 <p><span class="math display">\[E(Y) = \mu = \frac{1}{\lambda}\]</span></p>
 <p>enquanto a variância é dada por:</p>
 <p><span class="math display">\[VAR(Y) = \sigma^2 = \frac{1}{\lambda^2}\]</span></p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-332-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-336-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>No modelo exponencial, o único parâmetro é <span class="math inline">\(\lambda\)</span>. O modelo é altamente assimétrico, com maior densidade na porção esquerda da curva. Assim, para um fenômeno que possa ser descrito por um modelo exponencial, a maioria das observações será composta de valores baixos, ainda que valores extremamente elevados possam surgir ocasionalmente.</p>
 
 </div>
