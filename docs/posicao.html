@@ -510,8 +510,10 @@ Figure 7.1: Divisão de uma distribuição de valores em quartis
 <p><span class="math inline">\(Q_{3}\)</span>: O ponto que separa os 25% <strong>maiores</strong> valores do restante da distribuição.</p>
 </blockquote>
 <hr />
+<p>Os quartis que veremos aqui são medidas <strong>empíricas</strong> dos limites indicados na figura acima. Calculamos estes limites a paritr de uma amostra de tamanho <span class="math inline">\(n\)</span>.</p>
 <div id="cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Cálculo dos quartis na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>, para <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(2\)</span> e <span class="math inline">\(3\)</span>)</h3>
+<p>Existem diferentes algorítmos possíveis para o cálculo dos quartis. Veremos um tipo de algoritmo. Para isto, siga os passos abaixo:</p>
 <ol style="list-style-type: decimal">
 <li><p>Re-organize <span class="math inline">\(X\)</span> em ordem crescente de <span class="math inline">\(k = 1\)</span> a <span class="math inline">\(k = n\)</span>. Seja <span class="math inline">\(n\)</span> o número de observações em <span class="math inline">\(X\)</span>, teremos portantro <span class="math inline">\(X_k\)</span> como o valor observado na posição <span class="math inline">\(k\)</span> em ordem crescente. Deste modo, para <span class="math inline">\(k = 1\)</span> teremos <span class="math inline">\(X_1\)</span> como o menor valor e para <span class="math inline">\(k = n\)</span> teremos <span class="math inline">\(X_n\)</span> como o maior valor.</p></li>
 <li><p>Calcule</p></li>
@@ -720,7 +722,7 @@ X ordenado
 </div>
 <div id="cálculo-dos-quartis-no-r" class="section level3" number="7.1.2">
 <h3><span class="header-section-number">7.1.2</span> Cálculo dos quartis no R</h3>
-<p>Podemos programar a sequência de funções acima no R com os seguintes comandos:</p>
+<p>Podemos programar a sequência de funções acima utilizando o R:</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="posicao.html#cb84-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">8.7</span>, <span class="fl">10.4</span>, <span class="fl">8.3</span>, <span class="fl">13.2</span>, <span class="fl">10.7</span>, <span class="fl">8.4</span>, <span class="dv">11</span>, <span class="fl">11.5</span>, <span class="fl">11.2</span>, <span class="fl">9.4</span>, </span>
 <span id="cb84-2"><a href="posicao.html#cb84-2" aria-hidden="true" tabindex="-1"></a>      <span class="dv">13</span>, <span class="fl">10.8</span>, <span class="fl">8.8</span>, <span class="fl">5.6</span>, <span class="fl">12.2</span>, <span class="fl">9.9</span>, <span class="dv">10</span>, <span class="fl">11.9</span>, <span class="fl">11.6</span>, <span class="fl">11.2</span>)</span>
 <span id="cb84-3"><a href="posicao.html#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -739,34 +741,37 @@ X ordenado
 <span id="cb84-16"><a href="posicao.html#cb84-16" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div>
 <pre><code>##     Q1     Q2     Q3 
 ##  8.950 10.750 11.575</code></pre>
-<p>Existe uma função no R denominada <code>quantile</code>. Consirderando a variável <span class="math inline">\(X\)</span> acima, a função pode ser utilizada da seguinte forma:</p>
+<p>No entando, existe uma função no R denominada <code>quantile</code> que pode ser utilizada da seguinte forma:</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="posicao.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>))</span></code></pre></div>
 <pre><code>##    25%    50%    75% 
 ##  9.250 10.750 11.525</code></pre>
 <p><strong>Observações</strong></p>
 <ul>
-<li><p>Lembre que o quartil <span class="math inline">\(Q_1\)</span> delimita a posição <span class="math inline">\(25\%\)</span>, <span class="math inline">\(Q_2\)</span> delimita <span class="math inline">\(50\%\)</span> (<span class="math inline">\(=\)</span>mediana) e <span class="math inline">\(Q_3\)</span> delimita <span class="math inline">\(75\%\)</span>. Por este motivo utilizamos na função o argumento <code>probs = c(0.25, 0.50, 0.75)</code>. Deste modo, a função <code>quantile</code> é mais geral que a rotina passada anteriormente uma vez que permite o cálculo para qualquer posição entre os percentis <span class="math inline">\(0\%\)</span> e <span class="math inline">\(100\%\)</span>.</p></li>
-<li><p>Note também que os resultados foram <em>ligeiramente</em> diferentes uma vez que existem diferentes algoritmos para o cálculo dos quartis. A função <code>quantile</code> permite a escolha entre <span class="math inline">\(9\)</span> algoritmos diferentes e por padrão, utiliza o <code>type = 7</code>. O passo-a-passo que mostramos nesta apostila corresponde ao <code>type = 6</code>. Você pode verificar que se digitar:</p></li>
+<li><p>Lembre que o quartil <span class="math inline">\(Q_1\)</span> delimita a posição <span class="math inline">\(25\%\)</span>, <span class="math inline">\(Q_2\)</span> delimita a posição <span class="math inline">\(50\%\)</span> (<span class="math inline">\(=\)</span>mediana) e <span class="math inline">\(Q_3\)</span> delimita as posição <span class="math inline">\(75\%\)</span>. Por este motivo utilizamos o argumento <code>probs = c(0.25, 0.50, 0.75)</code>. Deste modo, a função <code>quantile</code> é mais geral que a rotina passada anteriormente, uma vez que permite o cálculo para qualquer posição entre os <strong>quantis</strong> <span class="math inline">\(0\%\)</span> e <span class="math inline">\(100\%\)</span>.</p></li>
+<li><p>Note também que os resultados foram <em>ligeiramente</em> diferentes uma vez que existem diferentes algoritmos para o cálculo dos quartis. A função <code>quantile</code> permite a escolha entre <span class="math inline">\(9\)</span> algoritmos diferentes e por padrão, utiliza o <code>type = 7</code>. O passo-a-passo que mostramos nesta apostila corresponde ao <code>type = 6</code>. Você pode verificar que se digitar o comando abaixo, os resultados serão os mesmos que calculamos manualmente.</p></li>
 </ul>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="posicao.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>), <span class="at">type =</span> <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>##    25%    50%    75% 
 ##  8.950 10.750 11.575</code></pre>
 <ul>
-<li>Ainda que cada algoritmo possa resultar em pequenas diferenças, estas diferenças diminuem à medida que o tamanho amostral aumenta.</li>
+<li><p>Ainda que cada algoritmo possa resultar em pequenas diferenças, estas diferenças diminuem à medida que o tamanho amostral aumenta.</p></li>
+<li><p>Finalmente, os quartis discutidos aqui são casos particulares de limites mais gerais denominados de <strong>quantis</strong> que indicam uma deteminama posição na distribuição. Como vimos, o limite <span class="math inline">\(Q_1\)</span> por exemplo, denominado de Quartil 1 delimita o trecho que separa <span class="math inline">\(25\%\)</span>. Poderíamos denominar este limite de <strong>Quantil</strong> <span class="math inline">\(0,25\)</span>. Pensando desta maneira, poderíamos encontrar qualquer posição. Por exemplo o quantil <span class="math inline">\(0,10\)</span>, que delimita os <span class="math inline">\(10\%\)</span> dos menores valores, o quantil <span class="math inline">\(0,025\)</span> que delimita os <span class="math inline">\(2,5\%\)</span> menores valores na distribuição, e assim, por diante.</p></li>
+<li><p>Veremos ao longo desta apostila que além dos limites de <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> e <span class="math inline">\(Q_3\)</span>, outros limites importantes são aqueles que definem as posições <span class="math inline">\(2,5\%\)</span>, <span class="math inline">\(5\%\)</span>, <span class="math inline">\(10\%\)</span>, <span class="math inline">\(90\%\)</span>, <span class="math inline">\(95\%\)</span> e <span class="math inline">\(97,5\%\)</span>. Todos estes limites aparecerão de forma recorrente em estatística inferencial e probabilidade.</p></li>
+<li><p>No calculo dos quantis para um limite <span class="math inline">\(p\)</span> qualquer (<span class="math inline">\(0 \le p \le 1\)</span>) a única mundança no algoritmno que apresentamos neste capítulo está na obtenção de <span class="math inline">\(L\)</span> (passo 2), que é feita como:</p></li>
 </ul>
-<p>Os resultados serão os mesmos que calculamos manualmente.</p>
+<p><span class="math display">\[L = p \times (n+1)\]</span></p>
 </div>
 <div id="regresentação-gráfica-dos-quartis-boxplots" class="section level3" number="7.1.3">
 <h3><span class="header-section-number">7.1.3</span> Regresentação gráfica dos quartis: Boxplots</h3>
-<p>Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de <strong>Boxplot</strong>. Para a variável acima o boxplot será:</p>
+<p>Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de <strong>Boxplot</strong>. Para a variável acima, o boxplot será:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:boxquartis"></span>
 <img src="probest-cambientais_files/figure-html/boxquartis-1.png" alt="Divisão em quartis de um boxplot" width="384" />
 <p class="caption">
 Figure 7.2: Divisão em quartis de um boxplot
 </p>
 </div>
-<p>Em um boxplot, a linha central mais expessa representa a <strong>Mediana</strong> ou <span class="math inline">\(2^o\)</span> quartil, os limites da caixa são o <span class="math inline">\(1^o\)</span> e <span class="math inline">\(3^o\)</span> quartis e as extremidades geralmente são os pontos máximo e mínimo da dsitribuição.</p>
-<p>Existe uma relação entre os <strong>histogramas</strong> e os <strong>boxplots</strong>. Ambos podem ser utilizados para avaliarmos o grau de <strong>assimetria</strong> de uma distribuição como pode ser visto abaixo. Em uma distribuição simétrica, a caixa do boxplot tende a se concentrar no meio da distribuição, enquanto que em distribuições assimétricas, a caixa tende a ficar deslocada à esquerda o à direita.</p>
+<p>Em um boxplot, a linha central mais expessa representa a <strong>Mediana</strong> ou <span class="math inline">\(2^o\)</span> quartil (<span class="math inline">\(Q_2\)</span>), os limites da caixa são o <span class="math inline">\(1^o\)</span> e <span class="math inline">\(3^o\)</span> quartis, respectivamente <span class="math inline">\(Q_1\)</span> e <span class="math inline">\(Q_3\)</span>. As extremidades geralmente são os pontos máximo e mínimo da dsitribuição.</p>
+<p>Existe uma relação entre os <strong>histogramas</strong> e os <strong>boxplots</strong>. Ambos podem ser utilizados para avaliarmos o grau de <strong>assimetria</strong> de uma distribuição como apresentado abaixo. Em uma distribuição simétrica, a caixa do boxplot tende a se concentrar no meio da distribuição, enquanto em distribuições assimétricas, a caixa tende a ficar deslocada à esquerda ou à direita.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-151"></span>
 <img src="probest-cambientais_files/figure-html/unnamed-chunk-151-1.png" alt="Relação entre as representações por meio de histogramas e boxplots" width="960" />
 <p class="caption">
@@ -777,24 +782,23 @@ Figure 7.3: Relação entre as representações por meio de histogramas e boxplo
 </div>
 <div id="índice-z" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Índice <span class="math inline">\(Z\)</span></h2>
-<p>O <strong>Índice <span class="math inline">\(Z\)</span></strong> ou <strong>Escore <span class="math inline">\(Z\)</span></strong> indica a posição de uma observação particular (<span class="math inline">\(X_i\)</span>). O valor de <span class="math inline">\(Z\)</span> relaciona a posição de <span class="math inline">\(X_i\)</span> com a <strong>média</strong> e o <strong>desvio padrão</strong> da distribuição. Suponha variável com média <span class="math inline">\(\overline{X}\)</span> e desvio padrão <span class="math inline">\(s\)</span>. O índice de <span class="math inline">\(Z_i\)</span> para uma observação <span class="math inline">\(i\)</span> particular é calculado por:</p>
+<p>O <strong>Índice <span class="math inline">\(Z\)</span></strong> ou <strong>Escore <span class="math inline">\(Z\)</span></strong> indica a posição de uma observação particular (<span class="math inline">\(X_i\)</span>). O valor de <span class="math inline">\(Z\)</span> relaciona a posição de <span class="math inline">\(X_i\)</span> com a <strong>média</strong> e o <strong>desvio padrão</strong> da distribuição. Suponha uma variável com média <span class="math inline">\(\overline{X}\)</span> e desvio padrão <span class="math inline">\(s\)</span>. O índice de <span class="math inline">\(Z_i\)</span> para uma observação <span class="math inline">\(i\)</span> particular é calculado por:</p>
 <p><span class="math display">\[Z_i = \frac{X_i - \overline{X}}{s}\]</span></p>
 <p><strong>Exemplo</strong></p>
-<p>Retornemos à variável <span class="math inline">\(X\)</span> descrita acima:</p>
 <p><span class="math inline">\(X\)</span> = 8.7, 10.4, 8.3, 13.2, 10.7, 8.4, 11, 11.5, 11.2, 9.4, 13, 10.8, 8.8, 5.6, 12.2, 9.9, 10, 11.9, 11.6, 11.2</p>
 <p>A média e o desvio padrão de <span class="math inline">\(X\)</span> são respectivamente <span class="math inline">\(\overline{X} = 10.39\)</span> e <span class="math inline">\(s = 1.82\)</span>.</p>
-<p>Vamos calcular o índice <span class="math inline">\(Z\)</span> para a observação <span class="math inline">\(X = 8.3\)</span></p>
-<p><span class="math inline">\(Z = \frac{8.3 - 10.39}{1.82} = -1.15\)</span></p>
+<p>Vamos calcular o índice <span class="math inline">\(Z_i\)</span> para a observação <span class="math inline">\(X_i = 8.3\)</span></p>
+<p><span class="math inline">\(Z_i = \frac{8.3 - 10.39}{1.82} = -1.15\)</span></p>
 <p>Veja que o score <span class="math inline">\(Z\)</span> é negativo e portanto <span class="math inline">\(X_i\)</span> está -1.15 desvios padrões abaixo da média.</p>
 <div id="interpretando-o-valor-de-z" class="section level3" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Interpretando o valor de <span class="math inline">\(Z\)</span></h3>
-<p>O valor de <span class="math inline">\(Z\)</span> indica quantos desvio padrões uma determinada observação está acima ou abaixo da média do grupo de observações. Os resultados de <span class="math inline">\(Z\)</span> podem ser:</p>
+<p>Para calcularmos o valor de <span class="math inline">\(Z\)</span>, primeiro fazemos uma <strong>centralização</strong> da variável <span class="math inline">\(X\)</span> ao redor de sua média (<span class="math inline">\(\overline{X}\)</span>) e em seguida, <strong>padronizamos</strong> este resultado como função do desvio padrão <span class="math inline">\(s\)</span>. Deste modo, o valor de <span class="math inline">\(Z_i\)</span> associado a uma determinada observação <span class="math inline">\(X_i\)</span> nos indica <strong>quantos desvio padrões</strong> <span class="math inline">\(X_i\)</span> está acima ou abaixo da média de seu grupo. A relação entre a nova variável <span class="math inline">\(Z\)</span> e a variável original <span class="math inline">\(X\)</span> é:</p>
 <ul>
-<li><span class="math inline">\(Z = 0\)</span>: <span class="math inline">\(X_i = \overline{X}\)</span>;</li>
-<li><span class="math inline">\(Z &gt; 0\)</span>: <span class="math inline">\(X_i &gt; \overline{X}\)</span>;</li>
-<li><span class="math inline">\(Z &lt; 0\)</span>: <span class="math inline">\(X_i &lt; \overline{X}\)</span>;</li>
+<li>Se <span class="math inline">\(Z_i = 0\)</span>, então <span class="math inline">\(X_i = \overline{X}\)</span>;</li>
+<li>Se <span class="math inline">\(Z_i &gt; 0\)</span>, então <span class="math inline">\(X_i &gt; \overline{X}\)</span>;</li>
+<li>Se <span class="math inline">\(Z_i &lt; 0\)</span>, então <span class="math inline">\(X_i &lt; \overline{X}\)</span>;</li>
 </ul>
-<p>Para uma distribuição com média igual 10 e desvio padrão igual a 3, uma observação <span class="math inline">\(X = 16\)</span> está dois desvios padrões acima da sua respectiva média pois neste caso, <span class="math inline">\(Z = 2\)</span> como pode ser verificado na equação abaixo?</p>
+<p>Para uma distribuição com média igual 10 e desvio padrão igual a 3, uma observação <span class="math inline">\(X_i = 16\)</span> está dois desvios padrões acima da sua respectiva média, pois neste caso <span class="math inline">\(Z = 2\)</span>, como pode ser verificado na equação abaixo:</p>
 <p><span class="math display">\[Z = \frac{16 - 10}{3} = 2\]</span></p>
 <p>Vamos calcular os valores de <span class="math inline">\(Z\)</span> para a variável <span class="math inline">\(X\)</span> acima e discutir os resultados.</p>
 <table>
@@ -1035,19 +1039,20 @@ Z ordenado
 </tbody>
 </table>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-153-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>Veja na tabela que conforme o valor de <span class="math inline">\(X_i\)</span> se distancia da média de <span class="math inline">\(X = 10.39\)</span> mais distante de zero será o valor <span class="math inline">\(Z\)</span>. Neste exemplo, as observações mais extremas de <span class="math inline">\(X\)</span> estão, respectivamente, a -2.63 desvios padrões abaixo e 1.54 desvios padrões acima da média.</p>
+<p>Veja na tabela que conforme o valor de <span class="math inline">\(X_i\)</span> se distancia da média de <span class="math inline">\(X = 10.39\)</span>, mais distante de zero será o valor <span class="math inline">\(Z\)</span>. Neste exemplo, as observações mais extremas de <span class="math inline">\(X\)</span> estão, respectivamente, a -2.63 desvios padrões abaixo e 1.54 desvios padrões acima da média.</p>
 </div>
 <div id="valores-esperados-de-z-em-uma-distribuição-normal-padronizada" class="section level3" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Valores esperados de <span class="math inline">\(Z\)</span> em uma distribuição normal padronizada</h3>
-<p>A interpretação de <span class="math inline">\(Z\)</span> faz sentido quando desejamos comparar uma determinada observação <span class="math inline">\(X_i\)</span> à posição que esta teria dentro de uma <strong>Distribuição Normal Padronizada</strong> (Capítulo <a href="#normtlc"><strong>??</strong></a>). A figura abaixo nos permite avaliar qual a probabilidade de encontrarmos uma observação a diferentes distâncias da média populacional. Suponha que tomemos uma amostra de uma distribuição normal. Existe uma probabilidade de aproximadamente 68% de que esta amostra esteja 1 desvio padrão acima ou abaixo da média. Esta probabilidade aumenta para cerca de 95% se considerarmos uma distância dois desvios padrões acima ou abaixo da média. Por outro lado, que é muito <strong>improvável</strong> amostrarmos um valor a mais de 3 desvios padrões da média. Isto rá ocorrer em somente de 0.2% dos casos.</p>
+<p>A interpretação de <span class="math inline">\(Z\)</span> faz sentido quando desejamos posicionar uma determinada observação <span class="math inline">\(X_i\)</span> como função da média e desvio padrões de seu grupo. Veremos nos capítulos <a href="normdist.html#normdist">13</a> e <a href="tcl.html#tcl">14</a> que se uma variável <span class="math inline">\(X\)</span> puder ser descrita adequadamente por uma <strong>Distribuição Normal de probabilidades</strong>, uma regra empírica nos permite determinar qual o percentual das observações está acima e abaixo de alguns limites conhecidos.</p>
+<p>Na figura abaixo vemos estes limites para uma distribuição normal teórica. Suponha que tomemos uma observação ao acaso desta distribuição. Existe uma probabilidade de aproximadamente <span class="math inline">\(68\%\)</span> de que esta observação esteja entre os limites de <span class="math inline">\(-1\)</span> e <span class="math inline">\(+1\)</span> desvios padrões da média. Ou ainda, existe uma probabilidade de aproximadamente <span class="math inline">\(95\%\)</span> de que esta observação esteja entre <span class="math inline">\(-2\)</span> e <span class="math inline">\(+2\)</span> desvio padrões da média. Por outro lado, que é muito <strong>improvável</strong> amostrarmos um valor a mais de <span class="math inline">\(3\)</span> desvios padrões distantes da média. Isto deverá ocorrer em somente de cerca de <span class="math inline">\(0,2\%\)</span> dos casos em que sortearmos uma amostra aleatoriamente.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-154-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>Suponha por exemplo que a distribuição de altura de homens adultos siga uma distribuição normal com média <span class="math inline">\(\mu = 175\)</span> cm e desvio padrão de <span class="math inline">\(\sigma = 20\)</span> cm.</p>
-<p>Neste caso,</p>
-<p><span class="math inline">\(\mu - 2 \times \sigma = 175 - 2 \times 20 = 135\)</span></p>
+<p>Suponha por exemplo que a distribuição de altura de homens adultos siga uma distribuição normal com média <span class="math inline">\(\mu = 175\)</span> cm e desvio padrão de <span class="math inline">\(\sigma = 175\)</span> cm.</p>
+<p>Neste caso, se tomarmos os limites entre <span class="math inline">\(-2\)</span> e <span class="math inline">\(+2\)</span> desvios padrões teremos:</p>
+<p><span class="math inline">\(\mu - 2 \times \sigma = 175 - 2 \times 10 = 155\)</span> cm</p>
 <p>e</p>
-<p><span class="math inline">\(\mu + 2 \times \sigma = 175 + 2 \times 20 = 215\)</span></p>
-<p>Sugerindo que menos de 5% dos homens adultos teriam têm mais de 215 cm ou menos de 135 cm de altura.</p>
-<p>Este assunto será abordado em mais detalhes na seção sobre inferênia estatística (Capítulos <a href="amostrmedias.html#amostrmedias">12</a> a <a href="testet.html#testet">17</a>).</p>
+<p><span class="math inline">\(\mu + 2 \times \sigma = 175 + 2 \times 10 = 195\)</span> cm</p>
+<p>Sugerindo que somente cerca de <span class="math inline">\(5\%\)</span> dos homens adultos teriam mais de <span class="math inline">\(195\)</span> cm ou menos de <span class="math inline">\(155\)</span> cm de altura.</p>
+<p>Este assunto será abordado em mais detalhes na seção sobre inferência estatística (Capítulos <a href="popamostra.html#popamostra">11</a> a <a href="testet.html#testet">17</a>).</p>
 
 </div>
 </div>
