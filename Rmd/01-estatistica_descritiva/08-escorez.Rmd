@@ -1,0 +1,169 @@
+# Medidas de posição: índice Z {#escorez}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+```
+
+O **Índice $Z$** ou **Escore $Z$** indica a posição de uma observação particular ($X_i$). O valor de $Z$ relaciona a posição de $X_i$ com a **média** e o **desvio padrão** da distribuição. Suponha uma variável com média $\overline{X}$ e desvio padrão $s$. O índice de $Z_i$ para uma observação $i$ particular é calculado por:
+
+$$Z_i = \frac{X_i - \overline{X}}{s}$$
+
+Seja por exemplo a variável $X$
+
+$X$ = `r X` 
+
+
+```{r}
+Xm = mean(X)
+Xsd = sd(X)
+Z3 = (X[3] - Xm)/Xsd
+
+if (Z3 < 0){
+    posicao = "abaixo"
+    resultado = "negativo"
+} else if (Z3 > 0){
+    posicao = "acima"
+    resultado = "positivo"
+} else {
+    posicao = "igual"
+    resultado = "zero"
+}
+```
+
+
+A média e o desvio padrão são respectivamente $\overline{X} = `r round(Xm,2)`$ e $s = `r round(Xsd, 2)`$.
+
+O índice $Z_i$ para a observação $X_i = `r X[3]`$
+
+$Z_i = \frac{`r X[3]` - `r round(Xm,2)`}{`r round(Xsd, 2)`} = `r round(Z3,2)`$
+
+## Interpretando o valor de $Z$
+
+Ao calcularmos o valor de $Z$ estamos primeiro fazendo uma **centralização** da variável $X$ quando subtraímos cada observação $X_i$ de $\overline{X}$. A porção $X_i - \overline{X}$ mede os *desvios* de cada observação, isto é, suas distâncias (positivas ou negativas) entre $X_i$ e $\overline{X}$. Se calcularmos a média destes desvios por exemplo, veremos que o resultado será **exatamente** zero:
+
+$\sum_{i=1}^{n}\frac{(X_i - \overline{X})}{n} = 0$
+
+Portanto, acabamos de *centralizar* a variável $X$ ao redor de sua média.
+
+Em seguida dividimos a quantia $X_i - \overline{X}$ pelo desvio padrão de $X$ e, ao fazermos, isto estamos **padronizando** a nova variável que denominaremos de $Z$. Se calcularmos o desvio padrão desta nova variável veremos que será **exatamente** igual a $1$.
+
+Dizemos que o Índice $Z$ consiste de uma transformação que faz com que a nova variável tenha média = $0$ e desvio padrão = $1$. 
+
+Um valor de $Z_i$ particular associado a uma observação $X_i$ nos indica **quantos desvios padrões** $X_i$ está acima ou abaixo da média de seu grupo. A relação entre a nova variável $Z$  e a variável original $X$ é:
+
+- Se $Z_i = 0$, então $X_i = \overline{X}$;
+- Se $Z_i > 0$, então $X_i > \overline{X}$;
+- Se $Z_i < 0$, então $X_i < \overline{X}$;
+
+Para uma distribuição com média igual $10$ e desvio padrão igual a $3$ por exemplo, uma observação $X_i = 16$ terá um valor de $Z = \frac{16-10}{3} = 2$, indicando que está **dois desvios padrões** acima da média de $X$.
+
+Vamos calcular os valores de $Z$ para a variável $X$ do exemplo acima e observar os resultados.
+
+```{r}
+Xm = mean(X)
+Xsd = sd(X)
+Z = (sort(X) - Xm)/Xsd
+df = data.frame(Posicao_k, X_ordenado = sX, Z = round(Z,2))
+msd = data.frame('Posicao_k' = c('Média', 'Desvio padrão'),
+                 X_ordenado = c(round(mean(sX),2), round(sd(sX),2)),
+                 Z = c(round(mean(Z),2), round(sd(Z),2)))
+df = as.data.frame(rbind(df,msd))
+
+df %>% 
+  kable(col.names = c("Posicao k", "X ordenado", "Z ordenado"))
+```
+
+```{r fig.width=10, fig.height=5, fig.align = "center"}
+layout(mat = matrix(1:2, nr = 1, nc = 2, byrow = T))
+hist(X, breaks = 9, xlim = c(5, 14), ylim = c(0, 6), col = "gray", main = "", prob = F, axes = T, 
+     xlab = "Distribuição de X", ylab = "", cex.lab = 2)
+axis(1, at = c(5:15));axis(2, at = c(0:6))
+
+hist(Z, breaks = 9, xlim = c(-3, 2.5), ylim = c(0, 6), col = "gray", main = "", prob = F, axes = T, 
+     xlab = "Distribuição de Z", ylab = "", cex.lab = 2)
+axis(1, at = c(-3:3));axis(2, at = c(0:6))
+```
+
+Veja na tabela que conforme o valor de $X_i$ se distancia da média de $X = `r  round(Xm,2)`$, mais distante de zero será o valor de $Z_i$. Neste exemplo, as observações mais extremas de $X$ estão, respectivamente, a `r min(round(Z,2))` desvios padrões abaixo e `r max(round(Z,2))` desvios padrões acima da média. Como discutimos acima, a nova variável $Z$ tem média $\overline{Z} = 0$ (está centralizada) e desvio padrão $1$ (está padronizada). 
+
+## Valores esperados de $Z$ em uma distribuição normal padronizada
+
+A interpretação de $Z$ faz sentido quando desejamos posicionar uma determinada observação $X_i$ como função da média e desvio padrão de seu grupo. Veremos nos capítulos \@ref(normdist) e \@ref(tcl) que se uma variável $X$ puder ser descrita adequadamente por uma **Distribuição Normal de probabilidades**, uma regra empírica nos permite determinar qual o percentual das observações está acima e abaixo de alguns limites conhecidos. 
+
+Na figura abaixo vemos estes limites para uma distribuição normal teórica. Suponha que tomemos uma observação ao acaso desta distribuição. Existe uma probabilidade de aproximadamente $68\%$ de que esta observação esteja entre os limites de $-1$ e $+1$ desvios padrões da média. Ou ainda, existe uma probabilidade de aproximadamente $95\%$ de que esta observação esteja entre $-2$ e $+2$ desvio padrões da média. Por outro lado, que é muito **improvável** amostrarmos um valor a mais de $3$ desvios padrões distantes da média. Isto deverá ocorrer em somente de cerca de $0,2\%$ dos casos em que sortearmos uma amostra aleatoriamente.
+
+
+``` {r, fog.cap = "Áreas de probabilidade em uma distribuição Normal", fig.width=6, fig.height=6, fig.align = "center"}
+qr = -3:3
+dqr = dnorm(x = qr)
+
+
+qrc1 = c(-1, 1, seq(1,-1, by = -0.001))
+dqrc1 = c(0, 0, dnorm(x = seq(1,-1, by = -0.001)))
+
+qrc2 = c(2, 3, seq(3,2, by = -0.001))
+dqrc2 = c(0, 0, dnorm(x = seq(3, 2, by = -0.001)))
+
+qrc2m = c(-2, -3, seq(-3,-2, by = 0.001))
+dqrc2m = c(0, 0, dnorm(x = seq(-3, -2, by = 0.001)))
+
+#eixox = expression(bar(X)-3*phi, -1.5*phi, -phi, -phi/2, 0, phi/2, phi, 2*phi, 1.5*phi)
+
+xn = paste0('bar(X)', c(rep("-", 3), "", rep("+",3)), c(3:1, 0, 1:3)  , '*s')
+xn[4] = "bar(X)"
+           
+eixoX = parse(text = xn)
+
+pqr = pnorm(q = -4:4)
+perc = diff(pqr) * 100
+
+curve(expr = dnorm(x, 0,1), from = -4, to = 4, 
+      ylab = "Densidade da distribuição normal",
+      xlab = "", ylim = c(0, 0.7), axes = F)
+axis(1, at = -5:5, labels = c("","",eixoX,"",""), cex.axis = 0.8)
+axis(2, at = seq(-1, 0.5, by = 0.1), cex.axis = 0.8)
+segments(x0 = qr, x1 = qr, y0 = 0, y1 = c(0.65, 0.55, 0.45, dnorm(0), 0.45, 0.55, 0.65), lty = 2)
+polygon(x = qrc1, y = dqrc1, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
+polygon(x = qrc2, y = dqrc2, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
+polygon(x = qrc2m, y = dqrc2m, col = rgb(red = 0.9, 0,0, alpha = 0.3))
+segments(x0 = -1, x1 = 1, y0 = 0.45, y1 = 0.45, lwd = 2)
+segments(x0 = -2, x1 = 2, y0 = 0.55, y1 = 0.55, lwd = 2)
+segments(x0 = -3, x1 = 3, y0 = 0.65, y1 = 0.65, lwd = 2)
+
+text(x = -3.5:3.5, y = c(0.05, 0.05, 0.07, 0.2, 0.2, 0.07, 0.05, 0.05),
+     labels = paste(round(perc,1), "%", sep  =''), cex = 0.7)
+text(x = 0, y = 0.67, labels = paste(round(diff(pnorm(q = c(-3,3))*100),2), "% a 3 desvios padrões da média",sep = ''), cex = 0.7)
+text(x = 0, y = 0.57, labels = paste(round(diff(pnorm(q = c(-2,2))*100),2), "% a 2 desvios padrões da média",sep = ''), cex = 0.7)
+text(x = 0, y = 0.47, labels = paste(round(diff(pnorm(q = c(-1,1))*100),2), "% a 1 desvio padrão da média",sep = ''), cex = 0.7)     
+
+```
+
+
+```{r}
+mH = 175
+sdH = 10
+lim = 2
+linf = round(mH - lim * sdH,2)
+lsup = round(mH + lim * sdH,2)
+```
+
+Este assunto será abordado em mais detalhes na seção sobre inferência estatística (Capítulos \@ref(popamostra) a \@ref(testet)). Por hora, suponha que a distribuição de altura de homens adultos siga uma distribuição normal com média $\mu = `r mH`$ cm e desvio padrão de $\sigma = `r mH`$ cm. 
+
+Neste caso, se tomarmos os limites entre $-2$ e $+2$ desvios padrões teremos: 
+
+$\mu - `r lim` \times \sigma = `r mH` - `r lim` \times `r sdH` = `r linf`$ cm
+
+e
+
+$\mu + `r lim` \times \sigma = `r mH` + `r lim` \times `r sdH` = `r lsup`$ cm
+
+
+Sugerindo que somente cerca de $5\%$ dos homens adultos teriam mais de $`r lsup`$ cm ou menos de $`r linf`$ cm de altura.
+
+Os processos centralização e padronização de uma variável são úteis em diferentes momentos da estatística descritiva e inferencial. Veremos este processo aparecendo novamente quando formos medir a associação entre variáveis quantitativas por meio do **coeficiente de correlação de Pearson** (Capítulo \@ref(biquant)) e também quando formos falar sobre associação entre variáveis quantitativas e qualitativas no capítulo \@ref(biquantquali).
+
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+
