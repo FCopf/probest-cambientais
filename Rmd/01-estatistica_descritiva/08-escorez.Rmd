@@ -86,6 +86,69 @@ axis(1, at = c(-3:3));axis(2, at = c(0:6))
 
 Veja na tabela que conforme o valor de $X_i$ se distancia da média de $X = `r  round(Xm,2)`$, mais distante de zero será o valor de $Z_i$. Neste exemplo, as observações mais extremas de $X$ estão, respectivamente, a `r min(round(Z,2))` desvios padrões abaixo e `r max(round(Z,2))` desvios padrões acima da média. Como discutimos acima, a nova variável $Z$ tem média $\overline{Z} = 0$ (está centralizada) e desvio padrão $1$ (está padronizada). 
 
+## Realizando a transformação $Z$ a partir de uma tabela de dados 
+
+Carregue o pacote `tidyverse` e importe novamente a base de dados `Reservatorios_Parana_parcial.csv`.
+
+
+```{r}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('datasets/Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+```{r, echo = TRUE, eval=FALSE}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+res = read_delim('Reservatorios_Parana_parcial.csv',
+                  delim = ',',
+                  locale = locale(decimal_mark = '.',
+                                  encoding = 'latin1'))
+```
+
+Vamos manter somente a variável `CPUE` e criar outra coluna denominada `CPUE_z` utilizando a função `mutate`.
+
+```{r echo = TRUE, eval = FALSE}
+df_z = res %>% 
+  select(CPUE) %>% 
+  mutate(CPUE_z = (CPUE - mean(CPUE))/sd(CPUE))
+
+df_z
+```
+
+```{r}
+df_z = res %>% 
+  select(CPUE) %>% 
+  mutate(CPUE_z = (CPUE - mean(CPUE))/sd(CPUE))
+
+df_z %>% 
+  knitr::kable()
+```
+
+Se calcularmos a média e desvio padrão das variáveis verermos que `CPUE` mantém os valores originais, enquanto `CPUE_z` terá média = $0$ e desvio padrão = $1$.
+
+```{r echo = TRUE, eval = FALSE}
+df_z %>% 
+  summarize(CPUE_media = mean(CPUE),
+            CPUE_dp = sd(CPUE),
+            CPUE_z_media = round(mean(CPUE_z),2),
+            CPUE_z_dp = round(sd(CPUE_z),2))
+```
+
+```{r echo = TRUE, eval = FALSE}
+df_z %>% 
+  summarize(CPUE_media = mean(CPUE),
+            CPUE_dp = sd(CPUE),
+            CPUE_z_media = mean(CPUE_z),
+            CPUE_z_dp = sd(CPUE_z)) %>% 
+  kable()
+```
+
 ## Valores esperados de $Z$ em uma distribuição normal padronizada
 
 A interpretação de $Z$ faz sentido quando desejamos posicionar uma determinada observação $X_i$ como função da média e desvio padrão de seu grupo. Veremos nos capítulos \@ref(normdist) e \@ref(tcl) que se uma variável $X$ puder ser descrita adequadamente por uma **Distribuição Normal de probabilidades**, uma regra empírica nos permite determinar qual o percentual das observações está acima e abaixo de alguns limites conhecidos. 

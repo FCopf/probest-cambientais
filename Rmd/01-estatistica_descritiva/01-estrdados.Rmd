@@ -51,13 +51,13 @@ Esta tabela está organizada em um formato muito específico em que cada linha r
 ```{r}
 linhas = 10
 data.frame(ID = paste('UA', 1:linhas, by = ' ')) %>%
-  mutate(`UA 1` = rep('', linhas), 
-         `UA 2` = rep('', linhas),
-         `UA 3` = rep('', linhas),
-         `UA 4` = rep('', linhas),
-         `UA 5` = rep('', linhas),
-         `UA 6` = rep('', linhas),
-         `UA 7` = rep('', linhas)) %>% 
+  mutate(`VA 1` = rep('', linhas), 
+         `VA 2` = rep('', linhas),
+         `VA 3` = rep('', linhas),
+         `VA 4` = rep('', linhas),
+         `VA 5` = rep('', linhas),
+         `VA 6` = rep('', linhas),
+         `VA 7` = rep('', linhas)) %>% 
   kableExtra::kable(booktabs = TRUE) %>%
   kable_styling(font_size = 11)
   #kable_classic(full_width = F, html_font = "Cambria", position = 'center')

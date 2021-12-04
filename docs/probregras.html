@@ -246,12 +246,21 @@ div.csl-indent {
 <li class="chapter" data-level="7.3" data-path="quartis.html"><a href="quartis.html#obtendo-os-quartis-a-partir-de-uma-tabela-de-dados"><i class="fa fa-check"></i><b>7.3</b> Obtendo os quartis a partir de uma tabela de dados</a></li>
 <li class="chapter" data-level="7.4" data-path="quartis.html"><a href="quartis.html#regresentação-gráfica-dos-quartis-boxplots"><i class="fa fa-check"></i><b>7.4</b> Regresentação gráfica dos quartis: Boxplots</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="escorez.html"><a href="escorez.html"><i class="fa fa-check"></i><b>8</b> Medidas de posição: Índice Z</a>
+<li class="chapter" data-level="8" data-path="escorez.html"><a href="escorez.html"><i class="fa fa-check"></i><b>8</b> Medidas de posição: índice Z</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="escorez.html"><a href="escorez.html#interpretando-o-valor-de-z"><i class="fa fa-check"></i><b>8.1</b> Interpretando o valor de <span class="math inline">\(Z\)</span></a></li>
-<li class="chapter" data-level="8.2" data-path="escorez.html"><a href="escorez.html#valores-esperados-de-z-em-uma-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>8.2</b> Valores esperados de <span class="math inline">\(Z\)</span> em uma distribuição normal padronizada</a></li>
+<li class="chapter" data-level="8.2" data-path="escorez.html"><a href="escorez.html#realizando-a-transformação-z-a-partir-de-uma-tabela-de-dados"><i class="fa fa-check"></i><b>8.2</b> Realizando a transformação <span class="math inline">\(Z\)</span> a partir de uma tabela de dados</a></li>
+<li class="chapter" data-level="8.3" data-path="escorez.html"><a href="escorez.html#valores-esperados-de-z-em-uma-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>8.3</b> Valores esperados de <span class="math inline">\(Z\)</span> em uma distribuição normal padronizada</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="biquali.html"><a href="biquali.html"><i class="fa fa-check"></i><b>9</b> Análise bidimensional: variáveis qualitativas</a></li>
+<li class="chapter" data-level="9" data-path="biquali.html"><a href="biquali.html"><i class="fa fa-check"></i><b>9</b> Análise bidimensional: variáveis qualitativas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="biquali.html"><a href="biquali.html#tabelas-de-contingência"><i class="fa fa-check"></i><b>9.1</b> Tabelas de contingência</a></li>
+<li class="chapter" data-level="9.2" data-path="biquali.html"><a href="biquali.html#o-gráfico-de-barras-para-duas-variáveis-qualitativas"><i class="fa fa-check"></i><b>9.2</b> O gráfico de barras para duas variáveis qualitativas</a></li>
+<li class="chapter" data-level="9.3" data-path="biquali.html"><a href="biquali.html#medindo-a-discrepância-com-o-índice-de-chi2-de-pearson"><i class="fa fa-check"></i><b>9.3</b> Medindo a discrepância com o índice de <span class="math inline">\(\chi^2\)</span> de Pearson</a></li>
+<li class="chapter" data-level="9.4" data-path="biquali.html"><a href="biquali.html#o-índice-de-chi2-em-uma-tabela-de-contigência"><i class="fa fa-check"></i><b>9.4</b> O índice de <span class="math inline">\(\chi^2\)</span> em uma tabela de contigência</a></li>
+<li class="chapter" data-level="9.5" data-path="biquali.html"><a href="biquali.html#valores-de-chi2-quando-existe-associação"><i class="fa fa-check"></i><b>9.5</b> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação</a></li>
+<li class="chapter" data-level="9.6" data-path="biquali.html"><a href="biquali.html#variações-do-índice-de-chi2"><i class="fa fa-check"></i><b>9.6</b> Variações do índice de <span class="math inline">\(\chi^2\)</span></a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="biquant.html"><a href="biquant.html"><i class="fa fa-check"></i><b>10</b> Análise bidimensional: variáveis quantitativas</a></li>
 <li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a></li>
 <li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
@@ -501,7 +510,7 @@ div.csl-indent {
 <p>Uma forma de visualizar o espaço amostral e eventos deste espaço é pela construção de <strong>diagramas de Venn</strong>. Para isto, vamos considerar também o evento <span class="math inline">\(B\)</span> <em>“encontrar mais de 3 itens”</em> que consiste de:</p>
 <p><span class="math inline">\(B = \{(F3), (F4), (F5), (F6), (G3), (G4)\}\)</span></p>
 <p>Observando os eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> em um <strong>Diagrama de Venn</strong> temos:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-316-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-343-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Cada um destes eventos é denominado de <strong>evento complexo</strong>, pois pode ser obtido pela combinação de eventos simples. O evento <span class="math inline">\(B\)</span> por exemplo, pode ocorrer quando é encontrado uma folha <strong>OU</strong> um galho com mais de 3 itens, enquanto o evento <span class="math inline">\(A\)</span> ocorre quando é encontrada uma folha com <span class="math inline">\(0\)</span> <strong>OU</strong> <span class="math inline">\(1\)</span> <strong>OU</strong> <span class="math inline">\(2\)</span> <strong>OU</strong> <span class="math inline">\(3\)</span> <strong>OU</strong> <span class="math inline">\(4\)</span> <strong>OU</strong> <span class="math inline">\(5\)</span> <strong>OU</strong> <span class="math inline">\(6\)</span> itens.</p>
 <p>Estes eventos complexos foram obtidos por meio da <strong>união</strong> de eventos simples. A declaração <strong>OU</strong> significa que qualquer uma destas observações é suficiente para dizer que o evento ocorreu. Ou seja, <span class="math inline">\(A\)</span> pode ocorrer por 7 formas e <span class="math inline">\(B\)</span> por 6 formas distintas.</p>
 <p>Note que as observações <span class="math inline">\((G0)\)</span>, <span class="math inline">\((G1)\)</span> e <span class="math inline">\((G2)\)</span> <strong>não pertencem</strong> aos eventos <span class="math inline">\(A\)</span> nem <span class="math inline">\(B\)</span>, ainda que estejam no espaço amostral <span class="math inline">\(\Omega\)</span> de possibilidades.</p>
