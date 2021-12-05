@@ -41,6 +41,7 @@ library(tidyverse)
 library(kableExtra)
 library(magick)
 library(patchwork)
+library(mvtnorm)
 library(gridExtra)
 library(grid)
 

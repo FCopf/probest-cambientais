@@ -4,10 +4,7 @@
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
 ```
 
-```{r, fig.align = 'center', fig.width=5, fig.height=5}
-uc <- image_read("figs/under_construction_2.jpg")
-grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
-```
+Para finalizar a seção sobre estatística descritiva, vamos entender como podemos mensurar o grau de associação entre uma variável $Y$ contínua e uma variável $X$ categórica. Iremos nos referir ao processo de **Partição da Soma dos Quadrados** e, para tal, precisamos retornar aos conceitos de soma dos quadrados e variância amostral visto nos capitulos anteriores. O processo de partição da soma dos quadrados é central nos delineamentos de **Análise de Variância** (Capítulos \@ref(anova) a \@ref(repanova)) e de **Regressão linear** (Capítulos \@ref(regressao) e \@ref(regresmultipla)) que veremos nas próximas seções.
 
 ```{r echo = FALSE}
 rm(list = ls())
