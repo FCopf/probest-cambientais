@@ -260,6 +260,7 @@ div.csl-indent {
 <li class="chapter" data-level="9.4" data-path="biquali.html"><a href="biquali.html#o-índice-de-chi2-em-uma-tabela-de-contigência"><i class="fa fa-check"></i><b>9.4</b> O índice de <span class="math inline">\(\chi^2\)</span> em uma tabela de contigência</a></li>
 <li class="chapter" data-level="9.5" data-path="biquali.html"><a href="biquali.html#valores-de-chi2-quando-existe-associação"><i class="fa fa-check"></i><b>9.5</b> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação</a></li>
 <li class="chapter" data-level="9.6" data-path="biquali.html"><a href="biquali.html#variações-do-índice-de-chi2"><i class="fa fa-check"></i><b>9.6</b> Variações do índice de <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="9.7" data-path="biquali.html"><a href="biquali.html#obtendo-o-índice-de-chi2-de-uma-tabela-de-dados"><i class="fa fa-check"></i><b>9.7</b> Obtendo o índice de <span class="math inline">\(\chi^2\)</span> de uma tabela de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="biquant.html"><a href="biquant.html"><i class="fa fa-check"></i><b>10</b> Análise bidimensional: variáveis quantitativas</a></li>
 <li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a></li>
@@ -520,20 +521,14 @@ Residente</li>
 <li><input type="checkbox" disabled="" />
 Não-Residente</li>
 </ul>
-<p>Após entrevistar <span class="math inline">\(200\)</span> pessoas selecionadas <em>ao acaso</em> de uma lista da moradores da cidade, é construída a seguinte tabela:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="biquali.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
-<span id="cb96-2"><a href="biquali.html#cb96-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">200</span></span>
-<span id="cb96-3"><a href="biquali.html#cb96-3" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Entrevistado =</span> <span class="dv">1</span><span class="sc">:</span>N,</span>
-<span id="cb96-4"><a href="biquali.html#cb96-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">Opiniao =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;A favor&#39;</span>, <span class="st">&#39;Contra&#39;</span>),</span>
-<span id="cb96-5"><a href="biquali.html#cb96-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">size =</span> N, <span class="at">repl =</span> T, </span>
-<span id="cb96-6"><a href="biquali.html#cb96-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="fl">0.25</span>)),</span>
-<span id="cb96-7"><a href="biquali.html#cb96-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">Moradia =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&#39;Residente&#39;</span>, <span class="st">&#39;Não-Residente&#39;</span>), </span>
-<span id="cb96-8"><a href="biquali.html#cb96-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">size =</span> N, <span class="at">repl =</span> T,</span>
-<span id="cb96-9"><a href="biquali.html#cb96-9" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)))</span></code></pre></div>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="biquali.html#cb97-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">12</span></span>
-<span id="cb97-2"><a href="biquali.html#cb97-2" aria-hidden="true" tabindex="-1"></a>kableExtra<span class="sc">::</span><span class="fu">kbl</span>(tab[<span class="dv">1</span><span class="sc">:</span>n,]) <span class="sc">%&gt;%</span> </span>
-<span id="cb97-3"><a href="biquali.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_paper</span>(<span class="st">&quot;striped&quot;</span>, <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span></span>
-<span id="cb97-4"><a href="biquali.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>), <span class="at">bold =</span> T, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">background =</span> <span class="st">&quot;#D7261E&quot;</span>)</span></code></pre></div>
+<p>Importe a tabela abaixo com os resultados das entrevistas:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="biquali.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega pacotes</span></span>
+<span id="cb96-2"><a href="biquali.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb96-3"><a href="biquali.html#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa base de dados </span></span>
+<span id="cb96-4"><a href="biquali.html#cb96-4" aria-hidden="true" tabindex="-1"></a>mun <span class="ot">=</span> <span class="fu">read_delim</span>(<span class="st">&#39;Entrevista_municipes.csv&#39;</span>,</span>
+<span id="cb96-5"><a href="biquali.html#cb96-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">delim =</span> <span class="st">&#39;,&#39;</span>)</span>
+<span id="cb96-6"><a href="biquali.html#cb96-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-7"><a href="biquali.html#cb96-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">nrow</span>(mun) <span class="co"># Número de entrevistados</span></span></code></pre></div>
 <table class=" lightable-paper lightable-striped" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -683,8 +678,9 @@ Não-Residente
 </tr>
 </tbody>
 </table>
-<p>Acima estão os resultados planilhados de 12 entrevistados. Estão destacadas todas as combinações de possíveis respostas. O entrevistado pode ser: i) <code>A favor</code> e ser <code>Residente</code> da região; ii) <code>A favor</code> e ser <code>Não-Residente</code>, iii) <code>Contra</code> e ser <code>Residente</code>; iv) <code>Contra</code> e ser <code>Não-Residente</code>.</p>
-<p>Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência e gráficos de barras dos 200 entrevistados.</p>
+<p>Após entrevistar <span class="math inline">\(200\)</span> pessoas selecionadas <em>ao acaso</em> de uma lista da moradores da cidade, é construída a tabela acima com três colunas: <code>Entrevistado</code> (sequência numérica do primeiro ao último respondente), <code>Opinião</code> e <code>Moradia</code>.</p>
+<p>Estão descritos acima os resultados das promeiras 12 entrevistas, onde é possível ver ao menos uma combinação de todas as possíveis respostas. O entrevistado pode ser: i) <code>A favor</code> e ser <code>Residente</code> da região; ii) <code>A favor</code> e ser <code>Não-Residente</code>, iii) <code>Contra</code> e ser <code>Residente</code>; iv) <code>Contra</code> e ser <code>Não-Residente</code>.</p>
+<p>Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência e gráficos de barras dos 12 entrevistados.</p>
 <table>
 <thead>
 <tr>
@@ -724,12 +720,12 @@ Contra
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="biquali.html#cb98-1" aria-hidden="true" tabindex="-1"></a>resumo_opiniao <span class="ot">=</span> tab <span class="sc">%&gt;%</span> </span>
-<span id="cb98-2"><a href="biquali.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Opiniao) <span class="sc">%&gt;%</span> </span>
-<span id="cb98-3"><a href="biquali.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Op_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb98-4"><a href="biquali.html#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Op_rel =</span> Op_n<span class="sc">/</span><span class="fu">sum</span>(Op_n))</span>
-<span id="cb98-5"><a href="biquali.html#cb98-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb98-6"><a href="biquali.html#cb98-6" aria-hidden="true" tabindex="-1"></a>resumo_opiniao</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="biquali.html#cb97-1" aria-hidden="true" tabindex="-1"></a>resumo_opiniao <span class="ot">=</span> mun <span class="sc">%&gt;%</span> </span>
+<span id="cb97-2"><a href="biquali.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Opiniao) <span class="sc">%&gt;%</span> </span>
+<span id="cb97-3"><a href="biquali.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Op_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb97-4"><a href="biquali.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Op_rel =</span> Op_n<span class="sc">/</span><span class="fu">sum</span>(Op_n))</span>
+<span id="cb97-5"><a href="biquali.html#cb97-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-6"><a href="biquali.html#cb97-6" aria-hidden="true" tabindex="-1"></a>resumo_opiniao</span></code></pre></div>
 <p>Das <span class="math inline">\(200\)</span> respostas tivemos <span class="math inline">\(144\)</span> pessoas <em>A favor</em> (<span class="math inline">\(72\%\)</span>) e <span class="math inline">\(56\)</span> pessoas <em>Contra</em> (<span class="math inline">\(28\%\)</span>).</p>
 <p>Com relação ao local de residência:</p>
 <table>
@@ -771,58 +767,58 @@ Residente
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="biquali.html#cb99-1" aria-hidden="true" tabindex="-1"></a>resumo_morad <span class="ot">=</span> tab <span class="sc">%&gt;%</span> </span>
-<span id="cb99-2"><a href="biquali.html#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Moradia) <span class="sc">%&gt;%</span> </span>
-<span id="cb99-3"><a href="biquali.html#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Morad_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb99-4"><a href="biquali.html#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Morad_rel =</span> Morad_n<span class="sc">/</span><span class="fu">sum</span>(Morad_n))</span>
-<span id="cb99-5"><a href="biquali.html#cb99-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-6"><a href="biquali.html#cb99-6" aria-hidden="true" tabindex="-1"></a>resumo_morad</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="biquali.html#cb98-1" aria-hidden="true" tabindex="-1"></a>resumo_morad <span class="ot">=</span> mun <span class="sc">%&gt;%</span> </span>
+<span id="cb98-2"><a href="biquali.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Moradia) <span class="sc">%&gt;%</span> </span>
+<span id="cb98-3"><a href="biquali.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Morad_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb98-4"><a href="biquali.html#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Morad_rel =</span> Morad_n<span class="sc">/</span><span class="fu">sum</span>(Morad_n))</span>
+<span id="cb98-5"><a href="biquali.html#cb98-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-6"><a href="biquali.html#cb98-6" aria-hidden="true" tabindex="-1"></a>resumo_morad</span></code></pre></div>
 <p>Temos um total de <span class="math inline">\(117\)</span> pessoas <em>Não-Residente</em> (<span class="math inline">\(58.5\%\)</span>) e <span class="math inline">\(83\)</span> pessoas <em>Residente</em> (<span class="math inline">\(41.5\%\)</span>)</p>
 <p>Se visualizarmos estes totais em gráficos de barras individuais teremos:</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="biquali.html#cb100-1" aria-hidden="true" tabindex="-1"></a>plt_op <span class="ot">=</span> <span class="fu">ggplot</span>(tab, <span class="fu">aes</span>(<span class="at">x =</span> Opiniao)) <span class="sc">+</span></span>
-<span id="cb100-2"><a href="biquali.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&#39;darkblue&#39;</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>) <span class="sc">+</span></span>
-<span id="cb100-3"><a href="biquali.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
-<span id="cb100-4"><a href="biquali.html#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Número de respostas&#39;</span>) <span class="sc">+</span></span>
-<span id="cb100-5"><a href="biquali.html#cb100-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb100-6"><a href="biquali.html#cb100-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb100-7"><a href="biquali.html#cb100-7" aria-hidden="true" tabindex="-1"></a>plt_morad <span class="ot">=</span> <span class="fu">ggplot</span>(tab, <span class="fu">aes</span>(<span class="at">x =</span> Moradia)) <span class="sc">+</span></span>
-<span id="cb100-8"><a href="biquali.html#cb100-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&#39;darkred&#39;</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>) <span class="sc">+</span></span>
-<span id="cb100-9"><a href="biquali.html#cb100-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
-<span id="cb100-10"><a href="biquali.html#cb100-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Número de respostas&#39;</span>) <span class="sc">+</span></span>
-<span id="cb100-11"><a href="biquali.html#cb100-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb100-12"><a href="biquali.html#cb100-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb100-13"><a href="biquali.html#cb100-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Obs: para que a linha abaixo funcione, é necessário o pacote &#39;patchwork&#39;. </span></span>
-<span id="cb100-14"><a href="biquali.html#cb100-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Caso não tenha, instale e carregue com os comandos:</span></span>
-<span id="cb100-15"><a href="biquali.html#cb100-15" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;patchwork&#39;)</span></span>
-<span id="cb100-16"><a href="biquali.html#cb100-16" aria-hidden="true" tabindex="-1"></a><span class="co"># library(patchwork)</span></span>
-<span id="cb100-17"><a href="biquali.html#cb100-17" aria-hidden="true" tabindex="-1"></a>plt_op <span class="sc">+</span> plt_morad</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="biquali.html#cb99-1" aria-hidden="true" tabindex="-1"></a>plt_op <span class="ot">=</span> <span class="fu">ggplot</span>(mun, <span class="fu">aes</span>(<span class="at">x =</span> Opiniao)) <span class="sc">+</span></span>
+<span id="cb99-2"><a href="biquali.html#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&#39;darkblue&#39;</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>) <span class="sc">+</span></span>
+<span id="cb99-3"><a href="biquali.html#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
+<span id="cb99-4"><a href="biquali.html#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Número de respostas&#39;</span>) <span class="sc">+</span></span>
+<span id="cb99-5"><a href="biquali.html#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb99-6"><a href="biquali.html#cb99-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-7"><a href="biquali.html#cb99-7" aria-hidden="true" tabindex="-1"></a>plt_morad <span class="ot">=</span> <span class="fu">ggplot</span>(mun, <span class="fu">aes</span>(<span class="at">x =</span> Moradia)) <span class="sc">+</span></span>
+<span id="cb99-8"><a href="biquali.html#cb99-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&#39;darkred&#39;</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>) <span class="sc">+</span></span>
+<span id="cb99-9"><a href="biquali.html#cb99-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
+<span id="cb99-10"><a href="biquali.html#cb99-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Número de respostas&#39;</span>) <span class="sc">+</span></span>
+<span id="cb99-11"><a href="biquali.html#cb99-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb99-12"><a href="biquali.html#cb99-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-13"><a href="biquali.html#cb99-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Obs: para que a linha abaixo funcione, é necessário o pacote &#39;patchwork&#39;. </span></span>
+<span id="cb99-14"><a href="biquali.html#cb99-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Caso não tenha, instale e carregue com os comandos:</span></span>
+<span id="cb99-15"><a href="biquali.html#cb99-15" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;patchwork&#39;)</span></span>
+<span id="cb99-16"><a href="biquali.html#cb99-16" aria-hidden="true" tabindex="-1"></a><span class="co"># library(patchwork)</span></span>
+<span id="cb99-17"><a href="biquali.html#cb99-17" aria-hidden="true" tabindex="-1"></a>plt_op <span class="sc">+</span> plt_morad</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
 <p>Existe portanto um predomínio de pessoas <code>A Favor</code> e um ligeiro predomínio de entrevistados <code>Não-Residentes</code>.</p>
 <p>Estamos interessados em entender se existe alguma <strong>associação</strong> entre as respostas dadas às duas perguntas. Esta questão pode ser colocada da seguinte forma: Será que moradores <code>Residentes</code> tendem ter uma opinião consistentemente diferente de moradores <code>Não-residentes</code> no que se refere a ser <code>A favor</code> ou <code>Contra</code>? Para começar a entender esta questão vamos explorar a distribuição das variáveis conjuntamente.</p>
 <div id="tabelas-de-contingência" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Tabelas de contingência</h2>
 <p>Tabelas de contigência são organizadas para verificarmos a associação entre duas variáveis qualitativas. São conhecidas também como tabelas de <em>dupla entrada</em>. Nas colunas estão os níveis da variável <span class="math inline">\(X\)</span> e nas linhas os níveis da variável <span class="math inline">\(X\)</span>.</p>
 <p>Para nosso exemplo, podemos fazer simplesmente:</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="biquali.html#cb101-1" aria-hidden="true" tabindex="-1"></a>tcont <span class="ot">=</span> <span class="fu">table</span>(tab<span class="sc">$</span>Opiniao, tab<span class="sc">$</span>Moradia)</span>
-<span id="cb101-2"><a href="biquali.html#cb101-2" aria-hidden="true" tabindex="-1"></a>tcont</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="biquali.html#cb100-1" aria-hidden="true" tabindex="-1"></a>tcont <span class="ot">=</span> <span class="fu">table</span>(mun<span class="sc">$</span>Opiniao, mun<span class="sc">$</span>Moradia)</span>
+<span id="cb100-2"><a href="biquali.html#cb100-2" aria-hidden="true" tabindex="-1"></a>tcont</span></code></pre></div>
 <pre><code>##          
 ##           Não-Residente Residente
 ##   A favor            81        63
 ##   Contra             36        20</code></pre>
 <p>Temos portanto 81 a favor e não residentes, 63 e residentes, 36 contra e não residentes e por fim 20 a favor e residentes.</p>
-<p>Podemos ver os totais marginais das linhas e colunas para cada variável fazendo:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="biquali.html#cb103-1" aria-hidden="true" tabindex="-1"></a>tcont_linhas <span class="ot">=</span> <span class="fu">apply</span>(tcont, <span class="dv">1</span>, sum) <span class="co"># Totais das linhas</span></span>
-<span id="cb103-2"><a href="biquali.html#cb103-2" aria-hidden="true" tabindex="-1"></a>tcont_colunas <span class="ot">=</span> <span class="fu">apply</span>(tcont, <span class="dv">2</span>, sum) <span class="co"># Totais das colunas</span></span>
-<span id="cb103-3"><a href="biquali.html#cb103-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-4"><a href="biquali.html#cb103-4" aria-hidden="true" tabindex="-1"></a>tcont_linhas</span></code></pre></div>
+<p>Podemos ver os totais marginais das linhas:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="biquali.html#cb102-1" aria-hidden="true" tabindex="-1"></a>tcont_linhas <span class="ot">=</span> <span class="fu">apply</span>(tcont, <span class="dv">1</span>, sum) <span class="co"># Totais das linhas</span></span>
+<span id="cb102-2"><a href="biquali.html#cb102-2" aria-hidden="true" tabindex="-1"></a>tcont_linhas</span></code></pre></div>
 <pre><code>## A favor  Contra 
 ##     144      56</code></pre>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="biquali.html#cb105-1" aria-hidden="true" tabindex="-1"></a>tcont_colunas</span></code></pre></div>
+<p>Ou os totais marginais das colunas:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="biquali.html#cb104-1" aria-hidden="true" tabindex="-1"></a>tcont_colunas <span class="ot">=</span> <span class="fu">apply</span>(tcont, <span class="dv">2</span>, sum) <span class="co"># Totais das colunas</span></span>
+<span id="cb104-2"><a href="biquali.html#cb104-2" aria-hidden="true" tabindex="-1"></a>tcont_colunas</span></code></pre></div>
 <pre><code>## Não-Residente     Residente 
 ##           117            83</code></pre>
 <p>Se quisermos ver as frequências relativas <em>marginais</em> podemos fazer:</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="biquali.html#cb107-1" aria-hidden="true" tabindex="-1"></a>trel_linha <span class="ot">=</span> <span class="fu">prop.table</span>(tcont, <span class="dv">1</span>) <span class="co"># Frequencia relativa marginal das linhas</span></span>
-<span id="cb107-2"><a href="biquali.html#cb107-2" aria-hidden="true" tabindex="-1"></a>trel_linha</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="biquali.html#cb106-1" aria-hidden="true" tabindex="-1"></a>trel_linha <span class="ot">=</span> <span class="fu">prop.table</span>(tcont, <span class="dv">1</span>) <span class="co"># Frequencia relativa marginal das linhas</span></span>
+<span id="cb106-2"><a href="biquali.html#cb106-2" aria-hidden="true" tabindex="-1"></a>trel_linha</span></code></pre></div>
 <pre><code>##          
 ##           Não-Residente Residente
 ##   A favor     0.5625000 0.4375000
@@ -833,8 +829,8 @@ Residente
 <li><p>dos <span class="math inline">\(56\)</span> entrevistados que são <strong>A favor</strong>, cerca de <span class="math inline">\(64.29\%\)</span> são não residentes, enquanto os demais <span class="math inline">\(35.71\%\)</span> são residentes.</p></li>
 </ul>
 <p>Podemos fazer exatamente a mesma coisa olhando agora para as <strong>frequências marginais por colunas</strong>:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="biquali.html#cb109-1" aria-hidden="true" tabindex="-1"></a>trel_coluna <span class="ot">=</span> <span class="fu">prop.table</span>(tcont, <span class="dv">2</span>) <span class="co"># Frequencia relativa marginal das colunas</span></span>
-<span id="cb109-2"><a href="biquali.html#cb109-2" aria-hidden="true" tabindex="-1"></a>trel_coluna</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="biquali.html#cb108-1" aria-hidden="true" tabindex="-1"></a>trel_coluna <span class="ot">=</span> <span class="fu">prop.table</span>(tcont, <span class="dv">2</span>) <span class="co"># Frequencia relativa marginal das colunas</span></span>
+<span id="cb108-2"><a href="biquali.html#cb108-2" aria-hidden="true" tabindex="-1"></a>trel_coluna</span></code></pre></div>
 <pre><code>##          
 ##           Não-Residente Residente
 ##   A favor     0.6923077 0.7590361
@@ -845,19 +841,19 @@ Residente
 <li><p>dos <span class="math inline">\(83\)</span> entrevistados que são <strong>Residentes</strong>, cerca de <span class="math inline">\(30.77\%\)</span> são A favor, enquanto os demais <span class="math inline">\(24.1\%\)</span> são Contra.</p></li>
 </ul>
 <p>Podemos finalmente ver a frequência relativa conjunta:</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="biquali.html#cb111-1" aria-hidden="true" tabindex="-1"></a>trel_conjunta <span class="ot">=</span> <span class="fu">prop.table</span>(tcont) <span class="co"># Frequencia relativa conjunta</span></span>
-<span id="cb111-2"><a href="biquali.html#cb111-2" aria-hidden="true" tabindex="-1"></a>trel_conjunta</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="biquali.html#cb110-1" aria-hidden="true" tabindex="-1"></a>trel_conjunta <span class="ot">=</span> <span class="fu">prop.table</span>(tcont) <span class="co"># Frequencia relativa conjunta</span></span>
+<span id="cb110-2"><a href="biquali.html#cb110-2" aria-hidden="true" tabindex="-1"></a>trel_conjunta</span></code></pre></div>
 <pre><code>##          
 ##           Não-Residente Residente
 ##   A favor         0.405     0.315
 ##   Contra          0.180     0.100</code></pre>
 <p>Neste caso, o somatório das linhas é igual a:</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="biquali.html#cb113-1" aria-hidden="true" tabindex="-1"></a>tcont_linhas <span class="sc">/</span> <span class="fu">sum</span>(tcont_linhas)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="biquali.html#cb112-1" aria-hidden="true" tabindex="-1"></a>tcont_linhas <span class="sc">/</span> <span class="fu">sum</span>(tcont_linhas)</span></code></pre></div>
 <pre><code>## A favor  Contra 
 ##    0.72    0.28</code></pre>
 <p>E indica os valores relativos das opiniões <code>A Favor</code> e <code>Contra</code>.</p>
 <p>O somatório das colunas é igual a:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="biquali.html#cb115-1" aria-hidden="true" tabindex="-1"></a>tcont_colunas <span class="sc">/</span> <span class="fu">sum</span>(tcont_colunas)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="biquali.html#cb114-1" aria-hidden="true" tabindex="-1"></a>tcont_colunas <span class="sc">/</span> <span class="fu">sum</span>(tcont_colunas)</span></code></pre></div>
 <pre><code>## Não-Residente     Residente 
 ##         0.585         0.415</code></pre>
 <p>E indica os valores relativos de <code>Não-Residentes</code> e <code>Residentes</code>.</p>
@@ -865,18 +861,18 @@ Residente
 </div>
 <div id="o-gráfico-de-barras-para-duas-variáveis-qualitativas" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> O gráfico de barras para duas variáveis qualitativas</h2>
-<p>Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela obtida a partir do comando <code>table(tab$Opiniao, tab$Moradia)</code> podemos utilizar o comando <code>barplot()</code>. Por outro lado se quisermos utilizar a tabela original de dados (objeto <code>tab</code>) podemos fazer uso do <code>ggplot2</code>.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="biquali.html#cb117-1" aria-hidden="true" tabindex="-1"></a>plt_bar1 <span class="ot">=</span> <span class="fu">ggplot</span>(tab) <span class="sc">+</span></span>
-<span id="cb117-2"><a href="biquali.html#cb117-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> Moradia, <span class="at">fill =</span> Opiniao) <span class="sc">+</span></span>
-<span id="cb117-3"><a href="biquali.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">&#39;white&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="sc">+</span></span>
-<span id="cb117-4"><a href="biquali.html#cb117-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&#39;Contra&#39;</span> <span class="ot">=</span> <span class="st">&#39;darkred&#39;</span>,</span>
-<span id="cb117-5"><a href="biquali.html#cb117-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&#39;A favor&#39;</span> <span class="ot">=</span> <span class="st">&#39;darkblue&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb117-6"><a href="biquali.html#cb117-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>)) <span class="sc">+</span></span>
-<span id="cb117-7"><a href="biquali.html#cb117-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Número de respostas&#39;</span>) <span class="sc">+</span></span>
-<span id="cb117-8"><a href="biquali.html#cb117-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb117-9"><a href="biquali.html#cb117-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-10"><a href="biquali.html#cb117-10" aria-hidden="true" tabindex="-1"></a>plt_bar1</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-186-1.png" width="672" /></p>
+<p>Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela obtida a partir do comando <code>table(mun$Opiniao, mun$Moradia)</code> podemos utilizar o comando <code>barplot()</code>. Por outro lado se quisermos utilizar a tabela original de dados (objeto <code>mun</code>) podemos fazer uso do <code>ggplot2</code>.</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="biquali.html#cb116-1" aria-hidden="true" tabindex="-1"></a>plt_bar1 <span class="ot">=</span> <span class="fu">ggplot</span>(mun) <span class="sc">+</span></span>
+<span id="cb116-2"><a href="biquali.html#cb116-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> Moradia, <span class="at">fill =</span> Opiniao) <span class="sc">+</span></span>
+<span id="cb116-3"><a href="biquali.html#cb116-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">&#39;white&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="sc">+</span></span>
+<span id="cb116-4"><a href="biquali.html#cb116-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&#39;Contra&#39;</span> <span class="ot">=</span> <span class="st">&#39;darkred&#39;</span>,</span>
+<span id="cb116-5"><a href="biquali.html#cb116-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&#39;A favor&#39;</span> <span class="ot">=</span> <span class="st">&#39;darkblue&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb116-6"><a href="biquali.html#cb116-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>)) <span class="sc">+</span></span>
+<span id="cb116-7"><a href="biquali.html#cb116-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Número de respostas&#39;</span>) <span class="sc">+</span></span>
+<span id="cb116-8"><a href="biquali.html#cb116-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb116-9"><a href="biquali.html#cb116-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-10"><a href="biquali.html#cb116-10" aria-hidden="true" tabindex="-1"></a>plt_bar1</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
 <p>Veja que nesta figura, existem mais opiniões <code>A favor</code> <strong>independente</strong> do entrevistado ser ou não residente. Este padrão é o mesmo que observamos no gráfico da variável <code>Opinião</code> isoladamente. Isto sugere que <strong>não existe</strong> associação entre as variáveis <code>Opinião</code> e <code>Moradia</code>. Isto é, a opinião de um entrevistado sobre a construção da obra <strong>não depende</strong> do seu local de moradia.</p>
 <hr />
 <blockquote>
@@ -884,7 +880,7 @@ Residente
 </blockquote>
 <hr />
 <p>Abaixo são apresentadas situações em que <strong>existe</strong> uma associação.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-188-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
 <p>Em todos estes exemplos, note que a relação entre as opiniões <code>A favor</code> ou <code>Contra</code> <em>depende</em> se o entrevistado é ou não Residente na região. Todos estes padrões configuram uma <strong>associação</strong> entre as variáveis <code>Opinião</code> e <code>Moradia</code>.</p>
 <ul>
 <li><p>Figura A: Não-Residentes tendem a ser <code>A favor</code> e Residentes são em sua maioria <code>Contra</code>;</p></li>
@@ -1170,7 +1166,7 @@ Urbana
 <li><p>Compare os valores e os gráficos abaixo com os apresentados em nosso exemplo inicial.</p></li>
 <li><p>Tente aplicar a fórmula do <span class="math inline">\(\chi^2\)</span> para chegar nos resultados apresentados em cada exemplo.</p></li>
 </ul>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-193-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-196-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
 </div>
 <div id="variações-do-índice-de-chi2" class="section level2" number="9.6">
 <h2><span class="header-section-number">9.6</span> Variações do índice de <span class="math inline">\(\chi^2\)</span></h2>
@@ -1180,6 +1176,28 @@ Urbana
 <p><span class="math display">\[T = \sqrt{\frac{\frac{\chi^2}{n}}{(r-1) \times (s-1)}}\]</span>
 O valor <span class="math inline">\(0\)</span> ocorre quando não há associação (<span class="math inline">\(\chi^2 = 0\)</span>). O valor máximo de <span class="math inline">\(1\)</span> só será atingido quando houver associação e <span class="math inline">\(r = s\)</span></p>
 <p>Todos estes índices aumentam conforme aumenta o grua de associação entre as variáveis. Entretanto, não dissemos <strong>em que ponto</strong> passamos a aceitar a hipótese de associação as variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Iremos tratar deste assunto na seção sobre estatística inferencial. Ao tratarmos deste ponto é importante termos claro o que siginifica uma associação (ou dependêcia) entre duas variáveis qualitativas e como o índice de <span class="math inline">\(\chi^2\)</span> mede esta associação.</p>
+</div>
+<div id="obtendo-o-índice-de-chi2-de-uma-tabela-de-dados" class="section level2" number="9.7">
+<h2><span class="header-section-number">9.7</span> Obtendo o índice de <span class="math inline">\(\chi^2\)</span> de uma tabela de dados</h2>
+<p>A função para o cálculo do <span class="math inline">\(\chi^2\)</span> no R é <code>chisq.test</code> e pode ser utilizada a partir da tabela de contigência gerada pela função <code>table</code>:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="biquali.html#cb117-1" aria-hidden="true" tabindex="-1"></a>tcont <span class="ot">=</span> <span class="fu">table</span>(mun<span class="sc">$</span>Opiniao, mun<span class="sc">$</span>Moradia)</span>
+<span id="cb117-2"><a href="biquali.html#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tcont)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  tcont
+## X-squared = 0.76697, df = 1, p-value = 0.3812</code></pre>
+<p>O resultado mostra o o valor de <span class="math inline">\(\chi^2\)</span> calcuado (<code>X-squared</code>) e outras duas quantias denominadas de <strong>graus de liberdade</strong> (<code>df</code>) e <strong>valor de p</strong> (<code>p-value</code>), sobre as quais falaremos na seção sobre Inferência estatística (Capítulos <a href="popamostra.html#popamostra">12</a> a <a href="testet.html#testet">18</a>).</p>
+<p>Note que o resultado é diferente do que obtvemos neste capítulo. Isto ocorre pois, por padrão, a função utiliza a chamada <strong>correção de Yates</strong> (<a target="_blank" href="https://en.wikipedia.org/wiki/Yates%27s_correction_for_continuity">veja aqui</a>), em que o <span class="math inline">\(\chi_{Yates}^{2}\)</span> é calculado por:</p>
+<p><span class="math display">\[\chi_{Yates}^{2} = \sum_{i=1}^{r}\sum_{j=1}^{s}\frac{(|n_{ij} - n_{ij}^{e}| - 0,5)^2}{n_{ij}^{e}}\]</span></p>
+<p>O termo <span class="math inline">\(|n_{ij} - n_{ij}^{e}|\)</span> se refere ao módulo da distância entre os valores observados e calculados.</p>
+<p>Esta correção será abordada ao falarmos de <strong>testes de hipóteses para variáveis categóricas</strong>. Por hora se quisermos obter exatamente os resultados descrito acima utilizando o a função <code>chisq.test</code>, basta fazermos:</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="biquali.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tcont, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  tcont
+## X-squared = 1.0724, df = 1, p-value = 0.3004</code></pre>
 
 </div>
 </div>

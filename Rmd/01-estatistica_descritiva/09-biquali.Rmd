@@ -24,34 +24,55 @@ Imagine que haverá uma obra de revitalização de uma área n região central d
 - [ ] Residente
 - [ ] Não-Residente
 
-Após entrevistar $200$ pessoas selecionadas *ao acaso* de uma lista da moradores da cidade, é construída a seguinte tabela:
+Importe a tabela abaixo com os resultados das entrevistas:
 
-```{r}
-set.seed(2)
-N = 200
-tab = data.frame(Entrevistado = 1:N,
-                  Opiniao = sample(c('A favor', 'Contra'),
-                                   size = N, repl = T, 
-                                   prob = c(0.75, 0.25)),
-                  Moradia = sample(c('Residente', 'Não-Residente'), 
-                                     size = N, repl = T,
-                                     prob = c(0.4, 0.6)))
+```{r echo = FALSE}
+# set.seed(2)
+# N = 200
+# mun = data.frame(Entrevistado = 1:N,
+#                   Opiniao = sample(c('A favor', 'Contra'),
+#                                    size = N, repl = T, 
+#                                    prob = c(0.75, 0.25)),
+#                   Moradia = sample(c('Residente', 'Não-Residente'), 
+#                                      size = N, repl = T,
+#                                      prob = c(0.4, 0.6)))
 ```
 
+```{r echo = FALSE, eval = TRUE}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+mun = read_delim('datasets/Entrevista_municipes.csv',
+                  delim = ',')
 
-```{r}
-n = 12
-kableExtra::kbl(tab[1:n,]) %>% 
+n = nrow(mun) # Número de entrevistados
+```
+
+```{r, echo = TRUE, eval = FALSE}
+# Carrega pacotes
+library(tidyverse)
+# Importa base de dados 
+mun = read_delim('Entrevista_municipes.csv',
+                  delim = ',')
+
+n = nrow(mun) # Número de entrevistados
+```
+
+```{r echo = F}
+n_amostra = 12
+kableExtra::kbl(head(mun, n_amostra)) %>% 
   kable_paper("striped", full_width = F) %>%
   row_spec(c(4,5,6,7), bold = T, color = "white", background = "#D7261E")
 ```
 
-Acima estão os resultados planilhados de `r n` entrevistados. Estão destacadas todas as combinações de possíveis respostas. O entrevistado pode ser: i) `A favor` e ser `Residente` da região; ii)  `A favor` e ser `Não-Residente`, iii) `Contra` e ser `Residente`; iv)  `Contra` e ser `Não-Residente`. 
+Após entrevistar $`r n`$ pessoas selecionadas *ao acaso* de uma lista da moradores da cidade, é construída a tabela acima com três colunas: `Entrevistado` (sequência numérica do primeiro ao último respondente), `Opinião` e `Moradia`. 
 
-Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência e gráficos de barras dos `r N` entrevistados.
+Estão descritos acima os resultados das promeiras `r n_amostra` entrevistas, onde é possível ver ao menos uma combinação de todas as possíveis respostas. O entrevistado pode ser: i) `A favor` e ser `Residente` da região; ii)  `A favor` e ser `Não-Residente`, iii) `Contra` e ser `Residente`; iv)  `Contra` e ser `Não-Residente`. 
+
+Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência e gráficos de barras dos `r n_amostra` entrevistados.
 
 ```{r echo = FALSE, eval = TRUE}
-resumo_opiniao = tab %>% 
+resumo_opiniao = mun %>% 
   group_by(Opiniao) %>% 
   summarise(Op_n = n()) %>% 
   mutate(Op_rel = Op_n/sum(Op_n))
@@ -61,7 +82,7 @@ resumo_opiniao %>%
 ```
 
 ```{r echo = TRUE, eval = FALSE}
-resumo_opiniao = tab %>% 
+resumo_opiniao = mun %>% 
   group_by(Opiniao) %>% 
   summarise(Op_n = n()) %>% 
   mutate(Op_rel = Op_n/sum(Op_n))
@@ -69,12 +90,12 @@ resumo_opiniao = tab %>%
 resumo_opiniao
 ```
 
-Das $`r N`$ respostas tivemos $`r resumo_opiniao[1,2]`$ pessoas *`r resumo_opiniao[1,1]`* ($`r round(resumo_opiniao[1,3] * 100,2)`\%$) e $`r resumo_opiniao[2,2]`$ pessoas *`r resumo_opiniao[2,1]`* ($`r round(resumo_opiniao[2,3] * 100,2)`\%$).
+Das $`r n`$ respostas tivemos $`r resumo_opiniao[1,2]`$ pessoas *`r resumo_opiniao[1,1]`* ($`r round(resumo_opiniao[1,3] * 100,2)`\%$) e $`r resumo_opiniao[2,2]`$ pessoas *`r resumo_opiniao[2,1]`* ($`r round(resumo_opiniao[2,3] * 100,2)`\%$).
 
 Com relação ao local de residência:
 
 ```{r echo = FALSE, eval = TRUE}
-resumo_morad = tab %>% 
+resumo_morad = mun %>% 
   group_by(Moradia) %>% 
   summarise(Morad_n = n()) %>% 
   mutate(Morad_rel = Morad_n/sum(Morad_n))
@@ -84,7 +105,7 @@ resumo_morad %>%
 ```
 
 ```{r echo = TRUE, eval = FALSE}
-resumo_morad = tab %>% 
+resumo_morad = mun %>% 
   group_by(Moradia) %>% 
   summarise(Morad_n = n()) %>% 
   mutate(Morad_rel = Morad_n/sum(Morad_n))
@@ -97,13 +118,13 @@ Temos um total de $`r resumo_morad[1,2]`$ pessoas *`r resumo_morad[1,1]`* ($`r r
 Se visualizarmos estes totais em gráficos de barras individuais teremos:
 
 ```{r}
-plt_op = ggplot(tab, aes(x = Opiniao)) +
+plt_op = ggplot(mun, aes(x = Opiniao)) +
   geom_bar(fill = 'darkblue', color = 'white') +
   coord_cartesian(ylim = c(0, 150)) +
   labs(y = 'Número de respostas') +
   theme_classic()
 
-plt_morad = ggplot(tab, aes(x = Moradia)) +
+plt_morad = ggplot(mun, aes(x = Moradia)) +
   geom_bar(fill = 'darkred', color = 'white') +
   coord_cartesian(ylim = c(0, 150)) +
   labs(y = 'Número de respostas') +
@@ -127,19 +148,23 @@ Tabelas de contigência são organizadas para verificarmos a associação entre 
 Para nosso exemplo, podemos fazer simplesmente:
 
 ```{r}
-tcont = table(tab$Opiniao, tab$Moradia)
+tcont = table(mun$Opiniao, mun$Moradia)
 tcont
 ```
 
 Temos portanto `r tcont[1,1]` a favor e não residentes, `r tcont[1,2]` e residentes, `r tcont[2,1]` contra e não residentes e por fim `r tcont[2,2]` a favor e residentes.
 
-Podemos ver os totais marginais das linhas e colunas para cada variável fazendo:
+Podemos ver os totais marginais das linhas:
 
 ```{r}
 tcont_linhas = apply(tcont, 1, sum) # Totais das linhas
-tcont_colunas = apply(tcont, 2, sum) # Totais das colunas
-
 tcont_linhas
+```
+
+Ou os totais marginais das colunas:
+
+```{r}
+tcont_colunas = apply(tcont, 2, sum) # Totais das colunas
 tcont_colunas
 ```
 
@@ -196,10 +221,10 @@ Na tabela de frequência relativa conjunta, o somatório total da tabela deve se
 
 ## O gráfico de barras para duas variáveis qualitativas
 
-Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela obtida a partir do comando `table(tab$Opiniao, tab$Moradia)` podemos utilizar o comando `barplot()`. Por outro lado se quisermos utilizar a tabela original de dados (objeto `tab`) podemos fazer uso do `ggplot2`.
+Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela obtida a partir do comando `table(mun$Opiniao, mun$Moradia)` podemos utilizar o comando `barplot()`. Por outro lado se quisermos utilizar a tabela original de dados (objeto `mun`) podemos fazer uso do `ggplot2`.
 
 ```{r}
-plt_bar1 = ggplot(tab) +
+plt_bar1 = ggplot(mun) +
   aes(x = Moradia, fill = Opiniao) +
   geom_bar(color = 'white', position = 'dodge') +
   scale_fill_manual(values = c('Contra' = 'darkred',
@@ -221,14 +246,14 @@ ___
 Abaixo são apresentadas situações em que **existe** uma associação.
 
 ```{r echo = FALSE}
-assoc_vq = function(N = 200, p1 = 0.2, p2 = 0.8, seed = 2){
+assoc_vq = function(n = 200, p1 = 0.2, p2 = 0.8, seed = 2){
   set.seed(seed)
-  Moradia = sample(0:1, size = N, repl = T, 
+  Moradia = sample(0:1, size = n, repl = T, 
                    prob = c(0.75, 0.25))
   Opiniao = if_else(condition = Moradia == 1,
-                    true = rbinom(n = N, size = 1, prob = p1),
-                    false = rbinom(n = N, size = 1, prob = p2))
-  df = data.frame(Entrevistado = 1:N,
+                    true = rbinom(n = n, size = 1, prob = p1),
+                    false = rbinom(n = n, size = 1, prob = p2))
+  df = data.frame(Entrevistado = 1:n,
                   Opiniao, Moradia)
   df = df %>% 
     mutate(Opiniao = recode(Opiniao,
@@ -239,18 +264,18 @@ assoc_vq = function(N = 200, p1 = 0.2, p2 = 0.8, seed = 2){
                             `0` = 'Não-Residente'))
   return(df)
 }
-tab1 = assoc_vq(N = 200, p1 = 0.2, p2 = 0.8, seed = 2)
-tab2 = assoc_vq(N = 200, p1 = 0.05, p2 = 0.3, seed = 2)
-tab3 = assoc_vq(N = 200, p1 = 0.55, p2 = 0.22, seed = 3)
-tab4 = assoc_vq(N = 200, p1 = 0.8, p2 = 0.50, seed = 14)
+mun1 = assoc_vq(n = 200, p1 = 0.2, p2 = 0.8, seed = 2)
+mun2 = assoc_vq(n = 200, p1 = 0.05, p2 = 0.3, seed = 2)
+mun3 = assoc_vq(n = 200, p1 = 0.55, p2 = 0.22, seed = 3)
+mun4 = assoc_vq(n = 200, p1 = 0.8, p2 = 0.50, seed = 14)
 
-tabs = list(tab1, tab2, tab3, tab4)
+muns = list(mun1, mun2, mun3, mun4)
 ```
 
 ```{r echo = FALSE}
 plt_bar_list = list()
-for (i in 1:length(tabs)){
-  p = ggplot(tabs[[i]]) +
+for (i in 1:length(muns)){
+  p = ggplot(muns[[i]]) +
     aes(x = Moradia, fill = Opiniao) +
     geom_bar(color = 'white', position = 'dodge') +
     scale_fill_manual(values = c('Contra' = 'darkred',
@@ -289,11 +314,11 @@ Digamos que um município tenha $20\%$ de sua população morando em área Rural
 + Zona Urbana $160$ moradores
 
 ```{r echo = FALSE}
-N = 200
+n = 200
 pr = 0.2
 pu = 1-pr
-Moradia = data.frame(Regiao = c(rep('Rural', pr * N),
-                           rep('Urbana', pu * N)))
+Moradia = data.frame(Regiao = c(rep('Rural', pr * n),
+                           rep('Urbana', pu * n)))
 
 tb_dfe = table(Moradia)
 tb_dfe %>% 
@@ -305,13 +330,13 @@ Entretando, se fazemos um sorteio ao acaso, haverá nos valores observados algum
 $$\chi^2 = \sum_{i=1}^{n}\frac{(o_i - e_i)^2}{e_i}$$
 Para uma tabela de frequências, devemos determinar portanto os valores de $o_i$ e $e_i$.
 
-Suponha que uma amostra de $200$ moradores tenha resultado em:
+Suponha que uma amostra de $`r n`$ moradores tenha resultado em:
 
 ```{r echo = FALSE}
 set.seed(10)
-Nor = sum(rbinom(n = N, size = 1, prob = pr))
-Moradia_obs = data.frame(Regiao = c(rep('Rural', Nor),
-                           rep('Urbana', N - Nor)))
+nor = sum(rbinom(n = n, size = 1, prob = pr))
+Moradia_obs = data.frame(Regiao = c(rep('Rural', nor),
+                           rep('Urbana', n - nor)))
 
 tb_dfo = table(Moradia_obs)
 tb_dfo %>% 
@@ -324,17 +349,17 @@ As frequências observadas e esperadas serão:
 
 $o_{Rural} = `r tb_dfo[1]`$
 
-$e_{Rural} = `r pr` \times `r N` = `r pr * N`$
+$e_{Rural} = `r pr` \times `r n` = `r pr * n`$
 
 + Zona Urbana
 
 $o_{Urbana} = `r tb_dfo[2]`$
 
-$e_{Urbana} = `r pu` \times `r N` = `r pu * N`$
+$e_{Urbana} = `r pu` \times `r n` = `r pu * n`$
 
 De modo que o valor de $\chi^2$ será:
 
-$\chi^2 = \frac{(`r tb_dfo[1]` - `r pr * N`)^2}{`r pr * N`} + \frac{(`r tb_dfo[2]` - `r pu * N`)^2}{`r pu * N`} = \frac{(`r tb_dfo[1] - pr * N`)^2}{`r pr * N`} + \frac{(`r tb_dfo[2] - pu * N`)^2}{`r pu * N`} = `r (tb_dfo[1] - pr * N)^2 / (pr * N)` + `r (tb_dfo[2] - pu * N)^2 / (pu * N)` = `r (tb_dfo[1] - pr * N)^2 / (pr * N) + (tb_dfo[2] - pu * N)^2 / (pu * N)`$
+$\chi^2 = \frac{(`r tb_dfo[1]` - `r pr * n`)^2}{`r pr * n`} + \frac{(`r tb_dfo[2]` - `r pu * n`)^2}{`r pu * n`} = \frac{(`r tb_dfo[1] - pr * n`)^2}{`r pr * n`} + \frac{(`r tb_dfo[2] - pu * n`)^2}{`r pu * n`} = `r (tb_dfo[1] - pr * n)^2 / (pr * n)` + `r (tb_dfo[2] - pu * n)^2 / (pu * n)` = `r (tb_dfo[1] - pr * n)^2 / (pr * n) + (tb_dfo[2] - pu * n)^2 / (pu * n)`$
 
 ## O índice de $\chi^2$ em uma tabela de contigência
 
@@ -437,30 +462,30 @@ Abaixo estão diferentes exemplos em que existe associação entre `Opinião` e 
 + Tente aplicar a fórmula do $\chi^2$ para chegar nos resultados apresentados em cada exemplo.
 
 ```{r echo = FALSE}
-tab1_chisq = chisq.test(table(tab1$Opiniao, tab1$Moradia), correct = FALSE)$statistic
-tab2_chisq = chisq.test(table(tab2$Opiniao, tab2$Moradia), correct = FALSE)$statistic
-tab3_chisq = chisq.test(table(tab3$Opiniao, tab3$Moradia), correct = FALSE)$statistic
-tab4_chisq = chisq.test(table(tab4$Opiniao, tab4$Moradia), correct = FALSE)$statistic
+mun1_chisq = chisq.test(table(mun1$Opiniao, mun1$Moradia), correct = FALSE)$statistic
+mun2_chisq = chisq.test(table(mun2$Opiniao, mun2$Moradia), correct = FALSE)$statistic
+mun3_chisq = chisq.test(table(mun3$Opiniao, mun3$Moradia), correct = FALSE)$statistic
+mun4_chisq = chisq.test(table(mun4$Opiniao, mun4$Moradia), correct = FALSE)$statistic
 
 ex1 = plt_bar_list[[1]] + 
-  labs(subtitle = bquote(chi^2 == .(round(tab1_chisq,3)))) +
+  labs(subtitle = bquote(chi^2 == .(round(mun1_chisq,3)))) +
   theme(plot.subtitle = element_text(hjust = 0.5)) +
-  gridExtra::tableGrob(table(tab1$Opiniao, tab1$Moradia))
+  gridExtra::tableGrob(table(mun1$Opiniao, mun1$Moradia))
 
 ex2 = plt_bar_list[[2]] + 
-  labs(subtitle = bquote(chi^2 == .(round(tab2_chisq,3)))) +
+  labs(subtitle = bquote(chi^2 == .(round(mun2_chisq,3)))) +
   theme(plot.subtitle = element_text(hjust = 0.5)) +
-  gridExtra::tableGrob(table(tab2$Opiniao, tab2$Moradia))
+  gridExtra::tableGrob(table(mun2$Opiniao, mun2$Moradia))
 
 ex3 = plt_bar_list[[3]] + 
-  labs(subtitle = bquote(chi^2 == .(round(tab3_chisq,3)))) +
+  labs(subtitle = bquote(chi^2 == .(round(mun3_chisq,3)))) +
   theme(plot.subtitle = element_text(hjust = 0.5)) +
-  gridExtra::tableGrob(table(tab3$Opiniao, tab3$Moradia))
+  gridExtra::tableGrob(table(mun3$Opiniao, mun3$Moradia))
 
 ex4 = plt_bar_list[[4]] + 
-  labs(subtitle = bquote(chi^2 == .(round(tab4_chisq,3)))) +
+  labs(subtitle = bquote(chi^2 == .(round(mun4_chisq,3)))) +
   theme(plot.subtitle = element_text(hjust = 0.5)) +
-  gridExtra::tableGrob(table(tab4$Opiniao, tab4$Moradia))
+  gridExtra::tableGrob(table(mun4$Opiniao, mun4$Moradia))
 
 ```
 
@@ -481,6 +506,30 @@ $$T = \sqrt{\frac{\frac{\chi^2}{n}}{(r-1) \times (s-1)}}$$
 O valor $0$ ocorre quando não há associação ($\chi^2 = 0$). O valor máximo de $1$ só será atingido quando houver associação e $r = s$
 
 Todos estes índices aumentam conforme aumenta o grua de associação entre as variáveis. Entretanto, não dissemos **em que ponto** passamos a aceitar a hipótese de associação as variáveis $X$ e $Y$. Iremos tratar deste assunto na seção sobre estatística inferencial. Ao tratarmos deste ponto é importante termos claro o que siginifica uma associação (ou dependêcia) entre duas variáveis qualitativas e como o índice de $\chi^2$ mede esta associação.
+
+## Obtendo o índice de $\chi^2$ de uma tabela de dados
+
+A função para o cálculo do $\chi^2$ no R é `chisq.test` e pode ser utilizada a partir da tabela de contigência gerada pela função `table`:
+
+```{r}
+tcont = table(mun$Opiniao, mun$Moradia)
+chisq.test(tcont)
+```
+
+O resultado mostra o o valor de $\chi^2$ calcuado (`X-squared`) e outras duas quantias denominadas de **graus de liberdade** (`df`) e **valor de p** (`p-value`), sobre as quais falaremos na seção sobre Inferência estatística (Capítulos \@ref(popamostra) a \@ref(testet)).
+
+Note que o resultado é diferente do que obtvemos neste capítulo. Isto ocorre pois, por padrão, a função utiliza a chamada **correção de Yates** (<a target="_blank" href="https://en.wikipedia.org/wiki/Yates%27s_correction_for_continuity">veja aqui</a>), em que o $\chi_{Yates}^{2}$ é calculado por:
+
+$$\chi_{Yates}^{2} = \sum_{i=1}^{r}\sum_{j=1}^{s}\frac{(|n_{ij} - n_{ij}^{e}| - 0,5)^2}{n_{ij}^{e}}$$
+
+O termo $|n_{ij} - n_{ij}^{e}|$ se refere ao módulo da distância entre os valores observados e calculados. 
+
+Esta correção será abordada ao falarmos de **testes de hipóteses para variáveis categóricas**. Por hora se quisermos obter exatamente os resultados descrito acima utilizando o a função `chisq.test`, basta fazermos:
+
+```{r}
+chisq.test(tcont, correct = FALSE)
+```
+
 
 
 ```{r echo = FALSE}

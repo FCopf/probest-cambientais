@@ -260,6 +260,7 @@ div.csl-indent {
 <li class="chapter" data-level="9.4" data-path="biquali.html"><a href="biquali.html#o-índice-de-chi2-em-uma-tabela-de-contigência"><i class="fa fa-check"></i><b>9.4</b> O índice de <span class="math inline">\(\chi^2\)</span> em uma tabela de contigência</a></li>
 <li class="chapter" data-level="9.5" data-path="biquali.html"><a href="biquali.html#valores-de-chi2-quando-existe-associação"><i class="fa fa-check"></i><b>9.5</b> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação</a></li>
 <li class="chapter" data-level="9.6" data-path="biquali.html"><a href="biquali.html#variações-do-índice-de-chi2"><i class="fa fa-check"></i><b>9.6</b> Variações do índice de <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="9.7" data-path="biquali.html"><a href="biquali.html#obtendo-o-índice-de-chi2-de-uma-tabela-de-dados"><i class="fa fa-check"></i><b>9.7</b> Obtendo o índice de <span class="math inline">\(\chi^2\)</span> de uma tabela de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="biquant.html"><a href="biquant.html"><i class="fa fa-check"></i><b>10</b> Análise bidimensional: variáveis quantitativas</a></li>
 <li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a></li>
@@ -496,12 +497,12 @@ div.csl-indent {
 <div id="va" class="section level1" number="29">
 <h1><span class="header-section-number">Capítulo 29</span> As variáveis são aleatórias, não imprevisíveis! - <em>Modelos discretos</em></h1>
 <p>Nos capítulos <a href="espacoamostral.html#espacoamostral">25</a> a <a href="tbayes.html#tbayes">28</a> apresentamos conceitos básicos que regem as leis de probabilidade aplicadas à ocorrência de eventos simples e complexos. No entanto, ao conduzir um experimento, muitas vezes não estamos interessados nos eventos em si, mas em <strong>quantias numéricas</strong> que expressam a ocorrência destes eventos. Definiremos estas quantias aqui como <strong>variáveis aleatórias</strong>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-358-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-363-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Variáveis aleatórias são funções matemáticas que associam cada evento do espaço amostral a uma quantia numérica. Embora expressem resultados probabilísticos, as variáveis aleatórias como funções matemáticas, têm estruturas previssíveis como <strong>média</strong>, <strong>variância</strong>, <strong>grau de assimetria</strong>, etc. Estas estruturas são as utilizadas para fazermos predições sobre eventos futuros. Neste sentido, as variáveis aleatórias compõem os modelos probabilísticos sobre os quais nos baseamos para fazer predições sobre fenômenos naturais. Estas variáveis são subdivididas em variáveis aleatórias <strong>discretas</strong> e <strong>contínuas</strong>, a depender da natureza da informação que está sendo mensurada. As diferências entre dados discretos e contínuos é discutida no capítulo <a href="#descrit"><strong>??</strong></a>. A seguir serão exemplificados diferentes modelos de variáveis aleatórias associados a diferentes tipos de experimentos aleatórios.</p>
 <div id="experimento-1-sucessos-e-fracassos" class="section level2" number="29.1">
 <h2><span class="header-section-number">29.1</span> <em>Experimento 1</em>: Sucessos e fracassos</h2>
 <p><em>Rhamdioglanis transfasciatus</em> é um peixe endêmico de riachos costeiros de Mata Atlântica do sudeste do Brasil, particularmente abundante em pequenos riachos, rasos, com boa cobertura vegetal e de fundo predregoso. A captura é feita buscando os indivíduos ocultos sob rochas e troncos, que são o micro-habitats que a espécie ocupa. Geralmente esta busca é feita percorrendo um trecho de algumas dezenas de metros de extensão em um dado riacho.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-359-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-364-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Suponha que a probabilidade de ocorrência da espécie em riachos da região seja de <span class="math inline">\(P(O) = 0.4\)</span>. Suponha também que não existam falsos positivos ou falsos negativos. Isto é, se a espécie estiver presente no trecho ela certamente será capturada e, se não estiver, não há a possibilidade de falso registro. Neste caso, se fizermos uma busca, é esperado que a captura seja feita em 40% dos riachos selecionados.</p>
 <p>Ao selecionar um dado riacho, os resultados possíveis são:</p>
 <p><span class="math display">\[\Omega = \{(ocorre), (nao-ocorre)\}\]</span></p>
@@ -558,7 +559,7 @@ y
 <p><span class="math inline">\(P(Y = 3|4,0.4) = \frac{24}{6} \times 0.064 \times (0.6) = 0.1536\)</span></p>
 <p>o que é condizente com o resultado obtido anteriormente.</p>
 <p>Se fizermos os cálculos para todos os valores de <span class="math inline">\(Y\)</span> e os expressarmos em um gráfico de barras (Capítulo <a href="#descrit"><strong>??</strong></a>) veremos a figura abaixo:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-361-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-366-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Vemos que as probabilidades de selecionarmos 1 ou 2 riachos contendo a espécie são maiores que as probabilidades de que nenhum ou de que todos os riachos contenham a espécie.</p>
 </div>
 </div>
@@ -567,7 +568,7 @@ y
 <p>Obtida <span class="math inline">\(p_Y\)</span> para cada valor particular, podemos obter as probabilidades acumuladas para <span class="math inline">\(Y\)</span>. Vamos denotar esta função de <span class="math inline">\(F(y)\)</span>, que nos fornece a probabilidade de obtermos valores de <span class="math inline">\(Y\)</span> menores ou iguais a um limite particular <span class="math inline">\(y\)</span>. Deste modo temos que:</p>
 <p><span class="math display">\[F(y) = P(Y \le y)\]</span></p>
 <p>Se comparamos <span class="math inline">\(F(y)\)</span> e <span class="math inline">\(p(y)\)</span> graficamente teremos:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-362-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-367-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>A barra laranja em 1 por exemplo, é o somatório das duas primeiras barras em azul da distribuição de <span class="math inline">\(p(y)\)</span>. Veja que <span class="math inline">\(F(Y)\)</span> necessariamente termina em <span class="math inline">\(1\)</span> expressando a soma de todos os valores possíveis de <span class="math inline">\(p(y)\)</span>.</p>
 </div>
 <div id="estruturas-previsíveis-para-um-experimento-aleatório" class="section level3 unnumbered">
@@ -588,7 +589,7 @@ y
 <div id="alterando-os-parâmetros-do-modelo" class="section level3 unnumbered">
 <h3>Alterando os parâmetros do modelo</h3>
 <p>Em nosso exemplo, esperamos encontrar a espécie na maior parte das vezes em 1 ou 2. De fato, a esperança de <span class="math inline">\(Y\)</span> será <span class="math inline">\(E(Y) = 1.6\)</span>. O que aconteceria para outros valores de <span class="math inline">\(n\)</span> ou de <span class="math inline">\(p\)</span>. Veja as figuras abaixo:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-363-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-368-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Na medida em que <span class="math inline">\(p\)</span> é baixo, a distribuição de probabilidade é assimétrica para a esquerda, denotando que é mais provável a ocorrência de um número baixo de sucessos. Para <span class="math inline">\(p = 0.5\)</span> a distribuição de probabilidade é simétrica ao redor do valor esperado, e as proporções de sucessos e fracassos são idênticas. Finalmente, para valores elevados de <span class="math inline">\(p\)</span> a distribuição é assimétrica para a direita e a probabilidade de obtermos um número elevado de sucessos aumenta.</p>
 </div>
 </div>
@@ -608,7 +609,7 @@ y
 <p><span class="math display">\[P(Y = y|p) = (1-p)^{y-1} \times p\]</span>
 ?Esta expressão reflete o fato de que o primeiro 1 sucesso que irá acontecer com probabilidade <span class="math inline">\(p\)</span> deve necessariamente ser precedido de <span class="math inline">\(y-1\)</span> fracassos, cada um com probabilidade <span class="math inline">\((1-p)\)</span>.</p>
 <p>A distribuição de probabilidade e as funções de distribuição acumulada para o modelo geométrico têm os seguintes formatos:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-364-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-369-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Quando <span class="math inline">\(p = 0.05\)</span>, por exemplo, existe uma probabilidade de cerca de 0.45 que seja necesária a busca em 10 riachos até que a espécie seja observada. Para valores altos de <span class="math inline">\(p\)</span> por outro lado, a probabilidade de encontrar a espécie logo nos primeiros riachos é alta (ex. para <span class="math inline">\(p = 0.4\)</span>, <span class="math inline">\(F(3) = 0.8704\)</span>).</p>
 <p>Nas figuras, são apresentadas probabilidades até <span class="math inline">\(Y = 20\)</span>, ainda que a variável aleatória no modelo geométrico não tenha limite superior. Consequentemente, o espaço amostral no modelo geométrico pode ser definido por:</p>
 <p><span class="math display">\[\Omega = \left\{ y \in \mathbb{N}: y \ge 1 \right\}\]</span></p>
@@ -638,7 +639,7 @@ y - 1 \\
 r - 1
 \end{array}\right) \times p^{r} \times (1-p)^{(y-r)}\]</span></p>
 <p>As funções de distribuição de probabilidade e a função acumulada tem os seguintes formatos:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-365-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-370-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>No modelo binomial negativo, a esperança matemática e a variância são definidas por:</p>
 <p><span class="math display">\[E(Y) = \frac{r}{p}\]</span></p>
 <p><span class="math display">\[VAR(Y) = \frac{r \times (1-p)}{p^2}\]</span></p>
@@ -659,7 +660,7 @@ r - 1
 <p><strong>n</strong>: número de elementos na amostra.</p>
 </blockquote>
 <p>Vejam que a variável aleatória <span class="math inline">\(Y\)</span> tem <span class="math inline">\(0\)</span> como valor mínimo, quando <strong>nenhum</strong> dos indivíduos na amostra estiver marcado. O valor máximo será o maior número entre <span class="math inline">\(m\)</span> e <span class="math inline">\(n\)</span>. Vejamos o formato da distribuição hipergeométrica para um tamanho <span class="math inline">\(N = 30\)</span> e diferentes valores de <span class="math inline">\(m\)</span> e <span class="math inline">\(n\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-366-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-371-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>No modelo hipergeométrico podemos definir o valor esperado e a variância por:</p>
 <p><span class="math display">\[E(Y) = \frac{n m}{N}\]</span></p>
 <p><span class="math display">\[VAR(Y) = \frac{n m}{N}(\frac{(n-1)(m-1)}{N-1}+1-\frac{n m}{N})\]</span></p>
@@ -669,7 +670,7 @@ r - 1
 <p>Neste último experimento, o riacho foi subdividido em 30 unidades de <span class="math inline">\(1m^2\)</span>. Foram amostrados todos os indivíduos presentes nos trechos. Se o número de indivíduos em um determinado trecho for independente do número de indivíduos nos demais trechos, a contagem de organísmos por <span class="math inline">\(m^2\)</span> será uma variável aleatória descrita por um <strong>Modelo de Poisson</strong>. Neste modelo, temos um único parâmetro denominado <em>lambda</em> (<span class="math inline">\(\lambda\)</span>) e a distribuição de probabilidade será descrita por:</p>
 <p><span class="math display">\[P(Y = y|\lambda) =  \frac{e^{-\lambda} \lambda^y}{y!}\]</span></p>
 <p>O formato da distribuição é assimétrico para valores baixos de <span class="math inline">\(\lambda\)</span>, tornado-se simétrico ao redor da média à medida que <span class="math inline">\(\lambda\)</span> aumenta.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-367-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-372-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Este é um modelo particular em que o valor esperado é igual à variância, ambos dados por:</p>
 <p><span class="math display">\[E(Y) = VAR(Y) = \lambda\]</span></p>
 <p>Embora tenhamos exemplificado o modelo para unidade de área, o modelo de Poisson pode ser utilizado para expressar dados de contagem para qualquer tipo de unidade (ex. indivíduos por dia), desde que a contagem em uma unidade seja <strong>independente</strong> da contagem obtida nas demais unidades.</p>

@@ -260,6 +260,7 @@ div.csl-indent {
 <li class="chapter" data-level="9.4" data-path="biquali.html"><a href="biquali.html#o-índice-de-chi2-em-uma-tabela-de-contigência"><i class="fa fa-check"></i><b>9.4</b> O índice de <span class="math inline">\(\chi^2\)</span> em uma tabela de contigência</a></li>
 <li class="chapter" data-level="9.5" data-path="biquali.html"><a href="biquali.html#valores-de-chi2-quando-existe-associação"><i class="fa fa-check"></i><b>9.5</b> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação</a></li>
 <li class="chapter" data-level="9.6" data-path="biquali.html"><a href="biquali.html#variações-do-índice-de-chi2"><i class="fa fa-check"></i><b>9.6</b> Variações do índice de <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="9.7" data-path="biquali.html"><a href="biquali.html#obtendo-o-índice-de-chi2-de-uma-tabela-de-dados"><i class="fa fa-check"></i><b>9.7</b> Obtendo o índice de <span class="math inline">\(\chi^2\)</span> de uma tabela de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="biquant.html"><a href="biquant.html"><i class="fa fa-check"></i><b>10</b> Análise bidimensional: variáveis quantitativas</a></li>
 <li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a></li>
@@ -503,11 +504,11 @@ div.csl-indent {
 <div id="simulando-a-realização-de-um-modelo-estatístico" class="section level4 unnumbered">
 <h4>Simulando a realização de um modelo estatístico</h4>
 <p>Vamos utilizar o R para simular uma observação deste tipo de experimento.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="modelstat.html#cb187-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb187-2"><a href="modelstat.html#cb187-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
-<span id="cb187-3"><a href="modelstat.html#cb187-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb187-4"><a href="modelstat.html#cb187-4" aria-hidden="true" tabindex="-1"></a>Y1 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
-<span id="cb187-5"><a href="modelstat.html#cb187-5" aria-hidden="true" tabindex="-1"></a>Y1</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="modelstat.html#cb190-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb190-2"><a href="modelstat.html#cb190-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb190-3"><a href="modelstat.html#cb190-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-4"><a href="modelstat.html#cb190-4" aria-hidden="true" tabindex="-1"></a>Y1 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb190-5"><a href="modelstat.html#cb190-5" aria-hidden="true" tabindex="-1"></a>Y1</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>Nos comandos acima fizemos os seguintes passos:</p>
 <blockquote>
@@ -527,41 +528,41 @@ div.csl-indent {
 </blockquote>
 <p>Note que a cada vez que você rodar os comandos acima irá obter um valor aleatório para <code>Y</code> entre <span class="math inline">\(0\)</span> e <span class="math inline">\(4\)</span>. Se repetir várias o comando vezes verá que as frequências observadas de cada resultado irão se aproximar das probabilidades preditas pelo modelo Bonimial.</p>
 <p>De fato, não é necessario repetir os comandos várias vezes. Basta indicar o número de repetições desejada do experimento. Por exemplo, se quisermos repetí-lo 10 vezes basta fazermos:</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="modelstat.html#cb189-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb189-2"><a href="modelstat.html#cb189-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
-<span id="cb189-3"><a href="modelstat.html#cb189-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb189-4"><a href="modelstat.html#cb189-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
-<span id="cb189-5"><a href="modelstat.html#cb189-5" aria-hidden="true" tabindex="-1"></a>Y</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="modelstat.html#cb192-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb192-2"><a href="modelstat.html#cb192-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb192-3"><a href="modelstat.html#cb192-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb192-4"><a href="modelstat.html#cb192-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb192-5"><a href="modelstat.html#cb192-5" aria-hidden="true" tabindex="-1"></a>Y</span></code></pre></div>
 <pre><code>##  [1] 0 1 0 1 3 1 2 1 3 3</code></pre>
 <p>Aumente gradativamente o número de repetições e compare a frequência com que os valores simulados são gerados. Para um número baixo de repetições, haverá maior divergência entre os valores teóricos preditos pelo modelo Binomial e os valores simulados. A medida que o número de repetições aumenta, a distribuição de frequência dos valores simulados irá se assemelhar à distribuição teórica:</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="modelstat.html#cb191-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb191-2"><a href="modelstat.html#cb191-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
-<span id="cb191-3"><a href="modelstat.html#cb191-3" aria-hidden="true" tabindex="-1"></a>repeticoes <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb191-4"><a href="modelstat.html#cb191-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb191-5"><a href="modelstat.html#cb191-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribuição teórica</span></span>
-<span id="cb191-6"><a href="modelstat.html#cb191-6" aria-hidden="true" tabindex="-1"></a>DY <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Y =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">Tipo =</span> <span class="fu">rep</span>(<span class="st">&quot;Teórico&quot;</span>, n <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb191-7"><a href="modelstat.html#cb191-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PB =</span> <span class="fu">dbinom</span>(Y, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
-<span id="cb191-8"><a href="modelstat.html#cb191-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb191-9"><a href="modelstat.html#cb191-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores simulados</span></span>
-<span id="cb191-10"><a href="modelstat.html#cb191-10" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(repeticoes, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
-<span id="cb191-11"><a href="modelstat.html#cb191-11" aria-hidden="true" tabindex="-1"></a>Y_sim <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">FB =</span> <span class="fu">prop.table</span>(<span class="fu">table</span>(Y)))</span>
-<span id="cb191-12"><a href="modelstat.html#cb191-12" aria-hidden="true" tabindex="-1"></a>Y_sim<span class="sc">$</span>FB.Y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(Y_sim<span class="sc">$</span>FB.Y))</span>
-<span id="cb191-13"><a href="modelstat.html#cb191-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb191-14"><a href="modelstat.html#cb191-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Unificando os data.frames</span></span>
-<span id="cb191-15"><a href="modelstat.html#cb191-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb191-16"><a href="modelstat.html#cb191-16" aria-hidden="true" tabindex="-1"></a>DY <span class="ot">&lt;-</span> Y_sim <span class="sc">%&gt;%</span> </span>
-<span id="cb191-17"><a href="modelstat.html#cb191-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Y =</span> FB.Y, <span class="at">PB =</span> FB.Freq) <span class="sc">%&gt;%</span>  </span>
-<span id="cb191-18"><a href="modelstat.html#cb191-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Tipo =</span> <span class="fu">rep</span>(<span class="st">&quot;Simulado&quot;</span>, <span class="at">times =</span> <span class="fu">nrow</span>(Y_sim))) <span class="sc">%&gt;%</span> </span>
-<span id="cb191-19"><a href="modelstat.html#cb191-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Y, Tipo, PB) <span class="sc">%&gt;%</span> </span>
-<span id="cb191-20"><a href="modelstat.html#cb191-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(DY)</span>
-<span id="cb191-21"><a href="modelstat.html#cb191-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb191-22"><a href="modelstat.html#cb191-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DY, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Y, <span class="at">y =</span> PB, <span class="at">fill =</span> Tipo)) <span class="sc">+</span></span>
-<span id="cb191-23"><a href="modelstat.html#cb191-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span> <span class="co">#, width=.8, position = &quot;dodge&quot;)</span></span>
-<span id="cb191-24"><a href="modelstat.html#cb191-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Tipo) <span class="sc">+</span></span>
-<span id="cb191-25"><a href="modelstat.html#cb191-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Distribuição de frequência em um experimento Binomial&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb191-26"><a href="modelstat.html#cb191-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb191-27"><a href="modelstat.html#cb191-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">expression</span>(<span class="fu">f</span>(y)))</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-394-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="modelstat.html#cb194-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb194-2"><a href="modelstat.html#cb194-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb194-3"><a href="modelstat.html#cb194-3" aria-hidden="true" tabindex="-1"></a>repeticoes <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb194-4"><a href="modelstat.html#cb194-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-5"><a href="modelstat.html#cb194-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribuição teórica</span></span>
+<span id="cb194-6"><a href="modelstat.html#cb194-6" aria-hidden="true" tabindex="-1"></a>DY <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Y =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">Tipo =</span> <span class="fu">rep</span>(<span class="st">&quot;Teórico&quot;</span>, n <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb194-7"><a href="modelstat.html#cb194-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PB =</span> <span class="fu">dbinom</span>(Y, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb194-8"><a href="modelstat.html#cb194-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-9"><a href="modelstat.html#cb194-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores simulados</span></span>
+<span id="cb194-10"><a href="modelstat.html#cb194-10" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(repeticoes, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb194-11"><a href="modelstat.html#cb194-11" aria-hidden="true" tabindex="-1"></a>Y_sim <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">FB =</span> <span class="fu">prop.table</span>(<span class="fu">table</span>(Y)))</span>
+<span id="cb194-12"><a href="modelstat.html#cb194-12" aria-hidden="true" tabindex="-1"></a>Y_sim<span class="sc">$</span>FB.Y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(Y_sim<span class="sc">$</span>FB.Y))</span>
+<span id="cb194-13"><a href="modelstat.html#cb194-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-14"><a href="modelstat.html#cb194-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Unificando os data.frames</span></span>
+<span id="cb194-15"><a href="modelstat.html#cb194-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-16"><a href="modelstat.html#cb194-16" aria-hidden="true" tabindex="-1"></a>DY <span class="ot">&lt;-</span> Y_sim <span class="sc">%&gt;%</span> </span>
+<span id="cb194-17"><a href="modelstat.html#cb194-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Y =</span> FB.Y, <span class="at">PB =</span> FB.Freq) <span class="sc">%&gt;%</span>  </span>
+<span id="cb194-18"><a href="modelstat.html#cb194-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Tipo =</span> <span class="fu">rep</span>(<span class="st">&quot;Simulado&quot;</span>, <span class="at">times =</span> <span class="fu">nrow</span>(Y_sim))) <span class="sc">%&gt;%</span> </span>
+<span id="cb194-19"><a href="modelstat.html#cb194-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Y, Tipo, PB) <span class="sc">%&gt;%</span> </span>
+<span id="cb194-20"><a href="modelstat.html#cb194-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(DY)</span>
+<span id="cb194-21"><a href="modelstat.html#cb194-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-22"><a href="modelstat.html#cb194-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DY, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Y, <span class="at">y =</span> PB, <span class="at">fill =</span> Tipo)) <span class="sc">+</span></span>
+<span id="cb194-23"><a href="modelstat.html#cb194-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span> <span class="co">#, width=.8, position = &quot;dodge&quot;)</span></span>
+<span id="cb194-24"><a href="modelstat.html#cb194-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Tipo) <span class="sc">+</span></span>
+<span id="cb194-25"><a href="modelstat.html#cb194-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Distribuição de frequência em um experimento Binomial&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb194-26"><a href="modelstat.html#cb194-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb194-27"><a href="modelstat.html#cb194-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">expression</span>(<span class="fu">f</span>(y)))</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-399-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="a-parcela-determinística" class="section level2" number="32.2">
@@ -572,37 +573,37 @@ div.csl-indent {
 <h4>Qual modelo determinístico escolher?</h4>
 <p>Se assumirmos que <span class="math inline">\(g(x)\)</span> deverá ser uma função crescente da elevação, poderíamos escolher por exemplo o modelo linear. Neste caso, estaríamos assumindo que o parâmetro <span class="math inline">\(p\)</span> seria modelado por:</p>
 <p><span class="math display">\[g(X) = p = \beta_0 + \beta_1 X\]</span></p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="modelstat.html#cb192-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb192-2"><a href="modelstat.html#cb192-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb192-3"><a href="modelstat.html#cb192-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-4"><a href="modelstat.html#cb192-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">50</span>))</span>
-<span id="cb192-5"><a href="modelstat.html#cb192-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-6"><a href="modelstat.html#cb192-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)</span>
-<span id="cb192-7"><a href="modelstat.html#cb192-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-8"><a href="modelstat.html#cb192-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb192-9"><a href="modelstat.html#cb192-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb192-10"><a href="modelstat.html#cb192-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Elevação (X)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb192-11"><a href="modelstat.html#cb192-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;p&quot;</span>) <span class="sc">+</span></span>
-<span id="cb192-12"><a href="modelstat.html#cb192-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-395-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="modelstat.html#cb195-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb195-2"><a href="modelstat.html#cb195-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb195-3"><a href="modelstat.html#cb195-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-4"><a href="modelstat.html#cb195-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">50</span>))</span>
+<span id="cb195-5"><a href="modelstat.html#cb195-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-6"><a href="modelstat.html#cb195-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)</span>
+<span id="cb195-7"><a href="modelstat.html#cb195-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-8"><a href="modelstat.html#cb195-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb195-9"><a href="modelstat.html#cb195-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb195-10"><a href="modelstat.html#cb195-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Elevação (X)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb195-11"><a href="modelstat.html#cb195-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;p&quot;</span>) <span class="sc">+</span></span>
+<span id="cb195-12"><a href="modelstat.html#cb195-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-400-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Veja que este modelo tem uma limitação importante para ser utilizado neste situação. O parâmetro <span class="math inline">\(p\)</span> por ser uma probabilidade, deve estar restrido ao limites entre <span class="math inline">\(0\)</span> e <span class="math inline">\(1\)</span>. Entretanto, a função linear é sempre crescente e permite tanto valores negativos quando acima de <span class="math inline">\(1\)</span> o que não faz sentido para oproblema em questão.</p>
 <p>Outros modelos descritos no captítulo <a href="detmodel.html#detmodel">31</a> seriam mais interessantes, por exemplo, o modelo logístico. Se assumirmos <span class="math inline">\(g(x)\)</span> como uma função logística da elevação, então <span class="math inline">\(p\)</span> poderia ser modelado conforme:</p>
 <p><span class="math display">\[g(X) = p = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}\]</span></p>
 <p>que assume o formato:</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="modelstat.html#cb193-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">10</span></span>
-<span id="cb193-2"><a href="modelstat.html#cb193-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb193-3"><a href="modelstat.html#cb193-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-4"><a href="modelstat.html#cb193-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb193-5"><a href="modelstat.html#cb193-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-6"><a href="modelstat.html#cb193-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)))</span>
-<span id="cb193-7"><a href="modelstat.html#cb193-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-8"><a href="modelstat.html#cb193-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb193-9"><a href="modelstat.html#cb193-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb193-10"><a href="modelstat.html#cb193-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Elevação (X)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb193-11"><a href="modelstat.html#cb193-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;p&quot;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-396-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="modelstat.html#cb196-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">10</span></span>
+<span id="cb196-2"><a href="modelstat.html#cb196-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb196-3"><a href="modelstat.html#cb196-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-4"><a href="modelstat.html#cb196-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb196-5"><a href="modelstat.html#cb196-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-6"><a href="modelstat.html#cb196-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)))</span>
+<span id="cb196-7"><a href="modelstat.html#cb196-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-8"><a href="modelstat.html#cb196-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb196-9"><a href="modelstat.html#cb196-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb196-10"><a href="modelstat.html#cb196-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Elevação (X)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb196-11"><a href="modelstat.html#cb196-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;p&quot;</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-401-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>De fato, a equação logística seria a primeira a ser considerada em uma situação deste tipo, ainda que outros modelos possam ser aplicados. Ao assumir a equação logística, nosso <strong>modelo estatístico</strong> está completo, em que <span class="math inline">\(Y\)</span> é uma variável aleatória Binomial (porção aleatória), que tem o parâmetro <span class="math inline">\(p\)</span> como uma função logística da elevação <span class="math inline">\(X\)</span> (porção detrminística) e <span class="math inline">\(n\)</span> é o número de riachos selecionados para um dado valor de elevação.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-397-1.png" width="288" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-402-1.png" width="288" style="display: block; margin: auto;" /></p>
 <p>O modelo estatístico apropriado para prever a ocorrência da espécie em um dado riacho poderia ser escrito como:</p>
 <p><span class="math inline">\(Y ∼ Binom \left (\begin{array}{c} p = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}, n = 1 \end{array}\right)\)</span></p>
 <p>A realização desde modelo nos daria como resposta <span class="math inline">\(Y = 0\)</span> (a espécie não ocorre) ou <span class="math inline">\(Y = 1\)</span> (a espécie ocorre). Ao nos referirmos a <strong>cada riacho</strong>, o parâmetro <span class="math inline">\(n = 1\)</span> da distribuição binomial transforma este modelo em um <em>experimento de Bernoulli</em> em que a probabilidade de ocorrência <span class="math inline">\(p\)</span> varia de acordo com a elevação.</p>
@@ -627,7 +628,7 @@ div.csl-indent {
 </div>
 <div id="o-modelo-estatístico-da-regressão-linear" class="section level2" number="32.4">
 <h2><span class="header-section-number">32.4</span> O modelo estatístico da regressão linear</h2>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-398-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-403-1.png" width="480" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
