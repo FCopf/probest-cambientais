@@ -1,0 +1,777 @@
+--- 
+title: "Estatística nas Ciências Ambientais"
+author: 
+  - Fabio Cop Ferreira
+  - fabiocopf@gmail.com; fcferreira@unifesp.br
+  - Instituto do Mar, Universidade Federal de São Paulo
+date: "Última atualização em `r format(Sys.Date(), '%d/%m/%Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Estatística nas Ciências Ambientais"
+---
+
+# Índice {-}
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# (PART) Estatística descritiva {-}
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/00-PART-estatdescr.Rmd-->
+
+
+# Estrutura e tipo de dados {#estrdados}
+
+Placeholder
+
+
+## Unidades amostrais e descritores
+## Tipos de dados
+### Variáveis qualitativas
+### Variáveis quantitativas
+## Níveis de mensuração
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/01-estrdados.Rmd-->
+
+
+# Processamento de dados {#procdados}
+
+Placeholder
+
+
+## Criando o diretório de trabalho
+## Iniciando o projeto `Intro_estatistica`
+## Instalação de pacotes
+## Carregando os pacotes
+## Importanto a base de dados
+## Verificando a base de dados
+## Reorganizando a base de dados
+## Selecionando colunas da tabela
+## Filtrando linhas da tabela
+## Adicionando ou modificando colunas
+## Renomeando colunas
+## Outras operações para processamento e transformação de dados
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/02-procdados.Rmd-->
+
+
+# Descrevendo variáveis qualitativas {#varqualit}
+
+Placeholder
+
+
+## Representação em tabelas de frequência
+## Tabelas de frequência para variáveis categóricas ordenadas
+## Representação gráfica
+### Criando um gráfico no `ggplot2`
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/03-varqualit.Rmd-->
+
+
+# Descrevendo variáveis quantitativas {#varquant}
+
+Placeholder
+
+
+## Tabelas de frequência para variáveis quantitativas
+### Alterando o tamanho dos intervalos de classe
+### Tabela de frequência para `CPUE`
+### Tabela de frequência acumulada
+## Representação gráfica: histogramas
+### Representando frequências acumuladas
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/04-varquant.Rmd-->
+
+
+# Medidas de tendência central {#tendcentral}
+
+Placeholder
+
+
+## Média aritmética
+## Mediana
+## Moda
+## Ponto médio 
+## Efeito da assimetria sobre os descritores de tendência central
+## Obtendo medidas de uma tabela de dados 
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/05-tendcentral.Rmd-->
+
+
+# Medidas de variação {#variacao}
+
+Placeholder
+
+
+## Variância
+## Desvio padrão
+## Coeficiente de variação
+## Amplitude de variação 
+## Obtendo medidas variação de uma tabela de dados 
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/06-variacao.Rmd-->
+
+
+# Medidas de posição: quartis {#quartis}
+
+Placeholder
+
+
+## Cálculo dos quartis na posição $j$ ($Q_j$, para $j = 1$, $2$ e $3$)
+## Cálculo dos quartis no R
+## Obtendo os quartis a partir de uma tabela de dados 
+## Regresentação gráfica dos quartis: Boxplots
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/07-quartis.Rmd-->
+
+
+# Medidas de posição: índice Z {#escorez}
+
+Placeholder
+
+
+## Interpretando o valor de $Z$
+## Realizando a transformação $Z$ a partir de uma tabela de dados 
+## Valores esperados de $Z$ em uma distribuição normal padronizada
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/08-escorez.Rmd-->
+
+
+# Análise bidimensional: variáveis qualitativas {#biquali}
+
+Placeholder
+
+
+## Tabelas de contingência
+## O gráfico de barras para duas variáveis qualitativas
+## Medindo a discrepância com o índice de $\chi^2$ de Pearson
+## O índice de $\chi^2$ em uma tabela de contigência
+## Valores de $\chi^2$ quando existe associação
+## Variações do índice de $\chi^2$
+## Obtendo o índice de $\chi^2$ de uma tabela de dados
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/09-biquali.Rmd-->
+
+# Análise bidimensional: variáveis quantitativas {#biquant}
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(message = FALSE, echo = FALSE)
+```
+
+Neste capítulo iremos medir o grau de associação entre duas variáveis quantitativas denominadas de $X$ e $Y$. Para isto falaremos dos conceitos de **covariáncia** e **correlação**. Neste momento, não estamos interessados em dizer se $Y$ depende funcionalmente de $X$ ou vice-versa. Estamos interessados em medir somente a intensidade de associação entre as duas variáveis. Deste modo, quando calcularmos a covariância entre $Y$ e $X$ ($s_{YX}$) poderíamos inverter a ordem ($s_{XY}$) e teríamos exatamente os mesmo resultados. Dizemos portanto que existe uma simetria entre as variáveis quando calculamos a covariãncia ou correlação. Esta simetria *não vale* quando formos abordar o conceito de **regressão linear** (Capítulo \@ref(regressao)), quando assumimos *explicitamente* a direção em que $Y$ é **função** de $X$ - $Y = f(X)$.
+
+Estamos interessados em diferenciar três situações que podem ser visualizadas nos gráficos de dispersão abaixo:
+
+```{r}
+sigma = matrix(c(1,0.8,0,0,
+                 0.8,1,0,0,
+                 0,0,1,-0.8,
+                 0,0,-0.8,1),
+               ncol = 4)
+colnames(sigma) = rownames(sigma) = paste('X', 1:4, sep = '')
+set.seed(1)
+cor4D = data.frame(rmvnorm(n = 300, 
+                           mean = rep(0,ncol(sigma)), 
+                           sigma = sigma, 
+                           method = "chol"))
+#cor4D
+#cor(cor4D)
+#pairs(cor4D)
+```
+
+```{r}
+p_neg = ggplot(cor4D) +
+  aes(x = X4, y = X3) +
+  geom_point(alpha = 0.5) +
+  labs(title = 'Covariância negativa',
+       subtitle = 'Correlação negativa',
+       x = 'X', y = 'Y') +
+  theme_classic(base_size = 15) +
+  theme(axis.text = element_blank())
+
+p_nula = ggplot(cor4D) +
+  aes(x = X1, y = X3) +
+  geom_point(alpha = 0.5) +
+  labs(title = 'Covariância nula',
+       subtitle = 'Correlação nula',
+       x = 'X', y = 'Y') +
+  theme_classic(base_size = 15) +
+  theme(axis.text = element_blank())
+
+p_pos = ggplot(cor4D) +
+  aes(x = X1, y = X2) +
+  geom_point(alpha = 0.5) +
+  labs(title = 'Covariância positiva',
+       subtitle = 'Correlação positiva',
+       x = 'X', y = 'Y') +
+  theme_classic(base_size = 15) +
+  theme(axis.text = element_blank())
+
+```
+
+```{r fig.align='center', fig.height=5, fig.width=15}
+p_neg | p_nula | p_pos
+```
+
+## Covariância entre $Y$ e $X$
+
+Vamos retomar o conceito de **variância amostral** para em seguida introduzir o conceito de **covariância amostral**.
+
+A variância amostral de $Y$ por exemplo, pode ser obtida subtraindo cada observação em $Y$ de sua média ($\overline{Y}$) e elevando esta subtração ao quadrado $(Y_i - \overline{Y})^2$. Ao somar para todos os valores de $Y_i$ teremos o **somatório dos quadrados de $Y$** ($SQ_Y$). 
+
+$$SQ_Y = \sum_{i-1}^{n} (Y_i - \overline{Y})^2 = \sum_{i-1}^{n}(Y_i - \overline{Y}) (Y_i - \overline{Y})$$
+
+Dividindo $SQ_Y$ por $n-1$ teremos a **variância amostral de $Y$** ($s^2_Y$).
+
+$$s^2_Y = \frac{\sum_{i-1}^{n} (Y_i - \overline{Y})^2}{n-1}$$
+
+No capítulo \@ref(variacao) denominamos esta quantia simplesmente por $s^2$. Aqui vamos usar uma notação diferente ($s^2_Y$), pois haverá outros estimadores de variância envolvidos, de modo que deveremos ser mais claros a respeito de qual estimador estaremos nos referindo.
+
+Adotando o mesmo procedimento para $X$, podemos calcular o **somatório dos quadrados de $X$** ($SQ_X$).
+
+$$SQ_X = \sum_{i-1}^{n} (X_i - \overline{X})^2 = \sum_{i-1}^{n}(X_i - \overline{X}) (X_i - \overline{X})$$
+
+e a **variância amostral de $X$** ($s^2_X$).
+
+$$s^2_X = \frac{\sum_{i-1}^{n} (X_i - \overline{X})^2}{n-1}$$
+
+Combinando as duas ideias, teremos o **produto cruzado de $Y$ e $X$** ($SQ_{YX}$)
+
+$$SQ_{YX} = \sum_{i-1}^{n}(Y_i - \overline{Y}) (X_i - \overline{X})$$
+
+e finalmente a **covariância amostral entre $Y$ e $X$** ($s_{YX}$).
+
+___
+
+$$s_{YX} = \frac{\sum_{i-1}^{n}(Y_i - \overline{Y}) (X_i - \overline{X})}{n-1}$$
+
+___
+## Coeficiente de correlação linear de Pearson $r$
+
+Quando estamos interessados em medir o grau de correlação entre duas variáveis utilizamos o **coeficiente de correlação de Pearson** (**$r$**). O coeficiente $r$ mede a intensidade da correlação linear entre $Y$ e $X$. Vimos que a **covariância amostral** ($s_{YX}$) mede a intensidade de uma associação linear entre $Y$ e $X$. A covariância entretanto, não tem limite superior ou inferior, pois sua magnitude depende da ordem de grandeza das variáveis envolvidas. O coeficiente de correlação $r$ é calculado como a covariância entre $Y$ e $X$ padronizada pelo **produto dos desvios padrões** de $Y$ e de $X$.
+
+$$r = \frac{s_{YX}}{s_Y s_X} = 
+\frac{\frac{\sum{(Y_i - \overline{Y})(X_i - \overline{X})}}{n-1}}
+{\sqrt{\frac{\sum{(Y_i - \overline{Y})^2}}{n-1}}  \times 
+\sqrt{\frac{\sum{(X_i - \overline{X})^2}}{n-1}}}$$
+
+___
+
+$$r = \frac{\sum{(Y_i - \overline{Y})(X_i - \overline{X})}}{\sqrt{\sum{(Y_i - \overline{Y})^2 \sum{(X_i - \overline{X})^2}}}}$$
+
+___
+
+Esta padronização garante que o índice pode variar entre $-1$ (correlação perfeitamente linear e **negativa**) e $+1$ (correlação perfeitamente linear e **positiva**), se aproximando de zero quando **não existe** correlação. 
+
+```{r fig.align="center", fig.width=6, fig.height=2}
+nf <- matrix(c(1:3), nc = 3, nr = 1, byrow = TRUE)
+layout(nf, respect = F, heights = c(1), widths = c(1,1,1))
+size_text = 1.2
+#_____________________________________________________
+#_____________________________________________________
+par(mai = c(0,0.2,0,0))
+plot(1:10, type  = "p", pch = 19, axes = F, xlab = "", ylab = "", ylim = c(-2, 12), xlim = c(-2, 12))
+axis(1, at = c(-10,20))
+axis(2, at = c(-10,20))
+text(x = 0, y = 11, labels = expression(r == 1), cex = size_text)
+
+#_____________________________________________________
+par(mai = c(0,0.2,0,0))
+set.seed(3)
+plot(y = rnorm(n = 20, mean = 5, sd = 2), x = rnorm(n = 20, mean = 5, sd = 2), type  = "p",
+     pch = 19, axes = F, xlab = "", ylab = "", ylim = c(-2, 12), xlim = c(-2, 12))
+axis(1, at = c(-10,20))
+axis(2, at = c(-10,20))
+text(x = 5, y = 11, labels = expression(r %~~% 0), cex = size_text)
+
+#_____________________________________________________
+par(mai = c(0,0.2,0,0))
+plot(y = 1:10, x = 10:1, pch = 19, type  = "p", axes = F, xlab = "", ylab = "", ylim = c(-2, 12), xlim = c(-2, 12))
+axis(1, at = c(-10,20))
+axis(2, at = c(-10,20))
+text(x = 10, y = 11, labels = expression(r == -1), cex = size_text)
+
+```
+
+## Exemplo
+
+No conjunto de dados abaixo [@haddon2010modelling] mostra dados da pesca do camarão tigre e do camarão rei entre nos anos de 1976 a 1987. O camarão tigre constitui a espécie alvo da pesca, enquanto o camarão rei aparece como uma espécie acidental.
+
+Importe a base de dados:
+
+```{r echo = TRUE, eval = FALSE}
+tigre = read_csv("ctigre_haddon.csv")
+tigre
+```
+
+```{r}
+tigre = read_csv("datasets/ctigre_haddon.csv")
+rtk = cor(tigre$Tiger, tigre$King)
+stk = cov(tigre$Tiger, tigre$King)
+kable(tigre, 
+      col.names = c("Ano", "Camarão tigre", "Camarão rei"))
+```
+
+
+```{r, echo = TRUE, fig.width=10, fig.height=5}
+c1 = ggplot(tigre, aes(x = Year, y = Tiger)) +
+  geom_line(color = "red") +
+  geom_point(color = "red", shape = 19) +
+  geom_line(mapping = aes(y = King), color = "blue") +
+  geom_point(mapping = aes(y = King), color = "blue", shape = 19) +
+  geom_segment(x = 1976, xend = 1976.3, y = 4000, yend = 4000, color = "red") +
+  geom_segment(x = 1976, xend = 1976.3, y = 3700, yend = 3700, color = "blue") +
+  geom_text(x = 1976.4, y = 4000, label = "Camarão tigre", hjust = 0) +
+  geom_text(x = 1976.4, y = 3700, label = "Camarão rei", hjust = 0) +
+  scale_x_continuous(breaks = tigre$Year) +
+  theme_classic()
+
+c2 = ggplot(tigre, aes(y = King, x = Tiger)) +
+  geom_point(shape = 19) +
+  scale_y_continuous(breaks = seq(0, 150, by = 20)) +
+  scale_x_continuous(breaks = seq(500, 5000, by = 500)) +
+  labs(x = "Camarão tigre (Ton)", y = "Camarão rei  (Ton)") +
+  theme_classic()
+
+c1 + c2
+```
+
+A captura em toneladas do camarão tigre é sempre mais elevada. Entretanto, a figura da direita sugere haver uma associação linear entre as capturas. Nos anos em que houve maiores capturas do camarão tigre parece ter havido também um aumento nas capturas do camarão rei. Dizemos as capturas covariam positivamente. Portanto existe uma **correlação positiva** entre a captura das duas espécies. 
+
+Em nenhum momento estamos dizendo que a captura de uma espécie é a **causa** do aumento na captura da outra. Muito provavelmente, as abundâncias das duas espécies estão relacionadas a um terceiro fator que gera um comportamento similar na variação das capturas ano a ano. Estamos interessados em mensurar o grau de associação seja pela covariância ou pelo coeficiente de correlação de Pearson.
+
+Em nosso exemplo, a covariância entre as abundâncias dos camarões tigre e rei é positiva ($s_{tigre-rei} = `r round(stk,2)`$) e consequentemente a correlação de Pearson também é positiva ($r = `r round(rtk,2)`$). Confira os cálculos utilizando as expressões apresentadas no capítulo.
+
+No R, a covariância entre $Y$ e $X$ pode ser obtida pela função `cov`:
+
+```{r, echo = TRUE}
+cov(tigre$Tiger, tigre$King)
+```
+
+E a correlação pela função `cor`:
+
+```{r, echo = TRUE}
+cor(tigre$Tiger, tigre$King)
+```
+
+
+```{r echo = FALSE}
+rm(list = ls())
+```
+
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/10-biquant.Rmd-->
+
+
+# Análise bidimensional: variáveis quantitativas e qualitativas {#biquantquali}
+
+Placeholder
+
+
+## Visualizando a distribuição de $Y$ em diferentes grupos
+## Os níveis de um tratamento podem ser variáveios contínuas
+
+<!--chapter:end:Rmd/01-estatistica_descritiva/11-biquantquali.Rmd-->
+
+# (PART) Amostragem e Inferência Estatística {-}
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/00-PART-inferencia.Rmd-->
+
+
+# Descrevendo populações e amostras  {#popamostra}
+
+Placeholder
+
+
+## População, amostra e unidade amostral
+## Distribuições de frequência
+## Parâmetros e estimadores
+## Amostragem e inferência
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/01-popamostra.Rmd-->
+
+
+# Amostrando uma População Estatística {#amostrmedias}
+
+Placeholder
+
+
+## Amostragem aleatória simples
+## Amostragem aleatória estratificada
+## Amostragem sistemática
+## Erro amostral, acurácia e precisão
+### Erro amostral
+### Acurácia
+### Precisão
+### Erro padrão da média
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/02-amostragem.Rmd-->
+
+
+# Alguns fenômenos têm distribuição normal {#normdist}
+
+Placeholder
+
+
+## O modelo normal de probabilidades
+## Entendendo a função normal de densidade de probabilidade
+## Fazendo predições com a função normal de densidade
+## A distribuição normal padronizada
+### Probabilidades em uma distribuição normal padronizada
+#### A transformação $Z$
+### Tabela $Z$
+## Exercícios resolvidos
+### Distribuição de comprimento
+### Intervalos em uma distribuição normal
+### Quantos desvios padrões?
+## Exercícios propostos
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/03-norm.Rmd-->
+
+
+# Distribuição das médias amostrais {#tcl}
+
+Placeholder
+
+
+## Teorema Central do Limite
+### Probabilidades na amostra original e na distribuição de médias
+### Distribuição não-normais
+## Exercícios resolvidos: 
+### Tamanho médio de robalos no mercado de peixes 
+## Exercícios propostos
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/04-tcl.Rmd-->
+
+
+# Inferindo sobre uma População Estatística {#inferenc}
+
+Placeholder
+
+
+## Estimação pontual e estimação intervalar
+### Intervalo de confiança
+#### Distribuiçao t de Student
+## Introdução à suficiência amostral
+### Nível de acurácia desejado (margem de erro) e nível de confiança na estimativa
+### Determinando o tamanho de uma amostra
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/05-inferencia.Rmd-->
+
+
+# Introdução ao Teste de Hipóteses {#th}
+
+Placeholder
+
+
+## Probabilidade e teste de hipóteses
+## Exemplificando um teste de hipóteses: o teste z
+### Tomada de decisão sobre $H_0$: nível de significância
+## Erros de decisão em um teste de hipóteses
+## Exemplo de um teste de hipótese: teste t para uma média populacional
+## Graus de liberdade
+## Probabilidades no teste $t$ de Student: a tabela $t$
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/06-testehipot.Rmd-->
+
+
+# Teste t para duas amostras {#testet}
+
+Placeholder
+
+
+## Teste t para comparação de duas médias independentes
+
+<!--chapter:end:Rmd/02-amostragem_inferencia/07-testet.Rmd-->
+
+# (PART) Modelos Lineares Clássicos {-}
+
+<!--chapter:end:Rmd/03-modelos_lineares_classicos/00-PART-modelinear.Rmd-->
+
+# Análise de variância de um fator {#anova}
+
+A *Análise de Variância* (**ANOVA**) desenvolvida por <a href="https://en.wikipedia.org/wiki/Ronald_Fisher" target="_blank">R. A. Fisher</a> aplica-se à uma classe de desenho experimenteal em que a variável resposta $Y$ é *contínua* e a variável explanatória $X$ é *categórica* com $2$ ou mais níveis. A ANOVA permite testarmos a hipótese de que duas ou mais médias amostrais ($\overline{Y}_i$) possam ter sido obtidas de uma mesma população estatística com média $\mu$. Alternativamente, podemos concluir que as médias amostrais diferem umas das outras, de tal forma que devemos assumir que foram amostradas a partir de diferentes populações estatísticas, nas quais ao menos um $\mu_i$ seja diferente dos demais. Iremos denominar estas duas possibilidades de **hipótese estatísticas** a cerca do relacionamento entre as médias populacionais. Assim a hipótese nula ($H_0$) define a ausência de diferenças:
+
+$H_0: \mu_1 = \mu_2 = \mu_3 =.... = \mu_m$
+
+Enquanto a hipótese alternativa ($H_a$) refere-se a qualquer possibilidade diferente da primeira de modo que:
+
+$H_a$: ao menos um $\mu$ é diferente
+
+Se temos exatamente dois níveis em $X$, a comparação de médias pode ser feita por meio de um teste $t$. A ANOVA deve ser utilizada quando temos **mais** de dois níveis em $X$. Neste sentido, o teste $t$ é um caso particular, enquanto a ANOVA é um caso geral, que permite inferir sobre a origem de duas ou mais médias amostrais.
+
+
+## O modelo da ANOVA
+
+A ANOVA faz parte da classe de **modelos lineares**, a luz do modelo de regressão (Capítulo \ref@(regressao)). O modelo de ANOVA pode ser descrito conforme abaixo:
+
+$$Y_{ij} = \mu + A_i + \epsilon_{ij}$$
+
+onde $Y_{ij}$ é a variável resposta associada à observação $j$ do tratamento $i$, $\mu$ a média geral e $A_i$ o efeito do tratamento $i$. $\epsilon_{ij}$ é denominado de **resíduo** (ou *erro*) associado a cada observação que, assim como na regressão, assumimos que $\epsilon$ tem distribuição normal com média zero e variância constante, $\epsilon \sim N(0, \sigma^2)$.
+
+**PAREI**
+
+[https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia](https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia)
+
+A figura abaixo exemplifica o tipo de experimento que pode ser analisado por meio de uma ANOVA. Vemos n = 30 observações independentes de um experimento, distribuídas em a = 4 tratamentos. A ANOVA nos permite testar se as médias amostrais de cada tratamento são provenientes de uma mesma população estatística com média μ (H0) ou se ao menos uma delas provém de uma população com um μ diferente (Ha).
+
+A ANOVA faz a **partição da soma dos quadrados totais** para quantificar o percentual da variação associado a um determinado tratamento ou aos resíduos como veremos a seguir. As médias são resultantes de observações independentes denominadas de **réplicas** associadas a cada um dos tratamentos de um experimento.
+
+
+<!--chapter:end:Rmd/03-modelos_lineares_classicos/01-anova.Rmd-->
+
+# Análise de variância fatorial {#anovafatorial}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/03-modelos_lineares_classicos/02-anovafatorial.Rmd-->
+
+
+# Regressão linear e correlação {#regressao}
+
+Placeholder
+
+
+## Modelo geral de regressão
+### Porção determinística
+### Porção estocástica
+## Ajuste dos dados ao modelo de regressão
+### Método dos mínimos quadrados
+### Variâncias, covariâncias e coeficientes da regressão
+### Exemplo de ajuste ao modelo de regressão
+## Testes de hipóteses na regressão linear simples
+### Teste sobre $\beta_1$
+### Análise de variância da regressão
+#### A distribuição F
+## Coeficiente de determinação $r^2$
+## Intervalo de confiança de $Y$
+## Pressupostos da regressão linear simples
+### Relação funcional linear
+### Independência
+### Variável $X$ é medida sem erros
+### Distribuição normal dos resíduos
+### Variância residual constante
+## Diagnósticos da regressão
+### Gráfico de resíduos
+### Histograma dos resíduos
+## Coeficiente de correlação de Pearson $r$
+### Teste de hipóteses para $r$
+
+<!--chapter:end:Rmd/03-modelos_lineares_classicos/03-regres.Rmd-->
+
+# Regressão linear múltipla {#regresmultipla}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+
+<!--chapter:end:Rmd/03-modelos_lineares_classicos/04-regresmultipla.Rmd-->
+
+# Análise de covariância {#ancova}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/03-modelos_lineares_classicos/05-ancova.Rmd-->
+
+# Análise de variância de medidas repetidas {#repanova}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/03-modelos_lineares_classicos/06-repanova.Rmd-->
+
+# (PART) Fundamentos de probabilidade {-}
+
+<!--chapter:end:Rmd/04-fundamentos_probabilidade/00-PART-probab.Rmd-->
+
+
+# O espaço de possibilidades de um experimento {#espacoamostral}
+
+Placeholder
+
+
+## Probabilidades de um evento
+### Estimando as probabilidades de um evento por amostragem
+
+<!--chapter:end:Rmd/04-fundamentos_probabilidade/01-espacoamostral.Rmd-->
+
+
+# Combinando as probabilidades de eventos {#probregras}
+
+Placeholder
+
+
+## Eventos complexos
+### Representação de eventos: diagrama de Venn
+### Probabilidade de eventos simples
+### Probabilidade da união de eventos
+### Representação de eventos: diagrama de árvore
+
+<!--chapter:end:Rmd/04-fundamentos_probabilidade/02-probregras.Rmd-->
+
+
+# Probabilidade condicional e independência {#probcondind}
+
+Placeholder
+
+
+## Eventos independentes
+### Um exemplo de eventos independentes
+## Eventos independentes *vs* mutuamente exclusivos
+
+<!--chapter:end:Rmd/04-fundamentos_probabilidade/03-probcondind.Rmd-->
+
+
+# Teorema de Bayes: atualizando o conhecimento {#tbayes}
+
+Placeholder
+
+
+## Teorema de Bayes
+## Teorema da probabilidade total
+## O problema da detecção de espécies
+### Razão de verossimilhança, inferência bayesiana e teste de hipóteses
+#### Verossimilhança: uma medida indireta para $P(O|D)$ {-}
+#### Inferência bayesiana: o conhecimento *a priori* é importante? {-}
+#### Entendendo as diferênças entre as duas abordagens {-}
+
+<!--chapter:end:Rmd/04-fundamentos_probabilidade/04-tbayes.Rmd-->
+
+# (PART) Modelos Probabilísticos, verossimilhança e inferência bayesiana {-}
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/00-PART-modprobab.Rmd-->
+
+
+# As variáveis são aleatórias, não imprevisíveis!  - *Modelos discretos* {#va}
+
+Placeholder
+
+
+## *Experimento 1*: Sucessos e fracassos
+### A distribuição de probabilidade de $Y$ {-}
+### Uma expressão geral para $P(Y = y)$ {-}
+#### Entendendo a expressão do modelo binomial {-}
+#### Exemplo de cálculo
+### Função de distribuição acumulada {-}
+### Estruturas previsíveis para um experimento aleatório {-}
+### Alterando os parâmetros do modelo {-}
+## *Experimento 2*: O custo de 1 sucesso
+## *Experimento 3*: Uma sequência de sucessos
+## *Experimento 4*: Quantas marcas na amostra!
+## *Experimento 5*: Contagem por unidade de área, tempo, .....
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/01-va.Rmd-->
+
+
+# As variáveis são aleatórias, não imprevisíveis! - *Modelos contínuos* {#vacont}
+
+Placeholder
+
+
+#### Esperança e variância em modelos contínuos {-}
+## Alguns fenômenos têm distribuição normal
+## Outros são altamente assimétricos
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/02-vacont.Rmd-->
+
+
+# Alguns modelos são determinísticos {#detmodel}
+
+Placeholder
+
+
+## Modelo linear
+#### Entendendo os comandos em R {-}
+#### Modelo linear segmentado {-}
+## Função potência
+#### A representação linear da função potência {-}
+#### As várias formas da função potência {-}
+## Modelo de Michaelis-Menten (ou Resposta funcional do tipo II)
+## Resposta funcional do tipo III
+## Resposta funcional do tipo IV
+## Função hiperbólica
+## Função exponencial
+## Função logística
+## Modelo monomolecular
+## Modelo de Ricker
+## Modelo de Gompertz
+## Modelo de von Bertalanffy
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/03-detprob.Rmd-->
+
+
+# As partes estocásticas e determinísticas de um modelo estatístico {#modelstat}
+
+Placeholder
+
+
+## A parcela aleatória
+#### Simulando a realização de um modelo estatístico {-}
+## A parcela determinística
+#### Qual modelo determinístico escolher?  {-}
+## Mais um modelo Binomial: taxa de mortalidade em testes dose-resposta
+## O modelo estatístico da regressão linear
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/04-modelstat.Rmd-->
+
+# Estimando os parâmetros: a ideia da Máxima Verossimilhança {#emv}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/05-emv.Rmd-->
+
+# Comparando modelos: uma questão de parcimônia {#aic}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/06-aic.Rmd-->
+
+# Da verossimilhança à estatística Bayesiana {#statbayes}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/07-statbayes.Rmd-->
+
+# Uma variedade de modelos estatísticos: modelando a variância {#varmodels}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/08-varmodel.Rmd-->
+
+# Uma variedade de modelos estatísticos: modelando os resíduos {#nindep}
+
+```{r, fig.align = 'center', fig.width=5, fig.height=5}
+uc <- image_read("figs/under_construction_2.jpg")
+grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
+```
+
+<!--chapter:end:Rmd/05-modelos_probabilisticos/09-nindres.Rmd-->
+

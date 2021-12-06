@@ -268,7 +268,10 @@ div.csl-indent {
 <li class="chapter" data-level="10.2" data-path="biquant.html"><a href="biquant.html#coeficiente-de-correlação-linear-de-pearson-r"><i class="fa fa-check"></i><b>10.2</b> Coeficiente de correlação linear de Pearson <span class="math inline">\(r\)</span></a></li>
 <li class="chapter" data-level="10.3" data-path="biquant.html"><a href="biquant.html#exemplo"><i class="fa fa-check"></i><b>10.3</b> Exemplo</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a></li>
+<li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a></li>
+</ul></li>
 <li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
 <li class="chapter" data-level="12" data-path="popamostra.html"><a href="popamostra.html"><i class="fa fa-check"></i><b>12</b> Descrevendo populações e amostras</a>
 <ul>
@@ -528,8 +531,8 @@ No entanto, a importância central da amostragem aleatória em estatística est�
 <h2><span class="header-section-number">13.3</span> Amostragem sistemática</h2>
 <p>Uma amostragem sistemática é possível quando as unidades amostrais podem ser ordenadas. A ordenação segue alguma característica da unidade como peso, idade, salinidade, posição no espaço ou intervalo de tempo. O objetivo é garantir que a amostra inclua todo o intervalo de variação da população. Neste tipo de amostragem, selecionamos um elemento inicial e, em intervalos regulares, selecionamos os demais elementos.</p>
 <p>Em nossa amostragem de <em>Rhizophora mangle</em>, poderíamos ordenar as árvores da menor para a maior, selecionar uma árvore inicial (p. ex. a <span class="math inline">\(5^a\)</span>) e um intervalo (por exemplo a cada 10 árvores). A amostragem iria consistir da <span class="math inline">\(5^a\)</span>, <span class="math inline">\(15^a\)</span>, <span class="math inline">\(25^a\)</span>, <span class="math inline">\(35^a\)</span>, <span class="math inline">\(\cdots\)</span> árvores, até chegarmos ao maior indivíduo. Deste modo, saberíamos que todo o intervalo de DAPs estaria representado na amostra. Obviamente este exemplo é inviável, pois necessitaríamos de uma lista de <strong>prévia</strong> do tamanho e posição de todas as árvores antes de conduzirmos a amostragem. Um exemplo de amostragem sistemática mais factível, seria definir alguns transectos lineares e dispor <span class="math inline">\(n\)</span> pontos equidistantes. A amostra iria consistir dos DAPs mensurados nas árvores imediatamente mais próximas a cada um dos pontos. Se o comprimento e direção dos transectos forem bem escolhidos, garantimos que toda a área de estudo seja abrangida. Neste caso, o protocolo de amostragem não visou exatamente atingir todos os comprimentos, mas permitir um acesso mais homogêneo a toda a àrea de distribuição dos indivíduos, <strong>assumindo</strong> que de alguma forma, isto também nos permita acessar toda a variação de tamanho dos indivíduos presentes na região.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-219"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-219-1.png" alt="Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação." width="500" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-221"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-221-1.png" alt="Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação." width="500" />
 <p class="caption">
 Figure 13.1: Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação.
 </p>
@@ -546,8 +549,8 @@ Uma estimativa não-acurada (<strong>viciada</strong>) resulta em valores <stron
 <blockquote>
 <p><em>O paradoxo central da amostragem</em> é que é impossível saber, a partir da observação da amostra, se ela é ou não uma boa amostra, no sentido de que seja livre de viés <span class="citation">(<a href="#ref-stuart1984ideas" role="doc-biblioref">Stuart 1984</a>)</span>“.</p>
 </blockquote>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-220"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-220-1.png" alt="Representação dos conceitos de precisão e acurácia." width="798" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-222"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-222-1.png" alt="Representação dos conceitos de precisão e acurácia." width="798" />
 <p class="caption">
 Figure 13.2: Representação dos conceitos de precisão e acurácia.
 </p>
@@ -1578,7 +1581,7 @@ Medias
 </table>
 <p>A menor e maior médias possíveis são 14.6 e 36.6 respectivamente. Estes valores são os mais distantes do parâmetro populacional (<span class="math inline">\(\mu = 25.6\)</span>) e ocorrem quando, <strong>puramente ao acaso</strong>, são amostrados os 5 menores (3, 10, 14, 19, 27) ou os 5 maiores (43, 42, 41, 29, 28) elementos da população estatística. Estes casos extremos são <strong>raros</strong>. Em nosso exemplo, valores superiores a 33.8 ou inferiores a 17.4 são muito improváveis.</p>
 <p>Podemos avaliar graficamente a distribuição das médias amostrais através de um histograma. A grande maioria das médias amostrais concentra-se na porção intermediária do gráfico entre estes limites. Por exemplo, somente 3.2% das observações estão acima de 33.8. Da mesma forma, somente 3.2% das observações estão abaixo de 17.4</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-227-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-229-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Se calcularmos a <strong>média das médias</strong> (<span class="math inline">\(\overline{\overline{X}}\)</span>), ou seja, somarmos todos estes valores e dividirmos por 252, o resultado será 25.6, que é exatamente o valor da média populacional <span class="math inline">\(\mu\)</span>. Isto têm uma implicação central em inferência estatística. Significa que a média amostral <span class="math inline">\(\overline{X}\)</span> é um estimador <strong>acurado</strong> (= <strong>não-viciado</strong>), pois tende a estimar corretamente o valor da média populacional <span class="math inline">\(\mu\)</span>. Ou seja, o histograma acima está centrado ao redor de <span class="math inline">\(\mu\)</span>, o que significa que <strong>em média</strong> uma amostra particular tem maior probabilidade de expressar um <span class="math inline">\(\overline{X}\)</span> próxima ao valor populacional.</p>
 </div>
 <div id="precisão" class="section level3" number="13.4.3">
@@ -1970,7 +1973,7 @@ Medias
 </tr>
 </tbody>
 </table>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-230-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-232-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Se compararmos os histogramas com <span class="math inline">\(n = 5\)</span> e <span class="math inline">\(n = 7\)</span>, veremos que as duas geram estimativas acuradas, pois <span class="math inline">\(\overline{\overline{X}} = \mu\)</span>. No entando, o <strong>intervalo de variação</strong> é menor para amostras de tamanho <span class="math inline">\(n = 7\)</span>. Para esta figura, os valores estão mais concentrados ao redor da média. Portanto, à medida que aumenta o tamanhol amostral, diminui a disparsão das médias amostrais ao redor de <span class="math inline">\(\mu\)</span>. Assim, para amostras grandes torna-se mais <strong>improvável</strong> obter uma média amostral distante da média populacional. Disemoz então que Conforme aumenta o tamanho amostral, aumenta a precisão do estimador.</p>
 </div>
 <div id="erro-padrão-da-média" class="section level3" number="13.4.4">
@@ -1982,8 +1985,8 @@ Medias
 <p><span class="math display">\[s_{\overline{X}} = \frac{s}{\sqrt{n}}\]</span></p>
 <p>onde <span class="math inline">\(s\)</span> é o desvio padrão da amostra particular.</p>
 <p>Após esta discussão, podemos representar os conceitos de precisão e acurária mostrados utilizando histogramas de distribuição de frequência para as médias amostrais. Vemos portanto que precisão e acurária têm relação respectivamente, com o <strong>grau de variabilidade</strong> das médias amostrais e com as <strong>distâncias esperadas</strong> de <span class="math inline">\(\mu\)</span>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-231"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-231-1.png" alt="Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas." width="500" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-233"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-233-1.png" alt="Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas." width="500" />
 <p class="caption">
 Figure 13.3: Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas.
 </p>

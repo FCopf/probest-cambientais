@@ -4094,7 +4094,107 @@ E a correlação pela função \texttt{cor}:
 \hypertarget{biquantquali}{%
 \chapter{Análise bidimensional: variáveis quantitativas e qualitativas}\label{biquantquali}}
 
-Para finalizar a seção sobre estatística descritiva, vamos entender como podemos mensurar o grau de associação entre uma variável \(Y\) contínua e uma variável \(X\) categórica. Iremos nos referir ao processo de \textbf{Partição da Soma dos Quadrados} e, para tal, precisamos retornar aos conceitos de soma dos quadrados e variância amostral visto nos capitulos anteriores. O processo de partição da soma dos quadrados é central nos delineamentos de \textbf{Análise de Variância} (Capítulos \ref{anova} a \ref{repanova}) e de \textbf{Regressão linear} (Capítulos \ref{regressao} e \ref{regresmultipla}) que veremos nas próximas seções.
+Para finalizar a seção sobre estatística descritiva, vamos entender como podemos mensurar o grau de associação entre uma variável \(Y\) contínua e uma variável \(X\) categórica. Iremos nos referir ao processo de \textbf{Partição da Soma dos Quadrados} e, para tal, precisamos retornar aos conceitos de soma dos quadrados e variância amostral vistos nos capitulos anteriores. O processo de partição da soma dos quadrados é central nos delineamentos de \textbf{Análise de Variância} (Capítulos \ref{anova} a \ref{repanova}) e de \textbf{Regressão linear} (Capítulos \ref{regressao} e \ref{regresmultipla}) que veremos nas próximas seções.
+
+\hypertarget{visualizando-a-distribuiuxe7uxe3o-de-y-em-diferentes-grupos}{%
+\section{\texorpdfstring{Visualizando a distribuição de \(Y\) em diferentes grupos}{Visualizando a distribuição de Y em diferentes grupos}}\label{visualizando-a-distribuiuxe7uxe3o-de-y-em-diferentes-grupos}}
+
+Vamos utilizar um conjunto de dados originalmente disponível neste link:Turtles.csv sobre o tempo de incubação de ovos de tartaruga em quatro temperaturas (\(15^oC\), \(20^oC\), \(25^oC\)e \(30^oC\)). Para mais detalhes acesse: Environmental Computing .
+
+Importe o conjunto de dados
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{turtles }\OtherTok{=} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"Turtles.csv"}\NormalTok{)}
+\NormalTok{turtles}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{r|r}
+\hline
+Temperature & Days\\
+\hline
+15 & 37\\
+\hline
+15 & 43\\
+\hline
+15 & 45\\
+\hline
+15 & 54\\
+\hline
+15 & 56\\
+\hline
+15 & 65\\
+\hline
+15 & 62\\
+\hline
+15 & 73\\
+\hline
+15 & 74\\
+\hline
+15 & 75\\
+\hline
+20 & 30\\
+\hline
+20 & 31\\
+\hline
+20 & 34\\
+\hline
+20 & 35\\
+\hline
+20 & 35\\
+\hline
+20 & 47\\
+\hline
+20 & 53\\
+\hline
+20 & 54\\
+\hline
+20 & 63\\
+\hline
+20 & 64\\
+\hline
+25 & 21\\
+\hline
+25 & 23\\
+\hline
+25 & 48\\
+\hline
+25 & 52\\
+\hline
+25 & 52\\
+\hline
+25 & 54\\
+\hline
+25 & 54\\
+\hline
+25 & 61\\
+\hline
+25 & 62\\
+\hline
+25 & 65\\
+\hline
+30 & 13\\
+\hline
+30 & 16\\
+\hline
+30 & 19\\
+\hline
+30 & 11\\
+\hline
+30 & 12\\
+\hline
+30 & 18\\
+\hline
+30 & 21\\
+\hline
+30 & 23\\
+\hline
+30 & 29\\
+\hline
+30 & 39\\
+\hline
+\end{tabular}
 
 \hypertarget{part-amostragem-e-inferuxeancia-estatuxedstica}{%
 \part{Amostragem e Inferência Estatística}\label{part-amostragem-e-inferuxeancia-estatuxedstica}}
@@ -4144,11 +4244,11 @@ Os valores da população estatística não são idênticos. Os lambaris do exem
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-214-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-216-1} 
 
 }
 
-\caption{Distribuição de frequência seguindo um modelo Gaussiano}\label{fig:unnamed-chunk-214}
+\caption{Distribuição de frequência seguindo um modelo Gaussiano}\label{fig:unnamed-chunk-216}
 \end{figure}
 
 Vemos que existem mais valores entre 8 e 12 por exemplo, e poucas observações extremas.
@@ -4185,11 +4285,11 @@ Tendo em mãos uma amostra representativa, calculamos estatísticas que são os 
 
 \begin{figure}
 
-{\centering \includegraphics[width=18in]{probest-cambientais_files/figure-latex/unnamed-chunk-215-1} 
+{\centering \includegraphics[width=18in]{probest-cambientais_files/figure-latex/unnamed-chunk-217-1} 
 
 }
 
-\caption{Processo de amostragem e inferência estatística}\label{fig:unnamed-chunk-215}
+\caption{Processo de amostragem e inferência estatística}\label{fig:unnamed-chunk-217}
 \end{figure}
 
 \hypertarget{amostrmedias}{%
@@ -4243,11 +4343,11 @@ Em nossa amostragem de \emph{Rhizophora mangle}, poderíamos ordenar as árvores
 
 \begin{figure}
 
-{\centering \includegraphics[width=13.89in]{probest-cambientais_files/figure-latex/unnamed-chunk-219-1} 
+{\centering \includegraphics[width=13.89in]{probest-cambientais_files/figure-latex/unnamed-chunk-221-1} 
 
 }
 
-\caption{Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação.}\label{fig:unnamed-chunk-219}
+\caption{Representação de uma área com árvores de tamanhos médios agregados. (B): Em uma amostragem aleatória de com n pequeno, corremos maior risco de termos uma distribuição não representativa das unidades amostrais. (C): A amostragem estratificada resolve este problema uma vez que pois todos os blocos ou estratos serão necessariamente representados na amostra. (C): Uma vez bem definida, a amostragem ssitematica também possibilita a representatividade das unidades amostrais ao longo de todo o intervalo de variação.}\label{fig:unnamed-chunk-221}
 \end{figure}
 
 A escolha da amostragem sistemática ao invés de uma amostragem aleatória simples, se deve à sua praticidade. Se a característica de interesse das unidades amostrais estiver disposta de forma aleatória ao longo do transecto escolhido, os dois métodos irão gerar resultados similares. Na maioria dos casos, é isto que o pesquisador assume (ainda que implicitamente) quando opta por uma amostragem sistemática. Por outro lado, se houver um gradiente justamente na direção do transecto, a variância amostral irá \textbf{superestimar} a variância populacional equanto, se houver uma periodicidade que coincida com o intervalo escolhido, a variância amostral irá \textbf{subestimar} a variância populacional.
@@ -4270,11 +4370,11 @@ O objetivo da amostragem é obter estimativas precisas e acuradas. Porém, na im
 
 \begin{figure}
 
-{\centering \includegraphics[width=22.18in]{probest-cambientais_files/figure-latex/unnamed-chunk-220-1} 
+{\centering \includegraphics[width=22.18in]{probest-cambientais_files/figure-latex/unnamed-chunk-222-1} 
 
 }
 
-\caption{Representação dos conceitos de precisão e acurácia.}\label{fig:unnamed-chunk-220}
+\caption{Representação dos conceitos de precisão e acurácia.}\label{fig:unnamed-chunk-222}
 \end{figure}
 
 \hypertarget{erro-amostral}{%
@@ -4385,7 +4485,7 @@ A menor e maior médias possíveis são 14.6 e 36.6 respectivamente. Estes valor
 
 Podemos avaliar graficamente a distribuição das médias amostrais através de um histograma. A grande maioria das médias amostrais concentra-se na porção intermediária do gráfico entre estes limites. Por exemplo, somente 3.2\% das observações estão acima de 33.8. Da mesma forma, somente 3.2\% das observações estão abaixo de 17.4
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-227-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-229-1} \end{center}
 
 Se calcularmos a \textbf{média das médias} (\(\overline{\overline{X}}\)), ou seja, somarmos todos estes valores e dividirmos por 252, o resultado será 25.6, que é exatamente o valor da média populacional \(\mu\). Isto têm uma implicação central em inferência estatística. Significa que a média amostral \(\overline{X}\) é um estimador \textbf{acurado} (= \textbf{não-viciado}), pois tende a estimar corretamente o valor da média populacional \(\mu\). Ou seja, o histograma acima está centrado ao redor de \(\mu\), o que significa que \textbf{em média} uma amostra particular tem maior probabilidade de expressar um \(\overline{X}\) próxima ao valor populacional.
 
@@ -4422,7 +4522,7 @@ amostras diferentes de tamanho \(n = 7\) que podem ser retiradas de uma populaç
 \hline
 \end{tabular}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-230-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-232-1} \end{center}
 
 Se compararmos os histogramas com \(n = 5\) e \(n = 7\), veremos que as duas geram estimativas acuradas, pois \(\overline{\overline{X}} = \mu\). No entando, o \textbf{intervalo de variação} é menor para amostras de tamanho \(n = 7\). Para esta figura, os valores estão mais concentrados ao redor da média. Portanto, à medida que aumenta o tamanhol amostral, diminui a disparsão das médias amostrais ao redor de \(\mu\). Assim, para amostras grandes torna-se mais \textbf{improvável} obter uma média amostral distante da média populacional. Disemoz então que Conforme aumenta o tamanho amostral, aumenta a precisão do estimador.
 
@@ -4445,11 +4545,11 @@ Após esta discussão, podemos representar os conceitos de precisão e acurária
 
 \begin{figure}
 
-{\centering \includegraphics[width=13.89in]{probest-cambientais_files/figure-latex/unnamed-chunk-231-1} 
+{\centering \includegraphics[width=13.89in]{probest-cambientais_files/figure-latex/unnamed-chunk-233-1} 
 
 }
 
-\caption{Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas.}\label{fig:unnamed-chunk-231}
+\caption{Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas.}\label{fig:unnamed-chunk-233}
 \end{figure}
 
 \hypertarget{normdist}{%
@@ -4461,11 +4561,11 @@ Um dos motivos que tornam a distribuição normal de probabilidades central em e
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-234-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-236-1} 
 
 }
 
-\caption{Altura (m) de alunos de um curso de estatística e temperatura média anual de uma cidade americana}\label{fig:unnamed-chunk-234}
+\caption{Altura (m) de alunos de um curso de estatística e temperatura média anual de uma cidade americana}\label{fig:unnamed-chunk-236}
 \end{figure}
 
 As técnicas de estatística descritiva apresentadas anteriormente (capítulos \ref{descrit} e \ref{posicao}) nos permitem entender os padrões resultantes de fenômenos que já aconteceram. Seria interessante no entanto, se pudessemos utilizar estes padrões para realizar predições sobre o que \textbf{poderá acontecer}. Em estatística, a predição se torna possível pelo uso de \textbf{modelos probabilísticos}, dentre os quais a distribuição normal é um dos mais importantes.
@@ -4498,7 +4598,7 @@ A expressão envolve as quantias \(\mu\) e \(\sigma\), definidas como os \textbf
 
 A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o grau de espalhamento das observações ao redor de \(\mu\). Para valores baixos de \(\sigma\), a maioria das observações estará próxima a \(\mu\), enquanto para valores altos de \(\sigma\) as observações estarão mais distantes de \(\mu\). Deste modo, ao variar \(\mu\) e \(\sigma\) podemos ter uma infinidade de distribuições normais.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-235-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-237-1} \end{center}
 
 Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de \(\mu\) e \(\sigma\) e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de 2 metros ou menos de 1,5m é extremamente baixa.
 
@@ -4517,7 +4617,7 @@ Para um \(x = 1.6\):
 
 Este resultado corresponde ao ponto em \(x\) no gráfico da distribuição normal. Assim, se calcularmos \(f(x)\) para diferentes pontos em \(x\) teremos um esboço da função de densidade normal.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-237-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-239-1} \end{center}
 
 No R, os resultados acima podem ser obtidos com a função \texttt{dnorm}, que fornece um modo simples para calcularmos \(f(x)\) para a distribuição normal. Nesta função `d' vem de \emph{densidade} da distribuição normal.
 
@@ -4551,7 +4651,7 @@ Se quisermos obter \(f(x)\) para múltiplos valores de \(x\) podemos fazer:
 
 Por ser uma função de probabilidade, a área abaixo de \(f(x)\) soma 1. Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a \textbf{área abaixo da curva} para este limite. Por exemplo, a probabilidade de uma observação em \(X\) estar entre \(x_1\) e \(x_2\) será:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-240-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-242-1} \end{center}
 
 Você lembra-se que a área abaixo de uma função matemática é dada pela integral definida desta função.
 
@@ -4637,7 +4737,7 @@ ou simplesmente
 
 Aqui estão representados cada um dos intervalos calculados.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-245-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-247-1} \end{center}
 
 \hypertarget{a-distribuiuxe7uxe3o-normal-padronizada}{%
 \section{A distribuição normal padronizada}\label{a-distribuiuxe7uxe3o-normal-padronizada}}
@@ -4659,14 +4759,14 @@ Esta transformação é útil, pois ainda que seja difícil calcular as probabil
 
 Para o exemplos sobre altura dos alunos e chuva mensal temos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-246-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-248-1} \end{center}
 
 \hypertarget{probabilidades-em-uma-distribuiuxe7uxe3o-normal-padronizada}{%
 \subsection{Probabilidades em uma distribuição normal padronizada}\label{probabilidades-em-uma-distribuiuxe7uxe3o-normal-padronizada}}
 
 Nos dois exemplos anteriores, verifica-se que todas as observações estão situadas, aproximadamente, entre \(z = -3\) e \(z = +3\). De fato, a distribuição normal padronizada ou \textbf{distribuição Z} tem propriedades bem conhecidas. Sua média é \(\mu = 0\) e seu desvio padrão é \(\sigma = 1\), fazendo com que a maior parte das observações fique limitada entre \(z = -3\) e \(z = +3\). Para ser exato, podemos descrever as probabilidades de uma observação estar dentro de alguns limites. Por exemplo, \(95\%\) das observações estará entre \(z = -1.96\) e \(z = +1.96\), isto é, \(P(-1.96 \le Z \le +1.96) = 0.95\). De forma similar, \(90\%\) da área central da curva se encontra entre \(z = -1.64\) e \(z = +1.64\). Estes e outros limites na distribuição normal padronizada podem ser verificados na figura abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-247-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-249-1} \end{center}
 
 Vamos exemplificar o uso da distribuição Z no cálculo de probabilidades utilizando os dados de altura dos alunos. Para estes dados, iremos encontrar \(P(X \le 1.5)\). Este procedimento consiste de:
 
@@ -4770,7 +4870,7 @@ Você pode utilizar a Tabela \(Z\) para encontrar \(P(X \le 1.5)\). Note que o v
 
 As comunidades de peixes em riachos de cabeceira são compostas por espécies de pequeno porte. \emph{Rhamdioglanis transfasciatus} é uma destas espécies, desconhecida do público em geral, porém muito abundante em pequenos riachos bem preservados. Dados de captura sugerem que o tamanho dos indivíduos pode ser razoavelmente bem descrito por um modelo de distribuição normal.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-252-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-254-1.pdf}
 
 Suponha o comprimento desta espécie tenha uma distribuição normal com \(\mu = 10\) cm e \(\sigma = 3\) cm. Encontre:
 
@@ -4801,7 +4901,7 @@ Na tabela \(Z\) procuramos a linha que mostra a unidade e \(1^a\) casa decimal d
 
 Deste modo, \(P(Z \ge z_{14}) = 1 - P(Z \le z_{14}) = 1 - 0,9082 = 0.0918\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-255-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf}
 
 \textbf{ii. Para encontrar \(P(X \le 5)\):}
 
@@ -4811,7 +4911,7 @@ Na tabela \(Z\) procuramos a linha que mostra a unidade e \(1^a\) casa decimal d
 
 Deste modo, \(P(X \le 5) = P(Z \le z_{5}) = 0,0475\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-256-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-258-1.pdf}
 
 \textbf{iii. Para encontrar a área central da curva \(P(5 \le X \le 14)\):}
 
@@ -4821,7 +4921,7 @@ Estes valores já foram encontrados nos itens anteriores, de modo que basta faze
 
 \(P(5 \le X \le 14) = 0,9082 - 0,0475 = 0.8607\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-257-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-259-1.pdf}
 
 \textbf{iv. Indivíduos maiores que 14 cm de comprimento}
 
@@ -4928,7 +5028,7 @@ Se \(P(X \le a) = 0,10\), a área da curva abaixo de \(a\) é \(0,10\). Procuran
 
 \(a = (-1,28 \times 10) + 50 = 37.2\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-264-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-266-1.pdf}
 
 \textbf{ii. O valor de \(b\)}
 
@@ -4938,7 +5038,7 @@ Se \(P(X \ge b) = 0,85\), a área abaixo de \(b\) que devemos encontrar na tabel
 
 \(b = (-1,04 \times 10) + 50 = 39.6\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-265-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf}
 
 \textbf{iii. O intervalo simétrico ao redor da média delimitado por \(c\) e \(d\) (\(c < d\)), que contém \(95\%\) da área sob a curva.}
 
@@ -4956,7 +5056,7 @@ Novamente, como o intervalo é simétrico e a dsitribuição de \(Z\) é centrad
 
 \(d = (+1,96 \times 10) + 50 = 69.6\)
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-266-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-268-1.pdf}
 
 \textbf{iv. O valor de \(e\) tal que \(P(50-e \le X \le 50+e) = 0.99\)}
 
@@ -4970,7 +5070,7 @@ como \(\mu = 50\) e \(\sigma = 10\) temos:
 
 Como a área central ocupa \(0,99\) da distribuição, restam \(0,005\) na cauda \textbf{superior} e \(0,005\) na cauda \textbf{inferior}:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-267-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-269-1.pdf}
 
 Para encontrar \(-e\) buscamos por \(0,005\) na tabela \(Z\) e encontramos \(0,0051\) como valor mais próximo, referente a \(z_{-e} = -2,57\). Substituindo na equação temos:
 
@@ -5097,22 +5197,22 @@ Vamos retomar algumas ideias discutidas nos capítulos \ref{posicao} e \ref{amos
 
 \begin{figure}
 
-{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-271-1} 
+{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-273-1} 
 
 }
 
-\caption{Processo de amostragem e inferência estatística}\label{fig:unnamed-chunk-271}
+\caption{Processo de amostragem e inferência estatística}\label{fig:unnamed-chunk-273}
 \end{figure}
 
 Neste processo, o resultado de um experimento pode ser visto como uma observação particular de uma \textbf{população de experimentos} que podem ser reproduzidos sob as mesmas condições. A estimativa obtida deste experimento é portanto, somente uma entre uma \textbf{população de estimativas} que o experimento pode gerar. A inferência estatística é possível se pudermos entender o que é esperado como resultados desta população de experimentos.
 
 \begin{figure}
 
-{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-272-1} 
+{\centering \includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-274-1} 
 
 }
 
-\caption{Distribuição das médias amostrais provinientes de um experimento}\label{fig:unnamed-chunk-272}
+\caption{Distribuição das médias amostrais provinientes de um experimento}\label{fig:unnamed-chunk-274}
 \end{figure}
 
 \hypertarget{teorema-central-do-limite}{%
@@ -5137,7 +5237,7 @@ Note que a variância de \(\overline{X}\) depende do tamanho amostral \(n\). Ist
 
 Seja uma variável \(X\) qualquer com \(\mu = 50\) e \(\sigma = 10\). As figuras abaixo comparam as probabilidades acima de \(x_1 = 55\) para as observações originais e para as distribuições de médias amostrais de tamanho \(n_1 = 2\) e \(n_2 = 10\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-274-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-276-1} \end{center}
 
 Note que existe uma probabilidade razoável de que uma determinada observação em \(X\) esteja acima de \(55\), \(P(X \leq 55) = 0.309\). No entando se tomarmos \emph{ao acaso} uma amostra de tamanho \(n_1 = 2\), a probabilidade de que \textbf{a média} destas duas amostras esteja acima de \(55\) diminui para \(P(\overline{X} \leq 55) = 0.24\). Se tormarmos uma amostra ainda maior (\(n_2 = 10\)), a probabilidade se reduz ainda mais para \(P(\overline{X} \leq 55) = 0.057\).
 
@@ -5150,7 +5250,7 @@ O TCL é válido inclusive para distribuições não-normais. Isto torna a distr
 
 A figura abaixo por exemplo, simula a distribuição de médias amostrais para variáveis com diferentes distribuições de probabiidades e tamanhos crescentes de \(n\). Podemos observar que \emph{independente} do formato da distribuição original, a distribuição das médias amostrais \emph{tende à normalidade}. O padrão normal aparece mais rápido se a distribuição original é \textbf{simétrica}. Por outro lado, para populações estatísticas com distribuições \textbf{assimétricas}, será necessário um tamanho amostral maior para que se alcance a normalidade.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-276-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-278-1.pdf}
 
 \hypertarget{exercuxedcios-resolvidos-1}{%
 \section{Exercícios resolvidos:}\label{exercuxedcios-resolvidos-1}}
@@ -5160,14 +5260,14 @@ A figura abaixo por exemplo, simula a distribuição de médias amostrais para v
 
 Em 2014 no estuário do rio Itanhaém - SP foi pescado o \emph{``maior robalo já encontrado''} \href{http://g1.globo.com/sp/santos-regiao/noticia/2014/11/pescador-fisga-em-itanhaem-o-maior-robalo-ja-encontrado-briguei-com-ele.html}{(G1 Santos)}. O peixe tinha \(133\) cm e \(27,8\) kg . Em 2018 em Bertioga, também no litoral de SP \emph{``Robalo `gigante' quebra recordes e vira atração''} \href{https://g1.globo.com/sp/santos-regiao/noticia/robalo-gigante-quebra-recordes-e-vira-atracao-durante-pescaria-em-sp.ghtml}{(G1 Santos)} pesando \(33\) kg. Em ``\emph{uma das salas da Colônia de Pesca Z2 de Atafona}'' RJ está uma imagem de um robalo de \(28\) kg capturado muitas décadas atrás \href{http://ambientecult.blogspot.com/2010/10/ponto-de-memoria-foto-da-pesca.html}{(Ambiente Cult)}.
 
-\includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-278-1}
+\includegraphics[width=20.83in]{probest-cambientais_files/figure-latex/unnamed-chunk-280-1}
 
 Estas capturas viram notícias pois são certamente inusitadas. Dados de desembarque sugerem que a distribuição de tamanho de robalos comumente capturados está muito abaixo destes limites \citep{ximanes-carvalo2006} ( \href{http://repositorio.ufc.br/bitstream/riufc/1312/1/2006_dis_moxcarvalho.pdf}{Acesse aqui o trabalho completo} ).
 
 \begin{figure}
 \centering
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-280-1.pdf}
-\caption{\label{fig:unnamed-chunk-280}Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006.}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-282-1.pdf}
+\caption{\label{fig:unnamed-chunk-282}Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006.}
 \end{figure}
 
 Esta distribuição é altamente assimétrica e claramente \textbf{não-normal}. Um dos motivos para este forte grau de assimetria deve-se ao limite inferior de captura. A captura e comercialização de animais muito pequenos é proibida. Suponha que o comprimento de robalos (\(L\)) disponíveis para compra tenha média \(\mu = 44.1\) e desvio padrão \(\sigma = 13.4\). Você compra 10 robalos escolhidos ao acaso dos que estão disponíveis. Qual a probabilidade de que:
@@ -5349,7 +5449,7 @@ O valor \(z_{\alpha/2} = 1.96\) foi retirado da Tabela Z como o módulo do valor
 
 Se queremos um nível de confiança diferente, basta ajustar o valor de \(\alpha\). Por exemplo, se queremos um nível de significância a 99\%, fixamos \(\alpha\) em \(0.01\) e portanto \(z = 2.58\). Da mesma forma, o \(IC_{90\%}\) poderá ser obtido com \(\alpha = 0.10\) e consequentemente \(z = 1.64\). Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (Capítulo \ref{normtlc}), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem inclusos nas \textbf{Tabelas Z}, encontradas na grande maioria dos livros de estatística básica. Os valores de Z são os mesmos discutidos no tópico \textbf{Medidas de posição} quando discutimos os \textbf{Índice Z} (Capítulo \ref{posicao})
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-288-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-290-1} \end{center}
 
 Para o cálculo do intervalo de confiança, estamos assumindo que as médias amostrais têm \textbf{Distribuição Normal} com média \(\mu\) e desvio padrão \(\frac{\sigma}{\sqrt{n}}\). Fazendo isto, estamos no \textbf{Teorema Central do Limite (TCL)} (Capítulo \ref{tcl}). Geralmente não temos os valores de \(\mu\) e \(\sigma\), de modo que utilizamos os valores de \(\overline{X}\) e \(s\) calculados a partir de nossa amostra. Quando as amostras são grandes (\(n\ge{30}\)) não há problema em utilizar o valor de \(z_{\alpha/2}\), e assim:
 
@@ -5368,11 +5468,11 @@ Em que \(\alpha\) continua sendo o nível de significância e \(gl\) é definido
 
 O formato da distribuição \(t\) de student não é constante. À medida que o tamanho amostral aumenta, o formado da distribuição \(t\) converge para a distribuição normal. Isto faz com que na prática \textbf{raremente} usaremos a distribuição de Z, substituindo-a pela distribuição \(t\) de Student.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-289-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-291-1.pdf}
 
 Para amostras pequenas (\(n = 2\)) o formato da distribuição de \(t\) é distinto da distribuição normal. No entanto, para tamanhos amostrais maiores (\(n = 30\)) as o formato da distribuição \(t\) tende a a convergir para o mesmo formato a distribuição normal. Esta característica implica que a área a partir de um determinado limite \(t_i\) não é constante como na distribuição normal, mas \emph{depende do tamanho da amostra}, como pode ser visto abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-290-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-292-1} \end{center}
 
 \hypertarget{introduuxe7uxe3o-uxe0-suficiuxeancia-amostral}{%
 \section{Introdução à suficiência amostral}\label{introduuxe7uxe3o-uxe0-suficiuxeancia-amostral}}
@@ -5385,7 +5485,7 @@ Por outro lado, partir de um determinado tamanho amostral o ganho em precisão t
 
 Veja o que ocorre com o erro padrão de uma amostra à medida que aumenta o tamanho \(n\).
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-291-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-293-1.pdf}
 
 Neste exemplo, para amostras de tamanho 1, \(\sigma_{\overline{X}} = 4\). Se tivermos agora amostras de tamanho 10, \(\sigma_{\overline{X}} = 1.2\), uma redução de mais de 50\%. No entanto aumentarmos o tamanho amostral para 50 o erro padrão cai somente de 1.2 para 0.56. Isto significa que a partir de determinado ponto (neste exemplo a partir de 10 ou 20 amostras), a redução no erro padrão torna-se mínima. Neste momento podemos podemos refletir sobre o custo de continuar aumentando o tamanho amostral para obter um ganho cada vez menor em precisão.
 
@@ -5404,7 +5504,7 @@ O nível de confiança na estimativa nos garante que nossa estimativa estará de
 
 Uma representação esquemática do erro amostral e do nível de confiança na distribuição de \(z\) pode ser vista abaixo:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-292-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-294-1} \end{center}
 
 A definição da margem de erro e do nível de confiança depende de estimativas prévias dos parâmetros populacionais \(\mu\) e \(\sigma\). Estas estimativas podem ser obtidas na literatura, buscando estudos similares, ou por meio de um \textbf{projeto piloto}. Em um experimento piloto, o pesquisador irá conduzir seu plano de amostragem com um tamanho mínimo, justamente para avaliar a eficiência metodológica, adequabilidade dos resultados e prever o esforço amostral adequado. As informações de um pequeno estudo piloto, se bem aproveitadas, podem evitar erros simples de delineamento, além de invariavelmente, permitir economia de recusros e consequentemente ganho em qualidade.
 
@@ -5495,11 +5595,11 @@ O valor de \(z\) calculato é chamado de \textbf{estatśitica do teste}. Com o u
 
 Como nossa pergunta se refere à \textbf{distância} entre \(\overline{X}\) e \(\mu\), devemos encontar também \(P(Z \le -z)\), de modo que a probabilidade que nos interessa será representada pela área destacada na figura abaixo que nos dá \(P(Z \ge |z|)\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-296-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-298-1} \end{center}
 
 Valores de \(\overline{X}\) muito próximos a \(\mu\) resultarão em valores de \(z\) próximos a \textbf{zero}. Neste caso, a probabilidade de \(\overline{X}\) estar tão ou mais distante de \(\mu\) é alta. Se \(\overline{X}\) estiver muito \textbf{distante} de \(\mu\) o valor calculado \(z\) será grande e, consequentemente, estará associado a uma probabilidade muito baixa:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-297-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-299-1} \end{center}
 
 Iremos aceitar ou rejeitar \(H_0\) na medida que esta probabilidade estiver acima (aceita \(H_0\)) ou abaixo (rejeita \(H_0\)) de um limite \emph{pré-estabelecido} que denominamos de \textbf{nível de significância - \(\alpha\)}.
 
@@ -5538,7 +5638,7 @@ Com estes resultados encontramos o valor correspondente de Z.
 
 Utilizando a Tabela Z, encontramos a probabilidade de obtermos valores tão ou mais extremos que \(-0.75\) e \(+0.75\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-299-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-301-1} \end{center}
 
 Com isto, a probabilidade de encontarmos valores tão ou mais extermos que \(\overline{X} = 66.73\) foi calculada em \(0.227 + 0.227 =\) \textbf{0.453}.
 
@@ -5606,7 +5706,7 @@ Um outra situação ocorre quando aceitamos erroneamente a hipótese nula que é
 
 As figuras abaixo representam as distribuições das médias amostrais e os erros do tipos I e II quando o \(H_0\) é verdadeira (\(\mu_a = \mu\)) e quando \(H_0\) é falsa (\(\mu_a > \mu\)).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-301-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-303-1} \end{center}
 
 Idealmente em um teste estatístico, seria interessante reduzir ao máximo os erros do tipo I e II. Ao reduzirmos o erro do tipo I, diminuindo \(\alpha\) teremos um teste mais rigoroso que raramente iria errar ao rejeitar um \(H_0\) verdadeiro (Figura A). Entretanto, este teste também \textbf{raramente} iria rejeitar \(H_0\) ainda que ele seja falso (Figura B). Consequentemente, ao diminuir o valor de \(\alpha\) ficamos menos propensos a cometer o erro do tipo I, porém \textbf{mais propensos} a incorrer no erro tipo II, isto é, não rejeitar uma \(H_0\) falsa.
 
@@ -5645,7 +5745,7 @@ Para este exemplo, temos uma amostra de tamanho \(n = 8\) com média \(\overline
 
 Assim como fizemos para a distribuição \(Z\), devemos encontrar a probabilidade de obtermos um valor tão ou maior que o módulo de \(t_c\). Na figura abaixo, nosso resultado fica:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-303-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-305-1} \end{center}
 
 A probabilidade de encontrarmos um valor de \(t_c\) tão ou mais extremo segundo a hipótese nula foi de \(p = 0.028\). Uma vez que este valor é \textbf{menor} que o nível crítico \(\alpha = 0,05\), concluímos que existe evidência suficiente para \textbf{rejeitar} \(H_0\) e \textbf{aceitar} a hipótese alternativa de que as moedas de \(10\) centavos \textbf{não} provém de uma população estatística com \(\mu = 4,8\) gramas. Nossa conclusão é portanto, que as moedas de \(R\$ 0,10\) são mais \textbf{pesadas} que \(4,8\) gramas.
 
@@ -5680,7 +5780,7 @@ A distribuição \(t\) como várias outras distribuições amostrais utilizadas 
 
 À medida que os graus de liberdade aumentam, o formato da distribuição \(t\) se assemelha ao formato da distribuição Normal padronizada. De fato, para graus de liberdades altos (ex. \(n \ge 30\)), os formatos das distribuições \(Z\) e \(t\) são praticamente indistinguíveis. Na prática, isto faz que as distribuição \(Z\) \textbf{raramente} seja utilizada.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-305-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-307-1.pdf}
 
 \hypertarget{probabilidades-no-teste-t-de-student-a-tabela-t}{%
 \section{\texorpdfstring{Probabilidades no teste \(t\) de Student: a tabela \(t\)}{Probabilidades no teste t de Student: a tabela t}}\label{probabilidades-no-teste-t-de-student-a-tabela-t}}
@@ -5715,7 +5815,7 @@ Os dados abaixo mostram o tempo de coagulação sanguínea (em minutos) em ratos
 
 Inicialmente, vamos fazer um gráfico de dispersão para verificar a distribuição do tempo de coagulação para cada droga
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-309-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-311-1} \end{center}
 
 As médias, desvios padrões e tamanhos amostrais de cada grupo são:
 
@@ -5807,7 +5907,7 @@ A ANOVA faz a \textbf{partição da soma dos quadrados totais} para quantificar 
 \hypertarget{anovafatorial}{%
 \chapter{Análise de variância fatorial}\label{anovafatorial}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-313-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-315-1} \end{center}
 
 \hypertarget{regressao}{%
 \chapter{Regressão linear e correlação}\label{regressao}}
@@ -5856,13 +5956,13 @@ Year & FlowR & RainR & Year & FlowR & RainR\\
 
 É razoável supor que em anos de mais chuva, seriam esperadas maiores vazões e que anos mais secos resultassem menores volumes de vazão. Para verificar esta suposição vamos fazer um gráfico de dispersão entre vazão e chuva.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-316-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-318-1} \end{center}
 
 O gráfico sugere que a suposição faz sentido. Volumes baixos de chuva estão associados a volumes baixos de vazão e vice versa. O gráfico sugrere ainda que a relação funcional é \textbf{linear}. Nestas condições, faz sentido tentar modelar a relação entre estas variáveis por meio de um modelo de regressão linear simples.
 
 Ao ajustar um modelo de regressão, vemos que a linha em azul é a que melhor descreve a relação linear entre as variáveis.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-317-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-319-1} \end{center}
 
 Esta linha nos permite obter uma estimativa sobre a vazão esperada (\(Y\)) para qualquer \textbf{dado} volume de chuva (\(X\)). Neste exemplo, a equação que melhor associa vazão e chuva é:
 
@@ -5892,18 +5992,18 @@ A porção determinística é um modelo matemático que descreve a relação fun
 
 Na regressão linear simples, o parâmetro \(\beta_1\) é geralmente o de maior interesse. Este parâmetro nos dirá se a relação será crescente (\(\beta_1 > 0\)), decrescente (\(\beta_1 < 0\)) ou nula (\(\beta_1 = 0\)). \(\beta_0\) é o \(\textbf{intercepto}\) e expressa o ponto em \(Y\) em que a reta cruza o eixo das ordenadas.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-318-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-320-1} \end{center}
 
 \hypertarget{poruxe7uxe3o-estocuxe1stica}{%
 \subsection{Porção estocástica}\label{poruxe7uxe3o-estocuxe1stica}}
 
 A porção estocástica, é representada pelo \textbf{resíduo} ou \textbf{erro}. A cada observação \(Y_i\) está associado um valor de resíduo correspondente (\(\epsilon_i\)), dado pela distância vertical entre \(Y_i\) e o valor predito \(\hat{Y_i}\) sobre a reta de regressão.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-319-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-321-1} \end{center}
 
 No modelo de regressão linear que veremos aqui, os resídos são uma \textbf{variável aleatória} prevenientes de uma distribuição normal de probabilidades com média \(\mu = 0\) e variância \(\sigma^2\) constante ao longo da reta de regressão, \(N(0, \sigma^2)\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-320-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-322-1} \end{center}
 
 \hypertarget{ajuste-dos-dados-ao-modelo-de-regressuxe3o}{%
 \section{Ajuste dos dados ao modelo de regressão}\label{ajuste-dos-dados-ao-modelo-de-regressuxe3o}}
@@ -5921,7 +6021,7 @@ O \textbf{Método dos Mínimos Quadrados} (\(MMQ\)) é uma das formas disponíve
 
 \[SQ_{Resíduo} = \sum{(Y_i-\hat{Y_ i})^2} = \sum{(Y_i-(\hat{\beta_0} + \hat{\beta_1}X_i))^2}\]
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-321-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-323-1} \end{center}
 
 Nas figuras acima, a linha da esquerda (\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 37\)) está claramente melhor ajustada à nuvem de pontos, o que se expressa em um menor somatório dos quadrados dos resíduos (\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 37\)) quando comparado com o ajuste da figura à direita (\(SQ_{Resíduo} = \sum{\epsilon_i^2} = 145\)).
 
@@ -6005,7 +6105,7 @@ Richness & NAP\\
 
 O gráfico de dispersão sugere uma relação negativa e possivelmente linear, em que a riqueza de espécies diminui com o aumento no grau de exposição. Vamos ajustar um modelo de regressão a estes pontos calculando \(\hat{\beta_0}\), \(\hat{\beta_1}\) e \(\hat{\sigma}^2\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-324-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-326-1} \end{center}
 
 Os passos intermediários envolvem o cálculo do somatórios dos quadrados de X:
 
@@ -6057,7 +6157,7 @@ De modo que a melhor reta de regressão é dada por:
 
 \[Richness = 5.94 -2.58 \times NAP\]
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-326-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-328-1} \end{center}
 
 \hypertarget{testes-de-hipuxf3teses-na-regressuxe3o-linear-simples}{%
 \section{Testes de hipóteses na regressão linear simples}\label{testes-de-hipuxf3teses-na-regressuxe3o-linear-simples}}
@@ -6099,7 +6199,7 @@ No exemplo sobre a fauna praial estamos interessados em testar a hipótese de qu
 
 Que na distribuição de t fica:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-328-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-330-1} \end{center}
 
 Se nosso nível de significancia \(\alpha = 0.05\), então a probabilidade \(p = 0.011 + 0.011 = 0.022\) indica que devemos \textbf{rejeitar} \(H_0\) e aceitar que \textbf{existe} uma relação entre Riqueza de espécies e NAP.
 
@@ -6125,7 +6225,7 @@ Pode-se mostrar ainda que vale a expressão:
 \[SQ_Y = SQ_{Regressão} + SQ_{Resíduo}\]
 A decomposição destas quantias é conhecida \textbf{partição das somas dos quadrados} e nos permitem comparar a influência de \(X\) com a influência do puro acaso sobre a variabilidade em \(Y\). Se todos os pontos estiverem perfeitamente sobre a reta, então toda a variação em \(Y\) seria atribuída à influência de \(X\). Por outro lado, à medida que aumenta a distância média dos pontos acima e abaixo da curva, aumenta a parcela atribuída ao \textbf{acaso}.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-329-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-331-1} \end{center}
 
 Estes \textbf{componentes de variação} podem ser organizados em uma Tabela de \textbf{Análise de Variância (ANOVA)}. \(n\) se refere ao número de amostras.
 
@@ -6169,7 +6269,7 @@ O valor de \(F\) na tabela se refere a \textbf{distribuição de probabilidade F
 O símbolo \(F\) foi dado em homenagem a Ronald Aylmer Fisher o estatístico e geneticista Britânico do início do séc. XX, que entre inúmeras outras contribuições, desenvolveu a Análise de Variância. Fisher é descrito como \emph{``a genius who almost single-handedly created the foundations for modern statistical science''} \citep{halt1998history} e como \emph{``the single most important figure in 20th century statistics''} \citep{efron1998r}. Ver \href{https://en.wikipedia.org/wiki/Ronald_Fisher}{Ronald Aylmer Fisher}.
 \end{quote}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-330-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-332-1} \end{center}
 
 Os resultados da ANOVA para os dados da fauna praial nos dá os seguintes valores. \emph{Confira os cálculos}.
 
@@ -6284,11 +6384,11 @@ Richness & NAP & \$\textbackslash{}hat\{Y\}\$ & \$\textbackslash{}hat\{\textback
 
 E representá-los graficamente, juntamente com os valores ajustados de Y.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-334-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-336-1} \end{center}
 
 Note que na figura acima, estão representados os valores observados de riqueza de espécies (em preto), os valores ajustados (azul) e os intervalos a 95\% (vermelho). Os valores ajustados são aqueles utilizados para construir a \textbf{reta de regressão}. O intervalo não costuma ser representados por pontos individuais, mas por uma banda que delimita a área que restringe o intervalo de confiança ao nível \(1 - \alpha\) como na figura abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-335-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-337-1} \end{center}
 
 A banda mais estreita próxima ao ponto médio de \(X\), reflete o ponto comentado anteriormente, de que quanto mais próximo ao centro da distibuição de pontos, mais confiança temos sobre os limites máximos e mínimos que um valor de \(Y\) pode assumir. Do mesmo modo, esta confiança \textbf{diminui} à medida que nos aproximamos dos extremos dos valores observados em \(X\).
 
@@ -6351,7 +6451,7 @@ O diagnóstivo da regressão é composto por observações e testes que ajudam a
 
 O primeiro diagnóstico da regressão é conhecido como \textbf{gráfico de resíduos}, que consiste em um gráfico de dispersão entre os resíduos e o valor ajustado \(\hat{Y}\). Abaixo estão os gráficos de resíduos que surge quando ajustamos uma reta a dados que apresentam uma \textbf{relação linear}, uma \textbf{função potência}, uma \textbf{função assintótica} e uma relação linear porém comm \textbf{variância heterogênea}.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-336-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-338-1.pdf}
 
 Nas primeiras duas figuras, em que a relação é linear, vemos um padrão crescente de \(Y\) como função de \(X\) (figura da esquerda), em que os pontos estão aleatóriamente acima e abaixo da reta de regressão. Este padrão se reflete em um gráfico de resíduos (figura da direita) em que os pontos ficam aleatóriamente acima e abaixo de zero expressando resíduos positivos e negativos respectivamente. Em uma situação em que os pontos estivessem \textbf{perfeitamente} sobre a reta, os resíduos seriam todos iguais a zero e o gráfico de resíduos mostraria todos os pontos alinhados horizontalmente em zero.
 
@@ -6366,7 +6466,7 @@ No último exemplo (variância heterogênea) os pontos tendem a se afastar consi
 
 Outro diagnóstico da regressão consiste em fazer um histograma dos gráficos de resíduos. Um histograma, aproximadamente simétrico ao redor de zero o que sugere que o pressuposto de normalidade dos resíduos é válido neste caso. Existem testes formais de normalidade cmo o teste de \textbf{Kolmogorov Smirnov} ou o teste de \textbf{Shapiro-Wilk}.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-337-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-339-1.pdf}
 
 \hypertarget{coeficiente-de-correlauxe7uxe3o-de-pearson-r}{%
 \section{\texorpdfstring{Coeficiente de correlação de Pearson \(r\)}{Coeficiente de correlação de Pearson r}}\label{coeficiente-de-correlauxe7uxe3o-de-pearson-r}}
@@ -6405,7 +6505,7 @@ Ano & Camarão tigre & Camarão rei\\
 \hline
 \end{tabular}
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-339-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-341-1.pdf}
 
 Veja nas figuras acima que a captura em toneladas do camarão tigre é sempre mais elevada. Entretanto, a figura da direita sugere haver uma relação linear entre as capturas. Nos anos em que houve maiores capturas do camarão tigre parece ter havido também um aumento nas capturas do camarão rei. Dizemos que existe uma \textbf{correlação positiva} entre a captura das duas espécies. Em nenhum momento estamos dizendo que a abundância de uma espécie é a \textbf{causa} do aumento na captura da outra. Muito provavelmente, as abundâncias das duas espécies estão relacionadas a um terceiro fator que gera um comportamento similar na variação das capturas ano a ano. Portanto, aqui não há como se falar em variável dependente e independente. Podemos no referir apenas a uma correlação aparentemente linear entre duas variáveis.
 
@@ -6424,7 +6524,7 @@ A obtenção do coeficiente de correlação \(r\) também parte do cálculo da c
 
 A expressão acima, nos dá um índice que pode variar entre +1 (correlação perfeitamente linear e \textbf{positiva}) e -1 (correlação perfeitamente linear e \textbf{negativa}), e que se aproxima de zero quando não existe correlação.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-340-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-342-1} \end{center}
 
 Em nosso exemplo a intensidade da correlação linear entre as abudâncias dos camarões tigre e rei é \(r = 0.82\) (\textbf{confira os cálculos}).
 
@@ -6448,17 +6548,17 @@ Quando comparado à distribuição t, a área da curva aos extremos de 4.53 e -4
 \hypertarget{regresmultipla}{%
 \chapter{Regressão linear múltipla}\label{regresmultipla}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-343-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-345-1} \end{center}
 
 \hypertarget{ancova}{%
 \chapter{Análise de covariância}\label{ancova}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-344-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-346-1} \end{center}
 
 \hypertarget{repanova}{%
 \chapter{Análise de variância de medidas repetidas}\label{repanova}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-345-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-347-1} \end{center}
 
 \hypertarget{part-fundamentos-de-probabilidade}{%
 \part{Fundamentos de probabilidade}\label{part-fundamentos-de-probabilidade}}
@@ -6523,13 +6623,13 @@ O valor acima descreve o resultado para a observação de um único indivíduo e
 
 Suponha então que o experimento seja repetido em 30 dias diferentes de observação e que os resultados fossem:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-349-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-351-1.pdf}
 
 Com base nestes resultados temos estimativas que variam entre 0 e 0.23. Veja que em 6 dias não foi observada nenhuma captura, \(\hat{P}(captura) = 0\). Isto não significa que a captura seja impossível, mas que neste dia em particular, o sucesso foi muito baixo. Tivemos também dias com elevada captura, por exemplo \(\hat{P}(captura) = 0.23\). Isto não significa que o sucesso é sempre desta forma. Na realidade tamanho sucesso parece ser improvável.
 
 Diante destes resultados, poderíamos estimar que \emph{em média} a probabilidade de captura esteja em \(\overline{P}(captura) = 0.09\)
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-350-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-352-1} \end{center}
 
 A estimativa de \(\overline{P}(captura) = 0.09\) resulta de um número \textbf{finito} de repetições do experimento, é portanto uma \textbf{estimativa} da verdadeira probabilidade de captura. Lembre-se que:
 
@@ -6576,7 +6676,7 @@ Uma forma de visualizar o espaço amostral e eventos deste espaço é pela const
 
 Observando os eventos \(A\) e \(B\) em um \textbf{Diagrama de Venn} temos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-355-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-357-1} \end{center}
 
 Cada um destes eventos é denominado de \textbf{evento complexo}, pois pode ser obtido pela combinação de eventos simples. O evento \(B\) por exemplo, pode ocorrer quando é encontrado uma folha \textbf{OU} um galho com mais de 3 itens, enquanto o evento \(A\) ocorre quando é encontrada uma folha com \(0\) \textbf{OU} \(1\) \textbf{OU} \(2\) \textbf{OU} \(3\) \textbf{OU} \(4\) \textbf{OU} \(5\) \textbf{OU} \(6\) itens.
 
@@ -6643,7 +6743,7 @@ Considere agora o experimento \emph{``virar duas estruturas e verificar o tipo d
 
 E pode ser representado visualmente por um diagrama de árvore.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-358-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-360-1.pdf}
 
 O diagrama de árvore é útil quando desejamos representar os resultados possíveis de um experimento que consiste de múltiplas etapas consecutivas, possivelmente composto por mais de uma caminho possível. Utilizaremos novamente este tipo de diagrama para falarmos em probabilidade condicional (Capítulo \ref{probcondind}) e do Teorema de Bayes (Capítulo \ref{tbayes}).
 
@@ -6664,7 +6764,7 @@ E \(B\) \emph{``encontar mais de 3 itens''}:
 
 Representados no diagrama de Venn abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-360-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-362-1} \end{center}
 
 Nos capítulos anteriores obtivemos as probabilidades \(P(A)\), \(P(B)\), \(P(A \cup B)\) e \(P(A \cap B)\). Digamos agora que, ao virar uma estrutura, \textbf{sabemos} que a estrutura era uma folha. A pergunta é:
 
@@ -6702,7 +6802,7 @@ Esta expressão nos dá também uma forma de calcularmos a probabilidade da inte
 
 Uma vez que probabilidade condicional se refere ao cálculo de probabilidades em eventos complexos \textbf{sequenciais}, podemos fazer a mesma representação de um experimento complexo utilizando um diagrama de árvore onde estão indicadas as probabilidades de ocorrência de cada evento, bem como as probabilidades condicionais.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-361-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-363-1} \end{center}
 
 Neste esquema, podemos ler as probabilidades de obtenção de cada resultado da seguinte forma. A primeira etapa do experimento, pode resultar na ocorrencia do evento \(A\) com probabilidade \(P(A)\), ou de seu \textbf{complemento}, com probabilidade \(P(\overline{A})\). Na segunda etapa, os resultados podem ser dar da seguinte forma:
 
@@ -6735,7 +6835,7 @@ Estas ocorrências denotam as probabilidades de \textbf{todos os eventos possív
 
 Vamos expressar numericamente todas as probabilidades representadas no diagrama de árvore acima:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-362-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-364-1.pdf}
 
 \emph{Obs.}: Refaça os cálculos e confira os resultados
 
@@ -6828,7 +6928,7 @@ de modo que,
 
 Eventos mutuamente exclusivos são representados no diagrama de Venn abaixo.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-365-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-367-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6866,7 +6966,7 @@ Deste modo, para dois eventos dependentes, \(P(B) \ne P(B|A)\).
 
 Representando eventos mutuamente exclusivos em um diagrama de árvore teremos:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-366-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-368-1.pdf}
 
 Ao saber que \(A\) ocorreu, veja que \(P(B|A)\) tem probabilidade igual a zero, de modo que eventos mutuamente exclusivos são necessariamente \textbf{dependentes}.
 
@@ -6922,7 +7022,7 @@ o que nos leva à expressão que define o \textbf{Teorema de Bayes} e nos fornec
 
 Veja novamente a esquema concentual de um diagrama de árvore:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-368-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-370-1} \end{center}
 
 Podemos perceber que dois caminhos nos levam à ocorrência de \(A\). Um caminho em que \(B\) \textbf{também ocorre} - com probabilidade \(P(A \cap B)\) - \textbf{ou} um caminho em que \(B\) \emph{não ocorre} - com probabilidade \(P(A \cap \overline{B})\). Uma vez que estas rotas são mutuamente exclusivas, \(P(A)\) pode ser calculado por:
 
@@ -6949,11 +7049,11 @@ As probabilidades descritas neste problema podem ser organizadas em um diagrama 
 
 \begin{figure}
 
-{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-369-1} 
+{\centering \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-371-1} 
 
 }
 
-\caption{Diagrama de árvore representando as probabilidades de ocorrência P(O) e detecção P(D) de uma espécie.}\label{fig:unnamed-chunk-369}
+\caption{Diagrama de árvore representando as probabilidades de ocorrência P(O) e detecção P(D) de uma espécie.}\label{fig:unnamed-chunk-371}
 \end{figure}
 
 No diagrama, cada bifurcação representa as possíveis saídas de um estágio do experimento. Por exemplo, em uma determinada poça a espécie está ou não está presente, com probabilidades \(0,05\) e \(0,95\) respectivamente. O segundo estágio do experimento consiste na tentativa de detecção da espécie. Neste caso, as possibilidades são as seguintes:
@@ -7095,7 +7195,7 @@ Portanto, as duas abordagens serão equivalentes \textbf{somente} quando utiliza
 
 Nos capítulos \ref{espacoamostral} a \ref{tbayes} apresentamos conceitos básicos que regem as leis de probabilidade aplicadas à ocorrência de eventos simples e complexos. No entanto, ao conduzir um experimento, muitas vezes não estamos interessados nos eventos em si, mas em \textbf{quantias numéricas} que expressam a ocorrência destes eventos. Definiremos estas quantias aqui como \textbf{variáveis aleatórias}.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-370-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-372-1} \end{center}
 
 Variáveis aleatórias são funções matemáticas que associam cada evento do espaço amostral a uma quantia numérica. Embora expressem resultados probabilísticos, as variáveis aleatórias como funções matemáticas, têm estruturas previssíveis como \textbf{média}, \textbf{variância}, \textbf{grau de assimetria}, etc. Estas estruturas são as utilizadas para fazermos predições sobre eventos futuros. Neste sentido, as variáveis aleatórias compõem os modelos probabilísticos sobre os quais nos baseamos para fazer predições sobre fenômenos naturais. Estas variáveis são subdivididas em variáveis aleatórias \textbf{discretas} e \textbf{contínuas}, a depender da natureza da informação que está sendo mensurada. As diferências entre dados discretos e contínuos é discutida no capítulo \ref{descrit}. A seguir serão exemplificados diferentes modelos de variáveis aleatórias associados a diferentes tipos de experimentos aleatórios.
 
@@ -7104,7 +7204,7 @@ Variáveis aleatórias são funções matemáticas que associam cada evento do e
 
 \emph{Rhamdioglanis transfasciatus} é um peixe endêmico de riachos costeiros de Mata Atlântica do sudeste do Brasil, particularmente abundante em pequenos riachos, rasos, com boa cobertura vegetal e de fundo predregoso. A captura é feita buscando os indivíduos ocultos sob rochas e troncos, que são o micro-habitats que a espécie ocupa. Geralmente esta busca é feita percorrendo um trecho de algumas dezenas de metros de extensão em um dado riacho.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-371-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-373-1} \end{center}
 
 Suponha que a probabilidade de ocorrência da espécie em riachos da região seja de \(P(O) = 0.4\). Suponha também que não existam falsos positivos ou falsos negativos. Isto é, se a espécie estiver presente no trecho ela certamente será capturada e, se não estiver, não há a possibilidade de falso registro. Neste caso, se fizermos uma busca, é esperado que a captura seja feita em 40\% dos riachos selecionados.
 
@@ -7118,7 +7218,7 @@ Vamos denominar de \textbf{sucesso} a escolha de um riacho em a espécie esteja 
 
 Este experimento consiste portanto de 4 etapas, isto é, a amostragem do \(1^o\), \(2^o\), \(3^o\) e \(4^o\) riacho, verificando em cada um a ocorrẽncia da espécie. Se representarmos por \(O\) o evento de ocorrência e por \(\overline{O}\) o evento não-ocorrência, os possíveis resultados do experimento seriam:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-372-1.pdf}
+\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-374-1.pdf}
 
 A tabela acima apresenta os 16 eventos possíveis deste experimento, em que cada riacho pode ou não conter a espécie. A pirmeira linha por exemplo, descreve a situação em que a espécie \textbf{não-ocorre} em nenhum riacho, enquanto a última descreve a situação em que a espécie ocorre em todos os riachos.
 
@@ -7203,7 +7303,7 @@ o que é condizente com o resultado obtido anteriormente.
 
 Se fizermos os cálculos para todos os valores de \(Y\) e os expressarmos em um gráfico de barras (Capítulo \ref{descrit}) veremos a figura abaixo:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-373-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-375-1} \end{center}
 
 Vemos que as probabilidades de selecionarmos 1 ou 2 riachos contendo a espécie são maiores que as probabilidades de que nenhum ou de que todos os riachos contenham a espécie.
 
@@ -7217,7 +7317,7 @@ Obtida \(p_Y\) para cada valor particular, podemos obter as probabilidades acumu
 
 Se comparamos \(F(y)\) e \(p(y)\) graficamente teremos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-374-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-376-1} \end{center}
 
 A barra laranja em 1 por exemplo, é o somatório das duas primeiras barras em azul da distribuição de \(p(y)\). Veja que \(F(Y)\) necessariamente termina em \(1\) expressando a soma de todos os valores possíveis de \(p(y)\).
 
@@ -7255,7 +7355,7 @@ Em nosso exemplo, temos \(E(Y) = 4 \times 0.4 = 0.16\) e \(VAR(Y) = 4 \times 0,4
 
 Em nosso exemplo, esperamos encontrar a espécie na maior parte das vezes em 1 ou 2. De fato, a esperança de \(Y\) será \(E(Y) = 1.6\). O que aconteceria para outros valores de \(n\) ou de \(p\). Veja as figuras abaixo:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-375-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-377-1} \end{center}
 
 Na medida em que \(p\) é baixo, a distribuição de probabilidade é assimétrica para a esquerda, denotando que é mais provável a ocorrência de um número baixo de sucessos. Para \(p = 0.5\) a distribuição de probabilidade é simétrica ao redor do valor esperado, e as proporções de sucessos e fracassos são idênticas. Finalmente, para valores elevados de \(p\) a distribuição é assimétrica para a direita e a probabilidade de obtermos um número elevado de sucessos aumenta.
 
@@ -7287,7 +7387,7 @@ Generalizando, a distribuição de probabilidade para o modelo geométrico é:
 
 A distribuição de probabilidade e as funções de distribuição acumulada para o modelo geométrico têm os seguintes formatos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-376-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-378-1} \end{center}
 
 Quando \(p = 0.05\), por exemplo, existe uma probabilidade de cerca de 0.45 que seja necesária a busca em 10 riachos até que a espécie seja observada. Para valores altos de \(p\) por outro lado, a probabilidade de encontrar a espécie logo nos primeiros riachos é alta (ex. para \(p = 0.4\), \(F(3) = 0.8704\)).
 
@@ -7339,7 +7439,7 @@ r - 1
 
 As funções de distribuição de probabilidade e a função acumulada tem os seguintes formatos:
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-377-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-379-1} \end{center}
 
 No modelo binomial negativo, a esperança matemática e a variância são definidas por:
 
@@ -7372,7 +7472,7 @@ Os parâmetros da distribuição hipergeométrica são:
 
 Vejam que a variável aleatória \(Y\) tem \(0\) como valor mínimo, quando \textbf{nenhum} dos indivíduos na amostra estiver marcado. O valor máximo será o maior número entre \(m\) e \(n\). Vejamos o formato da distribuição hipergeométrica para um tamanho \(N = 30\) e diferentes valores de \(m\) e \(n\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-378-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-380-1} \end{center}
 
 No modelo hipergeométrico podemos definir o valor esperado e a variância por:
 
@@ -7389,7 +7489,7 @@ Neste último experimento, o riacho foi subdividido em 30 unidades de \(1m^2\). 
 
 O formato da distribuição é assimétrico para valores baixos de \(\lambda\), tornado-se simétrico ao redor da média à medida que \(\lambda\) aumenta.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-379-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-381-1} \end{center}
 
 Este é um modelo particular em que o valor esperado é igual à variância, ambos dados por:
 
@@ -7413,7 +7513,7 @@ Para variáveis contínuas podemos expressar somente a probabilidade de que um e
 
 Portanto, para as variáveis contínuas, o conceito de somatório dos valores individuais para \(y\) é substituído pelo conceito de \emph{integração} em um intervalo definido e a probabilidade deste intervalo equivale à área sob a curva de probabilidade.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-380-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-382-1} \end{center}
 
 \hypertarget{esperanuxe7a-e-variuxe2ncia-em-modelos-contuxednuos}{%
 \subsubsection*{Esperança e variância em modelos contínuos}\label{esperanuxe7a-e-variuxe2ncia-em-modelos-contuxednuos}}
@@ -7445,11 +7545,11 @@ Em que os parâmetros da função são \(\mu\) e \(\sigma\) representam respecti
 
 Após o término deste tópico é importante que você leia também o que foi apresentado no capítulo \ref{normdist} sobre distribuição normal.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-381-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-383-1} \end{center}
 
 Por exemplo, se o comprimento segue uma distribuição normal com \(\mu = 10\) e \(\sigma = 2\) veremos que a proporção de individuos iguais ou maiores que 16 cm de comprimento é muito baixa, neste caso \(P(Y \ge 16) = 0.0013\). Por outro lado, para \(\sigma = 4\), esperamos encontrar mais indivíduos nos extremos da distribuição em que a proporção de individuos iguais ou maiores que 16 cm seria de \(P(Y \ge 16) = 0.0668\).
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-383-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-385-1} \end{center}
 
 \hypertarget{outros-suxe3o-altamente-assimuxe9tricos}{%
 \section{Outros são altamente assimétricos}\label{outros-suxe3o-altamente-assimuxe9tricos}}
@@ -7468,7 +7568,7 @@ enquanto a variância é dada por:
 
 \[VAR(Y) = \sigma^2 = \frac{1}{\lambda^2}\]
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-384-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-386-1} \end{center}
 
 No modelo exponencial, o único parâmetro é \(\lambda\). O modelo é altamente assimétrico, com maior densidade na porção esquerda da curva. Assim, para um fenômeno que possa ser descrito por um modelo exponencial, a maioria das observações será composta de valores baixos, ainda que valores extremamente elevados possam surgir ocasionalmente.
 
@@ -7516,7 +7616,7 @@ Vamos a um exemplo no R.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-387-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-389-1} \end{center}
 
 Na figura acima, temos cada um dos pontos em \(Y\) como função linear de \(X\). Os comandos cima são entendidos como:
 
@@ -7543,7 +7643,7 @@ Vamos substituir com uma figura em formato de linha
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-388-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-390-1} \end{center}
 
 No exemplo acima, temos os parâmetros \(\beta_0 = 0\) e \(\beta_1 = 2\). Isto significa que para \(X = 0\) o valor em \(Y = 0\). Conforme aumentamos \(X\) em uma unidade, \(Y\) aumenta em 2 unidades. No modelo linear, \(\beta_0\) é interpretado portanto como a altura em \(Y\) em que a reta cruza o eixo das ordenadas, enquanto \(\beta_1\) representa a taxa de incremento em \(Y\) para o aumento de \textbf{uma unidade} em \(X\).
 
@@ -7581,7 +7681,7 @@ Vamos inserir duas outras curvas à figura anterior modificando os valores de \(
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-389-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-391-1} \end{center}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -7663,7 +7763,7 @@ Veja que agora o modelo tem 4 parâmetros \(\beta_0\), \(\beta_1\), \(\beta_2\) 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-390-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-392-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-potuxeancia}{%
 \section{Função potência}\label{funuxe7uxe3o-potuxeancia}}
@@ -7688,7 +7788,7 @@ Uma relação potência é exemplo de modelo \textbf{não-linear} descrito por:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-391-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-393-1} \end{center}
 
 \hypertarget{a-representauxe7uxe3o-linear-da-funuxe7uxe3o-potuxeancia}{%
 \subsubsection*{A representação linear da função potência}\label{a-representauxe7uxe3o-linear-da-funuxe7uxe3o-potuxeancia}}
@@ -7722,7 +7822,7 @@ Veja a relação gráfica descrita por \(log(Y)\) e \(log(X)\) após as trnasfor
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-392-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-394-1} \end{center}
 
 \hypertarget{as-vuxe1rias-formas-da-funuxe7uxe3o-potuxeancia}{%
 \subsubsection*{As várias formas da função potência}\label{as-vuxe1rias-formas-da-funuxe7uxe3o-potuxeancia}}
@@ -7766,7 +7866,7 @@ Na função potência temos diferentes formatos possíveis, dependendo dos valor
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-393-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-395-1} \end{center}
 
 \hypertarget{modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii}{%
 \section{Modelo de Michaelis-Menten (ou Resposta funcional do tipo II)}\label{modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii}}
@@ -7799,7 +7899,7 @@ Vamos ao gráfico da função:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-394-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-396-1} \end{center}
 
 \hypertarget{resposta-funcional-do-tipo-iii}{%
 \section{Resposta funcional do tipo III}\label{resposta-funcional-do-tipo-iii}}
@@ -7826,7 +7926,7 @@ Compare este modelo com o anterior modificando os valores para os parâmetros \(
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-395-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-397-1} \end{center}
 
 \hypertarget{resposta-funcional-do-tipo-iv}{%
 \section{Resposta funcional do tipo IV}\label{resposta-funcional-do-tipo-iv}}
@@ -7855,7 +7955,7 @@ Varie os valores de \(\beta_2\) e compare os padrões com os modelos de resposta
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-396-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-398-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-hiperbuxf3lica}{%
 \section{Função hiperbólica}\label{funuxe7uxe3o-hiperbuxf3lica}}
@@ -7880,7 +7980,7 @@ Que tem o formato de:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-397-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-399-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-exponencial}{%
 \section{Função exponencial}\label{funuxe7uxe3o-exponencial}}
@@ -7907,7 +8007,7 @@ O modelo exponencial á amplamente utilizado em ecologia. As aplicações mais s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-398-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-400-1} \end{center}
 
 \hypertarget{funuxe7uxe3o-loguxedstica}{%
 \section{Função logística}\label{funuxe7uxe3o-loguxedstica}}
@@ -7934,7 +8034,7 @@ Varie os dois parâmetros e veja o que ocorre com a figura abaixo.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-399-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-401-1} \end{center}
 
 \hypertarget{modelo-monomolecular}{%
 \section{Modelo monomolecular}\label{modelo-monomolecular}}
@@ -7958,7 +8058,7 @@ Tem um formato similar ao da função de Michaelis-Menten com assintota em \(\be
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-400-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-402-1} \end{center}
 
 \hypertarget{modelo-de-ricker}{%
 \section{Modelo de Ricker}\label{modelo-de-ricker}}
@@ -7981,7 +8081,7 @@ O modelo de Ricker é uma opção para descrever o crescimento populacional dens
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-401-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-403-1} \end{center}
 
 \hypertarget{modelo-de-gompertz}{%
 \section{Modelo de Gompertz}\label{modelo-de-gompertz}}
@@ -8004,7 +8104,7 @@ O modelo de Gompertz é outra alternativa ao modelo Logístico. \(Y\) se aproxim
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-402-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-404-1} \end{center}
 
 \hypertarget{modelo-de-von-bertalanffy}{%
 \section{Modelo de von Bertalanffy}\label{modelo-de-von-bertalanffy}}
@@ -8028,7 +8128,7 @@ O modelo de von Bertalanffy é uma opção para modelar o \emph{crescimento de o
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-403-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-405-1} \end{center}
 
 \hypertarget{modelstat}{%
 \chapter{As partes estocásticas e determinísticas de um modelo estatístico}\label{modelstat}}
@@ -8145,7 +8245,7 @@ Aumente gradativamente o número de repetições e compare a frequência com que
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-406-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-408-1} \end{center}
 
 \hypertarget{a-parcela-determinuxedstica}{%
 \section{A parcela determinística}\label{a-parcela-determinuxedstica}}
@@ -8179,7 +8279,7 @@ Se assumirmos que \(g(x)\) deverá ser uma função crescente da elevação, pod
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-407-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-409-1} \end{center}
 
 Veja que este modelo tem uma limitação importante para ser utilizado neste situação. O parâmetro \(p\) por ser uma probabilidade, deve estar restrido ao limites entre \(0\) e \(1\). Entretanto, a função linear é sempre crescente e permite tanto valores negativos quando acima de \(1\) o que não faz sentido para oproblema em questão.
 
@@ -8205,11 +8305,11 @@ que assume o formato:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-408-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-410-1} \end{center}
 
 De fato, a equação logística seria a primeira a ser considerada em uma situação deste tipo, ainda que outros modelos possam ser aplicados. Ao assumir a equação logística, nosso \textbf{modelo estatístico} está completo, em que \(Y\) é uma variável aleatória Binomial (porção aleatória), que tem o parâmetro \(p\) como uma função logística da elevação \(X\) (porção detrminística) e \(n\) é o número de riachos selecionados para um dado valor de elevação.
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-409-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-411-1} \end{center}
 
 O modelo estatístico apropriado para prever a ocorrência da espécie em um dado riacho poderia ser escrito como:
 
@@ -8247,32 +8347,32 @@ Em experimento deste tipo, um dos principais interesse é saber o nível de polu
 \hypertarget{o-modelo-estatuxedstico-da-regressuxe3o-linear}{%
 \section{O modelo estatístico da regressão linear}\label{o-modelo-estatuxedstico-da-regressuxe3o-linear}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-410-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-412-1} \end{center}
 
 \hypertarget{emv}{%
 \chapter{Estimando os parâmetros: a ideia da Máxima Verossimilhança}\label{emv}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-411-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-413-1} \end{center}
 
 \hypertarget{aic}{%
 \chapter{Comparando modelos: uma questão de parcimônia}\label{aic}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-412-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-414-1} \end{center}
 
 \hypertarget{statbayes}{%
 \chapter{Da verossimilhança à estatística Bayesiana}\label{statbayes}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-413-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-415-1} \end{center}
 
 \hypertarget{varmodels}{%
 \chapter{Uma variedade de modelos estatísticos: modelando a variância}\label{varmodels}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-414-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-416-1} \end{center}
 
 \hypertarget{nindep}{%
 \chapter{Uma variedade de modelos estatísticos: modelando os resíduos}\label{nindep}}
 
-\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-415-1} \end{center}
+\begin{center}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-417-1} \end{center}
 
   \bibliography{book.bib,packages.bib}
 

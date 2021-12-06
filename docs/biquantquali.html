@@ -268,7 +268,10 @@ div.csl-indent {
 <li class="chapter" data-level="10.2" data-path="biquant.html"><a href="biquant.html#coeficiente-de-correlação-linear-de-pearson-r"><i class="fa fa-check"></i><b>10.2</b> Coeficiente de correlação linear de Pearson <span class="math inline">\(r\)</span></a></li>
 <li class="chapter" data-level="10.3" data-path="biquant.html"><a href="biquant.html#exemplo"><i class="fa fa-check"></i><b>10.3</b> Exemplo</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a></li>
+<li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a></li>
+</ul></li>
 <li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
 <li class="chapter" data-level="12" data-path="popamostra.html"><a href="popamostra.html"><i class="fa fa-check"></i><b>12</b> Descrevendo populações e amostras</a>
 <ul>
@@ -501,8 +504,349 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="biquantquali" class="section level1" number="11">
 <h1><span class="header-section-number">Capítulo 11</span> Análise bidimensional: variáveis quantitativas e qualitativas</h1>
-<p>Para finalizar a seção sobre estatística descritiva, vamos entender como podemos mensurar o grau de associação entre uma variável <span class="math inline">\(Y\)</span> contínua e uma variável <span class="math inline">\(X\)</span> categórica. Iremos nos referir ao processo de <strong>Partição da Soma dos Quadrados</strong> e, para tal, precisamos retornar aos conceitos de soma dos quadrados e variância amostral visto nos capitulos anteriores. O processo de partição da soma dos quadrados é central nos delineamentos de <strong>Análise de Variância</strong> (Capítulos <a href="anova.html#anova">19</a> a <a href="repanova.html#repanova">24</a>) e de <strong>Regressão linear</strong> (Capítulos <a href="regressao.html#regressao">21</a> e <a href="regresmultipla.html#regresmultipla">22</a>) que veremos nas próximas seções.</p>
+<p>Para finalizar a seção sobre estatística descritiva, vamos entender como podemos mensurar o grau de associação entre uma variável <span class="math inline">\(Y\)</span> contínua e uma variável <span class="math inline">\(X\)</span> categórica. Iremos nos referir ao processo de <strong>Partição da Soma dos Quadrados</strong> e, para tal, precisamos retornar aos conceitos de soma dos quadrados e variância amostral vistos nos capitulos anteriores. O processo de partição da soma dos quadrados é central nos delineamentos de <strong>Análise de Variância</strong> (Capítulos <a href="anova.html#anova">19</a> a <a href="repanova.html#repanova">24</a>) e de <strong>Regressão linear</strong> (Capítulos <a href="regressao.html#regressao">21</a> e <a href="regresmultipla.html#regresmultipla">22</a>) que veremos nas próximas seções.</p>
+<div id="visualizando-a-distribuição-de-y-em-diferentes-grupos" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</h2>
+<p>Vamos utilizar um conjunto de dados originalmente disponível neste link:<a href="https://github.com/cornwell-lab-unsw/EnvironmentalComputing/blob/master/5_Statistics/Linear%20models/ANOVA-single%20factor/Turtles.csv" target="_blank">Turtles.csv</a> sobre o tempo de incubação de ovos de tartaruga em quatro temperaturas (<span class="math inline">\(15^oC\)</span>, <span class="math inline">\(20^oC\)</span>, <span class="math inline">\(25^oC\)</span>e <span class="math inline">\(30^oC\)</span>). Para mais detalhes acesse: <a href="http://environmentalcomputing.net/analysis-variance-single-factor/" target="_blank">Environmental Computing </a>.</p>
+<p>Importe o conjunto de dados</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="biquantquali.html#cb127-1" aria-hidden="true" tabindex="-1"></a>turtles <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;Turtles.csv&quot;</span>)</span>
+<span id="cb127-2"><a href="biquantquali.html#cb127-2" aria-hidden="true" tabindex="-1"></a>turtles</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Temperature
+</th>
+<th style="text-align:right;">
+Days
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+37
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+43
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+45
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+54
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+56
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+65
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+62
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+73
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+74
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+75
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+53
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+54
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+63
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+64
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+52
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+52
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+54
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+54
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+61
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+62
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+65
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+39
+</td>
+</tr>
+</tbody>
+</table>
 
+</div>
 </div>
 
 

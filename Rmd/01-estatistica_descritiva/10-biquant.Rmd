@@ -200,6 +200,7 @@ E a correlação pela função `cor`:
 cor(tigre$Tiger, tigre$King)
 ```
 
+
 ```{r echo = FALSE}
 rm(list = ls())
 ```

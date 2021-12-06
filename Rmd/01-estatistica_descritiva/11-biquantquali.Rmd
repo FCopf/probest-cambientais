@@ -4,7 +4,60 @@
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
 ```
 
-Para finalizar a seção sobre estatística descritiva, vamos entender como podemos mensurar o grau de associação entre uma variável $Y$ contínua e uma variável $X$ categórica. Iremos nos referir ao processo de **Partição da Soma dos Quadrados** e, para tal, precisamos retornar aos conceitos de soma dos quadrados e variância amostral visto nos capitulos anteriores. O processo de partição da soma dos quadrados é central nos delineamentos de **Análise de Variância** (Capítulos \@ref(anova) a \@ref(repanova)) e de **Regressão linear** (Capítulos \@ref(regressao) e \@ref(regresmultipla)) que veremos nas próximas seções.
+Para finalizar a seção sobre estatística descritiva, vamos entender como podemos visualizar a relação entre uma variável $Y$ contínua e uma variável $X$ categórica e mensurar o grau de associação entre as variáveis. Iremos nos referir à variável contínua $Y$ como **variável dependente** e à variàvel categórica $X$ como variável independente. Neste caso, assumimos *explicitamente* que $Y$ é função de $X$ e não o contrário. 
+
+Para mensurar o grau de associação entre $Y$ e $X$ iremos nos referir ao processo de **Partição da Soma dos Quadrados** e, para tal, precisamos retornar aos conceitos de soma dos quadrados e variância amostral vistos nos capitulos anteriores. O processo de partição da soma dos quadrados é central nos delineamentos de **Análise de Variância** (Capítulos \@ref(anova) a \@ref(repanova)) e de **Regressão linear** (Capítulos \@ref(regressao) e \@ref(regresmultipla)) que veremos nas próximas seções.
+
+## Visualizando a distribuição de $Y$ em diferentes grupos
+
+Considere o conjunto de dados medley.csv (disponível também em <a href="https://users.monash.edu.au/~murray/BDAR/" target="_blank">Chapter 10 - Single factor classification (ANOVA)</a>) que avalia o impacto da presença de metais paseados na diversidade de espécies de diatomácias em riachos [@medleyclements1998; @queen2002experimental; logan2011biostatistica].
+
+```{r echo = TRUE, eval = FALSE}
+medley = read_csv("medley.csv")
+medley
+```
+
+```{r}
+medley = read_csv("datasets/medley.csv") %>% 
+  mutate(STREAM = factor(STREAM),
+         ZINC = factor(ZINC, ordered = TRUE,
+                       levels = c("BACK", "LOW", "MED", "HIGH")))
+medley %>% kable()
+var_medley = colnames(medley)
+stream_levels = levels(medley$STREAM)
+n_stream = nlevels(medley$STREAM)
+zinc_levels = levels(medley$ZINC)
+n_zinc = nlevels(medley$ZINC)
+```
+
+A coluna `r var_medley[1]` é uma variável categórica contendo o nome dos $`r n_stream`$ riachos amostrados (`r paste(stream_levels, collapse = ', ')`). A coluna `r var_medley[2]` é uma variável categórica ordinal com $`r n_zinc`$ níveis de concentração de zinco na água (`r paste(zinc_levels, collapse = ' < ')`). O primeiro nível (`r zinc_levels[1]`) é o nível de referência (**BACKGROUND**). Finalmente, a coluna `r var_medley[3]` é uma variável contínua e contém a diversidade de diatomácieas (medida pelo índice de diversidade de <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_Shannon" target="_blank">Shannon</a>) encontrada e cada uma das `r nrow(medley)`.
+
+## Os níveis de um tratamento podem ser variáveios contínuas
+
+Vamos utilizar um conjunto de dados originalmente disponíveis neste link:<a href="https://users.monash.edu.au/~murray/BDAR/" target="_blank">Turtles.csv</a> sobre o tempo de incubação de ovos de tartaruga em quatro temperaturas ($15^oC$, $20^oC$, $25^oC$e $30^oC$). Para mais detalhes acesse: <a href="http://environmentalcomputing.net/analysis-variance-single-factor/" target="_blank">Environmental Computing </a>.
+
+Importe o conjunto de dados
+
+```{r echo = TRUE, eval = FALSE}
+turtles = read_csv("Turtles.csv")
+turtles
+```
+
+```{r}
+turtles = read_csv("datasets/Turtles.csv")
+kable(turtles)
+```
+
+Medley and Clements (1998) investigated the impact of zinc contamination (and other
+heavy metals) on the diversity of diatom species in the USA Rocky Mountains (from
+Box 8.1 of Quinn and Keough (2002)). The diversity of diatoms (number of species)
+and degree of zinc contamination (categorized as either of high, medium, low or natural
+background level) were recorded from between four and six sampling stations within each
+of six streams known to be polluted. These data were used to test the null hypothesis
+that there were no differences the diversity of diatoms between different zinc levels (H0:
+μH = μM = μL = μB = μ; αi = 0).
+
+
 
 ```{r echo = FALSE}
 rm(list = ls())
