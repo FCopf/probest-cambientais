@@ -140,7 +140,7 @@ df_z %>%
             CPUE_z_dp = round(sd(CPUE_z),2))
 ```
 
-```{r echo = TRUE, eval = FALSE}
+```{r echo = FALSE, eval = TRUE}
 df_z %>% 
   summarize(CPUE_media = mean(CPUE),
             CPUE_dp = sd(CPUE),

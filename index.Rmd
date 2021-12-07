@@ -15,16 +15,17 @@ description: "Estatística nas Ciências Ambientais"
 
 # Índice {-}
 
+I - Estatística descritiva (capítulos \@ref(estrdados) e \@ref(biquantquali))
 
-I. Estatística descritiva (capítulos \@ref(estrdados) e \@ref(biquantquali))
+II - Amostragem e Delineamento (capítulos \@ref(popamostra) a \@ref(amostrmedias))
 
-II. Amostragem e Inferência Estatística (capítulos \@ref(popamostra) a \@ref(testet))
+III - Inferência e Teste de Hipóteses (capítulos \@ref(normdist) a \@ref(testet))
 
-III. Modelos Lineares Clássicos (capítulos \@ref(regressao) a \@ref(repanova))
+IV - Modelos Lineares Clássicos (capítulos \@ref(regressao) a \@ref(repanova))
 
-IV. Fundamentos de probabilidade (capítulos \@ref(espacoamostral) a \@ref(tbayes))
+V - Fundamentos de probabilidade (capítulos \@ref(espacoamostral) a \@ref(tbayes))
 
-V - Modelos Probabilísticos, verossimilhança e inferência bayesiana (capítulos \@ref(va) a \@ref(nindep))
+VI - Modelos Probabilísticos, verossimilhança e inferência bayesiana (capítulos \@ref(va) a \@ref(nindep))
 
 
 ```{r include=FALSE, fig.width=5, fig.align='center'}

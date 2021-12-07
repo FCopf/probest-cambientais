@@ -6,7 +6,7 @@
 ]{book}
 \title{Estatística nas Ciências Ambientais}
 \author{Fabio Cop Ferreira \and \href{mailto:fabiocopf@gmail.com}{\nolinkurl{fabiocopf@gmail.com}}; \href{mailto:fcferreira@unifesp.br}{\nolinkurl{fcferreira@unifesp.br}} \and Instituto do Mar, Universidade Federal de São Paulo}
-\date{Última atualização em 06/12/2021}
+\date{Última atualização em 07/12/2021}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -151,20 +151,17 @@
 \chapter*{Índice}\label{uxedndice}}
 \addcontentsline{toc}{chapter}{Índice}
 
-I. Estatística descritiva (capítulos \ref{estrdados} e \ref{biquantquali})
+I - Estatística descritiva (capítulos \ref{estrdados} e \ref{biquantquali})
 
-\begin{enumerate}
-\def\labelenumi{\Roman{enumi}.}
-\setcounter{enumi}{1}
-\item
-  Amostragem e Inferência Estatística (capítulos \ref{popamostra} a \ref{testet})
-\item
-  Modelos Lineares Clássicos (capítulos \ref{regressao} a \ref{repanova})
-\item
-  Fundamentos de probabilidade (capítulos \ref{espacoamostral} a \ref{tbayes})
-\end{enumerate}
+II - Amostragem e Delineamento (capítulos \ref{popamostra} a \ref{amostrmedias})
 
-V - Modelos Probabilísticos, verossimilhança e inferência bayesiana (capítulos \ref{va} a \ref{nindep})
+III - Inferência e Teste de Hipóteses (capítulos \ref{normdist} a \ref{testet})
+
+IV - Modelos Lineares Clássicos (capítulos \ref{regressao} a \ref{repanova})
+
+V - Fundamentos de probabilidade (capítulos \ref{espacoamostral} a \ref{tbayes})
+
+VI - Modelos Probabilísticos, verossimilhança e inferência bayesiana (capítulos \ref{va} a \ref{nindep})
 
 \hypertarget{part-estatuxedstica-descritiva}{%
 \part{Estatística descritiva}\label{part-estatuxedstica-descritiva}}
@@ -3267,16 +3264,13 @@ Se calcularmos a média e desvio padrão das variáveis verermos que \texttt{CPU
 \end{Highlighting}
 \end{Shaded}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{df\_z }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{CPUE\_media =} \FunctionTok{mean}\NormalTok{(CPUE),}
-            \AttributeTok{CPUE\_dp =} \FunctionTok{sd}\NormalTok{(CPUE),}
-            \AttributeTok{CPUE\_z\_media =} \FunctionTok{mean}\NormalTok{(CPUE\_z),}
-            \AttributeTok{CPUE\_z\_dp =} \FunctionTok{sd}\NormalTok{(CPUE\_z)) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{kable}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+\begin{tabular}{r|r|r|r}
+\hline
+CPUE\_media & CPUE\_dp & CPUE\_z\_media & CPUE\_z\_dp\\
+\hline
+12.70097 & 7.3701 & 0 & 1\\
+\hline
+\end{tabular}
 
 \hypertarget{valores-esperados-de-z-em-uma-distribuiuxe7uxe3o-normal-padronizada}{%
 \section{\texorpdfstring{Valores esperados de \(Z\) em uma distribuição normal padronizada}{Valores esperados de Z em uma distribuição normal padronizada}}\label{valores-esperados-de-z-em-uma-distribuiuxe7uxe3o-normal-padronizada}}
@@ -4323,10 +4317,10 @@ Podemos agora observar estes elementos no gráfico de dispersão.
 
 \includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-226-1.pdf}
 
-Em seguida, precisamos calcular \(3\) quantias: 1 - a \textbf{Soma dos Quadrados Totais} (\(SQ_{Total}\)), 2 - a \textbf{Soma dos Quadrados dos Tratamentos} \(SQ_{Trat}\) e 3 - a \textbf{Soma dos Quadrados dos Resíduos} \(SQ_{Res}\).
+Em seguida, precisamos calcular \(3\) quantias: i - a \textbf{Soma dos Quadrados Totais} (\(SQ_{Total}\)), ii - a \textbf{Soma dos Quadrados dos Tratamentos} \(SQ_{Trat}\) e iii - a \textbf{Soma dos Quadrados dos Resíduos} \(SQ_{Res}\).
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \textbf{Soma dos Quadrados Totais} \(SQ_{Total}\): mede as diferenças entre \(Y_{ij}\) e \(\overline{\overline{Y}}\). Temos nesta expressão o somatório dos desvios ao quadrados de todas as observações com relação à grande média \textbf{independente} do grupo de origem de cada observação.
@@ -4335,7 +4329,7 @@ Em seguida, precisamos calcular \(3\) quantias: 1 - a \textbf{Soma dos Quadrados
 \[SQ_{Total} = \sum_{j = 1}^{k}\sum_{i = 1}^{n}(Y_{ij} - \overline{\overline{Y}})^2\]
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \setcounter{enumi}{1}
 \tightlist
 \item
@@ -4345,7 +4339,7 @@ Em seguida, precisamos calcular \(3\) quantias: 1 - a \textbf{Soma dos Quadrados
 \[SQ_{Trat} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(Y_{j} - \overline{\overline{Y}})^2 = \sum_{j = 1}^{k}n_{j}(Y_{j} - \overline{\overline{Y}})^2\]
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \setcounter{enumi}{2}
 \tightlist
 \item
@@ -4355,7 +4349,7 @@ Em seguida, precisamos calcular \(3\) quantias: 1 - a \textbf{Soma dos Quadrados
 \[SQ_{Res} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(Y_{ij} - \overline{Y}_{j})^2\]
 
 \hypertarget{a-caracteruxedstica-aditiva-das-somas-dos-quadrados}{%
-\section{A característica aditiva das somas dos quadrados}\label{a-caracteruxedstica-aditiva-das-somas-dos-quadrados}}
+\subsection{A característica aditiva das somas dos quadrados}\label{a-caracteruxedstica-aditiva-das-somas-dos-quadrados}}
 
 A partição da soma dos quadrados consiste em decompor a \textbf{variação total} do experimento em uma parcela atribuída à variação \textbf{entre tratamentos} e outra parcela da variação \textbf{dentro dos tratamentos}. Isto é possível pois as somas dos quadrados definidas acima podem ser expressas de forma aditiva como:
 
@@ -4372,7 +4366,7 @@ Deste modo, é possível demostrar que:
 \end{quote}
 
 \hypertarget{medindo-a-associauxe7uxe3o-entre-y-e-x}{%
-\section{\texorpdfstring{Medindo a associação entre \(Y\) e \(X\)}{Medindo a associação entre Y e X}}\label{medindo-a-associauxe7uxe3o-entre-y-e-x}}
+\subsection{\texorpdfstring{Medindo a associação entre \(Y\) e \(X\)}{Medindo a associação entre Y e X}}\label{medindo-a-associauxe7uxe3o-entre-y-e-x}}
 
 As somas dos quadrados definidas acima e sua característica aditiva podem ser utilizadas para diferenciarmos situações em que a média em \(Y\) \textbf{depende} do nível do tratamento. Compare as duas figuras abaixo:
 
@@ -4383,7 +4377,7 @@ A soma dos quadrados dentro dos grupos é a mesma (\(SQ_{Res} = 362.6\)). No ent
 A compreensão desta ideia é central para entendermos os delineamentos de \textbf{Análise de Variância} (Capítulos \ref{anova} a \ref{repanova}) e de \textbf{Regressão linear} (Capítulos \ref{regressao} e \ref{regresmultipla}) que veremos nas próximas seções.
 
 \hypertarget{o-coeficiente-de-determinauxe7uxe3o-r2}{%
-\section{\texorpdfstring{O coeficiente de determinação (\(R^2\))}{O coeficiente de determinação (R\^{}2)}}\label{o-coeficiente-de-determinauxe7uxe3o-r2}}
+\subsection{\texorpdfstring{O coeficiente de determinação (\(R^2\))}{O coeficiente de determinação (R\^{}2)}}\label{o-coeficiente-de-determinauxe7uxe3o-r2}}
 
 Podemos expressar a relação entre \(SQ_{Trat}\) e \(SQ_{Total}\) pela expressão:
 
@@ -4431,8 +4425,8 @@ Por fim, o \(R^2\) pode ser calculado por:
 ## [1] 0.2825725
 \end{verbatim}
 
-\hypertarget{part-amostragem-e-inferuxeancia-estatuxedstica}{%
-\part{Amostragem e Inferência Estatística}\label{part-amostragem-e-inferuxeancia-estatuxedstica}}
+\hypertarget{part-amostragem-e-delineamento}{%
+\part{Amostragem e Delineamento}\label{part-amostragem-e-delineamento}}
 
 \hypertarget{popamostra}{%
 \chapter{Descrevendo populações e amostras}\label{popamostra}}
@@ -4786,6 +4780,9 @@ Após esta discussão, podemos representar os conceitos de precisão e acurária
 
 \caption{Representação dos conceitos de precisão e acurácia. A linha vermelha tracejada representa a média populacional e os histogramas representam a distribuição de todas a médias amostrais com tamanho n desta população. A: estimativas acuradas e não-precisas; B: acuradas e precisas; C: não-acuradas e precisas; D: não-acuradas e não-precisas.}\label{fig:unnamed-chunk-251}
 \end{figure}
+
+\hypertarget{part-inferuxeancia-e-teste-de-hipuxf3teses}{%
+\part{Inferência e Teste de Hipóteses}\label{part-inferuxeancia-e-teste-de-hipuxf3teses}}
 
 \hypertarget{normdist}{%
 \chapter{Alguns fenômenos têm distribuição normal}\label{normdist}}

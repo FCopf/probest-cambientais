@@ -1,0 +1,46 @@
+# Análise de variância de um fator {#anova}
+
+A *Análise de Variância* (**ANOVA**) desenvolvida por <a href="https://en.wikipedia.org/wiki/Ronald_Fisher" target="_blank">R. A. Fisher</a> aplica-se à uma classe de desenho experimenteal em que a variável resposta $Y$ é *contínua* e a variável explanatória $X$ é *categórica* com $2$ ou mais níveis. A ANOVA permite testarmos a hipótese de que duas ou mais médias amostrais ($\overline{Y}_i$) possam ter sido obtidas de uma mesma população estatística com média $\mu$. Alternativamente, podemos concluir que as médias amostrais diferem umas das outras, de tal forma que devemos assumir que foram amostradas a partir de diferentes populações estatísticas, nas quais ao menos um $\mu_i$ seja diferente dos demais. Iremos denominar estas duas possibilidades de **hipótese estatísticas** a cerca do relacionamento entre as médias populacionais. Assim a hipótese nula ($H_0$) define a ausência de diferenças:
+
+$H_0: \mu_1 = \mu_2 = \mu_3 =.... = \mu_m$
+
+Enquanto a hipótese alternativa ($H_a$) refere-se a qualquer possibilidade diferente da primeira de modo que:
+
+$H_a$: ao menos um $\mu$ é diferente
+
+Se temos exatamente dois níveis em $X$, a comparação de médias pode ser feita por meio de um teste $t$. A ANOVA deve ser utilizada quando temos **mais** de dois níveis em $X$. Neste sentido, o teste $t$ é um caso particular, enquanto a ANOVA é um caso geral, que permite inferir sobre a origem de duas ou mais médias amostrais.
+
+
+## O modelo da ANOVA
+
+A ANOVA faz parte da classe de **modelos lineares**, a luz do modelo de regressão (Capítulo \ref@(regressao)). O modelo de ANOVA pode ser descrito conforme abaixo:
+
+$$Y_{ij} = \mu + A_i + \epsilon_{ij}$$
+
+onde $Y_{ij}$ é a variável resposta associada à observação $j$ do tratamento $i$, $\mu$ a média geral e $A_i$ o efeito do tratamento $i$. $\epsilon_{ij}$ é denominado de **resíduo** (ou *erro*) associado a cada observação que, assim como na regressão, assumimos que $\epsilon$ tem distribuição normal com média zero e variância constante, $\epsilon \sim N(0, \sigma^2)$.
+
+**PAREI**
+
+[https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia](https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia)
+
+A figura abaixo exemplifica o tipo de experimento que pode ser analisado por meio de uma ANOVA. Vemos n = 30 observações independentes de um experimento, distribuídas em a = 4 tratamentos. A ANOVA nos permite testar se as médias amostrais de cada tratamento são provenientes de uma mesma população estatística com média μ (H0) ou se ao menos uma delas provém de uma população com um μ diferente (Ha).
+
+A ANOVA faz a **partição da soma dos quadrados totais** para quantificar o percentual da variação associado a um determinado tratamento ou aos resíduos como veremos a seguir. As médias são resultantes de observações independentes denominadas de **réplicas** associadas a cada um dos tratamentos de um experimento.
+
+### Quadrados médios
+
+Para que os somatórios dos quadrados expressem uma medida de variação é necessáro corrigir para o tamanhos amostrais apropriados. Fazemos isto obtendo os **Quadrados médios**. Estas quantias são dadas por:
+
+1. Quadrado médio total ($QM_{Total}$)
+
+$$QM_{Total} = \frac{SQ_{Total}}{N -1}$$
+
+2. Quadrado médio entre tratamentos ($QM_{Trat}$)
+
+$$QM_{Total} = \frac{SQ_{Trat}}{k - 1}$$
+
+3. Quadrado médio dentro dos tratamentos ($QM_{Res}$)
+
+$$QM_{Total} = \frac{SQ_{Res}}{N-k}$$
+
+Os quadrados médios que são estimativas das variâncias total ($QM_{Total}$), da variância **entre tratamentos** ($QM_{Trat}$) e da variâncias **dentro dos tratamentos** ($QM_{Res}$). Compare a expressão do $QM_{Total}$ com a fórmula da variância amostral ($s^2$) descrita no capítulo \@ref(variacao) e verá que excetuando mudanças de notação, as expressões são essencialmente as mesmas.

@@ -1,6 +1,0 @@
-# Uma variedade de modelos estatísticos: modelando a variância {#varmodels}
-
-```{r, fig.align = 'center', fig.width=5, fig.height=5}
-uc <- image_read("figs/under_construction_2.jpg")
-grid.arrange(rasterGrob(uc), nrow = 1, ncol = 1)
-```
