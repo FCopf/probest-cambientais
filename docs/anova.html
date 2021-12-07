@@ -270,7 +270,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a></li>
+<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="biquantquali.html"><a href="biquantquali.html#boxplots-para-os-níveis-do-tratamento"><i class="fa fa-check"></i><b>11.1.1</b> Boxplots para os níveis do tratamento</a></li>
+<li class="chapter" data-level="11.1.2" data-path="biquantquali.html"><a href="biquantquali.html#o-gráfico-de-erros"><i class="fa fa-check"></i><b>11.1.2</b> O gráfico de erros</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="biquantquali.html"><a href="biquantquali.html#partição-das-soma-dos-quadrados"><i class="fa fa-check"></i><b>11.2</b> Partição das Soma dos Quadrados</a></li>
+<li class="chapter" data-level="11.3" data-path="biquantquali.html"><a href="biquantquali.html#a-característica-aditiva-das-somas-dos-quadrados"><i class="fa fa-check"></i><b>11.3</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="11.4" data-path="biquantquali.html"><a href="biquantquali.html#medindo-a-associação-entre-y-e-x"><i class="fa fa-check"></i><b>11.4</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="11.5" data-path="biquantquali.html"><a href="biquantquali.html#o-coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>11.5</b> O coeficiente de determinação (<span class="math inline">\(R^2\)</span>)</a></li>
+<li class="chapter" data-level="11.6" data-path="biquantquali.html"><a href="biquantquali.html#voltando-ao-conjundo-de-dados-medley.csv"><i class="fa fa-check"></i><b>11.6</b> Voltando ao conjundo de dados <code>medley.csv</code></a></li>
 </ul></li>
 <li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
 <li class="chapter" data-level="12" data-path="popamostra.html"><a href="popamostra.html"><i class="fa fa-check"></i><b>12</b> Descrevendo populações e amostras</a>
@@ -355,7 +364,10 @@ div.csl-indent {
 <li class="part"><span><b>III Modelos Lineares Clássicos</b></span></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>19.1</b> O modelo da ANOVA</a></li>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>19.1</b> O modelo da ANOVA</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>19.1.1</b> Quadrados médios</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>20</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="21" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>21</b> Regressão linear e correlação</a>
@@ -518,7 +530,24 @@ div.csl-indent {
 <p><a href="https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia">https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia</a></p>
 <p>A figura abaixo exemplifica o tipo de experimento que pode ser analisado por meio de uma ANOVA. Vemos n = 30 observações independentes de um experimento, distribuídas em a = 4 tratamentos. A ANOVA nos permite testar se as médias amostrais de cada tratamento são provenientes de uma mesma população estatística com média μ (H0) ou se ao menos uma delas provém de uma população com um μ diferente (Ha).</p>
 <p>A ANOVA faz a <strong>partição da soma dos quadrados totais</strong> para quantificar o percentual da variação associado a um determinado tratamento ou aos resíduos como veremos a seguir. As médias são resultantes de observações independentes denominadas de <strong>réplicas</strong> associadas a cada um dos tratamentos de um experimento.</p>
+<div id="quadrados-médios" class="section level3" number="19.1.1">
+<h3><span class="header-section-number">19.1.1</span> Quadrados médios</h3>
+<p>Para que os somatórios dos quadrados expressem uma medida de variação é necessáro corrigir para o tamanhos amostrais apropriados. Fazemos isto obtendo os <strong>Quadrados médios</strong>. Estas quantias são dadas por:</p>
+<ol style="list-style-type: decimal">
+<li>Quadrado médio total (<span class="math inline">\(QM_{Total}\)</span>)</li>
+</ol>
+<p><span class="math display">\[QM_{Total} = \frac{SQ_{Total}}{N -1}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Quadrado médio entre tratamentos (<span class="math inline">\(QM_{Trat}\)</span>)</li>
+</ol>
+<p><span class="math display">\[QM_{Total} = \frac{SQ_{Trat}}{k - 1}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Quadrado médio dentro dos tratamentos (<span class="math inline">\(QM_{Res}\)</span>)</li>
+</ol>
+<p><span class="math display">\[QM_{Total} = \frac{SQ_{Res}}{N-k}\]</span></p>
+<p>Os quadrados médios que são estimativas das variâncias total (<span class="math inline">\(QM_{Total}\)</span>), da variância <strong>entre tratamentos</strong> (<span class="math inline">\(QM_{Trat}\)</span>) e da variâncias <strong>dentro dos tratamentos</strong> (<span class="math inline">\(QM_{Res}\)</span>). Compare a expressão do <span class="math inline">\(QM_{Total}\)</span> com a fórmula da variância amostral (<span class="math inline">\(s^2\)</span>) descrita no capítulo <a href="variacao.html#variacao">6</a> e verá que excetuando mudanças de notação, as expressões são essencialmente as mesmas.</p>
 
+</div>
 </div>
 </div>
             </section>

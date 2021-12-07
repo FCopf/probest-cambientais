@@ -270,7 +270,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a></li>
+<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="biquantquali.html"><a href="biquantquali.html#boxplots-para-os-níveis-do-tratamento"><i class="fa fa-check"></i><b>11.1.1</b> Boxplots para os níveis do tratamento</a></li>
+<li class="chapter" data-level="11.1.2" data-path="biquantquali.html"><a href="biquantquali.html#o-gráfico-de-erros"><i class="fa fa-check"></i><b>11.1.2</b> O gráfico de erros</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="biquantquali.html"><a href="biquantquali.html#partição-das-soma-dos-quadrados"><i class="fa fa-check"></i><b>11.2</b> Partição das Soma dos Quadrados</a></li>
+<li class="chapter" data-level="11.3" data-path="biquantquali.html"><a href="biquantquali.html#a-característica-aditiva-das-somas-dos-quadrados"><i class="fa fa-check"></i><b>11.3</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="11.4" data-path="biquantquali.html"><a href="biquantquali.html#medindo-a-associação-entre-y-e-x"><i class="fa fa-check"></i><b>11.4</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="11.5" data-path="biquantquali.html"><a href="biquantquali.html#o-coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>11.5</b> O coeficiente de determinação (<span class="math inline">\(R^2\)</span>)</a></li>
+<li class="chapter" data-level="11.6" data-path="biquantquali.html"><a href="biquantquali.html#voltando-ao-conjundo-de-dados-medley.csv"><i class="fa fa-check"></i><b>11.6</b> Voltando ao conjundo de dados <code>medley.csv</code></a></li>
 </ul></li>
 <li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
 <li class="chapter" data-level="12" data-path="popamostra.html"><a href="popamostra.html"><i class="fa fa-check"></i><b>12</b> Descrevendo populações e amostras</a>
@@ -355,7 +364,10 @@ div.csl-indent {
 <li class="part"><span><b>III Modelos Lineares Clássicos</b></span></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>19.1</b> O modelo da ANOVA</a></li>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>19.1</b> O modelo da ANOVA</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>19.1.1</b> Quadrados médios</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>20</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="21" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>21</b> Regressão linear e correlação</a>
@@ -523,7 +535,7 @@ e</p>
 <div id="teorema-da-probabilidade-total" class="section level2" number="28.2">
 <h2><span class="header-section-number">28.2</span> Teorema da probabilidade total</h2>
 <p>Veja novamente a esquema concentual de um diagrama de árvore:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-370-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-388-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Podemos perceber que dois caminhos nos levam à ocorrência de <span class="math inline">\(A\)</span>. Um caminho em que <span class="math inline">\(B\)</span> <strong>também ocorre</strong> - com probabilidade <span class="math inline">\(P(A \cap B)\)</span> - <strong>ou</strong> um caminho em que <span class="math inline">\(B\)</span> <em>não ocorre</em> - com probabilidade <span class="math inline">\(P(A \cap \overline{B})\)</span>. Uma vez que estas rotas são mutuamente exclusivas, <span class="math inline">\(P(A)\)</span> pode ser calculado por:</p>
 <p><span class="math display">\[P(A) = P(A \cap B) + P(A \cap \overline{B})\]</span></p>
 <p>que podemos re-escrever como:</p>
@@ -537,8 +549,8 @@ e</p>
 <p>A detecção desta espécie é feita pela captura e identificação taxonômica. Dado que esteja presente em uma poça, sua probabilidade de ser capturada é de <span class="math inline">\(0,99\)</span>. Consequentemente, existe uma probabilidade de <span class="math inline">\(0,01\)</span> de que, mesmo estando presente, a espécie não seja capturada, o que é conhecido como <strong>falso negativo</strong>. Um falso negativo pode acontecer por exemplo se os indivíduos permanecem escondidos sob o substrato e não são capturados.</p>
 <p>Sabe-se também que existe na região uma espécie muito similar e, por vezes, ocorre um erro de identificação. Desta forma, mesmo nas poças em que a espécie não está presente, existe uma possibilidade de que seja registrada erroneamente, o que pode ocorrer com probabilidade de <span class="math inline">\(0,10\)</span>. Chamamos esta possibilidade de <strong>falso positivo</strong>. O problema da não-detecção ou da falsa-detecção, longe de ser somente um exemplo, é comum em levantamentos de fauna e flora ainda que raramente seja considerado.</p>
 <p>As probabilidades descritas neste problema podem ser organizadas em um diagrama de árvore.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-371"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-371-1.png" alt="Diagrama de árvore representando as probabilidades de ocorrência P(O) e detecção P(D) de uma espécie." width="576" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-389"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-389-1.png" alt="Diagrama de árvore representando as probabilidades de ocorrência P(O) e detecção P(D) de uma espécie." width="576" />
 <p class="caption">
 Figure 28.1: Diagrama de árvore representando as probabilidades de ocorrência P(O) e detecção P(D) de uma espécie.
 </p>

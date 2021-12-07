@@ -270,7 +270,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="biquantquali.html"><a href="biquantquali.html"><i class="fa fa-check"></i><b>11</b> Análise bidimensional: variáveis quantitativas e qualitativas</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a></li>
+<li class="chapter" data-level="11.1" data-path="biquantquali.html"><a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos"><i class="fa fa-check"></i><b>11.1</b> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="biquantquali.html"><a href="biquantquali.html#boxplots-para-os-níveis-do-tratamento"><i class="fa fa-check"></i><b>11.1.1</b> Boxplots para os níveis do tratamento</a></li>
+<li class="chapter" data-level="11.1.2" data-path="biquantquali.html"><a href="biquantquali.html#o-gráfico-de-erros"><i class="fa fa-check"></i><b>11.1.2</b> O gráfico de erros</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="biquantquali.html"><a href="biquantquali.html#partição-das-soma-dos-quadrados"><i class="fa fa-check"></i><b>11.2</b> Partição das Soma dos Quadrados</a></li>
+<li class="chapter" data-level="11.3" data-path="biquantquali.html"><a href="biquantquali.html#a-característica-aditiva-das-somas-dos-quadrados"><i class="fa fa-check"></i><b>11.3</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="11.4" data-path="biquantquali.html"><a href="biquantquali.html#medindo-a-associação-entre-y-e-x"><i class="fa fa-check"></i><b>11.4</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="11.5" data-path="biquantquali.html"><a href="biquantquali.html#o-coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>11.5</b> O coeficiente de determinação (<span class="math inline">\(R^2\)</span>)</a></li>
+<li class="chapter" data-level="11.6" data-path="biquantquali.html"><a href="biquantquali.html#voltando-ao-conjundo-de-dados-medley.csv"><i class="fa fa-check"></i><b>11.6</b> Voltando ao conjundo de dados <code>medley.csv</code></a></li>
 </ul></li>
 <li class="part"><span><b>II Amostragem e Inferência Estatística</b></span></li>
 <li class="chapter" data-level="12" data-path="popamostra.html"><a href="popamostra.html"><i class="fa fa-check"></i><b>12</b> Descrevendo populações e amostras</a>
@@ -355,7 +364,10 @@ div.csl-indent {
 <li class="part"><span><b>III Modelos Lineares Clássicos</b></span></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>19.1</b> O modelo da ANOVA</a></li>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>19.1</b> O modelo da ANOVA</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>19.1.1</b> Quadrados médios</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>20</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="21" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>21</b> Regressão linear e correlação</a>
@@ -511,7 +523,7 @@ div.csl-indent {
 Para variáveis contínuas podemos expressar somente a probabilidade de que um experimento resulte em um <strong>intervalo</strong> de valores entre <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span>, ou seja, <span class="math inline">\(P(a \le y \le b)\)</span>. Deste modo temos que:</p>
 <p><span class="math display">\[P(-\infty \le Y \le +\infty) = \int_{-\infty}^{+\infty}p(y) dy = 1\]</span></p>
 <p>Portanto, para as variáveis contínuas, o conceito de somatório dos valores individuais para <span class="math inline">\(y\)</span> é substituído pelo conceito de <em>integração</em> em um intervalo definido e a probabilidade deste intervalo equivale à área sob a curva de probabilidade.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-382-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-400-1.png" width="960" style="display: block; margin: auto;" /></p>
 <div id="esperança-e-variância-em-modelos-contínuos" class="section level4 unnumbered">
 <h4>Esperança e variância em modelos contínuos</h4>
 <p>Vimos que o valor esperado para uma variável aleatória discreta é dado por:</p>
@@ -529,9 +541,9 @@ Para uma variável aleatória contínua, podemos definir o valor esperado como:<
 <p><span class="math display">\[f(y|\mu,\sigma) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{y-\mu}{\sigma})^2}\]</span></p>
 <p>Em que os parâmetros da função são <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> representam respectivamente a média e o desvio padrão de <span class="math inline">\(y\)</span>. Novamente nos referimos aos símbolos da média e desvio padrão conforme a notação utilizada para descrever a população estatística de um experimento (Capítulo <a href="#posicao"><strong>??</strong></a>). Na função de densidade estes parâmetros determiman a prosição central e o grau de achatamento da curva.</p>
 <p>Após o término deste tópico é importante que você leia também o que foi apresentado no capítulo <a href="normdist.html#normdist">14</a> sobre distribuição normal.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-383-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-401-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Por exemplo, se o comprimento segue uma distribuição normal com <span class="math inline">\(\mu = 10\)</span> e <span class="math inline">\(\sigma = 2\)</span> veremos que a proporção de individuos iguais ou maiores que 16 cm de comprimento é muito baixa, neste caso <span class="math inline">\(P(Y \ge 16) = 0.0013\)</span>. Por outro lado, para <span class="math inline">\(\sigma = 4\)</span>, esperamos encontrar mais indivíduos nos extremos da distribuição em que a proporção de individuos iguais ou maiores que 16 cm seria de <span class="math inline">\(P(Y \ge 16) = 0.0668\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-385-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-403-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="outros-são-altamente-assimétricos" class="section level2" number="30.2">
 <h2><span class="header-section-number">30.2</span> Outros são altamente assimétricos</h2>
@@ -542,7 +554,7 @@ Para uma variável aleatória contínua, podemos definir o valor esperado como:<
 <p><span class="math display">\[E(Y) = \mu = \frac{1}{\lambda}\]</span></p>
 <p>enquanto a variância é dada por:</p>
 <p><span class="math display">\[VAR(Y) = \sigma^2 = \frac{1}{\lambda^2}\]</span></p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-386-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-404-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>No modelo exponencial, o único parâmetro é <span class="math inline">\(\lambda\)</span>. O modelo é altamente assimétrico, com maior densidade na porção esquerda da curva. Assim, para um fenômeno que possa ser descrito por um modelo exponencial, a maioria das observações será composta de valores baixos, ainda que valores extremamente elevados possam surgir ocasionalmente.</p>
 
 </div>

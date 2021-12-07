@@ -27,3 +27,20 @@ A figura abaixo exemplifica o tipo de experimento que pode ser analisado por mei
 
 A ANOVA faz a **partição da soma dos quadrados totais** para quantificar o percentual da variação associado a um determinado tratamento ou aos resíduos como veremos a seguir. As médias são resultantes de observações independentes denominadas de **réplicas** associadas a cada um dos tratamentos de um experimento.
 
+### Quadrados médios
+
+Para que os somatórios dos quadrados expressem uma medida de variação é necessáro corrigir para o tamanhos amostrais apropriados. Fazemos isto obtendo os **Quadrados médios**. Estas quantias são dadas por:
+
+1. Quadrado médio total ($QM_{Total}$)
+
+$$QM_{Total} = \frac{SQ_{Total}}{N -1}$$
+
+2. Quadrado médio entre tratamentos ($QM_{Trat}$)
+
+$$QM_{Total} = \frac{SQ_{Trat}}{k - 1}$$
+
+3. Quadrado médio dentro dos tratamentos ($QM_{Res}$)
+
+$$QM_{Total} = \frac{SQ_{Res}}{N-k}$$
+
+Os quadrados médios que são estimativas das variâncias total ($QM_{Total}$), da variância **entre tratamentos** ($QM_{Trat}$) e da variâncias **dentro dos tratamentos** ($QM_{Res}$). Compare a expressão do $QM_{Total}$ com a fórmula da variância amostral ($s^2$) descrita no capítulo \@ref(variacao) e verá que excetuando mudanças de notação, as expressões são essencialmente as mesmas.
