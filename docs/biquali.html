@@ -519,13 +519,14 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="biquali" class="section level1" number="9">
 <h1><span class="header-section-number">Capítulo 9</span> Análise bidimensional: variáveis qualitativas</h1>
-<p>Até agora exploramos formas de representar visualmente um conjunto de dados (Capítulos <a href="varqualit.html#varqualit">3</a> e <a href="varquant.html#varquant">4</a>) e medidas para descrever algumas propriedades deste conjunto (Capítulo <a href="tendcentral.html#tendcentral">5</a> a <a href="escorez.html#escorez">8</a>). A partir de agora veremos como representar e resumir <strong>padrões de associação</strong> entre pares de variáveis. Segundo a natureza dos dados envlvidos, estas associações podem ser entre:</p>
+<p>Até agora exploramos formas de representar visualmente uma única variável por vez (Capítulos <a href="varqualit.html#varqualit">3</a> e <a href="varquant.html#varquant">4</a>) e discutimos medidas para descrever algumas propriedades desta variável (Capítulo <a href="tendcentral.html#tendcentral">5</a> a <a href="escorez.html#escorez">8</a>). A partir de agora veremos como representar e resumir <strong>padrões de associação</strong> entre pares de variáveis. Segundo a natureza dos dados envolvidos, estas associações podem ser entre:</p>
 <ul>
 <li><p>duas variáveis qualitativas (este capítulo);</p></li>
 <li><p>duas variáveis quantitativas (Capítulo <a href="biquant.html#biquant">10</a>) e;</p></li>
 <li><p>uma variável qualitativa e uma quantitativa (Capítulo <a href="biquantquali.html#biquantquali">11</a>)</p></li>
 </ul>
-<p>Imagine que haverá uma obra de revitalização de uma área n região central da cidade. A obra implicará na melhoria de acesso e segurança, mas levará tempo para ser concluída, precisará passar por ações de remoção de moradias irregulares, interdição de ruas e avenidas por longos períodos, etc. A prefeitura encomenda uma pesquisa para saber a opinião dos munícipes. A cada entrevistado são feitas duas perguntas:</p>
+<p><strong>Exemplo</strong></p>
+<p>Imagine que haverá uma obra de revitalização de uma área na região central da cidade. A obra implicará na melhoria de acesso e segurança, ferta de serviços, mas levará tempo para ser concluída e precisará passar por ações de remoção de moradias irregulares, interdição de ruas e avenidas por longos períodos, etc. A prefeitura encomenda uma pesquisa para saber a opinião dos munícipes. A cada entrevistado são feitas duas perguntas:</p>
 <ol style="list-style-type: decimal">
 <li>Qual sua opinião sobre a necessidade de realização da obra?</li>
 </ol>
@@ -544,7 +545,8 @@ Residente</li>
 <li><input type="checkbox" disabled="" />
 Não-Residente</li>
 </ul>
-<p>Importe a tabela abaixo com os resultados das entrevistas:</p>
+<p>A base de dados está disponível em: <a href="https://github.com/FCopf/probest-cambientais/blob/master/datasets/Entrevista_municipes.csv" target="_blank">Entrevista_municipes.csv</a></p>
+<p>Importe a tabela e veja os primeiros 12 resultados das entrevistas:</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="biquali.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega pacotes</span></span>
 <span id="cb95-2"><a href="biquali.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb95-3"><a href="biquali.html#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa base de dados </span></span>
@@ -701,9 +703,15 @@ Não-Residente
 </tr>
 </tbody>
 </table>
-<p>Após entrevistar <span class="math inline">\(200\)</span> pessoas selecionadas <em>ao acaso</em> de uma lista da moradores da cidade, é construída a tabela acima com três colunas: <code>Entrevistado</code> (sequência numérica do primeiro ao último respondente), <code>Opinião</code> e <code>Moradia</code>.</p>
-<p>Estão descritos acima os resultados das promeiras 12 entrevistas, onde é possível ver ao menos uma combinação de todas as possíveis respostas. O entrevistado pode ser: i) <code>A favor</code> e ser <code>Residente</code> da região; ii) <code>A favor</code> e ser <code>Não-Residente</code>, iii) <code>Contra</code> e ser <code>Residente</code>; iv) <code>Contra</code> e ser <code>Não-Residente</code>.</p>
-<p>Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência e gráficos de barras dos 12 entrevistados.</p>
+<p>Após entrevistar <span class="math inline">\(200\)</span> pessoas selecionadas <em>ao acaso</em> de uma lista da moradores da cidade, é construída uma tabela com três colunas: <code>Entrevistado</code> (sequência numérica do primeiro ao último respondente), <code>Opinião</code> e <code>Moradia</code>.</p>
+<p>Estão descritos acima os resultados das primeiras 12 entrevistas, onde é possível ver ao menos uma combinação de todas as possíveis respostas. O entrevistado pode ser: i) <code>A favor</code> e ser <code>Residente</code> da região; ii) <code>A favor</code> e ser <code>Não-Residente</code>, iii) <code>Contra</code> e ser <code>Residente</code>; iv) <code>Contra</code> e ser <code>Não-Residente</code>.</p>
+<p>Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência dos 200 entrevistados.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="biquali.html#cb96-1" aria-hidden="true" tabindex="-1"></a>resumo_opiniao <span class="ot">=</span> mun <span class="sc">%&gt;%</span> </span>
+<span id="cb96-2"><a href="biquali.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Opiniao) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-3"><a href="biquali.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Op_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-4"><a href="biquali.html#cb96-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Op_rel =</span> Op_n<span class="sc">/</span><span class="fu">sum</span>(Op_n))</span>
+<span id="cb96-5"><a href="biquali.html#cb96-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-6"><a href="biquali.html#cb96-6" aria-hidden="true" tabindex="-1"></a>resumo_opiniao</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -743,14 +751,14 @@ Contra
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="biquali.html#cb96-1" aria-hidden="true" tabindex="-1"></a>resumo_opiniao <span class="ot">=</span> mun <span class="sc">%&gt;%</span> </span>
-<span id="cb96-2"><a href="biquali.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Opiniao) <span class="sc">%&gt;%</span> </span>
-<span id="cb96-3"><a href="biquali.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Op_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb96-4"><a href="biquali.html#cb96-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Op_rel =</span> Op_n<span class="sc">/</span><span class="fu">sum</span>(Op_n))</span>
-<span id="cb96-5"><a href="biquali.html#cb96-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb96-6"><a href="biquali.html#cb96-6" aria-hidden="true" tabindex="-1"></a>resumo_opiniao</span></code></pre></div>
-<p>Das <span class="math inline">\(200\)</span> respostas tivemos <span class="math inline">\(144\)</span> pessoas <em>A favor</em> (<span class="math inline">\(72\%\)</span>) e <span class="math inline">\(56\)</span> pessoas <em>Contra</em> (<span class="math inline">\(28\%\)</span>).</p>
+<p>Das <span class="math inline">\(200\)</span> respostas tivemos <span class="math inline">\(144\)</span> pessoas A favor (<span class="math inline">\(72\%\)</span>) e <span class="math inline">\(56\)</span> pessoas Contra (<span class="math inline">\(28\%\)</span>).</p>
 <p>Com relação ao local de residência:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="biquali.html#cb97-1" aria-hidden="true" tabindex="-1"></a>resumo_morad <span class="ot">=</span> mun <span class="sc">%&gt;%</span> </span>
+<span id="cb97-2"><a href="biquali.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Moradia) <span class="sc">%&gt;%</span> </span>
+<span id="cb97-3"><a href="biquali.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Morad_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb97-4"><a href="biquali.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Morad_rel =</span> Morad_n<span class="sc">/</span><span class="fu">sum</span>(Morad_n))</span>
+<span id="cb97-5"><a href="biquali.html#cb97-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-6"><a href="biquali.html#cb97-6" aria-hidden="true" tabindex="-1"></a>resumo_morad</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -790,13 +798,7 @@ Residente
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="biquali.html#cb97-1" aria-hidden="true" tabindex="-1"></a>resumo_morad <span class="ot">=</span> mun <span class="sc">%&gt;%</span> </span>
-<span id="cb97-2"><a href="biquali.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Moradia) <span class="sc">%&gt;%</span> </span>
-<span id="cb97-3"><a href="biquali.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Morad_n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb97-4"><a href="biquali.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Morad_rel =</span> Morad_n<span class="sc">/</span><span class="fu">sum</span>(Morad_n))</span>
-<span id="cb97-5"><a href="biquali.html#cb97-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-6"><a href="biquali.html#cb97-6" aria-hidden="true" tabindex="-1"></a>resumo_morad</span></code></pre></div>
-<p>Temos um total de <span class="math inline">\(117\)</span> pessoas <em>Não-Residente</em> (<span class="math inline">\(58.5\%\)</span>) e <span class="math inline">\(83\)</span> pessoas <em>Residente</em> (<span class="math inline">\(41.5\%\)</span>)</p>
+<p>Temos um total de <span class="math inline">\(117\)</span> pessoas Não-Residente (<span class="math inline">\(58.5\%\)</span>) e <span class="math inline">\(83\)</span> pessoas Residente (<span class="math inline">\(41.5\%\)</span>)</p>
 <p>Se visualizarmos estes totais em gráficos de barras individuais teremos:</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="biquali.html#cb98-1" aria-hidden="true" tabindex="-1"></a>plt_op <span class="ot">=</span> <span class="fu">ggplot</span>(mun, <span class="fu">aes</span>(<span class="at">x =</span> Opiniao)) <span class="sc">+</span></span>
 <span id="cb98-2"><a href="biquali.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&#39;darkblue&#39;</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>) <span class="sc">+</span></span>
@@ -810,17 +812,21 @@ Residente
 <span id="cb98-10"><a href="biquali.html#cb98-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Número de respostas&#39;</span>) <span class="sc">+</span></span>
 <span id="cb98-11"><a href="biquali.html#cb98-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb98-12"><a href="biquali.html#cb98-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb98-13"><a href="biquali.html#cb98-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Obs: para que a linha abaixo funcione, é necessário o pacote &#39;patchwork&#39;. </span></span>
+<span id="cb98-13"><a href="biquali.html#cb98-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Obs: para que a linha abaixo funcione, é necessário habilitar o pacote &#39;patchwork&#39;. </span></span>
 <span id="cb98-14"><a href="biquali.html#cb98-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Caso não tenha, instale e carregue com os comandos:</span></span>
 <span id="cb98-15"><a href="biquali.html#cb98-15" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;patchwork&#39;)</span></span>
 <span id="cb98-16"><a href="biquali.html#cb98-16" aria-hidden="true" tabindex="-1"></a><span class="co"># library(patchwork)</span></span>
 <span id="cb98-17"><a href="biquali.html#cb98-17" aria-hidden="true" tabindex="-1"></a>plt_op <span class="sc">+</span> plt_morad</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
 <p>Existe portanto um predomínio de pessoas <code>A Favor</code> e um ligeiro predomínio de entrevistados <code>Não-Residentes</code>.</p>
-<p>Estamos interessados em entender se existe alguma <strong>associação</strong> entre as respostas dadas às duas perguntas. Esta questão pode ser colocada da seguinte forma: Será que moradores <code>Residentes</code> tendem ter uma opinião consistentemente diferente de moradores <code>Não-residentes</code> no que se refere a ser <code>A favor</code> ou <code>Contra</code>? Para começar a entender esta questão vamos explorar a distribuição das variáveis conjuntamente.</p>
+<p>Estamos interessados em entender se existe alguma <strong>associação</strong> entre as respostas dadas às duas perguntas, uma questão que pode ser colocada da seguinte forma:</p>
+<blockquote>
+<p>Será que moradores <code>Residentes</code> tendem ter uma opinião <strong>consistentemente</strong> diferente de moradores <code>Não-residentes</code> no que se refere a ser <code>A favor</code> ou <code>Contra</code> a obra?</p>
+</blockquote>
+<p>Para começar a entender esta questão vamos explorar a distribuição das variáveis conjuntamente.</p>
 <div id="tabelas-de-contingência" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Tabelas de contingência</h2>
-<p>Tabelas de contigência são organizadas para verificarmos a associação entre duas variáveis qualitativas. São conhecidas também como tabelas de <em>dupla entrada</em>. Nas colunas estão os níveis da variável <span class="math inline">\(X\)</span> e nas linhas os níveis da variável <span class="math inline">\(X\)</span>.</p>
+<p>Tabelas de contigência são organizadas para verificarmos a associação entre duas variáveis qualitativas. São conhecidas também como tabelas de <em>dupla entrada</em>. Nas colunas estão os níveis da variável <span class="math inline">\(X\)</span> e nas linhas os níveis da variável <span class="math inline">\(Y\)</span>.</p>
 <p>Para nosso exemplo, podemos fazer simplesmente:</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="biquali.html#cb99-1" aria-hidden="true" tabindex="-1"></a>tcont <span class="ot">=</span> <span class="fu">table</span>(mun<span class="sc">$</span>Opiniao, mun<span class="sc">$</span>Moradia)</span>
 <span id="cb99-2"><a href="biquali.html#cb99-2" aria-hidden="true" tabindex="-1"></a>tcont</span></code></pre></div>
@@ -828,7 +834,13 @@ Residente
 ##           Não-Residente Residente
 ##   A favor            81        63
 ##   Contra             36        20</code></pre>
-<p>Temos portanto 81 a favor e não residentes, 63 e residentes, 36 contra e não residentes e por fim 20 a favor e residentes.</p>
+<p>Temos portanto:</p>
+<ul>
+<li><p>81 - A favor e Não-Residente;</p></li>
+<li><p>63 - A favor e Residente;</p></li>
+<li><p>36 - Contra e Não-Residente;</p></li>
+<li><p>20 - Contra e Residente</p></li>
+</ul>
 <p>Podemos ver os totais marginais das linhas:</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="biquali.html#cb101-1" aria-hidden="true" tabindex="-1"></a>tcont_linhas <span class="ot">=</span> <span class="fu">apply</span>(tcont, <span class="dv">1</span>, sum) <span class="co"># Totais das linhas</span></span>
 <span id="cb101-2"><a href="biquali.html#cb101-2" aria-hidden="true" tabindex="-1"></a>tcont_linhas</span></code></pre></div>
@@ -839,6 +851,7 @@ Residente
 <span id="cb103-2"><a href="biquali.html#cb103-2" aria-hidden="true" tabindex="-1"></a>tcont_colunas</span></code></pre></div>
 <pre><code>## Não-Residente     Residente 
 ##           117            83</code></pre>
+<p>Que são justamente os totais que verificamos nas distribuições individuais.</p>
 <p>Se quisermos ver as frequências relativas <em>marginais</em> podemos fazer:</p>
 <div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="biquali.html#cb105-1" aria-hidden="true" tabindex="-1"></a>trel_linha <span class="ot">=</span> <span class="fu">prop.table</span>(tcont, <span class="dv">1</span>) <span class="co"># Frequencia relativa marginal das linhas</span></span>
 <span id="cb105-2"><a href="biquali.html#cb105-2" aria-hidden="true" tabindex="-1"></a>trel_linha</span></code></pre></div>
@@ -846,10 +859,10 @@ Residente
 ##           Não-Residente Residente
 ##   A favor     0.5625000 0.4375000
 ##   Contra      0.6428571 0.3571429</code></pre>
-<p>Neste caso, estamos vendo as <strong>frequências relativas das linhas</strong>, isto é, cada linha nesta tabela soma <span class="math inline">\(1\)</span>. Os que vemos aqui é:</p>
+<p>Neste caso, estamos vendo as <strong>frequências relativas das linhas</strong>, isto é, cada linha nesta tabela soma <span class="math inline">\(1\)</span>. O que vemos nesta tabela é:</p>
 <ul>
-<li><p>dos <span class="math inline">\(144\)</span> entrevistados que são <strong>A favor</strong>, cerca de <span class="math inline">\(56.25\%\)</span> são não residentes, enquanto os demais <span class="math inline">\(43.75\%\)</span> são residentes.</p></li>
-<li><p>dos <span class="math inline">\(56\)</span> entrevistados que são <strong>A favor</strong>, cerca de <span class="math inline">\(64.29\%\)</span> são não residentes, enquanto os demais <span class="math inline">\(35.71\%\)</span> são residentes.</p></li>
+<li><p>dos <span class="math inline">\(144\)</span> entrevistados que são A favor, cerca de <span class="math inline">\(56.25\%\)</span> são Não-Residente, enquanto os demais <span class="math inline">\(43.75\%\)</span> são Residente</p></li>
+<li><p>dos <span class="math inline">\(56\)</span> entrevistados que são Contra, cerca de <span class="math inline">\(64.29\%\)</span> são Não-Residente, enquanto os demais <span class="math inline">\(35.71\%\)</span> são Residente</p></li>
 </ul>
 <p>Podemos fazer exatamente a mesma coisa olhando agora para as <strong>frequências marginais por colunas</strong>:</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="biquali.html#cb107-1" aria-hidden="true" tabindex="-1"></a>trel_coluna <span class="ot">=</span> <span class="fu">prop.table</span>(tcont, <span class="dv">2</span>) <span class="co"># Frequencia relativa marginal das colunas</span></span>
@@ -860,8 +873,8 @@ Residente
 ##   Contra      0.3076923 0.2409639</code></pre>
 <p>Neste caso são as <strong>colunas</strong> que somam <span class="math inline">\(1\)</span>, portanto:</p>
 <ul>
-<li><p>dos <span class="math inline">\(117\)</span> entrevistados que são <strong>Não-Residentes</strong>, cerca de <span class="math inline">\(69.23\%\)</span> são A favor, enquanto os demais <span class="math inline">\(75.9\%\)</span> são Contra.</p></li>
-<li><p>dos <span class="math inline">\(83\)</span> entrevistados que são <strong>Residentes</strong>, cerca de <span class="math inline">\(30.77\%\)</span> são A favor, enquanto os demais <span class="math inline">\(24.1\%\)</span> são Contra.</p></li>
+<li><p>dos <span class="math inline">\(117\)</span> entrevistados que são Não-Residente, cerca de <span class="math inline">\(69.23\%\)</span> são A favor, enquanto os demais <span class="math inline">\(30.77\%\)</span> são Contra</p></li>
+<li><p>dos <span class="math inline">\(83\)</span> entrevistados que são Residente, cerca de <span class="math inline">\(75.9\%\)</span> são A favor, enquanto os demais <span class="math inline">\(75.9\%\)</span> são Contra</p></li>
 </ul>
 <p>Podemos finalmente ver a frequência relativa conjunta:</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="biquali.html#cb109-1" aria-hidden="true" tabindex="-1"></a>trel_conjunta <span class="ot">=</span> <span class="fu">prop.table</span>(tcont) <span class="co"># Frequencia relativa conjunta</span></span>
@@ -884,7 +897,7 @@ Residente
 </div>
 <div id="o-gráfico-de-barras-para-duas-variáveis-qualitativas" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> O gráfico de barras para duas variáveis qualitativas</h2>
-<p>Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela obtida a partir do comando <code>table(mun$Opiniao, mun$Moradia)</code> podemos utilizar o comando <code>barplot()</code>. Por outro lado se quisermos utilizar a tabela original de dados (objeto <code>mun</code>) podemos fazer uso do <code>ggplot2</code>.</p>
+<p>Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela de contingência obtida a partir do comando <code>table(mun$Opiniao, mun$Moradia)</code>, podemos utilizar o comando <code>barplot()</code>. Por outro lado, se quisermos utilizar a tabela original de dados (objeto <code>mun</code>) podemos fazer uso do pacote <code>ggplot2</code>:</p>
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="biquali.html#cb115-1" aria-hidden="true" tabindex="-1"></a>plt_bar1 <span class="ot">=</span> <span class="fu">ggplot</span>(mun) <span class="sc">+</span></span>
 <span id="cb115-2"><a href="biquali.html#cb115-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> Moradia, <span class="at">fill =</span> Opiniao) <span class="sc">+</span></span>
 <span id="cb115-3"><a href="biquali.html#cb115-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">&#39;white&#39;</span>, <span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="sc">+</span></span>
@@ -915,7 +928,7 @@ Residente
 <div id="medindo-a-discrepância-com-o-índice-de-chi2-de-pearson" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> Medindo a discrepância com o índice de <span class="math inline">\(\chi^2\)</span> de Pearson</h2>
 <p>O índice de qui-quadrado (<span class="math inline">\(\chi^2\)</span>) mede a discrepância entre os valores <strong>observados</strong> e os valores <strong>esperados</strong> em uma tabela de contingência.</p>
-<p>Digamos que um município tenha <span class="math inline">\(20\%\)</span> de sua população morando em área Rural e os outros <span class="math inline">\(80\%\)</span> em área Urbana. Se fazemos uma amostragem <em>ao acaso</em> dos moradores é esperado que esta frequencia relativa se reflita na amostra. Neste caso se sorteamos <span class="math inline">\(200\)</span> pessoas, seria esperados:</p>
+<p>Digamos que um município tenha <span class="math inline">\(20\%\)</span> de sua população morando em área Rural e os outros <span class="math inline">\(80\%\)</span> em área Urbana. Se fizermos uma amostragem <em>ao acaso</em> dos moradores é esperado que esta frequência relativa se reflita na amostra. Neste caso se sorteamos <span class="math inline">\(200\)</span> pessoas, seria esperado:</p>
 <ul>
 <li><p>Zona Rural: <span class="math inline">\(40\)</span> moradores</p></li>
 <li><p>Zona Urbana <span class="math inline">\(160\)</span> moradores</p></li>
@@ -950,7 +963,7 @@ Urbana
 </tr>
 </tbody>
 </table>
-<p>Entretando, se fazemos um sorteio ao acaso, haverá nos valores observados alguma variação ao redor destes valores. O <span class="math inline">\(\chi^2\)</span> mede a discrepância entre as frequências observadas (<span class="math inline">\(o\)</span>) e esperadas (<span class="math inline">\(e\)</span>) para dada célula da tabela:</p>
+<p>Entretando, se fazemos um sorteio ao acaso, haverá alguma variação ao redor destes valores. O <span class="math inline">\(\chi^2\)</span> mede esta discrepância entre as frequências observadas (<span class="math inline">\(o\)</span>) e esperadas (<span class="math inline">\(e\)</span>) para cada célula da tabela:</p>
 <p><span class="math display">\[\chi^2 = \sum_{i=1}^{n}\frac{(o_i - e_i)^2}{e_i}\]</span>
 Para uma tabela de frequências, devemos determinar portanto os valores de <span class="math inline">\(o_i\)</span> e <span class="math inline">\(e_i\)</span>.</p>
 <p>Suponha que uma amostra de <span class="math inline">\(200\)</span> moradores tenha resultado em:</p>
@@ -1000,8 +1013,8 @@ Urbana
 </div>
 <div id="o-índice-de-chi2-em-uma-tabela-de-contigência" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> O índice de <span class="math inline">\(\chi^2\)</span> em uma tabela de contigência</h2>
-<p>No exemplo acima, verificamos a discrepância entre as contagens observadas na tabela e as contagens esperadas. As contagens esperadas foram definidas segundo um modelo que dizia que as populações rurais e urbanas se dividiam nas proporções <span class="math inline">\(20\%:80\%\)</span>. Em uma tabela de contigência, a hipótese em verificação é a de que <strong>não há associação entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span></strong>. Se for assim, é esperado que as frequências conjuntas sejam porporcionais às frequências marginais. Vamos apresentar esta ideia utilizando uma notação geral para tabelas de contingência e em seguida discutir com um exemplo.</p>
-<p>A tabela abaixo apresenta <span class="math inline">\(r\)</span> linhas por <span class="math inline">\(s\)</span> colunas com as contagens detodas as combinações dos níveis da variável <span class="math inline">\(X\)</span> (Níveis <span class="math inline">\(A_{1}\)</span> a <span class="math inline">\(A_{r}\)</span>) e da variável <span class="math inline">\(Y\)</span> (Níveis <span class="math inline">\(B_{1}\)</span> a <span class="math inline">\(B_{s}\)</span>). Os totais marginais de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são expressos respectivamente na última coluna e na última linha.</p>
+<p>No exemplo acima, as contagens esperadas foram definidas a partir de um modelo que dizia que as populações rurais e urbanas se dividiam nas proporções <span class="math inline">\(20\%:80\%\)</span>. Em uma tabela de contigência, a hipótese em verificação é a de que <strong>não há associação entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span></strong>. Se for assim, é esperado que as frequências conjuntas sejam <em>p</em>orporcionais às frequências marginais*. Vamos apresentar esta ideia utilizando uma notação geral para tabelas de contingência e em seguida discutir com um exemplo.</p>
+<p>A tabela abaixo apresenta <span class="math inline">\(r\)</span> linhas por <span class="math inline">\(s\)</span> colunas com as contagens de todas as combinações dos níveis da variável <span class="math inline">\(X\)</span> (Níveis <span class="math inline">\(A_{1}\)</span> a <span class="math inline">\(A_{r}\)</span>) e da variável <span class="math inline">\(Y\)</span> (Níveis <span class="math inline">\(B_{1}\)</span> a <span class="math inline">\(B_{s}\)</span>). Os totais marginais de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são expressos respectivamente na última coluna e na última linha.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1099,6 +1112,7 @@ Urbana
 <hr />
 <p>Tendo definido os valores esperados em uma tabela de contingência de <span class="math inline">\(r \times s\)</span>, o <span class="math inline">\(\chi^2\)</span> é dado por:</p>
 <p><span class="math display">\[\chi^2 = \sum_{i=1}^{r}\sum_{j=1}^{s}\frac{(n_{ij} - n_{ij}^{e})^2}{n_{ij}^{e}}\]</span></p>
+<p><strong>Retornando ao exemplo das entrevistas</strong></p>
 <p>A tabela de contingência contendo os dados <strong>observados</strong> do início do capítulo pode ser escrita como:</p>
 <table>
 <thead>
@@ -1130,24 +1144,24 @@ Urbana
 </tr>
 </tbody>
 </table>
-<p><strong>Valores esperados na linha <span class="math inline">\(i\)</span> e coluna <span class="math inline">\(j\)</span></strong></p>
+<p>Os Valores esperados na linha <span class="math inline">\(i\)</span> e coluna <span class="math inline">\(j\)</span> são:</p>
 <ul>
-<li>Linha <span class="math inline">\(1\)</span> - coluna <span class="math inline">\(1\)</span> (<code>Não-Residente</code> - <code>A favor</code>):</li>
+<li>Linha <span class="math inline">\(1\)</span> - Coluna <span class="math inline">\(1\)</span> (<code>Não-Residente</code> - <code>A favor</code>):</li>
 </ul>
 <p><span class="math inline">\(n_{ii}^{e} = \frac{n_{1.} \times n_{.1}}{n} = \frac{144 \times 117}{200} = 84.24\)</span></p>
 <ul>
-<li>Linha <span class="math inline">\(1\)</span> - coluna <span class="math inline">\(2\)</span> (<code>Residente</code> - <code>A favor</code>):</li>
+<li>Linha <span class="math inline">\(1\)</span> - Coluna <span class="math inline">\(2\)</span> (<code>Residente</code> - <code>A favor</code>):</li>
 </ul>
 <p><span class="math inline">\(n_{ii}^{e} = \frac{n_{1.} \times n_{.2}}{n} = \frac{144 \times 83}{200} = 59.76\)</span></p>
 <ul>
-<li>Linha <span class="math inline">\(2\)</span> - coluna <span class="math inline">\(1\)</span> (<code>Não-Residente</code> - <code>Contra</code>):</li>
+<li>Linha <span class="math inline">\(2\)</span> - Coluna <span class="math inline">\(1\)</span> (<code>Não-Residente</code> - <code>Contra</code>):</li>
 </ul>
 <p><span class="math inline">\(n_{ii}^{e} = \frac{n_{2.} \times n_{.1}}{n} = \frac{56 \times 117}{200} = 32.76\)</span></p>
 <ul>
-<li>Linha <span class="math inline">\(2\)</span> - coluna <span class="math inline">\(2\)</span> (<code>Residente</code> - <code>Contra</code>):</li>
+<li>Linha <span class="math inline">\(2\)</span> - Coluna <span class="math inline">\(2\)</span> (<code>Residente</code> - <code>Contra</code>):</li>
 </ul>
 <p><span class="math inline">\(n_{ii}^{e} = \frac{n_{2.} \times n_{.2}}{n} = \frac{56 \times 83}{200} = 23.24\)</span></p>
-<p>Tabela dom os valores <strong>esperados</strong></p>
+<p>De modo que a tabela com os valores <strong>esperados</strong> será:</p>
 <table>
 <thead>
 <tr class="header">
@@ -1178,27 +1192,26 @@ Urbana
 </tr>
 </tbody>
 </table>
-<p>Finalmente, o valor <span class="math inline">\(\chi^2\)</span> será:</p>
+<p>Finalmente, o valor <span class="math inline">\(\chi^2\)</span> pode ser obtido por:</p>
 <p><span class="math inline">\(\chi^2 = \frac{(81 - 84.24)^2}{84.24} + \frac{(36 - 32.76)^2}{84.24} + \frac{(63 - 59.76)^2}{84.24} + \frac{(20 - 23.24)^2}{84.24} = 1.072\)</span></p>
 </div>
 <div id="valores-de-chi2-quando-existe-associação" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação</h2>
-<p>O valor de <span class="math inline">\(\chi^2\)</span> é zero somente se os valores observados forem <strong>exatamente</strong> igausi aos valores esperados. Pequenas discrepâncias irão gerar valores de <span class="math inline">\(chi^2\)</span> acima de zero. Os valores se tornarão ais altos à medida que aumentam as diferenças entre <span class="math inline">\(n_{ij}\)</span> e <span class="math inline">\(n_{ij}^e\)</span>.</p>
-<p>Abaixo estão diferentes exemplos em que existe associação entre <code>Opinião</code> e <code>Moradia</code>. Veja que todos os valores são mais elevados que o valor de <span class="math inline">\(chi^2\)</span> que calculamos para o primeiro exemplo do capítulo.</p>
-<ul>
-<li><p>Compare os valores e os gráficos abaixo com os apresentados em nosso exemplo inicial.</p></li>
-<li><p>Tente aplicar a fórmula do <span class="math inline">\(\chi^2\)</span> para chegar nos resultados apresentados em cada exemplo.</p></li>
-</ul>
+<p>O valor de <span class="math inline">\(\chi^2\)</span> será zero somente se os valores observados forem <strong>exatamente</strong> igauis aos valores esperados. Pequenas discrepâncias irão gerar valores de <span class="math inline">\(\chi^2\)</span> acima de zero. Os valores se tornarão mais altos à medida que aumentam as diferenças entre <span class="math inline">\(n_{ij}\)</span> e <span class="math inline">\(n_{ij}^e\)</span>.</p>
+<p>Abaixo estão diferentes exemplos em que existe associação entre <code>Opinião</code> e <code>Moradia</code>. Compare os valores e os gráficos abaixo os que fizemos no exemplo do capítulo e veja que todos os valores de <span class="math inline">\(\chi^2\)</span> são mais elevados.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-196-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+<ul>
+<li>Tente aplicar a fórmula do <span class="math inline">\(\chi^2\)</span> para chegar aos resultados apresentados em cada exemplo.</li>
+</ul>
 </div>
 <div id="variações-do-índice-de-chi2" class="section level2" number="9.6">
 <h2><span class="header-section-number">9.6</span> Variações do índice de <span class="math inline">\(\chi^2\)</span></h2>
-<p>O valor de <span class="math inline">\(\chi^2\)</span> aumenta com o tamanho da amostra o que torna difícil comparações de diferentes estudos. Para corrigir este efeito existe o <strong>coeficiente de contigência de Pearson (<span class="math inline">\(C\)</span>)</strong> que é baseado no resultado de <span class="math inline">\(\chi^2\)</span></p>
+<p>O valor de <span class="math inline">\(\chi^2\)</span> aumenta com o tamanho da amostra, o que torna difícil comparações entre diferentes estudos. Para corrigir este efeito existe o <strong>coeficiente de contigência de Pearson (<span class="math inline">\(C\)</span>)</strong> que é baseado no resultado de <span class="math inline">\(\chi^2\)</span></p>
 <p><span class="math display">\[C = \sqrt{\frac{\chi^2}{\chi^2 + n}}\]</span></p>
 <p>em que <span class="math inline">\(n\)</span> é o tamanho da amostra. O valor máximo de <span class="math inline">\(C\)</span> depende do número de linhas (<span class="math inline">\(r\)</span>) e de colunas (<span class="math inline">\(s\)</span>) na tabela de contingêcia, deste modo podemos ainda definir um outro coeficiente que varia entre <span class="math inline">\(0\)</span> e <span class="math inline">\(1\)</span>:</p>
 <p><span class="math display">\[T = \sqrt{\frac{\frac{\chi^2}{n}}{(r-1) \times (s-1)}}\]</span>
-O valor <span class="math inline">\(0\)</span> ocorre quando não há associação (<span class="math inline">\(\chi^2 = 0\)</span>). O valor máximo de <span class="math inline">\(1\)</span> só será atingido quando houver associação e <span class="math inline">\(r = s\)</span></p>
-<p>Todos estes índices aumentam conforme aumenta o grua de associação entre as variáveis. Entretanto, não dissemos <strong>em que ponto</strong> passamos a aceitar a hipótese de associação as variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Iremos tratar deste assunto na seção sobre estatística inferencial. Ao tratarmos deste ponto é importante termos claro o que siginifica uma associação (ou dependêcia) entre duas variáveis qualitativas e como o índice de <span class="math inline">\(\chi^2\)</span> mede esta associação.</p>
+O valor <span class="math inline">\(T = 0\)</span> ocorre quando não há associação (<span class="math inline">\(\chi^2 = 0\)</span>) e o valor máximo de <span class="math inline">\(T = 1\)</span> só será atingido quando houver associação e <span class="math inline">\(r = s\)</span></p>
+<p>Todos estes índices aumentam conforme aumenta o grau de associação entre as variáveis. Entretanto, não dissemos <strong>em que ponto</strong> passamos a aceitar a hipótese de associação as variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Iremos tratar deste assunto na seção sobre estatística inferencial. Ao tratarmos deste ponto é importante termos claro o que siginifica uma associação (ou dependêcia) entre duas variáveis qualitativas e como o índice de <span class="math inline">\(\chi^2\)</span> mede esta associação.</p>
 </div>
 <div id="obtendo-o-índice-de-chi2-de-uma-tabela-de-dados" class="section level2" number="9.7">
 <h2><span class="header-section-number">9.7</span> Obtendo o índice de <span class="math inline">\(\chi^2\)</span> de uma tabela de dados</h2>
@@ -1210,11 +1223,11 @@ O valor <span class="math inline">\(0\)</span> ocorre quando não há associaç�
 ## 
 ## data:  tcont
 ## X-squared = 0.76697, df = 1, p-value = 0.3812</code></pre>
-<p>O resultado mostra o o valor de <span class="math inline">\(\chi^2\)</span> calcuado (<code>X-squared</code>) e outras duas quantias denominadas de <strong>graus de liberdade</strong> (<code>df</code>) e <strong>valor de p</strong> (<code>p-value</code>), sobre as quais falaremos na seção sobre Inferência estatística (Capítulos <a href="popamostra.html#popamostra">12</a> a <a href="testet.html#testet">18</a>).</p>
-<p>Note que o resultado é diferente do que obtvemos neste capítulo. Isto ocorre pois, por padrão, a função utiliza a chamada <strong>correção de Yates</strong> (<a target="_blank" href="https://en.wikipedia.org/wiki/Yates%27s_correction_for_continuity">veja aqui</a>), em que o <span class="math inline">\(\chi_{Yates}^{2}\)</span> é calculado por:</p>
+<p>O resultado mostra o o valor de <span class="math inline">\(\chi^2\)</span> calculado (<code>X-squared</code>) e outras duas quantias denominadas de <strong>graus de liberdade</strong> (<code>df</code>) e <strong>valor de p</strong> (<code>p-value</code>), sobre as quais falaremos na seção sobre Inferência estatística (Capítulos <a href="popamostra.html#popamostra">12</a> a <a href="testet.html#testet">18</a>).</p>
+<p>Note que o resultado é diferente do que obtivemos neste capítulo. Isto ocorre pois, por padrão, a função utiliza a <strong>correção de Yates</strong> (<a target="_blank" href="https://en.wikipedia.org/wiki/Yates%27s_correction_for_continuity">veja aqui</a>), em que <span class="math inline">\(\chi_{Yates}^{2}\)</span> é calculado por:</p>
 <p><span class="math display">\[\chi_{Yates}^{2} = \sum_{i=1}^{r}\sum_{j=1}^{s}\frac{(|n_{ij} - n_{ij}^{e}| - 0,5)^2}{n_{ij}^{e}}\]</span></p>
 <p>O termo <span class="math inline">\(|n_{ij} - n_{ij}^{e}|\)</span> se refere ao módulo da distância entre os valores observados e calculados.</p>
-<p>Esta correção será abordada ao falarmos de <strong>testes de hipóteses para variáveis categóricas</strong>. Por hora se quisermos obter exatamente os resultados descrito acima utilizando o a função <code>chisq.test</code>, basta fazermos:</p>
+<p>Esta correção será abordada ao falarmos de <strong>testes de hipóteses para variáveis categóricas</strong>. Por hora, se quisermos obter exatamente os resultados descritos no exemplo deste capítulo, basta fazermos:</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="biquali.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tcont, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test

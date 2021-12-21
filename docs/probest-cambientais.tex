@@ -6,7 +6,7 @@
 ]{book}
 \title{Estatística nas Ciências Ambientais}
 \author{Fabio Cop Ferreira \and \href{mailto:fabiocopf@gmail.com}{\nolinkurl{fabiocopf@gmail.com}}; \href{mailto:fcferreira@unifesp.br}{\nolinkurl{fcferreira@unifesp.br}} \and Instituto do Mar, Universidade Federal de São Paulo}
-\date{Última atualização em 07/12/2021}
+\date{Última atualização em 21/12/2021}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -3298,7 +3298,7 @@ Os processos centralização e padronização de uma variável são úteis em di
 \hypertarget{biquali}{%
 \chapter{Análise bidimensional: variáveis qualitativas}\label{biquali}}
 
-Até agora exploramos formas de representar visualmente um conjunto de dados (Capítulos \ref{varqualit} e \ref{varquant}) e medidas para descrever algumas propriedades deste conjunto (Capítulo \ref{tendcentral} a \ref{escorez}). A partir de agora veremos como representar e resumir \textbf{padrões de associação} entre pares de variáveis. Segundo a natureza dos dados envlvidos, estas associações podem ser entre:
+Até agora exploramos formas de representar visualmente uma única variável por vez (Capítulos \ref{varqualit} e \ref{varquant}) e discutimos medidas para descrever algumas propriedades desta variável (Capítulo \ref{tendcentral} a \ref{escorez}). A partir de agora veremos como representar e resumir \textbf{padrões de associação} entre pares de variáveis. Segundo a natureza dos dados envolvidos, estas associações podem ser entre:
 
 \begin{itemize}
 \item
@@ -3309,7 +3309,9 @@ Até agora exploramos formas de representar visualmente um conjunto de dados (Ca
   uma variável qualitativa e uma quantitativa (Capítulo \ref{biquantquali})
 \end{itemize}
 
-Imagine que haverá uma obra de revitalização de uma área n região central da cidade. A obra implicará na melhoria de acesso e segurança, mas levará tempo para ser concluída, precisará passar por ações de remoção de moradias irregulares, interdição de ruas e avenidas por longos períodos, etc. A prefeitura encomenda uma pesquisa para saber a opinião dos munícipes. A cada entrevistado são feitas duas perguntas:
+\textbf{Exemplo}
+
+Imagine que haverá uma obra de revitalização de uma área na região central da cidade. A obra implicará na melhoria de acesso e segurança, ferta de serviços, mas levará tempo para ser concluída e precisará passar por ações de remoção de moradias irregulares, interdição de ruas e avenidas por longos períodos, etc. A prefeitura encomenda uma pesquisa para saber a opinião dos munícipes. A cada entrevistado são feitas duas perguntas:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3342,7 +3344,9 @@ Imagine que haverá uma obra de revitalização de uma área n região central d
   Não-Residente
 \end{itemize}
 
-Importe a tabela abaixo com os resultados das entrevistas:
+A base de dados está disponível em: Entrevista\_municipes.csv
+
+Importe a tabela e veja os primeiros 12 resultados das entrevistas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3389,21 +3393,11 @@ Entrevistado & Opiniao & Moradia\\
 \end{tabular}
 \end{table}
 
-Após entrevistar \(200\) pessoas selecionadas \emph{ao acaso} de uma lista da moradores da cidade, é construída a tabela acima com três colunas: \texttt{Entrevistado} (sequência numérica do primeiro ao último respondente), \texttt{Opinião} e \texttt{Moradia}.
+Após entrevistar \(200\) pessoas selecionadas \emph{ao acaso} de uma lista da moradores da cidade, é construída uma tabela com três colunas: \texttt{Entrevistado} (sequência numérica do primeiro ao último respondente), \texttt{Opinião} e \texttt{Moradia}.
 
-Estão descritos acima os resultados das promeiras 12 entrevistas, onde é possível ver ao menos uma combinação de todas as possíveis respostas. O entrevistado pode ser: i) \texttt{A\ favor} e ser \texttt{Residente} da região; ii) \texttt{A\ favor} e ser \texttt{Não-Residente}, iii) \texttt{Contra} e ser \texttt{Residente}; iv) \texttt{Contra} e ser \texttt{Não-Residente}.
+Estão descritos acima os resultados das primeiras 12 entrevistas, onde é possível ver ao menos uma combinação de todas as possíveis respostas. O entrevistado pode ser: i) \texttt{A\ favor} e ser \texttt{Residente} da região; ii) \texttt{A\ favor} e ser \texttt{Não-Residente}, iii) \texttt{Contra} e ser \texttt{Residente}; iv) \texttt{Contra} e ser \texttt{Não-Residente}.
 
-Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência e gráficos de barras dos 12 entrevistados.
-
-\begin{tabular}{l|r|r}
-\hline
-Opiniao & Op\_n & Op\_rel\\
-\hline
-A favor & 144 & 0.72\\
-\hline
-Contra & 56 & 0.28\\
-\hline
-\end{tabular}
+Vamos inicialmente representar cada uma das variáveis individualmente por meio de uma tabela de frequência dos 200 entrevistados.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3416,19 +3410,19 @@ Contra & 56 & 0.28\\
 \end{Highlighting}
 \end{Shaded}
 
-Das \(200\) respostas tivemos \(144\) pessoas \emph{A favor} (\(72\%\)) e \(56\) pessoas \emph{Contra} (\(28\%\)).
-
-Com relação ao local de residência:
-
 \begin{tabular}{l|r|r}
 \hline
-Moradia & Morad\_n & Morad\_rel\\
+Opiniao & Op\_n & Op\_rel\\
 \hline
-Não-Residente & 117 & 0.585\\
+A favor & 144 & 0.72\\
 \hline
-Residente & 83 & 0.415\\
+Contra & 56 & 0.28\\
 \hline
 \end{tabular}
+
+Das \(200\) respostas tivemos \(144\) pessoas A favor (\(72\%\)) e \(56\) pessoas Contra (\(28\%\)).
+
+Com relação ao local de residência:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3441,7 +3435,17 @@ Residente & 83 & 0.415\\
 \end{Highlighting}
 \end{Shaded}
 
-Temos um total de \(117\) pessoas \emph{Não-Residente} (\(58.5\%\)) e \(83\) pessoas \emph{Residente} (\(41.5\%\))
+\begin{tabular}{l|r|r}
+\hline
+Moradia & Morad\_n & Morad\_rel\\
+\hline
+Não-Residente & 117 & 0.585\\
+\hline
+Residente & 83 & 0.415\\
+\hline
+\end{tabular}
+
+Temos um total de \(117\) pessoas Não-Residente (\(58.5\%\)) e \(83\) pessoas Residente (\(41.5\%\))
 
 Se visualizarmos estes totais em gráficos de barras individuais teremos:
 
@@ -3459,7 +3463,7 @@ Se visualizarmos estes totais em gráficos de barras individuais teremos:
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{\textquotesingle{}Número de respostas\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{theme\_classic}\NormalTok{()}
 
-\CommentTok{\# Obs: para que a linha abaixo funcione, é necessário o pacote \textquotesingle{}patchwork\textquotesingle{}. }
+\CommentTok{\# Obs: para que a linha abaixo funcione, é necessário habilitar o pacote \textquotesingle{}patchwork\textquotesingle{}. }
 \CommentTok{\# Caso não tenha, instale e carregue com os comandos:}
 \CommentTok{\# install.packages(\textquotesingle{}patchwork\textquotesingle{})}
 \CommentTok{\# library(patchwork)}
@@ -3471,12 +3475,18 @@ Se visualizarmos estes totais em gráficos de barras individuais teremos:
 
 Existe portanto um predomínio de pessoas \texttt{A\ Favor} e um ligeiro predomínio de entrevistados \texttt{Não-Residentes}.
 
-Estamos interessados em entender se existe alguma \textbf{associação} entre as respostas dadas às duas perguntas. Esta questão pode ser colocada da seguinte forma: Será que moradores \texttt{Residentes} tendem ter uma opinião consistentemente diferente de moradores \texttt{Não-residentes} no que se refere a ser \texttt{A\ favor} ou \texttt{Contra}? Para começar a entender esta questão vamos explorar a distribuição das variáveis conjuntamente.
+Estamos interessados em entender se existe alguma \textbf{associação} entre as respostas dadas às duas perguntas, uma questão que pode ser colocada da seguinte forma:
+
+\begin{quote}
+Será que moradores \texttt{Residentes} tendem ter uma opinião \textbf{consistentemente} diferente de moradores \texttt{Não-residentes} no que se refere a ser \texttt{A\ favor} ou \texttt{Contra} a obra?
+\end{quote}
+
+Para começar a entender esta questão vamos explorar a distribuição das variáveis conjuntamente.
 
 \hypertarget{tabelas-de-continguxeancia}{%
 \section{Tabelas de contingência}\label{tabelas-de-continguxeancia}}
 
-Tabelas de contigência são organizadas para verificarmos a associação entre duas variáveis qualitativas. São conhecidas também como tabelas de \emph{dupla entrada}. Nas colunas estão os níveis da variável \(X\) e nas linhas os níveis da variável \(X\).
+Tabelas de contigência são organizadas para verificarmos a associação entre duas variáveis qualitativas. São conhecidas também como tabelas de \emph{dupla entrada}. Nas colunas estão os níveis da variável \(X\) e nas linhas os níveis da variável \(Y\).
 
 Para nosso exemplo, podemos fazer simplesmente:
 
@@ -3494,7 +3504,18 @@ Para nosso exemplo, podemos fazer simplesmente:
 ##   Contra             36        20
 \end{verbatim}
 
-Temos portanto 81 a favor e não residentes, 63 e residentes, 36 contra e não residentes e por fim 20 a favor e residentes.
+Temos portanto:
+
+\begin{itemize}
+\item
+  81 - A favor e Não-Residente;
+\item
+  63 - A favor e Residente;
+\item
+  36 - Contra e Não-Residente;
+\item
+  20 - Contra e Residente
+\end{itemize}
 
 Podemos ver os totais marginais das linhas:
 
@@ -3524,6 +3545,8 @@ Ou os totais marginais das colunas:
 ##           117            83
 \end{verbatim}
 
+Que são justamente os totais que verificamos nas distribuições individuais.
+
 Se quisermos ver as frequências relativas \emph{marginais} podemos fazer:
 
 \begin{Shaded}
@@ -3540,13 +3563,13 @@ Se quisermos ver as frequências relativas \emph{marginais} podemos fazer:
 ##   Contra      0.6428571 0.3571429
 \end{verbatim}
 
-Neste caso, estamos vendo as \textbf{frequências relativas das linhas}, isto é, cada linha nesta tabela soma \(1\). Os que vemos aqui é:
+Neste caso, estamos vendo as \textbf{frequências relativas das linhas}, isto é, cada linha nesta tabela soma \(1\). O que vemos nesta tabela é:
 
 \begin{itemize}
 \item
-  dos \(144\) entrevistados que são \textbf{A favor}, cerca de \(56.25\%\) são não residentes, enquanto os demais \(43.75\%\) são residentes.
+  dos \(144\) entrevistados que são A favor, cerca de \(56.25\%\) são Não-Residente, enquanto os demais \(43.75\%\) são Residente
 \item
-  dos \(56\) entrevistados que são \textbf{A favor}, cerca de \(64.29\%\) são não residentes, enquanto os demais \(35.71\%\) são residentes.
+  dos \(56\) entrevistados que são Contra, cerca de \(64.29\%\) são Não-Residente, enquanto os demais \(35.71\%\) são Residente
 \end{itemize}
 
 Podemos fazer exatamente a mesma coisa olhando agora para as \textbf{frequências marginais por colunas}:
@@ -3569,9 +3592,9 @@ Neste caso são as \textbf{colunas} que somam \(1\), portanto:
 
 \begin{itemize}
 \item
-  dos \(117\) entrevistados que são \textbf{Não-Residentes}, cerca de \(69.23\%\) são A favor, enquanto os demais \(75.9\%\) são Contra.
+  dos \(117\) entrevistados que são Não-Residente, cerca de \(69.23\%\) são A favor, enquanto os demais \(30.77\%\) são Contra
 \item
-  dos \(83\) entrevistados que são \textbf{Residentes}, cerca de \(30.77\%\) são A favor, enquanto os demais \(24.1\%\) são Contra.
+  dos \(83\) entrevistados que são Residente, cerca de \(75.9\%\) são A favor, enquanto os demais \(75.9\%\) são Contra
 \end{itemize}
 
 Podemos finalmente ver a frequência relativa conjunta:
@@ -3625,7 +3648,7 @@ Na tabela de frequência relativa conjunta, o somatório total da tabela deve se
 \hypertarget{o-gruxe1fico-de-barras-para-duas-variuxe1veis-qualitativas}{%
 \section{O gráfico de barras para duas variáveis qualitativas}\label{o-gruxe1fico-de-barras-para-duas-variuxe1veis-qualitativas}}
 
-Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela obtida a partir do comando \texttt{table(mun\$Opiniao,\ mun\$Moradia)} podemos utilizar o comando \texttt{barplot()}. Por outro lado se quisermos utilizar a tabela original de dados (objeto \texttt{mun}) podemos fazer uso do \texttt{ggplot2}.
+Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela de contingência obtida a partir do comando \texttt{table(mun\$Opiniao,\ mun\$Moradia)}, podemos utilizar o comando \texttt{barplot()}. Por outro lado, se quisermos utilizar a tabela original de dados (objeto \texttt{mun}) podemos fazer uso do pacote \texttt{ggplot2}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3676,7 +3699,7 @@ Em todos estes exemplos, note que a relação entre as opiniões \texttt{A\ favo
 
 O índice de qui-quadrado (\(\chi^2\)) mede a discrepância entre os valores \textbf{observados} e os valores \textbf{esperados} em uma tabela de contingência.
 
-Digamos que um município tenha \(20\%\) de sua população morando em área Rural e os outros \(80\%\) em área Urbana. Se fazemos uma amostragem \emph{ao acaso} dos moradores é esperado que esta frequencia relativa se reflita na amostra. Neste caso se sorteamos \(200\) pessoas, seria esperados:
+Digamos que um município tenha \(20\%\) de sua população morando em área Rural e os outros \(80\%\) em área Urbana. Se fizermos uma amostragem \emph{ao acaso} dos moradores é esperado que esta frequência relativa se reflita na amostra. Neste caso se sorteamos \(200\) pessoas, seria esperado:
 
 \begin{itemize}
 \item
@@ -3695,7 +3718,7 @@ Urbana & 160\\
 \hline
 \end{tabular}
 
-Entretando, se fazemos um sorteio ao acaso, haverá nos valores observados alguma variação ao redor destes valores. O \(\chi^2\) mede a discrepância entre as frequências observadas (\(o\)) e esperadas (\(e\)) para dada célula da tabela:
+Entretando, se fazemos um sorteio ao acaso, haverá alguma variação ao redor destes valores. O \(\chi^2\) mede esta discrepância entre as frequências observadas (\(o\)) e esperadas (\(e\)) para cada célula da tabela:
 
 \[\chi^2 = \sum_{i=1}^{n}\frac{(o_i - e_i)^2}{e_i}\]
 Para uma tabela de frequências, devemos determinar portanto os valores de \(o_i\) e \(e_i\).
@@ -3741,9 +3764,9 @@ De modo que o valor de \(\chi^2\) será:
 \hypertarget{o-uxedndice-de-chi2-em-uma-tabela-de-contiguxeancia}{%
 \section{\texorpdfstring{O índice de \(\chi^2\) em uma tabela de contigência}{O índice de \textbackslash chi\^{}2 em uma tabela de contigência}}\label{o-uxedndice-de-chi2-em-uma-tabela-de-contiguxeancia}}
 
-No exemplo acima, verificamos a discrepância entre as contagens observadas na tabela e as contagens esperadas. As contagens esperadas foram definidas segundo um modelo que dizia que as populações rurais e urbanas se dividiam nas proporções \(20\%:80\%\). Em uma tabela de contigência, a hipótese em verificação é a de que \textbf{não há associação entre \(X\) e \(Y\)}. Se for assim, é esperado que as frequências conjuntas sejam porporcionais às frequências marginais. Vamos apresentar esta ideia utilizando uma notação geral para tabelas de contingência e em seguida discutir com um exemplo.
+No exemplo acima, as contagens esperadas foram definidas a partir de um modelo que dizia que as populações rurais e urbanas se dividiam nas proporções \(20\%:80\%\). Em uma tabela de contigência, a hipótese em verificação é a de que \textbf{não há associação entre \(X\) e \(Y\)}. Se for assim, é esperado que as frequências conjuntas sejam \emph{p}orporcionais às frequências marginais*. Vamos apresentar esta ideia utilizando uma notação geral para tabelas de contingência e em seguida discutir com um exemplo.
 
-A tabela abaixo apresenta \(r\) linhas por \(s\) colunas com as contagens detodas as combinações dos níveis da variável \(X\) (Níveis \(A_{1}\) a \(A_{r}\)) e da variável \(Y\) (Níveis \(B_{1}\) a \(B_{s}\)). Os totais marginais de \(X\) e \(Y\) são expressos respectivamente na última coluna e na última linha.
+A tabela abaixo apresenta \(r\) linhas por \(s\) colunas com as contagens de todas as combinações dos níveis da variável \(X\) (Níveis \(A_{1}\) a \(A_{r}\)) e da variável \(Y\) (Níveis \(B_{1}\) a \(B_{s}\)). Os totais marginais de \(X\) e \(Y\) são expressos respectivamente na última coluna e na última linha.
 
 \begin{longtable}[]{@{}lccccccc@{}}
 \toprule
@@ -3782,6 +3805,8 @@ Tendo definido os valores esperados em uma tabela de contingência de \(r \times
 
 \[\chi^2 = \sum_{i=1}^{r}\sum_{j=1}^{s}\frac{(n_{ij} - n_{ij}^{e})^2}{n_{ij}^{e}}\]
 
+\textbf{Retornando ao exemplo das entrevistas}
+
 A tabela de contingência contendo os dados \textbf{observados} do início do capítulo pode ser escrita como:
 
 \begin{longtable}[]{@{}llll@{}}
@@ -3795,12 +3820,12 @@ Total Moradia & 117 & 83 & 200 \\
 \bottomrule
 \end{longtable}
 
-\textbf{Valores esperados na linha \(i\) e coluna \(j\)}
+Os Valores esperados na linha \(i\) e coluna \(j\) são:
 
 \begin{itemize}
 \tightlist
 \item
-  Linha \(1\) - coluna \(1\) (\texttt{Não-Residente} - \texttt{A\ favor}):
+  Linha \(1\) - Coluna \(1\) (\texttt{Não-Residente} - \texttt{A\ favor}):
 \end{itemize}
 
 \(n_{ii}^{e} = \frac{n_{1.} \times n_{.1}}{n} = \frac{144 \times 117}{200} = 84.24\)
@@ -3808,7 +3833,7 @@ Total Moradia & 117 & 83 & 200 \\
 \begin{itemize}
 \tightlist
 \item
-  Linha \(1\) - coluna \(2\) (\texttt{Residente} - \texttt{A\ favor}):
+  Linha \(1\) - Coluna \(2\) (\texttt{Residente} - \texttt{A\ favor}):
 \end{itemize}
 
 \(n_{ii}^{e} = \frac{n_{1.} \times n_{.2}}{n} = \frac{144 \times 83}{200} = 59.76\)
@@ -3816,7 +3841,7 @@ Total Moradia & 117 & 83 & 200 \\
 \begin{itemize}
 \tightlist
 \item
-  Linha \(2\) - coluna \(1\) (\texttt{Não-Residente} - \texttt{Contra}):
+  Linha \(2\) - Coluna \(1\) (\texttt{Não-Residente} - \texttt{Contra}):
 \end{itemize}
 
 \(n_{ii}^{e} = \frac{n_{2.} \times n_{.1}}{n} = \frac{56 \times 117}{200} = 32.76\)
@@ -3824,12 +3849,12 @@ Total Moradia & 117 & 83 & 200 \\
 \begin{itemize}
 \tightlist
 \item
-  Linha \(2\) - coluna \(2\) (\texttt{Residente} - \texttt{Contra}):
+  Linha \(2\) - Coluna \(2\) (\texttt{Residente} - \texttt{Contra}):
 \end{itemize}
 
 \(n_{ii}^{e} = \frac{n_{2.} \times n_{.2}}{n} = \frac{56 \times 83}{200} = 23.24\)
 
-Tabela dom os valores \textbf{esperados}
+De modo que a tabela com os valores \textbf{esperados} será:
 
 \begin{longtable}[]{@{}llll@{}}
 \toprule
@@ -3842,39 +3867,38 @@ Total Moradia & 117 & 83 & 200 \\
 \bottomrule
 \end{longtable}
 
-Finalmente, o valor \(\chi^2\) será:
+Finalmente, o valor \(\chi^2\) pode ser obtido por:
 
 \(\chi^2 = \frac{(81 - 84.24)^2}{84.24} + \frac{(36 - 32.76)^2}{84.24} + \frac{(63 - 59.76)^2}{84.24} + \frac{(20 - 23.24)^2}{84.24} = 1.072\)
 
 \hypertarget{valores-de-chi2-quando-existe-associauxe7uxe3o}{%
 \section{\texorpdfstring{Valores de \(\chi^2\) quando existe associação}{Valores de \textbackslash chi\^{}2 quando existe associação}}\label{valores-de-chi2-quando-existe-associauxe7uxe3o}}
 
-O valor de \(\chi^2\) é zero somente se os valores observados forem \textbf{exatamente} igausi aos valores esperados. Pequenas discrepâncias irão gerar valores de \(chi^2\) acima de zero. Os valores se tornarão ais altos à medida que aumentam as diferenças entre \(n_{ij}\) e \(n_{ij}^e\).
+O valor de \(\chi^2\) será zero somente se os valores observados forem \textbf{exatamente} igauis aos valores esperados. Pequenas discrepâncias irão gerar valores de \(\chi^2\) acima de zero. Os valores se tornarão mais altos à medida que aumentam as diferenças entre \(n_{ij}\) e \(n_{ij}^e\).
 
-Abaixo estão diferentes exemplos em que existe associação entre \texttt{Opinião} e \texttt{Moradia}. Veja que todos os valores são mais elevados que o valor de \(chi^2\) que calculamos para o primeiro exemplo do capítulo.
-
-\begin{itemize}
-\item
-  Compare os valores e os gráficos abaixo com os apresentados em nosso exemplo inicial.
-\item
-  Tente aplicar a fórmula do \(\chi^2\) para chegar nos resultados apresentados em cada exemplo.
-\end{itemize}
+Abaixo estão diferentes exemplos em que existe associação entre \texttt{Opinião} e \texttt{Moradia}. Compare os valores e os gráficos abaixo os que fizemos no exemplo do capítulo e veja que todos os valores de \(\chi^2\) são mais elevados.
 
 \begin{flushleft}\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-196-1} \end{flushleft}
+
+\begin{itemize}
+\tightlist
+\item
+  Tente aplicar a fórmula do \(\chi^2\) para chegar aos resultados apresentados em cada exemplo.
+\end{itemize}
 
 \hypertarget{variauxe7uxf5es-do-uxedndice-de-chi2}{%
 \section{\texorpdfstring{Variações do índice de \(\chi^2\)}{Variações do índice de \textbackslash chi\^{}2}}\label{variauxe7uxf5es-do-uxedndice-de-chi2}}
 
-O valor de \(\chi^2\) aumenta com o tamanho da amostra o que torna difícil comparações de diferentes estudos. Para corrigir este efeito existe o \textbf{coeficiente de contigência de Pearson (\(C\))} que é baseado no resultado de \(\chi^2\)
+O valor de \(\chi^2\) aumenta com o tamanho da amostra, o que torna difícil comparações entre diferentes estudos. Para corrigir este efeito existe o \textbf{coeficiente de contigência de Pearson (\(C\))} que é baseado no resultado de \(\chi^2\)
 
 \[C = \sqrt{\frac{\chi^2}{\chi^2 + n}}\]
 
 em que \(n\) é o tamanho da amostra. O valor máximo de \(C\) depende do número de linhas (\(r\)) e de colunas (\(s\)) na tabela de contingêcia, deste modo podemos ainda definir um outro coeficiente que varia entre \(0\) e \(1\):
 
 \[T = \sqrt{\frac{\frac{\chi^2}{n}}{(r-1) \times (s-1)}}\]
-O valor \(0\) ocorre quando não há associação (\(\chi^2 = 0\)). O valor máximo de \(1\) só será atingido quando houver associação e \(r = s\)
+O valor \(T = 0\) ocorre quando não há associação (\(\chi^2 = 0\)) e o valor máximo de \(T = 1\) só será atingido quando houver associação e \(r = s\)
 
-Todos estes índices aumentam conforme aumenta o grua de associação entre as variáveis. Entretanto, não dissemos \textbf{em que ponto} passamos a aceitar a hipótese de associação as variáveis \(X\) e \(Y\). Iremos tratar deste assunto na seção sobre estatística inferencial. Ao tratarmos deste ponto é importante termos claro o que siginifica uma associação (ou dependêcia) entre duas variáveis qualitativas e como o índice de \(\chi^2\) mede esta associação.
+Todos estes índices aumentam conforme aumenta o grau de associação entre as variáveis. Entretanto, não dissemos \textbf{em que ponto} passamos a aceitar a hipótese de associação as variáveis \(X\) e \(Y\). Iremos tratar deste assunto na seção sobre estatística inferencial. Ao tratarmos deste ponto é importante termos claro o que siginifica uma associação (ou dependêcia) entre duas variáveis qualitativas e como o índice de \(\chi^2\) mede esta associação.
 
 \hypertarget{obtendo-o-uxedndice-de-chi2-de-uma-tabela-de-dados}{%
 \section{\texorpdfstring{Obtendo o índice de \(\chi^2\) de uma tabela de dados}{Obtendo o índice de \textbackslash chi\^{}2 de uma tabela de dados}}\label{obtendo-o-uxedndice-de-chi2-de-uma-tabela-de-dados}}
@@ -3896,15 +3920,15 @@ A função para o cálculo do \(\chi^2\) no R é \texttt{chisq.test} e pode ser 
 ## X-squared = 0.76697, df = 1, p-value = 0.3812
 \end{verbatim}
 
-O resultado mostra o o valor de \(\chi^2\) calcuado (\texttt{X-squared}) e outras duas quantias denominadas de \textbf{graus de liberdade} (\texttt{df}) e \textbf{valor de p} (\texttt{p-value}), sobre as quais falaremos na seção sobre Inferência estatística (Capítulos \ref{popamostra} a \ref{testet}).
+O resultado mostra o o valor de \(\chi^2\) calculado (\texttt{X-squared}) e outras duas quantias denominadas de \textbf{graus de liberdade} (\texttt{df}) e \textbf{valor de p} (\texttt{p-value}), sobre as quais falaremos na seção sobre Inferência estatística (Capítulos \ref{popamostra} a \ref{testet}).
 
-Note que o resultado é diferente do que obtvemos neste capítulo. Isto ocorre pois, por padrão, a função utiliza a chamada \textbf{correção de Yates} (veja aqui), em que o \(\chi_{Yates}^{2}\) é calculado por:
+Note que o resultado é diferente do que obtivemos neste capítulo. Isto ocorre pois, por padrão, a função utiliza a \textbf{correção de Yates} (veja aqui), em que \(\chi_{Yates}^{2}\) é calculado por:
 
 \[\chi_{Yates}^{2} = \sum_{i=1}^{r}\sum_{j=1}^{s}\frac{(|n_{ij} - n_{ij}^{e}| - 0,5)^2}{n_{ij}^{e}}\]
 
 O termo \(|n_{ij} - n_{ij}^{e}|\) se refere ao módulo da distância entre os valores observados e calculados.
 
-Esta correção será abordada ao falarmos de \textbf{testes de hipóteses para variáveis categóricas}. Por hora se quisermos obter exatamente os resultados descrito acima utilizando o a função \texttt{chisq.test}, basta fazermos:
+Esta correção será abordada ao falarmos de \textbf{testes de hipóteses para variáveis categóricas}. Por hora, se quisermos obter exatamente os resultados descritos no exemplo deste capítulo, basta fazermos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3923,7 +3947,7 @@ Esta correção será abordada ao falarmos de \textbf{testes de hipóteses para 
 \hypertarget{biquant}{%
 \chapter{Análise bidimensional: variáveis quantitativas}\label{biquant}}
 
-Neste capítulo iremos medir o grau de associação entre duas variáveis quantitativas denominadas de \(X\) e \(Y\). Para isto falaremos dos conceitos de \textbf{covariáncia} e \textbf{correlação}. Neste momento, não estamos interessados em dizer se \(Y\) depende funcionalmente de \(X\) ou vice-versa. Estamos interessados em medir somente a intensidade de associação entre as duas variáveis. Deste modo, quando calcularmos a covariância entre \(Y\) e \(X\) (\(s_{YX}\)) poderíamos inverter a ordem (\(s_{XY}\)) e teríamos exatamente os mesmo resultados. Dizemos portanto que existe uma simetria entre as variáveis quando calculamos a covariãncia ou correlação. Esta simetria \emph{não vale} quando formos abordar o conceito de \textbf{regressão linear} (Capítulo \ref{regressao}), quando assumimos \emph{explicitamente} a direção em que \(Y\) é \textbf{função} de \(X\) - \(Y = f(X)\).
+Neste capítulo iremos medir o grau de associação entre duas variáveis quantitativas denominadas de \(X\) e \(Y\). Para isto falaremos dos conceitos de \textbf{covariância} e \textbf{correlação}. Não estamos interessados em verificar se \(Y\) depende funcionalmente de \(X\) ou vice-versa. Estamos interessados somente em medir a intensidade de associação entre as duas variáveis. Quando calcularmos a covariância entre \(Y\) e \(X\) (\(s_{YX}\)), por exemplo, poderíamos inverter a ordem fazendo \(s_{XY}\) e teríamos exatamente os mesmo resultados. O mesmo vale para o coeficiente de correlação (\(r_{YX} = r_{XY}\)). Dizemos que existe uma simetria entre as variáveis quando calculamos a covariância ou correlação. Esta simetria \emph{não vale} quando formos abordar o conceito de \textbf{regressão linear} (Capítulo \ref{regressao}), quando assumimos \emph{explicitamente} que \(Y\) é \textbf{função} de \(X\).
 
 Estamos interessados em diferenciar três situações que podem ser visualizadas nos gráficos de dispersão abaixo:
 
