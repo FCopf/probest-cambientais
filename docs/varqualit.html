@@ -1032,7 +1032,7 @@ Eutrófico
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="varqualit.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> res) <span class="sc">+</span></span>
 <span id="cb48-2"><a href="varqualit.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> Bacia) <span class="sc">+</span></span>
 <span id="cb48-3"><a href="varqualit.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
 <p>Vamos entender o comando:</p>
 <ul>
 <li><p><code>ggplot(res)</code>: define a tabela de dados que será utilizada.</p></li>
@@ -1045,7 +1045,7 @@ Eutrófico
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="varqualit.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> res) <span class="sc">+</span></span>
 <span id="cb49-2"><a href="varqualit.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> Bacia) <span class="sc">+</span></span>
 <span id="cb49-3"><a href="varqualit.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
 <p>A estética gráfica (comando <code>aes()</code>) não precisa estar em uma linha separada. Também não é obrigatório escrevermos <code>data = res</code>. De fato, é mais comun escrevermos esta sequência de argumentos como:</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="varqualit.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Bacia)) <span class="sc">+</span></span>
 <span id="cb50-2"><a href="varqualit.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
@@ -1055,11 +1055,11 @@ Eutrófico
 <p>Finalmente, poderíamos organizar os barras em ordem decrescente como fizemos com as tabelas de frequência, utilizando a função <code>fct_infreq()</code>:</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="varqualit.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(Bacia))) <span class="sc">+</span></span>
 <span id="cb52-2"><a href="varqualit.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
 <p>ou em ordem crescente revertendo o comando anterior, com a função <code>fct_rev()</code>.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="varqualit.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_infreq</span>(Bacia)))) <span class="sc">+</span></span>
 <span id="cb53-2"><a href="varqualit.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
 <p><strong>Formatanto a figura</strong></p>
 <p>Para tormar a figura mais auto-explicativa, podemos adicionar camadas identificando os eixos e fornecendo, título, subtítulo e outras informações:</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="varqualit.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> Bacia)) <span class="sc">+</span></span>
@@ -1069,17 +1069,17 @@ Eutrófico
 <span id="cb54-5"><a href="varqualit.html#cb54-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&#39;Dados obtidos do livro: Biocenoses em Reservatórios&#39;</span>,</span>
 <span id="cb54-6"><a href="varqualit.html#cb54-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Bacia hidrográfica&#39;</span>,</span>
 <span id="cb54-7"><a href="varqualit.html#cb54-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Frequência&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
 <p><strong>Gráfico de frequência relativa</strong></p>
 <p>Utilizando o <code>ggplot2</code> é simples construir um gráfico de frequência relativa.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="varqualit.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> Bacia, <span class="at">y =</span> ..prop.., <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb55-2"><a href="varqualit.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
 <p>Veja que para isto transformou as contagens em proporções. Se quisermos transformar em percentuais então:</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="varqualit.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> Bacia, <span class="at">y =</span> ..prop.., <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb56-2"><a href="varqualit.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb56-3"><a href="varqualit.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
 <hr />
 <p><strong>Outras opções para construir um gráfico de barras</strong></p>
 <p>As figuras que acabamos de fazer apresentam, do modo gráfico, as mesmas informações das tabelas de frequência vistas no início do capítulo sem que fosse necessário contruir a tabela de frequencia, pois o comando <code>geom_bar()</code> já realiza esta contagem.</p>
@@ -1087,11 +1087,11 @@ Eutrófico
 <p>Podemos construir gráficos de barras das tabelas <code>Frequencia</code> ou <code>Freq_relativa</code> da seguinte forma:</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="varqualit.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fbacia_rel, <span class="fu">aes</span>(<span class="at">x =</span> Bacia, <span class="at">y =</span> Frequencia)) <span class="sc">+</span></span>
 <span id="cb57-2"><a href="varqualit.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
 <p>e</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="varqualit.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fbacia_rel, <span class="fu">aes</span>(<span class="at">x =</span> Bacia, <span class="at">y =</span> Freq_relativa)) <span class="sc">+</span></span>
 <span id="cb58-2"><a href="varqualit.html#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
 <p>Para utilizar diretamente uma tabela de frequências, devemos oferecer a variável do eixo <span class="math inline">\(x\)</span>, do eixo <span class="math inline">\(y\)</span> e no comando <code>geom_bar()</code> adicionar o argumento <code>stat = 'identity'</code>. Feito isso, o comando utiliza diretamente os números disponíveis em cada linha da coluna <code>Frequencia</code>.</p>
 <hr />
 <p><strong>Gráfico de frequência para variáveis categóricas ordenadas</strong></p>
@@ -1103,13 +1103,13 @@ Eutrófico
 <p>Feito isto, o comando <code>geom_bar()</code> vai organizar os níveis de acordo com a sequência definida:</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="varqualit.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> Trofia)) <span class="sc">+</span></span>
 <span id="cb60-2"><a href="varqualit.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
 <p>E caso seja necessário retirar reservatórios com dados faltantes em <code>Trofia</code>, podemos fazer:</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="varqualit.html#cb61-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">%&gt;%</span> </span>
 <span id="cb61-2"><a href="varqualit.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(Trofia) <span class="sc">%&gt;%</span> </span>
 <span id="cb61-3"><a href="varqualit.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Trofia)) <span class="sc">+</span></span>
 <span id="cb61-4"><a href="varqualit.html#cb61-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
 <p>No comando acima, a tabela de dados não entra dentro do comando <code>ggplot()</code>, ela é inicialmente processada e usamos o operador <code>%&gt;%</code> para inserir o resultado do processamento no comnado gráfico. Esta é outra maneira de combinar capacidade de processamento de dados e apresentação gráfica com o conjunto de pacotes em <code>tidyverse</code>.</p>
 
 </div>

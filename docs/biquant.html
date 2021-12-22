@@ -521,7 +521,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Capítulo 10</span> Análise bidimensional: variáveis quantitativas</h1>
 <p>Neste capítulo iremos medir o grau de associação entre duas variáveis quantitativas denominadas de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Para isto falaremos dos conceitos de <strong>covariância</strong> e <strong>correlação</strong>. Não estamos interessados em verificar se <span class="math inline">\(Y\)</span> depende funcionalmente de <span class="math inline">\(X\)</span> ou vice-versa. Estamos interessados somente em medir a intensidade de associação entre as duas variáveis. Quando calcularmos a covariância entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span> (<span class="math inline">\(s_{YX}\)</span>), por exemplo, poderíamos inverter a ordem fazendo <span class="math inline">\(s_{XY}\)</span> e teríamos exatamente os mesmo resultados. O mesmo vale para o coeficiente de correlação (<span class="math inline">\(r_{YX} = r_{XY}\)</span>). Dizemos que existe uma simetria entre as variáveis quando calculamos a covariância ou correlação. Esta simetria <em>não vale</em> quando formos abordar o conceito de <strong>regressão linear</strong> (Capítulo <a href="regressao.html#regressao">21</a>), quando assumimos <em>explicitamente</em> que <span class="math inline">\(Y\)</span> é <strong>função</strong> de <span class="math inline">\(X\)</span>.</p>
 <p>Estamos interessados em diferenciar três situações que podem ser visualizadas nos gráficos de dispersão abaixo:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-203-1.png" width="1440" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-204-1.png" width="1440" style="display: block; margin: auto;" /></p>
 <div id="covariância-entre-y-e-x" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Covariância entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></h2>
 <p>Vamos retomar o conceito de <strong>variância amostral</strong> para em seguida introduzir o conceito de <strong>covariância amostral</strong>.</p>
@@ -552,7 +552,7 @@ div.csl-indent {
 <p><span class="math display">\[r = \frac{\sum{(Y_i - \overline{Y})(X_i - \overline{X})}}{\sqrt{\sum{(Y_i - \overline{Y})^2 \sum{(X_i - \overline{X})^2}}}}\]</span></p>
 <hr />
 <p>Esta padronização garante que o índice pode variar entre <span class="math inline">\(-1\)</span> (correlação perfeitamente linear e <strong>negativa</strong>) e <span class="math inline">\(+1\)</span> (correlação perfeitamente linear e <strong>positiva</strong>), se aproximando de zero quando <strong>não existe</strong> correlação.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-204-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-205-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="exemplo" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> Exemplo</h2>
@@ -729,7 +729,7 @@ Camarão rei
 <span id="cb121-18"><a href="biquant.html#cb121-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb121-19"><a href="biquant.html#cb121-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb121-20"><a href="biquant.html#cb121-20" aria-hidden="true" tabindex="-1"></a>c1 <span class="sc">+</span> c2</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-207-1.png" width="960" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-208-1.png" width="960" /></p>
 <p>A captura em toneladas do camarão tigre é sempre mais elevada. Entretanto, a figura da direita sugere haver uma associação linear entre as capturas. Nos anos em que houve maiores capturas do camarão tigre parece ter havido também um aumento nas capturas do camarão rei. Dizemos as capturas covariam positivamente. Portanto existe uma <strong>correlação positiva</strong> entre a captura das duas espécies.</p>
 <p>Em nenhum momento estamos dizendo que a captura de uma espécie é a <strong>causa</strong> do aumento na captura da outra. Muito provavelmente, as abundâncias das duas espécies estão relacionadas a um terceiro fator que gera um comportamento similar na variação das capturas ano a ano. Estamos interessados em mensurar o grau de associação seja pela covariância ou pelo coeficiente de correlação de Pearson.</p>
 <p>Em nosso exemplo, a covariância entre as abundâncias dos camarões tigre e rei é positiva (<span class="math inline">\(s_{tigre-rei} = 3.3293\times 10^{4}\)</span>) e consequentemente a correlação de Pearson também é positiva (<span class="math inline">\(r = 0.82\)</span>). Confira os cálculos utilizando as expressões apresentadas no capítulo.</p>

@@ -817,7 +817,7 @@ Residente
 <span id="cb98-15"><a href="biquali.html#cb98-15" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;patchwork&#39;)</span></span>
 <span id="cb98-16"><a href="biquali.html#cb98-16" aria-hidden="true" tabindex="-1"></a><span class="co"># library(patchwork)</span></span>
 <span id="cb98-17"><a href="biquali.html#cb98-17" aria-hidden="true" tabindex="-1"></a>plt_op <span class="sc">+</span> plt_morad</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
 <p>Existe portanto um predomínio de pessoas <code>A Favor</code> e um ligeiro predomínio de entrevistados <code>Não-Residentes</code>.</p>
 <p>Estamos interessados em entender se existe alguma <strong>associação</strong> entre as respostas dadas às duas perguntas, uma questão que pode ser colocada da seguinte forma:</p>
 <blockquote>
@@ -908,7 +908,7 @@ Residente
 <span id="cb115-8"><a href="biquali.html#cb115-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb115-9"><a href="biquali.html#cb115-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb115-10"><a href="biquali.html#cb115-10" aria-hidden="true" tabindex="-1"></a>plt_bar1</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-190-1.png" width="672" /></p>
 <p>Veja que nesta figura, existem mais opiniões <code>A favor</code> <strong>independente</strong> do entrevistado ser ou não residente. Este padrão é o mesmo que observamos no gráfico da variável <code>Opinião</code> isoladamente. Isto sugere que <strong>não existe</strong> associação entre as variáveis <code>Opinião</code> e <code>Moradia</code>. Isto é, a opinião de um entrevistado sobre a construção da obra <strong>não depende</strong> do seu local de moradia.</p>
 <hr />
 <blockquote>
@@ -916,7 +916,7 @@ Residente
 </blockquote>
 <hr />
 <p>Abaixo são apresentadas situações em que <strong>existe</strong> uma associação.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
 <p>Em todos estes exemplos, note que a relação entre as opiniões <code>A favor</code> ou <code>Contra</code> <em>depende</em> se o entrevistado é ou não Residente na região. Todos estes padrões configuram uma <strong>associação</strong> entre as variáveis <code>Opinião</code> e <code>Moradia</code>.</p>
 <ul>
 <li><p>Figura A: Não-Residentes tendem a ser <code>A favor</code> e Residentes são em sua maioria <code>Contra</code>;</p></li>
@@ -1199,7 +1199,7 @@ Urbana
 <h2><span class="header-section-number">9.5</span> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação</h2>
 <p>O valor de <span class="math inline">\(\chi^2\)</span> será zero somente se os valores observados forem <strong>exatamente</strong> igauis aos valores esperados. Pequenas discrepâncias irão gerar valores de <span class="math inline">\(\chi^2\)</span> acima de zero. Os valores se tornarão mais altos à medida que aumentam as diferenças entre <span class="math inline">\(n_{ij}\)</span> e <span class="math inline">\(n_{ij}^e\)</span>.</p>
 <p>Abaixo estão diferentes exemplos em que existe associação entre <code>Opinião</code> e <code>Moradia</code>. Compare os valores e os gráficos abaixo os que fizemos no exemplo do capítulo e veja que todos os valores de <span class="math inline">\(\chi^2\)</span> são mais elevados.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-196-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-197-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
 <ul>
 <li>Tente aplicar a fórmula do <span class="math inline">\(\chi^2\)</span> para chegar aos resultados apresentados em cada exemplo.</li>
 </ul>
