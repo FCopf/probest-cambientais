@@ -141,9 +141,9 @@ text(x = 10, y = 11, labels = expression(r == -1), cex = size_text)
 
 ## Exemplo
 
-No conjunto de dados abaixo [@haddon2010modelling] mostra dados da pesca do camarão tigre e do camarão rei entre nos anos de 1976 a 1987. O camarão tigre constitui a espécie alvo da pesca, enquanto o camarão rei aparece como uma espécie acidental.
+No conjunto de dados abaixo [@haddon2010modelling] (disponível em <a href="https://github.com/FCopf/probest-cambientais/blob/master/datasets/ctigre_haddon.csv" target="_blank">ctigre_haddon.csv</a>) mostra dados da pesca do camarão tigre e do camarão rei entre nos anos de 1976 a 1987. O camarão tigre constitui a espécie alvo da pesca, enquanto o camarão rei aparece como uma espécie acidental.
 
-Importe a base de dados:
+Importe a base de dados (Disponível em :):
 
 ```{r echo = TRUE, eval = FALSE}
 tigre = read_csv("ctigre_haddon.csv")

@@ -71,6 +71,9 @@ library(palmerpenguins)
 
 ```
 
+<!--
 
 ```{r child = "snow.Rmd"}
 ```
+
+-->
