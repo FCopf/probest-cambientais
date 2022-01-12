@@ -526,7 +526,7 @@ div.csl-indent {
 Para variáveis contínuas podemos expressar somente a probabilidade de que um experimento resulte em um <strong>intervalo</strong> de valores entre <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span>, ou seja, <span class="math inline">\(P(a \le y \le b)\)</span>. Deste modo temos que:</p>
 <p><span class="math display">\[P(-\infty \le Y \le +\infty) = \int_{-\infty}^{+\infty}p(y) dy = 1\]</span></p>
 <p>Portanto, para as variáveis contínuas, o conceito de somatório dos valores individuais para <span class="math inline">\(y\)</span> é substituído pelo conceito de <em>integração</em> em um intervalo definido e a probabilidade deste intervalo equivale à área sob a curva de probabilidade.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-401-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-400-1.png" width="960" style="display: block; margin: auto;" /></p>
 <div id="esperança-e-variância-em-modelos-contínuos" class="section level4 unnumbered">
 <h4>Esperança e variância em modelos contínuos</h4>
 <p>Vimos que o valor esperado para uma variável aleatória discreta é dado por:</p>
@@ -544,9 +544,9 @@ Para uma variável aleatória contínua, podemos definir o valor esperado como:<
 <p><span class="math display">\[f(y|\mu,\sigma) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{y-\mu}{\sigma})^2}\]</span></p>
 <p>Em que os parâmetros da função são <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> representam respectivamente a média e o desvio padrão de <span class="math inline">\(y\)</span>. Novamente nos referimos aos símbolos da média e desvio padrão conforme a notação utilizada para descrever a população estatística de um experimento (Capítulo <a href="#posicao"><strong>??</strong></a>). Na função de densidade estes parâmetros determiman a prosição central e o grau de achatamento da curva.</p>
 <p>Após o término deste tópico é importante que você leia também o que foi apresentado no capítulo <a href="normdist.html#normdist">14</a> sobre distribuição normal.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-402-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-401-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Por exemplo, se o comprimento segue uma distribuição normal com <span class="math inline">\(\mu = 10\)</span> e <span class="math inline">\(\sigma = 2\)</span> veremos que a proporção de individuos iguais ou maiores que 16 cm de comprimento é muito baixa, neste caso <span class="math inline">\(P(Y \ge 16) = 0.0013\)</span>. Por outro lado, para <span class="math inline">\(\sigma = 4\)</span>, esperamos encontrar mais indivíduos nos extremos da distribuição em que a proporção de individuos iguais ou maiores que 16 cm seria de <span class="math inline">\(P(Y \ge 16) = 0.0668\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-404-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-403-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="outros-são-altamente-assimétricos" class="section level2" number="30.2">
 <h2><span class="header-section-number">30.2</span> Outros são altamente assimétricos</h2>
@@ -557,7 +557,7 @@ Para uma variável aleatória contínua, podemos definir o valor esperado como:<
 <p><span class="math display">\[E(Y) = \mu = \frac{1}{\lambda}\]</span></p>
 <p>enquanto a variância é dada por:</p>
 <p><span class="math display">\[VAR(Y) = \sigma^2 = \frac{1}{\lambda^2}\]</span></p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-405-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-404-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>No modelo exponencial, o único parâmetro é <span class="math inline">\(\lambda\)</span>. O modelo é altamente assimétrico, com maior densidade na porção esquerda da curva. Assim, para um fenômeno que possa ser descrito por um modelo exponencial, a maioria das observações será composta de valores baixos, ainda que valores extremamente elevados possam surgir ocasionalmente.</p>
 
 </div>

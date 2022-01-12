@@ -565,8 +565,8 @@ div.csl-indent {
 <div id="efeito-da-assimetria-sobre-os-descritores-de-tendência-central" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Efeito da assimetria sobre os descritores de tendência central</h2>
 <p>Cada um dos drescitores de tendência central descritos acima é mais ou menos sensível ao grau de assimetria de uma distribuiçãol. Em uma distribuição <strong>perfeitamente simétrica</strong>, onde as observações estão igualmente dispersas acima e abaixo do ponto central, os valores da média, mediana, moda e ponto médio coincidem. Por outro lado, pode ocorrer da distribuição ser <strong>assimétrica</strong>. Neste caso, a posição relativa dos descritores irá depender se a assimetria é à <strong>direita</strong> ou à <strong>esquerda</strong>. Esta discrepância ocorre devido à sensibilidade destes descritores a valores <em>extremos</em> na distribuição. O ponto médio é o mais sensível à presença de pontos extremos, seguido da média, mediana e a moda.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-121"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-121-1.png" alt="Efeito da assimetria de uma distribuição sobre o ponto médio, a média aritmética, a mediana e a moda" width="1152" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-120"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-120-1.png" alt="Efeito da assimetria de uma distribuição sobre o ponto médio, a média aritmética, a mediana e a moda" width="1152" />
 <p class="caption">
 Figure 5.1: Efeito da assimetria de uma distribuição sobre o ponto médio, a média aritmética, a mediana e a moda
 </p>
@@ -624,7 +624,7 @@ CPUE_mediana
 </tbody>
 </table>
 <p>Os valores são parecidos, porém a média é um pouco superior. Provavelmente a distribuição deva ser ligeiramente assimétrica à direita. Podemos verificar isto por meio de um histograma de disdribuição:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
 <p>Neste caso, alguns valores de captura próximos a <span class="math inline">\(30\)</span> kg estão fazendo com que a média esteja um pouco acima da mediana.</p>
 <p>Vamos verificar agora a média e a media da <code>Area</code> dos reservatórios:</p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="tendcentral.html#cb78-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">%&gt;%</span> </span>
@@ -658,7 +658,7 @@ CPUE_mediana
 <span id="cb79-2"><a href="tendcentral.html#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb79-3"><a href="tendcentral.html#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> Area)) <span class="sc">+</span></span>
 <span id="cb79-4"><a href="tendcentral.html#cb79-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> cl_area, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <p>Existe uma grande concentração de reservatórios com área até <span class="math inline">\(50\)</span> <span class="math inline">\(km^2\)</span>, porém poucos reservatórios muito grandes com mais de <span class="math inline">\(200\)</span> <span class="math inline">\(km^2\)</span>. Este valores <em>deslocam</em> a média aritmética à direita.</p>
 <p>Podemos ver quem são estes reservatórios utilizando a função <code>filter</code></p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="tendcentral.html#cb80-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">%&gt;%</span> </span>

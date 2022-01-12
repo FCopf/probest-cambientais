@@ -1610,11 +1610,11 @@ Relativa_ac
 <p>Histogramas são regresentações das tabelas de frequência e de frequência relativa. Um histograma da coluna <code>CPUE</code> pode ser feito com o comando:</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="varquant.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> CPUE)) <span class="sc">+</span></span>
 <span id="cb70-2"><a href="varquant.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 <p>Os intervalos de classe foram escolhidos automaticamente pela função <code>geom_histogram</code>. Se quisermos ter o controle sobre estes intervalos, podemos adicionar o argumento <code>beaks =</code> e a sequência com os limites de classe que criamos anteriormente:</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="varquant.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> CPUE)) <span class="sc">+</span></span>
 <span id="cb71-2"><a href="varquant.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> cl_cpue)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 <p>A formatação do histograma acima pode ser melhorada de diversas formas, por exemplo:</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="varquant.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> CPUE, <span class="at">label =</span> ..count..)) <span class="sc">+</span></span>
 <span id="cb72-2"><a href="varquant.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> cl_cpue, </span>
@@ -1623,7 +1623,7 @@ Relativa_ac
 <span id="cb72-5"><a href="varquant.html#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">&quot;bin&quot;</span>, <span class="at">size =</span> <span class="dv">6</span>, <span class="at">vjust =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
 <span id="cb72-6"><a href="varquant.html#cb72-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">breaks =</span> cl_cpue) <span class="sc">+</span></span>
 <span id="cb72-7"><a href="varquant.html#cb72-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
 <ul>
 <li><p>Modificamos a cor do preenchimento (<code>fill = 'darkblue'</code>), e identificamos as barras individualmente traçando uma linha branca entre elas (<code>color = 'white'</code>);</p></li>
 <li><p>Re-escrevemos o rótulo dos eixos <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> (<code>labs()</code>);</p></li>
@@ -1640,7 +1640,7 @@ Relativa_ac
 <span id="cb73-7"><a href="varquant.html#cb73-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">&quot;bin&quot;</span>, <span class="at">size =</span> <span class="dv">6</span>, <span class="at">vjust =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
 <span id="cb73-8"><a href="varquant.html#cb73-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">breaks =</span> cl_cpue) <span class="sc">+</span></span>
 <span id="cb73-9"><a href="varquant.html#cb73-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
 <p>Aqui fizemos duas mudanças:</p>
 <ul>
 <li><p>inserimos o argumento <code>y = (..count..)/sum(..count..)</code> para dizer que as barras em <span class="math inline">\(y\)</span> devem mostrar a contagem do número de observações em cada intervalo dividido pelo total e;</p></li>
@@ -1659,7 +1659,7 @@ Relativa_ac
 <span id="cb74-7"><a href="varquant.html#cb74-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">&quot;bin&quot;</span>, <span class="at">size =</span> <span class="dv">6</span>, <span class="at">vjust =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
 <span id="cb74-8"><a href="varquant.html#cb74-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">breaks =</span> cl_cpue) <span class="sc">+</span></span>
 <span id="cb74-9"><a href="varquant.html#cb74-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
 <p>Para fazer o mesmo mostrando as frequências relativas fazemos:</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="varquant.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(res, <span class="fu">aes</span>(<span class="at">x =</span> CPUE,</span>
 <span id="cb75-2"><a href="varquant.html#cb75-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="fu">cumsum</span>(..count..<span class="sc">/</span><span class="fu">sum</span>(..count..)),</span>
@@ -1670,7 +1670,7 @@ Relativa_ac
 <span id="cb75-7"><a href="varquant.html#cb75-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">&quot;bin&quot;</span>, <span class="at">size =</span> <span class="dv">6</span>, <span class="at">vjust =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
 <span id="cb75-8"><a href="varquant.html#cb75-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">breaks =</span> cl_cpue) <span class="sc">+</span></span>
 <span id="cb75-9"><a href="varquant.html#cb75-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
 
 </div>
 </div>
