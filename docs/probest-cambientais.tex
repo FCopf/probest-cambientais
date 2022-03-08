@@ -6,7 +6,7 @@
 ]{book}
 \title{Estatística nas Ciências Ambientais}
 \author{Fabio Cop Ferreira \and \href{mailto:fabiocopf@gmail.com}{\nolinkurl{fabiocopf@gmail.com}}; \href{mailto:fcferreira@unifesp.br}{\nolinkurl{fcferreira@unifesp.br}} \and Instituto do Mar, Universidade Federal de São Paulo}
-\date{Última atualização em 12/01/2022}
+\date{Última atualização em 08/03/2022}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -4458,13 +4458,20 @@ Por fim, o \(R^2\) pode ser calculado por:
 \hypertarget{populauxe7uxe3o-amostra-e-unidade-amostral}{%
 \section{População, amostra e unidade amostral}\label{populauxe7uxe3o-amostra-e-unidade-amostral}}
 
-Em estatística, \textbf{população} se refere a todos os elementos sobre os quais queremos tirar conclusões. É comum a confusão entre os termos população estatística e população biológica (nas ciências naturais) ou população humana (em ciências sociais). No entanto, \textbf{população estatística} refere-se ao \textbf{conjunto de medidas} que podem ser obtidas como resultado de um experimento ou de um estudo observacional e não pode ser confundido com conjuntos de pessoas ou organismos. As medidas que compõem a população estatística portanto, podem ser pesos, temperaturas, velocidades, tempos de reação, entre outras, a depender das características de um estudo particula. A abrangência da população estatística depende do contexto e do escopo da pergunta que se pretende responder.
+Em estatística, a \textbf{população} se refere a todos os elementos sobre os quais queremos tirar conclusões. É comum a confusão entre os termos população estatística e população biológica (nas ciências naturais) ou população humana (em ciências sociais). No entanto, \textbf{população estatística} refere-se ao \textbf{conjunto de medidas}, isto é, de variáveis que podem ser mensuradas como resultado de um experimento ou de um estudo observacional. A população estatística não pode portanto, ser confundida com conjuntos de pessoas ou de organismos ou mesmo com os elementos físicos nos quais as variáveis foram mensuradas. As medidas que compõem a população estatística podem ser pesos, temperaturas, velocidades, tempos de reação, entre outras, a depender das características de um estudo particular.
 
-Suponha um estudo para descrever o comprimento do lambari \emph{Deuterodon iguape} em riachos do litoral de São Paulo. A população estatística não são os peixes em si, mas o \textbf{comprimento} de cada indivíduo. Dado o escopo do estudo, a população estatística abrange \textbf{somente} comprimentos dos organismos que habitam bacias do litoral de São Paulo. Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um \textbf{índice de diversidade} calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não tem qualquer relação com população biológica, mas sim com uma medida obtida do conjunto de espécies que habitam cada bacia.
+A abrangência da população estatística depende do contexto e do escopo da pergunta que se pretende responder.
+
+\begin{itemize}
+\item
+  Exemplo 1: Suponha um estudo para descrever o comprimento do lambari \emph{Deuterodon iguape} em riachos do litoral de São Paulo. A população estatística não são os peixes em si, mas o \textbf{comprimento} de cada indivíduo que habita os riachos destas bacias. Dado o escopo do estudo (bacias do litoral de São Paulo), a população estatística abrange \textbf{somente} comprimentos dos organismos existem nesta região.
+\item
+  Exemplo 2: Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um \textbf{índice de diversidade} calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não tem qualquer relação com população biológica, mas sim com uma variável que pode ser mensurada a partir do conjunto de espécies que habitam cada bacia.
+\end{itemize}
 
 Nos dois exemplos acima é inviável obtermos informações de todos os elementos que compõem a população estaística. Para o exemplo dos comprimento, temos provavelmente alguns milhares de peixes na Bacia e consequentemente, o mesmo número de comprimentos individuais. O número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um \textbf{censo} ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática em estatística lida com a maioria dos casos em que mensuramos um \textbf{subconjunto} da população estatística, definido como uma \textbf{amostra}.
 
-Finalmente, \textbf{unidade amostral} é definida como um \textbf{único} elemento da população estatística. A unidade amostral deve ser a menor unidade \textbf{independente} associada ao estudo. A necessidade das unidades amostrais constituirem elementos independentes é um dos pressupostos centrais da estatística e suas implicações ficarão mais claras quando tratarmos do processo de amostragem. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécies de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada os valores de diversidade calculado para cada bacia.
+Finalmente, \textbf{unidade amostral} é definida como um \textbf{único} elemento da população estatística. A unidade amostral é a menor unidade \textbf{independente} associada ao estudo. A necessidade das unidades amostrais constituirem elementos independentes é um dos pressupostos centrais da estatística e suas implicações ficarão mais claras quando tratarmos do processo de amostragem. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécies de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada um dos valores de diversidade calculados para cada bacia costeira.
 
 \begin{quote}
 \textbf{População estatística}: todos os elementos que podem compor uma amostra. Podem ser medidas como comprimentos, temperaturas, velocidades, etc.
@@ -7035,7 +7042,9 @@ Considere agora o experimento \emph{``virar duas estruturas e verificar o tipo d
 
 E pode ser representado visualmente por um diagrama de árvore.
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-378-1.pdf}
+\begin{quote}
+REFAZER DIAGRAMA DE ÁRVORE. Função `bayes\_probability\_tree()' desatualizada
+\end{quote}
 
 O diagrama de árvore é útil quando desejamos representar os resultados possíveis de um experimento que consiste de múltiplas etapas consecutivas, possivelmente composto por mais de uma caminho possível. Utilizaremos novamente este tipo de diagrama para falarmos em probabilidade condicional (Capítulo \ref{probcondind}) e do Teorema de Bayes (Capítulo \ref{tbayes}).
 
@@ -7127,7 +7136,9 @@ Estas ocorrências denotam as probabilidades de \textbf{todos os eventos possív
 
 Vamos expressar numericamente todas as probabilidades representadas no diagrama de árvore acima:
 
-\includegraphics{probest-cambientais_files/figure-latex/unnamed-chunk-382-1.pdf}
+\begin{quote}
+REFAZER DIAGRAMA DE ÁRVORE. Função `bayes\_probability\_tree()' desatualizada
+\end{quote}
 
 \emph{Obs.}: Refaça os cálculos e confira os resultados
 
@@ -8500,7 +8511,7 @@ De fato, não é necessario repetir os comandos várias vezes. Basta indicar o n
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 2 0 0 1 1 3 2 2 2 2
+##  [1] 0 2 3 0 1 3 1 3 2 2
 \end{verbatim}
 
 Aumente gradativamente o número de repetições e compare a frequência com que os valores simulados são gerados. Para um número baixo de repetições, haverá maior divergência entre os valores teóricos preditos pelo modelo Binomial e os valores simulados. A medida que o número de repetições aumenta, a distribuição de frequência dos valores simulados irá se assemelhar à distribuição teórica:

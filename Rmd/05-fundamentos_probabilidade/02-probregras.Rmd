@@ -126,11 +126,13 @@ $\Omega = \{(galho, galho), (galho, folha), (folha, galho), (folha, folha)\}$
 
 E pode ser representado visualmente por um diagrama de árvore.
 
+> REFAZER DIAGRAMA DE ÁRVORE. Função 'bayes_probability_tree()' desatualizada
+
 ```{r}
-bayes_probability_tree(prior = 0.07, true_positive = 0.95, true_negative = 0.98,
-                       node_lab = c("Início", "galho", "folha", "galho", "folha", "galho", "folha", 
-                                    "(galho,galho)", "(galho,folha)", 
-                                    "(folha,galho)", "(folha,folha)"))
+# bayes_probability_tree(prior = 0.07, true_positive = 0.95, true_negative = 0.98,
+#                        node_lab = c("Início", "galho", "folha", "galho", "folha", "galho", "folha", 
+#                                     "(galho,galho)", "(galho,folha)", 
+#                                     "(folha,galho)", "(folha,folha)"))
 ```
 
 O diagrama de árvore é útil quando desejamos representar os resultados possíveis de um experimento que consiste de múltiplas etapas consecutivas, possivelmente composto por mais de uma caminho possível. Utilizaremos novamente este tipo de diagrama para falarmos em probabilidade condicional (Capítulo \@ref(probcondind)) e do Teorema de Bayes (Capítulo \@ref(tbayes)).

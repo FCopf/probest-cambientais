@@ -79,9 +79,11 @@ Estas ocorrências denotam as probabilidades de **todos os eventos possíveis** 
 
 Vamos expressar numericamente todas as probabilidades representadas no diagrama de árvore acima:
 
+> REFAZER DIAGRAMA DE ÁRVORE. Função 'bayes_probability_tree()' desatualizada
+
 ```{r}
-bayes_probability_tree(prior = round(7/12,2), true_positive = round(4/7,2), true_negative = round(3/5,2),
-                       node_lab = TRUE)
+# bayes_probability_tree(prior = round(7/12,2), true_positive = round(4/7,2), true_negative = round(3/5,2),
+#                        node_lab = TRUE)
 ```
 
 *Obs.*: Refaça os cálculos e confira os resultados
