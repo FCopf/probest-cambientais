@@ -4,9 +4,18 @@
 ie = read.csv("datasets/IE_BICT_2019.csv", sep = ";", dec = ",")
 ```
 
-No capítulo  \@ref(amostrmedias), a distribuição das médias amostrais foi apresentada como um histograma em forma de sino. Este histograma é **simétrico** ao redor de $\mu$. A curva teórica que representa esta distribuição é chamada de **Distribuição Normal** ou **Distribuição Gaussiana**, ou **Distribuição Normal de Probabilidades**. 
+As técnicas de estatística descritiva apresentadas anteriormente (capítulos \@ref(varqualit) a \@ref(biquantquali)) nos permitem entender os padrões resultantes de fenômenos que já aconteceram. Seria interessante no entanto, se pudessemos utilizar estes padrões para fazer predições sobre o que **poderá acontecer**. Em estatística, a predição se torna possível pelo uso de **modelos probabilísticos**, dentre os quais a distribuição normal é um dos mais importantes.
 
-Um dos motivos que tornam a distribuição normal de probabilidades central em estatística é a percepção de que muitos fenômenos naturais podem ser descritos por este padrão. Veja o histograma de alturas de `r nrow(ie)` alunos da turma de Introdução a Estatística de 2019 do curso de Bacharelado Interdisciplinar em Ciências do Mar (UNIFESP) (figura à esquerda). A linha sobre este histograma representa a distribuição normal teórica. À direita na mesma figura está um histograma da temperatura média anual em uma cidade americana, onde também foi sobreposta uma curva teórica Gaussiana. Embora estes dados descrevam fenômenos completamente distintos, a distribuição normal se adequa razoavelmente bem aos dois histogramas. 
+Modelos probabilísticos são definidos por **funções de probabilidade**. A variável envolvida neste modelo é denominada de **variável aleatória** (capítulos \@ref(va) e \@ref(vacont)). Uma variável aleatória resulta de um **experimento aleatório**, que nos provê sobre algum fenômeno de interesse. Neste sentido, medir a altura de um aluno, tomar a temperatura de uma cidade, medir a taxa de crescimento de uma bactéria, são todos experimentos aleatórios. A questão relevante nestes experimentos é que *antes* de ser finalizado, não temos certeza sobre qual será seu resultado. Desta forma, embora não saibamos qual será o resultado exato do experimento, podemos nos basear em algum modelo probabilidades para prever a chance deste resultado estar dentro de determinados limites. O papel de um modelo probabilísticos é portanto, **delimitar a incerteza** ao redor dos resultados possíveis de um experimento aleatório.
+
+Ao medir a altura de um aluno, podemos supor que existe grande probabilidade desta ficar abaixo de $1,9$ m. Supomos isto pois temos conhecimento de que a altura de maior parte das pessoas está abaixo deste limite. Entretanto, se quisermos atribuir um valor de probabilidade a esta suposição devemos:
+
+  1. Assumir que a variável altura segue um determinado modelo de probabilidades, e
+  
+  2. Utilizar dados de um experimento para estimar os parâmetros deste modelo a fim de calcularmos a probabilidade $P(X \le 1,9)$. Discutiremos isto em detalhes no capítulo \@ref(va) para diferentes modelos de probabilidades.
+
+
+Neste capítulo  iremos discutir pela primeira vez o modelo de distribuição normal. A **distribuição normal de probabilidades** descreve uma curva em forma de sino também chamada de **distribuição gaussiana**. Um dos motivos que tornam a distribuição normal central em estatística é a percepção de que o comportamento de muitos fenômenos naturais podem ser descritos adequadamente por este modelo teórico. Veja por exemplo, o histograma de alturas de `r nrow(ie)` alunos da turma de Introdução a Estatística de $2019$ do curso de Bacharelado Interdisciplinar em Ciências do Mar (UNIFESP). A linha sobre este histograma representa a distribuição normal teórica. À direita desta figura está um histograma da temperatura média anual em uma cidade americana, onde também foi sobreposta uma curva normal teórica. Embora estes dados descrevam fenômenos completamente distintos, a distribuição normal se adequa razoavelmente bem aos dois histogramas. 
 
 ```{r, fig.align = "center", fig.height = 4, fig.width = 8, echo=FALSE, fig.cap="Altura (m) de alunos de um curso de estatística e temperatura média anual de uma cidade americana"}
 
@@ -33,26 +42,22 @@ grid.arrange(alt_plt, temp_plt, ncol = 2)
 
 ```
 
-As técnicas de estatística descritiva apresentadas anteriormente (capítulos \@ref(descrit) e \@ref(posicao)) nos permitem entender os padrões resultantes de fenômenos que já aconteceram. Seria interessante no entanto, se pudessemos utilizar estes padrões para realizar predições sobre o que **poderá acontecer**. Em estatística, a predição se torna possível pelo uso de **modelos probabilísticos**, dentre os quais a distribuição normal é um dos mais importantes.
+O segundo motivo que torna a distribuição normal uma das mais importantes em estatística, é que ela surge como o modelo esperado para a distribuição das médias amostrais sob determinadas condições (Capítulo \@ref(tcl)), o que nos permite utilizar uma variedade de procedimentos analíticos no campo da inferência e testes de hipótese.
 
-Modelos probabilísticos são definidos por **funções de probabilidade**. A variável envolvida neste modelo é denominada de **variável aleatória** (capítulos \@ref(va) e \@ref(vacont)). Uma variável aleatória resulta de um **experimento aleatório**. Estou utilizando o termo experimento aleatório em como um procedimento científico que nos provê informações sobre algum fenômeno de interesse. Neste sentido, medir a altura de um aluno, tomar a temperatura atual de uma cidade, medir a taxa de crescimento de uma bactéria são todos experimentos aleatórios. A questão relevante nestes experimentos é que *antes* de ser finalizado, não temos certeza sobre qual será seu resultado. Embora não saibamos qual será o resultado exato do experimento, podemos prever nos basear em algum modelo probabilidades para prever a chance deste resultado estar dentro de determinados limites. O papel de um modelo probabilísticos é portanto, delimitar a incerteza ao redor dos resultados possíveis de um experimento aleatório.
-
-Ao medir a altura de um aluno, podemos supor que existe grande probabilidade desta ficar abaixo de $1,9$ m. Supomos isto pois temos conhecimento de que a altura de maior parte das pessoas está abaixo deste limite. Entretanto, se quisermos atribuir um valor de probabilidade a esta suposição devemos:
-
-> 1. Assumir que a variável altura segue um determinado modelo de probabilidades, e
-> 2. Utilizar dados de um experimento para estimar os parâmetros deste modelo a fim de calcularmos a probabilidade $P(X \le 1,9)$. Discutiremos isto em detalhes a partir do capítulo \@ref(va) para diferentes tipos de experimentos e de modelos de probabilidades.
 
 ## O modelo normal de probabilidades
 
-O modelo normal de probabilidades é uma função dada por:
+O modelo normal de probabilidades é uma função matemática dada por:
 
-$f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{y-\mu}{\sigma})^2}$, $y \in \mathbb{R} | -\infty \le x \le +\infty$
+$f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$, $x \in \mathbb{R} | -\infty \le y \le +\infty$
 
-A expressão envolve as quantias $\mu$ e $\sigma$, definidas como os **parâmetros** da distribuição que representam respectivamente sua média e o desvio padrão. Pdemos apontar que uma variável aleatória $X$ tem distribuição normal por meio de:
+A expressão envolve as quantias $\mu$ e $\sigma$, definidas como os **parâmetros** da distribuição que representam respectivamente, sua média e o desvio padrão. Para dizer que uma variável aleatória $X$ tem distribuição normal por meio da expressão:
 
 $X \sim \mathcal{N}(\mu,\,\sigma^2)$
 
-A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o grau de espalhamento das observações ao redor de $\mu$. Para valores baixos de $\sigma$, a maioria das observações estará próxima a $\mu$, enquanto para valores altos de $\sigma$ as observações estarão mais distantes de $\mu$. Deste modo, ao variar $\mu$ e $\sigma$ podemos ter uma infinidade de distribuições normais.
+Estaexpressão diz de $X$ é normalmente distribuída ($\mathcal{N}$) e que esta distribuição tem parâmetros $\mu$ e $\sigma$.
+
+A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o espalhamento das observações ao redor de $\mu$. Em um fenômeno descrito por valores baixos de $\sigma$, a maioria das observações estará próxima a $\mu$, enquanto para valores altos de $\sigma$ as observações estarão mais distantes de $\mu$. Deste modo, ao variar $\mu$ e $\sigma$ podemos ter uma infinidade de distribuições normais.
 
 ```{r, fig.align = "center", fig.height = 8, fig.width = 8, echo=FALSE}
 mu1 = 0; sigma1 = 1
@@ -91,7 +96,7 @@ text(x = 6, y = 0.7, label = bquote(mu == .(mu4)))
 text(x = 6, y = 0.62, label = bquote(sigma == .(sigma4)))
 ```
 
-Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de $\mu$ e $\sigma$ e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de 2 metros ou menos de 1,5m é extremamente baixa.
+Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de $\mu$ e $\sigma$ e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de $2$ metros ou menos de $1,5$m é extremamente baixa.
 
 ## Entendendo a função normal de densidade de probabilidade
 
@@ -104,17 +109,23 @@ posicao <- 5
 ```
 
 
-A função $f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{y-\mu}{\sigma})^2}$ não oferece diretamente a probabilidade de $x$ assumir determinado intervalo. $f(x)$ é uma **função de densidade de probabilidade**. Vamos utilizá-la para encontrar $f(x)$ utilizando os dados de altura dos alunos do BICT Mar. Vamos assumir que os parâmetros do modelo normal são:
+A função $f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$ é uma **função de densidade de probabilidade**. Antes de aplicar esta distribuição para encontrar valores de probabilidade, vamos aprender simplesmente para descrever a funções de densidade assumindo valores particulares de $\mu$ e $\sigma$. Para isto, vamos tentar mimetizar o histograma de altura dos alunos do BICT Mar mostrado anteriormente. Vamos assumir da distribuição normal de altura sejam:
 
 $\mu = `r mu`$
 
 $\sigma = `r sd`$
 
-Para um $x = `r x[posicao]`$:
+Seja uma determinada altura $x = `r x[posicao]`$m. Neste ponto, a $f(x)$ assume o valor:
 
 $f(`r x[posicao]`) = \frac{1}{\sqrt(2\pi \times`r sd`^2)}e^{-\frac{1}{2}(\frac{`r x[posicao]` - `r mu`}{`r sd`})^2} = `r round(dx[posicao], 3)`$
 
-Este resultado corresponde ao ponto em $x$ no gráfico da distribuição normal. Assim, se calcularmos $f(x)$ para diferentes pontos em $x$ teremos um esboço da função de densidade normal.
+Este resultado corresponde ao ponto em $x$ no gráfico da distribuição normal de densidade de probabilidade. Podemos encontar $f(x)$ para quaisquer valores dentro dos reais $\mathbb{R}$ entre $-\infty$ e $+\infty$.
+
+Assim, se calcularmos $f(x)$ para diferentes pontos em $x$ teremos um esboço da função de densidade normal. Na figura abaixo, por exemplo, apresentamos $f(x)$ para os valores:
+
+$X = `r x`$
+
+assumindo $\mu = `r mu`$ e $\sigma = `r sd`$
 
 ```{r,  fig.align = "center", fig.height = 5, fig.width = 8, echo=FALSE}
 df <- data.frame(x, dx)
@@ -141,7 +152,11 @@ ggplot() +
    theme_classic()
 ```
 
-No R, os resultados acima podem ser obtidos com a função `dnorm`, que fornece um modo simples para calcularmos $f(x)$ para a distribuição normal. Nesta função 'd' vem de *densidade* da distribuição normal.
+### Obtenção de $f(x)$ no R: a função `dnorm()`
+
+No R, os resultados acima podem ser obtidos com a função `dnorm()`, que fornece um modo simples para calcularmos $f(x)$ na distribuição normal. Nesta função a letra 'd' vem de *densidade* da distribuição normal.
+
+Para encntrar $f(x)$ para um dado valor fazemos simplesmente:
 
 ```{r echo = TRUE}
 mu <- 1.7
@@ -159,7 +174,7 @@ dnorm(x, mean = mu, sd = dp)
 
 ## Fazendo predições com a função normal de densidade
 
-Por ser uma função de probabilidade, a área abaixo de $f(x)$ soma 1. Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a **área abaixo da curva** para este limite. Por exemplo, a probabilidade de uma observação em $X$ estar entre $x_1$ e $x_2$ será:
+Fazer predições significa encontrar a probabilidade de uma variável aleatória $X$ estar dentro de uma deteminada faixa de valores. Por ser uma função de probabilidade, a área abaixo de $f(x)$ na distribuição normal soma $1$. Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a **área abaixo da curva** para este limite. Por exemplo, a probabilidade de uma observação em $X$ estar entre $x_1$ e $x_2$ será:
 
 ```{r, warning=FALSE, fig.align='center', fig.width=8, fig.height=5}
 sup <- 20
@@ -176,7 +191,7 @@ gc <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
       breaks = c(7, 9),
       label = c('x1', 'x2')) +
    ylab('f(x)') +
-   annotate(geom = 'text', x = 4.7, y = 0.15, label = bquote("Área = P(" ~ 'y'[1] <= ~ "X" <= ~ 'x'[2] ~")"),
+   annotate(geom = 'text', x = 4.7, y = 0.15, label = bquote("Área = P(" ~ 'x'[1] <= ~ "X" <= ~ 'x'[2] ~")"),
             color = '#eb4034') +
    theme_classic()
 gc   
@@ -188,7 +203,7 @@ Você lembra-se que a área abaixo de uma função matemática é dada pela inte
 
 $$P(x_1 \le X \le x_2) = \int_{x_1}^{x_2}f(x) dx$$
 
-Usando o R, a probabilidade de amostrarmos um aluno que tenha entre menos de 1.5 metros pode ser obtida por meio da função `pnorm`:
+Usando o R, a probabilidade de amostrarmos um aluno que tenha entre menos de $1.5$ metros pode ser obtida por meio da função `pnorm`:
 
 ```{r echo = TRUE}
 mu <- 1.7
@@ -198,21 +213,21 @@ pnorm(q = 1.5, mean = mu, sd = dp, lower.tail = TRUE)
 
 Os argumentos desta função são (veja o menu de ajuda digitando `?pnorm` no Console do R):
 
-> q: o valor de $x$
+> **q**: o valor de $x$
 
-> mean: média $\mu$ da função normal
+> **mean**: média $\mu$ da função normal
 
-> sd: desvio padrão $\sigma$ da função normal
+> **sd**: desvio padrão $\sigma$ da função normal
 
-> lower.tail: se a função irá retornar a probabilidade abaixo (TRUE) ou acima (FALSE) de q
+> **lower.tail**: se a função irá retornar a probabilidade abaixo (TRUE) ou acima (FALSE) de q
 
-Se quisermos a probabilidade $P(X \ge 1.5)$ alteramos o parâmetro `lower.tail`
+Se quisermos encontrar a probabilidade $P(X \ge 1.5)$ alteramos o parâmetro `lower.tail`
 
 ```{r echo = TRUE}
 pnorm(q = 1.5, mean = mu, sd = dp, lower.tail = FALSE)
 ```
 
-Se desejamos obter a probabilidade de $x$ estar **entre** 1.5m e 1.7m podemos fazer: $$P(1.5 \le X \le 1.7) = P(X \le 1.7) - P(X \le 1.5)$$
+Se desejamos obter a probabilidade de $x$ estar **entre** $1.5$m e $1.7$m podemos fazer: $$P(1.5 \le X \le 1.7) = P(X \le 1.7) - P(X \le 1.5)$$
 
 No R temos:
 
@@ -224,7 +239,7 @@ pfinal <- p1 - p2
 pfinal
 ```
 
-ou simplesmente
+ou simplesmente:
 
 ```{r echo = TRUE}
 diff(pnorm(q = c(1.7, 1.5),
@@ -287,20 +302,18 @@ grid.arrange(gc1, gc2, gc3, nrow = 3)
 
 ## A distribuição normal padronizada
 
-A integral para a função normal é difícil de ser calculada pois não tem solução analítica. Isto era um problema para os cientistas até meados do século XX de precisariam calcular valores de probabilidade para diferentes combinações de $\mu$ e $\sigma$. Naquele momento, a solução para facilitar a vida dos pesquisadores foi criar uma tabela descrevendo estas probabilidades em uma distribuição normal **padronizada**, ou seja para valores particulares de $\mu$ e $\sigma$. Padronizar aqui, significa transfomar cada valor $x_i$ de modo que as observações resultantes tenham média igual a 0 e desvio padrão igual a 1. 
+A integral para a função normal é difícil de ser calculada pois não tem solução analítica. Isto era um problema para os cientistas até meados do século $XX$ que precisavam calcular valores de probabilidades para diferentes combinações de $\mu$ e $\sigma$. Naquele momento, a solução para facilitar a vida dos pesquisadores foi criar uma tabela descrevendo estas probabilidades em uma distribuição normal **padronizada**, ou seja para valores particulares de $\mu$ e $\sigma$. Padronizar aqui, significa transfomar cada valor $x_i$ de modo que as observações resultantes tenham média igual a $0$ e desvio padrão igual a $1$. 
 
-Esta transformação é realizada transformando cada observação $x_i$ em um valor de $z_i$ por meio da expressão.
+Esta transformação é apicada a cada observação $x_i$, obtendo-sem um valor de $z_i$ correspondente por meio da expressão.
 
 $$z_i = \frac{x_i - \bar{x}}{s}$$
-Lembre-se que no capítulo \@ref(posicao) apresentamos $z_i$ como uma **medida de posição**, uma vez que representa uma medida **relativa** à média e ao desvio padrão de um conjunto de dados particular. Por exemplo, um valor de $z_i = 2$ significa que a observação original $x_i$ está 2 desvios padrões **acima** da média $\overline{x}$. 
+Lembre-se que no capítulo \@ref(escorez) apresentamos $z_i$ como uma **medida de posição** que representava uma medida **relativa** à média e ao desvio padrão de um conjunto de dados particular. Por exemplo, um valor de $z_i = 2$ significa que a observação original $x_i$ está $2$ desvios padrões **acima** de sua respectiva média $\overline{x}$. 
 
-> *Releita o tópico "Interpretando o valor de Z"* (Capítulo \@ref(posicao)). 
-
-Esta transformação é útil, pois ainda que seja difícil calcular as probabilidades para uma variável aleatória $X$, após a transformação teremos uma variável $Z$ para a qual os valores de probabilidade estão **tabelados**. Deste modo, $Z$ é uma variável aleatória com $\overline{z} = 0$ e $s = 1$ tal que:
+A transformação $Z$ é útil, pois ainda que seja difícil calcular as probabilidades para uma variável aleatória $X$, após a transformação teremos uma variável $Z$ para a qual os valores de probabilidade estão **tabelados**. Deste modo, $Z$ é uma variável aleatória com $\overline{z} = 0$ e $s = 1$ tal que:
 
 $$Z \sim \mathcal{N}(0,\,1)$$
 
-Para o exemplos sobre altura dos alunos e chuva mensal temos: 
+Após a transformação $Z$ nos exemplos sobre altura dos alunos e chuva mensal temos: 
 
 ```{r, fig.align = "center", fig.height = 8, fig.width = 8, echo=FALSE}
 ie <- ie %>% 
@@ -332,10 +345,24 @@ grid.arrange(alt_plt, temp_plt,
 
 ```
 
+</br>
+
+:::: {.blackbox data-latex=""}
+::: {.center data-latex=""}
+**IMPORTANTE!**
+:::
+Antes de continuar, releita o tópico "Interpretando o valor de Z" no capítulo \@ref(escorez).
+::::
+
+</br>
 
 ### Probabilidades em uma distribuição normal padronizada
 
-Nos dois exemplos anteriores, verifica-se que todas as observações estão situadas, aproximadamente, entre $z = -3$ e $z = +3$. De fato, a distribuição normal padronizada ou **distribuição Z** tem propriedades bem conhecidas. Sua média é $\mu = 0$ e seu desvio padrão é $\sigma = 1$, fazendo com que a maior parte das observações fique limitada entre  $z = -3$ e $z = +3$. Para ser exato, podemos descrever as probabilidades de uma observação estar dentro de alguns limites. Por exemplo, $95\%$ das observações estará entre $z = -1.96$ e $z = +1.96$, isto é, $P(-1.96 \le Z \le +1.96) = 0.95$. De forma similar, $90\%$ da área central da curva se encontra entre $z = -1.64$ e $z = +1.64$. Estes e outros limites na distribuição normal padronizada podem ser verificados na figura abaixo.
+Nos dois exemplos anteriores, verifica-se que todas as observações estão situadas, aproximadamente, entre $z = -3$ e $z = +3$. De fato, a distribuição normal padronizada ou **distribuição Z** tem propriedades bem conhecidas. Como sua média é $\mu = 0$ e seu desvio padrão é $\sigma = 1$, a maior parte das observações fica limitada entre  $z = -3$ e $z = +3$. Para ser exato, podemos descrever as probabilidades de uma observação estar dentro de alguns limites conhecidos. Por exemplo, $95\%$ das observações estará entre $z = -1.96$ e $z = +1.96$, isto é, 
+
+$$P(-1.96 \le Z \le +1.96) = 0.95$$. 
+
+De forma similar, $90\%$ da área central da curva se encontra entre $z = -1.64$ e $z = +1.64$. Estes e outros limites na distribuição normal padronizada podem ser verificados na figura abaixo.
 
 
 ``` {r fig.width=8, fig.height=5, fig.align = "center", echo=FALSE}
@@ -372,7 +399,7 @@ text(x = 0, y = 0.57, labels = bquote(.(round(diff(pnorm(q = c(qr[2],qr[6]))*100
 text(x = 0, y = 0.47, labels = bquote(.(round(diff(pnorm(q = c(qr[3],qr[5]))*100),0)) ~ "% entre " ~ .(round(qr[3],2)) ~ " e " ~ .(round(qr[5],2)) ~ ")"), cex = 0.7)    
 ```
 
-Vamos exemplificar o uso da distribuição Z no cálculo de probabilidades utilizando os dados de altura dos alunos. Para estes dados, iremos encontrar $P(X \le 1.5)$. Este procedimento consiste de:
+Vamos exemplificar o uso da distribuição $Z$ no cálculo de probabilidades utilizando os dados de altura dos alunos. Para estes dados, iremos encontrar $P(X \le 1.5)$. Este procedimento consiste de:
 
 ```{r echo = FALSE}
 mu <- 1.7
@@ -428,9 +455,9 @@ $P(\frac{m - \mu}{\sigma} \le Z \le \frac{n - \mu}{\sigma}) = \alpha$
 
 ### Tabela $Z$
 
-Ao utilizarmos um software estatístico não é necessário fazer esta transformação. A transformação $Z$ era necessária na ausência de ferramentas computacionais, ou seja, quando a única opção viável era utilizarmos a Tabela Z para evitar cálculos tediosos para cada combinação de $\mu$ e $\sigma$. 
+Ao utilizarmos um software estatístico não é necessário fazer esta transformação. A transformação $Z$ era necessária na ausência de ferramentas computacionais, ou seja, quando a única opção era utilizarmos a Tabela $Z$ para evitar cálculos tediosos considerando cada combinação de $\mu$ e $\sigma$. 
 
-A tabela disponibiliza os valores de probabilidade para um grande número de valores de $Z$ e é apresentada na grande maioria dos livros de estatística.
+A tabela $Z$ disponibiliza os valores de probabilidade para um grande número de valores e é apresentada na grande maioria dos livros de estatística.
 
 Você pode utilizar a Tabela $Z$ para encontrar $P(X \le 1.5)$. Note que o valor transformado é $z_{1.5} = `r round(z_1.5,3)`$. Este será o valor que iremos buscar na tabela. Para isto:
 
@@ -521,19 +548,23 @@ c_plt <- comp_plt +
 
 ```
 
+___
+
 **i. Para encontrar $P(X \ge `r la`)$:**
 
 Vamos encontrar o respectivo valor de $Z$ pela transformação
 
 $z_{`r la`} = \frac{`r la` - `r mu`}{`r sigma`} = `r round(zla, 2)`$
 
-Na tabela $Z$ procuramos a linha que mostra a unidade e $1^a$ casa decimal de $`r round(zla, 2)`$ e em seguida encontramos a coluna que representa a $2^a$ casa decimal de $`r round(zla, 2)`$. Cruzando linha e coluna encontramos o valor $0,9082$. Note que este valor representa  a área **abaixo** de `r round(zla, 2)`, isto é, $P(Z \le z_{`r la`})$. No entanto, queremos $P(Z \ge z_{`r la`})$ que representa a área daa curva **acima** de $`r round(zla, 2)`$. Para isto basta fazermos $1 - 0,9082$.
+Na tabela $Z$ procuramos a linha que mostra a unidade e $1^a$ casa decimal de $`r round(zla, 2)`$ e em seguida encontramos a coluna que representa a $2^a$ casa decimal de $`r round(zla, 2)`$. Cruzando linha e coluna encontramos o valor $0,9082$. Note que este valor representa  a área **abaixo** de `r round(zla, 2)`, isto é, $P(Z \le z_{`r la`})$. No entanto, queremos $P(Z \ge z_{`r la`})$ que representa a área da curva **acima** de $`r round(zla, 2)`$. Para isto basta fazermos $1 - 0,9082$.
 
 Deste modo, $P(Z \ge z_{`r la`}) = 1 - P(Z \le z_{`r la`}) = 1 - 0,9082 = `r 1 - 0.9082`$
 
 ```{r}
 a_plt + ggtitle(label = bquote('P(X' ~ '' >= '' ~ .(la) ~ ')' == .(1 - 0.9082)))
 ```
+
+___
 
 **ii. Para encontrar $P(X \le `r lb`)$:**
 
@@ -547,6 +578,8 @@ Deste modo, $P(X \le `r lb`) = P(Z \le z_{`r lb`}) = 0,0475$
 b_plt + ggtitle(label = bquote('P(X' ~ '' <= '' ~ .(lb) ~ ')' == .(0.0475)))
 ```
 
+___
+
 **iii. Para encontrar a área central da curva $P(`r lc[1]` \le X \le `r lc[2]`)$:**
 
 Vamos subtrair as quantias $P(Z \le `r la`) - P(Z \le `r lb`)$
@@ -559,13 +592,15 @@ $P(`r lc[1]` \le X \le `r lc[2]`) = 0,9082 - 0,0475 = `r 0.9082 - 0.0475`$
 c_plt + ggtitle(label = bquote('P(' ~ .(lc[1]) ~ '' <= '' ~'X'~ '' <= '' ~ .(lc[2]) ~ ')' == .(0.9082 - 0.0475)))
 ```
 
+___
+
 **iv. Indivíduos maiores que `r la` cm de comprimento**
 
 Se a proporção de indivíduos acima de `r la` é $P(X > `r la`) = `r 1 - 0.9082`$ e a população tem $N = 800$ indivíduos, teremos:
 
 $`r 1 - 0.9082` \times `r N` = `r round((1 - 0.9082) * N,0)`$ indivíduos maiores que `r la` cm.
 
-___
+**RESOLUÇÃO no R**
 
 O exercício pode ser resolvido pelo R por meio da função `pnorm`.
 
@@ -577,20 +612,26 @@ la <- 14
 lb <- 5
 ```
 
-$P(Z \ge `r la`)$
+___
+
+**i. $P(Z \ge `r la`)$**
 
 ```{r, echo=TRUE}
 pnorm(q = la, mean = mu, sd = sigma, lower.tail = FALSE)
 ```
 
 
-$P(Z \le `r lb`)$
+___
+
+**ii. $P(Z \le `r lb`)$**
 
 ```{r, echo=TRUE}
 pnorm(q = lb, mean = mu, sd = sigma, lower.tail = TRUE)
 ```
 
-$P(`r lc[1]` \le X \le `r lc[2]`)$
+___
+
+**iii. $P(`r lc[1]` \le X \le `r lc[2]`)$**
 
 ```{r, echo=TRUE}
 diff(
@@ -602,7 +643,9 @@ diff(
 
 ```
 
-Número de indivíduos maiores que $`r la`$ cm de comprimento
+___
+
+**iv. Número de indivíduos maiores que $`r la`$ cm de comprimento**
 
 ```{r, echo=TRUE}
 pg_la <- pnorm(q = la, mean = mu, sd = sigma, lower.tail = FALSE)
@@ -613,7 +656,7 @@ N * pg_la
 
 ### Intervalos em uma distribuição normal
 
-Suponha variável aleatória $X$ normalmente distribuída conforme com $\mu = 50$ e $\sigma = 10)$. Encontre:
+Suponha variável aleatória $X$ normalmente distribuída conforme com $\mu = 50$ e $\sigma = 10$. Encontre:
 
 i. O valor de $a$ tal que $P(X \le a) = 0,10$.
 ii. O valor de $b$ tal que $P(X \ge b) = 0,85$.
@@ -670,10 +713,13 @@ iv_plt <- X_plt +
 
 ```
 
+___
 
 **RESOLUÇÃO**
 
 Veja que neste exercício, foram oferecidos valores de probabilidades e solicitado que você obtivesse os limites em uma distribuição normal específica. Este processo é oposto ao do excercício anterior.
+
+___
 
 **i. O valor de $a$**
 
@@ -687,6 +733,8 @@ $a = (-1,28 \times 10) + 50 = `r (-1.28 * 10) + 50`$
 i_plt + ggtitle(label = bquote('P(X' ~ '' <= '' ~ .(round(a,1)) ~ ') = 0,10'))
 ```
 
+___
+
 **ii. O valor de $b$**
 
 Se $P(X \ge b) = 0,85$, a área abaixo de $b$ que devemos encontrar na tabela $Z$ é $1 - 0,85 = `r 1 - 0.85`$. Vemos que o valor mais próximo é $0,1492$ que corresponde a $z = -1,04$. Ao utilizar este resultado na expressão abaixo temos:
@@ -699,6 +747,8 @@ $b = (-1,04 \times 10) + 50 = `r (-1.04 * 10) + 50`$
 ii_plt + ggtitle(label = bquote('P(X' ~ '' >= '' ~ .(round(b,1)) ~ ') = 0,85'))
 ```
 
+
+___
 
 **iii. O intervalo simétrico ao redor da média delimitado por $c$ e $d$ ($c < d$), que contém $95\%$ da área sob a curva.**
 
@@ -719,6 +769,8 @@ $d = (+1,96 \times 10) + 50 = `r (1.96 * 10) + 50`$
 ```{r}
 iii_plt + ggtitle(label = bquote('P(' ~ .(round(c,1)) ~ '' <= ~ 'X' <= '' ~ .(round(d,1)) ~ ') = 0,95'))
 ```
+
+___
 
 **iv. O valor de $e$ tal que $P(50-e \le X \le 50+e) = 0.99$**
 
@@ -748,6 +800,8 @@ $\mu - e = 50 + 25.7 = 75.7$
 
 ___
 
+**RESOLUÇÃO no R**
+
 O exercício pode ser resolvido pelo R por meio da função `qnorm`.
 
 > Em `qnorm`, o 'q' vem de *quantis* da distribuição normal.
@@ -774,6 +828,8 @@ iii. O valor de $c$ tal que $P(\mu -c\sigma \le X \le \mu +c\sigma) = 0.99$
 
 **RESOLUÇÃO**
 
+___
+
 **i. O valor de $a$ tal que $P(X < a) = 0,20$.**
 
 $P(X < a) = P(\frac{X - \mu}{\sigma} < \frac{a - \mu}{\sigma}) = P(Z < \frac{a - \mu}{\sigma}) = 0,20$
@@ -784,9 +840,13 @@ $-0,84 = \frac{a - \mu}{\sigma}$
 
 $a = \mu -0,84\sigma$
 
+___
+
 **ii. $P(X \le \mu + 2\sigma)$**
 
 A expressão $\mu + 2\sigma$ nos diz que o limite de interesse está $2$ desvios padrões **acima** de $\mu$. Ao procurar pelo valor de $z = 2,0$ na tabela $Z$, veremos que a probabilidade de interesse é $P(X \le \mu + 2\sigma) = 0,9772$
+
+___
 
 **iii. O valor de $c$ tal que $P(\mu -c\sigma \le X \le \mu +c\sigma) = 0.99$**
 

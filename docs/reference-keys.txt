@@ -103,6 +103,7 @@ precisão-o-erro-padrão-da-média-sigmaoverlinex
 normdist
 o-modelo-normal-de-probabilidades
 entendendo-a-função-normal-de-densidade-de-probabilidade
+obtenção-de-fx-no-r-a-função-dnorm
 fazendo-predições-com-a-função-normal-de-densidade
 a-distribuição-normal-padronizada
 probabilidades-em-uma-distribuição-normal-padronizada
@@ -116,7 +117,7 @@ exercícios-propostos
 tcl
 teorema-central-do-limite
 probabilidades-na-amostra-original-e-na-distribuição-de-médias
-distribuição-não-normais
+distribuições-não-normais
 exercícios-resolvidos-1
 tamanho-médio-de-robalos-no-mercado-de-peixes
 exercícios-propostos-1

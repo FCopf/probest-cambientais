@@ -305,7 +305,10 @@ div.csl-indent {
 <li class="chapter" data-level="14" data-path="normdist.html"><a href="normdist.html"><i class="fa fa-check"></i><b>14</b> O modelo da distribuição normal</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="normdist.html"><a href="normdist.html#o-modelo-normal-de-probabilidades"><i class="fa fa-check"></i><b>14.1</b> O modelo normal de probabilidades</a></li>
-<li class="chapter" data-level="14.2" data-path="normdist.html"><a href="normdist.html#entendendo-a-função-normal-de-densidade-de-probabilidade"><i class="fa fa-check"></i><b>14.2</b> Entendendo a função normal de densidade de probabilidade</a></li>
+<li class="chapter" data-level="14.2" data-path="normdist.html"><a href="normdist.html#entendendo-a-função-normal-de-densidade-de-probabilidade"><i class="fa fa-check"></i><b>14.2</b> Entendendo a função normal de densidade de probabilidade</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="normdist.html"><a href="normdist.html#obtenção-de-fx-no-r-a-função-dnorm"><i class="fa fa-check"></i><b>14.2.1</b> Obtenção de <span class="math inline">\(f(x)\)</span> no R: a função <code>dnorm()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="14.3" data-path="normdist.html"><a href="normdist.html#fazendo-predições-com-a-função-normal-de-densidade"><i class="fa fa-check"></i><b>14.3</b> Fazendo predições com a função normal de densidade</a></li>
 <li class="chapter" data-level="14.4" data-path="normdist.html"><a href="normdist.html#a-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>14.4</b> A distribuição normal padronizada</a>
 <ul>
@@ -325,7 +328,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.1" data-path="tcl.html"><a href="tcl.html#teorema-central-do-limite"><i class="fa fa-check"></i><b>15.1</b> Teorema Central do Limite</a>
 <ul>
 <li class="chapter" data-level="15.1.1" data-path="tcl.html"><a href="tcl.html#probabilidades-na-amostra-original-e-na-distribuição-de-médias"><i class="fa fa-check"></i><b>15.1.1</b> Probabilidades na amostra original e na distribuição de médias</a></li>
-<li class="chapter" data-level="15.1.2" data-path="tcl.html"><a href="tcl.html#distribuição-não-normais"><i class="fa fa-check"></i><b>15.1.2</b> Distribuição não-normais</a></li>
+<li class="chapter" data-level="15.1.2" data-path="tcl.html"><a href="tcl.html#distribuições-não-normais"><i class="fa fa-check"></i><b>15.1.2</b> Distribuições não-normais</a></li>
 </ul></li>
 <li class="chapter" data-level="15.2" data-path="tcl.html"><a href="tcl.html#exercícios-resolvidos-1"><i class="fa fa-check"></i><b>15.2</b> Exercícios resolvidos:</a>
 <ul>
@@ -533,9 +536,14 @@ Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 <div id="teorema-central-do-limite" class="section level2" number="15.1">
 <h2><span class="header-section-number">15.1</span> Teorema Central do Limite</h2>
 <p>No capítulo <a href="amostrmedias.html#amostrmedias">13</a> apresentamos a distribuição de médias como uma distribuição normal, centrada na média populacional <span class="math inline">\(\mu\)</span> e com desvio padrão igual a <span class="math inline">\(\sigma_{\mu} = \frac{\sigma}{\sqrt{n}}\)</span>. Este resultado é previsto pelo <strong>Teorema Central do Limite (TCL)</strong> que fornece um <strong>modelo teórico</strong> para o comportamento esperado da média amostral de um experimento.</p>
-<blockquote>
-<p>DEFINIÇÃO DO TCL: Seja uma popuilação estatística com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\sigma\)</span>. A distribuição das médias amostrais desta população tenderá a apresentar uma distribuição normal de probabilidades com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\frac{\sigma}{\sqrt(n)}\)</span> à medida que o tamanho amostral <span class="math inline">\(n\)</span> aumenta, ainda que a dsitribuição das observações originais <strong>não possua</strong> uma distribuição normal.</p>
-</blockquote>
+<p></br></p>
+<div class="blackbox">
+<div class="center">
+<p><strong>DEFINIÇÃO DO TCL</strong></p>
+</div>
+<p>Seja uma população estatística com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\sigma\)</span>. A distribuição das médias amostrais desta população tenderá a apresentar uma distribuição normal de probabilidades com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\frac{\sigma}{\sqrt(n)}\)</span> à medida que o tamanho amostral <span class="math inline">\(n\)</span> aumenta, ainda que a distribuição das observações originais <strong>não possua</strong> uma distribuição normal.</p>
+</div>
+<p></br></p>
 <p>Segundo o TCL, as médias amostrais <span class="math inline">\(\overline{X}\)</span> de um experimento distribuem-se como:</p>
 <p><span class="math display">\[\overline{X} \sim \mathcal{N}(\mu_{\overline{X}},\,\sigma^{2}_{\overline{X}})\]</span></p>
 <p>em que <span class="math inline">\(\mu_{\overline{X}} = \mu\)</span> <span class="math inline">\(\sigma^{2}_{\overline{X}} = \frac{\sigma^2}{n}\)</span></p>
@@ -547,8 +555,8 @@ Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 <p>Note que existe uma probabilidade razoável de que uma determinada observação em <span class="math inline">\(X\)</span> esteja acima de <span class="math inline">\(55\)</span>, <span class="math inline">\(P(X \leq 55) = 0.309\)</span>. No entando se tomarmos <em>ao acaso</em> uma amostra de tamanho <span class="math inline">\(n_1 = 2\)</span>, a probabilidade de que <strong>a média</strong> destas duas amostras esteja acima de <span class="math inline">\(55\)</span> diminui para <span class="math inline">\(P(\overline{X} \leq 55) = 0.24\)</span>. Se tormarmos uma amostra ainda maior (<span class="math inline">\(n_2 = 10\)</span>), a probabilidade se reduz ainda mais para <span class="math inline">\(P(\overline{X} \leq 55) = 0.057\)</span>.</p>
 <p>Vemos portanto, como mencionado no capítulo <a href="amostrmedias.html#amostrmedias">13</a>, que a precisão de um experimento aumenta à medida que aumentamos o tamanho amostral, pois para amostras grandes, a probabilidade de obtermos um <span class="math inline">\(\overline{X}\)</span> distante de <span class="math inline">\(\mu\)</span> torna-se cada vez menor.</p>
 </div>
-<div id="distribuição-não-normais" class="section level3" number="15.1.2">
-<h3><span class="header-section-number">15.1.2</span> Distribuição não-normais</h3>
+<div id="distribuições-não-normais" class="section level3" number="15.1.2">
+<h3><span class="header-section-number">15.1.2</span> Distribuições não-normais</h3>
 <p>O TCL é válido inclusive para distribuições não-normais. Isto torna a distribuição normal uma das mais importantes em inferência estatística, pois ainda que o resultado de um experimento particular seja descrito por <em>qualquer outro modelo de probabilidades</em>, as <strong>médias das amostras</strong> deste experimento seguirão uma distribuição normal, à medida que <span class="math inline">\(n\)</span> aumenta. Isto justifica muitos dos processos de análise e inferência estatística que serão descritos nos capítulos posteriores.</p>
 <p>A figura abaixo por exemplo, simula a distribuição de médias amostrais para variáveis com diferentes distribuições de probabiidades e tamanhos crescentes de <span class="math inline">\(n\)</span>. Podemos observar que <em>independente</em> do formato da distribuição original, a distribuição das médias amostrais <em>tende à normalidade</em>. O padrão normal aparece mais rápido se a distribuição original é <strong>simétrica</strong>. Por outro lado, para populações estatísticas com distribuições <strong>assimétricas</strong>, será necessário um tamanho amostral maior para que se alcance a normalidade.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-299-1.png" width="1152" /></p>
@@ -574,7 +582,8 @@ Figure 15.3: Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extra
 <li>Responda novamente aos itens i. e ii. no caso de sua compra constar de <span class="math inline">\(4\)</span> robalos.</li>
 </ol>
 <p><strong>RESOLUÇÃO</strong></p>
-<p>Ainda que a distribuição original claramente não siga uma distribuição normal, podemos utilizar o TCL para estimarmos as probabilidades de obter uma média amostral <span class="math inline">\(\overline{X}\)</span> a determinada distância de <span class="math inline">\(\mu\)</span>. Para isto, no entanto devemos recordar que o desvio padrão das médias amostrais será dado por: <span class="math inline">\(\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\)</span>.`</p>
+<p>Ainda que a distribuição original claramente não siga uma distribuição normal, podemos utilizar o TCL para estimarmos as probabilidades de obter uma média amostral <span class="math inline">\(\overline{X}\)</span> a determinada distância de <span class="math inline">\(\mu\)</span>. Para isto, no entanto devemos recordar que o desvio padrão das médias amostrais será dado por: <span class="math inline">\(\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\)</span>.</p>
+<hr />
 <p><strong>i. <span class="math inline">\(P(\overline{L} &gt; 52,4)\)</span></strong></p>
 <p>Com base no TCL, uma amostra de <span class="math inline">\(n = 10\)</span> terá média normalmente distribuída com parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma_{\mu} = \frac{\sigma}{\sqrt{10}}\)</span>. Podemos assim, realizar a transformação <span class="math inline">\(Z\)</span> como segue:</p>
 <p><span class="math inline">\(Z_{\overline{L}} = \frac{\overline{L} - \mu}{\sigma_{\mu}} = \frac{\overline{L} - \mu}{\frac{\sigma}{\sqrt{n}}}\)</span></p>
@@ -583,21 +592,25 @@ Figure 15.3: Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extra
 <p>Note que o denomidador aqui é <em>diferente</em> do que fizemos no capítulo <a href="normdist.html#normdist">14</a>, pois aqui estamos falando da distribuição das <strong>médias amostrais</strong> <span class="math inline">\(\overline{L}\)</span> e não nas observações individuais <span class="math inline">\(L\)</span>.</p>
 </blockquote>
 <p>Se buscarmos na Tabela Z, veremos que a área da distribuição normal padronizada abaixo de <span class="math inline">\(1.96\)</span> é de <span class="math inline">\(0,975\)</span>. Consequentemente <span class="math inline">\(P(\overline{L} &gt; 52,4) = 1 - 0,975 = 0,025\)</span></p>
+<hr />
 <p><strong>ii. <span class="math inline">\(P(a \le \overline{L} \le b) = 0,95\)</span></strong></p>
 <p>Se o intervalo é simétrico e contém <span class="math inline">\(0,95\)</span> das observações, restam <span class="math inline">\(0,025\)</span> em cada uma das caudas. Vimos no item anterior que <span class="math inline">\(z = 1,96\)</span> que delimita <span class="math inline">\(0,025\)</span> da cauda superior. Portanto os limites aqui serão dados por: <span class="math inline">\(a = -1.96\)</span> e <span class="math inline">\(b = 1.96\)</span>. Na distribuição original estes limites resultarão em:</p>
 <p><span class="math inline">\(-1,96 = \frac{a - 44.1}{\frac{13.4}{\sqrt{10}}}:: a = 44.1 -1,96 \frac{13.4}{\sqrt{10}} = 35.8\)</span> cm</p>
 <p>e</p>
 <p><span class="math inline">\(+1,96 = \frac{b - 44.1}{\frac{13.4}{\sqrt{10}}}:: b = 44.1 +1,96 \frac{13.4}{\sqrt{10}} = 52.4\)</span> cm</p>
+<hr />
 <p><strong>Responda novamente aos itens i. e ii. no caso de sua compra constar de <span class="math inline">\(4\)</span> robalos.</strong></p>
 <p>Aqui você deve repetir exatamente os passos de i. e ii. substituindo <span class="math inline">\(n = 10\)</span> por <span class="math inline">\(n = 4\)</span>.</p>
 <hr />
-<p>No R temos:</p>
+<p>**RESOLUÇÃO no R:</p>
+<hr />
 <p><strong>i. <span class="math inline">\(P(\overline{L} &gt; 52,4)\)</span></strong></p>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="tcl.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">52.4</span>, </span>
 <span id="cb173-2"><a href="tcl.html#cb173-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fl">44.1</span>, </span>
 <span id="cb173-3"><a href="tcl.html#cb173-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd =</span> <span class="fl">13.4</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">10</span>), </span>
 <span id="cb173-4"><a href="tcl.html#cb173-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.02507255</code></pre>
+<hr />
 <p><strong>ii. <span class="math inline">\(P(a \le \overline{L} \le b) = 0,95\)</span></strong></p>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="tcl.html#cb175-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>((<span class="dv">1</span><span class="fl">-0.95</span>)<span class="sc">/</span><span class="dv">2</span>, </span>
 <span id="cb175-2"><a href="tcl.html#cb175-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fl">44.1</span>, </span>
@@ -611,12 +624,14 @@ Figure 15.3: Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extra
 <span id="cb177-4"><a href="tcl.html#cb177-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb177-5"><a href="tcl.html#cb177-5" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div>
 <pre><code>## [1] 52.40525</code></pre>
+<hr />
 <p><strong>iii. <span class="math inline">\(P(\overline{L} &gt; 52,4)\)</span> para <span class="math inline">\(n = 4\)</span></strong></p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="tcl.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">52.4</span>, </span>
 <span id="cb179-2"><a href="tcl.html#cb179-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fl">44.1</span>, </span>
 <span id="cb179-3"><a href="tcl.html#cb179-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd =</span> <span class="fl">13.4</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">4</span>), </span>
 <span id="cb179-4"><a href="tcl.html#cb179-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1077087</code></pre>
+<hr />
 <p><strong>ii. <span class="math inline">\(P(a \le \overline{L} \le b) = 0,95\)</span> para <span class="math inline">\(n = 4\)</span></strong></p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tcl.html#cb181-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>((<span class="dv">1</span><span class="fl">-0.95</span>)<span class="sc">/</span><span class="dv">2</span>, </span>
 <span id="cb181-2"><a href="tcl.html#cb181-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fl">44.1</span>, </span>

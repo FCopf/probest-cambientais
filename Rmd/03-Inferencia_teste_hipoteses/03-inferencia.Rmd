@@ -16,7 +16,15 @@ Como $\overline{X}$ varia em função de nossa amostra particular, devemos obter
 
 ### Intervalo de confiança
 
-> DEFINIÇÃO: é um intervalo de valores associado a um determinado nível de significância ($\alpha$). Quando dizemos que um intervalo foi calculado a um nível de confiança de 95%  ($1 - \alpha$), estamos dizendo que a probabilidade dos limites do IC conterem o valor da média populacional $\mu$ é de 95%.
+:::: {.blackbox data-latex=""}
+::: {.center data-latex=""}
+**DEFINIÇÃO DE INTERVALO DE CONFIANÇA**
+:::
+É o intervalo de valores associado a um determinado nível de significância ($\alpha$). Quando dizemos que um intervalo foi calculado a um nível de confiança de $95\%$  ($1 - \alpha$), estamos dizendo que a probabilidade dos limites do IC conterem o valor da média populacional $\mu$ é de $95\%$.
+::::
+
+</br>
+
 
 O IC é calculado por:
 
@@ -26,9 +34,9 @@ O valor de $z_{\alpha/2}$ é o valor do índice $z$ associado ao nível de confi
 
 Se desejamos definir o intervalo de confiança a 95% precisamos garantir que haja uma probabilidade de 95% de que a média amostral esteja ao redor da média populacional. Deste modo, o limite deve excluir 2.5% da porção superior e 2.5% da porção inferior da curva. Para isto, definimos $z_{\alpha/2} = 1.96$, sendo $\alpha$ fixado em 0.05.
 
-> O valor $z_{\alpha/2} = 1.96$ foi retirado da Tabela Z como o módulo do valor de $z$ que delimida uma área inferior igual a $0.025$. 
+> O valor $z_{\alpha/2} = 1.96$ foi retirado da Tabela $Z$ como o módulo do valor de $z$ que delimida uma área inferior igual a $0.025$. 
 
-Se queremos um nível de confiança diferente, basta ajustar o valor de $\alpha$. Por exemplo, se queremos um nível de significância a 99%, fixamos $\alpha$ em $0.01$ e portanto $z = 2.58$. Da mesma forma, o $IC_{90\%}$ poderá ser obtido com $\alpha = 0.10$ e consequentemente $z = 1.64$. Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (Capítulo \@ref(normtlc)), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem inclusos nas **Tabelas Z**, encontradas na grande maioria dos livros de estatística básica. Os valores de Z são os mesmos discutidos no tópico **Medidas de posição** quando discutimos os **Índice Z** (Capítulo \@ref(posicao))
+Se queremos um nível de confiança diferente, basta ajustar o valor de $\alpha$. Por exemplo, se queremos um nível de significância a 99%, fixamos $\alpha$ em $0.01$ e portanto $z = 2.58$. Da mesma forma, o $IC_{90\%}$ poderá ser obtido com $\alpha = 0.10$ e consequentemente $z = 1.64$. Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (Capítulo \@ref(normdist)), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem inclusos nas **Tabelas $Z$**, encontradas na grande maioria dos livros de estatística básica. Os valores de $Z$ são os mesmos discutidos no tópico **Medidas de posição** quando discutimos os **Índice $Z$** (Capítulo \@ref(escorez))
 
 ``` {r fig.width=6, fig.height=6, fig.align = "center", echo=FALSE}
 qr = qnorm(p = c(1-c(0.995, 0.975, 0.95),0.5,c(0.95, 0.975, 0.995)))
@@ -69,7 +77,7 @@ Para o cálculo do intervalo de confiança, estamos assumindo que as médias amo
 
 $$IC_{1-\alpha} = \overline{X} \pm z_{\alpha/2} \times \frac{s}{\sqrt{n}}$$
 
-#### Distribuiçao t de Student
+#### Distribuiçao $t$ de Student
 
 Quando não conhecemos $\mu$ e $\sigma$ e as amostras são pequenas (ex. $n<30$), a dsitribuiçao normal não é a melhor aproximação para o comportamento das médias amostrais. Nestes casos, substituímos a distribuição de $z$ pela **Distribuição $t$ de Student**, sendo o intervalo de confiança obtido por:
 
@@ -198,7 +206,7 @@ pn <- grid.arrange(p1,p2,p3,p4, ncol = 1)
     
 Uma decisão central ao planejamento de um experimento é quanto recurso (ex. tempo, dinheiro, mão de obra) devem ser investidos para se obter **boas estimativas** dos parâmetros populacionais. Por boas estimativas, entendemos **amostras precisas**, ou seja, que podem ser definida por amostras com baixo erro padrão e **acuradas**, que em média apontem para o verdadeiro valor do parâmetro.  Neste caso, uma das primeiras questões a ser feita é **"Qual tamanho amostral aplicar em meu estudo?"**.
 
-Vimos que aumentar o tamanho amostral resulta em estimativas mais precisas. Portanto, um bom delineamento amostral é aquele que permita, a um custo mínimo, obter estimativas com a precisão desejada. Uma pesquisa que resulte em estimativas demasiadamente imprecisas pode se mostrar inútil. O que dizer por exemplo, se um estudo conclui que o DAP médio de *Rhizophora mangle* é de 10 cm com uma incerteza entre 2 e 18 cm? Uma estimativa com tal nível de imprecisão não terá qualquer implicação prática. 
+Vimos que aumentar o tamanho amostral resulta em estimativas mais precisas, isto é com menor erro padrão. Portanto, um bom delineamento amostral é aquele que permita, a um custo mínimo, obter estimativas com a precisão desejada. Uma pesquisa que resulte em estimativas demasiadamente imprecisas pode se mostrar inútil. O que dizer por exemplo, se um estudo conclui que o comprimento médios de uma espécie de pescado é de $35$ cm com uma incerteza a $95\%$ entre $15$ e $55$ cm? Uma estimativa com tal nível de imprecisão não terá qualquer implicação prática. 
 
 Por outro lado,  partir de um determinado tamanho amostral o ganho em precisão torna-se mínimo. Isto significa que amostras demasiadamente grandes podem ter um custo muto alto porém não serem capazes aumentar de forma relevante a precisão do experimento. 
 
@@ -211,7 +219,7 @@ axis(1, at = seq(-10, 200, by = 10))
 axis(2, seq(-1,10, by = 0.5), las = 2)
 ```
   
-Neste exemplo, para amostras de tamanho 1, $\sigma_{\overline{X}} = 4$. Se tivermos agora amostras de tamanho 10, $\sigma_{\overline{X}} = 1.2$, uma redução de mais de 50%. No entanto aumentarmos o tamanho amostral para 50 o erro padrão cai somente de 1.2 para 0.56. Isto significa que a partir de determinado ponto (neste exemplo a partir de 10 ou 20 amostras), a redução no erro padrão torna-se mínima. Neste momento podemos podemos refletir sobre o custo de continuar aumentando o tamanho amostral para obter um ganho cada vez menor em precisão.
+Neste exemplo, para amostras de tamanho 1, $\sigma_{\overline{X}} = 4$. Se tivermos agora amostras de tamanho 10, $\sigma_{\overline{X}} = 1.2$, uma redução de mais de 50%. No entanto aumentarmos o tamanho amostral para 50 o erro padrão cai somente de $1,2$ para $0,56$. Isto significa que a partir de determinado ponto (neste exemplo a partir de $10$ ou $20$ amostras), a redução no erro padrão torna-se mínima. Neste momento podemos podemos refletir sobre o custo de continuar aumentando o tamanho amostral para obter um ganho cada vez menor em precisão.
 
 Para encontrarmos o tamanho amostral desejado, devemos decidir sobre dois pontos: i - *que nível de acurácia desejado*, ou seja, quão distante do valor real (média populacional) queremos que nossa esimativa esteja; e ii - *qual o nível de confiança do resultado*, ou seja, com que precisão queremos fazer esta estimativa.
 
@@ -223,7 +231,7 @@ A margem de erro para a média amostral pode ser obtida por (*compare esta expre
 
 $$E = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}$$
 
-O nível de confiança na estimativa nos garante que nossa estimativa estará dentro da margem de erro assumida com probabilidade $1-\alpha$. Como vimos acima, valores típicos para o nível de confiança são 99%, 95% e 90%.
+O nível de confiança na estimativa nos garante que nossa estimativa estará dentro da margem de erro assumida com probabilidade $1-\alpha$. Como vimos acima, valores típicos para o nível de confiança são $99\%$, $95\%$ e $90\%$.
 
 Uma representação esquemática do erro amostral e do nível de confiança na distribuição de $z$ pode ser vista abaixo:
 
@@ -257,7 +265,7 @@ A definição da margem de erro e do nível de confiança depende de estimativas
 
 ### Determinando o tamanho de uma amostra
 
-Podemos voltar a nossa questão anterior:  **"Qual tamanho amostral aplicar em meu estudo?"**. Esta questão pode ser reformulada como sendo "Qual tamanho amostral aplicar para obter uma estimativa de $\mu$ que possua uma margem de erro **E** e nivel de confiança $1-\alpha$ pré-determinados. Iniciando com a fórmula da margem de erro:
+Podemos voltar a nossa questão anterior:  **"Qual tamanho amostral aplicar em meu estudo?"**. Esta questão pode ser reformulada como sendo "Qual tamanho amostral aplicar para obter uma estimativa de $\mu$ que possua uma margem de erro $**E**$ e nivel de confiança $1-\alpha$ pré-determinados. Iniciando com a fórmula da margem de erro:
 
 $$E = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}$$
 
