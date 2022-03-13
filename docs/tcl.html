@@ -529,7 +529,7 @@ div.csl-indent {
 Figure 15.1: Processo de amostragem e inferência estatística
 </p>
 </div>
-<p>Neste processo, o resultado de um experimento pode ser visto como uma observação particular de uma <strong>população de experimentos</strong> que podem ser reproduzidos sob as mesmas condições. A estimativa obtida deste experimento é portanto, somente uma entre uma <strong>população de estimativas</strong> que o experimento pode gerar. A inferência estatística é possível se pudermos entender o que é esperado como resultados desta população de experimentos.</p>
+<p>Neste processo, o resultado de um experimento pode ser visto como uma observação particular de uma <strong>população de experimentos</strong> que podem ser reproduzidos sob as mesmas condições. A estimativa obtida deste experimento é portanto, somente uma entre uma <strong>população de estimativas</strong> que o experimento pode gerar. A inferência estatística é possível se pudermos entender o que é esperado como resultados possíveis desta população de experimentos.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-295"></span>
 <img src="probest-cambientais_files/figure-html/unnamed-chunk-295-1.png" alt="Distribuição das médias amostrais provinientes de um experimento" width="750" />
 <p class="caption">
@@ -544,7 +544,7 @@ Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 <div class="center">
 <p><strong>DEFINIÇÃO DO TCL</strong></p>
 </div>
-<p>Seja uma população estatística com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\sigma\)</span>. A distribuição das médias amostrais desta população tenderá a apresentar uma distribuição normal de probabilidades com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\frac{\sigma}{\sqrt(n)}\)</span> à medida que o tamanho amostral <span class="math inline">\(n\)</span> aumenta, ainda que a distribuição das observações originais <strong>não possua</strong> uma distribuição normal.</p>
+<p>Seja uma população estatística com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\sigma\)</span>. A distribuição das médias amostrais desta população tenderá a apresentar uma <strong>distribuição normal de probabilidades</strong> com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\frac{\sigma}{\sqrt(n)}\)</span> à medida que o tamanho amostral <span class="math inline">\(n\)</span> aumenta, ainda que a distribuição das observações originais <strong>não possua</strong> uma distribuição normal.</p>
 </div>
 <p></br></p>
 <p>Segundo o TCL, as médias amostrais <span class="math inline">\(\overline{X}\)</span> de um experimento distribuem-se como:</p>
@@ -554,7 +554,7 @@ Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 <div id="probabilidades-na-amostra-original-e-na-distribuição-de-médias" class="section level3" number="15.1.1">
 <h3><span class="header-section-number">15.1.1</span> Probabilidades na amostra original e na distribuição de médias</h3>
 <p>Seja uma variável <span class="math inline">\(X\)</span> qualquer com <span class="math inline">\(\mu = 50\)</span> e <span class="math inline">\(\sigma = 10\)</span>. As figuras abaixo comparam as probabilidades acima de <span class="math inline">\(x_1 = 55\)</span> para as observações originais e para as distribuições de médias amostrais de tamanho <span class="math inline">\(n_1 = 2\)</span> e <span class="math inline">\(n_2 = 10\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-297-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-297-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Note que existe uma probabilidade razoável de que uma determinada observação em <span class="math inline">\(X\)</span> esteja acima de <span class="math inline">\(55\)</span>, <span class="math inline">\(P(X \leq 55) = 0.309\)</span>. No entando se tomarmos <em>ao acaso</em> uma amostra de tamanho <span class="math inline">\(n_1 = 2\)</span>, a probabilidade de que <strong>a média</strong> destas duas amostras esteja acima de <span class="math inline">\(55\)</span> diminui para <span class="math inline">\(P(\overline{X} \leq 55) = 0.24\)</span>. Se tormarmos uma amostra ainda maior (<span class="math inline">\(n_2 = 10\)</span>), a probabilidade se reduz ainda mais para <span class="math inline">\(P(\overline{X} \leq 55) = 0.057\)</span>.</p>
 <p>Vemos portanto, como mencionado no capítulo <a href="amostrmedias.html#amostrmedias">13</a>, que a precisão de um experimento aumenta à medida que aumentamos o tamanho amostral, pois para amostras grandes, a probabilidade de obtermos um <span class="math inline">\(\overline{X}\)</span> distante de <span class="math inline">\(\mu\)</span> torna-se cada vez menor.</p>
 </div>
@@ -562,7 +562,7 @@ Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 <h3><span class="header-section-number">15.1.2</span> Distribuições não-normais</h3>
 <p>O TCL é válido inclusive para distribuições não-normais. Isto torna a distribuição normal uma das mais importantes em inferência estatística, pois ainda que o resultado de um experimento particular seja descrito por <em>qualquer outro modelo de probabilidades</em>, as <strong>médias das amostras</strong> deste experimento seguirão uma distribuição normal, à medida que <span class="math inline">\(n\)</span> aumenta. Isto justifica muitos dos processos de análise e inferência estatística que serão descritos nos capítulos posteriores.</p>
 <p>A figura abaixo por exemplo, simula a distribuição de médias amostrais para variáveis com diferentes distribuições de probabiidades e tamanhos crescentes de <span class="math inline">\(n\)</span>. Podemos observar que <em>independente</em> do formato da distribuição original, a distribuição das médias amostrais <em>tende à normalidade</em>. O padrão normal aparece mais rápido se a distribuição original é <strong>simétrica</strong>. Por outro lado, para populações estatísticas com distribuições <strong>assimétricas</strong>, será necessário um tamanho amostral maior para que se alcance a normalidade.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-299-1.png" width="1152" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-298-1.png" width="1152" /></p>
 </div>
 </div>
 <div id="exercícios-resolvidos-1" class="section level2" number="15.2">
@@ -570,10 +570,10 @@ Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 <div id="tamanho-médio-de-robalos-no-mercado-de-peixes" class="section level3" number="15.2.1">
 <h3><span class="header-section-number">15.2.1</span> Tamanho médio de robalos no mercado de peixes</h3>
 <p>Em 2014 no estuário do rio Itanhaém - SP foi pescado o <em>“maior robalo já encontrado”</em> <a href="http://g1.globo.com/sp/santos-regiao/noticia/2014/11/pescador-fisga-em-itanhaem-o-maior-robalo-ja-encontrado-briguei-com-ele.html">(G1 Santos)</a>. O peixe tinha <span class="math inline">\(133\)</span> cm e <span class="math inline">\(27,8\)</span> kg . Em 2018 em Bertioga, também no litoral de SP <em>“Robalo ‘gigante’ quebra recordes e vira atração”</em> <a href="https://g1.globo.com/sp/santos-regiao/noticia/robalo-gigante-quebra-recordes-e-vira-atracao-durante-pescaria-em-sp.ghtml">(G1 Santos)</a> pesando <span class="math inline">\(33\)</span> kg. Em “<em>uma das salas da Colônia de Pesca Z2 de Atafona</em>” RJ está uma imagem de um robalo de <span class="math inline">\(28\)</span> kg capturado muitas décadas atrás <a href="http://ambientecult.blogspot.com/2010/10/ponto-de-memoria-foto-da-pesca.html">(Ambiente Cult)</a>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-301-1.png" width="750" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-300-1.png" width="750" /></p>
 <p>Estas capturas viram notícias pois são certamente inusitadas. Dados de desembarque sugerem que a distribuição de tamanho de robalos comumente capturados está muito abaixo destes limites <span class="citation">(<a href="#ref-ximanes-carvalo2006" role="doc-biblioref">Ximenes-Carvalho 2006</a>)</span> ( <a href="http://repositorio.ufc.br/bitstream/riufc/1312/1/2006_dis_moxcarvalho.pdf">Acesse aqui o trabalho completo</a> ).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-303"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-303-1.png" alt="Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-302"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-302-1.png" alt="Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006." width="672" />
 <p class="caption">
 Figure 15.3: Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006.
 </p>

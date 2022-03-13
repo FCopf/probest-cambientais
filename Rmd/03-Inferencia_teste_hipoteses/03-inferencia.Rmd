@@ -265,7 +265,7 @@ A definição da margem de erro e do nível de confiança depende de estimativas
 
 ### Determinando o tamanho de uma amostra
 
-Podemos voltar a nossa questão anterior:  **"Qual tamanho amostral aplicar em meu estudo?"**. Esta questão pode ser reformulada como sendo "Qual tamanho amostral aplicar para obter uma estimativa de $\mu$ que possua uma margem de erro $**E**$ e nivel de confiança $1-\alpha$ pré-determinados. Iniciando com a fórmula da margem de erro:
+Podemos voltar a nossa questão anterior:  **"Qual tamanho amostral aplicar em meu estudo?"**. Esta questão pode ser reformulada como sendo "Qual tamanho amostral aplicar para obter uma estimativa de $\mu$ que possua uma margem de erro **$E$** e nivel de confiança $1-\alpha$ pré-determinados. Iniciando com a fórmula da margem de erro:
 
 $$E = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}$$
 

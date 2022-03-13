@@ -10,8 +10,8 @@ fig:unnamed-chunk-243
 fig:unnamed-chunk-257
 fig:unnamed-chunk-294
 fig:unnamed-chunk-295
-fig:unnamed-chunk-303
-fig:unnamed-chunk-392
+fig:unnamed-chunk-302
+fig:unnamed-chunk-391
 estrdados
 unidades-amostrais-e-descritores
 tipos-de-dados

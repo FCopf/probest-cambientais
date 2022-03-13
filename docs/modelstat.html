@@ -588,7 +588,7 @@ div.csl-indent {
 <span id="cb211-25"><a href="modelstat.html#cb211-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Distribuição de frequência em um experimento Binomial&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb211-26"><a href="modelstat.html#cb211-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
 <span id="cb211-27"><a href="modelstat.html#cb211-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">expression</span>(<span class="fu">f</span>(y)))</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-429-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-428-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="a-parcela-determinística" class="section level2" number="32.2">
@@ -611,7 +611,7 @@ div.csl-indent {
 <span id="cb212-10"><a href="modelstat.html#cb212-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Elevação (X)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb212-11"><a href="modelstat.html#cb212-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;p&quot;</span>) <span class="sc">+</span></span>
 <span id="cb212-12"><a href="modelstat.html#cb212-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-430-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-429-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Veja que este modelo tem uma limitação importante para ser utilizado neste situação. O parâmetro <span class="math inline">\(p\)</span> por ser uma probabilidade, deve estar restrido ao limites entre <span class="math inline">\(0\)</span> e <span class="math inline">\(1\)</span>. Entretanto, a função linear é sempre crescente e permite tanto valores negativos quando acima de <span class="math inline">\(1\)</span> o que não faz sentido para oproblema em questão.</p>
 <p>Outros modelos descritos no captítulo <a href="detmodel.html#detmodel">31</a> seriam mais interessantes, por exemplo, o modelo logístico. Se assumirmos <span class="math inline">\(g(x)\)</span> como uma função logística da elevação, então <span class="math inline">\(p\)</span> poderia ser modelado conforme:</p>
 <p><span class="math display">\[g(X) = p = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}\]</span></p>
@@ -627,9 +627,9 @@ div.csl-indent {
 <span id="cb213-9"><a href="modelstat.html#cb213-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb213-10"><a href="modelstat.html#cb213-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Elevação (X)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb213-11"><a href="modelstat.html#cb213-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;p&quot;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-431-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-430-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>De fato, a equação logística seria a primeira a ser considerada em uma situação deste tipo, ainda que outros modelos possam ser aplicados. Ao assumir a equação logística, nosso <strong>modelo estatístico</strong> está completo, em que <span class="math inline">\(Y\)</span> é uma variável aleatória Binomial (porção aleatória), que tem o parâmetro <span class="math inline">\(p\)</span> como uma função logística da elevação <span class="math inline">\(X\)</span> (porção detrminística) e <span class="math inline">\(n\)</span> é o número de riachos selecionados para um dado valor de elevação.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-432-1.png" width="288" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-431-1.png" width="288" style="display: block; margin: auto;" /></p>
 <p>O modelo estatístico apropriado para prever a ocorrência da espécie em um dado riacho poderia ser escrito como:</p>
 <p><span class="math inline">\(Y ∼ Binom \left (\begin{array}{c} p = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}, n = 1 \end{array}\right)\)</span></p>
 <p>A realização desde modelo nos daria como resposta <span class="math inline">\(Y = 0\)</span> (a espécie não ocorre) ou <span class="math inline">\(Y = 1\)</span> (a espécie ocorre). Ao nos referirmos a <strong>cada riacho</strong>, o parâmetro <span class="math inline">\(n = 1\)</span> da distribuição binomial transforma este modelo em um <em>experimento de Bernoulli</em> em que a probabilidade de ocorrência <span class="math inline">\(p\)</span> varia de acordo com a elevação.</p>
@@ -654,7 +654,7 @@ div.csl-indent {
 </div>
 <div id="o-modelo-estatístico-da-regressão-linear" class="section level2" number="32.4">
 <h2><span class="header-section-number">32.4</span> O modelo estatístico da regressão linear</h2>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-433-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-432-1.png" width="480" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

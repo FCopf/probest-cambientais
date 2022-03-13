@@ -15,7 +15,7 @@ Vamos retomar algumas ideias discutidas nos capítulos \@ref(popamostra) e \@ref
 amostr1
 ```
 
-Neste processo, o resultado de um experimento pode ser visto como uma observação particular de uma **população de experimentos** que podem ser reproduzidos sob as mesmas condições. A estimativa obtida deste experimento é portanto, somente uma entre uma **população de estimativas** que o experimento pode gerar. A inferência estatística é possível se pudermos entender o que é esperado como resultados desta população de experimentos. 
+Neste processo, o resultado de um experimento pode ser visto como uma observação particular de uma **população de experimentos** que podem ser reproduzidos sob as mesmas condições. A estimativa obtida deste experimento é portanto, somente uma entre uma **população de estimativas** que o experimento pode gerar. A inferência estatística é possível se pudermos entender o que é esperado como resultados possíveis desta população de experimentos. 
 
 ```{r, fig.cap = "Distribuição das médias amostrais provinientes de um experimento", fig.align='center'}
 amostr2
@@ -31,7 +31,7 @@ No capítulo \@ref(amostrmedias) apresentamos a distribuição de médias como u
 ::: {.center data-latex=""}
 **DEFINIÇÃO DO TCL**
 :::
-Seja uma população estatística com média $\mu$ e desvio padrão $\sigma$. A distribuição das médias amostrais desta população tenderá a apresentar uma distribuição normal de probabilidades com média $\mu$ e desvio padrão $\frac{\sigma}{\sqrt(n)}$ à medida que o tamanho amostral $n$ aumenta, ainda que a distribuição das observações originais **não possua** uma distribuição normal.
+Seja uma população estatística com média $\mu$ e desvio padrão $\sigma$. A distribuição das médias amostrais desta população tenderá a apresentar uma **distribuição normal de probabilidades** com média $\mu$ e desvio padrão $\frac{\sigma}{\sqrt(n)}$ à medida que o tamanho amostral $n$ aumenta, ainda que a distribuição das observações originais **não possua** uma distribuição normal.
 ::::
 
 </br>
@@ -57,7 +57,7 @@ n2 <- 10
 
 Seja uma variável $X$ qualquer com $\mu = `r muX`$ e $\sigma = `r sigmaX`$. As figuras abaixo comparam as probabilidades acima de $x_1 = `r x1`$ para as observações originais e para as distribuições de médias amostrais de tamanho $n_1 = `r n1`$ e $n_2 = `r n2`$.
 
-```{r, fig.align = "center", fig.width = 4, fig.height = 12}
+```{r, fig.align = "center", fig.width = 12, fig.height = 4}
 tam <- 20
 lim_x <- muX + c(-4,4) * sigmaX
 exprx <- expression(
@@ -76,7 +76,7 @@ p1 <- ggplot(data.frame(x = lim_x), aes(x = x)) +
                          sd = sigmaX),
              fill = "#00998a", 
              xlim = c(x1, lim_x[2])) +
-   labs(x = "X", y = "") +
+   labs(x = "X", y = "", subtitle = "Distribuição de X") +
    scale_y_continuous(breaks = NULL) +
    scale_x_continuous(breaks = c(muX, x1)) +
    theme(axis.text.x = element_text(size = tam),
@@ -94,7 +94,7 @@ p2 <- ggplot(data.frame(x = lim_x), aes(x = x)) +
                          sd = sigmaX/sqrt(n1)),
              fill = "#00998a", 
              xlim = c(x1, lim_x[2])) +
-   labs(x = expression(bar("X")), y = "") +
+   labs(x = expression(bar("X")), y = "", subtitle = paste("Distr. de médias: n = ", n1, sep = '')) +
    scale_y_continuous(breaks = NULL) +
    scale_x_continuous(breaks = c(muX, x1)) +
    theme(axis.text.x = element_text(size = tam),
@@ -112,7 +112,7 @@ p3 <- ggplot(data.frame(x = lim_x), aes(x = x)) +
                          sd = sigmaX/sqrt(n2)),
              fill = "#00998a", 
              xlim = c(x1, lim_x[2])) +
-   labs(x = expression(bar("X")), y = "") +
+   labs(x = expression(bar("X")), y = "", subtitle = paste("Distr. de médias: n = ", n2, sep = '')) +
    scale_y_continuous(breaks = NULL) +
    scale_x_continuous(breaks = c(muX, x1)) +
    theme(axis.text.x = element_text(size = tam),
@@ -121,14 +121,11 @@ p3 <- ggplot(data.frame(x = lim_x), aes(x = x)) +
    ggtitle(expr2) +
    theme_classic()
 
-pn <- grid.arrange(p1,p2,p3, ncol = 1)
-
-```
-
-```{r}
 area <- round(pnorm(x1, mean = muX, sd = sigmaX, lower.tail = F), 3)
 area1 <- round(pnorm(x1, mean = muX, sd = sigmaX/sqrt(n1), lower.tail = F), 3)
 area2 <- round(pnorm(x1, mean = muX, sd = sigmaX/sqrt(n2), lower.tail = F), 3)
+
+p1 | p2 | p3
 ```
 
 Note que existe uma probabilidade razoável de que uma determinada observação em $X$ esteja acima de $`r x1`$, $P(X \leq `r x1`) = `r area`$. No entando se tomarmos *ao acaso* uma amostra de tamanho $n_1 = `r n1`$, a probabilidade de que **a média** destas duas amostras esteja acima de $`r x1`$ diminui para $P(\overline{X} \leq `r x1`) = `r area1`$. Se tormarmos uma amostra ainda maior ($n_2 = `r n2`$), a probabilidade se reduz ainda mais para $P(\overline{X} \leq `r x1`) = `r area2`$. 
