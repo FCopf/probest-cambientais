@@ -88,6 +88,19 @@ que em nosso exemplo é
 
 Amplitude de variação  = $`r max(X)` - `r min(X)` = `r max(X) - min(X)`$
 
+</br>
+</br>
+
+:::: {.blackbox data-latex=""}
+::: {.center data-latex=""}
+**IMPORTANTE!**
+:::
+Nas seções sobre *Amostragem e Delineamento* e *Inferência e Teste de Hipóteses* (Capítulos \@ref(popamostra) a \@ref(testet)) faremos distinção entre variância e desvio padrão **amostral** (respectivamente $s^{2}$ e $s$) e a variância e desvio padrão **populacional** (respectivamente $\sigma^{2}$ e $\sigma$).
+::::
+
+</br>
+</br>
+
 
 ## Obtendo medidas variação de uma tabela de dados 
 

@@ -14,7 +14,7 @@ A abrangência da população estatística depende do contexto e do escopo da pe
 
 + Exemplo 2: Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um **índice de diversidade** calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não tem qualquer relação com população biológica, mas sim com uma variável que pode ser mensurada a partir do conjunto de espécies que habitam cada bacia.
 
-Nos dois exemplos acima é inviável obtermos informações de todos os elementos que compõem a população estaística. Para o exemplo dos comprimento, temos provavelmente alguns milhares de peixes na Bacia e consequentemente, o mesmo número de comprimentos individuais. O número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um **censo** ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática em estatística lida com a maioria dos casos em que mensuramos um **subconjunto** da população estatística, definido como uma **amostra**. 
+Nestes dois exemplos é inviável obter informações de todos os elementos que compõem a população estaística. No caso dos comprimentos, não temos como capturar todos os animais presentes em uma bacia hidrográfica e, ainda que tivéssemos, existem provavelmente alguns milhares de peixes somente em um pequeno trecho de riacho e consequentemente, o mesmo número de comprimentos individuais. Já o número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um **censo** ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática científica lida com a maioria dos casos em que mensuramos um **subconjunto** da população estatística, definido como uma **amostra**. 
 
 Finalmente, **unidade amostral** é definida como um **único** elemento da população estatística. A unidade amostral é a menor unidade **independente** associada ao estudo. A necessidade das unidades amostrais constituirem elementos independentes é um dos pressupostos centrais da estatística e suas implicações ficarão mais claras quando tratarmos do processo de amostragem. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécies de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada um dos valores de diversidade calculados para cada bacia costeira.
 
@@ -31,50 +31,138 @@ Finalmente, **unidade amostral** é definida como um **único** elemento da popu
       
 > **Tamanho amostral** (*n*): o número de elementos da amostra.
 
-## Distribuições de frequência
+## Distribuição de frequências na população estatística
 
-Os valores da população estatística não são idênticos. Os lambaris do exemplo anterior não têm todos o mesmo comprimento, assim como a diversidade de espécies não é a mesma para todas as bacias costeiras do estado de São Paulo. Dizemos que existe uma **distribuição** de valores. Os comprimentos de *Deuterodon iguape* devem variar de alguns milímetros (pós-larva) a cerca de 20 cm (adulto). Da mesma forma, nem todos os comprimentos são igaulente representados. Provavelmente existem mais lambaris pequenos e médios que grandes. Se fosse possível observar todos os elementos da população estatística, poderíamos organizá-los em uma **distribuição de frequências**, onde veríamos que algumas classes de valores são mais comuns que outras. 
+Os valores em uma população estatística não são idênticos, certamente existe uma **distribuição de frequência** em que algumas faixas de valores são mais frequentes, enquanto outras faixas de valores são inexistentes. Os comprimentos de *Deuterodon iguape* devem variar por exemplo de alguns milímetros (pós-larva) a cerca de 20 cm (adulto), em que nem todos os comprimentos são igualmente representados. Certamente, existem mais lambaris pequenos e médios do que lambaris grandes. De fato, animais muito grandes são os mais raros, de modo que se tivessemos informação da população estatística, deveríamos que faixas de valores muito elevados se tornaria cada vez menos frequentes.
 
-
-```{r fig.cap = "Distribuição de frequência seguindo um modelo Gaussiano", fig.width=5, fig.height=5, fig.align = "center"}
-set.seed(1)
-CP = rnorm(n = 1000, mean = 10, sd = 2.5)
-hist(CP, xlab = "Classes de valores", ylab = "Frequência", col = "grey", main = "", xlim = c(0, 21), axes = F)
-axis(2, las = 2)
-axis(1, at = seq(0, 20, by = 2))
-box()
+```{r}
+mu = 1.7
+sd = 0.10
 ```
 
-Vemos que existem mais valores entre 8 e 12 por exemplo, e poucas observações extremas.
 
-Este exemplo é fictício e segue  uma **distribuição normal** (capítulo \@ref(normdist)) de probabilidades. A distribuição normal, é uma das mais importantes em estatística. É uma distribuição **simétrica**, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média), apresenta uma forma de sino e também é chamada de distribuição **Gaussiana** em homenagem a [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a **Teoria da distribuição dos erros observacionais**, tópico central ao desenvolvimento da estatística e do método científico.
+Se fosse possível observar todos os elementos da população estatística, saberíamos exatamente qual o formato de sua distribuição de frequências. Suponha por exemplo, a altura de adultos acima de 18 anos. Seria razoável supor que a maioria das alturas está em valores intermediários ao redor de, por exemplo, `r mu` metros. É razoável supor também que a frequência de pessoas muito altas ou muito baixas vai diminuindo gradativamente, se modo que é muito raro encontrarmos adultos muito altos (ex. acima de $2$ metros) ou muito baixos (ex. menores que $1.5$ metros). A figura abaixo, descreve uma distribuição de frequência possível para esta variável.
+
+
+```{r fig.cap = "Distribuição em uma população estatística das alturas (em metros) de adultos acima de 18 anos.", fig.width=5, fig.height=4, fig.align = "center"}
+set.seed(1)
+N = 1000
+adultos = data.frame(CP = round(rnorm(n = N, mean = mu, sd = sd),2))
+ggplot(adultos, aes(x = CP)) +
+  geom_histogram(aes(y =..density..), 
+                  fill = 'dodgerblue4', color = 'black', bins = 10) +
+   labs(x = "Alturas em metros",
+        y = "Frequência relativa") +
+   theme_classic()
+
+```
+
+Vemos que existem mais valores entre $1.6$ e $1.8$ metros e poucas observações extremas, o que é condizente com nossa expectativa para a distribuição de frequências das alturas de indivíduos adultos.
+
+:::: {.blackbox data-latex=""}
+Este exemplo é fictício e segue  uma **distribuição normal** de probabilidades. A distribuição é **simétrica**, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média). Você poderá encontrar o termo *bell curve* em inglês devido à sua forma de sino ou distribuição **gaussiana** em homenagem a [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a **Teoria da distribuição dos erros observacionais** que é também um tópico central ao desenvolvimento da estatística e do método científico.
+::::
+
+## Distribuições de frequências na amostra
+
+Não é viável ou mesmo possível obter informações de todos os elementos que compõem a população estatística. Ainda assim, gostaríamos de ter informações sobre esta população para que possamos avançar no conhecimento científico. A amostragem é o meio de se obter tais informações. Ao amostrar uma população estatística, iremos constatar que nem todos os seus valores são idênticos. No caso dos exemplos anteriores, os lambaris de uma região não têm todos o mesmo comprimento e do mesmo modo, nem todas as todas as bacias costeiras do estado de São Paulo têm os mesmos valores de diversidade.
+
+Um vez que não é possível ou viável observar toda a população estatística, a amostra é o meio de nos aproximarmos desta informação. Suponha, uma amostra de 30 adultos do exemplo anterior.
+
+```{r}
+set.seed(2)
+n = 50
+selecao = sample(N, size = n)
+Am1 = sort(adultos$CP[selecao], decreasing = FALSE)
+```
+
+Se organizarmos esta amostra em valores crescente teríamos:
+
+`r  Am1`
+
+Os valores estão entre $`r min(Am1)`$ e `r max(Am1)`, o que certamente não é igual aos valores máximos e mínimos da população. Vamos representar a amostra por meio de um histograma
+
+```{r fig.cap = "Amostra de tamanho n = 50 adultos", fig.width=5, fig.height=4, fig.align = "center"}
+amostra_df = data.frame(CP = adultos$CP[selecao]) 
+ggplot(amostra_df, aes(x = CP)) +
+  geom_histogram(fill = 'dodgerblue4', color = 'black', bins = 10) +
+  coord_cartesian(xlim = c(1.4, 2)) +
+    scale_y_continuous(breaks = seq(0, 20, by = 2)) +
+   labs(x = "Alturas em metros",
+        y = "Frequência") +
+   theme_classic()
+
+```
+
+Na figura acima, ainda que a distribuição não seja igual à população estatística, podemos perceber que há uma concentração de valores ligeiramente maior entre $1.6$ e $1.8$, assim como na população estatística. A diferença entre a distribuição da população e da amostra é esperada, e ocorre justamente porque estamos observando um subconjunto de elementos. Vamos verificar por exemplo, as distribuição de frequência de outras amostras possíves de tamanho n = `r n` desta mesma população.
+
+```{r fig.cap = "Amostras de tamanho n = 50 adultos", fig.width=8, fig.height=6, fig.align = "center"}
+plot_list = list()
+for (i in 1:6){
+  p = ggplot(slice_sample(adultos, n = n), aes(x = CP)) +
+  geom_histogram(fill = 'dodgerblue4', color = 'black', bins = 10) +
+   labs(x = "Alturas em metros",
+        y = "Frequência") +
+    coord_cartesian(xlim = c(1.4, 2), ylim = c(0,15)) +
+    scale_y_continuous(breaks = seq(0, 20, by = 2)) +
+   theme_classic()
+  plot_list[[i]] = p
+}
+
+(plot_list[[1]] + plot_list[[2]] + plot_list[[3]]) /
+  (plot_list[[4]] + plot_list[[5]] + plot_list[[6]])
+
+```
+
+Note que a cada amostra, a distribuição de valores foi diferente. No entanto, de forma geral, observamos a situação em que a faixa intermediária de valores foi mais frequente e que os extremos foram mais raros. Desta forma, o que esperamos no processo de amostragem de uma é obter uma amostra **representativa** da população estatística, em que a distribuição de frequências se *aproxime* da distribuição de frequencias da população. 
+
+Como conhecíamos a população estatística neste exemplo fictício, este comportamento já era esperado. Na pratica científica entretanto, não conhecemos a população estatística e consequentemente não temos como saber se a nossa amostra em particular foi ou não representativa. O que **devemos** garantir é que o processo de amostragem seja conduzido de tal forma que a **teoria da amostragem** nos garante que, em média, nossa amostragem será representativa. Como veremos no Capítulo \@ref(amostrmedias), o modo mais simples de garantir este comportamento é realizarmos uma **amostra aleatória** dos elementos da população estatística.
+
 
 ## Parâmetros e estimadores
 
-Um conjunto de observações costuma ser caracterizada por dois tipos de descritores, **medidas de tendência central** e **medidas de dispersão**.
+Vimos nos capítulos \@ref(tendcentral) e \@ref(variacao) que um conjunto de observações costuma ser caracterizada por descritores de **tendência central** e de **variação**.
 
-Considere a questão levantada anteriormente: Qual o comprimento de **Deuterodon iguape** em riachos do litoral de São Paulo? Geralmente, entendemos esta questão como: - Qual o comprimento de um lambari **típico**; sendo que um lambari típico pode ser entendido como aquele de **comprimento médio**.
+Considere a questão levantada no inícip deste capítulo: Qual o comprimento de **Deuterodon iguape** em riachos do litoral de São Paulo? Geralmente, entendemos esta questão como: - Qual o comprimento de um lambari *típico*. Do ponto de vista estatítico, um lambari típico pode ser entendido como aquele de que tenha um **comprimento médio**. Ou seja, entendemos que a média aritmética pode ser uma forma de representar o valor esperado na popuilação estatística.
 
-Se o comprimento médio for calculado calculado a partir de **todos** os elementos da população, teremos o **parâmetro**, um descritor da população estatística. Os parâmetros só podem ser obtidos por meio de um censo, pois para serem calculados requerem que todos os elementos da população sejam mensurados. Por outro lado, se fizermos uma **amostragem** da população estatística, e tomarmos a média de 30 lambaris, teremos um **descritor da amostra**. Os descritores de uma amostra são conhecidos como **estimadores** ou **estatísticas**.
+Se este comprimento médio fosse calculado a partir de **TODOS** os elementos da população, teríamos acesso a um **parâmetro** desta distribuição, ou seja, um descritor da população estatística. Os parâmetros só podem ser obtidos por meio de um censo, pois para serem calculados requerem que todos os elementos da população sejam mensurados. Amédia não é o único parãmetro desta população, poderíamos também calcular a **variância** a partir de todos os elementos da população e teríamos um parâmetro que mede a dispersão de todos os elementos da população estatística ao redor da mérdia.
 
-> **Parâmetro**: a medida que descreve uma característica da \textit{população}. Ex.: a média ($\mu$) ou a variância ($\sigma^2$) populacional.
+:::: {.blackbox data-latex=""}
+::: {.center data-latex=""}
+**IMPORTANTE!**
+:::
+Denominamos de **parâmetro** um descritor obtido a partir da mensuração de **todos os elementos** da população estatística. Os parâmetros são comumente representados por letras gregas. O símbolo $\mu$, por exemplo, é utilizado para representar a média populacional, enquanto o símbolo $\sigma^2$ para representar a variância populacional.
+::::
 
-> **Estimador** ou **Estatística**: Uma medida que descreve uma característica da \textit{amostra}. Ex.: a média amostral ($\overline{X}$) ou a variância amostral ($s^2$).
+<br/>
 
-> **Estimativa**: é o valor numérico assumido pelo estimador. Ex. o valor número da média ou variância amostral.
+Ao conduzirmos uma **amostragem** de $n$ elementos teremos um subconjunto possível da população estatística que nos permitirá calcular **descritoers da amostra**. Descritores da amostra são conhecidos também como **estimadores** ou **estatísticas**.  A média aritmética deste subconjunto por exemplo, é denominada de **média amostral**, sendo representanta por $\overline{X}$. Poderíamos estimar também a variância desta amostra (**variância amostral**), representada por $s^2$.
+
+Como definições importantes temos:
+
+> **Parâmetro**: a medida que descreve uma característica da *população estatística*. Ex.: a média ($\mu$) ou a variância ($\sigma^2$) populacional.
+
+> **Estimador** ou **Estatística**: Uma medida que descreve uma característica da *amostra*. Ex.: a média amostral ($\overline{X}$) ou a variância amostral ($s^2$).
+
+> **Estimativa**: é o valor numérico assumido pelo estimador. Ex. o valor número calculado da média ou variância de uma amostra em particular.
 
 ## Amostragem e inferência
 
-Uma vez definida a população estística, deve ser definido o procedimento amostral que iremos utilizar para acessar seus elementos. Em última instância, não estamos interessados na amostra em si, mas nas características da população da qual ela é proveniente. Tendo essa premisa em mente, a importância do processo de **amostragem** está no fato de que, na impossibilidade de observar toda a população, a amostra é nossa **única** fonte de informação disponível. Uma amostragem mal conduzida pode nos trazer informações inúteis sobre a população. Dizemos então que uma amostra deve **representativa** da população de origem. 
+Em última instância, não estamos interessados na amostra em si, mas na população da qual ela é proveniente. Entretanto, o processo de **amostragem** é a única forma de obtermos alguma informação sobre esta população. 
 
-Tendo em mãos uma amostra representativa, calculamos estatísticas que são os **estimadores** dos parâmetros populacionais. A **inferência** é o processo inverso da amostragem, i.e. aquele que nos permite tirar conclusões sobre a população de origem a partir das informações contidas na amostra. 
+Tendo obtido uma amostra representativa, calculamos descritores (ex. de tendência central e dispersão) que serão utilizados como **estimadores** dos parâmetros populacionais, um processo que denominamos de **inferência estatística**. Como verificamos anteriormente, cada amostra que retirarmos da mesma população estatística será diferente. Isto significa que os estimadores destas amostras (ex. $\overline{X}$) serão diferentes entre si e numericamente diferentes dos parâmetros populacionais. No entanto, veremos nos capítulos \@ref(amostrmedias) a \@ref(inferenc) que podemos conhecer algumas propriedades destes estimadores que nos permitirão estabelecer limites de confiânça de para nossa inferência sobre a população estatística.
+
+:::: {.blackbox data-latex=""}
+::: {.center data-latex=""}
+**Inferência Estatística**
+:::
+O processo que consiste em utilizamos descritores da amostra para tirar conclusões sobre as características da população estatística.
+::::
 
 
 ```{r fig.cap = "Processo de amostragem e inferência estatística", fig.align='center'}
 image_read("figs/amostragem_inferencia.png") %>% 
-  image_scale('x800')
-# amostr <- image_read("figs/amostragem_inferencia.png")
-# grid.arrange(rasterGrob(amostr), nrow = 1, ncol = 1)
+  image_scale('x1000')
 ```
 
 

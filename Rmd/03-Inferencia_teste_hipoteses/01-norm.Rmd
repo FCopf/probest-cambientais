@@ -1,4 +1,4 @@
-# Alguns fenômenos têm distribuição normal {#normdist}
+# O modelo da distribuição normal {#normdist}
 
 ```{r, echo=FALSE}
 ie = read.csv("datasets/IE_BICT_2019.csv", sep = ";", dec = ",")

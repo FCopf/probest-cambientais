@@ -9,7 +9,7 @@ amostr3 <- image_read("figs/amostragem_inferencia_3.png") %>%
    image_scale("1500x")
 ```
 
-Vamos retomar algumas ideias discutidas nos capítulos \@ref(posicao) e \@ref(amostrmedias), quando apresentamos a distribuição das médias amostrais e o ciclo de *amostragem* $\Rightarrow$ *inferência estatística*. Ao amostrar uma população estatística por meio de um experimento, seremos capazes de calcular estatísticas descritivas desta população. A média amostral $\overline{X}$ é uma destas estimativas, mas a mesma ideia vale para **qualquer outra estatística $\theta$**.
+Vamos retomar algumas ideias discutidas nos capítulos \@ref(popamostra) e \@ref(amostrmedias), quando apresentamos a distribuição das médias amostrais e o ciclo de *amostragem* $\Rightarrow$ *inferência estatística*. Ao amostrar uma população estatística por meio de um experimento, seremos capazes de calcular estatísticas descritivas desta população. A média amostral $\overline{X}$ é uma destas estimativas, mas a mesma ideia vale para **qualquer outra estatística $\theta$**.
 
 ```{r, fig.cap = "Processo de amostragem e inferência estatística", fig.align='center'}
 amostr1

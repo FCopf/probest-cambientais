@@ -284,9 +284,10 @@ div.csl-indent {
 <li class="chapter" data-level="12" data-path="popamostra.html"><a href="popamostra.html"><i class="fa fa-check"></i><b>12</b> Descrevendo populações e amostras</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
-<li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequência"><i class="fa fa-check"></i><b>12.2</b> Distribuições de frequência</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.3</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.4</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -297,12 +298,11 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão"><i class="fa fa-check"></i><b>13.4.3</b> Precisão</a></li>
-<li class="chapter" data-level="13.4.4" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-padrão-da-média"><i class="fa fa-check"></i><b>13.4.4</b> Erro padrão da média</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>III Inferência e Teste de Hipóteses</b></span></li>
-<li class="chapter" data-level="14" data-path="normdist.html"><a href="normdist.html"><i class="fa fa-check"></i><b>14</b> Alguns fenômenos têm distribuição normal</a>
+<li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
+<li class="chapter" data-level="14" data-path="normdist.html"><a href="normdist.html"><i class="fa fa-check"></i><b>14</b> O modelo da distribuição normal</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="normdist.html"><a href="normdist.html#o-modelo-normal-de-probabilidades"><i class="fa fa-check"></i><b>14.1</b> O modelo normal de probabilidades</a></li>
 <li class="chapter" data-level="14.2" data-path="normdist.html"><a href="normdist.html#entendendo-a-função-normal-de-densidade-de-probabilidade"><i class="fa fa-check"></i><b>14.2</b> Entendendo a função normal de densidade de probabilidade</a></li>
@@ -524,7 +524,7 @@ div.csl-indent {
 <li><p>Exemplo 1: Suponha um estudo para descrever o comprimento do lambari <em>Deuterodon iguape</em> em riachos do litoral de São Paulo. A população estatística não são os peixes em si, mas o <strong>comprimento</strong> de cada indivíduo que habita os riachos destas bacias. Dado o escopo do estudo (bacias do litoral de São Paulo), a população estatística abrange <strong>somente</strong> comprimentos dos organismos existem nesta região.</p></li>
 <li><p>Exemplo 2: Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um <strong>índice de diversidade</strong> calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não tem qualquer relação com população biológica, mas sim com uma variável que pode ser mensurada a partir do conjunto de espécies que habitam cada bacia.</p></li>
 </ul>
-<p>Nos dois exemplos acima é inviável obtermos informações de todos os elementos que compõem a população estaística. Para o exemplo dos comprimento, temos provavelmente alguns milhares de peixes na Bacia e consequentemente, o mesmo número de comprimentos individuais. O número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um <strong>censo</strong> ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática em estatística lida com a maioria dos casos em que mensuramos um <strong>subconjunto</strong> da população estatística, definido como uma <strong>amostra</strong>.</p>
+<p>Nestes dois exemplos é inviável obter informações de todos os elementos que compõem a população estaística. No caso dos comprimentos, não temos como capturar todos os animais presentes em uma bacia hidrográfica e, ainda que tivéssemos, existem provavelmente alguns milhares de peixes somente em um pequeno trecho de riacho e consequentemente, o mesmo número de comprimentos individuais. Já o número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um <strong>censo</strong> ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática científica lida com a maioria dos casos em que mensuramos um <strong>subconjunto</strong> da população estatística, definido como uma <strong>amostra</strong>.</p>
 <p>Finalmente, <strong>unidade amostral</strong> é definida como um <strong>único</strong> elemento da população estatística. A unidade amostral é a menor unidade <strong>independente</strong> associada ao estudo. A necessidade das unidades amostrais constituirem elementos independentes é um dos pressupostos centrais da estatística e suas implicações ficarão mais claras quando tratarmos do processo de amostragem. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécies de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada um dos valores de diversidade calculados para cada bacia costeira.</p>
 <blockquote>
 <p><strong>População estatística</strong>: todos os elementos que podem compor uma amostra. Podem ser medidas como comprimentos, temperaturas, velocidades, etc.</p>
@@ -545,41 +545,82 @@ div.csl-indent {
 <p><strong>Tamanho amostral</strong> (<em>n</em>): o número de elementos da amostra.</p>
 </blockquote>
 </div>
-<div id="distribuições-de-frequência" class="section level2" number="12.2">
-<h2><span class="header-section-number">12.2</span> Distribuições de frequência</h2>
-<p>Os valores da população estatística não são idênticos. Os lambaris do exemplo anterior não têm todos o mesmo comprimento, assim como a diversidade de espécies não é a mesma para todas as bacias costeiras do estado de São Paulo. Dizemos que existe uma <strong>distribuição</strong> de valores. Os comprimentos de <em>Deuterodon iguape</em> devem variar de alguns milímetros (pós-larva) a cerca de 20 cm (adulto). Da mesma forma, nem todos os comprimentos são igaulente representados. Provavelmente existem mais lambaris pequenos e médios que grandes. Se fosse possível observar todos os elementos da população estatística, poderíamos organizá-los em uma <strong>distribuição de frequências</strong>, onde veríamos que algumas classes de valores são mais comuns que outras.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-234"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-234-1.png" alt="Distribuição de frequência seguindo um modelo Gaussiano" width="480" />
+<div id="distribuição-de-frequências-na-população-estatística" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Distribuição de frequências na população estatística</h2>
+<p>Os valores em uma população estatística não são idênticos, certamente existe uma <strong>distribuição de frequência</strong> em que algumas faixas de valores são mais frequentes, enquanto outras faixas de valores são inexistentes. Os comprimentos de <em>Deuterodon iguape</em> devem variar por exemplo de alguns milímetros (pós-larva) a cerca de 20 cm (adulto), em que nem todos os comprimentos são igualmente representados. Certamente, existem mais lambaris pequenos e médios do que lambaris grandes. De fato, animais muito grandes são os mais raros, de modo que se tivessemos informação da população estatística, deveríamos que faixas de valores muito elevados se tornaria cada vez menos frequentes.</p>
+<p>Se fosse possível observar todos os elementos da população estatística, saberíamos exatamente qual o formato de sua distribuição de frequências. Suponha por exemplo, a altura de adultos acima de 18 anos. Seria razoável supor que a maioria das alturas está em valores intermediários ao redor de, por exemplo, 1.7 metros. É razoável supor também que a frequência de pessoas muito altas ou muito baixas vai diminuindo gradativamente, se modo que é muito raro encontrarmos adultos muito altos (ex. acima de <span class="math inline">\(2\)</span> metros) ou muito baixos (ex. menores que <span class="math inline">\(1.5\)</span> metros). A figura abaixo, descreve uma distribuição de frequência possível para esta variável.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-235"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-235-1.png" alt="Distribuição em uma população estatística das alturas (em metros) de adultos acima de 18 anos." width="480" />
 <p class="caption">
-Figure 12.1: Distribuição de frequência seguindo um modelo Gaussiano
+Figure 12.1: Distribuição em uma população estatística das alturas (em metros) de adultos acima de 18 anos.
 </p>
 </div>
-<p>Vemos que existem mais valores entre 8 e 12 por exemplo, e poucas observações extremas.</p>
-<p>Este exemplo é fictício e segue uma <strong>distribuição normal</strong> (capítulo <a href="normdist.html#normdist">14</a>) de probabilidades. A distribuição normal, é uma das mais importantes em estatística. É uma distribuição <strong>simétrica</strong>, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média), apresenta uma forma de sino e também é chamada de distribuição <strong>Gaussiana</strong> em homenagem a <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</a> um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a <strong>Teoria da distribuição dos erros observacionais</strong>, tópico central ao desenvolvimento da estatística e do método científico.</p>
+<p>Vemos que existem mais valores entre <span class="math inline">\(1.6\)</span> e <span class="math inline">\(1.8\)</span> metros e poucas observações extremas, o que é condizente com nossa expectativa para a distribuição de frequências das alturas de indivíduos adultos.</p>
+<div class="blackbox">
+<p>Este exemplo é fictício e segue uma <strong>distribuição normal</strong> de probabilidades. A distribuição é <strong>simétrica</strong>, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média). Você poderá encontrar o termo <em>bell curve</em> em inglês devido à sua forma de sino ou distribuição <strong>gaussiana</strong> em homenagem a <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</a> um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a <strong>Teoria da distribuição dos erros observacionais</strong> que é também um tópico central ao desenvolvimento da estatística e do método científico.</p>
 </div>
-<div id="parâmetros-e-estimadores" class="section level2" number="12.3">
-<h2><span class="header-section-number">12.3</span> Parâmetros e estimadores</h2>
-<p>Um conjunto de observações costuma ser caracterizada por dois tipos de descritores, <strong>medidas de tendência central</strong> e <strong>medidas de dispersão</strong>.</p>
-<p>Considere a questão levantada anteriormente: Qual o comprimento de <strong>Deuterodon iguape</strong> em riachos do litoral de São Paulo? Geralmente, entendemos esta questão como: - Qual o comprimento de um lambari <strong>típico</strong>; sendo que um lambari típico pode ser entendido como aquele de <strong>comprimento médio</strong>.</p>
-<p>Se o comprimento médio for calculado calculado a partir de <strong>todos</strong> os elementos da população, teremos o <strong>parâmetro</strong>, um descritor da população estatística. Os parâmetros só podem ser obtidos por meio de um censo, pois para serem calculados requerem que todos os elementos da população sejam mensurados. Por outro lado, se fizermos uma <strong>amostragem</strong> da população estatística, e tomarmos a média de 30 lambaris, teremos um <strong>descritor da amostra</strong>. Os descritores de uma amostra são conhecidos como <strong>estimadores</strong> ou <strong>estatísticas</strong>.</p>
-<blockquote>
-<p><strong>Parâmetro</strong>: a medida que descreve uma característica da . Ex.: a média (<span class="math inline">\(\mu\)</span>) ou a variância (<span class="math inline">\(\sigma^2\)</span>) populacional.</p>
-</blockquote>
-<blockquote>
-<p><strong>Estimador</strong> ou <strong>Estatística</strong>: Uma medida que descreve uma característica da . Ex.: a média amostral (<span class="math inline">\(\overline{X}\)</span>) ou a variância amostral (<span class="math inline">\(s^2\)</span>).</p>
-</blockquote>
-<blockquote>
-<p><strong>Estimativa</strong>: é o valor numérico assumido pelo estimador. Ex. o valor número da média ou variância amostral.</p>
-</blockquote>
 </div>
-<div id="amostragem-e-inferência" class="section level2" number="12.4">
-<h2><span class="header-section-number">12.4</span> Amostragem e inferência</h2>
-<p>Uma vez definida a população estística, deve ser definido o procedimento amostral que iremos utilizar para acessar seus elementos. Em última instância, não estamos interessados na amostra em si, mas nas características da população da qual ela é proveniente. Tendo essa premisa em mente, a importância do processo de <strong>amostragem</strong> está no fato de que, na impossibilidade de observar toda a população, a amostra é nossa <strong>única</strong> fonte de informação disponível. Uma amostragem mal conduzida pode nos trazer informações inúteis sobre a população. Dizemos então que uma amostra deve <strong>representativa</strong> da população de origem.</p>
-<p>Tendo em mãos uma amostra representativa, calculamos estatísticas que são os <strong>estimadores</strong> dos parâmetros populacionais. A <strong>inferência</strong> é o processo inverso da amostragem, i.e. aquele que nos permite tirar conclusões sobre a população de origem a partir das informações contidas na amostra.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-235"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-235-1.png" alt="Processo de amostragem e inferência estatística" width="648" />
+<div id="distribuições-de-frequências-na-amostra" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Distribuições de frequências na amostra</h2>
+<p>Não é viável ou mesmo possível obter informações de todos os elementos que compõem a população estatística. Ainda assim, gostaríamos de ter informações sobre esta população para que possamos avançar no conhecimento científico. A amostragem é o meio de se obter tais informações. Ao amostrar uma população estatística, iremos constatar que nem todos os seus valores são idênticos. No caso dos exemplos anteriores, os lambaris de uma região não têm todos o mesmo comprimento e do mesmo modo, nem todas as todas as bacias costeiras do estado de São Paulo têm os mesmos valores de diversidade.</p>
+<p>Um vez que não é possível ou viável observar toda a população estatística, a amostra é o meio de nos aproximarmos desta informação. Suponha, uma amostra de 30 adultos do exemplo anterior.</p>
+<p>Se organizarmos esta amostra em valores crescente teríamos:</p>
+<p>1.4, 1.51, 1.52, 1.53, 1.54, 1.58, 1.58, 1.6, 1.6, 1.6, 1.6, 1.6, 1.61, 1.62, 1.62, 1.63, 1.64, 1.64, 1.65, 1.66, 1.66, 1.67, 1.67, 1.67, 1.69, 1.7, 1.71, 1.72, 1.73, 1.74, 1.74, 1.74, 1.75, 1.75, 1.76, 1.76, 1.76, 1.77, 1.78, 1.78, 1.78, 1.78, 1.81, 1.81, 1.84, 1.84, 1.88, 1.88, 1.89, 1.92</p>
+<p>Os valores estão entre <span class="math inline">\(1.4\)</span> e 1.92, o que certamente não é igual aos valores máximos e mínimos da população. Vamos representar a amostra por meio de um histograma</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-237"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-237-1.png" alt="Amostra de tamanho n = 50 adultos" width="480" />
 <p class="caption">
-Figure 12.2: Processo de amostragem e inferência estatística
+Figure 12.2: Amostra de tamanho n = 50 adultos
+</p>
+</div>
+<p>Na figura acima, ainda que a distribuição não seja igual à população estatística, podemos perceber que há uma concentração de valores ligeiramente maior entre <span class="math inline">\(1.6\)</span> e <span class="math inline">\(1.8\)</span>, assim como na população estatística. A diferença entre a distribuição da população e da amostra é esperada, e ocorre justamente porque estamos observando um subconjunto de elementos. Vamos verificar por exemplo, as distribuição de frequência de outras amostras possíves de tamanho n = 50 desta mesma população.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-238"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-238-1.png" alt="Amostras de tamanho n = 50 adultos" width="768" />
+<p class="caption">
+Figure 12.3: Amostras de tamanho n = 50 adultos
+</p>
+</div>
+<p>Note que a cada amostra, a distribuição de valores foi diferente. No entanto, de forma geral, observamos a situação em que a faixa intermediária de valores foi mais frequente e que os extremos foram mais raros. Desta forma, o que esperamos no processo de amostragem de uma é obter uma amostra <strong>representativa</strong> da população estatística, em que a distribuição de frequências se <em>aproxime</em> da distribuição de frequencias da população.</p>
+<p>Como conhecíamos a população estatística neste exemplo fictício, este comportamento já era esperado. Na pratica científica entretanto, não conhecemos a população estatística e consequentemente não temos como saber se a nossa amostra em particular foi ou não representativa. O que <strong>devemos</strong> garantir é que o processo de amostragem seja conduzido de tal forma que a <strong>teoria da amostragem</strong> nos garante que, em média, nossa amostragem será representativa. Como veremos no Capítulo <a href="amostrmedias.html#amostrmedias">13</a>, o modo mais simples de garantir este comportamento é realizarmos uma <strong>amostra aleatória</strong> dos elementos da população estatística.</p>
+</div>
+<div id="parâmetros-e-estimadores" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Parâmetros e estimadores</h2>
+<p>Vimos nos capítulos <a href="tendcentral.html#tendcentral">5</a> e <a href="variacao.html#variacao">6</a> que um conjunto de observações costuma ser caracterizada por descritores de <strong>tendência central</strong> e de <strong>variação</strong>.</p>
+<p>Considere a questão levantada no inícip deste capítulo: Qual o comprimento de <strong>Deuterodon iguape</strong> em riachos do litoral de São Paulo? Geralmente, entendemos esta questão como: - Qual o comprimento de um lambari <em>típico</em>. Do ponto de vista estatítico, um lambari típico pode ser entendido como aquele de que tenha um <strong>comprimento médio</strong>. Ou seja, entendemos que a média aritmética pode ser uma forma de representar o valor esperado na popuilação estatística.</p>
+<p>Se este comprimento médio fosse calculado a partir de <strong>TODOS</strong> os elementos da população, teríamos acesso a um <strong>parâmetro</strong> desta distribuição, ou seja, um descritor da população estatística. Os parâmetros só podem ser obtidos por meio de um censo, pois para serem calculados requerem que todos os elementos da população sejam mensurados. Amédia não é o único parãmetro desta população, poderíamos também calcular a <strong>variância</strong> a partir de todos os elementos da população e teríamos um parâmetro que mede a dispersão de todos os elementos da população estatística ao redor da mérdia.</p>
+<div class="blackbox">
+<div class="center">
+<p><strong>IMPORTANTE!</strong></p>
+</div>
+<p>Denominamos de <strong>parâmetro</strong> um descritor obtido a partir da mensuração de <strong>todos os elementos</strong> da população estatística. Os parâmetros são comumente representados por letras gregas. O símbolo <span class="math inline">\(\mu\)</span>, por exemplo, é utilizado para representar a média populacional, enquanto o símbolo <span class="math inline">\(\sigma^2\)</span> para representar a variância populacional.</p>
+</div>
+<p><br/></p>
+<p>Ao conduzirmos uma <strong>amostragem</strong> de <span class="math inline">\(n\)</span> elementos teremos um subconjunto possível da população estatística que nos permitirá calcular <strong>descritoers da amostra</strong>. Descritores da amostra são conhecidos também como <strong>estimadores</strong> ou <strong>estatísticas</strong>. A média aritmética deste subconjunto por exemplo, é denominada de <strong>média amostral</strong>, sendo representanta por <span class="math inline">\(\overline{X}\)</span>. Poderíamos estimar também a variância desta amostra (<strong>variância amostral</strong>), representada por <span class="math inline">\(s^2\)</span>.</p>
+<p>Como definições importantes temos:</p>
+<blockquote>
+<p><strong>Parâmetro</strong>: a medida que descreve uma característica da <em>população estatística</em>. Ex.: a média (<span class="math inline">\(\mu\)</span>) ou a variância (<span class="math inline">\(\sigma^2\)</span>) populacional.</p>
+</blockquote>
+<blockquote>
+<p><strong>Estimador</strong> ou <strong>Estatística</strong>: Uma medida que descreve uma característica da <em>amostra</em>. Ex.: a média amostral (<span class="math inline">\(\overline{X}\)</span>) ou a variância amostral (<span class="math inline">\(s^2\)</span>).</p>
+</blockquote>
+<blockquote>
+<p><strong>Estimativa</strong>: é o valor numérico assumido pelo estimador. Ex. o valor número calculado da média ou variância de uma amostra em particular.</p>
+</blockquote>
+</div>
+<div id="amostragem-e-inferência" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Amostragem e inferência</h2>
+<p>Em última instância, não estamos interessados na amostra em si, mas na população da qual ela é proveniente. Entretanto, o processo de <strong>amostragem</strong> é a única forma de obtermos alguma informação sobre esta população.</p>
+<p>Tendo obtido uma amostra representativa, calculamos descritores (ex. de tendência central e dispersão) que serão utilizados como <strong>estimadores</strong> dos parâmetros populacionais, um processo que denominamos de <strong>inferência estatística</strong>. Como verificamos anteriormente, cada amostra que retirarmos da mesma população estatística será diferente. Isto significa que os estimadores destas amostras (ex. <span class="math inline">\(\overline{X}\)</span>) serão diferentes entre si e numericamente diferentes dos parâmetros populacionais. No entanto, veremos nos capítulos <a href="amostrmedias.html#amostrmedias">13</a> a <a href="inferenc.html#inferenc">16</a> que podemos conhecer algumas propriedades destes estimadores que nos permitirão estabelecer limites de confiânça de para nossa inferência sobre a população estatística.</p>
+<div class="blackbox">
+<div class="center">
+<p><strong>Inferência Estatística</strong></p>
+</div>
+<p>O processo que consiste em utilizamos descritores da amostra para tirar conclusões sobre as características da população estatística.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-239"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-239-1.png" alt="Processo de amostragem e inferência estatística" width="810" />
+<p class="caption">
+Figure 12.4: Processo de amostragem e inferência estatística
 </p>
 </div>
 
@@ -633,7 +674,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
+"download": ["probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

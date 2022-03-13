@@ -1,1 +1,1 @@
-# (PART) Inferência e Teste de Hipóteses {-}
+# (PART) Inferência Estatística e Teste de Hipóteses {-}

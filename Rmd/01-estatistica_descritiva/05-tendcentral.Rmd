@@ -30,11 +30,18 @@ $\overline{X}=\frac{`r paste(X, collapse = ' + ')`}{`r length(X)`}$
 
 $\overline{X}=\frac{`r sum(X)`}{`r length(X)`} = `r mean(X)`$
 
-___
+</br>
+</br>
 
-**obs**: o símbolo $\overline{X}$ refere-se à média aritmética de uma amostra. Na seção sobre *inferência estatística* (Capítulos \@ref(amostrmedias) a \@ref(testet)) faremos distinção entre **média amostral** ($\overline{X}$) e a **média populacional** ($\mu$).
+:::: {.blackbox data-latex=""}
+::: {.center data-latex=""}
+**IMPORTANTE!**
+:::
+o símbolo $\overline{X}$ refere-se à média aritmética de uma amostra. Nas seções sobre *Amostragem e Delineamento* e *Inferência e Teste de Hipóteses* (Capítulos \@ref(popamostra) a \@ref(testet)) faremos distinção entre **média amostral** ($\overline{X}$) e a **média populacional** ($\mu$).
+::::
 
-___
+</br>
+</br>
 
 ## Mediana
 
