@@ -103,8 +103,9 @@ precisão-o-erro-padrão-da-média-sigmaoverlinex
 normdist
 o-modelo-normal-de-probabilidades
 entendendo-a-função-normal-de-densidade-de-probabilidade
-obtenção-de-fx-no-r-a-função-dnorm
-fazendo-predições-com-a-função-normal-de-densidade
+calculando-de-fx-no-r-a-função-dnorm
+cálculo-de-probabilidade-com-a-função-normal-de-densidade
+calculando-probabilidades-no-r-a-função-pnorm
 a-distribuição-normal-padronizada
 probabilidades-em-uma-distribuição-normal-padronizada
 a-transformação-z

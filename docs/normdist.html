@@ -307,9 +307,12 @@ div.csl-indent {
 <li class="chapter" data-level="14.1" data-path="normdist.html"><a href="normdist.html#o-modelo-normal-de-probabilidades"><i class="fa fa-check"></i><b>14.1</b> O modelo normal de probabilidades</a></li>
 <li class="chapter" data-level="14.2" data-path="normdist.html"><a href="normdist.html#entendendo-a-função-normal-de-densidade-de-probabilidade"><i class="fa fa-check"></i><b>14.2</b> Entendendo a função normal de densidade de probabilidade</a>
 <ul>
-<li class="chapter" data-level="14.2.1" data-path="normdist.html"><a href="normdist.html#obtenção-de-fx-no-r-a-função-dnorm"><i class="fa fa-check"></i><b>14.2.1</b> Obtenção de <span class="math inline">\(f(x)\)</span> no R: a função <code>dnorm()</code></a></li>
+<li class="chapter" data-level="14.2.1" data-path="normdist.html"><a href="normdist.html#calculando-de-fx-no-r-a-função-dnorm"><i class="fa fa-check"></i><b>14.2.1</b> Calculando de <span class="math inline">\(f(x)\)</span> no R: a função <code>dnorm()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="normdist.html"><a href="normdist.html#fazendo-predições-com-a-função-normal-de-densidade"><i class="fa fa-check"></i><b>14.3</b> Fazendo predições com a função normal de densidade</a></li>
+<li class="chapter" data-level="14.3" data-path="normdist.html"><a href="normdist.html#cálculo-de-probabilidade-com-a-função-normal-de-densidade"><i class="fa fa-check"></i><b>14.3</b> Cálculo de probabilidade com a função normal de densidade</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="normdist.html"><a href="normdist.html#calculando-probabilidades-no-r-a-função-pnorm"><i class="fa fa-check"></i><b>14.3.1</b> Calculando probabilidades no R: a função <code>pnorm()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="14.4" data-path="normdist.html"><a href="normdist.html#a-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>14.4</b> A distribuição normal padronizada</a>
 <ul>
 <li class="chapter" data-level="14.4.1" data-path="normdist.html"><a href="normdist.html#probabilidades-em-uma-distribuição-normal-padronizada"><i class="fa fa-check"></i><b>14.4.1</b> Probabilidades em uma distribuição normal padronizada</a></li>
@@ -540,9 +543,9 @@ Figure 14.1: Altura (m) de alunos de um curso de estatística e temperatura méd
 <p><span class="math inline">\(f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}\)</span>, <span class="math inline">\(x \in \mathbb{R} | -\infty \le y \le +\infty\)</span></p>
 <p>A expressão envolve as quantias <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>, definidas como os <strong>parâmetros</strong> da distribuição que representam respectivamente, sua média e o desvio padrão. Para dizer que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição normal por meio da expressão:</p>
 <p><span class="math inline">\(X \sim \mathcal{N}(\mu,\,\sigma^2)\)</span></p>
-<p>Estaexpressão diz de <span class="math inline">\(X\)</span> é normalmente distribuída (<span class="math inline">\(\mathcal{N}\)</span>) e que esta distribuição tem parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>.</p>
-<p>A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o espalhamento das observações ao redor de <span class="math inline">\(\mu\)</span>. Em um fenômeno descrito por valores baixos de <span class="math inline">\(\sigma\)</span>, a maioria das observações estará próxima a <span class="math inline">\(\mu\)</span>, enquanto para valores altos de <span class="math inline">\(\sigma\)</span> as observações estarão mais distantes de <span class="math inline">\(\mu\)</span>. Deste modo, ao variar <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> podemos ter uma infinidade de distribuições normais.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-258-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Esta expressão diz de <span class="math inline">\(X\)</span> é normalmente distribuída (<span class="math inline">\(\mathcal{N}\)</span>) e que esta distribuição tem parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>.</p>
+<p>A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o espalhamento das observações ao redor de <span class="math inline">\(\mu\)</span>. Em um fenômeno descrito por valores baixos de <span class="math inline">\(\sigma\)</span>, a maioria das observações estará próxima a <span class="math inline">\(\mu\)</span>, enquanto para valores altos de <span class="math inline">\(\sigma\)</span> as observações estarão mais distantes de <span class="math inline">\(\mu\)</span>. Deste modo, podemos alterar o formato da distribuição normal alterando seu parâmetos de posição (média - <span class="math inline">\(\mu\)</span>) e de dispersão (desvio padrão - <span class="math inline">\(\sigma\)</span>).</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-258-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de <span class="math inline">\(2\)</span> metros ou menos de <span class="math inline">\(1,5\)</span>m é extremamente baixa.</p>
 </div>
 <div id="entendendo-a-função-normal-de-densidade-de-probabilidade" class="section level2" number="14.2">
@@ -557,10 +560,10 @@ Figure 14.1: Altura (m) de alunos de um curso de estatística e temperatura méd
 <p><span class="math inline">\(X = 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2\)</span></p>
 <p>assumindo <span class="math inline">\(\mu = 1.7\)</span> e <span class="math inline">\(\sigma = 0.11\)</span></p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-260-1.png" width="768" style="display: block; margin: auto;" /></p>
-<div id="obtenção-de-fx-no-r-a-função-dnorm" class="section level3" number="14.2.1">
-<h3><span class="header-section-number">14.2.1</span> Obtenção de <span class="math inline">\(f(x)\)</span> no R: a função <code>dnorm()</code></h3>
+<div id="calculando-de-fx-no-r-a-função-dnorm" class="section level3" number="14.2.1">
+<h3><span class="header-section-number">14.2.1</span> Calculando de <span class="math inline">\(f(x)\)</span> no R: a função <code>dnorm()</code></h3>
 <p>No R, os resultados acima podem ser obtidos com a função <code>dnorm()</code>, que fornece um modo simples para calcularmos <span class="math inline">\(f(x)\)</span> na distribuição normal. Nesta função a letra ‘d’ vem de <em>densidade</em> da distribuição normal.</p>
-<p>Para encntrar <span class="math inline">\(f(x)\)</span> para um dado valor fazemos simplesmente:</p>
+<p>Para encontrar <span class="math inline">\(f(x)\)</span> para um dado valor fazemos simplesmente:</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="normdist.html#cb138-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">1.7</span></span>
 <span id="cb138-2"><a href="normdist.html#cb138-2" aria-hidden="true" tabindex="-1"></a>dp <span class="ot">&lt;-</span> <span class="fl">0.11</span></span>
 <span id="cb138-3"><a href="normdist.html#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="fl">1.5</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> dp)</span></code></pre></div>
@@ -571,12 +574,16 @@ Figure 14.1: Altura (m) de alunos de um curso de estatística e temperatura méd
 <pre><code>## [1] 0.0879777 0.6945048 2.3991470 3.6267480</code></pre>
 </div>
 </div>
-<div id="fazendo-predições-com-a-função-normal-de-densidade" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Fazendo predições com a função normal de densidade</h2>
-<p>Fazer predições significa encontrar a probabilidade de uma variável aleatória <span class="math inline">\(X\)</span> estar dentro de uma deteminada faixa de valores. Por ser uma função de probabilidade, a área abaixo de <span class="math inline">\(f(x)\)</span> na distribuição normal soma <span class="math inline">\(1\)</span>. Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a <strong>área abaixo da curva</strong> para este limite. Por exemplo, a probabilidade de uma observação em <span class="math inline">\(X\)</span> estar entre <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> será:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-263-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div id="cálculo-de-probabilidade-com-a-função-normal-de-densidade" class="section level2" number="14.3">
+<h2><span class="header-section-number">14.3</span> Cálculo de probabilidade com a função normal de densidade</h2>
+<p>Encontrar a probabilidade de uma variável aleatória <span class="math inline">\(X\)</span> estar dentro de uma deteminada faixa de valores significa fazer <strong>predições</strong> a respeito da probabilidade de ocorrência de uma observação futura. Por ser uma função de probabilidade, a área abaixo de <span class="math inline">\(f(x)\)</span> na distribuição normal soma <span class="math inline">\(1\)</span>.</p>
+<p><span class="math display">\[P(-\infty \le X \le +\infty) = \int_{-\infty}^{+\infty}f(x) dx = 1\]</span></p>
+<p>Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a <strong>área abaixo da curva</strong> para este limite. Por exemplo, a probabilidade de uma observação em <span class="math inline">\(X\)</span> estar entre <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> será:</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-263-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Você lembra-se que a área abaixo de uma função matemática é dada pela integral definida desta função.</p>
 <p><span class="math display">\[P(x_1 \le X \le x_2) = \int_{x_1}^{x_2}f(x) dx\]</span></p>
+<div id="calculando-probabilidades-no-r-a-função-pnorm" class="section level3" number="14.3.1">
+<h3><span class="header-section-number">14.3.1</span> Calculando probabilidades no R: a função <code>pnorm()</code></h3>
 <p>Usando o R, a probabilidade de amostrarmos um aluno que tenha entre menos de <span class="math inline">\(1.5\)</span> metros pode ser obtida por meio da função <code>pnorm</code>:</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="normdist.html#cb142-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">1.7</span></span>
 <span id="cb142-2"><a href="normdist.html#cb142-2" aria-hidden="true" tabindex="-1"></a>dp <span class="ot">&lt;-</span> <span class="fl">0.11</span></span>
@@ -616,12 +623,13 @@ Figure 14.1: Altura (m) de alunos de um curso de estatística e temperatura méd
 <p>Aqui estão representados cada um dos intervalos calculados.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-268-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
+</div>
 <div id="a-distribuição-normal-padronizada" class="section level2" number="14.4">
 <h2><span class="header-section-number">14.4</span> A distribuição normal padronizada</h2>
 <p>A integral para a função normal é difícil de ser calculada pois não tem solução analítica. Isto era um problema para os cientistas até meados do século <span class="math inline">\(XX\)</span> que precisavam calcular valores de probabilidades para diferentes combinações de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>. Naquele momento, a solução para facilitar a vida dos pesquisadores foi criar uma tabela descrevendo estas probabilidades em uma distribuição normal <strong>padronizada</strong>, ou seja para valores particulares de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>. Padronizar aqui, significa transfomar cada valor <span class="math inline">\(x_i\)</span> de modo que as observações resultantes tenham média igual a <span class="math inline">\(0\)</span> e desvio padrão igual a <span class="math inline">\(1\)</span>.</p>
 <p>Esta transformação é apicada a cada observação <span class="math inline">\(x_i\)</span>, obtendo-sem um valor de <span class="math inline">\(z_i\)</span> correspondente por meio da expressão.</p>
-<p><span class="math display">\[z_i = \frac{x_i - \bar{x}}{s}\]</span>
-Lembre-se que no capítulo <a href="escorez.html#escorez">8</a> apresentamos <span class="math inline">\(z_i\)</span> como uma <strong>medida de posição</strong> que representava uma medida <strong>relativa</strong> à média e ao desvio padrão de um conjunto de dados particular. Por exemplo, um valor de <span class="math inline">\(z_i = 2\)</span> significa que a observação original <span class="math inline">\(x_i\)</span> está <span class="math inline">\(2\)</span> desvios padrões <strong>acima</strong> de sua respectiva média <span class="math inline">\(\overline{x}\)</span>.</p>
+<p><span class="math display">\[z_i = \frac{x_i - \mu}{\sigma}\]</span>
+Lembre-se que no capítulo <a href="escorez.html#escorez">8</a> apresentamos <span class="math inline">\(z_i\)</span> como uma <strong>medida de posição</strong> que representava uma medida <strong>relativa</strong> à média e ao desvio padrão de um conjunto de dados particular. Por exemplo, um valor de <span class="math inline">\(z_i = 2\)</span> significa que a observação original <span class="math inline">\(x_i\)</span> está <span class="math inline">\(2\)</span> desvios padrões <strong>acima</strong> de sua respectiva média <span class="math inline">\(\mu\)</span>.</p>
 <p>A transformação <span class="math inline">\(Z\)</span> é útil, pois ainda que seja difícil calcular as probabilidades para uma variável aleatória <span class="math inline">\(X\)</span>, após a transformação teremos uma variável <span class="math inline">\(Z\)</span> para a qual os valores de probabilidade estão <strong>tabelados</strong>. Deste modo, <span class="math inline">\(Z\)</span> é uma variável aleatória com <span class="math inline">\(\overline{z} = 0\)</span> e <span class="math inline">\(s = 1\)</span> tal que:</p>
 <p><span class="math display">\[Z \sim \mathcal{N}(0,\,1)\]</span></p>
 <p>Após a transformação <span class="math inline">\(Z\)</span> nos exemplos sobre altura dos alunos e chuva mensal temos:</p>
@@ -662,7 +670,7 @@ Lembre-se que no capítulo <a href="escorez.html#escorez">8</a> apresentamos <sp
 <p>Do mesmo modo, suponha uma variável aleatória <span class="math inline">\(X\)</span> nomalmente distribuída conforme <span class="math inline">\(X \sim \mathcal{N}(\mu,\,\sigma^2)\)</span>. Desejamos encontrar <span class="math inline">\(m\)</span> tal que:</p>
 <p><span class="math inline">\(P(X \le m) = \alpha\)</span></p>
 <blockquote>
-<p><span class="math inline">\(\alpha\)</span> aqui reprsenta um valor de probabilidade qualquer determinada pela área na distribuição normal <strong>abaixo</strong> de <span class="math inline">\(m\)</span>.</p>
+<p><span class="math inline">\(\alpha\)</span> aqui representa um valor de probabilidade qualquer determinada pela área na distribuição normal <strong>abaixo</strong> de <span class="math inline">\(m\)</span>.</p>
 </blockquote>
 <p>Ao aplicar a transformação <span class="math inline">\(Z\)</span> teremos:</p>
 <p><span class="math inline">\(P(\frac{X - \mu}{\sigma} \le \frac{m - \mu}{\sigma}) = \alpha\)</span></p>

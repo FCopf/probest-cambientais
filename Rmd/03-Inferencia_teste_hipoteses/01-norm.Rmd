@@ -23,7 +23,8 @@ alt_plt <- ggplot(ie, aes(x = Altura)) +
    geom_histogram(aes(y =..density..), 
                   fill = 'dodgerblue4', color = 'black', bins = 10) +
    stat_function(fun = dnorm, args = list(mean = mean(ie$Altura, na.rm = T),
-                                          sd = sd(ie$Altura, na.rm = T))) +
+                                          sd = sd(ie$Altura, na.rm = T)),
+                 color = 'red', size = 2) +
    labs(x = "Alturas em metros",
         y = "Frequencia relativa") +
    theme_classic()
@@ -33,12 +34,13 @@ temp_plt <- ggplot(temp, aes(x = tm)) +
    geom_histogram(aes(y =..density..),
                   fill = 'dodgerblue4', color = 'black', bins = 10) +
    stat_function(fun = dnorm, args = list(mean = mean(temp$tm, na.rm = T),
-                                          sd = sd(temp$tm, na.rm = T))) +
+                                          sd = sd(temp$tm, na.rm = T)),
+                 color = 'red', size = 2) +
    labs(x = "Average Yearly Temperatures in New Haven - USA",
         y = "Frequencia relativa") +
    theme_classic()
 
-grid.arrange(alt_plt, temp_plt, ncol = 2)
+alt_plt + temp_plt
 
 ```
 
@@ -55,46 +57,58 @@ A expressão envolve as quantias $\mu$ e $\sigma$, definidas como os **parâmetr
 
 $X \sim \mathcal{N}(\mu,\,\sigma^2)$
 
-Estaexpressão diz de $X$ é normalmente distribuída ($\mathcal{N}$) e que esta distribuição tem parâmetros $\mu$ e $\sigma$.
+Esta expressão diz de $X$ é normalmente distribuída ($\mathcal{N}$) e que esta distribuição tem parâmetros $\mu$ e $\sigma$.
 
-A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o espalhamento das observações ao redor de $\mu$. Em um fenômeno descrito por valores baixos de $\sigma$, a maioria das observações estará próxima a $\mu$, enquanto para valores altos de $\sigma$ as observações estarão mais distantes de $\mu$. Deste modo, ao variar $\mu$ e $\sigma$ podemos ter uma infinidade de distribuições normais.
+A média de uma distribuição normal é o ponto central da curva e o desvio padrão mede o espalhamento das observações ao redor de $\mu$. Em um fenômeno descrito por valores baixos de $\sigma$, a maioria das observações estará próxima a $\mu$, enquanto para valores altos de $\sigma$ as observações estarão mais distantes de $\mu$. Deste modo, podemos alterar o formato da distribuição normal alterando seu parâmetos de posição (média - $\mu$) e de dispersão (desvio padrão - $\sigma$).
 
-```{r, fig.align = "center", fig.height = 8, fig.width = 8, echo=FALSE}
-mu1 = 0; sigma1 = 1
-mu2 = 0; sigma2 = 0.5
-mu3 = 10; sigma3 = 1
-mu4 = 10; sigma4 = 0.5
+```{r, fig.align='center', fig.width=12, fig.height=5}
+xlim = c(-10,20)
+mu1 = -3; sd1 = 3
+mu2 = -0; sd2 = 1
+mu3 = 10; sd3 = 4
+mu4 = -5; sd4 = 2
+df_norm <- data.frame(X = seq(xlim[1], xlim[2], length = 100)) %>% 
+  mutate(dx1 = dnorm(X, mu1, sd1),
+         dx2 = dnorm(X, mu2, sd2),
+         dx3 = dnorm(X, mu3, sd3),
+         dx4 = dnorm(X, mu4, sd4))
 
-layout(mat = matrix(1:4, nr = 2, byrow = T))
+ggplot(df_norm, aes(x = X)) +
+  stat_function(fun = dnorm, 
+                args = list(mean = mu1, sd = sd1),
+                color = 'red', size = 2, alpha = 0.5) +
+  stat_function(fun = dnorm, 
+                args = list(mean = mu2, sd = sd2),
+                color = 'blue', size = 2, alpha = 0.5) +
+  stat_function(fun = dnorm, 
+                args = list(mean = mu3, sd = sd3),
+                color = 'green', size = 2, alpha = 0.5) +
+  stat_function(fun = dnorm, 
+                args = list(mean = mu4, sd = sd4),
+                color = 'black', size = 2, alpha = 0.5) +
+  annotate(geom ='text', x = mu1-1.5, 
+           y = dnorm(mu1, mu1, sd1) * 0.5, 
+           label = bquote(mu == .(mu1) ~ ';' ~ sigma == .(sd1)), 
+           color = 'red', size = 5) +
+  annotate(geom ='text', x = mu2, 
+           y = dnorm(mu2, mu2, sd2) * 1.05, 
+           label = bquote(mu == .(mu2) ~ ';' ~ sigma == .(sd2)), 
+           color = 'blue', size = 5) +
+  annotate(geom ='text', x = mu3, 
+           y = dnorm(mu3, mu3, sd3) * 0.5, 
+           label = bquote(mu == .(mu3) ~ ';' ~ sigma == .(sd3)), 
+           color = 'green', size = 5) +
+  annotate(geom ='text', x = mu4, 
+           y = dnorm(mu4, mu4, sd4) * 1.1, 
+           label = bquote(mu == .(mu4) ~ ';' ~ sigma == .(sd4)), 
+           color = 'black', size = 5) +
+  scale_x_continuous(breaks = seq(xlim[1], xlim[2], by = 2)) +
+  coord_cartesian(xlim = xlim, ylim = c(0, 0.5)) +
+  labs(y = 'f(x)', x = 'x') +
+  theme_classic(base_size = 15)
 
-curve(expr = dnorm(x, mu1, sigma1), from = -5, to = 5, axes = F, 
-      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
-axis(1, at = seq(-6,6), cex.axis = 0.7)
-axis(2, at = seq(-1, 1, by = 0.1), las = 2)
-text(x = -4, y = 0.35, label = bquote(mu == .(mu1)))
-text(x = -4, y = 0.30, label = bquote(sigma == .(sigma1)))
-
-curve(expr = dnorm(x, mu2, sigma2), from = -5, to = 5, axes = F, 
-      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
-axis(1, at = seq(-6,6), cex.axis = 0.7)
-axis(2, at = seq(-1, 1, by = 0.1), las = 2)
-text(x = -4, y = 0.7, label = bquote(mu == .(mu2)))
-text(x = -4, y = 0.62, label = bquote(sigma == .(sigma2)))
-
-curve(expr = dnorm(x, mu3, sigma3), from = 3, to = 16, axes = F, 
-      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
-axis(1, at = seq(-6,6)+10, cex.axis = 0.7)
-axis(2, at = seq(-1, 1, by = 0.1), las = 2)
-text(x = 6, y = 0.35, label = bquote(mu == .(mu3)))
-text(x = 6, y = 0.30, label = bquote(sigma == .(sigma3)))
-
-curve(expr = dnorm(x, mu4, sigma4), from = 3, to = 16, axes = F, 
-      ylab = "Função normal de probabilidade", ylim = c(0,0.8), xlab = "X")
-axis(1, at = seq(-6,6)+10, cex.axis = 0.7)
-axis(2, at = seq(-1, 1, by = 0.1), las = 2)
-text(x = 6, y = 0.7, label = bquote(mu == .(mu4)))
-text(x = 6, y = 0.62, label = bquote(sigma == .(sigma4)))
 ```
+
 
 Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de $\mu$ e $\sigma$ e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de $2$ metros ou menos de $1,5$m é extremamente baixa.
 
@@ -152,11 +166,11 @@ ggplot() +
    theme_classic()
 ```
 
-### Obtenção de $f(x)$ no R: a função `dnorm()`
+### Calculando de $f(x)$ no R: a função `dnorm()`
 
 No R, os resultados acima podem ser obtidos com a função `dnorm()`, que fornece um modo simples para calcularmos $f(x)$ na distribuição normal. Nesta função a letra 'd' vem de *densidade* da distribuição normal.
 
-Para encntrar $f(x)$ para um dado valor fazemos simplesmente:
+Para encontrar $f(x)$ para um dado valor fazemos simplesmente:
 
 ```{r echo = TRUE}
 mu <- 1.7
@@ -172,15 +186,32 @@ dnorm(x, mean = mu, sd = dp)
 ```
 
 
-## Fazendo predições com a função normal de densidade
+## Cálculo de probabilidade com a função normal de densidade
 
-Fazer predições significa encontrar a probabilidade de uma variável aleatória $X$ estar dentro de uma deteminada faixa de valores. Por ser uma função de probabilidade, a área abaixo de $f(x)$ na distribuição normal soma $1$. Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a **área abaixo da curva** para este limite. Por exemplo, a probabilidade de uma observação em $X$ estar entre $x_1$ e $x_2$ será:
+Encontrar a probabilidade de uma variável aleatória $X$ estar dentro de uma deteminada faixa de valores significa fazer **predições** a respeito da probabilidade de ocorrência de uma observação futura. Por ser uma função de probabilidade, a área abaixo de $f(x)$ na distribuição normal soma $1$. 
 
-```{r, warning=FALSE, fig.align='center', fig.width=8, fig.height=5}
+$$P(-\infty \le X \le +\infty) = \int_{-\infty}^{+\infty}f(x) dx = 1$$
+
+Assim, se desejamos obter probabilidade de uma variável estar dentro de um determinado limite, devemos calcular a **área abaixo da curva** para este limite. Por exemplo, a probabilidade de uma observação em $X$ estar entre $x_1$ e $x_2$ será:
+
+```{r,  fig.align = "center", fig.height = 10, fig.width = 7, echo=FALSE}
 sup <- 20
 dfc <- data.frame(X = seq(0,sup, length = 1000)) %>% 
   mutate(dx = dnorm(X, mean = sup/2, sd = 2.05))
-gc <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
+
+gc1 <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
+   stat_function(fun = dnorm, args = list(mean = sup/2, sd = 2.05)) +
+  geom_area(mapping = aes(x = X), fill = '#eb4034', alpha = 0.3) + 
+   scale_x_continuous(
+       name = 'X',
+       limits = c(1,20),
+       breaks = NULL) +
+   ylab('f(x)') +
+   annotate(geom = 'text', x = sup/2, y = 0.08, label = bquote("Área = 1"),
+            color = 'black', size = 9) +
+   theme_classic(base_size = 15)
+
+gc2 <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
    stat_function(fun = dnorm, args = list(mean = sup/2, sd = 2.05)) +
    geom_area(mapping = aes(x = ifelse(test = X >=7 & X <=9, yes = X, no = 0)), fill = '#eb4034') +
    geom_area(mapping = aes(x = ifelse(test = X < 7.1, yes = X, no = 0)), fill = NA) +
@@ -193,15 +224,17 @@ gc <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
    ylab('f(x)') +
    annotate(geom = 'text', x = 4.7, y = 0.15, label = bquote("Área = P(" ~ 'x'[1] <= ~ "X" <= ~ 'x'[2] ~")"),
             color = '#eb4034') +
-   theme_classic()
-gc   
+   theme_classic(base_size = 15)
 
+gc1 / gc2
 ```
 
 
 Você lembra-se que a área abaixo de uma função matemática é dada pela integral definida desta função.
 
 $$P(x_1 \le X \le x_2) = \int_{x_1}^{x_2}f(x) dx$$
+
+### Calculando probabilidades no R: a função `pnorm()`
 
 Usando o R, a probabilidade de amostrarmos um aluno que tenha entre menos de $1.5$ metros pode ser obtida por meio da função `pnorm`:
 
@@ -297,7 +330,7 @@ gc3 <- ggplot(dfc, mapping = aes(y = dx, x = X)) +
             color = '#eb4034') +
    theme_classic()
   
-grid.arrange(gc1, gc2, gc3, nrow = 3)
+gc1 / gc2 / gc3
 ```
 
 ## A distribuição normal padronizada
@@ -306,8 +339,8 @@ A integral para a função normal é difícil de ser calculada pois não tem sol
 
 Esta transformação é apicada a cada observação $x_i$, obtendo-sem um valor de $z_i$ correspondente por meio da expressão.
 
-$$z_i = \frac{x_i - \bar{x}}{s}$$
-Lembre-se que no capítulo \@ref(escorez) apresentamos $z_i$ como uma **medida de posição** que representava uma medida **relativa** à média e ao desvio padrão de um conjunto de dados particular. Por exemplo, um valor de $z_i = 2$ significa que a observação original $x_i$ está $2$ desvios padrões **acima** de sua respectiva média $\overline{x}$. 
+$$z_i = \frac{x_i - \mu}{\sigma}$$
+Lembre-se que no capítulo \@ref(escorez) apresentamos $z_i$ como uma **medida de posição** que representava uma medida **relativa** à média e ao desvio padrão de um conjunto de dados particular. Por exemplo, um valor de $z_i = 2$ significa que a observação original $x_i$ está $2$ desvios padrões **acima** de sua respectiva média $\mu$. 
 
 A transformação $Z$ é útil, pois ainda que seja difícil calcular as probabilidades para uma variável aleatória $X$, após a transformação teremos uma variável $Z$ para a qual os valores de probabilidade estão **tabelados**. Deste modo, $Z$ é uma variável aleatória com $\overline{z} = 0$ e $s = 1$ tal que:
 
@@ -339,9 +372,12 @@ tempz_plt <- ggplot(temp, aes(x = tm_z)) +
         y = "Frequencia relativa") +
    theme_classic()
 
-grid.arrange(alt_plt, temp_plt, 
-             altz_plt, tempz_plt, 
-             nrow = 2, ncol = 2)
+# grid.arrange(alt_plt, temp_plt, 
+#              altz_plt, tempz_plt, 
+#              nrow = 2, ncol = 2)
+
+(alt_plt | temp_plt) / 
+  (altz_plt | tempz_plt)
 
 ```
 
@@ -394,9 +430,9 @@ polygon(x = qrc2m, y = dqrc2m, col = rgb(red = 0.9, 0,0, alpha = 0.5))
 segments(x0 = qr[1], x1 = qr[7], y0 = 0.65, y1 = 0.65, lwd = 2)
 segments(x0 = qr[2], x1 = qr[6], y0 = 0.55, y1 = 0.55, lwd = 2)
 segments(x0 = qr[3], x1 = qr[5], y0 = 0.45, y1 = 0.45, lwd = 2)
-text(x = 0, y = 0.67, labels = bquote(.(round(diff(pnorm(q = c(qr[1],qr[7]))*100),0)) ~ "% entre " ~ .(round(qr[1],2)) ~ " e " ~ .(round(qr[7],2)) ~ ")"), cex = 0.7)
-text(x = 0, y = 0.57, labels = bquote(.(round(diff(pnorm(q = c(qr[2],qr[6]))*100),0)) ~ "% entre " ~ .(round(qr[2],2)) ~ " e " ~ .(round(qr[6],2)) ~ ")"), cex = 0.7)
-text(x = 0, y = 0.47, labels = bquote(.(round(diff(pnorm(q = c(qr[3],qr[5]))*100),0)) ~ "% entre " ~ .(round(qr[3],2)) ~ " e " ~ .(round(qr[5],2)) ~ ")"), cex = 0.7)    
+text(x = 0, y = 0.67, labels = bquote(.(round(diff(pnorm(q = c(qr[1],qr[7]))*100),0)) ~ "% entre " ~ .(round(qr[1],2)) ~ " e " ~ .(round(qr[7],2))), cex = 1.2)
+text(x = 0, y = 0.57, labels = bquote(.(round(diff(pnorm(q = c(qr[2],qr[6]))*100),0)) ~ "% entre " ~ .(round(qr[2],2)) ~ " e " ~ .(round(qr[6],2))), cex = 1.2)
+text(x = 0, y = 0.47, labels = bquote(.(round(diff(pnorm(q = c(qr[3],qr[5]))*100),0)) ~ "% entre " ~ .(round(qr[3],2)) ~ " e " ~ .(round(qr[5],2))), cex = 1.2)      
 ```
 
 Vamos exemplificar o uso da distribuição $Z$ no cálculo de probabilidades utilizando os dados de altura dos alunos. Para estes dados, iremos encontrar $P(X \le 1.5)$. Este procedimento consiste de:
@@ -433,7 +469,7 @@ Do mesmo modo, suponha uma variável aleatória $X$ nomalmente distribuída conf
 
 $P(X \le m) = \alpha$
 
-> $\alpha$ aqui reprsenta um valor de probabilidade qualquer determinada pela área na distribuição normal **abaixo** de $m$.
+> $\alpha$ aqui representa um valor de probabilidade qualquer determinada pela área na distribuição normal **abaixo** de $m$.
 
 Ao aplicar a transformação $Z$ teremos:
 
