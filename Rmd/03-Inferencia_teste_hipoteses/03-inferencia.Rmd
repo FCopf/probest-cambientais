@@ -1,4 +1,4 @@
-# Inferindo sobre uma População Estatística {#inferenc}
+# Estimando a média populacional {#inferenc}
 
 ```{r}
 #knitr::opts_chunk$set(echo = FALSE, include = FALSE)
@@ -20,7 +20,7 @@ Como $\overline{X}$ varia em função de nossa amostra particular, devemos obter
 ::: {.center data-latex=""}
 **DEFINIÇÃO DE INTERVALO DE CONFIANÇA**
 :::
-É o intervalo de valores associado a um determinado nível de significância ($\alpha$). Quando dizemos que um intervalo foi calculado a um nível de confiança de $95\%$  ($1 - \alpha$), estamos dizendo que a probabilidade dos limites do IC conterem o valor da média populacional $\mu$ é de $95\%$.
+É o intervalo de valores associado a um determinado nível de significância ($\alpha$). Quando dizemos que um intervalo foi calculado a um nível de confiança de $95\%$  ($1 - \alpha$), estamos dizendo que a probabilidade do IC conter o valor da média populacional $\mu$ é de $95\%$.
 ::::
 
 </br>
@@ -79,7 +79,7 @@ $$IC_{1-\alpha} = \overline{X} \pm z_{\alpha/2} \times \frac{s}{\sqrt{n}}$$
 
 #### Distribuiçao $t$ de Student
 
-Quando não conhecemos $\mu$ e $\sigma$ e as amostras são pequenas (ex. $n<30$), a dsitribuiçao normal não é a melhor aproximação para o comportamento das médias amostrais. Nestes casos, substituímos a distribuição de $z$ pela **Distribuição $t$ de Student**, sendo o intervalo de confiança obtido por:
+Quando não conhecemos $\mu$ e $\sigma$ e as amostras são pequenas (ex. $n<30$), a dsitribuição normal não é a melhor aproximação para o comportamento das médias amostrais. Nestes casos, substituímos a distribuição de $z$ pela **Distribuição $t$ de Student**, sendo o intervalo de confiança obtido por:
 
 $$IC_{1-\alpha} = \overline{X} \pm t_{\alpha/2, gl} \times \frac{s}{\sqrt{n}}$$
 
@@ -246,7 +246,7 @@ dqrc1 = c(0, 0, dnorm(x = seq(qr[2],qr[1], by = -0.001)))
 pqr = pnorm(q = qr)
 perc = diff(pqr) * 100
 
-eixox = expression(E-mu, mu, E+mu)
+eixox = expression(mu-E, mu, mu+E)
 
 curve(expr = dnorm(x, 0,1), from = -4, to = 4, 
       ylab = "Densidade da distribuição normal",

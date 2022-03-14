@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 16 Inferindo sobre uma População Estatística | Estatística nas Ciências Ambientais</title>
-  <meta name="description" content="Capítulo 16 Inferindo sobre uma População Estatística | Estatística nas Ciências Ambientais" />
+  <title>Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais</title>
+  <meta name="description" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 16 Inferindo sobre uma População Estatística | Estatística nas Ciências Ambientais" />
+  <meta property="og:title" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Capítulo 16 Inferindo sobre uma População Estatística | Estatística nas Ciências Ambientais" />
+  <meta property="og:description" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 16 Inferindo sobre uma População Estatística | Estatística nas Ciências Ambientais" />
+  <meta name="twitter:title" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
   
-  <meta name="twitter:description" content="Capítulo 16 Inferindo sobre uma População Estatística | Estatística nas Ciências Ambientais" />
+  <meta name="twitter:description" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
   
 
 <meta name="author" content="Fabio Cop Ferreira" />
@@ -339,7 +339,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="15.3" data-path="tcl.html"><a href="tcl.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>15.3</b> Exercícios propostos</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="inferenc.html"><a href="inferenc.html"><i class="fa fa-check"></i><b>16</b> Inferindo sobre uma População Estatística</a>
+<li class="chapter" data-level="16" data-path="inferenc.html"><a href="inferenc.html"><i class="fa fa-check"></i><b>16</b> Estimando a média populacional</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="inferenc.html"><a href="inferenc.html#estimação-pontual-e-estimação-intervalar"><i class="fa fa-check"></i><b>16.1</b> Estimação pontual e estimação intervalar</a>
 <ul>
@@ -521,7 +521,7 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="inferenc" class="section level1" number="16">
-<h1><span class="header-section-number">Capítulo 16</span> Inferindo sobre uma População Estatística</h1>
+<h1><span class="header-section-number">Capítulo 16</span> Estimando a média populacional</h1>
 <div id="estimação-pontual-e-estimação-intervalar" class="section level2" number="16.1">
 <h2><span class="header-section-number">16.1</span> Estimação pontual e estimação intervalar</h2>
 <p>A média <span class="math inline">\(\overline{X}\)</span> obtida a partir de uma determinada amostra varia em função das características das unidades amostrais que foram selecionadas (Capítulo <a href="amostrmedias.html#amostrmedias">13</a>). Portanto, <span class="math inline">\(\overline{X}\)</span> não será igual à média <span class="math inline">\(\mu\)</span>. No entanto, o TLC (Capítulo <a href="tcl.html#tcl">15</a>) nos garante que a distribuição esperada das médias amostrais terá uma distribuição normal e que a média das médias (<span class="math inline">\(\mu_{\overline{X}}\)</span>) será igual a <span class="math inline">\(\mu\)</span>. Vimos ainda que o desvio padrão da distribuição das médias amostrais (conhecido como <strong>erro padrão</strong> - <span class="math inline">\(\sigma_{\overline{X}}\)</span>) dependerá do tamanho da amostra <span class="math inline">\(n\)</span>, de acordo com a expressão:</p>
@@ -534,7 +534,7 @@ div.csl-indent {
 <div class="center">
 <p><strong>DEFINIÇÃO DE INTERVALO DE CONFIANÇA</strong></p>
 </div>
-<p>É o intervalo de valores associado a um determinado nível de significância (<span class="math inline">\(\alpha\)</span>). Quando dizemos que um intervalo foi calculado a um nível de confiança de <span class="math inline">\(95\%\)</span> (<span class="math inline">\(1 - \alpha\)</span>), estamos dizendo que a probabilidade dos limites do IC conterem o valor da média populacional <span class="math inline">\(\mu\)</span> é de <span class="math inline">\(95\%\)</span>.</p>
+<p>É o intervalo de valores associado a um determinado nível de significância (<span class="math inline">\(\alpha\)</span>). Quando dizemos que um intervalo foi calculado a um nível de confiança de <span class="math inline">\(95\%\)</span> (<span class="math inline">\(1 - \alpha\)</span>), estamos dizendo que a probabilidade do IC conter o valor da média populacional <span class="math inline">\(\mu\)</span> é de <span class="math inline">\(95\%\)</span>.</p>
 </div>
 <p></br></p>
 <p>O IC é calculado por:</p>
@@ -550,7 +550,7 @@ div.csl-indent {
 <p><span class="math display">\[IC_{1-\alpha} = \overline{X} \pm z_{\alpha/2} \times \frac{s}{\sqrt{n}}\]</span></p>
 <div id="distribuiçao-t-de-student" class="section level4" number="16.1.1.1">
 <h4><span class="header-section-number">16.1.1.1</span> Distribuiçao <span class="math inline">\(t\)</span> de Student</h4>
-<p>Quando não conhecemos <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e as amostras são pequenas (ex. <span class="math inline">\(n&lt;30\)</span>), a dsitribuiçao normal não é a melhor aproximação para o comportamento das médias amostrais. Nestes casos, substituímos a distribuição de <span class="math inline">\(z\)</span> pela <strong>Distribuição <span class="math inline">\(t\)</span> de Student</strong>, sendo o intervalo de confiança obtido por:</p>
+<p>Quando não conhecemos <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e as amostras são pequenas (ex. <span class="math inline">\(n&lt;30\)</span>), a dsitribuição normal não é a melhor aproximação para o comportamento das médias amostrais. Nestes casos, substituímos a distribuição de <span class="math inline">\(z\)</span> pela <strong>Distribuição <span class="math inline">\(t\)</span> de Student</strong>, sendo o intervalo de confiança obtido por:</p>
 <p><span class="math display">\[IC_{1-\alpha} = \overline{X} \pm t_{\alpha/2, gl} \times \frac{s}{\sqrt{n}}\]</span></p>
 <p>Em que <span class="math inline">\(\alpha\)</span> continua sendo o nível de significância e <span class="math inline">\(gl\)</span> é definido como os <strong>graus de liberdade</strong>. Neste caso, os graus de liberdade são dados por:</p>
 <p><span class="math display">\[gl = n-1\]</span></p>
