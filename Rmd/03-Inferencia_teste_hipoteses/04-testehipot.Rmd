@@ -4,7 +4,7 @@
 #knitr::opts_chunk$set(echo = FALSE, include = FALSE)
 ```
 
-Um dos objetivos centrais em estatística é fazer inferências válidas para a **população** examinando as características de uma **amostra**. Geralmente, a teoria disponível para um determinado campo do conhecimento científico nos permite fazer afirmações sobre determinado fenômeno, tais como: 
+Um dos objetivos centrais em estatística é fazer inferências válidas para a **população** examinando as características de uma **amostra**. Considere as afirmações abaixo: 
 
 > *"a fragmentação de habitats reduz a diversidade em $x$ espécies"*;
 
@@ -12,25 +12,23 @@ Um dos objetivos centrais em estatística é fazer inferências válidas para a 
 
 > *"a remoção da área de mangue implica na redução em $m\%$ da captura de carbono"*. 
 
-Todas estas afirmações são **hipóteses**, sobre um ou mais parâmetros de uma população estatística. A experimentação nos permite, com base na amostra, tirar conclusões sobre determitada hipótese. Mais especificamente, queremos saber se os dados em mãos nos permitem ou não refutar uma hipótese inicial.   
+Todas estas afirmações são na realidade **hipóteses**, sobre um ou mais parâmetros de uma população estatística que podem ser testadas por meio de um experimento adequado. A experimentação nos permite tirar conclusões sobre determitada hipótese com base na amostra. Mais especificamente, queremos saber se os dados em mãos nos permitem ou não refutar uma hipótese inicial. Se desejamos fazer uma inferência sobre um parâmetro da população estatística (ex.: sua média $\mu$), devemos iniciar com uma afirmação sobre a posição deste parâmetro, que denominamos de **hipótese nula** ($H_0$). 
 
-Vamos a um exemplo simples. Se desejamos fazer uma inferência sobre um parâmetro da população estatística (ex.: sua média $\mu$), devemos iniciar com uma afirmação sobre a posição deste parâmetro, que denominamos de **hipótese nula** ($H_0$).
+Vamos a um exemplo simples;
 
-> Ex. Um modelo de climático sugere que a pluviosidade média entre junho e agosto nas cidades litorâneas do estado de São Paulo seja de $110$ mm/mês. 
+> Imagine que um modelo de climático estabeleça que a pluviosidade média entre junho e agosto nas cidades litorâneas do estado de São Paulo seja de $110$ mm/mês. 
 
 Um cientista acredita que o modelo têm falhas e resolve tomar algumas observações sobre chuva mensal a fim de testar esta afirmação. Este cientista iria iniciar por formalizar suas **hipóteses estatísticas**. 
 
-Inicialmente será necessário estabelecer a **hipótese nula**, que neste exemplo será:
+1. Inicialmente será necessário estabelecer o que chamamos de **hipótese nula**. Se uma análise estatística concluir que a hipótese nula deve ser **falsa**, então precisaremos ter me mãos uma hipótese **alternativa** ($H_a$). Assim, no caso de rejeição de $H_0$, passaremos a assumir $H_a$ como **verdadeira**. Neste exemplo poderíamos ter:
 
-$H_0: \mu = 110$ mm de chuva
+$H_0: \mu = 110$ mm de chuva (HIPÓTESE NULA)
 
-Se uma análise estatística concluir que a hipótese nula é **falsa**, então deveremos ter uma hipótese **alternativa** ($H_a$). Assim, no caso de rejeição de $H_0$ passaremos a assumir $H_a$ como **verdadeira**. 
+$H_a: \mu \ne 110$ mm de chuva (HIPÓTESE ALTERNATIVA)
 
-A hipótese alternativa neste exemplo será:
+2. O segundo passo é decidir sobre o limite de rejeição, isto é, um limite a partir do qual iremos conlcuir que $H_0$ é falsa. Este é um limite baseado no que denominamos de **nível de significância** ($\alpha$) sobre o qual iremos falar adiante.
 
-$H_a: \mu \ne 110$ mm de chuva
-
-Note que as hipóteses nula e alternativa se referem a predições sobre a posição da média populaçional $\mu$. Como não temos acesso à $\mu$, nossa opção é tomar amostras do fenômeno, medindo a quantidade de chuva em diferentes localidades e calcular a média amostral $\overline{X}$. 
+3. O terceiro passo é tomar amostras independentes sobre o fenômeno em questão. Note que as hipóteses nula e alternativa se referem a predições sobre a posição da **média populaçional** $\mu$, que é justamente a informação que não temos, mas sobre a qual queremos conhecer. Como não temos acesso à $\mu$, nossa opção é tomar amostras do fenômeno, medindo a quantidade de chuva em diferentes localidades e calcular a média amostral $\overline{X}$. 
 
 ## Probabilidade e teste de hipóteses
 
@@ -38,34 +36,33 @@ A média $\overline{X}$ de uma amostra será nossa melhor evidência a respeito 
 
 > O valor obtido de $\overline{X}$ é condizente com o esperado segundo $H_0$?
 
-Podemos racionalizar que se $\overline{X}$ estiver muito próximo a $\mu$, não haveria evidências para rejeitar $H_0$. Por outro lado, um valor de $\overline{X}$ muito distante de $\mu$ irá colocar em dúvida a afirmação feita em $H_0$. O ponto relevante aqui é: *quão distante de $\mu$ deve estar $\overline{X}$ para que rejeitemos $H_0$?*
+Podemos racionalizar que se $\overline{X}$ estiver **muito próximo** a $\mu$, não haveria evidências para rejeitar $H_0$. Por outro lado, um valor de $\overline{X}$ muito distante de $\mu$ irá colocar em dúvida a afirmação feita por $H_0$. O ponto relevante aqui é: *quão distante de $\mu$ deve estar $\overline{X}$ para que rejeitemos $H_0$?*
 
 Esta resposta poderá ser respondida **somente** com o auxílio de um modelo probabilístico aplicado ao experimento em questão. Seja $H_0$ verdadeira, é esperado que a probabilidade de $\overline{X}$ estar próximo a $\mu$ é alta. Portanto, uma pergunta melhor formulada seria:
 
 > Sendo $H_0$ **verdadeira**, qual é a probabilidade de que uma determinada média amostral $\overline{X}$ esteja tão ou mais distante de $\mu$ quanto o observado em nossa amostra particular?
 
-Uma vez que estamos falando da distribuição de médias amostrais, vale retomar o que determina o **Teorema Central do Limite (TCL)**. Segundo o TLC, a distribuição das médias amostrais tenderá a uma distribuição normal com média $\mu$ e desvio padrão $\sigma_{\mu} = \frac{\sigma}{\sqrt{n}}$. 
+### A necessidade de um modelo de distribuição das médias amostrais
 
-Desta forma, para um $H_0$ verdadeiro, seria esperado que a distribuição das médias amostrais resultantes de um procedimento experimental tivesse o formato de um distribuição normal, centrada em $110$ mm. 
+A pergunta feita acima é de natureza probabilística, de modo que para respondê-la iremos precisar estabelecer um **modelo probabilístico** para a distribuição das médias amostrais.  De acordo com o que temos discutido até este ponto, **Teorema Central do Limite (TCL)** estabelece que a distribuição normal é um bm modelo neste situação.
 
-Digamos ainda que o modelo climático estabeleça que o desvio padrão para a quantidade de chuva seja $\sigma = 30$. Neste caso, o desvio padrão esperado para as médias amostrais seria de $\sigma_{\mu} = \frac{30}{\sqrt{n}}$. Por se tratar do desvio padrão da médias amostrais, $\sigma_{\mu}$ é denominado de **erro padrão da média** (Capítulo \@ref(amostrmedias)).
+Desta forma, para um $H_0$ verdadeiro, seria esperado que a distribuição das médias amostrais resultantes de um procedimento experimental tivesse o formato de um distribuição normal, centrada em $110$ mm. Segundo o TCL, a distribuição seria centrada em $\mu$ e o desvio padrão seria definido pelo **erro padrão da média** (Capítulo \@ref(amostrmedias)), isto é, $\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}$.
+
+Digamos ainda que o modelo climático estabeleça que desvio padrão para a quantidade de chuva seja $\sigma = 30$. Neste caso, o erro padrão seria de $\sigma_{\mu} = \frac{30}{\sqrt{n}}$.
 
 Feito isto, temos em mãos o **modelo probabilístico** que, aliado a uma amostra particular, nos permitirá concluir se há evidências para rejeitar $H_0$ em favor de $H_a$.
 
-```{r}
-# INSERIR distribuição normal
-```
-
+### Definindo o limite de rejeição para $H_0$
 
 Segundo a distribuição normal, a probabilidade do valor observado $\overline{X}$ estar **tão ou mais distante** de $\mu$ na distribuição $Z$ é calculando por:
 
 $$z = \frac{\overline{X} - \mu}{\sigma_{\overline{X}}}$$
 
-O valor de $z$ calculato é chamado de **estatśitica do teste**. Com o uso da Tabela $Z$, esta estatística será utilizada para encontrar:
+O valor de $z$ calculado é chamado de **estatitica do teste**. Com o uso da Tabela $Z$, esta estatística será utilizada para encontrar:
 
 $$P(Z \ge z) = P(\overline{X} \ge \mu)$$
 
-Como nossa pergunta se refere à **distância** entre $\overline{X}$ e $\mu$, devemos encontar também $P(Z \le -z)$, de modo que a probabilidade que nos interessa será representada pela área destacada na figura abaixo que nos dá $P(Z \ge |z|)$.
+Como nossa pergunta se refere à **distância** entre $\overline{X}$ e $\mu$, devemos encontar também $P(Z \le -z)$, de modo que a probabilidade que nos interessa será representada pela área destacada em vermelho na figura abaixo que nos dá $P(Z \ge |z|)$.
 
 
 ``` {r fig.width=6, fig.height=4, fig.align = "center"}
@@ -97,7 +94,14 @@ text(y = c(0.1), x = c(2.7), labels = bquote(P(Z >= +z)))
 
 ```
 
-Valores de $\overline{X}$ muito próximos a $\mu$ resultarão em valores de $z$ próximos a **zero**. Neste caso, a probabilidade de $\overline{X}$ estar tão ou mais distante de $\mu$ é alta. Se $\overline{X}$ estiver muito **distante** de $\mu$ o valor calculado $z$ será grande e, consequentemente, estará associado a uma probabilidade muito baixa:
+A área destacada em vermelho será irá diminuir conforme $\overline{X}$ se distancia de $\mu$ e irá aumentar para valores de $\overline{X}$ muito próximos a $\mu$. Como estamos falando de uma distribuição de probabilidade, esta área mede a probabilidade de encontrarmos $\overline{X}$ pelo menos a uma dada distância de $\mu$, **assumindo** que $H_0$ seja verdadeiro. Se esta área for muito pequena, a probabilidade de que $\overline{X}$ seja condizente com $H_0$ diminui. Chamaremos este probabilidade de **valor de p**. Portanto, se $p$ for **muito pequeno** dizemos que é improvável que $\overline{X}$ seja condizente com $H_0$, nos levando a **rejeitar** $H_O$ em favor de $H_a$. 
+
+A decisão do que é uma probabilidade foi **muito pequena** é feita com base no **limite de rejeição** $\alpha$, tambṕem chamado de **nivel crítico** ou **nível de significância**. Deste modo, a conclusão de um teste estatístico se dá por:
+
+> Se $p > \alpha$ --> **ACEITAMOS $H_0$**
+
+> Se $p \le \alpha$ --> **REJEITAMOS $H_0$** (e assumimos $H_a$ como verdadeira)
+
 
 ``` {r fig.width=12, fig.height=4, fig.align = "center"}
 qr_a = qnorm(p = c(0.25, 0.75))
@@ -151,8 +155,6 @@ segments(x0 = qr_b[1], x1 = qr_b[7], y0 = 0.65, y1 = 0.65, lwd = 2)
 
 
 ```
-
-Iremos aceitar ou rejeitar $H_0$ na medida que esta probabilidade estiver acima (aceita $H_0$) ou abaixo (rejeita $H_0$) de um limite *pré-estabelecido* que denominamos de **nível de significância - $\alpha$**.
 
 
 ## Exemplificando um teste de hipóteses: o teste z
@@ -337,126 +339,8 @@ Idealmente em um teste estatístico, seria interessante reduzir ao máximo os er
 
 Dadas estas características, o único modo que reduzir os dois tipos de erros **simultaneamente** é aumentando o tamanho amostral $n$ pois, neste caso, reduzimos o erro padrão ($\sigma_{\overline{X}}$) e consequentemente a sobreposição entre as duas curvas acima.
 
-## Exemplo de um teste de hipótese: teste t para uma média populacional
 
-```{r}
-mo = 4.8
-X = c(5.1 , 5.0 , 4.8 , 5.0 , 5.0 , 4.9 , 4.9 , 4.7)
-n = length(X)
-ep = sd(X)/sqrt(n)
-tc = (mean(X) - mo)/ep
-tR <- t.test(X, mu = 4.8)
-valort <- tR$statistic
-df <- tR$parameter
-pv <- tR$p.value
-ic <- tR$conf.int
-tRmedio <- tR$estimate
-```
-
-O **teste $z$** que utilizamos anteriormente assume que a distribuição das médias amostrais é normalmente distribuída e que a variância populacional $\sigma$ seja conhecida. Não temos entretanto, conhecimento sobre o valor de $\sigma$, podendo somente estimá-lo pelo desvio padrão **amostral** $s$. Adicionalmente, assumir que a distribuição das médias seja normalmente distribuída, como prevê o Teorema do Limite Central requer que tenhamos amostras grandes (os livros sugerem $n \ge 30$). 
-
-Ao falar de estimação intervalar (Capítulo \@ref(inferenc)) apresentamos outra distribuição de probabilidade, a **distribuição t de Student**. Dissemos que esta distribuição descreve melhor o comportamento das médias amostrais quando as amostras são pequenas e a variância amostral é desconhecida. 
-
-Seguindo este raciocínio, apresentamos o **teste t** para comparar uma média populacional. Este teste é muito similar ao teset $z$ apresentado anteriormente.
-
-Considere um exemplo simples. Dados do Banco Central do Brasil dizem que moedas de $R\$ 0,10$ da segunda geração pesam `r mo` gramas. Você tem $`r n`$ moedas no bolso e resolve testar essa afirmação pesando cada moeda. Os pesos obtidos são: $X = `r X`$.
-
-Inicialmente, devemos estabelecer nossa hipótese nula ($H_0$), nossa hipótese alternativa ($H_a$) e o nível se significância $\alpha$. Iremos estabelecer $\alpha = 0,05$ e as hipóteses como:
-
-$H_0: \mu = `r mo`$ gramas
-
-$H_a: \mu \ne `r mo`$ gramas
-
-Como não conhecemos $\sigma$ e temos uma amostra pequena, a posição das médias amostrais seguirá uma distribuição $t$ de Student e a estatística do teste será:
-
-$$t = \frac{\overline{X} - \mu}{s_{\overline{X}}}$$
-
-sendo o erro padrão amostral obtido por:
-
-$$s_{\overline{X}} = \frac{s}{\sqrt{n}}$$
-
-O cálculo de $t$ é muito similar ao escore z. No entanto, substituímos $\sigma$ por $s$. Como visto no capítulo \@ref(inferenc), as distribuições de $t$ e de $Z$ são muto similares. Entretanto, para amostras pequenas e quando $\sigma$ é desconhecido, a curva de $t$ nos fornece uma melhor estimativa das probabilidades associadas a distribuição das médias amostrais.
-
-Para este exemplo, temos uma amostra de tamanho $n = `r n`$ com média $\overline{X} = `r mean(X)`$g e desvio padrão $s = `r round(sd(X),2)`$g. O valor de $t$ pode ser calculado por:
-
-$$t_{c} = \frac{\overline{X} - \mu}{s_{\overline{X}}} = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{`r mean(X)`  - `r mo`}{\frac{`r round(sd(X),2)`}{\sqrt{`r n`}}} = `r round(tc,2)`$$
-
-Assim como fizemos para a distribuição $Z$, devemos encontrar a probabilidade de obtermos um valor tão ou maior que o módulo de $t_c$. Na figura abaixo, nosso resultado fica:
-
-``` {r fig.width=6, fig.height=4, fig.align = "center"}
-qr = c(-tc, tc)
-dqr = dt(x = qr, df = n-1)
-
-
-qrc1 = c(seq(-5, qr[1], l = 100), seq(qr[1],-5, l = 100))
-dqrc1 = c(rep(0,100), dt(x = seq(qr[1],-5, l = 100), df = n-1))
-
-qrc2 = c(seq(5, qr[2], l = 100), seq(qr[2],5, l = 100))
-dqrc2 = c(rep(0,100), dt(x = seq(qr[2],5, l = 100), df = n-1))
-
-pqr = pt(q = qr, df = n-1)
-perc = diff(pqr, df = n-1) * 100
-
-#eixox = bquote(.(-tc), 0, .(+tc))
-
-curve(expr = dt(x, 0, df = n-1), from = -4, to = 4, 
-      ylab = "Densidade da distribuição t",
-      xlab = "Valores de t", ylim = c(0, 0.5), axes = F)
-axis(1, at = round(c(qr[1],0,qr[2]),2), cex.axis = 0.8)
-axis(2, at = seq(-1, 0.5, by = 0.1), cex.axis = 0.8)
-polygon(x = qrc1, y = dqrc1, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
-polygon(x = qrc2, y = dqrc2, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
-segments(x0 = qr[1], x1 = qr[7], y0 = 0.65, y1 = 0.65, lwd = 2)
-text(y = c(0.05), x = c(-3.1), labels = bquote(.(round(pt(-tc, df = n-1),3))))
-text(y = c(0.05), x = c(3.1), labels = bquote(.(round(pt(tc, df = n-1, lower.tail = F),3))))
-
-```
-
-A probabilidade de encontrarmos um valor de $t_c$ tão ou mais extremo segundo a hipótese nula foi de $p = `r round(pt(-tc, df = n-1)*2,3)`$. Uma vez que este valor é **menor** que o nível crítico $\alpha = 0,05$, concluímos que existe evidência suficiente para **rejeitar** $H_0$ e **aceitar** a hipótese alternativa de que as moedas de $10$ centavos **não** provém de uma população estatística com $\mu = 4,8$ gramas. Nossa conclusão é portanto, que as moedas de $R\$ 0,10$ são mais **pesadas** que $4,8$ gramas.
-
-No R, o teste t discutido acima pode ser realizado por:
-
-```{r, echo = T}
-t.test(X, mu = 4.8)
-```
-
-Nos comandos acima, $X$ é a amostra e o argumento 'mu' é o valor da média populacional *segundo $H_0$*. Como resultados temos a indicação de que fizemos um *teste $t$* para uma amostra (*One Sample t-test*), o valor de $t$ calculado ($t = `r round(valort,2)`$), os graus de liberdade ($df = `r length(X)` - 1 = `r df`$) e o valor de $p = `r round(pv,3)`$. Nestes resultados, podemos ver ainda o valor da média amostral ($\overline{X} = `r round(tRmedio,3)`$) e o intervalo de confiança a $95\%$ ($`r paste(round(ic, 2), collapse = " - ")`$) 
-
-## Graus de liberdade
-
-A distribuição $t$ como várias outras distribuições amostrais utilizadas em inferência estatística, muda seu formato em função do que chamamos de **graus de liberdade** ($gl$). Os graus de liberdade têm relação com o tamanho amostral. No caso do teste $t$ para $1$ amostra, esta relação é simplesmente: $gl = n-1$. 
-
-À medida que os graus de liberdade aumentam, o formato da distribuição $t$ se assemelha ao formato da distribuição Normal padronizada. De fato, para graus de liberdades altos (ex. $n \ge 30$), os formatos das distribuições $Z$ e $t$ são praticamente indistinguíveis. Na prática, isto faz que as distribuição $Z$ **raramente** seja utilizada.
-
-```{r}
-v = c(2, 5, 30)
-curve(dnorm(x), from = -5, to = 5, axes = F, ylab = "Densidade de probabilidade", col = 2, xlab = "")
-axis(1, at = -5:5)
-axis(2, at = NULL)
-curve(dt(x, df = v[1]), lty = 1, lwd = 4, add = T)
-curve(dt(x, df = v[2]), lty = 2, lwd = 3, add = T)
-curve(dt(x, df = v[3]), lty = 2, lwd = 1, add = T)
-
-legend(x = "topleft", legend = c("Distribuição Normal",paste("Dist. t, gl = ",v, sep = '')), lty = c(1,1,2,2), lwd = c(1,4,2,1), bty = "n", col = c(2,1,1,1))
-
-
-```
-
-## Probabilidades no teste $t$ de Student: a tabela $t$
-
-A rejeição/aceitação da hipótese nula em um teste t pode ser feita por meio da obtenção do *valor de p* ou pela comparação do $t$ calculado com valores críticos de referência para determinado nível de significância. O primeiro caso foi o que apresentamos acima e depende de um software estatístico para obtermos valores exatos de $p$. O segundo caso, pode ser feito com auxílio da Tabela t, em críticos de $t$ são disponibilizados para diferentes níveis de significância e graus de liberdade.
-
-O uso ta tabela $t$ têm finalidade, em grande parte didática, uma vez que a aplicação do teste fora da sala de aula será invariavelmente conduzido por meio de um software estatístico. po este motivo vamos apresentá-lo aqui rapidamente.
-
-Na tabela t que disponibilizamos, a primeira coluna mostra os *graus de liberdade* de $1$ a $120$. O cabeçalho da tabela de $90\%$ a $0,1\%$ mostra a área na distribuição de $t$ nas caldas inferior e superior.
-
-Vamos retornar ao exemplo da moedas de $R\$0,10$ para exemplificar sua utilização. Neste exemplo a tinhamos $`r n`$ ($gl = `r df`$ graus de liberdade) e o teste foi feito com $\alpha =0,05$. Se buscarmos na linha $gl = `r df`$ e a coluna $5\%$ ($\alpha = 0,05$), encontraremos o valor $t = 2,3646$. Este é o chamado $t$ **crítico**. Acima deste valor e abaixo de sua contraparte negativa temos exatamente $5\%$ da área na disribuição $t$. Deste modo qualquer valor calulado **maior** que $t$ crítico estará mais para a extremidade da distribuição e consequentemente estará associado a **menores** valores de probabilidade. Neste sentido:
-
-+ $t_{calculado} \ge t$ crítico leva a *rejeição* de $H_0$
-+ $t_{calculado} < t$ crítico leva a *aceitação* de $H_0$
-
-O resultado do teste estatístico em nosso exemplo foi $t_c = `r round(valort,2)`$ que é **maior** que $2,3646$. Isto nos leva à mesma decisão anterior (**rejeitar** $H_0$), ainda que por meio da tabela $t$ não tenhamos o valor exato de probabilidade.
-
+## Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais
 
 ```{r, echo=FALSE}
 rm(list = ls())

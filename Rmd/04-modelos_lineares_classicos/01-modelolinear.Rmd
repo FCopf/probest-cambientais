@@ -1,0 +1,110 @@
+# Modelos lineares {#modlinear}
+
+Até agora estávamos nos referindo à nossa variável de interesse principal como variável $X$. Nesta seção entretanto (Capítulos \@ref(modlinear) a \@ref(repanova)) iremos nos referir a uma variável resposta (ou variável dependente, $Y$), que será nossa variável de interesse principal e que será descrita como função de uma ou mais variáveis preditoras (ou variáveis independentes, $X$). Abordaremos novamente os conceitos de **partição da soma dos quadrados**, **covariância** e **coeficiente de determinação** agora no contexto do teste de hipóteses e ajuste de modelos. Neste sentido, esta seção tem relação direta com o que foi apresentado nos capítulos \@ref(biquant) e \@ref(biquantquali) e é interessante rever estes capítulos antes de continuar.
+
+Modelos lineares compõem os modelos estatísticos clássicos para descrevermos o comportamento de uma variável resposta $Y$ como função de uma ou mais variáveis preditoras $X$´s quando esta relação é **linear**. O formato básico de um modelo linear é:
+
+$$Y = \beta_0 + \beta_1X + \epsilon$$
+
+em que $\beta_0$ e $\beta_1$ são os **parâmetros do modelo** e $\epsilon$ é denominado de **resíduo** do modelo. Nos modelo que veremos nesta seção, o resíduo tem distribuição normal com média $0$ e variância constante $\sigma^2$, ou seja:
+
+$$\epsilon \sim \mathcal{N}(0, \sigma^2)$$
+
+A parte inicial do modelo ($\beta_0 + \beta_1X$) forma a parte **sistemática** do modelo, enquanto $\epsilon$ descreve a parte estocástica.
+
+Quando existe mais de uma variável preditora, o modelo pode ser descrito como:
+
+$$Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_pX_p + \epsilon$$
+
+em que temos portanto $p$ variáveis preditoras envolvidas.
+
+$Y$ consiste de uma variável quantitativa, enquanto as variáveis $X$ em um modelo linear podem ser todas quantitativas, todas qualitativas ou conter uma combinação das duas formas. Nos capítulos que veremos a seguir, as análises são casos particulares de modelos lineares que variam em função do número de variáveis preditoras e da natureza destas variáveis (quantitativas ou qualitativas). Deste modo temos:
+
+|Número de variáveis preditoras ($X$)|Quantitativa|Qualitativa|Modelo|
+|:---                                |:---:       |:---:      |:---|
+|Uma                                 |            | X       |ANOVA   |
+|Uma                                 | X          |           |Regressão linear simples    |
+|Duas ou mais                        | X          |           |Regressão linear múltipla   |
+|Duas ou mais                        |            | X         |ANOVA fatorial   |
+|Duas ou mais                        | X          | X         |ANCOVA   |   |
+
+
+## Simulando um modelo linear no R
+
+Vamos simular dois tipos de modelos lineares e avaliar como a regressão linear e modelos de ANOVA podem ser criados a partir da mesma ideia geral, isto é, combinando uma parcela sistemática com uma parcela estocástica e utilizando variáveis preditoras que podem ser quantitativas ou qualitativas.
+
+### O Modelo de Regressão
+
+Envolve uma única variável preditora contínua e três parâmetros desconhecidos, $\beta_0$ e $\beta_1$ e $\sigma^2$.
+
+```{r}
+b0 = 50    
+b1 = 2
+sigma = 30
+n = 40
+
+df = data.frame(X = rep(seq(20, 100, by = 20), each = 8),
+                residuo = rnorm(n = n, mean = 0, sd = sigma)) %>% 
+  mutate(Y = b0 + b1 * X + residuo)
+
+ggplot(df) +
+  aes(x = X, y = Y) +
+  geom_point(size = 2) +
+  geom_smooth(method = 'lm', se = FALSE) +
+  scale_y_continuous(breaks = seq(0, 500, by = 50)) +
+  theme_classic(base_size = 15)
+
+```
+
+Neste modelo, os pontos mostram o resultado do modelo estatístico e a linha descreve a parte sistemática. O parâmetro $\beta_0$ descreve a posição média em $Y$ para um valor de $X = 0$ e $\beta_1$ a taxa de incremento médio em $Y$ para a deferença de uma unidade em $X$. O parâmetro $\sigma$ se refere ao desvio padrão do resíduo e define o grau de espalhamento dos pontos ao redor da reta média. Experimente  diminuir e aumentar o valor de $\sigma$ e verifique o que ocorre com a dispersão dos pontos.
+
+### Modelo de ANOVA
+
+Neste caso a variável preditora $X$ é categórica. Vamos criar uma variável $X$ com 4 níveis (`A`, `B`, `C` e `D`) em um experimento com $8$ repetições (**réplicas**) por nível, totalizando $n = 8 \times 4 = 40$ observações. Quando modelos de ANOVA são representados como modelos lineares, a variável categórica deve ser transformada em uma (no caso de dois níveis) ou mais variáveis indicadoras (ou variáveis **dummy**). Esta transformação é consiste basicamente em criar variáveis do tipo $0/1$ que indiquem todas as combinações de níveis do experimento. Para entender melhor, acesse o link: <a href="https://en.wikipedia.org/wiki/Dummy_variable_(statistics)" target="_blank">Dummy variable (statistic)</a>.
+
+Os comandos neste caso são mais complexos que na regressão simples, mas seguem a mesma lógica de criarmos as variáveis preditoras e somá-las ao ressíduo do modelo.
+
+```{r}
+sigma = 50
+n = 8
+a = 4
+betas = matrix(c(b0 = 50, b1 = 10, b2 = -20, b3 = 30, b4 = 15))
+
+df = data.frame(X = gl(n = a, k = n, labels = LETTERS[1:4]),
+                residuo = rnorm(n  = 4 * 8, mean = 0, sd = sigma)) %>% 
+  mutate(dummy = model.matrix(~0 + X)) %>% 
+  mutate(Ymedio = as.matrix(data.frame(1, dummy)) %*% betas) %>% 
+  mutate(Y = Ymedio + residuo)
+
+```
+Nestes comandos criamos uma variável preditora $X$ com $4$ níveis, as transformamos em uma variável indicadora e criamos os valores de $\mu_A$, $\mu_B$, $\mu_C$ e $\mu_D$, de modo que:
+
+$\mu = \beta_0 = `r betas[1,]`$: média geral
+
+$\mu_A = \beta_0 + \beta_1 = `r betas[1,]` + `r betas[2,]`$: média do tratamento `A`
+
+$\mu_B = \beta_0 + \beta_2 = `r betas[1,]` + `r betas[3,]`$: média do tratamento `B`
+
+$\mu_C = \beta_0 + \beta_3 = `r betas[1,]` + `r betas[4,]`$: média do tratamento `C`
+
+$\mu_D = \beta_0 + \beta_4 = `r betas[1,]` + `r betas[5,]`$: média do tratamento `D`
+
+As notações $\mu_{A \cdots D}$ são respectivamente as médias populacionais dos tratamentos, conforme iremos definir no capítulo sobre Análise de Variância (ANOVA - capítulo \@ref(anova)). Deste modo, o gráfico de dispersão resultante deste modelo contém variáveis preditoras categóricas em que os pontos estão espalhados ao redor da media $\mu$ (em azul) do respectivo tratamento de acordo com a magnitude de $\sigma$ .
+
+```{r}
+ggplot(df) +
+  aes(x = X, y = Y) +
+  geom_point(size = 2) +
+  geom_point(data = data.frame(B = betas[1,] + betas[-1,],
+                                Xm = LETTERS[1:4]),
+              aes(x = Xm, y = B), color = 'darkblue', size = 5) +
+  scale_y_continuous(breaks = seq(0, 500, by = 50)) +
+  theme_classic(base_size = 15)                
+
+```
+
+
+
+```{r, echo=FALSE}
+rm(list = ls())
+```
