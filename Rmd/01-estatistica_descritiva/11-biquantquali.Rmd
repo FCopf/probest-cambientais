@@ -4,6 +4,10 @@
 knitr::opts_chunk$set(message = FALSE, echo = FALSE)
 ```
 
+```{r}
+source('scriptsR/anova_sim.r')
+```
+
 Para finalizar a seção sobre estatística descritiva, vamos entender como podemos visualizar a relação entre uma variável $Y$ contínua e uma variável $X$ categórica e mensurar o grau de associação entre elas. Iremos nos referir a $Y$ como variável **dependente** (ou variável **resposta**) e a $X$ como variável **independente** (ou **preditora**). Assim, assumimos *explicitamente* que $Y$ é função (depende) de $X$ e não o contrário. O nome preditora vem do fato que, se $Y$ e $X$ estão associadas, ao conhecemos $X$ somos capazer de *prever* a resposta média em $Y$.
 
 ## Visualizando a distribuição de $Y$ em diferentes grupos
@@ -118,19 +122,19 @@ ggplot(medley) +
 Ao representarmos a distribuição de uma variável $Y$ contínua em função de uma variável $X$ categórica, geralmente estamos interessados em determinar se os diferentes níveis de $X$ (diferentes grupos) têm médias similares ou se ao menos um dos níveis têm média diferente dosdemais. Queremos um métodos que nos permita diferenciar situações como as apresentadas abaixo:
 
 ```{r}
-anova_sim = function(B = c(b0 = 50, b1 = 0, b2 = 0, b3 = 0, b4 = 0), 
-                     k = 100, sd_residuo = 5, 
-                     seed = 1){
-  n = length(B) - 1
-  X = gl(n, k, labels = LETTERS[1:n])
-  dummy = model.matrix(~0 + X)
-  betas = matrix(B)
-  fx = as.matrix(data.frame(1, dummy)) %*% betas
-  set.seed(seed)
-  Y = fx + rnorm(n  = n * k, mean = 0, sd = sd_residuo)
-  df = data.frame(X, Y)
-  return(df)
-}
+# anova_sim = function(B = c(b0 = 50, b1 = 0, b2 = 0, b3 = 0, b4 = 0), 
+#                      k = 100, sd_residuo = 5, 
+#                      seed = 1){
+#   n = length(B) - 1
+#   X = gl(n, k, labels = LETTERS[1:n])
+#   dummy = model.matrix(~0 + X)
+#   betas = matrix(B)
+#   fx = as.matrix(data.frame(1, dummy)) %*% betas
+#   set.seed(seed)
+#   Y = fx + rnorm(n  = n * k, mean = 0, sd = sd_residuo)
+#   df = data.frame(X, Y)
+#   return(df)
+#}
 
 df1 = anova_sim()
 df2 = anova_sim(B = c(b0 = 50, b1 = 0, b2 = 20, b3 = 0, b4 = 0))
@@ -160,7 +164,7 @@ plt_df1 | plt_df2 | plt_df3
 
 ```
 
-Na figura $I$ todos os grupos são provenientes da mesma distribuição e têm médias iguais ($\overline{Y}_A \approx  \overline{Y}_B \approx \overline{Y}_C \approx \overline{Y}_D$). Na figura $II$ o segundo grupo B tem média mais elevada que os demais e na da figura $III$, todas as médias parecem ser diferentes entre si ($\overline{Y}_A \ne  \overline{Y}_B \ne \overline{Y}_C \ne \overline{Y}_D$).
+Na figura $I$ todos os grupos são provenientes da mesma distribuição e têm médias aproximadamente iguais ($\overline{Y}_A \approx  \overline{Y}_B \approx \overline{Y}_C \approx \overline{Y}_D$). Na figura $II$ o segundo grupo B tem média mais elevada que os demais e na da figura $III$, todas as médias parecem ser diferentes entre si ($\overline{Y}_A \ne  \overline{Y}_B \ne \overline{Y}_C \ne \overline{Y}_D$).
 
 Para mensurar o grau de associação entre $Y$ e $X$ e entender como podemos diferenciar as situações acima, vamos introduzir o processo de **Partição da Soma dos Quadrados**. Para entendermos do que se trata a partição da soma dos quadrados vamos iniciar com um exemplo simples descrito na figura e na tabela abaixo:
 
@@ -199,9 +203,11 @@ plt_dfe +
 
 Para deixarmos claro as notações que iremos adotar adiante vamos definir que:
 
-+ Temos $k = `r k`$ grupos e para cada grupo $n =  `r n`$ observações. Denotamos por $n_{ij}$ as observações dentro de cada grupo, em que $i$ é a *i-ésima* observação ($i = 1$ a $`r n`$) do *j-ésimo* grupo ($j = 1$ a $`r k`$ - grupos A ao C). Neste exemplo, o número de observações em cada grupo é o mesmo ($n_1 = n_2 = n_3 = n$), de modo que o total de observações é dado por $N = k \times n = n_1 + n_2 + n_3 = `r N`$.
++ Temos $k = `r k`$ grupos (`A`, `B` ou `C`) e para cada grupo $n =  `r n`$ observações. Denotamos por $n_{ij}$ o número de observações dentro de cada grupo, em que $i$ é a *i-ésima* observação ($i = 1$ a $`r n`$) do *j-ésimo* grupo ($j = 1$ a $`r k`$ - grupos `A` ao `C`). Neste exemplo, o número de observações em cada grupo é o mesmo ($n_1 = n_2 = n_3 = n$), de modo que o total de observações é dado por:
 
-+ A média de cada grupo será denotada por $\overline{Y}_j$, sendo $Y_1 = `r Ymeans[1,2]`$ (grupo A), $Y_2 = `r Ymeans[2,2]`$ (grupo B) e $Y_3 = `r Ymeans[3,2]`$ (grupo C).
+$N = k \times n = n_1 + n_2 + n_3 = `r N`$
+
++ A média de cada grupo será denotada por $\overline{Y}_j$, que neste exemplo são: $Y_1 = `r Ymeans[1,2]`$ (grupo `A`), $Y_2 = `r Ymeans[2,2]`$ (grupo `B`) e $Y_3 = `r Ymeans[3,2]`$ (grupo `C`).
 
 + Vamos denotar por $\overline{\overline{Y}}$ a **Grande Média**, isto é, a média geral de todas as observações independente do grupo de origem.
 
@@ -243,14 +249,14 @@ plt_dfe +
 
 Em seguida, precisamos calcular $3$ quantias: i - a **Soma dos Quadrados Totais** ($SQ_{Total}$), ii - a **Soma dos Quadrados dos Tratamentos** $SQ_{Trat}$ e iii - a **Soma dos Quadrados dos Resíduos** $SQ_{Res}$.
 
-i. **Soma dos Quadrados Totais** $SQ_{Total}$: mede as diferenças entre $Y_{ij}$ e $\overline{\overline{Y}}$. Temos nesta expressão o somatório dos desvios ao quadrados de todas as observações com relação à grande média **independente** do grupo de origem de cada observação.
+i. **Soma dos Quadrados Totais** $SQ_{Total}$: mede as diferenças entre $Y_{ij}$ e $\overline{\overline{Y}}$. Temos nesta expressão o somatório dos desvios ao quadrado de todas as observações com relação à grande média **independente** do grupo de origem de cada observação.
 
 $$SQ_{Total} = \sum_{j = 1}^{k}\sum_{i = 1}^{n}(Y_{ij} - \overline{\overline{Y}})^2$$
 
 
-ii. **Soma dos Quadrados dos Tratamentos** $SQ_{Trat}$: mede as diferenças entre as **médias dos tratamentos** $Y_j$ e $\overline{\overline{Y}}$, sendo portanto os desvios ao quadrado da média de cada tratamento subtraída da grande média. $SQ_{Trat}$ também é chamada de soma dos quadrados **entre grupos** ou **entre tratamentos**
+ii. **Soma dos Quadrados dos Tratamentos** $SQ_{Trat}$: mede as diferenças entre as **médias dos tratamentos** $\overline{Y}_j$ e $\overline{\overline{Y}}$, sendo portanto os desvios ao quadrado da média de cada tratamento subtraída da grande média. $SQ_{Trat}$ também é chamada de soma dos quadrados **entre grupos** ou **entre tratamentos**
 
-$$SQ_{Trat} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(Y_{j} - \overline{\overline{Y}})^2 = \sum_{j = 1}^{k}n_{j}(Y_{j} - \overline{\overline{Y}})^2$$
+$$SQ_{Trat} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(\overline{Y}_{j} - \overline{\overline{Y}})^2 = \sum_{j = 1}^{k}n_{j}(\overline{Y}_{j} - \overline{\overline{Y}})^2$$
 
 iii. **Soma dos Quadrados dos Resíduos** $SQ_{Res}$: mede as diferenças entre cada observação $Y_{ij}$ e a média de seu próprio grupo $\overline{Y}_{j}$. $SQ_{Res}$ também é chamada de soma dos quadrados **dentro dos grupos** ou **dentro dos tratamentos**
 
@@ -273,7 +279,7 @@ ___
 
 ### Medindo a associação entre $Y$ e $X$
 
-As somas dos quadrados definidas acima e sua característica aditiva podem ser utilizadas para diferenciarmos situações em que a média em $Y$ **depende** do nível do tratamento. Compare as duas figuras abaixo:
+A característica aditiva das somas dos quadrados pode ser utilizada para mensurar o grau de dependência de $Y_{ij}$ com respeito aos diferentes tratamentos. Compare as duas figuras abaixo:
 
 ```{r}
 n = 5
@@ -374,7 +380,7 @@ plt_igu = plt_dfi +
 plt_igu | plt_diff
 ```
 
-A soma dos quadrados dentro dos grupos é a mesma ($SQ_{Res} = `r SQ_Res_dfi`$). No entanto, na figura da esquerda, em que as médias dos tratamentos são similares (consequentemente próximas à grande média), a soma dos quadrados entre os tratamentos é muito menor ($SQ_{Trat}^{esquerda} = `r SQ_Trat_dfi`$) que na figura da direita, em que as médias dos tratamentos estão distantes entre si ($SQ_{Trat}^{direita} = `r SQ_Trat_dfe`$). É desta forma que a partição das somas dos quadrados nos permite diferenciar situações em que: i - a média dos grupos **depende** dos níveis do tratamento (figura da direita); de situações em que ii - a média **não depende** dos níveis do tratamento (figura da esquerda). 
+A soma dos quadrados dentro dos grupos é a mesma nas duas figuras ($SQ_{Res} = `r SQ_Res_dfi`$). No entanto, na figura da esquerda, em que as médias dos tratamentos são similares (e consequentemente próximas à grande média), a soma dos quadrados entre os tratamentos é muito menor ($SQ_{Trat}^{esquerda} = `r SQ_Trat_dfi`$) que na figura da direita, em que as médias dos tratamentos estão distantes entre si ($SQ_{Trat}^{direita} = `r SQ_Trat_dfe`$). É desta forma que a partição das somas dos quadrados nos permite diferenciar situações em que: i - a média dos grupos **depende** dos níveis do tratamento (figura da direita); de situações em que ii - a média **não depende** dos níveis do tratamento (figura da esquerda). 
 
 A compreensão desta ideia é central para entendermos os delineamentos de **Análise de Variância** (Capítulos \@ref(anova) a \@ref(repanova)) e de **Regressão linear** (Capítulos \@ref(regressao) e \@ref(regresmultipla)) que veremos nas próximas seções.
 

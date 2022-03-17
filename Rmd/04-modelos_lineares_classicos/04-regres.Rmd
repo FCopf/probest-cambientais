@@ -42,10 +42,10 @@ rg1 = ggplot(st, aes(y = FlowR, x = RainR)) +
     xlab("Pluviosidade (mm/area/ano)") +
     xlim(limitex) +
     ylim(limitey) +
-    theme_gray()
+    theme_classic()
 
 
-grid.arrange(rg1, ncol = 1)
+rg1
 
 ```
 
@@ -65,9 +65,9 @@ rg2 = rg1 +
                  colour = "red", arrow = arrow(length = unit(0.1, "inches"))) +
     annotate('text', x = 1250, y = 1250, 
              label = bquote(.(round(Ym,0)) ~ " = "~ .(round(b0,0)) ~ " + "~ .(round(b1,2)) ~ " x "~ .(Xm)), size = 4) +
-    theme_gray()
+    theme_classic()
 
-grid.arrange(rg2, ncol = 1)
+rg2
 
 ```
 
@@ -169,7 +169,7 @@ ggplot(DS, aes(y = Y, x = X)) +
    geom_point(aes(y=Y[i], x=X[i]), shape = 21, colour = "red", size = 3, alpha = 0.5) +
    geom_segment(aes(y=Y[i], x=X[i], xend = X[i], yend = Yfit[i]), colour = "red") +
    geom_text(x = 4.7, y = 3.5, label = expression(epsilon), size = 6) +
-   theme_light()
+   theme_classic()
 
 #myimages<-list.files(path = "figs/",pattern = "Regre", full.names = TRUE)
 #include_graphics(myimages)
@@ -223,7 +223,7 @@ rg1 = ggplot(DS, aes(y = Y, x = X)) +
   #geom_point(aes(y=Y[i], x=X[i]), colour = "red", size = 3) +
   geom_segment(aes(y=Y, x=X, xend = X, yend = Yfit), colour = "red", linetype=3) +
   annotate("text", x = 2.5, y = 5, label = bquote(sum(epsilon[i])^2==sum((Y[i]-hat(Y[i]))^2 == .(floor(sre)))), size = 3) +
-  theme_light()
+  theme_classic()
 
 rg2 = ggplot(DS, aes(y = Y, x = X)) +
   geom_point() +
@@ -231,11 +231,11 @@ rg2 = ggplot(DS, aes(y = Y, x = X)) +
   #geom_point(aes(y=Y[i], x=X[i]), colour = "red", size = 3) +
   geom_segment(aes(y=Y, x=X, xend = X, yend = Yfit2), colour = "red", linetype=3) +
   annotate("text",x = 2.5, y = 5, label = bquote(sum(epsilon[i])^2==sum((Y[i]-hat(Y[i]))^2 == .(floor(sre2)))), size = 3) +
-  theme_light()
+  theme_classic()
 
 #expression(sum(epsilon[i])^2==sum((Y[i]-hat(Y[i]))^2 == sre))
 
-grid.arrange(rg1, rg2, nrow = 1, ncol = 2)
+rg1 | rg2
 ```
 
 Nas figuras acima, a linha da esquerda ($SQ_{Resíduo} = \sum{\epsilon_i^2} = `r floor(sre)`$) está claramente melhor ajustada à nuvem de pontos, o que se expressa em um menor somatório dos quadrados dos resíduos ($SQ_{Resíduo} = \sum{\epsilon_i^2} = `r floor(sre)`$) quando comparado com o ajuste da figura à direita ($SQ_{Resíduo} = \sum{\epsilon_i^2} = `r floor(sre2)`$).
@@ -309,7 +309,8 @@ O gráfico de dispersão sugere uma relação negativa e possivelmente linear, e
 ```{r fig.width=5, fig.height=3, fig.align = "center"}
 rks %>% 
   ggplot(aes(y = Richness, x = NAP)) +
-  geom_point()
+  geom_point() +
+  theme_classic()
 
 m1 = lm(Richness ~ NAP, data = rks)
 b0 = coef(m1)[1]
@@ -386,7 +387,8 @@ $$Richness = `r round(b0e,3)` `r round(b1e,3)` \times NAP$$
 rks %>% 
   ggplot(aes(y = Richness, x = NAP)) +
   geom_point() +
-  geom_smooth(method = "lm", se = F)
+  geom_smooth(method = "lm", se = F) +
+  theme_classic()
 
 ```
 
@@ -509,16 +511,18 @@ reg1 <- ggplot(df, mapping = aes(y = Y1, x = X)) +
   geom_smooth(method = "lm", color = "blue", se = FALSE) +
   xlim(limitex) +
   ylim(limitey) +
-  annotate("text",x = 30, y = 250, label = bquote(SQ[Regressão] ~ ">>>>"), size = 4)
+  annotate("text",x = 30, y = 250, label = bquote(SQ[Regressão] ~ ">>>>"), size = 4) +
+  theme_classic()
 
 reg2 <- ggplot(df, mapping = aes(y = Y2, x = X)) +
   geom_point(shape = 19, size = 3) +
   geom_smooth(method = "lm", color = "blue", se = FALSE) +
   xlim(limitex) +
   ylim(limitey) +
-  annotate("text",x = 30, y = 250, label = bquote(SQ[Residuo] ~ ">>>>"), size = 4)
+  annotate("text",x = 30, y = 250, label = bquote(SQ[Residuo] ~ ">>>>"), size = 4) +
+  theme_classic()
 
-grid.arrange(reg1, reg2, ncol = 2, nrow = 1)
+reg1 | reg2
   
 ```
 
@@ -564,7 +568,8 @@ gdfa <- ggplot(DF) +
   annotate("segment", x = 2.5, xend = 3, y = 1, yend = 1, colour = "blue") +
   annotate("segment", x = 2.5, xend = 3, y = 0.85, yend = 0.85, colour = "red") +
   annotate("text", x = 6.5, y = 1, size = 3, label = bquote(gl[numerador]==.(num1) ~ ";" ~ gl[denominador]==.(den1))) +
-  annotate("text", x = 6.5, y = 0.85, size = 3, label = bquote(gl[numerador]==.(num2) ~ ";" ~ gl[denominador]==.(den2)))
+  annotate("text", x = 6.5, y = 0.85, size = 3, label = bquote(gl[numerador]==.(num2) ~ ";" ~ gl[denominador]==.(den2))) +
+  theme_classic()
 
 gdfb <- ggplot(DF) +
   geom_line(mapping = aes(x = f, y = DF1), color  ="blue") +
@@ -573,7 +578,8 @@ gdfb <- ggplot(DF) +
   xlab("Valores de F") +
   annotate("text", x = 6, y = 1, label = bquote(gl[numerador]==.(num1) ~ ";" ~ gl[denominador]==.(den1))) +
   geom_segment(mapping = aes(x = Flim1, xend = Flim1, y = 0.3, yend = 0.1),
-                 colour = "blue", arrow = arrow(length = unit(0.1, "inches")))
+                 colour = "blue", arrow = arrow(length = unit(0.1, "inches"))) +
+  theme_classic()
 
 gdfc <- ggplot(DF) +
   geom_line(mapping = aes(x = f, y = DF2), color  ="red") +
@@ -582,9 +588,10 @@ gdfc <- ggplot(DF) +
   xlab("Valores de F") +
   annotate("text", x = 6, y = 0.85, label = bquote(gl[numerador]==.(num2) ~ ";" ~ gl[denominador]==.(den2))) +
   geom_segment(mapping = aes(x = Flim2, xend = Flim2, y = 0.3, yend = 0.2),
-                 colour = "red", arrow = arrow(length = unit(0.1, "inches")))
+                 colour = "red", arrow = arrow(length = unit(0.1, "inches"))) +
+  theme_classic()
 
-grid.arrange(gdfa, gdfb, gdfc, nrow = 3)
+gdfa / gdfb / gdfc
 ```
 
 
@@ -617,22 +624,22 @@ $$Y_i = \beta_0 + \beta_1X_{i1} + \beta_1X_{i2} + \cdots + \beta_mX_{im} + \epsi
 
 esta relação não é mais observada, pois existem múltiplos coeficientes agindo sobre a variação em $Y$.
 
-## Coeficiente de determinação $r^2$
+## Coeficiente de determinação $R^2$
 
 Uma vez que toda a variação observada em Y pode ser alocada aos efeitos da **reta de regressão** e e do **resíduo** podemos fazer a seguinte questão:
 
 > Qual parcela da variação na Riqueza é explicada **exclusivamente** pelo modelo de regressão?
 
-Esta pergunta pode ser respondida calculando o que denominamos de **coeficiente de determinção** ou simplesmente $r^2$:
+Esta pergunta pode ser respondida calculando o que denominamos de **coeficiente de determinção** ou simplesmente $R^2$:
 
-$$r^2 = \frac{SQ_{Regressão}}{SQ_Y} = 1 - \frac{SQ_{Resíduo}}{SQ_Y}$$
+$$R^2 = \frac{SQ_{Regressão}}{SQ_Y} = 1 - \frac{SQ_{Resíduo}}{SQ_Y}$$
 
 
 O valor de $SQ_{Regressão}$ mede a variação **explicada exclusivamente** pela regressão, $SQ_{Resíduo}$ a **variação residual** e $SQ_Y$ mede a **variação total** em $Y$. Ao dividir $SQ_{Resíduo}$ por $SQ_Y$, o $r^2$ nos informa sobre qual a **fração** da variação total é explicada somente pela reta de regressão.
 
 Npo exemplo da fauna praial:
 
-$$r^2 = 1 - \frac{`r round(SQRes,2)`}{`r round(SQY,2)`} = `r round(r2,4)`$$
+$$R^2 = 1 - \frac{`r round(SQRes,2)`}{`r round(SQY,2)`} = `r round(r2,4)`$$
 
 O que significa que aproximadamente `r round(r2 * 100,2)`\% da variação na riqueza é explicada pela variação no grau de exposição às ondas (NAP). Não sabemos a que se deve o restante da variação e, no contexto do modelo de regressão, assumimos ser uma variação aleatória inerente a cada observação ($\epsilon_i$). Esta variação aleatória, como dito, segue uma distribuição normal com ponto central sobre a reta e variância data por $\sigma^2$. Este pressuposto é fundamental para a discussão do próximo ponto a respeito do **intervalo de confiança de $Y$**
 
@@ -707,7 +714,9 @@ rksRtb %>%
   geom_point() +
   geom_point(aes(y = Yfit, x = NAP), color = 'blue', shape = 19) +
   geom_point(aes(y = ICinferior, x = NAP), color = 'red', shape = 19) +
-  geom_point(aes(y = ICsuperior, x = NAP), color = 'red', shape = 19)
+  geom_point(aes(y = ICsuperior, x = NAP), color = 'red', shape = 19) +
+  theme_classic()
+
 ```
 
 Note que na figura acima, estão representados os valores observados de riqueza de espécies (em preto), os valores ajustados (azul) e os intervalos a 95% (vermelho). Os valores ajustados são aqueles utilizados para construir a **reta de regressão**. O intervalo não costuma ser representados por pontos individuais, mas por uma banda que delimita a área que restringe o intervalo de confiança ao nível $1 - \alpha$ como na figura abaixo.
@@ -717,7 +726,8 @@ Note que na figura acima, estão representados os valores observados de riqueza 
 rksRtb %>%  
   ggplot(aes(y = Richness, x = NAP)) +
   geom_point() +
-  geom_smooth(method = "lm", se = TRUE, fill = "red", alpha = 0.5)
+  geom_smooth(method = "lm", se = TRUE, fill = "red", alpha = 0.5) +
+  theme_classic()
 ```
 
 A banda mais estreita próxima ao ponto médio de $X$, reflete o ponto comentado anteriormente, de que quanto mais próximo ao centro da distibuição de pontos, mais confiança temos sobre os limites máximos e mínimos que um valor de $Y$ pode assumir. Do mesmo modo, esta confiança **diminui** à medida que nos aproximamos dos extremos dos valores observados em $X$. 
@@ -813,55 +823,60 @@ ga <- ggplot(df, aes(x = X, y = Ya)) +
   geom_segment(x = df$X, xend = df$X, y = df$Ya, yend = df$Yafit, color = "red", linetype = "dashed", alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(x = "X", y = "Y") +
-  geom_text(x = 2, y = 520, label = "Relação linear", hjust = 0)
+  geom_text(x = 2, y = 520, label = "Relação linear", hjust = 0) +
+  theme_classic()
 
 gb <- ggplot(df, aes(x = X, y = Yb)) +
   geom_point(shape = 19) +
   geom_segment(x = df$X, xend = df$X, y = df$Yb, yend = df$Ybfit, color = "red", linetype = "dashed", alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(x = "X", y = "Y") +
-  geom_text(x = 2, y = 37000, label = "Função potência", hjust = 0)
+  geom_text(x = 2, y = 37000, label = "Função potência", hjust = 0) +
+  theme_classic()
 
 gc <- ggplot(df, aes(x = X, y = Yc)) +
   geom_point(shape = 19) +
   geom_segment(x = df$X, xend = df$X, y = df$Yc, yend = df$Ycfit, color = "red", linetype = "dashed", alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(x = "X", y = "Y") +
-  geom_text(x = 2, y = 48, label = "Relação asintótica", hjust = 0)
+  geom_text(x = 2, y = 48, label = "Relação asintótica", hjust = 0) +
+  theme_classic()
 
 gd <- ggplot(df, aes(x = X, y = Yd)) +
   geom_point(shape = 19) +
   geom_segment(x = df$X, xend = df$X, y = df$Yd, yend = df$Ydfit, color = "red", linetype = "dashed", alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(x = "X", y = "Y") +
-  geom_text(x = 2, y = 450, label = "Variância heterogênea", hjust = 0)
+  geom_text(x = 2, y = 450, label = "Variância heterogênea", hjust = 0) +
+  theme_classic()
 
 gar <- ggplot(df, aes(x = Yafit, y = Yares)) +
   geom_point(shape = 19) +
   geom_hline(yintercept = 0, color = "red", alpha = 0.5) +
-  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos")
+  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos") +
+  theme_classic()
 
 gbr <- ggplot(df, aes(x = Ybfit, y = Ybres)) +
   geom_point(shape = 19) +
   geom_hline(yintercept = 0, color = "red", alpha = 0.5) +
-  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos")
+  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos") +
+  theme_classic()
 
 gcr <- ggplot(df, aes(x = Ycfit, y = Ycres)) +
   geom_point(shape = 19) +
   geom_hline(yintercept = 0, color = "red", alpha = 0.5) +
-  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos")
+  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos") +
+  theme_classic()
 
 gdr <- ggplot(df, aes(x = Ydfit, y = Ydres)) +
   geom_point(shape = 19) +
   geom_hline(yintercept = 0, color = "red", alpha = 0.5) +
-  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos")
+  labs(x = bquote("Y ajustado (" ~ hat(Y) ~")"), y = "Resíduos") +
+  theme_classic()
 
 
-grid.arrange(ga, gar,
-             gb, gbr,
-             gc, gcr,
-             gd, gdr,
-             nrow = 4, ncol = 2)
+(ga | gar) / (gb | gbr) / (gc | gcr) / (gd | gdr)
+
 ```
 
 
@@ -891,7 +906,8 @@ dftest <- data.frame(X, Ya, Yfit = fitted(mtest), Yres = resid(mtest))
 
 ggplot(dftest, aes(x = Yres)) +
   geom_histogram(aes(y = ..density..), binwidth = 30, color = 1, fill = "gray", alpha = 0.8) +
-  stat_function(fun = dnorm, args = list(mean = mean(dftest$Yres), sd = sd(dftest$Yres)), color = "red")
+  stat_function(fun = dnorm, args = list(mean = mean(dftest$Yres), sd = sd(dftest$Yres)), color = "red") +
+  theme_classic()
 
 
 ```
@@ -918,19 +934,21 @@ c1 <- ggplot(tigre, aes(x = Year, y = Tiger)) +
   geom_segment(x = 1976, xend = 1976.3, y = 4000, yend = 4000, color = "red") +
   geom_segment(x = 1976, xend = 1976.3, y = 3700, yend = 3700, color = "blue") +
   geom_text(x = 1976.4, y = 4000, label = "Camarão tigre", hjust = 0) +
-  geom_text(x = 1976.4, y = 3700, label = "Camarão rei", hjust = 0)
+  geom_text(x = 1976.4, y = 3700, label = "Camarão rei", hjust = 0) +
+  theme_classic()
 
 c2 <- ggplot(tigre, aes(y = King, x = Tiger)) +
   geom_point(shape = 19) +
   labs(x = "Camarão tigre (Ton)", y = "Camarão rei  (Ton)") +
-  geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed")
+  geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed") +
+  theme_classic()
 
-grid.arrange(c1, c2, nrow = 1)
+c1 | c2
 ```
 
 Veja nas figuras acima que a captura em toneladas do camarão tigre é sempre mais elevada. Entretanto, a figura da direita sugere haver uma relação linear entre as capturas. Nos anos em que houve maiores capturas do camarão tigre parece ter havido também um aumento nas capturas do camarão rei. Dizemos que existe uma **correlação positiva** entre a captura das duas espécies. Em nenhum momento estamos dizendo que a abundância de uma espécie é a **causa** do aumento na captura da outra. Muito provavelmente, as abundâncias das duas espécies estão relacionadas a um terceiro fator que gera um comportamento similar na variação das capturas ano a ano. Portanto, aqui não há como se falar em variável dependente e independente. Podemos no referir apenas a uma correlação aparentemente linear entre duas variáveis.
 
-Quando estamos interessados em medir o grau de correlação entre duas variáveis utilizamos o **coeficiente de correlação de Pearson** (**$r$**). O coeficiente $r$ mede a intensidade da correlação linear entre $Y$ e $X$. Como não há variável dependente e independente, pouco importa no exemplo acima, a quem chamaremos de $Y$ ou de $X$. De fato, seria mais correto denominarmos simplesmente as variáveis de $X_1$ e $X_2$, porém vamos seguir utilizando a nomenclatura que vimos ao longo do capítulo.
+Quando estamos interessados em medir o grau de correlação entre duas variáveis utilizamos o **coeficiente de correlação de Pearson** (**$r$**) (Capítulo \@ref(biquant)). O coeficiente $r$ mede a intensidade da correlação linear entre $Y$ e $X$. Como não há variável dependente e independente, pouco importa no exemplo acima, a quem chamaremos de $Y$ ou de $X$. De fato, seria mais correto denominarmos simplesmente as variáveis de $X_1$ e $X_2$, porém vamos seguir utilizando a nomenclatura que vimos ao longo do capítulo.
 
 Vimos que a **covariância amostral** ($\sigma_{YX}$) mede a intensidade de uma associação linear entre $Y$ e $X$. A covariância entretanto, não tem limite superior ou inferior. Vimos também que valor de $\beta_1$ é dado pela covariância entre $Y$ e $X$ padronizada pela variância de $X$ o que expressa a noções de dependência de $Y$ como função de $X$. 
 

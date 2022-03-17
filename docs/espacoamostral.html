@@ -383,10 +383,21 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="20" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>20</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA</a>
+<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova-e-as-hipóteses-estatísticas"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA e as hipóteses estatísticas</a></li>
+<li class="chapter" data-level="20.2" data-path="anova.html"><a href="anova.html#partição-da-soma-dos-quadrados"><i class="fa fa-check"></i><b>20.2</b> Partição da soma dos quadrados</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>20.1.1</b> Quadrados médios</a></li>
+<li class="chapter" data-level="20.2.1" data-path="anova.html"><a href="anova.html#a-característica-aditiva-das-somas-dos-quadrados-1"><i class="fa fa-check"></i><b>20.2.1</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="20.2.2" data-path="anova.html"><a href="anova.html#medindo-a-associação-entre-y-e-x-1"><i class="fa fa-check"></i><b>20.2.2</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="20.3" data-path="anova.html"><a href="anova.html#quadrados-médios-e-graus-de-liberdade"><i class="fa fa-check"></i><b>20.3</b> Quadrados médios e graus de liberdade</a></li>
+<li class="chapter" data-level="20.4" data-path="anova.html"><a href="anova.html#estatística-f-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>20.4</b> Estatística <span class="math inline">\(F\)</span> e teste de hipóteses</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="anova.html"><a href="anova.html#nível-de-significância"><i class="fa fa-check"></i><b>20.4.1</b> Nível de significância</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="anova.html"><a href="anova.html#um-exemplo-de-anova"><i class="fa fa-check"></i><b>20.5</b> Um exemplo de ANOVA</a></li>
+<li class="chapter" data-level="20.6" data-path="anova.html"><a href="anova.html#testes-a-posteriori-de-comparação-de-médias"><i class="fa fa-check"></i><b>20.6</b> Testes a <em>posteriori</em> de comparação de médias</a></li>
+<li class="chapter" data-level="20.7" data-path="anova.html"><a href="anova.html#rodando-a-anova-no-r"><i class="fa fa-check"></i><b>20.7</b> Rodando a ANOVA no R</a></li>
+<li class="chapter" data-level="20.8" data-path="anova.html"><a href="anova.html#pressupostos-da-anova"><i class="fa fa-check"></i><b>20.8</b> Pressupostos da ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>21</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="22" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>22</b> Regressão linear e correlação</a>
@@ -407,7 +418,7 @@ div.csl-indent {
 <li class="chapter" data-level="22.3.1" data-path="regressao.html"><a href="regressao.html#teste-sobre-beta_1"><i class="fa fa-check"></i><b>22.3.1</b> Teste sobre <span class="math inline">\(\beta_1\)</span></a></li>
 <li class="chapter" data-level="22.3.2" data-path="regressao.html"><a href="regressao.html#análise-de-variância-da-regressão"><i class="fa fa-check"></i><b>22.3.2</b> Análise de variância da regressão</a></li>
 </ul></li>
-<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="22.5" data-path="regressao.html"><a href="regressao.html#intervalo-de-confiança-de-y"><i class="fa fa-check"></i><b>22.5</b> Intervalo de confiança de <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="22.6" data-path="regressao.html"><a href="regressao.html#pressupostos-da-regressão-linear-simples"><i class="fa fa-check"></i><b>22.6</b> Pressupostos da regressão linear simples</a>
 <ul>
@@ -573,7 +584,7 @@ Por evento mutuamente exclusivos entendemos que ambos não podem ocorrer ao mesm
 <script type="application/json" data-for="htmlwidget-f19834f138f1f523f820">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],[3,2,3,1,2,0,3,2,1,1,0,2,1,0,3,1,2,2,0,2,2,0,1,2,0,2,1,3,3,1],[14,18,13,12,16,9,19,15,14,11,9,18,16,11,21,14,19,14,13,15,21,10,13,12,7,25,16,21,18,12],[0.21,0.11,0.23,0.08,0.12,0,0.16,0.13,0.07,0.09,0,0.11,0.06,0,0.14,0.07,0.11,0.14,0,0.13,0.1,0,0.08,0.17,0,0.08,0.06,0.14,0.17,0.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Dia<\/th>\n      <th>#capturas<\/th>\n      <th>#viradas<\/th>\n      <th>P(captura)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Com base nestes resultados temos estimativas que variam entre 0 e 0.23. Veja que em 6 dias não foi observada nenhuma captura, <span class="math inline">\(\hat{P}(captura) = 0\)</span>. Isto não significa que a captura seja impossível, mas que neste dia em particular, o sucesso foi muito baixo. Tivemos também dias com elevada captura, por exemplo <span class="math inline">\(\hat{P}(captura) = 0.23\)</span>. Isto não significa que o sucesso é sempre desta forma. Na realidade tamanho sucesso parece ser improvável.</p>
 <p>Diante destes resultados, poderíamos estimar que <em>em média</em> a probabilidade de captura esteja em <span class="math inline">\(\overline{P}(captura) = 0.09\)</span></p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-377-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-400-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A estimativa de <span class="math inline">\(\overline{P}(captura) = 0.09\)</span> resulta de um número <strong>finito</strong> de repetições do experimento, é portanto uma <strong>estimativa</strong> da verdadeira probabilidade de captura. Lembre-se que:</p>
 <blockquote>
 <p>Ao jogar uma moeda para o alto exatamente 10 vezes, <em>provavelmente</em> não teremos exatamente 5 caras e 5 coroas. Esta proporção <strong>esperada</strong> pode ser somente aproximada à medida que aumentemos indefinidamente o número de jogadas.</p>

@@ -383,10 +383,21 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="20" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>20</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA</a>
+<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova-e-as-hipóteses-estatísticas"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA e as hipóteses estatísticas</a></li>
+<li class="chapter" data-level="20.2" data-path="anova.html"><a href="anova.html#partição-da-soma-dos-quadrados"><i class="fa fa-check"></i><b>20.2</b> Partição da soma dos quadrados</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>20.1.1</b> Quadrados médios</a></li>
+<li class="chapter" data-level="20.2.1" data-path="anova.html"><a href="anova.html#a-característica-aditiva-das-somas-dos-quadrados-1"><i class="fa fa-check"></i><b>20.2.1</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="20.2.2" data-path="anova.html"><a href="anova.html#medindo-a-associação-entre-y-e-x-1"><i class="fa fa-check"></i><b>20.2.2</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="20.3" data-path="anova.html"><a href="anova.html#quadrados-médios-e-graus-de-liberdade"><i class="fa fa-check"></i><b>20.3</b> Quadrados médios e graus de liberdade</a></li>
+<li class="chapter" data-level="20.4" data-path="anova.html"><a href="anova.html#estatística-f-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>20.4</b> Estatística <span class="math inline">\(F\)</span> e teste de hipóteses</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="anova.html"><a href="anova.html#nível-de-significância"><i class="fa fa-check"></i><b>20.4.1</b> Nível de significância</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="anova.html"><a href="anova.html#um-exemplo-de-anova"><i class="fa fa-check"></i><b>20.5</b> Um exemplo de ANOVA</a></li>
+<li class="chapter" data-level="20.6" data-path="anova.html"><a href="anova.html#testes-a-posteriori-de-comparação-de-médias"><i class="fa fa-check"></i><b>20.6</b> Testes a <em>posteriori</em> de comparação de médias</a></li>
+<li class="chapter" data-level="20.7" data-path="anova.html"><a href="anova.html#rodando-a-anova-no-r"><i class="fa fa-check"></i><b>20.7</b> Rodando a ANOVA no R</a></li>
+<li class="chapter" data-level="20.8" data-path="anova.html"><a href="anova.html#pressupostos-da-anova"><i class="fa fa-check"></i><b>20.8</b> Pressupostos da ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>21</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="22" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>22</b> Regressão linear e correlação</a>
@@ -407,7 +418,7 @@ div.csl-indent {
 <li class="chapter" data-level="22.3.1" data-path="regressao.html"><a href="regressao.html#teste-sobre-beta_1"><i class="fa fa-check"></i><b>22.3.1</b> Teste sobre <span class="math inline">\(\beta_1\)</span></a></li>
 <li class="chapter" data-level="22.3.2" data-path="regressao.html"><a href="regressao.html#análise-de-variância-da-regressão"><i class="fa fa-check"></i><b>22.3.2</b> Análise de variância da regressão</a></li>
 </ul></li>
-<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="22.5" data-path="regressao.html"><a href="regressao.html#intervalo-de-confiança-de-y"><i class="fa fa-check"></i><b>22.5</b> Intervalo de confiança de <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="22.6" data-path="regressao.html"><a href="regressao.html#pressupostos-da-regressão-linear-simples"><i class="fa fa-check"></i><b>22.6</b> Pressupostos da regressão linear simples</a>
 <ul>
@@ -539,8 +550,8 @@ div.csl-indent {
 <blockquote>
 <p>Neste capítulo iremos retornar às funções no R. Para tal, carregue os pacotes <code>ggplot2</code> e <code>gridExtra</code>.</p>
 </blockquote>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="detmodel.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb189-2"><a href="detmodel.html#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="detmodel.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb197-2"><a href="detmodel.html#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code></pre></div>
 <hr />
 <p>Como veremos no Capítulo <a href="modelstat.html#modelstat">33</a>, modelos estatísticos são compostaos por uma porção estocástica (ou aleatória) e uma porção determinística. Abaixo iremos analisar algumas funções determinísticas, a maioria delas apresentada no livro <a href="https://ms.mcmaster.ca/~bolker/emdbook/" target="_blank">Ecological Models and Data in R</a> <span class="citation">(<a href="#ref-bolker2008ecological" role="doc-biblioref">Bolker 2008</a>)</span>.</p>
 <div id="modelo-linear" class="section level2" number="32.1">
@@ -549,16 +560,16 @@ div.csl-indent {
 <p><span class="math display">\[Y = \beta_0 + \beta_1X\]</span></p>
 <p>Falamos deste modelo no capítulo sobre <em>regressão linear</em> (Capítulo <a href="regressao.html#regressao">22</a>).
 Vamos a um exemplo no R.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="detmodel.html#cb190-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb190-2"><a href="detmodel.html#cb190-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb190-3"><a href="detmodel.html#cb190-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb190-4"><a href="detmodel.html#cb190-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
-<span id="cb190-5"><a href="detmodel.html#cb190-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb190-6"><a href="detmodel.html#cb190-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)</span>
-<span id="cb190-7"><a href="detmodel.html#cb190-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb190-8"><a href="detmodel.html#cb190-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb190-9"><a href="detmodel.html#cb190-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-414-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="detmodel.html#cb198-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb198-2"><a href="detmodel.html#cb198-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb198-3"><a href="detmodel.html#cb198-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-4"><a href="detmodel.html#cb198-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
+<span id="cb198-5"><a href="detmodel.html#cb198-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-6"><a href="detmodel.html#cb198-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)</span>
+<span id="cb198-7"><a href="detmodel.html#cb198-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-8"><a href="detmodel.html#cb198-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb198-9"><a href="detmodel.html#cb198-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-437-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Na figura acima, temos cada um dos pontos em <span class="math inline">\(Y\)</span> como função linear de <span class="math inline">\(X\)</span>. Os comandos cima são entendidos como:</p>
 <ol style="list-style-type: decimal">
 <li><p>Determinamos os parâmetros <span class="math inline">\(\beta_0 = 0\)</span> e <span class="math inline">\(\beta_1 = 2\)</span>;</p></li>
@@ -568,39 +579,39 @@ Vamos a um exemplo no R.</p>
 <li><p>Preenchemos a camada com uma geometria de pontos.</p></li>
 </ol>
 <p>Vamos substituir com uma figura em formato de linha</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="detmodel.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb191-2"><a href="detmodel.html#cb191-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-415-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="detmodel.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb199-2"><a href="detmodel.html#cb199-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-438-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>No exemplo acima, temos os parâmetros <span class="math inline">\(\beta_0 = 0\)</span> e <span class="math inline">\(\beta_1 = 2\)</span>. Isto significa que para <span class="math inline">\(X = 0\)</span> o valor em <span class="math inline">\(Y = 0\)</span>. Conforme aumentamos <span class="math inline">\(X\)</span> em uma unidade, <span class="math inline">\(Y\)</span> aumenta em 2 unidades. No modelo linear, <span class="math inline">\(\beta_0\)</span> é interpretado portanto como a altura em <span class="math inline">\(Y\)</span> em que a reta cruza o eixo das ordenadas, enquanto <span class="math inline">\(\beta_1\)</span> representa a taxa de incremento em <span class="math inline">\(Y\)</span> para o aumento de <strong>uma unidade</strong> em <span class="math inline">\(X\)</span>.</p>
 <p>Vamos inserir duas outras curvas à figura anterior modificando os valores de <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="detmodel.html#cb192-1" aria-hidden="true" tabindex="-1"></a>b0_i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb192-2"><a href="detmodel.html#cb192-2" aria-hidden="true" tabindex="-1"></a>b1_i <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb192-3"><a href="detmodel.html#cb192-3" aria-hidden="true" tabindex="-1"></a>b0_ii <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb192-4"><a href="detmodel.html#cb192-4" aria-hidden="true" tabindex="-1"></a>b1_ii <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb192-5"><a href="detmodel.html#cb192-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-6"><a href="detmodel.html#cb192-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
-<span id="cb192-7"><a href="detmodel.html#cb192-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-8"><a href="detmodel.html#cb192-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb192-9"><a href="detmodel.html#cb192-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Y1 =</span> b0_i <span class="sc">+</span> b1_i <span class="sc">*</span> X,</span>
-<span id="cb192-10"><a href="detmodel.html#cb192-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y2 =</span> b0_i <span class="sc">+</span> b1_ii <span class="sc">*</span> X,</span>
-<span id="cb192-11"><a href="detmodel.html#cb192-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y3 =</span> b0_ii <span class="sc">+</span> b1_i <span class="sc">*</span> X,</span>
-<span id="cb192-12"><a href="detmodel.html#cb192-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y4 =</span> b0_ii <span class="sc">+</span> b1_ii <span class="sc">*</span> X)</span>
-<span id="cb192-13"><a href="detmodel.html#cb192-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-14"><a href="detmodel.html#cb192-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
-<span id="cb192-15"><a href="detmodel.html#cb192-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y1), <span class="at">col =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
-<span id="cb192-16"><a href="detmodel.html#cb192-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y2), <span class="at">col =</span> <span class="st">&#39;blue&#39;</span>) <span class="sc">+</span></span>
-<span id="cb192-17"><a href="detmodel.html#cb192-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y3), <span class="at">col =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb192-18"><a href="detmodel.html#cb192-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y4), <span class="at">col =</span> <span class="st">&#39;green&#39;</span>) <span class="sc">+</span></span>
-<span id="cb192-19"><a href="detmodel.html#cb192-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y1) <span class="sc">+</span> <span class="dv">5</span>, </span>
-<span id="cb192-20"><a href="detmodel.html#cb192-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_i) <span class="sc">+</span> .(b1_i) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;black&#39;</span>, <span class="at">angle =</span> <span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb192-21"><a href="detmodel.html#cb192-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y2) <span class="sc">+</span> <span class="dv">5</span>, </span>
-<span id="cb192-22"><a href="detmodel.html#cb192-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_i) <span class="sc">+</span> .(b1_ii) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;blue&#39;</span>, <span class="at">angle =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
-<span id="cb192-23"><a href="detmodel.html#cb192-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y3) <span class="sc">+</span> <span class="dv">5</span>, </span>
-<span id="cb192-24"><a href="detmodel.html#cb192-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_ii) <span class="sc">+</span> .(b1_i) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;red&#39;</span>, <span class="at">angle =</span> <span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb192-25"><a href="detmodel.html#cb192-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y4) <span class="sc">+</span> <span class="dv">5</span>, </span>
-<span id="cb192-26"><a href="detmodel.html#cb192-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_ii) <span class="sc">+</span> .(b1_ii) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;green&#39;</span>, <span class="at">angle =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
-<span id="cb192-27"><a href="detmodel.html#cb192-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Y&quot;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-416-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="detmodel.html#cb200-1" aria-hidden="true" tabindex="-1"></a>b0_i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb200-2"><a href="detmodel.html#cb200-2" aria-hidden="true" tabindex="-1"></a>b1_i <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb200-3"><a href="detmodel.html#cb200-3" aria-hidden="true" tabindex="-1"></a>b0_ii <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb200-4"><a href="detmodel.html#cb200-4" aria-hidden="true" tabindex="-1"></a>b1_ii <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb200-5"><a href="detmodel.html#cb200-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-6"><a href="detmodel.html#cb200-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
+<span id="cb200-7"><a href="detmodel.html#cb200-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-8"><a href="detmodel.html#cb200-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb200-9"><a href="detmodel.html#cb200-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Y1 =</span> b0_i <span class="sc">+</span> b1_i <span class="sc">*</span> X,</span>
+<span id="cb200-10"><a href="detmodel.html#cb200-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y2 =</span> b0_i <span class="sc">+</span> b1_ii <span class="sc">*</span> X,</span>
+<span id="cb200-11"><a href="detmodel.html#cb200-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y3 =</span> b0_ii <span class="sc">+</span> b1_i <span class="sc">*</span> X,</span>
+<span id="cb200-12"><a href="detmodel.html#cb200-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y4 =</span> b0_ii <span class="sc">+</span> b1_ii <span class="sc">*</span> X)</span>
+<span id="cb200-13"><a href="detmodel.html#cb200-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-14"><a href="detmodel.html#cb200-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
+<span id="cb200-15"><a href="detmodel.html#cb200-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y1), <span class="at">col =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb200-16"><a href="detmodel.html#cb200-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y2), <span class="at">col =</span> <span class="st">&#39;blue&#39;</span>) <span class="sc">+</span></span>
+<span id="cb200-17"><a href="detmodel.html#cb200-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y3), <span class="at">col =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb200-18"><a href="detmodel.html#cb200-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y4), <span class="at">col =</span> <span class="st">&#39;green&#39;</span>) <span class="sc">+</span></span>
+<span id="cb200-19"><a href="detmodel.html#cb200-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y1) <span class="sc">+</span> <span class="dv">5</span>, </span>
+<span id="cb200-20"><a href="detmodel.html#cb200-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_i) <span class="sc">+</span> .(b1_i) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;black&#39;</span>, <span class="at">angle =</span> <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb200-21"><a href="detmodel.html#cb200-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y2) <span class="sc">+</span> <span class="dv">5</span>, </span>
+<span id="cb200-22"><a href="detmodel.html#cb200-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_i) <span class="sc">+</span> .(b1_ii) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;blue&#39;</span>, <span class="at">angle =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb200-23"><a href="detmodel.html#cb200-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y3) <span class="sc">+</span> <span class="dv">5</span>, </span>
+<span id="cb200-24"><a href="detmodel.html#cb200-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_ii) <span class="sc">+</span> .(b1_i) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;red&#39;</span>, <span class="at">angle =</span> <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb200-25"><a href="detmodel.html#cb200-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y4) <span class="sc">+</span> <span class="dv">5</span>, </span>
+<span id="cb200-26"><a href="detmodel.html#cb200-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_ii) <span class="sc">+</span> .(b1_ii) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;green&#39;</span>, <span class="at">angle =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb200-27"><a href="detmodel.html#cb200-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Y&quot;</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-439-1.png" width="384" style="display: block; margin: auto;" /></p>
 <hr />
 <div id="entendendo-os-comandos-em-r" class="section level4 unnumbered">
 <h4>Entendendo os comandos em R</h4>
@@ -630,27 +641,27 @@ Vamos a um exemplo no R.</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_{1}X + \beta_{2}(X - \alpha)\]</span></p>
 <p>se <span class="math inline">\(X &gt; \alpha\)</span></p>
 <p>Veja que agora o modelo tem 4 parâmetros <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span> e <span class="math inline">\(\alpha\)</span>. O valor de <span class="math inline">\(\alpha\)</span> representa o <em>ponto de quebra</em>, onde a inclinação da reta muda. Se <span class="math inline">\(X\)</span> está abaixo de <span class="math inline">\(\alpha\)</span> temos o modelo linear comum. Entretanto, se estamos acima do ponto de quebra, a inclinação é dada pelos efeitos conjuntos de <span class="math inline">\(\beta_1\)</span> sobre <span class="math inline">\(X\)</span> somado ao efeito de <span class="math inline">\(\beta_2\)</span> sobre a diferença <span class="math inline">\((X - \alpha)\)</span>.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="detmodel.html#cb193-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb193-2"><a href="detmodel.html#cb193-2" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb193-3"><a href="detmodel.html#cb193-3" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb193-4"><a href="detmodel.html#cb193-4" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fl">2.5</span></span>
-<span id="cb193-5"><a href="detmodel.html#cb193-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-6"><a href="detmodel.html#cb193-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
-<span id="cb193-7"><a href="detmodel.html#cb193-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-8"><a href="detmodel.html#cb193-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb193-9"><a href="detmodel.html#cb193-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">ifelse</span>(<span class="at">test =</span> X <span class="sc">&lt;</span> a, </span>
-<span id="cb193-10"><a href="detmodel.html#cb193-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">yes =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X,</span>
-<span id="cb193-11"><a href="detmodel.html#cb193-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">no =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X <span class="sc">+</span> b2 <span class="sc">*</span> (X <span class="sc">-</span> a)</span>
-<span id="cb193-12"><a href="detmodel.html#cb193-12" aria-hidden="true" tabindex="-1"></a>                    )</span>
-<span id="cb193-13"><a href="detmodel.html#cb193-13" aria-hidden="true" tabindex="-1"></a>         )</span>
-<span id="cb193-14"><a href="detmodel.html#cb193-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-15"><a href="detmodel.html#cb193-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb193-16"><a href="detmodel.html#cb193-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb193-17"><a href="detmodel.html#cb193-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">15</span>, <span class="at">y =</span> <span class="dv">38</span>, </span>
-<span id="cb193-18"><a href="detmodel.html#cb193-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> beta[<span class="dv">0</span>] <span class="sc">+</span> beta[<span class="dv">1</span>]<span class="sc">*</span>X), <span class="at">angle =</span> <span class="dv">33</span>) <span class="sc">+</span></span>
-<span id="cb193-19"><a href="detmodel.html#cb193-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">35</span>, <span class="at">y =</span> <span class="dv">90</span>, </span>
-<span id="cb193-20"><a href="detmodel.html#cb193-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> beta[<span class="dv">0</span>] <span class="sc">+</span> beta[<span class="dv">1</span>]<span class="sc">*</span>X <span class="sc">+</span> beta[<span class="dv">2</span>]<span class="sc">*</span>(X <span class="sc">-</span> alpha)), <span class="at">angle =</span> <span class="dv">58</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-417-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="detmodel.html#cb201-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb201-2"><a href="detmodel.html#cb201-2" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb201-3"><a href="detmodel.html#cb201-3" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb201-4"><a href="detmodel.html#cb201-4" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fl">2.5</span></span>
+<span id="cb201-5"><a href="detmodel.html#cb201-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb201-6"><a href="detmodel.html#cb201-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
+<span id="cb201-7"><a href="detmodel.html#cb201-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb201-8"><a href="detmodel.html#cb201-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb201-9"><a href="detmodel.html#cb201-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">ifelse</span>(<span class="at">test =</span> X <span class="sc">&lt;</span> a, </span>
+<span id="cb201-10"><a href="detmodel.html#cb201-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">yes =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X,</span>
+<span id="cb201-11"><a href="detmodel.html#cb201-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">no =</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> X <span class="sc">+</span> b2 <span class="sc">*</span> (X <span class="sc">-</span> a)</span>
+<span id="cb201-12"><a href="detmodel.html#cb201-12" aria-hidden="true" tabindex="-1"></a>                    )</span>
+<span id="cb201-13"><a href="detmodel.html#cb201-13" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb201-14"><a href="detmodel.html#cb201-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb201-15"><a href="detmodel.html#cb201-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb201-16"><a href="detmodel.html#cb201-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb201-17"><a href="detmodel.html#cb201-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">15</span>, <span class="at">y =</span> <span class="dv">38</span>, </span>
+<span id="cb201-18"><a href="detmodel.html#cb201-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> beta[<span class="dv">0</span>] <span class="sc">+</span> beta[<span class="dv">1</span>]<span class="sc">*</span>X), <span class="at">angle =</span> <span class="dv">33</span>) <span class="sc">+</span></span>
+<span id="cb201-19"><a href="detmodel.html#cb201-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">35</span>, <span class="at">y =</span> <span class="dv">90</span>, </span>
+<span id="cb201-20"><a href="detmodel.html#cb201-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> beta[<span class="dv">0</span>] <span class="sc">+</span> beta[<span class="dv">1</span>]<span class="sc">*</span>X <span class="sc">+</span> beta[<span class="dv">2</span>]<span class="sc">*</span>(X <span class="sc">-</span> alpha)), <span class="at">angle =</span> <span class="dv">58</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-440-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="função-potência" class="section level2" number="32.2">
@@ -658,16 +669,16 @@ Vamos a um exemplo no R.</p>
 <p>As função potência têm um longo histórico de aplicações em ciências naturais em que diversas relações fisiológicas podem ser descritas por este tipo de relação funcional. Veja por exemplo livro o clássico <a href="https://www.cambridge.org/core/books/the-ecological-implications-of-body-size/4D86337571D7F26E76F885B2548FCBFB" target="_blank">The Ecological Implications of Body Size</a> <span class="citation">(<a href="#ref-peters1986ecological" role="doc-biblioref">Peters and Peters 1986</a>)</span>.</p>
 <p>Uma relação potência é exemplo de modelo <strong>não-linear</strong> descrito por:</p>
 <p><span class="math display">\[Y = \beta_{0}X^{\beta_{1}}\]</span></p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="detmodel.html#cb194-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb194-2"><a href="detmodel.html#cb194-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb194-3"><a href="detmodel.html#cb194-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb194-4"><a href="detmodel.html#cb194-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb194-5"><a href="detmodel.html#cb194-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb194-6"><a href="detmodel.html#cb194-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> X<span class="sc">^</span>b1)</span>
-<span id="cb194-7"><a href="detmodel.html#cb194-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb194-8"><a href="detmodel.html#cb194-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb194-9"><a href="detmodel.html#cb194-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-418-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="detmodel.html#cb202-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb202-2"><a href="detmodel.html#cb202-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb202-3"><a href="detmodel.html#cb202-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-4"><a href="detmodel.html#cb202-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb202-5"><a href="detmodel.html#cb202-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-6"><a href="detmodel.html#cb202-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> X<span class="sc">^</span>b1)</span>
+<span id="cb202-7"><a href="detmodel.html#cb202-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-8"><a href="detmodel.html#cb202-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb202-9"><a href="detmodel.html#cb202-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-441-1.png" width="384" style="display: block; margin: auto;" /></p>
 <div id="a-representação-linear-da-função-potência" class="section level4 unnumbered">
 <h4>A representação linear da função potência</h4>
 <p>Embora descreva uma relação funcional não-linear, a função potência têm sido historicamente ajustada por modelos lineares devido a seguinte relação:</p>
@@ -677,52 +688,52 @@ Vamos a um exemplo no R.</p>
 <p><span class="math inline">\(log(Y) = log(\beta_{0}) + \beta_{1}log(X)\)</span></p>
 <p>Esta relação permite que os parâmetros <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> da relação potência possam ser ajustados por regressões lineares simples (Capítulo <a href="regressao.html#regressao">22</a>) após a aplicação da transformação logarítmica em <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span>. Atualmente, diante da facilidade computacional de ajustes de <em>modelos não-lineares</em>, a necessidade desta transformação têm sido discutida na literatura. Para uma análise desta questão veja: <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/11-0538.1" target="_blank">Xiau et al., (2011)</a> e <a href="https://academic.oup.com/biolinnean/article/109/2/476/2415719" target="_blank">Packard, (2013)</a>.</p>
 <p>Veja a relação gráfica descrita por <span class="math inline">\(log(Y)\)</span> e <span class="math inline">\(log(X)\)</span> após as trnasformações. Nesta figura, o intercepto da curva é dados por <span class="math inline">\(log(\beta_0)\)</span> enquanto a inclinação é dada pelo efeito de <span class="math inline">\(\beta_1\)</span> sobre <span class="math inline">\(log(X)\)</span>.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="detmodel.html#cb195-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb195-2"><a href="detmodel.html#cb195-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb195-3"><a href="detmodel.html#cb195-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb195-4"><a href="detmodel.html#cb195-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb195-5"><a href="detmodel.html#cb195-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb195-6"><a href="detmodel.html#cb195-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> X<span class="sc">^</span>b1)</span>
-<span id="cb195-7"><a href="detmodel.html#cb195-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb195-8"><a href="detmodel.html#cb195-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(X), <span class="at">y =</span> <span class="fu">log</span>(Y))) <span class="sc">+</span></span>
-<span id="cb195-9"><a href="detmodel.html#cb195-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-419-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="detmodel.html#cb203-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb203-2"><a href="detmodel.html#cb203-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb203-3"><a href="detmodel.html#cb203-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb203-4"><a href="detmodel.html#cb203-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb203-5"><a href="detmodel.html#cb203-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb203-6"><a href="detmodel.html#cb203-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> X<span class="sc">^</span>b1)</span>
+<span id="cb203-7"><a href="detmodel.html#cb203-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb203-8"><a href="detmodel.html#cb203-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(X), <span class="at">y =</span> <span class="fu">log</span>(Y))) <span class="sc">+</span></span>
+<span id="cb203-9"><a href="detmodel.html#cb203-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-442-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="as-várias-formas-da-função-potência" class="section level4 unnumbered">
 <h4>As várias formas da função potência</h4>
 <p>Na função potência temos diferentes formatos possíveis, dependendo dos valores de <span class="math inline">\(\beta_1\)</span>.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="detmodel.html#cb196-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb196-2"><a href="detmodel.html#cb196-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-3"><a href="detmodel.html#cb196-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb196-4"><a href="detmodel.html#cb196-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-5"><a href="detmodel.html#cb196-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb196-6"><a href="detmodel.html#cb196-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Y1 =</span> b0 <span class="sc">*</span> X<span class="sc">^</span><span class="dv">3</span>,</span>
-<span id="cb196-7"><a href="detmodel.html#cb196-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y2 =</span> b0 <span class="sc">*</span> X<span class="sc">^</span><span class="dv">1</span>,</span>
-<span id="cb196-8"><a href="detmodel.html#cb196-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y3 =</span> b0 <span class="sc">*</span> X<span class="sc">^-</span><span class="fl">0.5</span>,</span>
-<span id="cb196-9"><a href="detmodel.html#cb196-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y4 =</span> b0 <span class="sc">*</span> X<span class="sc">^</span><span class="fl">0.5</span>)</span>
-<span id="cb196-10"><a href="detmodel.html#cb196-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-11"><a href="detmodel.html#cb196-11" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y1)) <span class="sc">+</span></span>
-<span id="cb196-12"><a href="detmodel.html#cb196-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb196-13"><a href="detmodel.html#cb196-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="dv">7500</span>, </span>
-<span id="cb196-14"><a href="detmodel.html#cb196-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">1</span>))</span>
-<span id="cb196-15"><a href="detmodel.html#cb196-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-16"><a href="detmodel.html#cb196-16" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y2)) <span class="sc">+</span></span>
-<span id="cb196-17"><a href="detmodel.html#cb196-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb196-18"><a href="detmodel.html#cb196-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="dv">50</span>, </span>
-<span id="cb196-19"><a href="detmodel.html#cb196-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">==</span> <span class="dv">1</span>))</span>
-<span id="cb196-20"><a href="detmodel.html#cb196-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-21"><a href="detmodel.html#cb196-21" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y3)) <span class="sc">+</span></span>
-<span id="cb196-22"><a href="detmodel.html#cb196-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb196-23"><a href="detmodel.html#cb196-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">20</span>, </span>
-<span id="cb196-24"><a href="detmodel.html#cb196-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">&lt;</span> <span class="dv">0</span>))</span>
-<span id="cb196-25"><a href="detmodel.html#cb196-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-26"><a href="detmodel.html#cb196-26" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y4)) <span class="sc">+</span></span>
-<span id="cb196-27"><a href="detmodel.html#cb196-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb196-28"><a href="detmodel.html#cb196-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fl">6.5</span>, <span class="at">y =</span> <span class="dv">10</span>, </span>
-<span id="cb196-29"><a href="detmodel.html#cb196-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;e&quot;</span> <span class="sc">~</span> beta[<span class="dv">1</span>] <span class="sc">&lt;</span> <span class="dv">1</span>))</span>
-<span id="cb196-30"><a href="detmodel.html#cb196-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-31"><a href="detmodel.html#cb196-31" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-420-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="detmodel.html#cb204-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb204-2"><a href="detmodel.html#cb204-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-3"><a href="detmodel.html#cb204-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb204-4"><a href="detmodel.html#cb204-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-5"><a href="detmodel.html#cb204-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb204-6"><a href="detmodel.html#cb204-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Y1 =</span> b0 <span class="sc">*</span> X<span class="sc">^</span><span class="dv">3</span>,</span>
+<span id="cb204-7"><a href="detmodel.html#cb204-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y2 =</span> b0 <span class="sc">*</span> X<span class="sc">^</span><span class="dv">1</span>,</span>
+<span id="cb204-8"><a href="detmodel.html#cb204-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y3 =</span> b0 <span class="sc">*</span> X<span class="sc">^-</span><span class="fl">0.5</span>,</span>
+<span id="cb204-9"><a href="detmodel.html#cb204-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">Y4 =</span> b0 <span class="sc">*</span> X<span class="sc">^</span><span class="fl">0.5</span>)</span>
+<span id="cb204-10"><a href="detmodel.html#cb204-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-11"><a href="detmodel.html#cb204-11" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y1)) <span class="sc">+</span></span>
+<span id="cb204-12"><a href="detmodel.html#cb204-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb204-13"><a href="detmodel.html#cb204-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="dv">7500</span>, </span>
+<span id="cb204-14"><a href="detmodel.html#cb204-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">1</span>))</span>
+<span id="cb204-15"><a href="detmodel.html#cb204-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-16"><a href="detmodel.html#cb204-16" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y2)) <span class="sc">+</span></span>
+<span id="cb204-17"><a href="detmodel.html#cb204-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb204-18"><a href="detmodel.html#cb204-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="dv">50</span>, </span>
+<span id="cb204-19"><a href="detmodel.html#cb204-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">==</span> <span class="dv">1</span>))</span>
+<span id="cb204-20"><a href="detmodel.html#cb204-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-21"><a href="detmodel.html#cb204-21" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y3)) <span class="sc">+</span></span>
+<span id="cb204-22"><a href="detmodel.html#cb204-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb204-23"><a href="detmodel.html#cb204-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">20</span>, </span>
+<span id="cb204-24"><a href="detmodel.html#cb204-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">&lt;</span> <span class="dv">0</span>))</span>
+<span id="cb204-25"><a href="detmodel.html#cb204-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-26"><a href="detmodel.html#cb204-26" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y4)) <span class="sc">+</span></span>
+<span id="cb204-27"><a href="detmodel.html#cb204-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb204-28"><a href="detmodel.html#cb204-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fl">6.5</span>, <span class="at">y =</span> <span class="dv">10</span>, </span>
+<span id="cb204-29"><a href="detmodel.html#cb204-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;e&quot;</span> <span class="sc">~</span> beta[<span class="dv">1</span>] <span class="sc">&lt;</span> <span class="dv">1</span>))</span>
+<span id="cb204-30"><a href="detmodel.html#cb204-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-31"><a href="detmodel.html#cb204-31" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-443-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii" class="section level2" number="32.3">
@@ -733,36 +744,36 @@ Vamos a um exemplo no R.</p>
 <p><span class="math display">\[Y = \frac{\beta_0 X}{(\beta_1 + X)}\]</span></p>
 <p>O parâmetro <span class="math inline">\(\beta_0\)</span> descreve a assíntota do modelo, enquanto a taxa de meia saturação em <span class="math inline">\(Y\)</span> (<span class="math inline">\(\frac{\beta_0}{2}\)</span>) ocorre no ponto em que <span class="math inline">\(X = \beta_1\)</span>.</p>
 <p>Vamos ao gráfico da função:</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="detmodel.html#cb197-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb197-2"><a href="detmodel.html#cb197-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb197-3"><a href="detmodel.html#cb197-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb197-4"><a href="detmodel.html#cb197-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb197-5"><a href="detmodel.html#cb197-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb197-6"><a href="detmodel.html#cb197-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0<span class="sc">*</span>X<span class="sc">/</span>(b1<span class="sc">+</span>X))</span>
-<span id="cb197-7"><a href="detmodel.html#cb197-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb197-8"><a href="detmodel.html#cb197-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb197-9"><a href="detmodel.html#cb197-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb197-10"><a href="detmodel.html#cb197-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb197-11"><a href="detmodel.html#cb197-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-421-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="detmodel.html#cb205-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb205-2"><a href="detmodel.html#cb205-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb205-3"><a href="detmodel.html#cb205-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb205-4"><a href="detmodel.html#cb205-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb205-5"><a href="detmodel.html#cb205-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb205-6"><a href="detmodel.html#cb205-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0<span class="sc">*</span>X<span class="sc">/</span>(b1<span class="sc">+</span>X))</span>
+<span id="cb205-7"><a href="detmodel.html#cb205-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb205-8"><a href="detmodel.html#cb205-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb205-9"><a href="detmodel.html#cb205-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb205-10"><a href="detmodel.html#cb205-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb205-11"><a href="detmodel.html#cb205-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-444-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="resposta-funcional-do-tipo-iii" class="section level2" number="32.4">
 <h2><span class="header-section-number">32.4</span> Resposta funcional do tipo III</h2>
 <p>Em situações de baixa densidade de presa, o aumento na taxa de predação pode ser manter reduzido devido à preferência do por outras presas mais abundante ou sua incapacidade de encontrar a vítima. Estas situações descrevem uma resposta Funcional do Tipo III. A padrão é uma curva sigmóide no início que atinge a assíntota no ponto em que <span class="math inline">\(Y = beta_0\)</span> assim como a curva de Michaelis-Menten. O formato deste modelo é:</p>
 <p><span class="math display">\[Y = \frac{\beta_0 X^2}{(\beta_1^2 + X^2)}\]</span></p>
 <p>Compare este modelo com o anterior modificando os valores para os parâmetros <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="detmodel.html#cb198-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb198-2"><a href="detmodel.html#cb198-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb198-3"><a href="detmodel.html#cb198-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb198-4"><a href="detmodel.html#cb198-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb198-5"><a href="detmodel.html#cb198-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb198-6"><a href="detmodel.html#cb198-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0<span class="sc">*</span>X<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(b1<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>X<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb198-7"><a href="detmodel.html#cb198-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb198-8"><a href="detmodel.html#cb198-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb198-9"><a href="detmodel.html#cb198-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb198-10"><a href="detmodel.html#cb198-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb198-11"><a href="detmodel.html#cb198-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-422-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="detmodel.html#cb206-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb206-2"><a href="detmodel.html#cb206-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb206-3"><a href="detmodel.html#cb206-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-4"><a href="detmodel.html#cb206-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb206-5"><a href="detmodel.html#cb206-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-6"><a href="detmodel.html#cb206-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0<span class="sc">*</span>X<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(b1<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>X<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb206-7"><a href="detmodel.html#cb206-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-8"><a href="detmodel.html#cb206-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb206-9"><a href="detmodel.html#cb206-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb206-10"><a href="detmodel.html#cb206-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb206-11"><a href="detmodel.html#cb206-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-445-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="resposta-funcional-do-tipo-iv" class="section level2" number="32.5">
 <h2><span class="header-section-number">32.5</span> Resposta funcional do tipo IV</h2>
@@ -770,54 +781,54 @@ Vamos a um exemplo no R.</p>
 <p>O modelo é dado por:</p>
 <p><span class="math display">\[Y = \frac{\beta_0 X^2}{(\beta_1 + \beta_2 X + X^2)}\]</span></p>
 <p>Varie os valores de <span class="math inline">\(\beta_2\)</span> e compare os padrões com os modelos de resposta funcional do Tipo II (Michaelis-Menten) e III.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="detmodel.html#cb199-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb199-2"><a href="detmodel.html#cb199-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb199-3"><a href="detmodel.html#cb199-3" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
-<span id="cb199-4"><a href="detmodel.html#cb199-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-5"><a href="detmodel.html#cb199-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb199-6"><a href="detmodel.html#cb199-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-7"><a href="detmodel.html#cb199-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> (b0<span class="sc">*</span>X<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(b1 <span class="sc">+</span> b2<span class="sc">*</span>X <span class="sc">+</span> X<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb199-8"><a href="detmodel.html#cb199-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-9"><a href="detmodel.html#cb199-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb199-10"><a href="detmodel.html#cb199-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb199-11"><a href="detmodel.html#cb199-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-423-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="detmodel.html#cb207-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb207-2"><a href="detmodel.html#cb207-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb207-3"><a href="detmodel.html#cb207-3" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
+<span id="cb207-4"><a href="detmodel.html#cb207-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb207-5"><a href="detmodel.html#cb207-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb207-6"><a href="detmodel.html#cb207-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb207-7"><a href="detmodel.html#cb207-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> (b0<span class="sc">*</span>X<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(b1 <span class="sc">+</span> b2<span class="sc">*</span>X <span class="sc">+</span> X<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb207-8"><a href="detmodel.html#cb207-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb207-9"><a href="detmodel.html#cb207-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb207-10"><a href="detmodel.html#cb207-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb207-11"><a href="detmodel.html#cb207-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-446-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="função-hiperbólica" class="section level2" number="32.6">
 <h2><span class="header-section-number">32.6</span> Função hiperbólica</h2>
 <p>Em ecologia a função hiperbólica pode ser utilizada para prever o resultado de um modelo de competição, assumindo que o recurso por unidade de área é constante e que o uso do recurso por indivíduo é proporcional ao inverso da densidade de organismos (<span class="math inline">\(X\)</span>) por unidade de área. O resultado é uma redução no número de descendentes por indivíduos (<span class="math inline">\(Y\)</span>) em função do aumento da densidade (<span class="math inline">\(X\)</span>) e o modelo é dado por:</p>
 <p><span class="math display">\[ Y = \frac{\beta_0}{\beta_1 + X}\]</span></p>
 <p>Que tem o formato de:</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="detmodel.html#cb200-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb200-2"><a href="detmodel.html#cb200-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb200-3"><a href="detmodel.html#cb200-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb200-4"><a href="detmodel.html#cb200-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb200-5"><a href="detmodel.html#cb200-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb200-6"><a href="detmodel.html#cb200-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0<span class="sc">/</span>(b1 <span class="sc">*</span> X))</span>
-<span id="cb200-7"><a href="detmodel.html#cb200-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb200-8"><a href="detmodel.html#cb200-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb200-9"><a href="detmodel.html#cb200-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-424-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="detmodel.html#cb208-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb208-2"><a href="detmodel.html#cb208-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb208-3"><a href="detmodel.html#cb208-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-4"><a href="detmodel.html#cb208-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb208-5"><a href="detmodel.html#cb208-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-6"><a href="detmodel.html#cb208-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0<span class="sc">/</span>(b1 <span class="sc">*</span> X))</span>
+<span id="cb208-7"><a href="detmodel.html#cb208-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-8"><a href="detmodel.html#cb208-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb208-9"><a href="detmodel.html#cb208-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-447-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="função-exponencial" class="section level2" number="32.7">
 <h2><span class="header-section-number">32.7</span> Função exponencial</h2>
 <p>O modelo exponencial á amplamente utilizado em ecologia. As aplicações mais simples são o crescimento (<span class="math inline">\(Y = \beta_0 e^{\beta_1 X}\)</span>) e o decrescimento (<span class="math inline">\(Y = \beta_0 e^{-\beta_1 X}\)</span>) exponencial.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="detmodel.html#cb201-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb201-2"><a href="detmodel.html#cb201-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb201-3"><a href="detmodel.html#cb201-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-4"><a href="detmodel.html#cb201-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb201-5"><a href="detmodel.html#cb201-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-6"><a href="detmodel.html#cb201-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y1 =</span> b0 <span class="sc">*</span> <span class="fu">exp</span>(b1 <span class="sc">*</span> X),</span>
-<span id="cb201-7"><a href="detmodel.html#cb201-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Y2 =</span> b0 <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>b1 <span class="sc">*</span> X))</span>
-<span id="cb201-8"><a href="detmodel.html#cb201-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-9"><a href="detmodel.html#cb201-9" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
-<span id="cb201-10"><a href="detmodel.html#cb201-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y1), <span class="at">col =</span> <span class="st">&#39;black&#39;</span>)</span>
-<span id="cb201-11"><a href="detmodel.html#cb201-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-12"><a href="detmodel.html#cb201-12" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
-<span id="cb201-13"><a href="detmodel.html#cb201-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y2), <span class="at">col =</span> <span class="st">&#39;red&#39;</span>)</span>
-<span id="cb201-14"><a href="detmodel.html#cb201-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-15"><a href="detmodel.html#cb201-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g1, g2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-425-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="detmodel.html#cb209-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb209-2"><a href="detmodel.html#cb209-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb209-3"><a href="detmodel.html#cb209-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-4"><a href="detmodel.html#cb209-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb209-5"><a href="detmodel.html#cb209-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-6"><a href="detmodel.html#cb209-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y1 =</span> b0 <span class="sc">*</span> <span class="fu">exp</span>(b1 <span class="sc">*</span> X),</span>
+<span id="cb209-7"><a href="detmodel.html#cb209-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Y2 =</span> b0 <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>b1 <span class="sc">*</span> X))</span>
+<span id="cb209-8"><a href="detmodel.html#cb209-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-9"><a href="detmodel.html#cb209-9" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
+<span id="cb209-10"><a href="detmodel.html#cb209-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y1), <span class="at">col =</span> <span class="st">&#39;black&#39;</span>)</span>
+<span id="cb209-11"><a href="detmodel.html#cb209-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-12"><a href="detmodel.html#cb209-12" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
+<span id="cb209-13"><a href="detmodel.html#cb209-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y2), <span class="at">col =</span> <span class="st">&#39;red&#39;</span>)</span>
+<span id="cb209-14"><a href="detmodel.html#cb209-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-15"><a href="detmodel.html#cb209-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g1, g2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-448-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="função-logística" class="section level2" number="32.8">
 <h2><span class="header-section-number">32.8</span> Função logística</h2>
@@ -825,78 +836,78 @@ Vamos a um exemplo no R.</p>
 <p><span class="math display">\[Y = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}\]</span></p>
 <p>Neste formato, <span class="math inline">\(\beta_0\)</span> é um parâmetro de posição e <span class="math inline">\(\beta_1\)</span> controla a inclinação da curva. O ponto de meia saturação (<span class="math inline">\(Y = 0,5\)</span>) ocorre quando <span class="math inline">\(X = \frac{-\beta_0}{\beta_1}\)</span>.</p>
 <p>Varie os dois parâmetros e veja o que ocorre com a figura abaixo.</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="detmodel.html#cb202-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">10</span></span>
-<span id="cb202-2"><a href="detmodel.html#cb202-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb202-3"><a href="detmodel.html#cb202-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb202-4"><a href="detmodel.html#cb202-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb202-5"><a href="detmodel.html#cb202-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb202-6"><a href="detmodel.html#cb202-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)))</span>
-<span id="cb202-7"><a href="detmodel.html#cb202-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb202-8"><a href="detmodel.html#cb202-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb202-9"><a href="detmodel.html#cb202-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-426-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="detmodel.html#cb210-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">10</span></span>
+<span id="cb210-2"><a href="detmodel.html#cb210-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb210-3"><a href="detmodel.html#cb210-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-4"><a href="detmodel.html#cb210-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb210-5"><a href="detmodel.html#cb210-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-6"><a href="detmodel.html#cb210-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(b0 <span class="sc">+</span> b1 <span class="sc">*</span> X)))</span>
+<span id="cb210-7"><a href="detmodel.html#cb210-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-8"><a href="detmodel.html#cb210-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb210-9"><a href="detmodel.html#cb210-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-449-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-monomolecular" class="section level2" number="32.9">
 <h2><span class="header-section-number">32.9</span> Modelo monomolecular</h2>
 <p>Tem um formato similar ao da função de Michaelis-Menten com assintota em <span class="math inline">\(\beta_0\)</span> e taxa de incremento dada pelo valor de <span class="math inline">\(\beta_1\)</span>. É função é dada por:</p>
 <p><span class="math display">\[Y = \beta_0 (1 - e^{-\beta_1 X})\]</span></p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="detmodel.html#cb203-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb203-2"><a href="detmodel.html#cb203-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb203-3"><a href="detmodel.html#cb203-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb203-4"><a href="detmodel.html#cb203-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb203-5"><a href="detmodel.html#cb203-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb203-6"><a href="detmodel.html#cb203-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>b1<span class="sc">*</span>X)))</span>
-<span id="cb203-7"><a href="detmodel.html#cb203-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb203-8"><a href="detmodel.html#cb203-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb203-9"><a href="detmodel.html#cb203-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb203-10"><a href="detmodel.html#cb203-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-427-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="detmodel.html#cb211-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb211-2"><a href="detmodel.html#cb211-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb211-3"><a href="detmodel.html#cb211-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb211-4"><a href="detmodel.html#cb211-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb211-5"><a href="detmodel.html#cb211-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb211-6"><a href="detmodel.html#cb211-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>b1<span class="sc">*</span>X)))</span>
+<span id="cb211-7"><a href="detmodel.html#cb211-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb211-8"><a href="detmodel.html#cb211-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb211-9"><a href="detmodel.html#cb211-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb211-10"><a href="detmodel.html#cb211-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-450-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-de-ricker" class="section level2" number="32.10">
 <h2><span class="header-section-number">32.10</span> Modelo de Ricker</h2>
 <p>O modelo de Ricker é uma opção para descrever o crescimento populacional denso-dependente e portanto uma opção ao modelo Logístico. Em <span class="math inline">\(X = 0\)</span>, o modelo inicia com crescimento linear com inclinação dada pelo parâmetro <span class="math inline">\(\beta_0\)</span> e atinge um pico em <span class="math inline">\(X = \frac{1}{\beta_1}\)</span>. O modelo é dado por:</p>
 <p><span class="math display">\[Y = \beta_0 X e^{-\beta_1 X}\]</span></p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="detmodel.html#cb204-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb204-2"><a href="detmodel.html#cb204-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb204-3"><a href="detmodel.html#cb204-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb204-4"><a href="detmodel.html#cb204-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb204-5"><a href="detmodel.html#cb204-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb204-6"><a href="detmodel.html#cb204-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> X <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>b1<span class="sc">*</span>X))</span>
-<span id="cb204-7"><a href="detmodel.html#cb204-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb204-8"><a href="detmodel.html#cb204-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb204-9"><a href="detmodel.html#cb204-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-428-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="detmodel.html#cb212-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb212-2"><a href="detmodel.html#cb212-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb212-3"><a href="detmodel.html#cb212-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-4"><a href="detmodel.html#cb212-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb212-5"><a href="detmodel.html#cb212-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-6"><a href="detmodel.html#cb212-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> b0 <span class="sc">*</span> X <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>b1<span class="sc">*</span>X))</span>
+<span id="cb212-7"><a href="detmodel.html#cb212-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-8"><a href="detmodel.html#cb212-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb212-9"><a href="detmodel.html#cb212-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-451-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-de-gompertz" class="section level2" number="32.11">
 <h2><span class="header-section-number">32.11</span> Modelo de Gompertz</h2>
 <p>O modelo de Gompertz é outra alternativa ao modelo Logístico. <span class="math inline">\(Y\)</span> se aproxima de 1 à medida que <span class="math inline">\(X\)</span> aumenta, entretanto, ao contrário do modelo logístico é assimétrico, e o ponto de inflecção ocorre a cerca de <span class="math inline">\(1/3\)</span> do caminho até a assíntota. O modelo é dado por:</p>
 <p><span class="math display">\[Y = e^{-\beta_0 e^{-\beta_1 X}}\]</span></p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="detmodel.html#cb205-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb205-2"><a href="detmodel.html#cb205-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb205-3"><a href="detmodel.html#cb205-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb205-4"><a href="detmodel.html#cb205-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb205-5"><a href="detmodel.html#cb205-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb205-6"><a href="detmodel.html#cb205-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">exp</span>(<span class="sc">-</span>b0 <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>b1 <span class="sc">*</span> X)))</span>
-<span id="cb205-7"><a href="detmodel.html#cb205-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb205-8"><a href="detmodel.html#cb205-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb205-9"><a href="detmodel.html#cb205-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-429-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="detmodel.html#cb213-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb213-2"><a href="detmodel.html#cb213-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb213-3"><a href="detmodel.html#cb213-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-4"><a href="detmodel.html#cb213-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb213-5"><a href="detmodel.html#cb213-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-6"><a href="detmodel.html#cb213-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">exp</span>(<span class="sc">-</span>b0 <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>b1 <span class="sc">*</span> X)))</span>
+<span id="cb213-7"><a href="detmodel.html#cb213-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-8"><a href="detmodel.html#cb213-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb213-9"><a href="detmodel.html#cb213-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-452-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-de-von-bertalanffy" class="section level2" number="32.12">
 <h2><span class="header-section-number">32.12</span> Modelo de von Bertalanffy</h2>
 <p>O modelo de von Bertalanffy é uma opção para modelar o <em>crescimento de organismos</em> com crescimento indeterminado. A expressão abaixo utiliza os símbolos comumente empregado nestas situações, onde <span class="math inline">\(L_{\infty}\)</span> é o ponto assintótico (tamanho máximo teórico do organismo), <span class="math inline">\(k\)</span> é a taxa de crescimento, <span class="math inline">\(t_0\)</span> o tempo em que o tamanho (<span class="math inline">\(Y\)</span>) está em zero. O modelo é dado por:</p>
 <p><span class="math display">\[Y = L_{\infty} (1 - e^{-k(X - t_0)})\]</span></p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="detmodel.html#cb206-1" aria-hidden="true" tabindex="-1"></a>Linf <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb206-2"><a href="detmodel.html#cb206-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
-<span id="cb206-3"><a href="detmodel.html#cb206-3" aria-hidden="true" tabindex="-1"></a>t0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.1</span></span>
-<span id="cb206-4"><a href="detmodel.html#cb206-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb206-5"><a href="detmodel.html#cb206-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
-<span id="cb206-6"><a href="detmodel.html#cb206-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb206-7"><a href="detmodel.html#cb206-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> Linf <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>k <span class="sc">*</span>(X <span class="sc">-</span> t0))))</span>
-<span id="cb206-8"><a href="detmodel.html#cb206-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb206-9"><a href="detmodel.html#cb206-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb206-10"><a href="detmodel.html#cb206-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-430-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="detmodel.html#cb214-1" aria-hidden="true" tabindex="-1"></a>Linf <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb214-2"><a href="detmodel.html#cb214-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fl">1.2</span></span>
+<span id="cb214-3"><a href="detmodel.html#cb214-3" aria-hidden="true" tabindex="-1"></a>t0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.1</span></span>
+<span id="cb214-4"><a href="detmodel.html#cb214-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-5"><a href="detmodel.html#cb214-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">length =</span> <span class="dv">100</span>))</span>
+<span id="cb214-6"><a href="detmodel.html#cb214-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-7"><a href="detmodel.html#cb214-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Y =</span> Linf <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>k <span class="sc">*</span>(X <span class="sc">-</span> t0))))</span>
+<span id="cb214-8"><a href="detmodel.html#cb214-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-9"><a href="detmodel.html#cb214-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb214-10"><a href="detmodel.html#cb214-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-453-1.png" width="384" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

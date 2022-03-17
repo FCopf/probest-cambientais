@@ -383,10 +383,21 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="20" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>20</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA</a>
+<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova-e-as-hipóteses-estatísticas"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA e as hipóteses estatísticas</a></li>
+<li class="chapter" data-level="20.2" data-path="anova.html"><a href="anova.html#partição-da-soma-dos-quadrados"><i class="fa fa-check"></i><b>20.2</b> Partição da soma dos quadrados</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>20.1.1</b> Quadrados médios</a></li>
+<li class="chapter" data-level="20.2.1" data-path="anova.html"><a href="anova.html#a-característica-aditiva-das-somas-dos-quadrados-1"><i class="fa fa-check"></i><b>20.2.1</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="20.2.2" data-path="anova.html"><a href="anova.html#medindo-a-associação-entre-y-e-x-1"><i class="fa fa-check"></i><b>20.2.2</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="20.3" data-path="anova.html"><a href="anova.html#quadrados-médios-e-graus-de-liberdade"><i class="fa fa-check"></i><b>20.3</b> Quadrados médios e graus de liberdade</a></li>
+<li class="chapter" data-level="20.4" data-path="anova.html"><a href="anova.html#estatística-f-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>20.4</b> Estatística <span class="math inline">\(F\)</span> e teste de hipóteses</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="anova.html"><a href="anova.html#nível-de-significância"><i class="fa fa-check"></i><b>20.4.1</b> Nível de significância</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="anova.html"><a href="anova.html#um-exemplo-de-anova"><i class="fa fa-check"></i><b>20.5</b> Um exemplo de ANOVA</a></li>
+<li class="chapter" data-level="20.6" data-path="anova.html"><a href="anova.html#testes-a-posteriori-de-comparação-de-médias"><i class="fa fa-check"></i><b>20.6</b> Testes a <em>posteriori</em> de comparação de médias</a></li>
+<li class="chapter" data-level="20.7" data-path="anova.html"><a href="anova.html#rodando-a-anova-no-r"><i class="fa fa-check"></i><b>20.7</b> Rodando a ANOVA no R</a></li>
+<li class="chapter" data-level="20.8" data-path="anova.html"><a href="anova.html#pressupostos-da-anova"><i class="fa fa-check"></i><b>20.8</b> Pressupostos da ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>21</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="22" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>22</b> Regressão linear e correlação</a>
@@ -407,7 +418,7 @@ div.csl-indent {
 <li class="chapter" data-level="22.3.1" data-path="regressao.html"><a href="regressao.html#teste-sobre-beta_1"><i class="fa fa-check"></i><b>22.3.1</b> Teste sobre <span class="math inline">\(\beta_1\)</span></a></li>
 <li class="chapter" data-level="22.3.2" data-path="regressao.html"><a href="regressao.html#análise-de-variância-da-regressão"><i class="fa fa-check"></i><b>22.3.2</b> Análise de variância da regressão</a></li>
 </ul></li>
-<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="22.5" data-path="regressao.html"><a href="regressao.html#intervalo-de-confiança-de-y"><i class="fa fa-check"></i><b>22.5</b> Intervalo de confiança de <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="22.6" data-path="regressao.html"><a href="regressao.html#pressupostos-da-regressão-linear-simples"><i class="fa fa-check"></i><b>22.6</b> Pressupostos da regressão linear simples</a>
 <ul>
@@ -535,16 +546,16 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="modlinear" class="section level1" number="19">
 <h1><span class="header-section-number">Capítulo 19</span> Modelos lineares</h1>
-<p>Até agora estávamos nos referindo à nossa variável de interesse principal como variável <span class="math inline">\(X\)</span>. Nesta seção entretanto (Capítulos <a href="modlinear.html#modlinear">19</a> a <a href="repanova.html#repanova">25</a>) iremos nos referir a uma variável resposta (ou variável dependente, <span class="math inline">\(Y\)</span>), que será nossa variável de interesse principal e que será descrita como função de uma ou mais variáveis preditoras (ou variáveis independentes, <span class="math inline">\(X\)</span>). Abordaremos novamente os conceitos de <strong>partição da soma dos quadrados</strong>, <strong>covariância</strong> e <strong>coeficiente de determinação</strong> agora no contexto do teste de hipóteses e ajuste de modelos. Neste sentido, esta seção tem relação direta com o que foi apresentado nos capítulos <a href="biquant.html#biquant">10</a> e <a href="biquantquali.html#biquantquali">11</a> e é interessante rever estes capítulos antes de continuar.</p>
+<p>Até agora estávamos nos referindo à nossa variável de interesse principal como variável <span class="math inline">\(X\)</span>. Nesta seção (Capítulos <a href="modlinear.html#modlinear">19</a> a <a href="repanova.html#repanova">25</a>) iremos nos referir a uma variável resposta (ou variável dependente, <span class="math inline">\(Y\)</span>), que será nossa variável de interesse principal e que será descrita como função de uma ou mais variáveis preditoras (ou variáveis independentes, <span class="math inline">\(X\)</span>). Abordaremos novamente os conceitos de <strong>partição da soma dos quadrados</strong>, <strong>covariância</strong> e <strong>coeficiente de determinação</strong> no contexto do teste de hipóteses e ajuste de modelos. Neste sentido, esta seção tem relação direta com o que foi apresentado nos capítulos <a href="biquant.html#biquant">10</a> e <a href="biquantquali.html#biquantquali">11</a> e é interessante revê-los antes de continuar.</p>
 <p>Modelos lineares compõem os modelos estatísticos clássicos para descrevermos o comportamento de uma variável resposta <span class="math inline">\(Y\)</span> como função de uma ou mais variáveis preditoras <span class="math inline">\(X\)</span>´s quando esta relação é <strong>linear</strong>. O formato básico de um modelo linear é:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
-<p>em que <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> são os <strong>parâmetros do modelo</strong> e <span class="math inline">\(\epsilon\)</span> é denominado de <strong>resíduo</strong> do modelo. Nos modelo que veremos nesta seção, o resíduo tem distribuição normal com média <span class="math inline">\(0\)</span> e variância constante <span class="math inline">\(\sigma^2\)</span>, ou seja:</p>
+<p>em que <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> são os <strong>parâmetros do modelo</strong> e <span class="math inline">\(\epsilon\)</span> é denominado de <strong>resíduo</strong> do modelo. Nos modelos que veremos nesta seção, o resíduo tem distribuição normal com média <span class="math inline">\(0\)</span> e variância constante <span class="math inline">\(\sigma^2\)</span>, ou seja:</p>
 <p><span class="math display">\[\epsilon \sim \mathcal{N}(0, \sigma^2)\]</span></p>
 <p>A parte inicial do modelo (<span class="math inline">\(\beta_0 + \beta_1X\)</span>) forma a parte <strong>sistemática</strong> do modelo, enquanto <span class="math inline">\(\epsilon\)</span> descreve a parte estocástica.</p>
 <p>Quando existe mais de uma variável preditora, o modelo pode ser descrito como:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_pX_p + \epsilon\]</span></p>
 <p>em que temos portanto <span class="math inline">\(p\)</span> variáveis preditoras envolvidas.</p>
-<p><span class="math inline">\(Y\)</span> consiste de uma variável quantitativa, enquanto as variáveis <span class="math inline">\(X\)</span> em um modelo linear podem ser todas quantitativas, todas qualitativas ou conter uma combinação das duas formas. Nos capítulos que veremos a seguir, as análises são casos particulares de modelos lineares que variam em função do número de variáveis preditoras e da natureza destas variáveis (quantitativas ou qualitativas). Deste modo temos:</p>
+<p><span class="math inline">\(Y\)</span> consiste de uma variável contínua, enquanto as variáveis <span class="math inline">\(X\)</span> em um modelo linear podem ser todas quantitativas (contínuas ou discretas), todas qualitativas (categóricas ou ordinais) ou conter uma combinação destes tipos. Os modelos que veremos nos capítulos desta seção são casos particulares de modelos lineares que variam em função do número de variáveis preditoras envolvidas e da natureza destas variáveis (quantitativas ou qualitativas). Deste modo temos por exemplo:</p>
 <table>
 <thead>
 <tr class="header">
@@ -589,11 +600,11 @@ div.csl-indent {
 </table>
 <div id="simulando-um-modelo-linear-no-r" class="section level2" number="19.1">
 <h2><span class="header-section-number">19.1</span> Simulando um modelo linear no R</h2>
-<p>Vamos simular dois tipos de modelos lineares e avaliar como a regressão linear e modelos de ANOVA podem ser criados a partir da mesma ideia geral, isto é, combinando uma parcela sistemática com uma parcela estocástica e utilizando variáveis preditoras que podem ser quantitativas ou qualitativas.</p>
+<p>Vamos simular dois tipos de modelos lineares (o modelo de Regressão Linear e o modelo de Análise de Variância - ANOVA) utilizando uma notação comum. Nos capítulos seguintes cada um destes modelos será tratado de forma particular.</p>
 <div id="o-modelo-de-regressão" class="section level3" number="19.1.1">
 <h3><span class="header-section-number">19.1.1</span> O Modelo de Regressão</h3>
 <p>Envolve uma única variável preditora contínua e três parâmetros desconhecidos, <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> e <span class="math inline">\(\sigma^2\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-336-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-337-1.png" width="672" /></p>
 <p>Neste modelo, os pontos mostram o resultado do modelo estatístico e a linha descreve a parte sistemática. O parâmetro <span class="math inline">\(\beta_0\)</span> descreve a posição média em <span class="math inline">\(Y\)</span> para um valor de <span class="math inline">\(X = 0\)</span> e <span class="math inline">\(\beta_1\)</span> a taxa de incremento médio em <span class="math inline">\(Y\)</span> para a deferença de uma unidade em <span class="math inline">\(X\)</span>. O parâmetro <span class="math inline">\(\sigma\)</span> se refere ao desvio padrão do resíduo e define o grau de espalhamento dos pontos ao redor da reta média. Experimente diminuir e aumentar o valor de <span class="math inline">\(\sigma\)</span> e verifique o que ocorre com a dispersão dos pontos.</p>
 </div>
 <div id="modelo-de-anova" class="section level3" number="19.1.2">
@@ -607,7 +618,7 @@ div.csl-indent {
 <p><span class="math inline">\(\mu_C = \beta_0 + \beta_3 = 50 + 30\)</span>: média do tratamento <code>C</code></p>
 <p><span class="math inline">\(\mu_D = \beta_0 + \beta_4 = 50 + 15\)</span>: média do tratamento <code>D</code></p>
 <p>As notações <span class="math inline">\(\mu_{A \cdots D}\)</span> são respectivamente as médias populacionais dos tratamentos, conforme iremos definir no capítulo sobre Análise de Variância (ANOVA - capítulo <a href="anova.html#anova">20</a>). Deste modo, o gráfico de dispersão resultante deste modelo contém variáveis preditoras categóricas em que os pontos estão espalhados ao redor da media <span class="math inline">\(\mu\)</span> (em azul) do respectivo tratamento de acordo com a magnitude de <span class="math inline">\(\sigma\)</span> .</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-338-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-339-1.png" width="672" /></p>
 
 </div>
 </div>

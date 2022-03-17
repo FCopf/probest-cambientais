@@ -383,10 +383,21 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="20" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>20</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA</a>
+<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova-e-as-hipóteses-estatísticas"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA e as hipóteses estatísticas</a></li>
+<li class="chapter" data-level="20.2" data-path="anova.html"><a href="anova.html#partição-da-soma-dos-quadrados"><i class="fa fa-check"></i><b>20.2</b> Partição da soma dos quadrados</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>20.1.1</b> Quadrados médios</a></li>
+<li class="chapter" data-level="20.2.1" data-path="anova.html"><a href="anova.html#a-característica-aditiva-das-somas-dos-quadrados-1"><i class="fa fa-check"></i><b>20.2.1</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="20.2.2" data-path="anova.html"><a href="anova.html#medindo-a-associação-entre-y-e-x-1"><i class="fa fa-check"></i><b>20.2.2</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="20.3" data-path="anova.html"><a href="anova.html#quadrados-médios-e-graus-de-liberdade"><i class="fa fa-check"></i><b>20.3</b> Quadrados médios e graus de liberdade</a></li>
+<li class="chapter" data-level="20.4" data-path="anova.html"><a href="anova.html#estatística-f-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>20.4</b> Estatística <span class="math inline">\(F\)</span> e teste de hipóteses</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="anova.html"><a href="anova.html#nível-de-significância"><i class="fa fa-check"></i><b>20.4.1</b> Nível de significância</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="anova.html"><a href="anova.html#um-exemplo-de-anova"><i class="fa fa-check"></i><b>20.5</b> Um exemplo de ANOVA</a></li>
+<li class="chapter" data-level="20.6" data-path="anova.html"><a href="anova.html#testes-a-posteriori-de-comparação-de-médias"><i class="fa fa-check"></i><b>20.6</b> Testes a <em>posteriori</em> de comparação de médias</a></li>
+<li class="chapter" data-level="20.7" data-path="anova.html"><a href="anova.html#rodando-a-anova-no-r"><i class="fa fa-check"></i><b>20.7</b> Rodando a ANOVA no R</a></li>
+<li class="chapter" data-level="20.8" data-path="anova.html"><a href="anova.html#pressupostos-da-anova"><i class="fa fa-check"></i><b>20.8</b> Pressupostos da ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>21</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="22" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>22</b> Regressão linear e correlação</a>
@@ -407,7 +418,7 @@ div.csl-indent {
 <li class="chapter" data-level="22.3.1" data-path="regressao.html"><a href="regressao.html#teste-sobre-beta_1"><i class="fa fa-check"></i><b>22.3.1</b> Teste sobre <span class="math inline">\(\beta_1\)</span></a></li>
 <li class="chapter" data-level="22.3.2" data-path="regressao.html"><a href="regressao.html#análise-de-variância-da-regressão"><i class="fa fa-check"></i><b>22.3.2</b> Análise de variância da regressão</a></li>
 </ul></li>
-<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="22.5" data-path="regressao.html"><a href="regressao.html#intervalo-de-confiança-de-y"><i class="fa fa-check"></i><b>22.5</b> Intervalo de confiança de <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="22.6" data-path="regressao.html"><a href="regressao.html#pressupostos-da-regressão-linear-simples"><i class="fa fa-check"></i><b>22.6</b> Pressupostos da regressão linear simples</a>
 <ul>
@@ -535,39 +546,510 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="anova" class="section level1" number="20">
 <h1><span class="header-section-number">Capítulo 20</span> Análise de variância de um fator</h1>
-<p>A <em>Análise de Variância</em> (<strong>ANOVA</strong>) desenvolvida por <a href="https://en.wikipedia.org/wiki/Ronald_Fisher" target="_blank">R. A. Fisher</a> aplica-se à uma classe de desenho experimental em que a variável resposta <span class="math inline">\(Y\)</span> é <em>contínua</em> e a variável explanatória <span class="math inline">\(X\)</span> é <em>categórica</em> com <span class="math inline">\(2\)</span> ou mais níveis. A ANOVA permite testarmos a hipótese de que duas ou mais médias amostrais (<span class="math inline">\(\overline{Y}_i\)</span>) possam ter sido obtidas de uma mesma população estatística com média <span class="math inline">\(\mu\)</span>. Alternativamente, podemos concluir que as médias amostrais diferem umas das outras, de tal forma que devemos assumir que foram amostradas a partir de diferentes populações estatísticas, nas quais ao menos um <span class="math inline">\(\mu_i\)</span> seja diferente dos demais. Iremos denominar estas duas possibilidades de <strong>hipótese estatísticas</strong> a cerca da relação entre as médias populacionais.</p>
-<p>As hipóteses estatísticas na ANOVA são:</p>
-<p><span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3 =.... = \mu_m\)</span> (HIPÓTESE NULA)</p>
-<p><span class="math inline">\(H_a\)</span>: ao menos um <span class="math inline">\(\mu\)</span> é diferente (HIPÓTESE ALTERNATIVA)</p>
-<p>Assim, a hipótese nula (<span class="math inline">\(H_0\)</span>) define a ausência de diferenças enquanto a hipótese alternativa (<span class="math inline">\(H_a\)</span>) refere-se a qualquer possibilidade diferente de <span class="math inline">\(H_0\)</span>.</p>
-<p>Se temos exatamente dois níveis em <span class="math inline">\(X\)</span>, a comparação de médias pode ser feita por meio de um teste <span class="math inline">\(t\)</span>. A ANOVA deve ser utilizada quando temos <strong>mais</strong> de dois níveis em <span class="math inline">\(X\)</span>. Neste sentido, o teste <span class="math inline">\(t\)</span> é um caso particular, enquanto a ANOVA é um caso geral, que permite inferir sobre a origem de duas ou mais médias amostrais.</p>
-<div id="o-modelo-da-anova" class="section level2" number="20.1">
-<h2><span class="header-section-number">20.1</span> O modelo da ANOVA</h2>
-<p>O modelo de ANOVA pode ser descrito como:</p>
+<p>A <em>Análise de Variância</em> (<strong>ANOVA</strong>) desenvolvida por <a href="https://en.wikipedia.org/wiki/Ronald_Fisher" target="_blank">R. A. Fisher</a> aplica-se à uma classe de desenho experimental em que a variável resposta <span class="math inline">\(Y\)</span> é <em>contínua</em> e a variável explanatória <span class="math inline">\(X\)</span> é <em>categórica</em> com <span class="math inline">\(2\)</span> ou mais níveis. A ANOVA permite testarmos a hipótese de que duas ou mais médias amostrais (<span class="math inline">\(\overline{Y}_i\)</span>) possam ter sido obtidas de uma mesma população estatística com média <span class="math inline">\(\mu\)</span>. Alternativamente, podemos concluir que as médias amostrais diferem umas das outras, de tal forma que devemos assumir que foram amostradas a partir de <strong>diferentes populações estatísticas</strong>, nas quais ao menos um <span class="math inline">\(\mu_i\)</span> seja diferente dos demais. Iremos denominar estas duas possibilidades de <strong>hipótese estatísticas</strong> sobre a relação entre as médias populacionais.</p>
+<div id="o-modelo-da-anova-e-as-hipóteses-estatísticas" class="section level2" number="20.1">
+<h2><span class="header-section-number">20.1</span> O modelo da ANOVA e as hipóteses estatísticas</h2>
+<p>O modelo pode ser representado por:</p>
 <p><span class="math display">\[Y_{ij} = \mu + A_i + \epsilon_{ij}\]</span></p>
-<p>onde <span class="math inline">\(Y_{ij}\)</span> é a variável resposta associada à observação <span class="math inline">\(j\)</span> do tratamento <span class="math inline">\(i\)</span>, <span class="math inline">\(\mu\)</span> a média geral e <span class="math inline">\(A_i\)</span> o efeito do tratamento <span class="math inline">\(i\)</span>. <span class="math inline">\(\epsilon_{ij}\)</span> é denominado de <strong>resíduo</strong> (ou <em>erro</em>) associado a cada observação que, assim como na regressão, assumimos que <span class="math inline">\(\epsilon\)</span> tem distribuição normal com média zero e variância constante, <span class="math inline">\(\epsilon \sim \mathcal{N}(0, \sigma^2)\)</span>.</p>
-<p><strong>PAREI</strong></p>
-<p><a href="https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia">https://sites.google.com/site/ecolsampling/modelos-lineares/analise-de-variancia</a></p>
-<p>A figura abaixo exemplifica o tipo de experimento que pode ser analisado por meio de uma ANOVA. Vemos n = 30 observações independentes de um experimento, distribuídas em a = 4 tratamentos. A ANOVA nos permite testar se as médias amostrais de cada tratamento são provenientes de uma mesma população estatística com média μ (H0) ou se ao menos uma delas provém de uma população com um μ diferente (Ha).</p>
-<p>A ANOVA faz a <strong>partição da soma dos quadrados totais</strong> para quantificar o percentual da variação associado a um determinado tratamento ou aos resíduos como veremos a seguir. As médias são resultantes de observações independentes denominadas de <strong>réplicas</strong> associadas a cada um dos tratamentos de um experimento.</p>
-<div id="quadrados-médios" class="section level3" number="20.1.1">
-<h3><span class="header-section-number">20.1.1</span> Quadrados médios</h3>
-<p>Para que os somatórios dos quadrados expressem uma medida de variação é necessário corrigir para o tamanhos amostrais apropriados. Fazemos isto obtendo os <strong>Quadrados médios</strong>. Estas quantias são dadas por:</p>
+<p>onde <span class="math inline">\(Y_{ij}\)</span> é a variável resposta associada à observação <span class="math inline">\(i\)</span> do tratamento <span class="math inline">\(j\)</span>, <span class="math inline">\(\mu\)</span> representa a média geral e <span class="math inline">\(A_i\)</span> o efeito do tratamento <span class="math inline">\(i\)</span>. O termo <span class="math inline">\(\epsilon_{ij}\)</span> é denominado de <strong>resíduo</strong> (ou <em>erro</em>) associado a cada observação, que assumimos ter distribuição normal com média zero e variância constante.</p>
+<p><span class="math inline">\(\epsilon \sim \mathcal{N}(0, \sigma^2)\)</span></p>
+<hr />
+<p>As hipóteses estatísticas no modelo de ANOVA são:</p>
+<p><span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3 =.... = \mu_k\)</span> (HIPÓTESE NULA)</p>
+<p><span class="math inline">\(H_a\)</span>: ao menos um par de médias é diferente (HIPÓTESE ALTERNATIVA)</p>
+<hr />
+<p>A hipótese nula (<span class="math inline">\(H_0\)</span>) define a ausência de diferenças entre as médias populacionais enquanto a hipótese alternativa (<span class="math inline">\(H_a\)</span>) refere-se a qualquer possibilidade diferente de <span class="math inline">\(H_0\)</span>. Se temos exatamente dois níveis em <span class="math inline">\(X\)</span>, a comparação de médias pode ser feita por meio de um teste <span class="math inline">\(t\)</span>. A ANOVA deve ser utilizada quando temos <strong>mais</strong> de dois níveis em <span class="math inline">\(X\)</span>. Neste sentido, o teste <span class="math inline">\(t\)</span> é um caso particular da ANOVA.</p>
+</div>
+<div id="partição-da-soma-dos-quadrados" class="section level2" number="20.2">
+<h2><span class="header-section-number">20.2</span> Partição da soma dos quadrados</h2>
+<p>A ANOVA consiste basicamente da <strong>partição da soma dos quadrados</strong> (Capítulo <a href="biquantquali.html#biquantquali">11</a>) seguida da construção de um teste estatístico apropriado (o teste <span class="math inline">\(F\)</span>) para verificar as plasibilidade de <span class="math inline">\(H_0\)</span>. Apresentaremos aqui um exemplo simples descrito na figura e na tabela abaixo para descrever o ajuste da ANOVA.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-343-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Para deixarmos claro as notações que iremos adotar adiante neste capítulo vamos definir que:</p>
+<ul>
+<li>Temos <span class="math inline">\(k = 3\)</span> grupos (<code>A</code>, <code>B</code> ou <code>C</code>) e para cada grupo <span class="math inline">\(n = 5\)</span> observações. Denotamos por <span class="math inline">\(n_{ij}\)</span> o número de observações dentro de cada grupo, em que <span class="math inline">\(i\)</span> é a <em>i-ésima</em> observação (<span class="math inline">\(i = 1\)</span> a <span class="math inline">\(5\)</span>) do <em>j-ésimo</em> grupo (<span class="math inline">\(j = 1\)</span> a <span class="math inline">\(3\)</span> - grupos <code>A</code> ao <code>C</code>). Neste exemplo, o número de observações em cada grupo é o mesmo (<span class="math inline">\(n_1 = n_2 = n_3 = n\)</span>), de modo que o total de observações é dado por:</li>
+</ul>
+<p><span class="math inline">\(N = k \times n = n_1 + n_2 + n_3 = 15\)</span></p>
+<ul>
+<li><p>A média de cada grupo será denotada por <span class="math inline">\(\overline{Y}_j\)</span>, que neste exemplo são: <span class="math inline">\(\overline{Y}_1 = 20.64\)</span> (grupo <code>A</code>), <span class="math inline">\(\overline{Y}_2 = 28.68\)</span> (grupo <code>B</code>) e <span class="math inline">\(\overline{Y}_3 = 12.18\)</span> (grupo <code>C</code>). Estas médias <strong>estimam</strong> as quantias <span class="math inline">\(\mu_1\)</span>, <span class="math inline">\(\mu_2\)</span> e <span class="math inline">\(\mu_3\)</span> sobre as quais versam as hipóteses do modelo.</p></li>
+<li><p>Vamos denotar por <span class="math inline">\(\overline{\overline{Y}}\)</span> a <strong>Grande Média</strong>, isto é, a média geral de todas as observações independente do grupo de origem e que é utilizada para <strong>estimar</strong> <span class="math inline">\(\mu\)</span>.</p></li>
+</ul>
+<p><span class="math display">\[\overline{\overline{Y}} = \sum_{j = 1}^{k}\sum_{i = 1}^{n}\frac{Y_{ij}}{N} = \frac{\overline{Y_1} + \overline{Y_2} + \overline{Y_3}}{3} = 20.5\]</span></p>
+<p>Podemos agora observar estes elementos no gráfico de dispersão.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-344-1.png" width="672" /></p>
+<p>Para ajustar o modelo de ANOVA a estes dados precisamos calcular <span class="math inline">\(3\)</span> quantias: i - a <strong>Soma dos Quadrados Totais</strong> (<span class="math inline">\(SQ_{Total}\)</span>), ii - a <strong>Soma dos Quadrados dos Tratamentos</strong> <span class="math inline">\(SQ_{Trat}\)</span> e iii - a <strong>Soma dos Quadrados dos Resíduos</strong> <span class="math inline">\(SQ_{Res}\)</span>.</p>
+<ol style="list-style-type: lower-roman">
+<li><strong>Soma dos Quadrados Totais</strong> <span class="math inline">\(SQ_{Total}\)</span>: mede as diferenças entre <span class="math inline">\(Y_{ij}\)</span> e <span class="math inline">\(\overline{\overline{Y}}\)</span>. Temos nesta expressão o somatório dos desvios ao quadrado de todas as observações com relação à grande média <strong>independente</strong> do grupo de origem de cada observação.</li>
+</ol>
+<p><span class="math display">\[SQ_{Total} = \sum_{j = 1}^{k}\sum_{i = 1}^{n}(Y_{ij} - \overline{\overline{Y}})^2\]</span></p>
+<ol start="2" style="list-style-type: lower-roman">
+<li><strong>Soma dos Quadrados dos Tratamentos</strong> <span class="math inline">\(SQ_{Trat}\)</span>: mede as diferenças entre as <strong>médias dos tratamentos</strong> <span class="math inline">\(\overline{Y}_j\)</span> e <span class="math inline">\(\overline{\overline{Y}}\)</span>, sendo portanto os desvios ao quadrado da média de cada tratamento subtraída da grande média. <span class="math inline">\(SQ_{Trat}\)</span> também é chamada de soma dos quadrados <strong>entre grupos</strong> ou <strong>entre tratamentos</strong></li>
+</ol>
+<p><span class="math display">\[SQ_{Trat} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(\overline{Y}_{j} - \overline{\overline{Y}})^2 = \sum_{j = 1}^{k}n_{j}(\overline{Y}_{j} - \overline{\overline{Y}})^2\]</span></p>
+<ol start="3" style="list-style-type: lower-roman">
+<li><strong>Soma dos Quadrados dos Resíduos</strong> <span class="math inline">\(SQ_{Res}\)</span>: mede as diferenças entre cada observação <span class="math inline">\(Y_{ij}\)</span> e a média de seu próprio grupo <span class="math inline">\(\overline{Y}_{j}\)</span>. <span class="math inline">\(SQ_{Res}\)</span> também é chamada de soma dos quadrados <strong>dentro dos grupos</strong> ou <strong>dentro dos tratamentos</strong></li>
+</ol>
+<p><span class="math display">\[SQ_{Res} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(Y_{ij} - \overline{Y}_{j})^2\]</span></p>
+<div id="a-característica-aditiva-das-somas-dos-quadrados-1" class="section level3" number="20.2.1">
+<h3><span class="header-section-number">20.2.1</span> A característica aditiva das somas dos quadrados</h3>
+<p>A partição da soma dos quadrados consiste em decompor a <strong>variação total</strong> do experimento em uma parcela atribuída à variação <strong>entre tratamentos</strong> e outra parcela da variação <strong>dentro dos tratamentos</strong>. Isto é possível pois as somas dos quadrados definidas acima podem ser expressas de forma aditiva como:</p>
+<hr />
+<p><span class="math display">\[SQ_{Total} = SQ_{Trat} + SQ_{Res}\]</span></p>
+<hr />
+<blockquote>
+<p>Deste modo, é possível demostrar que:</p>
+<p><span class="math inline">\(\sum_{j = 1}^{k}\sum_{i = 1}^{n}(Y_{ij} - \overline{\overline{Y}})^2 = \sum_{j = 1}^{k}n_{j}(Y_{j} - \overline{\overline{Y}})^2 + \sum_{j = 1}^{k}\sum_{i = 1}^{n}(Y_{ij} - \overline{Y}_{j})^2\)</span></p>
+</blockquote>
+</div>
+<div id="medindo-a-associação-entre-y-e-x-1" class="section level3" number="20.2.2">
+<h3><span class="header-section-number">20.2.2</span> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></h3>
+<p>A característica aditiva das somas dos quadrados pode ser utilizada para mensurar o grau de dependência de <span class="math inline">\(Y_{ij}\)</span> com respeito aos diferentes tratamentos. Compare as duas figuras abaixo:</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-346-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>A soma dos quadrados dentro dos grupos é a mesma nas duas figuras (<span class="math inline">\(SQ_{Res} = 362.6\)</span>). No entanto, na figura da esquerda, em que as médias dos tratamentos são similares (e consequentemente próximas à grande média), a soma dos quadrados entre os tratamentos é muito menor (<span class="math inline">\(SQ_{Trat}^{esquerda} = 15.8\)</span>) que na figura da direita, em que as médias dos tratamentos estão distantes entre si (<span class="math inline">\(SQ_{Trat}^{direita} = 680.8\)</span>). É desta forma que a partição das somas dos quadrados nos permite diferenciar situações em que: i - a média dos grupos <strong>depende</strong> dos níveis do tratamento (figura da direita); de situações em que ii - a média <strong>não depende</strong> dos níveis do tratamento (figura da esquerda).</p>
+</div>
+</div>
+<div id="quadrados-médios-e-graus-de-liberdade" class="section level2" number="20.3">
+<h2><span class="header-section-number">20.3</span> Quadrados médios e graus de liberdade</h2>
+<p>Para que os somatórios dos quadrados expressem uma medida de variação é necessário corriglos em função dos <strong>graus de liberdade (<span class="math inline">\(gl\)</span>)</strong>, obtendo assim <strong>Quadrados médios</strong> dados abaixo:</p>
 <ol style="list-style-type: decimal">
 <li>Quadrado médio total (<span class="math inline">\(QM_{Total}\)</span>)</li>
 </ol>
-<p><span class="math display">\[QM_{Total} = \frac{SQ_{Total}}{N -1}\]</span></p>
+<p><span class="math display">\[QM_{Total} = \frac{SQ_{Total}}{gl_{Total}}\]</span></p>
+<p>em que <span class="math inline">\(gl_{Total} = N - 1\)</span></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Quadrado médio entre tratamentos (<span class="math inline">\(QM_{Trat}\)</span>)</li>
 </ol>
-<p><span class="math display">\[QM_{Total} = \frac{SQ_{Trat}}{k - 1}\]</span></p>
+<p><span class="math display">\[QM_{Trat} = \frac{SQ_{Trat}}{gl_{Trat}}\]</span></p>
+<p>em que <span class="math inline">\(gl_{Trat} = k - 1\)</span></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Quadrado médio dentro dos tratamentos (<span class="math inline">\(QM_{Res}\)</span>)</li>
 </ol>
-<p><span class="math display">\[QM_{Total} = \frac{SQ_{Res}}{N-k}\]</span></p>
-<p>Os quadrados médios que são estimativas das variâncias total (<span class="math inline">\(QM_{Total}\)</span>), da variância <strong>entre tratamentos</strong> (<span class="math inline">\(QM_{Trat}\)</span>) e da variâncias <strong>dentro dos tratamentos</strong> (<span class="math inline">\(QM_{Res}\)</span>). Compare a expressão do <span class="math inline">\(QM_{Total}\)</span> com a fórmula da variância amostral (<span class="math inline">\(s^2\)</span>) descrita no capítulo <a href="variacao.html#variacao">6</a> e verá que excetuando mudanças de notação, as expressões são essencialmente as mesmas.</p>
-
+<p><span class="math display">\[QM_{Res} = \frac{SQ_{Res}}{gl_{Res}}\]</span></p>
+<p>em que <span class="math inline">\(gl_{Res} = N-k\)</span></p>
+<p>Assim como a soma dos quadrados, os graus de liberdade também têm característica aditiva.</p>
+<p><span class="math display">\[gl_{Total} = gl_{Trat} + gl_{Res} = (k - 1) + (N - K) = N - 1\]</span></p>
+<p>Os quadrados médios que são estimativas de variâncias. Compare por exemplo a expressão do <span class="math inline">\(QM_{Total}\)</span> com a fórmula da variância amostral (<span class="math inline">\(s^2\)</span>) (Capítulo <a href="variacao.html#variacao">6</a>) e verá que excetuando mudanças de notação, as expressões são essencialmente as mesmas.</p>
 </div>
+<div id="estatística-f-e-teste-de-hipóteses" class="section level2" number="20.4">
+<h2><span class="header-section-number">20.4</span> Estatística <span class="math inline">\(F\)</span> e teste de hipóteses</h2>
+<p>Uma vez que os quadrados médios são estimativas de variância, uma estatística de teste apropriada é:</p>
+<p><span class="math display">\[F_{calculado} = \frac{QM_{Trat}}{QM_{Res}}\]</span></p>
+<p>A estatística <span class="math inline">\(F\)</span> (ou razão-<span class="math inline">\(F\)</span>) está associada à <strong>distribuição de probabilidades <span class="math inline">\(F\)</span></strong> e nos permite comparar a variância associada ao tratamento com a variância associada aos resíduos. Em mãos do valor de <span class="math inline">\(F_{calculado}\)</span>, o teste de hipóteses é possível após a definição do <strong>nível de significância</strong> <span class="math inline">\(\alpha\)</span>.</p>
+<div id="nível-de-significância" class="section level3" number="20.4.1">
+<h3><span class="header-section-number">20.4.1</span> Nível de significância</h3>
+<p>Assim como discutimos nos testes <span class="math inline">\(Z\)</span> e <span class="math inline">\(t\)</span>, o valor de <span class="math inline">\(\alpha\)</span> estabelece um limite de aceitação para <span class="math inline">\(H_0\)</span>, isto é, um limite a partir do qual a estatística do teste se torna <strong>tão extrema</strong> que nos leva a assumir que <span class="math inline">\(H_0\)</span> é improvável, devendo portanto ser rejeitada em favor de <span class="math inline">\(H_a\)</span>. Este passo é possível pois o valor de <span class="math inline">\(F_{calculado}\)</span> pode ser associado à distribuição <span class="math inline">\(F\)</span> de probabilidades, o que nos permite calcular a probabilidade:</p>
+<p><span class="math display">\[P(F_{calculado}) \le \alpha\]</span></p>
+<p>Para facilitar a notação denominaremos <span class="math inline">\(P(F_{calculado})\)</span> simplesmente de <strong>valor de <span class="math inline">\(p\)</span></strong> expresso em vermelho na figura abaixo:</p>
+<blockquote>
+<p>Se <span class="math inline">\(p &gt; \alpha\)</span> –&gt; <strong>ACEITAMOS <span class="math inline">\(H_0\)</span></strong></p>
+</blockquote>
+<blockquote>
+<p>Se <span class="math inline">\(p \le \alpha\)</span> –&gt; <strong>REJEITAMOS <span class="math inline">\(H_0\)</span></strong> (e assumimos <span class="math inline">\(H_a\)</span> como verdadeira)</p>
+</blockquote>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-347-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Tradicionalmente utiliza-se <span class="math inline">\(\alpha = 0.05\)</span>. Neste caso, <span class="math inline">\(H_0\)</span> seria rejeitada somente de <span class="math inline">\(p \le 0.05\)</span>. Algumas área da medicina por eoutro lado, são tradicionais por utilizar valores de <span class="math inline">\(\alpha = 0.01\)</span>, o que torna o experimento menos sujeito ao <strong>erro do tipo I</strong> (Capítulo <a href="th.html#th">17</a>). Portanto, outros valores de <span class="math inline">\(\alpha\)</span> diferentes de <span class="math inline">\(0.05\)</span> podem ser escolhidos. O fundamental é que esta decisão, isto é, sobre o nível de significância <span class="math inline">\(\alpha\)</span> a ser adotado, seja feita <strong>previamente</strong> à obtenção dos dados.</p>
+</div>
+</div>
+<div id="um-exemplo-de-anova" class="section level2" number="20.5">
+<h2><span class="header-section-number">20.5</span> Um exemplo de ANOVA</h2>
+<p>Vamos exemplificar o passo-a-passo de uma ANOVA utilizandocom nosso exemplo fictício. /o primeiro passo é definir as hipóteses estatpisticas e o nível de significância:</p>
+<hr />
+<p><span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: ao menos um <span class="math inline">\(\mu\)</span> é diferente</p>
+<p><span class="math inline">\(\alpha = 0.05\)</span></p>
+<hr />
+<p>Utilizando os tados da tabela abaixo podemos obetr todas as quantias necessárias para o cálculo da ANOVA, isto é, os somatórios dos quadrados, os graus de liberdade,os quadraos médios e finalmente o valor de <span class="math inline">\(F_{calculado}\)</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+X
+</th>
+<th style="text-align:right;">
+Y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+16.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+20.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+15.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+28.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+21.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+23.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+30.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+31.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+30.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+26.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:right;">
+19.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:right;">
+13.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:right;">
+8.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:right;">
+0.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:right;">
+17.6
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>1. Somatórios dos quadrados</strong></p>
+<p><span class="math inline">\(SQ_{Trat} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(\overline{Y}_{j} - \overline{\overline{Y}})^2 = 680.772\)</span></p>
+<p><span class="math inline">\(SQ_{Res} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(Y_{ij} - \overline{Y}_{j})^2 = 362.568\)</span></p>
+<hr />
+<p><strong>2. Graus de liberdade</strong></p>
+<p><span class="math inline">\(gl_{Trat} = k - 1 = 2\)</span></p>
+<p><span class="math inline">\(gl_{Res} = N-k = 12\)</span></p>
+<hr />
+<p><strong>3. Quadrados médios</strong></p>
+<p><span class="math inline">\(QM_{Trat} = \frac{SQ_{Trat}}{gl_{Trat}} = 340.386\)</span></p>
+<p><span class="math inline">\(QM_{Res} = \frac{SQ_{Res}}{gl_{Res}} = 30.214\)</span></p>
+<hr />
+<p><strong>4. Estatística <span class="math inline">\(F\)</span></strong></p>
+<p><span class="math inline">\(F_{calculado} = \frac{QM_{Trat}}{QM_{Res}} = 11.265837\)</span></p>
+<hr />
+<p><strong>5. Tabela da ANOVA</strong></p>
+<p>Estas quantias são tradicionalmente expressas em uma <strong>Tabela de ANOVA</strong> conforme abaixo:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Df
+</th>
+<th style="text-align:right;">
+Sum Sq
+</th>
+<th style="text-align:right;">
+Mean Sq
+</th>
+<th style="text-align:right;">
+F value
+</th>
+<th style="text-align:right;">
+Pr(&gt;F)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+X
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+680.772
+</td>
+<td style="text-align:right;">
+340.386
+</td>
+<td style="text-align:right;">
+11.26584
+</td>
+<td style="text-align:right;">
+0.0017611
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Residuals
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+362.568
+</td>
+<td style="text-align:right;">
+30.214
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<p>em que:</p>
+<p><code>Df</code>: graus de liberdade</p>
+<p><code>Sum Sq</code>: soma dos quadrados</p>
+<p><code>Mean Sq</code>: quadrados médios</p>
+<p><code>F value</code>: valor de <span class="math inline">\(F_{calculado}\)</span></p>
+<p><code>Pr(&gt;F)</code>: valor de p</p>
+<p>A primeira linha refere-se aos valores associados aos tratamentos e a segunda linha aos resíduos. Note que o cômputo de <span class="math inline">\(SQ_{Total}\)</span>, <span class="math inline">\(gl_{Total}\)</span> e <span class="math inline">\(QM_{Total}\)</span> não é realmente necessário.</p>
+<hr />
+<p>O valor de <span class="math inline">\(p = 11.265837\)</span> mostrado na tabela acima é aquele referência à área na distribuição <span class="math inline">\(F\)</span> que fica acima de <span class="math inline">\(F_{calculado}\)</span>. Poderíamos tentar observar representar este valor visualmente na distribuição <span class="math inline">\(F\)</span>, mas ele é tão pequeno, que a área em vermelho sequer aparece na figura.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-351-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Como conclusão temos que <span class="math inline">\(p \le \alpha\)</span> nos leva a <strong>REJEITAR <span class="math inline">\(H_0\)</span></strong>, pois <span class="math inline">\(F_{calculado}\)</span> é muito extremo para ser resultante da hipótese nula. Neste caso, assumimos que a <span class="math inline">\(H_a\)</span> é mais condizente com a estrutura dos dados, de modo que os tratamentos devem ser provenientes de populações estatísticas com diferentes médias <span class="math inline">\(\mu\)</span>.</p>
+</div>
+<div id="testes-a-posteriori-de-comparação-de-médias" class="section level2" number="20.6">
+<h2><span class="header-section-number">20.6</span> Testes a <em>posteriori</em> de comparação de médias</h2>
+<p>Tendo rejeitado <span class="math inline">\(H_0\)</span> concluímos que ao menos 1 par médias é diferente entre si, saber qual(is). Isto nos leva a buscar por um teste que permita fazer comparações <strong>par-a-par</strong>. Os testes a <em>posteriori</em> são uma alternativa.</p>
+<p>Entre os diferentes testes a <em>posteriori</em> na literatura discutiremos o <a href="https://en.wikipedia.org/wiki/Tukey%27s_range_test" target="_blank">teste de Tukey</a>, em que o objetivo é estabelecer uma <em>Diferença Honesta Significativa</em> (<em>DHS</em>) entre um dado par de médias. Esta diferença pode ser calculada por:</p>
+<p><span class="math display">\[DHS_{12} = q\sqrt{\left(\frac{1}{n_1} + \frac{1}{n_2}\right)QM_{Res}}\]</span></p>
+<p>onde:</p>
+<p><span class="math inline">\(q\)</span>: é um valor retirado de uma <strong>tabela estatística da distribuição de amplitude normalizada</strong> (<em>studentized range q table</em>). Para um dado <span class="math inline">\(\alpha\)</span>, o valor desejado de <span class="math inline">\(q\)</span> é encontrado cruzando a linha contento o número de grupos <span class="math inline">\(k\)</span> tratamentos do experimento com a linha contendo os graus de liberdade do resíduo (<span class="math inline">\(gl_{Res}\)</span>). Veja um exemplo desta tabela no link: <a href="https://www.real-statistics.com/statistics-tables/studentized-range-q-table/" target="_blank">Studentized Range q Table</a>;</p>
+<p><span class="math inline">\(QM_{Res}\)</span>: é quadrado médio do resíduo obtido na ANOVA, e;</p>
+<p><span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span>: os tamanhos amostrais de cada grupo envolvido na comparação.</p>
+<p>Para um dado nível de significância <span class="math inline">\(\alpha\)</span>, a <span class="math inline">\(DHS\)</span> irá depender basicamente da variação residual do modelo de ANOVA e dos tamanhos amostrais de cada grupo. Em um experimento <strong>balanceado</strong>, isto é, onde <span class="math inline">\(n_1 = n_2 = \cdots = n_k = n\)</span>, a diferença mínima para que um par de médias seja cosiderado diferente é sempre a mesma.</p>
+<p>Em nosso exemplo, a <span class="math inline">\(DHS\)</span> com <span class="math inline">\(\alpha = 0.05\)</span> será:</p>
+<p><span class="math inline">\(DHS = 3.773\sqrt{\left(\frac{1}{5} + \frac{1}{5}\right)30.214} = 13.116\)</span></p>
+<p>Assim, qualquer diferença entre pares de médias maior ou igual a <span class="math inline">\(13.116\)</span> será considerada <strong>estatisticamente significativa</strong>, nos levando a concluir que aqueles grupos têm médias populacionais distintas.</p>
+<p>Em nosso exemplo, as médias dos grupos foram:</p>
+<ul>
+<li><p>Grupo <code>A</code>: <span class="math inline">\(\overline{Y}_A = 20.64\)</span></p></li>
+<li><p>Grupo <code>B</code>: <span class="math inline">\(\overline{Y}_B = 28.68\)</span></p></li>
+<li><p>Grupo <code>C</code>: <span class="math inline">\(\overline{Y}_C = 12.18\)</span></p></li>
+</ul>
+<p>E as diferenças (<span class="math inline">\(\overline{Y}_{maior} - \overline{Y}_{menor}\)</span>) entre elas:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+A
+</th>
+<th style="text-align:right;">
+B
+</th>
+<th style="text-align:right;">
+C
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:right;">
+8.04
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:right;">
+8.46
+</td>
+<td style="text-align:right;">
+16.5
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p>Das três comparações possíveis, somente a comparação entre os grupos <code>B</code> e <code>C</code> (<span class="math inline">\(\overline{Y}_B - \overline{Y}_C = 16.5\)</span>) foi maior que o limite estabelecido pelo teste de Tukey. Desta forma, concluímos que a ANOVA foi significativa e que somente os grupos <code>B</code> e <code>C</code> diferem entre si.</p>
+</div>
+<div id="rodando-a-anova-no-r" class="section level2" number="20.7">
+<h2><span class="header-section-number">20.7</span> Rodando a ANOVA no R</h2>
+<p>Considere que a tabela em nosso exemplo está no objeto <code>Tab</code>. A ANOVA no R é feita com o comando <code>aov</code>.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="anova.html#cb189-1" aria-hidden="true" tabindex="-1"></a>ajuste <span class="ot">=</span> <span class="fu">aov</span>(Y <span class="sc">~</span> X, <span class="at">data  =</span> Tab)</span>
+<span id="cb189-2"><a href="anova.html#cb189-2" aria-hidden="true" tabindex="-1"></a>ajuste</span></code></pre></div>
+<pre><code>## Call:
+##    aov(formula = Y ~ X, data = Tab)
+## 
+## Terms:
+##                       X Residuals
+## Sum of Squares  680.772   362.568
+## Deg. of Freedom       2        12
+## 
+## Residual standard error: 5.496726
+## Estimated effects may be unbalanced</code></pre>
+<blockquote>
+<p>A notação <code>Y ~ X</code> será muito utilizada nesta seção sobre modelos lineares e lê-se como <strong><span class="math inline">\(Y\)</span> é função de <span class="math inline">\(X\)</span></strong>.</p>
+</blockquote>
+<p>O comando acima fez os cálculos da ANOVA, isto é, computou as somas dos quadrados, os graus de liberdade, os quadrados médios, o <span class="math inline">\(F_{calculado}\)</span> e o valor de <span class="math inline">\(p\)</span>. Para visualizarmos a tabela da ANOVA fazemos:</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="anova.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(ajuste)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: Y
+##           Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+## X          2 680.77  340.39  11.266 0.001761 **
+## Residuals 12 362.57   30.21                    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Note que os resultados coincidem com o que apresentamos anteriormente. Como o valor de <span class="math inline">\(p\)</span> foi menor que <span class="math inline">\(\alpha = 0.05\)</span>, concluimos que a ANOVA foi significativa, isto é, indicou que ao menos um par de médias difere ente si. Podemos fazer o teste a <em>posteriori</em> de Tukey com o comando:</p>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = Y ~ X, data = Tab)
+## 
+## $X
+##       diff        lwr        upr     p adj
+## B-A   8.04  -1.234654 17.3146545 0.0923564
+## C-A  -8.46 -17.734654  0.8146545 0.0751622
+## C-B -16.50 -25.774654 -7.2253455 0.0012751</code></pre>
+<p>O resultado apresenta todas as comparações possíveis entre os grupos, mostrando as diferenças de médias, seus intervalos de confiança a <span class="math inline">\(95\%\)</span> e os valores de <span class="math inline">\(p\)</span>, indicando quais destas diferenças são significativas, isto é, <span class="math inline">\(p \le \alpha\)</span>. Estes resultados nos permitem concluir novamente que somente o par <code>C-B</code> difere entre si, pois <code>p adj &lt; 0.05</code>.</p>
+<p>Um gráfico facilita a visualização das comparações, sobretudo em situações com muitos pares de médias envolvidos:</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-357-1.png" width="672" /></p>
+<p>Neste gráfico, as comparações em que o intervalo de confiança <strong>não inclui o zero</strong>, são consideradas significativas. Novamente, vemos que somente o grupo <code>C-B</code> tem médias estatisticamente diferentes.</p>
+</div>
+<div id="pressupostos-da-anova" class="section level2" number="20.8">
+<h2><span class="header-section-number">20.8</span> Pressupostos da ANOVA</h2>
+<p>Os pressupostos da ANOVA são:</p>
+<ol style="list-style-type: decimal">
+<li><p>Os observação são independentes e;</p></li>
+<li><p>A variância dos resíduos é homogênea e;</p></li>
+<li><p>Os resíduos têm distribuição normal com média <span class="math inline">\(0\)</span> e variância <span class="math inline">\(\sigma^2\)</span>.</p></li>
+</ol>
+<p>Vamos inicialmente testar o pressuposto de homogeneidade de variâncias com um teste <span class="math inline">\(F\)</span>.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="anova.html#cb194-1" aria-hidden="true" tabindex="-1"></a>Tab <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(X) <span class="sc">%&gt;%</span> </span>
+<span id="cb194-2"><a href="anova.html#cb194-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Var =</span> <span class="fu">var</span>(Y))</span></code></pre></div>
+<p>Note que a maior variância é <span class="math inline">\(56.347\)</span> e a menor <span class="math inline">\(11.152\)</span>.</p>
+<p>O teste <span class="math inline">\(F\)</span> consiste em dividir a maior variância pela menor:</p>
+<pre><code>## 
+##  F test to compare two variances
+## 
+## data:  Tab$Y[Tab$X == &quot;C&quot;] and Tab$Y[Tab$X == &quot;B&quot;]
+## F = 5.0526, num df = 4, denom df = 4, p-value = 0.1457
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##   0.526068 48.528196
+## sample estimates:
+## ratio of variances 
+##           5.052636</code></pre>
+<p>A maior variância foi 5.05 vezes maior que a menor variância e o test F sugere que esta diferença é <strong>não-significativa</strong> a <span class="math inline">\(5\%\)</span> (<span class="math inline">\(p &lt; 0.05\)</span>). Isto indica que as variâncias são homogêneas.</p>
+<p>A verificação visual de que as variâncias são homogêneas pode também ser inspecionada pelo <strong>gráfico de resíduos</strong>:</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-361-1.png" width="672" /></p>
+<p>Em seguida avaliamos o histograma dos resíduos e aplicamos um teste de normalidade (ex. teste de Shapiro-Wilk) para verificar se o pressuposto de normalidade pode ser aceito.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-362-1.png" width="672" /></p>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  rstudent(ajuste)
+## W = 0.93171, p-value = 0.2894</code></pre>
+<p>Neste caso, o valor de <span class="math inline">\(p &gt; 0.05\)</span> indica não haver desvio da normalidade.</p>
+
 </div>
 </div>
             </section>

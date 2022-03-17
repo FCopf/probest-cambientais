@@ -1,12 +1,12 @@
 # Modelos lineares {#modlinear}
 
-Até agora estávamos nos referindo à nossa variável de interesse principal como variável $X$. Nesta seção entretanto (Capítulos \@ref(modlinear) a \@ref(repanova)) iremos nos referir a uma variável resposta (ou variável dependente, $Y$), que será nossa variável de interesse principal e que será descrita como função de uma ou mais variáveis preditoras (ou variáveis independentes, $X$). Abordaremos novamente os conceitos de **partição da soma dos quadrados**, **covariância** e **coeficiente de determinação** agora no contexto do teste de hipóteses e ajuste de modelos. Neste sentido, esta seção tem relação direta com o que foi apresentado nos capítulos \@ref(biquant) e \@ref(biquantquali) e é interessante rever estes capítulos antes de continuar.
+Até agora estávamos nos referindo à nossa variável de interesse principal como variável $X$. Nesta seção (Capítulos \@ref(modlinear) a \@ref(repanova)) iremos nos referir a uma variável resposta (ou variável dependente, $Y$), que será nossa variável de interesse principal e que será descrita como função de uma ou mais variáveis preditoras (ou variáveis independentes, $X$). Abordaremos novamente os conceitos de **partição da soma dos quadrados**, **covariância** e **coeficiente de determinação** no contexto do teste de hipóteses e ajuste de modelos. Neste sentido, esta seção tem relação direta com o que foi apresentado nos capítulos \@ref(biquant) e \@ref(biquantquali) e é interessante revê-los antes de continuar.
 
 Modelos lineares compõem os modelos estatísticos clássicos para descrevermos o comportamento de uma variável resposta $Y$ como função de uma ou mais variáveis preditoras $X$´s quando esta relação é **linear**. O formato básico de um modelo linear é:
 
 $$Y = \beta_0 + \beta_1X + \epsilon$$
 
-em que $\beta_0$ e $\beta_1$ são os **parâmetros do modelo** e $\epsilon$ é denominado de **resíduo** do modelo. Nos modelo que veremos nesta seção, o resíduo tem distribuição normal com média $0$ e variância constante $\sigma^2$, ou seja:
+em que $\beta_0$ e $\beta_1$ são os **parâmetros do modelo** e $\epsilon$ é denominado de **resíduo** do modelo. Nos modelos que veremos nesta seção, o resíduo tem distribuição normal com média $0$ e variância constante $\sigma^2$, ou seja:
 
 $$\epsilon \sim \mathcal{N}(0, \sigma^2)$$
 
@@ -18,7 +18,7 @@ $$Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_pX_p + \epsilon$$
 
 em que temos portanto $p$ variáveis preditoras envolvidas.
 
-$Y$ consiste de uma variável quantitativa, enquanto as variáveis $X$ em um modelo linear podem ser todas quantitativas, todas qualitativas ou conter uma combinação das duas formas. Nos capítulos que veremos a seguir, as análises são casos particulares de modelos lineares que variam em função do número de variáveis preditoras e da natureza destas variáveis (quantitativas ou qualitativas). Deste modo temos:
+$Y$ consiste de uma variável contínua, enquanto as variáveis $X$ em um modelo linear podem ser todas quantitativas (contínuas ou discretas), todas qualitativas (categóricas ou ordinais) ou conter uma combinação destes tipos. Os modelos que veremos nos capítulos desta seção são casos particulares de modelos lineares que variam em função do número de variáveis preditoras envolvidas e da natureza destas variáveis (quantitativas ou qualitativas). Deste modo temos por exemplo:
 
 |Número de variáveis preditoras ($X$)|Quantitativa|Qualitativa|Modelo|
 |:---                                |:---:       |:---:      |:---|
@@ -31,7 +31,7 @@ $Y$ consiste de uma variável quantitativa, enquanto as variáveis $X$ em um mod
 
 ## Simulando um modelo linear no R
 
-Vamos simular dois tipos de modelos lineares e avaliar como a regressão linear e modelos de ANOVA podem ser criados a partir da mesma ideia geral, isto é, combinando uma parcela sistemática com uma parcela estocástica e utilizando variáveis preditoras que podem ser quantitativas ou qualitativas.
+Vamos simular dois tipos de modelos lineares (o modelo de Regressão Linear e o modelo de Análise de Variância - ANOVA) utilizando uma notação comum. Nos capítulos seguintes cada um destes modelos será tratado de forma particular.
 
 ### O Modelo de Regressão
 

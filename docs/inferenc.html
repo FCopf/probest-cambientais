@@ -383,10 +383,21 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="20" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>20</b> Análise de variância de um fator</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA</a>
+<li class="chapter" data-level="20.1" data-path="anova.html"><a href="anova.html#o-modelo-da-anova-e-as-hipóteses-estatísticas"><i class="fa fa-check"></i><b>20.1</b> O modelo da ANOVA e as hipóteses estatísticas</a></li>
+<li class="chapter" data-level="20.2" data-path="anova.html"><a href="anova.html#partição-da-soma-dos-quadrados"><i class="fa fa-check"></i><b>20.2</b> Partição da soma dos quadrados</a>
 <ul>
-<li class="chapter" data-level="20.1.1" data-path="anova.html"><a href="anova.html#quadrados-médios"><i class="fa fa-check"></i><b>20.1.1</b> Quadrados médios</a></li>
+<li class="chapter" data-level="20.2.1" data-path="anova.html"><a href="anova.html#a-característica-aditiva-das-somas-dos-quadrados-1"><i class="fa fa-check"></i><b>20.2.1</b> A característica aditiva das somas dos quadrados</a></li>
+<li class="chapter" data-level="20.2.2" data-path="anova.html"><a href="anova.html#medindo-a-associação-entre-y-e-x-1"><i class="fa fa-check"></i><b>20.2.2</b> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="20.3" data-path="anova.html"><a href="anova.html#quadrados-médios-e-graus-de-liberdade"><i class="fa fa-check"></i><b>20.3</b> Quadrados médios e graus de liberdade</a></li>
+<li class="chapter" data-level="20.4" data-path="anova.html"><a href="anova.html#estatística-f-e-teste-de-hipóteses"><i class="fa fa-check"></i><b>20.4</b> Estatística <span class="math inline">\(F\)</span> e teste de hipóteses</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="anova.html"><a href="anova.html#nível-de-significância"><i class="fa fa-check"></i><b>20.4.1</b> Nível de significância</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="anova.html"><a href="anova.html#um-exemplo-de-anova"><i class="fa fa-check"></i><b>20.5</b> Um exemplo de ANOVA</a></li>
+<li class="chapter" data-level="20.6" data-path="anova.html"><a href="anova.html#testes-a-posteriori-de-comparação-de-médias"><i class="fa fa-check"></i><b>20.6</b> Testes a <em>posteriori</em> de comparação de médias</a></li>
+<li class="chapter" data-level="20.7" data-path="anova.html"><a href="anova.html#rodando-a-anova-no-r"><i class="fa fa-check"></i><b>20.7</b> Rodando a ANOVA no R</a></li>
+<li class="chapter" data-level="20.8" data-path="anova.html"><a href="anova.html#pressupostos-da-anova"><i class="fa fa-check"></i><b>20.8</b> Pressupostos da ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>21</b> Análise de variância fatorial</a></li>
 <li class="chapter" data-level="22" data-path="regressao.html"><a href="regressao.html"><i class="fa fa-check"></i><b>22</b> Regressão linear e correlação</a>
@@ -407,7 +418,7 @@ div.csl-indent {
 <li class="chapter" data-level="22.3.1" data-path="regressao.html"><a href="regressao.html#teste-sobre-beta_1"><i class="fa fa-check"></i><b>22.3.1</b> Teste sobre <span class="math inline">\(\beta_1\)</span></a></li>
 <li class="chapter" data-level="22.3.2" data-path="regressao.html"><a href="regressao.html#análise-de-variância-da-regressão"><i class="fa fa-check"></i><b>22.3.2</b> Análise de variância da regressão</a></li>
 </ul></li>
-<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="22.4" data-path="regressao.html"><a href="regressao.html#coeficiente-de-determinação-r2"><i class="fa fa-check"></i><b>22.4</b> Coeficiente de determinação <span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="22.5" data-path="regressao.html"><a href="regressao.html#intervalo-de-confiança-de-y"><i class="fa fa-check"></i><b>22.5</b> Intervalo de confiança de <span class="math inline">\(Y\)</span></a></li>
 <li class="chapter" data-level="22.6" data-path="regressao.html"><a href="regressao.html#pressupostos-da-regressão-linear-simples"><i class="fa fa-check"></i><b>22.6</b> Pressupostos da regressão linear simples</a>
 <ul>
@@ -558,7 +569,7 @@ div.csl-indent {
 <p>O valor <span class="math inline">\(z_{\alpha/2} = 1.96\)</span> foi retirado da Tabela <span class="math inline">\(Z\)</span> como o módulo do valor de <span class="math inline">\(z\)</span> que delimida uma área inferior igual a <span class="math inline">\(0.025\)</span>.</p>
 </blockquote>
 <p>Se queremos um nível de confiança diferente, basta ajustar o valor de <span class="math inline">\(\alpha\)</span>. Por exemplo, se queremos um nível de significância a 99%, fixamos <span class="math inline">\(\alpha\)</span> em <span class="math inline">\(0.01\)</span> e portanto <span class="math inline">\(z = 2.58\)</span>. Da mesma forma, o <span class="math inline">\(IC_{90\%}\)</span> poderá ser obtido com <span class="math inline">\(\alpha = 0.10\)</span> e consequentemente <span class="math inline">\(z = 1.64\)</span>. Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (Capítulo <a href="normdist.html#normdist">14</a>), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem inclusos nas <strong>Tabelas <span class="math inline">\(Z\)</span></strong>, encontradas na grande maioria dos livros de estatística básica. Os valores de <span class="math inline">\(Z\)</span> são os mesmos discutidos no tópico <strong>Medidas de posição</strong> quando discutimos os <strong>Índice <span class="math inline">\(Z\)</span></strong> (Capítulo <a href="escorez.html#escorez">8</a>)</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-310-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-311-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Para o cálculo do intervalo de confiança, estamos assumindo que as médias amostrais têm <strong>Distribuição Normal</strong> com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\frac{\sigma}{\sqrt{n}}\)</span>. Fazendo isto, estamos no <strong>Teorema Central do Limite (TCL)</strong> (Capítulo <a href="tcl.html#tcl">15</a>). Geralmente não temos os valores de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>, de modo que utilizamos os valores de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s\)</span> calculados a partir de nossa amostra. Quando as amostras são grandes (<span class="math inline">\(n\ge{30}\)</span>) não há problema em utilizar o valor de <span class="math inline">\(z_{\alpha/2}\)</span>, e assim:</p>
 <p><span class="math display">\[IC_{1-\alpha} = \overline{X} \pm z_{\alpha/2} \times \frac{s}{\sqrt{n}}\]</span></p>
 <div id="distribuiçao-t-de-student-mu-e-sigma-desconhecidos" class="section level4" number="16.1.1.1">
@@ -568,9 +579,9 @@ div.csl-indent {
 <p>Em que <span class="math inline">\(\alpha\)</span> continua sendo o nível de significância e <span class="math inline">\(gl\)</span> é definido como os <strong>graus de liberdade</strong>. Neste caso, os graus de liberdade são dados por:</p>
 <p><span class="math display">\[gl = n-1\]</span></p>
 <p>O formato da distribuição <span class="math inline">\(t\)</span> de student não é constante. À medida que o tamanho amostral aumenta, o formado da distribuição <span class="math inline">\(t\)</span> converge para a distribuição normal. Isto faz com que na prática <strong>raremente</strong> se utilize a distribuição <span class="math inline">\(Z\)</span>, substituindo-a pela distribuição <span class="math inline">\(t\)</span> de Student.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-311-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-312-1.png" width="672" /></p>
 <p>Para amostras pequenas (<span class="math inline">\(n = 2\)</span>) o formato da distribuição de <span class="math inline">\(t\)</span> é distinto da distribuição normal. No entanto, para tamanhos amostrais maiores (<span class="math inline">\(n = 30\)</span>) as o formato da distribuição <span class="math inline">\(t\)</span> tende a a convergir para o mesmo formato a distribuição normal. Esta característica implica que a área a partir de um determinado limite <span class="math inline">\(t_i\)</span> não é constante como na distribuição normal, mas <em>depende do tamanho da amostra</em>, como pode ser visto abaixo.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-312-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-313-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -580,7 +591,7 @@ div.csl-indent {
 <p>Vimos que aumentar o tamanho amostral resulta em estimativas mais precisas, isto é com menor erro padrão. Portanto, um bom delineamento amostral é aquele que permita, a um custo mínimo, obter estimativas com a precisão desejada. Uma pesquisa que resulte em estimativas demasiadamente imprecisas pode se mostrar inútil. O que dizer por exemplo, se um estudo conclui que o comprimento médios de uma espécie de pescado é de <span class="math inline">\(35\)</span> cm com uma incerteza a <span class="math inline">\(95\%\)</span> entre <span class="math inline">\(15\)</span> e <span class="math inline">\(55\)</span> cm? Uma estimativa com tal nível de imprecisão não terá qualquer implicação prática.</p>
 <p>Por outro lado, partir de um determinado tamanho amostral o ganho em precisão torna-se mínimo. Isto significa que amostras demasiadamente grandes podem ter um custo muto alto porém não serem capazes aumentar de forma relevante a precisão do experimento.</p>
 <p>Veja o que ocorre com o erro padrão de uma amostra à medida que aumenta o tamanho <span class="math inline">\(n\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-313-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-314-1.png" width="672" /></p>
 <p>Neste exemplo, para amostras de tamanho 1, <span class="math inline">\(\sigma_{\overline{X}} = 4\)</span>. Se tivermos agora amostras de tamanho 10, <span class="math inline">\(\sigma_{\overline{X}} = 1.2\)</span>, uma redução de mais de 50%. No entanto aumentarmos o tamanho amostral para 50 o erro padrão cai somente de <span class="math inline">\(1,2\)</span> para <span class="math inline">\(0,56\)</span>. Isto significa que a partir de determinado ponto (neste exemplo a partir de <span class="math inline">\(10\)</span> ou <span class="math inline">\(20\)</span> amostras), a redução no erro padrão torna-se mínima. Neste momento podemos podemos refletir sobre o custo de continuar aumentando o tamanho amostral para obter um ganho cada vez menor em precisão.</p>
 <p>Para encontrarmos o tamanho amostral desejado, devemos decidir sobre dois pontos: i - <em>que nível de acurácia desejado</em>, ou seja, quão distante do valor real (média populacional) queremos que nossa esimativa esteja; e ii - <em>qual o nível de confiança do resultado</em>, ou seja, com que precisão queremos fazer esta estimativa.</p>
 <div id="nível-de-acurácia-desejado-margem-de-erro-e-nível-de-confiança-na-estimativa" class="section level3" number="16.2.1">
@@ -590,7 +601,7 @@ div.csl-indent {
 <p><span class="math display">\[E = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>O nível de confiança na estimativa nos garante que nossa estimativa estará dentro da margem de erro assumida com probabilidade <span class="math inline">\(1-\alpha\)</span>. Como vimos acima, valores típicos para o nível de confiança são <span class="math inline">\(99\%\)</span>, <span class="math inline">\(95\%\)</span> e <span class="math inline">\(90\%\)</span>.</p>
 <p>Uma representação esquemática do erro amostral e do nível de confiança na distribuição de <span class="math inline">\(z\)</span> pode ser vista abaixo:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-314-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-315-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>A definição da margem de erro e do nível de confiança depende de estimativas prévias dos parâmetros populacionais <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>. Estas estimativas podem ser obtidas na literatura, buscando estudos similares, ou por meio de um <strong>projeto piloto</strong>. Em um experimento piloto, o pesquisador irá conduzir seu plano de amostragem com um tamanho mínimo, justamente para avaliar a eficiência metodológica, adequabilidade dos resultados e prever o esforço amostral adequado. As informações de um pequeno estudo piloto, se bem aproveitadas, podem evitar erros simples de delineamento, além de invariavelmente, permitir economia de recusros e consequentemente ganho em qualidade.</p>
 </div>
 <div id="determinando-o-tamanho-de-uma-amostra" class="section level3" number="16.2.2">
