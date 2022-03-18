@@ -396,7 +396,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="20.5" data-path="anova.html"><a href="anova.html#um-exemplo-de-anova"><i class="fa fa-check"></i><b>20.5</b> Um exemplo de ANOVA</a></li>
 <li class="chapter" data-level="20.6" data-path="anova.html"><a href="anova.html#testes-a-posteriori-de-comparação-de-médias"><i class="fa fa-check"></i><b>20.6</b> Testes a <em>posteriori</em> de comparação de médias</a></li>
-<li class="chapter" data-level="20.7" data-path="anova.html"><a href="anova.html#rodando-a-anova-no-r"><i class="fa fa-check"></i><b>20.7</b> Rodando a ANOVA no R</a></li>
+<li class="chapter" data-level="20.7" data-path="anova.html"><a href="anova.html#ajustando-a-anova-no-r"><i class="fa fa-check"></i><b>20.7</b> Ajustando a ANOVA no R</a></li>
 <li class="chapter" data-level="20.8" data-path="anova.html"><a href="anova.html#pressupostos-da-anova"><i class="fa fa-check"></i><b>20.8</b> Pressupostos da ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="anovafatorial.html"><a href="anovafatorial.html"><i class="fa fa-check"></i><b>21</b> Análise de variância fatorial</a></li>
@@ -651,7 +651,7 @@ div.csl-indent {
 </div>
 <div id="um-exemplo-de-anova" class="section level2" number="20.5">
 <h2><span class="header-section-number">20.5</span> Um exemplo de ANOVA</h2>
-<p>Vamos exemplificar o passo-a-passo de uma ANOVA utilizandocom nosso exemplo fictício. /o primeiro passo é definir as hipóteses estatpisticas e o nível de significância:</p>
+<p>Vamos exemplificar o passo-a-passo de uma ANOVA utilizando nosso exemplo fictício. /o primeiro passo é definir as hipóteses estatpisticas e o nível de significância:</p>
 <hr />
 <p><span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3\)</span></p>
 <p><span class="math inline">\(H_a\)</span>: ao menos um <span class="math inline">\(\mu\)</span> é diferente</p>
@@ -806,7 +806,7 @@ C
 <p><span class="math inline">\(QM_{Res} = \frac{SQ_{Res}}{gl_{Res}} = 30.214\)</span></p>
 <hr />
 <p><strong>4. Estatística <span class="math inline">\(F\)</span></strong></p>
-<p><span class="math inline">\(F_{calculado} = \frac{QM_{Trat}}{QM_{Res}} = 11.265837\)</span></p>
+<p><span class="math inline">\(F_{calculado} = \frac{QM_{Trat}}{QM_{Res}} = 11.266\)</span></p>
 <hr />
 <p><strong>5. Tabela da ANOVA</strong></p>
 <p>Estas quantias são tradicionalmente expressas em uma <strong>Tabela de ANOVA</strong> conforme abaixo:</p>
@@ -970,8 +970,8 @@ C
 </table>
 <p>Das três comparações possíveis, somente a comparação entre os grupos <code>B</code> e <code>C</code> (<span class="math inline">\(\overline{Y}_B - \overline{Y}_C = 16.5\)</span>) foi maior que o limite estabelecido pelo teste de Tukey. Desta forma, concluímos que a ANOVA foi significativa e que somente os grupos <code>B</code> e <code>C</code> diferem entre si.</p>
 </div>
-<div id="rodando-a-anova-no-r" class="section level2" number="20.7">
-<h2><span class="header-section-number">20.7</span> Rodando a ANOVA no R</h2>
+<div id="ajustando-a-anova-no-r" class="section level2" number="20.7">
+<h2><span class="header-section-number">20.7</span> Ajustando a ANOVA no R</h2>
 <p>Considere que a tabela em nosso exemplo está no objeto <code>Tab</code>. A ANOVA no R é feita com o comando <code>aov</code>.</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="anova.html#cb189-1" aria-hidden="true" tabindex="-1"></a>ajuste <span class="ot">=</span> <span class="fu">aov</span>(Y <span class="sc">~</span> X, <span class="at">data  =</span> Tab)</span>
 <span id="cb189-2"><a href="anova.html#cb189-2" aria-hidden="true" tabindex="-1"></a>ajuste</span></code></pre></div>
@@ -999,6 +999,8 @@ C
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Note que os resultados coincidem com o que apresentamos anteriormente. Como o valor de <span class="math inline">\(p\)</span> foi menor que <span class="math inline">\(\alpha = 0.05\)</span>, concluimos que a ANOVA foi significativa, isto é, indicou que ao menos um par de médias difere ente si. Podemos fazer o teste a <em>posteriori</em> de Tukey com o comando:</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="anova.html#cb193-1" aria-hidden="true" tabindex="-1"></a>alfa <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb193-2"><a href="anova.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(ajuste, <span class="at">conf.level =</span> <span class="dv">1</span><span class="sc">-</span>alfa)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -1011,6 +1013,7 @@ C
 ## C-B -16.50 -25.774654 -7.2253455 0.0012751</code></pre>
 <p>O resultado apresenta todas as comparações possíveis entre os grupos, mostrando as diferenças de médias, seus intervalos de confiança a <span class="math inline">\(95\%\)</span> e os valores de <span class="math inline">\(p\)</span>, indicando quais destas diferenças são significativas, isto é, <span class="math inline">\(p \le \alpha\)</span>. Estes resultados nos permitem concluir novamente que somente o par <code>C-B</code> difere entre si, pois <code>p adj &lt; 0.05</code>.</p>
 <p>Um gráfico facilita a visualização das comparações, sobretudo em situações com muitos pares de médias envolvidos:</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="anova.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(ajuste))</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-357-1.png" width="672" /></p>
 <p>Neste gráfico, as comparações em que o intervalo de confiança <strong>não inclui o zero</strong>, são consideradas significativas. Novamente, vemos que somente o grupo <code>C-B</code> tem médias estatisticamente diferentes.</p>
 </div>
@@ -1023,8 +1026,8 @@ C
 <li><p>Os resíduos têm distribuição normal com média <span class="math inline">\(0\)</span> e variância <span class="math inline">\(\sigma^2\)</span>.</p></li>
 </ol>
 <p>Vamos inicialmente testar o pressuposto de homogeneidade de variâncias com um teste <span class="math inline">\(F\)</span>.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="anova.html#cb194-1" aria-hidden="true" tabindex="-1"></a>Tab <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(X) <span class="sc">%&gt;%</span> </span>
-<span id="cb194-2"><a href="anova.html#cb194-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Var =</span> <span class="fu">var</span>(Y))</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="anova.html#cb196-1" aria-hidden="true" tabindex="-1"></a>Tab <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(X) <span class="sc">%&gt;%</span> </span>
+<span id="cb196-2"><a href="anova.html#cb196-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Var =</span> <span class="fu">var</span>(Y))</span></code></pre></div>
 <p>Note que a maior variância é <span class="math inline">\(56.347\)</span> e a menor <span class="math inline">\(11.152\)</span>.</p>
 <p>O teste <span class="math inline">\(F\)</span> consiste em dividir a maior variância pela menor:</p>
 <pre><code>## 

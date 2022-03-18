@@ -334,7 +334,7 @@ Tradicionalmente utiliza-se $\alpha = 0.05$. Neste caso, $H_0$ seria rejeitada s
 
 ## Um exemplo de ANOVA
 
-Vamos exemplificar o passo-a-passo de uma ANOVA utilizandocom nosso exemplo fictício. /o primeiro passo é definir as hipóteses estatpisticas e o nível de significância:
+Vamos exemplificar o passo-a-passo de uma ANOVA utilizando nosso exemplo fictício. /o primeiro passo é definir as hipóteses estatpisticas e o nível de significância:
 
 ___
 
@@ -350,14 +350,15 @@ ___
 
 Utilizando os tados da tabela abaixo podemos obetr todas as quantias necessárias para o cálculo da ANOVA, isto é, os somatórios dos quadrados, os graus de liberdade,os quadraos médios e finalmente o valor de $F_{calculado}$
 
+
 ```{r}
 Tab = data.frame(dfe[,1:2])
+kableExtra::kable(Tab)
 ```
 
 
 ```{r}
 anova_ex = anova(aov(Y ~ X, data = Tab))
-kableExtra::kable(Tab)
 ```
 
 ___
@@ -390,7 +391,7 @@ ___
 
 **4. Estatística $F$**
 
-$F_{calculado} = \frac{QM_{Trat}}{QM_{Res}} = `r anova_ex[[4]][1]`$
+$F_{calculado} = \frac{QM_{Trat}}{QM_{Res}} = `r round(anova_ex[[4]][1],3)`$
 
 ___
 
@@ -505,7 +506,7 @@ kableExtra::kable(Ymean_D)
 
 Das três comparações possíveis, somente a comparação entre os grupos `B` e `C` ($\overline{Y}_B - \overline{Y}_C = `r Ymean_D[3,2]`$) foi maior que o limite estabelecido pelo teste de Tukey. Desta forma, concluímos que a ANOVA foi significativa e que somente os grupos `B` e `C` diferem entre si.
 
-## Rodando a ANOVA no R
+## Ajustando a ANOVA no R
 
 Considere que a tabela em nosso exemplo está no objeto `Tab`. A ANOVA no R é feita com o comando `aov`.
 
@@ -524,7 +525,7 @@ anova(ajuste)
 
 Note que os resultados coincidem com o que apresentamos anteriormente. Como o valor de $p$ foi menor que $\alpha = 0.05$, concluimos que a ANOVA foi significativa, isto é, indicou que ao menos um par de médias difere ente si. Podemos fazer o teste a *posteriori* de Tukey com o comando:
 
-```{r}
+```{r, echo = TRUE}
 alfa = 0.05
 TukeyHSD(ajuste, conf.level = 1-alfa)
 ```
@@ -533,7 +534,7 @@ O resultado apresenta todas as comparações possíveis entre os grupos, mostran
 
 Um gráfico facilita a visualização das comparações, sobretudo em situações com muitos pares de médias envolvidos:
 
-```{r}
+```{r, echo = TRUE}
 plot(TukeyHSD(ajuste))
 ```
 

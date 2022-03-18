@@ -157,7 +157,7 @@ estatística-f-e-teste-de-hipóteses
 nível-de-significância
 um-exemplo-de-anova
 testes-a-posteriori-de-comparação-de-médias
-rodando-a-anova-no-r
+ajustando-a-anova-no-r
 pressupostos-da-anova
 anovafatorial
 regressao
