@@ -94,6 +94,7 @@ Voltemos à nossa população fictícia com $N = `r N`$ elementos:
 **População**: `r pop`
 
 Para esta população em particular nós conhecemos a média populacional ($\mu$ = `r round(mean(pop),1)`), de modo que será possível compará-la com as estimativas amostrais.
+
 ```{r, echo=FALSE}
 set.seed(4)
 n = 5
@@ -143,7 +144,7 @@ CT = choose(N,n)
 ```
 
 
-Até agora, analisamos duas amostras diferentes da população. Porém, quantas amostras distintas seriam possíveis? Para uma população com `r N` elementos, a teoria combinatória nos diz que são possíveis:  
+Até agora, analisamos duas amostras diferentes da população. Porém, quantas amostras distintas seriam possíveis? Para uma amostragem **sem reposição**, a teoria combinatória nos diz que são possíveis:  
 
 $${{`r N`}\choose{`r 5`}} = \frac{`r N`!}{(`r N`-`r n`)! \times `r n`!} = `r CT`$$
 
@@ -164,7 +165,8 @@ Inicialmente vamos avaliar a questão com um número menor. Sejam por exemplo, `
 
 ```{r, echo=FALSE, warning=FALSE}
 #A15
-kable(A15)
+kable(A15) %>%
+  row_spec(6, bold = T, color = "white", background = "#D7261E")
 ```
 
 Cada coluna desta matriz corresponde a uma possível amostra aleatória e suas respectivas médias.
@@ -204,7 +206,7 @@ gp5
 
 Se calcularmos a **média das médias** ($mu_{\overline{X}}$), ou seja, somarmos todos estes valores e dividirmos por `r CT`, o resultado será `r mean(M_Allcomb)`, que é exatamente o valor da média populacional $\mu$. Isto têm uma implicação  central em inferência estatística. Significa que a média amostral $\overline{X}$ é um estimador **acurado** (= **não-viciado**), pois tende a estimar corretamente o valor da média populacional $\mu$. Ou seja, o histograma acima está centrado ao redor de $\mu$, o que significa que **em média** uma amostra particular tem maior probabilidade de expressar um $\overline{X}$ próximo ao valor populacional. 
 
-### Precisão: o erro padrão da média (\(\sigma^{\overline{X}}\))
+### Precisão: o erro padrão da média (\(\sigma_{\overline{X}}\))
 
 ```{r, echo=FALSE}
 n2 = 7
@@ -253,14 +255,16 @@ ep7 = sigma_pop/sqrt(n2)
 ```
 
 
-Se compararmos os histogramas com $n = `r n`$ e $n = `r n2`$, veremos que os dois resultam em estimadores acurados, pois $mu_{\overline{X}} = \mu$. No entando, o **intervalo de variação** é menor para amostras de tamanho $n = `r n2`$. Para esta figura, os valores estão mais concentrados ao redor da média. Portanto, à medida que aumenta o tamanhol amostral, diminui a dispersão das médias amostrais ao redor de $\mu$. Assim, para amostras grandes torna-se mais **improvável** obter uma média amostral distante da média populacional. Dizemos então que Conforme aumenta o tamanho amostral, conseguimos estimativas mais precisas.
+Se compararmos os histogramas com $n = `r n`$ e $n = `r n2`$, veremos que os dois resultam em estimadores acurados, pois $\mu_{\overline{X}} = \mu$. No entando, o **intervalo de variação** é menor para amostras de tamanho $n = `r n2`$. Para esta figura, os valores estão mais concentrados ao redor da média. Portanto, à medida que aumenta o tamanho amostral, diminui a dispersão das médias amostrais ao redor de $\mu$. Assim, para amostras grandes torna-se mais **improvável** obter uma média amostral distante da média populacional. Dizemos então que conforme aumenta o tamanho amostral, conseguimos estimativas mais precisas.
 
 
 A precisão de um estimador pode ser medida pelo **Erro padrão da média** ($\sigma_{\overline{X}}$) que pode ser calculado por:
 
 $$\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}$$
 
-O erro padrão da média é o desvio padrão de **todas** as médias amostrais que poderiam ser obtidas de uma amostra com tamanho $n$. Para nosso exemplo com $n = `r n`$, $\sigma_{\overline{X}}$ = `r round(ep5,2)`, enquanto para $n = 7$, $\sigma_{\overline{X}}$ = `r round(ep7,2)`. Dizemos que o último exemplo provê estimativas **mais precisas**.
+O erro padrão da média é o desvio padrão de **todas** as médias amostrais que poderiam ser obtidas de uma amostra com tamanho $n$. Para nosso exemplo com $n = `r n`$, $\sigma_{\overline{X}}$ = `r round(ep5,2)`, enquanto para $n = 7$, $\sigma_{\overline{X}}$ = `r round(ep7,2)`. Dizemos que o último exemplo provê estimativas **mais precisas**. 
+
+</br>
 
 :::: {.blackbox data-latex=""}
 ::: {.center data-latex=""}

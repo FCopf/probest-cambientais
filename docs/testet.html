@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -548,8 +552,8 @@ div.csl-indent {
 <h1><span class="header-section-number">Capítulo 18</span> Teste t de Student</h1>
 <p>De acordo com o que discutimos no capítulo <a href="inferenc.html#inferenc">16</a>, o modelo normal de probabilidades não é a melhor aproximação para a distribuição das madias amostrais quando não conhecemos <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e/ou quando o tamanho amostral <span class="math inline">\(n\)</span> é pequeno. Nesta situação, apresentamos a <strong>distribuição t de Student</strong> como uma opção mais apropriada para o cálculo de um intervalo de confiança. Da mesma forma, o <strong>teste <span class="math inline">\(Z\)</span></strong> que introduzimos no capítulo <a href="th.html#th">17</a> assume que a distribuição das médias amostrais é normalmente distribuída e que a variância populacional <span class="math inline">\(\sigma\)</span> seja conhecida, uma informação que não temos na prática científica.</p>
 <p>Seguindo este raciocínio portanto, iremos apresentar o <strong>teste t</strong> para verificar uma hipótese sobre uma média populacional. Este teste é utilizado em substituição ao <strong>teste <span class="math inline">\(Z\)</span></strong> quando <span class="math inline">\(\sigma\)</span> é desconhecido e/ou o tamanho amostral é pequeno. O teste segue também a mesma lógica discutida no teste <span class="math inline">\(Z\)</span>, porém estabelece que a distribuição das médias amostrais é melhor descrita pela distribuição <span class="math inline">\(t\)</span> e não pela distribuição normal.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-327"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-327-1.png" alt="Teste Z versus teste t. Estatística do teste e distribuição de probabilidades" width="90%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-333"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-333-1.png" alt="Teste Z versus teste t. Estatística do teste e distribuição de probabilidades" width="90%" />
 <p class="caption">
 Figure 18.1: Teste Z versus teste t. Estatística do teste e distribuição de probabilidades
 </p>
@@ -568,7 +572,7 @@ Figure 18.1: Teste Z versus teste t. Estatística do teste e distribuição de p
 <p>Para este exemplo, temos uma amostra de tamanho <span class="math inline">\(n = 8\)</span> com média <span class="math inline">\(\overline{X} = 4.925\)</span>g e desvio padrão <span class="math inline">\(s = 0.13\)</span>g. O valor de <span class="math inline">\(t\)</span> pode ser calculado por:</p>
 <p><span class="math display">\[t_{c} = \frac{\overline{X} - \mu}{s_{\overline{X}}} = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{4.925  - 4.8}{\frac{0.13}{\sqrt{8}}} = 2.76\]</span></p>
 <p>Assim como fizemos para a distribuição <span class="math inline">\(Z\)</span>, devemos encontrar a probabilidade de obtermos um valor tão ou maior que o módulo de <span class="math inline">\(t_c\)</span>. Na figura abaixo, nosso resultado fica:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-328-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-334-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>A probabilidade de encontrarmos um valor de <span class="math inline">\(t_c\)</span> tão ou mais extremo segundo a hipótese nula foi de <span class="math inline">\(p = 0.028\)</span>. Uma vez que este valor é <strong>menor</strong> que o nível crítico <span class="math inline">\(\alpha = 0,05\)</span>, concluímos que existe evidência suficiente para <strong>rejeitar</strong> <span class="math inline">\(H_0\)</span> e <strong>aceitar</strong> a hipótese alternativa de que as moedas de <span class="math inline">\(10\)</span> centavos <strong>não</strong> provém de uma população estatística com <span class="math inline">\(\mu = 4,8\)</span> gramas. Nossa conclusão é portanto, que as moedas de <span class="math inline">\(R\$ 0,10\)</span> são mais <strong>pesadas</strong> que <span class="math inline">\(4,8\)</span> gramas.</p>
 <p>No R, o teste <span class="math inline">\(t\)</span> discutido acima pode ser realizado por:</p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="testet.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(X, <span class="at">mu =</span> <span class="fl">4.8</span>)</span></code></pre></div>
@@ -596,7 +600,7 @@ Figure 18.1: Teste Z versus teste t. Estatística do teste e distribuição de p
 <h2><span class="header-section-number">18.2</span> Graus de liberdade</h2>
 <p>A distribuição <span class="math inline">\(t\)</span> como várias outras distribuições amostrais utilizadas em inferência estatística, muda seu formato em função do que chamamos de <strong>graus de liberdade</strong> (<span class="math inline">\(gl\)</span>). Os graus de liberdade têm relação com o tamanho amostral. No caso do teste <span class="math inline">\(t\)</span> para <span class="math inline">\(1\)</span> amostra, esta relação é simplesmente: <span class="math inline">\(gl = n-1\)</span>.</p>
 <p>À medida que os graus de liberdade aumentam, o formato da distribuição <span class="math inline">\(t\)</span> se assemelha ao formato da distribuição Normal padronizada. De fato, para graus de liberdades altos (ex. <span class="math inline">\(n \ge 30\)</span>), os formatos das distribuições <span class="math inline">\(Z\)</span> e <span class="math inline">\(t\)</span> são praticamente indistinguíveis. Na prática, isto faz que as distribuição <span class="math inline">\(Z\)</span> <strong>raramente</strong> seja utilizada.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-330-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-336-1.png" width="672" /></p>
 </div>
 <div id="probabilidades-no-teste-t-de-student-a-tabela-t" class="section level2" number="18.3">
 <h2><span class="header-section-number">18.3</span> Probabilidades no teste <span class="math inline">\(t\)</span> de Student: a tabela <span class="math inline">\(t\)</span></h2>
@@ -733,7 +737,7 @@ Droga B
 </tbody>
 </table>
 <p>Nosso objetivo é testar se as duas drogas resultam, em média, no mesmo tempo de coagulação. Inicialmente, vamos fazer um gráfico de dispersão para verificar a distribuição do tempo de coagulação para cada droga.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-333-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-339-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>As médias, desvios padrões e tamanhos amostrais de cada grupo são:</p>
 <table>
 <thead>

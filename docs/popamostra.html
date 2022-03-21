@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -548,109 +552,646 @@ div.csl-indent {
 <h1><span class="header-section-number">Capítulo 12</span> Descrevendo populações e amostras</h1>
 <div id="população-amostra-e-unidade-amostral" class="section level2" number="12.1">
 <h2><span class="header-section-number">12.1</span> População, amostra e unidade amostral</h2>
-<p>Em estatística, a <strong>população</strong> se refere a todos os elementos sobre os quais queremos tirar conclusões. É comum a confusão entre os termos população estatística e população biológica (nas ciências naturais) ou população humana (em ciências sociais). No entanto, <strong>população estatística</strong> refere-se ao <strong>conjunto de medidas</strong>, isto é, de variáveis que podem ser mensuradas como resultado de um experimento ou de um estudo observacional. A população estatística não pode portanto, ser confundida com conjuntos de pessoas ou de organismos ou mesmo com os elementos físicos nos quais as variáveis foram mensuradas. As medidas que compõem a população estatística podem ser pesos, temperaturas, velocidades, tempos de reação, entre outras, a depender das características de um estudo particular.</p>
+<p>Uma <strong>população estatística</strong> são todos os elementos sobre os quais queremos tirar conclusões. Refere-se ao <strong>conjunto de medidas</strong> que <em>podem</em> ser mensuradas como resultado de um experimento. As medidas que compõem a população estatística podem ser pesos, temperaturas, velocidades, tempos de reação, entre outras, a depender das características de um estudo particular. Uma população estatística pode ser finita ou infinita. Quando é finita, o número de elementos é dado por <span class="math inline">\(N\)</span>. O termo <em>população</em> não pode ser confundido com seu uso do dia-a-dia, quando refere-se a conjuntos de pessoas ou de organismos, nem mesmo com os elementos físicos nos quais as variáveis foram mensuradas.</p>
 <p>A abrangência da população estatística depende do contexto e do escopo da pergunta que se pretende responder.</p>
 <ul>
 <li><p>Exemplo 1: Suponha um estudo para descrever o comprimento do lambari <em>Deuterodon iguape</em> em riachos do litoral de São Paulo. A população estatística não são os peixes em si, mas o <strong>comprimento</strong> de cada indivíduo que habita os riachos destas bacias. Dado o escopo do estudo (bacias do litoral de São Paulo), a população estatística abrange <strong>somente</strong> comprimentos dos organismos existem nesta região.</p></li>
-<li><p>Exemplo 2: Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um <strong>índice de diversidade</strong> calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não tem qualquer relação com população biológica, mas sim com uma variável que pode ser mensurada a partir do conjunto de espécies que habitam cada bacia.</p></li>
+<li><p>Exemplo 2: Suponha agora que desejamos estudar a diversidade de espécies de peixes em bacias costeiras do litoral de São Paulo. Neste caso, a população estatística seria constituida de um <strong>índice de diversidade</strong> calculado para cada uma das bacias costeiras do litoral. Fica claro que, neste caso, população estatística não se refere a população biológica, mas sim a variável que foi mensurada a partir do conjunto de espécies que habitam cada bacia.</p></li>
 </ul>
-<p>Nestes dois exemplos é inviável obter informações de todos os elementos que compõem a população estaística. No caso dos comprimentos, não temos como capturar todos os animais presentes em uma bacia hidrográfica e, ainda que tivéssemos, existem provavelmente alguns milhares de peixes somente em um pequeno trecho de riacho e consequentemente, o mesmo número de comprimentos individuais. Já o número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda é inviável mensurar a diversidade de espécies em todas elas. Um <strong>censo</strong> ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática científica lida com a maioria dos casos em que mensuramos um <strong>subconjunto</strong> da população estatística, definido como uma <strong>amostra</strong>.</p>
-<p>Finalmente, <strong>unidade amostral</strong> é definida como um <strong>único</strong> elemento da população estatística. A unidade amostral é a menor unidade <strong>independente</strong> associada ao estudo. A necessidade das unidades amostrais constituirem elementos independentes é um dos pressupostos centrais da estatística e suas implicações ficarão mais claras quando tratarmos do processo de amostragem. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécies de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada um dos valores de diversidade calculados para cada bacia costeira.</p>
-<blockquote>
+<p>Nestes dois exemplos é inviável obter informações de todos os elementos que compõem a população estaística. No caso dos comprimentos, não temos como capturar todos os animais presentes em uma bacia hidrográfica, mas ainda que tivéssemos seria inviável medir todos, pois existem provavelmente alguns milhares de peixes somente em um pequeno trecho de riacho. Já o número de Bacias costeiras no litoral do Estado de São Paulo é bem menor, porém ainda seria inviável mensurar a diversidade de espécies em todas elas.</p>
+<p>Um <strong>censo</strong> ocorre nos raros exemplos em que é possível mensurar todos os elementos da população estatística. Entretanto, a prática científica lida com a maioria dos casos em que mensuramos um <strong>subconjunto</strong> da população estatística, definido como uma <strong>amostra</strong>. O tamanho da amostra é denominado de <span class="math inline">\(n\)</span>.</p>
+<p>Finalmente, <strong>unidade amostral</strong> é definida como um <strong>único</strong> elemento da população estatística. A unidade amostral é uma determinada observação da variável de interesse. No exemplo dos lambaris, unidade amostral é o comprimento mensurado em um indivíduo da espécie de interesse, enquanto no exemplo das bacias costeiras, as unidades amostrais são cada um dos valores de diversidade calculados para cada bacia costeira.</p>
+<div class="blackbox">
+<div class="center">
+<p><strong>DEFINIÇÕES</strong></p>
+</div>
 <p><strong>População estatística</strong>: todos os elementos que podem compor uma amostra. Podem ser medidas como comprimentos, temperaturas, velocidades, etc.</p>
-</blockquote>
-<blockquote>
 <p><strong>Unidade amostral</strong>: um único elemento da população.</p>
-</blockquote>
-<blockquote>
 <p><strong>Censo</strong>: o levantamento de <em>todos</em> os elementos da população.</p>
-</blockquote>
-<blockquote>
 <p><strong>Amostra</strong>: um subconjunto extraído da população.</p>
-</blockquote>
-<blockquote>
 <p><strong>Tamanho populacional</strong> (<em>N</em>): o número de elementos da população.</p>
-</blockquote>
-<blockquote>
 <p><strong>Tamanho amostral</strong> (<em>n</em>): o número de elementos da amostra.</p>
-</blockquote>
+</div>
 </div>
 <div id="distribuição-de-frequências-na-população-estatística" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> Distribuição de frequências na população estatística</h2>
-<p>Os valores em uma população estatística não são idênticos, certamente existe uma <strong>distribuição de frequência</strong> em que algumas faixas de valores são mais frequentes, enquanto outras faixas de valores são inexistentes. Os comprimentos de <em>Deuterodon iguape</em> devem variar por exemplo de alguns milímetros (pós-larva) a cerca de 20 cm (adulto), em que nem todos os comprimentos são igualmente representados. Certamente, existem mais lambaris pequenos e médios do que lambaris grandes. De fato, animais muito grandes são os mais raros, de modo que se tivessemos informação da população estatística, deveríamos que faixas de valores muito elevados se tornaria cada vez menos frequentes.</p>
-<p>Se fosse possível observar todos os elementos da população estatística, saberíamos exatamente qual o formato de sua distribuição de frequências. Suponha por exemplo, a altura de adultos acima de 18 anos. Seria razoável supor que a maioria das alturas está em valores intermediários ao redor de, por exemplo, 1.7 metros. É razoável supor também que a frequência de pessoas muito altas ou muito baixas vai diminuindo gradativamente, se modo que é muito raro encontrarmos adultos muito altos (ex. acima de <span class="math inline">\(2\)</span> metros) ou muito baixos (ex. menores que <span class="math inline">\(1.5\)</span> metros). A figura abaixo, descreve uma distribuição de frequência possível para esta variável.</p>
+<p>Os valores em uma população estatística não são idênticos, de modo que poderíamos descrevê-los por meio de uma <strong>distribuição de frequência</strong> em que algumas faixas de valores são mais frequentes que outras. Os comprimentos de <em>Deuterodon iguape</em> devem variar por exemplo de alguns milímetros (pós-larva) a cerca de 20 cm (adulto), em que nem todos os comprimentos são igualmente representados. Certamente, existem mais lambaris pequenos e médios do que lambaris grandes. De fato, animais muito grandes são os mais raros, de modo que se tivéssemos informação da população estatística, veríamos que faixas de valores muito elevados se tornariam cada vez menos frequentes.</p>
+<p>Se fosse possível observar todos os elementos da população estatística, saberíamos exatamente qual o formato de sua distribuição de frequências. Suponha por exemplo, a altura de adultos acima de 18 anos. Seria razoável supor que a maioria das alturas consiste de valores intermediários ao redor de, por exemplo, 170 centímetros. É razoável supor também que a frequência de pessoas muito altas ou muito baixas vai diminuindo gradativamente, de modo que é muito raro encontrarmos adultos muito altos (ex. acima de <span class="math inline">\(200\)</span> centímetros) ou muito baixos (ex. menores que <span class="math inline">\(150\)</span> centímetros). A figura abaixo, descreve uma distribuição de frequência de uma população fictícia de <strong>exatamente</strong> <span class="math inline">\(N = 1000\)</span> alturas.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-236"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-236-1.png" alt="Distribuição em uma população estatística das alturas (em metros) de adultos acima de 18 anos." width="480" />
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-236-1.png" alt="Distribuição em uma população estatística das alturas (emcentímetros) de adultos acima de 18 anos." width="672" />
 <p class="caption">
-Figure 12.1: Distribuição em uma população estatística das alturas (em metros) de adultos acima de 18 anos.
+Figure 12.1: Distribuição em uma população estatística das alturas (emcentímetros) de adultos acima de 18 anos.
 </p>
 </div>
-<p>Vemos que existem mais valores entre <span class="math inline">\(1.6\)</span> e <span class="math inline">\(1.8\)</span> metros e poucas observações extremas, o que é condizente com nossa expectativa para a distribuição de frequências das alturas de indivíduos adultos.</p>
-<div class="blackbox">
-<p>Este exemplo é fictício e segue uma <strong>distribuição normal</strong> de probabilidades. A distribuição é <strong>simétrica</strong>, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média). Você poderá encontrar o termo <em>bell curve</em> em inglês devido à sua forma de sino ou distribuição <strong>gaussiana</strong> em homenagem a <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</a> um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a <strong>Teoria da distribuição dos erros observacionais</strong> que é também um tópico central ao desenvolvimento da estatística e do método científico.</p>
+<p>Vemos que existem mais valores entre <span class="math inline">\(160\)</span> e <span class="math inline">\(180\)</span> e poucas observações extremas. Por exemplo, das <span class="math inline">\(1000\)</span> observações, apenas 27 mais extremas que <span class="math inline">\(190\)</span>cm, o que é condizente com nossa expectativa para a distribuição de frequências das alturas de indivíduos adultos.</p>
 </div>
+<div id="distribuição-de-probabilidade-da-população-estatística" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Distribuição de probabilidade da população estatística</h2>
+<p>Este exemplo fictício segue uma <strong>distribuição normal</strong> de probabilidades (Capítulo <a href="normdist.html#normdist">14</a>). Como não temos acesso a toda a população estatística, não temos como visualizar toda a sua distribuição de frequência, deste modo, dizemos que conhecemos a população estatística quando conhecemos a <strong>função de probabilidades</strong> associada a variável que está sendo mensurada (Capítulos <a href="va.html#va">30</a> e <a href="vacont.html#vacont">31</a>). Neste exemplo, diríamos que a variável altura é normalmente distribuída. Quando descrevemos uma determinada distribuição de probabilidades, precisamos caracterizá-la por meio de certas quantidades, ou parâmetros da distribuição. Na distribuição normal, parâmetros de interesse são sua média <span class="math inline">\(\mu\)</span> e seu desvio padrão <span class="math inline">\(\sigma\)</span>. No exemplo das alturas, <span class="math inline">\(\mu = 170\)</span> e <span class="math inline">\(\sigma = 10\)</span>.</p>
 </div>
-<div id="distribuições-de-frequências-na-amostra" class="section level2" number="12.3">
-<h2><span class="header-section-number">12.3</span> Distribuições de frequências na amostra</h2>
-<p>Não é viável ou mesmo possível obter informações de todos os elementos que compõem a população estatística. Ainda assim, gostaríamos de ter informações sobre esta população para que possamos avançar no conhecimento científico. A amostragem é o meio de se obter tais informações. Ao amostrar uma população estatística, iremos constatar que nem todos os seus valores são idênticos. No caso dos exemplos anteriores, os lambaris de uma região não têm todos o mesmo comprimento e do mesmo modo, nem todas as todas as bacias costeiras do estado de São Paulo têm os mesmos valores de diversidade.</p>
-<p>Um vez que não é possível ou viável observar toda a população estatística, a amostra é o meio de nos aproximarmos desta informação. Suponha, uma amostra de 30 adultos do exemplo anterior.</p>
-<p>Se organizarmos esta amostra em valores crescente teríamos:</p>
-<p>1.4, 1.51, 1.52, 1.53, 1.54, 1.58, 1.58, 1.6, 1.6, 1.6, 1.6, 1.6, 1.61, 1.62, 1.62, 1.63, 1.64, 1.64, 1.65, 1.66, 1.66, 1.67, 1.67, 1.67, 1.69, 1.7, 1.71, 1.72, 1.73, 1.74, 1.74, 1.74, 1.75, 1.75, 1.76, 1.76, 1.76, 1.77, 1.78, 1.78, 1.78, 1.78, 1.81, 1.81, 1.84, 1.84, 1.88, 1.88, 1.89, 1.92</p>
-<p>Os valores estão entre <span class="math inline">\(1.4\)</span> e 1.92, o que certamente não é igual aos valores máximos e mínimos da população. Vamos representar a amostra por meio de um histograma</p>
+<div id="distribuições-de-frequências-na-amostra" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Distribuições de frequências na amostra</h2>
+<p>Ainda que não tenhamos acesso a toda população estatística, gostaríamos de ter informações sobre a variável de interesse. No caso das alturas, há uma concentração de elementos entre <span class="math inline">\(160\)</span> e <span class="math inline">\(180\)</span>. A <strong>amostragem</strong> é o meio de se obter informações de interesse sobre a população. Suponha, uma amostra de <span class="math inline">\(n = 50\)</span> adultos.</p>
+<p>Se organizarmos esta amostra em valores crescentes teríamos:</p>
+<p>140.03, 151.5, 152.13, 152.91, 154.07, 158.14, 158.32, 159.59, 159.69, 160.14, 160.42, 160.46, 161.48, 161.89, 162.05, 163.11, 163.59, 163.77, 165.36, 166.11, 166.38, 166.69, 166.76, 167.03, 168.55, 169.72, 170.56, 172.17, 172.94, 173.8, 173.92, 174.34, 174.5, 175.24, 175.76, 175.95, 176.16, 177.13, 177.63, 177.66, 178.03, 178.48, 180.96, 180.97, 183.94, 184.17, 187.54, 187.64, 188.87, 191.69</p>
+<p>Os valores estão entre <span class="math inline">\(140.03\)</span> e 191.69, o que certamente não é igual aos valores máximos e mínimos da população. Vamos representar a amostra por meio de um histograma.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-238"></span>
 <img src="probest-cambientais_files/figure-html/unnamed-chunk-238-1.png" alt="Amostra de tamanho n = 50 adultos" width="480" />
 <p class="caption">
 Figure 12.2: Amostra de tamanho n = 50 adultos
 </p>
 </div>
-<p>Na figura acima, ainda que a distribuição não seja igual à população estatística, podemos perceber que há uma concentração de valores ligeiramente maior entre <span class="math inline">\(1.6\)</span> e <span class="math inline">\(1.8\)</span>, assim como na população estatística. A diferença entre a distribuição da população e da amostra é esperada, e ocorre justamente porque estamos observando um subconjunto de elementos. Vamos verificar por exemplo, as distribuição de frequência de outras amostras possíves de tamanho n = 50 desta mesma população.</p>
+<p>Ainda que a distribuição da amostra não seja igual à da população estatística, podemos perceber que há uma concentração de valores justamente entre <span class="math inline">\(1.6\)</span> e <span class="math inline">\(1.8\)</span>, assim como na população estatística. Esta diferença entre a distribuição da população e a distribuição da amostra é esperada, e ocorre porque estamos observando um subconjunto particular de elementos. Deste modo, sempre que amostrarmos uma população estatística, teremos uma amostra ligeiramente diferente. Vamos verificar por exemplo, as distribuições de frequência de outras amostras possíves de tamanho <span class="math inline">\(n = 50\)</span> desta mesma população.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-239"></span>
 <img src="probest-cambientais_files/figure-html/unnamed-chunk-239-1.png" alt="Amostras de tamanho n = 50 adultos" width="768" />
 <p class="caption">
 Figure 12.3: Amostras de tamanho n = 50 adultos
 </p>
 </div>
-<p>Note que a cada amostra, a distribuição de valores foi diferente. No entanto, de forma geral, observamos a situação em que a faixa intermediária de valores foi mais frequente e que os extremos foram mais raros. Desta forma, o que esperamos no processo de amostragem de uma é obter uma amostra <strong>representativa</strong> da população estatística, em que a distribuição de frequências se <em>aproxime</em> da distribuição de frequencias da população.</p>
-<p>Como conhecíamos a população estatística neste exemplo fictício, este comportamento já era esperado. Na pratica científica entretanto, não conhecemos a população estatística e consequentemente não temos como saber se a nossa amostra em particular foi ou não representativa. O que <strong>devemos</strong> garantir é que o processo de amostragem seja conduzido de tal forma que a <strong>teoria da amostragem</strong> nos garante que, em média, nossa amostragem será representativa. Como veremos no Capítulo <a href="amostrmedias.html#amostrmedias">13</a>, o modo mais simples de garantir este comportamento é realizarmos uma <strong>amostra aleatória</strong> dos elementos da população estatística.</p>
+<p>Cada amostra resulta em distribuições diferentes, mas em todas a frequência de observações na faixa intermediária é maior. O processo de amostragem nos forneceu portanto amostras <strong>representativas</strong> da população estatística, isto é, amostras em que a distribuição de frequências se <em>aproximou</em> da distribuição de frequências da população.</p>
+<p>Neste exemplo fictício, como conhecemos a população estatística é fácil verificar que as amostras foram representativas. Na prática científica não conhecemos a população estatística e, consequentemente, não temos como saber se a nossa amostra em particular foi ou não representativa. O que devemos é conduzir o processo de tal forma que a <strong>teoria da amostragem</strong> nos garanta que a amostra resultante de um determinado experimento seja, em média, representativa da população. Como veremos no Capítulo <a href="amostrmedias.html#amostrmedias">13</a>, o modo mais simples de garantir este comportamento é realizarmos uma <strong>amostra aleatória</strong> dos elementos da população estatística.</p>
 </div>
-<div id="parâmetros-e-estimadores" class="section level2" number="12.4">
-<h2><span class="header-section-number">12.4</span> Parâmetros e estimadores</h2>
-<p>Vimos nos capítulos <a href="tendcentral.html#tendcentral">5</a> e <a href="variacao.html#variacao">6</a> que um conjunto de observações costuma ser caracterizada por descritores de <strong>tendência central</strong> e de <strong>variação</strong>.</p>
-<p>Considere a questão levantada no inícip deste capítulo: Qual o comprimento de <strong>Deuterodon iguape</strong> em riachos do litoral de São Paulo? Geralmente, entendemos esta questão como: - Qual o comprimento de um lambari <em>típico</em>. Do ponto de vista estatítico, um lambari típico pode ser entendido como aquele de que tenha um <strong>comprimento médio</strong>. Ou seja, entendemos que a média aritmética pode ser uma forma de representar o valor esperado na popuilação estatística.</p>
-<p>Se este comprimento médio fosse calculado a partir de <strong>TODOS</strong> os elementos da população, teríamos acesso a um <strong>parâmetro</strong> desta distribuição, ou seja, um descritor da população estatística. Os parâmetros só podem ser obtidos por meio de um censo, pois para serem calculados requerem que todos os elementos da população sejam mensurados. Amédia não é o único parãmetro desta população, poderíamos também calcular a <strong>variância</strong> a partir de todos os elementos da população e teríamos um parâmetro que mede a dispersão de todos os elementos da população estatística ao redor da mérdia.</p>
+<div id="parâmetros-e-estimadores" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Parâmetros e estimadores</h2>
+<p>A população estatística tem determinadas quantias de interesse que definimos como <strong>parâmetros</strong> da população. Se fosse possível medir as alturas dos <span class="math inline">\(N = 1000\)</span> adultos, poderíamos calcular a média da população. Seja uma variável <span class="math inline">\(X\)</span> composta por <span class="math inline">\(X_1, X_2, X_3, \cdots , X_N,\)</span>, a média da população estatística é denominada de <span class="math inline">\(\mu\)</span> e definida por:</p>
+<p><span class="math display">\[\mu=\frac{X_1+X_2+X_3+\cdots+X_N}{N}=\frac{\sum_{i=1}^N{X_i}}{N}\]</span>
+Como não temos acesso a toda a população não podemos obter <span class="math inline">\(\mu\)</span>, mas podemos estimá-lo por meio de uma amostra. Neste caso, seja uma amostra de tamanho <span class="math inline">\(n\)</span> composta por <span class="math inline">\(X_1, X_2, X_3, \cdots, X_n\)</span>, a média da amosta é denominada de <span class="math inline">\(\overline{X}\)</span> e definida por:</p>
+<p><span class="math display">\[\overline{X}=\frac{X_1+X_2+X_3+\cdots+X_n}{n}=\frac{\sum_{i=1}^n{X_i}}{n}\]</span></p>
+<p>Dizemos que <span class="math inline">\(\overline{X}\)</span> é um <strong>estimador não viciado</strong> de <span class="math inline">\(\mu\)</span> (Capítulos <a href="amostrmedias.html#amostrmedias">13</a> e <a href="tcl.html#tcl">15</a>).</p>
+<p>Como os valores da população estatística não são idênticos, podemos obter uma medida de dispersão como a <strong>variância populacional</strong> (<span class="math inline">\(\sigma^2\)</span>) definida por:</p>
+<p><span class="math display">\[\sigma^2=\frac{\sum_{i=1}^N{(X_i - \mu)^2}}{N}\]</span></p>
+<p>Novamente, como não temos acesso a todos os <span class="math inline">\(N\)</span> elementos, podemos apenas calcular a <strong>variância amostral</strong> (<span class="math inline">\(s^2\)</span>) definida por:</p>
+<p><span class="math display">\[s^2=\frac{\sum_{i=1}^n{(X_i - \overline{X})^2}}{n-1}\]</span></p>
+<p>Note que na expressão acima, substituimos <span class="math inline">\(\mu\)</span> por <span class="math inline">\(\overline{X}\)</span> pois estamos nos referindo à variância da amostra. No denominador fizemos a divisão por <span class="math inline">\(n-1\)</span> não por <span class="math inline">\(N\)</span>. Istas mudanças são necessárias para que <span class="math inline">\(s^2\)</span> seja um estimador <strong>não-viciado</strong> de <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Denominamos de <strong>parâmetro</strong> ao descritor obtido a partir da mensuração de <strong>todos os elementos</strong> da população estatística e de <strong>estimador</strong> (ou <strong>estatística</strong>), a quantia obtida a partir da amostra. Os parâmetros são comumente representados por letras gregas. O símbolo <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> representam, respectivamente, a média e variância populacionais, enquanto <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span> são a média e variância amostrais.</p>
 <div class="blackbox">
 <div class="center">
-<p><strong>IMPORTANTE!</strong></p>
+<p><strong>DEFINIÇÕES</strong></p>
 </div>
-<p>Denominamos de <strong>parâmetro</strong> um descritor obtido a partir da mensuração de <strong>todos os elementos</strong> da população estatística. Os parâmetros são comumente representados por letras gregas. O símbolo <span class="math inline">\(\mu\)</span>, por exemplo, é utilizado para representar a média populacional, enquanto o símbolo <span class="math inline">\(\sigma^2\)</span> para representar a variância populacional.</p>
-</div>
-<p><br/></p>
-<p>Ao conduzirmos uma <strong>amostragem</strong> de <span class="math inline">\(n\)</span> elementos teremos um subconjunto possível da população estatística que nos permitirá calcular <strong>descritoers da amostra</strong>. Descritores da amostra são conhecidos também como <strong>estimadores</strong> ou <strong>estatísticas</strong>. A média aritmética deste subconjunto por exemplo, é denominada de <strong>média amostral</strong>, sendo representanta por <span class="math inline">\(\overline{X}\)</span>. Poderíamos estimar também a variância desta amostra (<strong>variância amostral</strong>), representada por <span class="math inline">\(s^2\)</span>.</p>
-<p>Como definições importantes temos:</p>
-<blockquote>
 <p><strong>Parâmetro</strong>: a medida que descreve uma característica da <em>população estatística</em>. Ex.: a média (<span class="math inline">\(\mu\)</span>) ou a variância (<span class="math inline">\(\sigma^2\)</span>) populacional.</p>
-</blockquote>
-<blockquote>
-<p><strong>Estimador</strong> ou <strong>Estatística</strong>: Uma medida que descreve uma característica da <em>amostra</em>. Ex.: a média amostral (<span class="math inline">\(\overline{X}\)</span>) ou a variância amostral (<span class="math inline">\(s^2\)</span>).</p>
-</blockquote>
-<blockquote>
-<p><strong>Estimativa</strong>: é o valor numérico assumido pelo estimador. Ex. o valor número calculado da média ou variância de uma amostra em particular.</p>
-</blockquote>
+<p><strong>Estimador</strong> ou <strong>Estatística</strong>: Uma medida que descreve uma característica da <em>amostra</em>. Ex.: a média amostral (<span class="math inline">\(\overline{X}\)</span>) ou a variância amostral (<span class="math inline">\(s^2\)</span>). Os estimadores támbem podem ser representados por letras gregas com o símbolo <span class="math inline">\(\hat{}\)</span>. A variância amostral, por exemplo, pode ser representada por <span class="math inline">\(\hat{\sigma}^2\)</span>.</p>
+<p><strong>Estimativa</strong>: é o valor numérico assumido pelo estimador. Ex. o valor numérico calculado para a média ou variância de uma amostra em particular.</p>
 </div>
-<div id="amostragem-e-inferência" class="section level2" number="12.5">
-<h2><span class="header-section-number">12.5</span> Amostragem e inferência</h2>
-<p>Em última instância, não estamos interessados na amostra em si, mas na população da qual ela é proveniente. Entretanto, o processo de <strong>amostragem</strong> é a única forma de obtermos alguma informação sobre esta população.</p>
-<p>Tendo obtido uma amostra representativa, calculamos descritores (ex. de tendência central e dispersão) que serão utilizados como <strong>estimadores</strong> dos parâmetros populacionais, um processo que denominamos de <strong>inferência estatística</strong>. Como verificamos anteriormente, cada amostra que retirarmos da mesma população estatística será diferente. Isto significa que os estimadores destas amostras (ex. <span class="math inline">\(\overline{X}\)</span>) serão diferentes entre si e numericamente diferentes dos parâmetros populacionais. No entanto, veremos nos capítulos <a href="amostrmedias.html#amostrmedias">13</a> a <a href="inferenc.html#inferenc">16</a> que podemos conhecer algumas propriedades destes estimadores que nos permitirão estabelecer limites de confiânça de para nossa inferência sobre a população estatística.</p>
+<hr />
+<hr />
+<div id="verificando-as-propriedades-de-overlinex-e-s2" class="section level3" number="12.5.1">
+<h3><span class="header-section-number">12.5.1</span> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></h3>
+<p>Por meio de um exmplo, vamos verificar empiricamente que <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span> são estimadores não viciados de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> respectivamente. Suponha uma população de somente <span class="math inline">\(5\)</span> elementos.</p>
+<p><strong><span class="math display">\[2 - 11 - 15 - 19 - 9\]</span></strong></p>
+<p>Desta população, tomemos amostras de tamanho <span class="math inline">\(n = 2\)</span> <strong>com reposição</strong>.</p>
+<p><strong>1. Calculando <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span>.</strong></p>
+<p>Como conhecemos a população vamos obter:</p>
+<p><span class="math display">\[\mu = \frac{\sum_{i=1}^N{X_i}}{N} = \frac{2 + 11 + 15 + 19 + 9}{5}= \frac{5}{5} = 11.2\]</span></p>
+<p>e</p>
+<p><span class="math display">\[\sigma^2=\frac{\sum_{i=1}^N{(X_i - \mu)^2}}{N} = \frac{164.8}{5} = 32.96\]</span></p>
+<p><strong>2. Amostrando a população estatística</strong></p>
+<p>A tabela abaixo mostra todas as <span class="math inline">\(25\)</span> amostras com reposição de tamanho <span class="math inline">\(n = 2\)</span> que podem ser obtidas desta população.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+2
+</th>
+<th style="text-align:left;">
+11
+</th>
+<th style="text-align:left;">
+15
+</th>
+<th style="text-align:left;">
+19
+</th>
+<th style="text-align:left;">
+9
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(2 ; 2)
+</td>
+<td style="text-align:left;">
+(2 ; 11)
+</td>
+<td style="text-align:left;">
+(2 ; 15)
+</td>
+<td style="text-align:left;">
+(2 ; 19)
+</td>
+<td style="text-align:left;">
+(2 ; 9)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+(11 ; 2)
+</td>
+<td style="text-align:left;">
+(11 ; 11)
+</td>
+<td style="text-align:left;">
+(11 ; 15)
+</td>
+<td style="text-align:left;">
+(11 ; 19)
+</td>
+<td style="text-align:left;">
+(11 ; 9)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+(15 ; 2)
+</td>
+<td style="text-align:left;">
+(15 ; 11)
+</td>
+<td style="text-align:left;">
+(15 ; 15)
+</td>
+<td style="text-align:left;">
+(15 ; 19)
+</td>
+<td style="text-align:left;">
+(15 ; 9)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+(19 ; 2)
+</td>
+<td style="text-align:left;">
+(19 ; 11)
+</td>
+<td style="text-align:left;">
+(19 ; 15)
+</td>
+<td style="text-align:left;">
+(19 ; 19)
+</td>
+<td style="text-align:left;">
+(19 ; 9)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+(9 ; 2)
+</td>
+<td style="text-align:left;">
+(9 ; 11)
+</td>
+<td style="text-align:left;">
+(9 ; 15)
+</td>
+<td style="text-align:left;">
+(9 ; 19)
+</td>
+<td style="text-align:left;">
+(9 ; 9)
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. Calculando <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span>.</strong></p>
+<p>Em seguida, organizamos as amostras em uma outra tabela, de modo que possamos calcular, para cada uma, os estimadores <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></p>
+<table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+<span class="math inline">\(x_1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(x_2\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\overline{X}\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(s^2\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+6.5
+</td>
+<td style="text-align:right;">
+40.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+8.5
+</td>
+<td style="text-align:right;">
+84.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+10.5
+</td>
+<td style="text-align:right;">
+144.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+<td style="text-align:right;">
+24.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6.5
+</td>
+<td style="text-align:right;">
+40.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+11.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+13.0
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+15.0
+</td>
+<td style="text-align:right;">
+32.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+10.0
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+8.5
+</td>
+<td style="text-align:right;">
+84.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+13.0
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+15.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+17.0
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+12.0
+</td>
+<td style="text-align:right;">
+18.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10.5
+</td>
+<td style="text-align:right;">
+144.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+15.0
+</td>
+<td style="text-align:right;">
+32.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+17.0
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+19.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+14.0
+</td>
+<td style="text-align:right;">
+50.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+<td style="text-align:right;">
+24.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+10.0
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+12.0
+</td>
+<td style="text-align:right;">
+18.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+14.0
+</td>
+<td style="text-align:right;">
+50.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+9.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+</tr>
+</tbody>
+</table>
+<p>Vemos que a média amostral pode variar entre 2, quando amostramos o menor valor da população duas vezes (isto é, o número 2) e 19, quando a amostra contém o maior valor da população (isto é, 19). Vemos ainda que existe uma maior concentração de valores entre <span class="math inline">\(8\)</span> e <span class="math inline">\(14\)</span> e que a distribuição das médias é aproximadamente simétrica.</p>
+<p>Para a variância amostral <span class="math inline">\(s^2\)</span> também verificamos uma grande diferença entre as amostras particulares, com resultados que varia entre 0 e 144.5, além de uma distribuição altamente assimétrica.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-244-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><strong>3. Verificando os valores esperados de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span>.</strong></p>
+<p>Para verificar empiricamente os <strong>valores esperados</strong> de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span> podemos encontrar as médias das distribuições. Vemos que:</p>
+<p><span class="math display">\[\overline{\overline{X}} = \frac{\sum_{i=1}^{25}{280}}{25} = 11.2 = \mu\]</span></p>
+<p>e que</p>
+<p><span class="math display">\[\overline{s^2} = \frac{\sum_{i=1}^{25}{824}}{25} = 32.96 = \sigma^2\]</span></p>
+<p>Estes resultados mostram que, em <strong>média</strong>, espera-se que as estimativas de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span> coincidem exatamente com os parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span>. Quando isto ocorre dizemos que o estimador é não viciado.</p>
+<p></br></p>
 <div class="blackbox">
 <div class="center">
-<p><strong>Inferência Estatística</strong></p>
+<p><strong>AMOSTRAGEM COM E SEM REPOSIÇÃO</strong></p>
 </div>
-<p>O processo que consiste em utilizamos descritores da amostra para tirar conclusões sobre as características da população estatística.</p>
+<p>A discussão feita acima é válida para a amostragem de uma população <strong>infinita</strong> ou para a amostragem <strong>com reposição</strong> de uma população finita de tamanho <span class="math inline">\(N\)</span>. Se a amostragem for feita <strong>sem reposição</strong> em uma população finita, <span class="math inline">\(\overline{X}\)</span> continua sendo o estimador não viciado de <span class="math inline">\(\mu\)</span>, porém o estimador não viciado da variância fica:</p>
+<p><span class="math inline">\(s^2 = \left( \frac{N-1}{N} \right) \left( \frac{\sum_{i=1}^n{(X_i - \overline{X})^2}}{n-1} \right)\)</span></p>
+<p>Na prática, raramente conduzimos uma amostragem com reposição. No entanto, ou a população é infinita como nos casos de estudos experimentais, ou a população é finita porém muito grande, como na maioria dos estudos observacionais. Neste segundo caso, para populações finitas com <span class="math inline">\(N\)</span> grande, o termo <span class="math inline">\(\left( \frac{N-1}{N} \right)\sim 1\)</span>.</p>
 </div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-240"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-240-1.png" alt="Processo de amostragem e inferência estatística" width="810" />
+<hr />
+<hr />
+</div>
+</div>
+<div id="amostragem-e-inferência" class="section level2" number="12.6">
+<h2><span class="header-section-number">12.6</span> Amostragem e inferência</h2>
+<p>O problema central com o qual iremos lidar em estatística é que:</p>
+<ol style="list-style-type: decimal">
+<li><p>Estamos interessados nas características da população, porém só temos informação sobre a amostra.</p></li>
+<li><p>A estimativa obtida a partir de uma amostra particular é sujeita à variação decorrente do processo de amostragem.</p></li>
+</ol>
+<p>Considere por exemplo, as diferentes amostras que podem ser obtidas a partir das <span class="math inline">\(n = 50\)</span> alturas:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-245"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-245-1.png" alt="Amostras de tamanho n = 50 adultos" width="768" />
 <p class="caption">
-Figure 12.4: Processo de amostragem e inferência estatística
+Figure 12.4: Amostras de tamanho n = 50 adultos
+</p>
+</div>
+<p>Vemos que a cada nova amostra, <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span> são numericamente diferentes e não coicidem com os parâmetros (<span class="math inline">\(\mu = 11.2\)</span>, <span class="math inline">\(\sigma^2 = 100\)</span>). Vemos entretanto, que mesmo sendo diferentes, estão <strong>ao redor</strong> dos parâmetros populacionais. Deste modo, se pudermos conhecer algumas propriedades destes estimadores, seremos capazes de estabelecer limites de confiança sobre as conclusões que podemos tirar as respeito da população estatística <a href="amostrmedias.html#amostrmedias">13</a> a <a href="inferenc.html#inferenc">16</a>.</p>
+<p>Neste sentido, o processo de <strong>amostragem e inferência</strong> consiste em:</p>
+<ol style="list-style-type: decimal">
+<li><p>Obter uma amostra representativa da população estatística;</p></li>
+<li><p>Calcular estimativas a partir das características da amostra (ex. <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span>);</p></li>
+<li><p>Assumir distribuições de probabilidade <strong>apropriadas</strong> para os estimadores;</p></li>
+<li><p>Utilizar para estas distribuições para calcular intervalos de confiança ou testar hipóteses estatísticas.</p></li>
+</ol>
+<p>Este processo pode ser resumido na figura abaixo e será discutido nos próximos capítulos.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-246"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-246-1.png" alt="Processo de amostragem e inferência estatística" width="810" />
+<p class="caption">
+Figure 12.5: Processo de amostragem e inferência estatística
 </p>
 </div>
 

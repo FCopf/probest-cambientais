@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -604,7 +608,7 @@ div.csl-indent {
 <div id="o-modelo-de-regressão" class="section level3" number="19.1.1">
 <h3><span class="header-section-number">19.1.1</span> O Modelo de Regressão</h3>
 <p>Envolve uma única variável preditora contínua e três parâmetros desconhecidos, <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> e <span class="math inline">\(\sigma^2\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-337-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-343-1.png" width="672" /></p>
 <p>Neste modelo, os pontos mostram o resultado do modelo estatístico e a linha descreve a parte sistemática. O parâmetro <span class="math inline">\(\beta_0\)</span> descreve a posição média em <span class="math inline">\(Y\)</span> para um valor de <span class="math inline">\(X = 0\)</span> e <span class="math inline">\(\beta_1\)</span> a taxa de incremento médio em <span class="math inline">\(Y\)</span> para a deferença de uma unidade em <span class="math inline">\(X\)</span>. O parâmetro <span class="math inline">\(\sigma\)</span> se refere ao desvio padrão do resíduo e define o grau de espalhamento dos pontos ao redor da reta média. Experimente diminuir e aumentar o valor de <span class="math inline">\(\sigma\)</span> e verifique o que ocorre com a dispersão dos pontos.</p>
 </div>
 <div id="modelo-de-anova" class="section level3" number="19.1.2">
@@ -618,7 +622,7 @@ div.csl-indent {
 <p><span class="math inline">\(\mu_C = \beta_0 + \beta_3 = 50 + 30\)</span>: média do tratamento <code>C</code></p>
 <p><span class="math inline">\(\mu_D = \beta_0 + \beta_4 = 50 + 15\)</span>: média do tratamento <code>D</code></p>
 <p>As notações <span class="math inline">\(\mu_{A \cdots D}\)</span> são respectivamente as médias populacionais dos tratamentos, conforme iremos definir no capítulo sobre Análise de Variância (ANOVA - capítulo <a href="anova.html#anova">20</a>). Deste modo, o gráfico de dispersão resultante deste modelo contém variáveis preditoras categóricas em que os pontos estão espalhados ao redor da media <span class="math inline">\(\mu\)</span> (em azul) do respectivo tratamento de acordo com a magnitude de <span class="math inline">\(\sigma\)</span> .</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-339-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-345-1.png" width="672" /></p>
 
 </div>
 </div>

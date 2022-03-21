@@ -334,7 +334,7 @@ Tradicionalmente utiliza-se $\alpha = 0.05$. Neste caso, $H_0$ seria rejeitada s
 
 ## Um exemplo de ANOVA
 
-Vamos exemplificar o passo-a-passo de uma ANOVA utilizando nosso exemplo fictício. /o primeiro passo é definir as hipóteses estatpisticas e o nível de significância:
+Vamos exemplificar o passo-a-passo de uma ANOVA utilizando nosso exemplo fictício. O primeiro passo é definir as hipóteses estatpisticas e o nível de significância:
 
 ___
 
@@ -348,7 +348,7 @@ $\alpha = 0.05$
 ___
 
 
-Utilizando os tados da tabela abaixo podemos obetr todas as quantias necessárias para o cálculo da ANOVA, isto é, os somatórios dos quadrados, os graus de liberdade,os quadraos médios e finalmente o valor de $F_{calculado}$
+Utilizando os dados da tabela abaixo podemos obter todas as quantias necessárias para o cálculo da ANOVA, isto é, os somatórios dos quadrados, os graus de liberdade,os quadraos médios e finalmente o valor de $F_{calculado}$
 
 
 ```{r}

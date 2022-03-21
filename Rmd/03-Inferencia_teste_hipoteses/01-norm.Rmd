@@ -112,6 +112,13 @@ ggplot(df_norm, aes(x = X)) +
 
 Se as mensurações sobre um determinado fenômeno apresentarem um padrão em forma de sino, podemos buscar a melhor combinação de $\mu$ e $\sigma$ e descrever o fenômeno por meio de um modelo normal. Ao fazer isto, poderemos utilizar este modelo para entender quais são as probabilidade de eventos futuros estarem em diferentes faixas de valores. No caso das alturas dos alunos por exemplo, vemos que a probabilidade de um aluno ter mais de $2$ metros ou menos de $1,5$m é extremamente baixa.
 
+:::: {.blackbox data-latex=""}
+::: {.center data-latex=""}
+**Um pouco de história**
+:::
+Alguns atribuem a proposição deste modelo normal a <a href="https://en.wikipedia.org/wiki/Abraham_de_Moivre" target="_blank">Abraham de Moivre</a>, um matemático Francês que chegou a a distribuição normal como uma aproximação a <a href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank">distribuição binomial</a> em seu livro <a href="https://en.wikipedia.org/wiki/The_Doctrine_of_Chances" target="_blank">The Doctrine of Chances</a> em $1718$. A **distribuição normal** de probabilidades é **simétrica**, ou seja, os valores extremos são igualmente representados acima e abaixo da região central (média). Você poderá encontrar o termo *bell curve* em inglês devido à sua forma de sino ou distribuição **gaussiana** em homenagem a [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) um dos mais importantes matemáticos do século XXI. Gauss lidou com a distribuição normal quando desenvolveu a **Teoria da distribuição dos erros observacionais** no contexto do <a href="https://en.wikipedia.org/wiki/Least_squares" target="_blank">Método dos Mínimos Quadrados</a> em $1823$.
+::::
+
 ## Entendendo a função normal de densidade de probabilidade
 
 ```{r}

@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -561,7 +565,7 @@ div.csl-indent {
 <p>Uma forma de visualizar o espaço amostral e eventos deste espaço é pela construção de <strong>diagramas de Venn</strong>. Para isto, vamos considerar também o evento <span class="math inline">\(B\)</span> <em>“encontrar mais de 3 itens”</em> que consiste de:</p>
 <p><span class="math inline">\(B = \{(F3), (F4), (F5), (F6), (G3), (G4)\}\)</span></p>
 <p>Observando os eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> em um <strong>Diagrama de Venn</strong> temos:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-405-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-411-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Cada um destes eventos é denominado de <strong>evento complexo</strong>, pois pode ser obtido pela combinação de eventos simples. O evento <span class="math inline">\(B\)</span> por exemplo, pode ocorrer quando é encontrado uma folha <strong>OU</strong> um galho com mais de 3 itens, enquanto o evento <span class="math inline">\(A\)</span> ocorre quando é encontrada uma folha com <span class="math inline">\(0\)</span> <strong>OU</strong> <span class="math inline">\(1\)</span> <strong>OU</strong> <span class="math inline">\(2\)</span> <strong>OU</strong> <span class="math inline">\(3\)</span> <strong>OU</strong> <span class="math inline">\(4\)</span> <strong>OU</strong> <span class="math inline">\(5\)</span> <strong>OU</strong> <span class="math inline">\(6\)</span> itens.</p>
 <p>Estes eventos complexos foram obtidos por meio da <strong>união</strong> de eventos simples. A declaração <strong>OU</strong> significa que qualquer uma destas observações é suficiente para dizer que o evento ocorreu. Ou seja, <span class="math inline">\(A\)</span> pode ocorrer por 7 formas e <span class="math inline">\(B\)</span> por 6 formas distintas.</p>
 <p>Note que as observações <span class="math inline">\((G0)\)</span>, <span class="math inline">\((G1)\)</span> e <span class="math inline">\((G2)\)</span> <strong>não pertencem</strong> aos eventos <span class="math inline">\(A\)</span> nem <span class="math inline">\(B\)</span>, ainda que estejam no espaço amostral <span class="math inline">\(\Omega\)</span> de possibilidades.</p>

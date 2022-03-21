@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -592,8 +596,8 @@ No entanto, a importância central da amostragem aleatória em estatística est�
 </ul>
 <p><span class="math display">\[\sigma_{\overline{X}} =\frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>A figura abaixo é comnmente utilizada para representar os conceitos de precição e acurácia. O centro do alvo é o valor do parâmetro populacional e os pontos em preto são as estimativas. Estimadores acurados geram, em média, estimativas ao redor do parâmetro populacional (viés <span class="math inline">\(= 0\)</span>). Estimadores <strong>não-acurados</strong> geram, em média, valores deslocados do parâmetro populacional (viés <span class="math inline">\(\ne 0\)</span>). Estimadores precisos resultam sempre em estimativas próximas entre si, enquanto estimadores não precisos resultam em estimativas distantes umas das outras.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-244"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-244-1.png" alt="Representação dos conceitos de precisão e acurácia." width="798" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-250"></span>
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-250-1.png" alt="Representação dos conceitos de precisão e acurácia." width="798" />
 <p class="caption">
 Figure 13.1: Representação dos conceitos de precisão e acurácia.
 </p>
@@ -616,7 +620,7 @@ Figure 13.1: Representação dos conceitos de precisão e acurácia.
 </div>
 <div id="acurácia" class="section level3" number="13.4.2">
 <h3><span class="header-section-number">13.4.2</span> Acurácia</h3>
-<p>Até agora, analisamos duas amostras diferentes da população. Porém, quantas amostras distintas seriam possíveis? Para uma população com 10 elementos, a teoria combinatória nos diz que são possíveis:</p>
+<p>Até agora, analisamos duas amostras diferentes da população. Porém, quantas amostras distintas seriam possíveis? Para uma amostragem <strong>sem reposição</strong>, a teoria combinatória nos diz que são possíveis:</p>
 <p><span class="math display">\[{{10}\choose{5}} = \frac{10!}{(10-5)! \times 5!} = 252\]</span></p>
 <p>formas diferentes de combinarmos <span class="math inline">\(N = 10\)</span> elementos em amostras de tamanho <span class="math inline">\(n = 5\)</span>.</p>
 <p>Inicialmente vamos avaliar a questão com um número menor. Sejam por exemplo, 8 amostras tomadas aleatoriamente, gerando os resultados a seguir:</p>
@@ -793,31 +797,31 @@ A 8
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 Medias
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 28.6
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 26
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 24.6
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 26.8
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 30.8
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 30.2
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 30
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 31.8
 </td>
 </tr>
@@ -1624,11 +1628,11 @@ Medias
 </table>
 <p>A menor e maior médias possíveis são 14.6 e 36.6 respectivamente. Estes valores são os mais distantes do parâmetro populacional (<span class="math inline">\(\mu = 25.6\)</span>) e ocorrem quando, <strong>puramente ao acaso</strong>, são amostrados os 5 menores (3, 10, 14, 19, 27) ou os 5 maiores (43, 42, 41, 29, 28) elementos da população estatística. Estes casos extremos são <strong>raros</strong>. Em nosso exemplo, valores superiores a 33.8 ou inferiores a 17.4 são muito improváveis.</p>
 <p>Podemos avaliar graficamente a distribuição das médias amostrais através de um histograma. A grande maioria das médias amostrais concentra-se na porção intermediária do gráfico entre estes limites. Por exemplo, somente 3.2% das observações estão acima de 33.8. Da mesma forma, somente 3.2% das observações estão abaixo de 17.4</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-251-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-257-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Se calcularmos a <strong>média das médias</strong> (<span class="math inline">\(mu_{\overline{X}}\)</span>), ou seja, somarmos todos estes valores e dividirmos por 252, o resultado será 25.6, que é exatamente o valor da média populacional <span class="math inline">\(\mu\)</span>. Isto têm uma implicação central em inferência estatística. Significa que a média amostral <span class="math inline">\(\overline{X}\)</span> é um estimador <strong>acurado</strong> (= <strong>não-viciado</strong>), pois tende a estimar corretamente o valor da média populacional <span class="math inline">\(\mu\)</span>. Ou seja, o histograma acima está centrado ao redor de <span class="math inline">\(\mu\)</span>, o que significa que <strong>em média</strong> uma amostra particular tem maior probabilidade de expressar um <span class="math inline">\(\overline{X}\)</span> próximo ao valor populacional.</p>
 </div>
-<div id="precisão-o-erro-padrão-da-média-sigmaoverlinex" class="section level3" number="13.4.3">
-<h3><span class="header-section-number">13.4.3</span> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</h3>
+<div id="precisão-o-erro-padrão-da-média-sigma_overlinex" class="section level3" number="13.4.3">
+<h3><span class="header-section-number">13.4.3</span> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</h3>
 <p>Suponha agora que tomemos ao acaso amostras com <span class="math inline">\(n = 7\)</span> desta mesma população. Existem ao todo:</p>
 <p><span class="math display">\[{{10}\choose{7}} = \frac{10!}{(10-7)! \times 7!} = 120\]</span></p>
 <p>amostras diferentes de tamanho <span class="math inline">\(n = 7\)</span> que podem ser retiradas de uma população de tamanho <span class="math inline">\(n = 10\)</span>. Se tomarmos estas 120 amostras e calcularmos suas respectivas médias amostrais, teremos os resultados abaixo:</p>
@@ -2016,11 +2020,12 @@ Medias
 </tr>
 </tbody>
 </table>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-254-1.png" width="480" style="display: block; margin: auto;" /></p>
-<p>Se compararmos os histogramas com <span class="math inline">\(n = 5\)</span> e <span class="math inline">\(n = 7\)</span>, veremos que os dois resultam em estimadores acurados, pois <span class="math inline">\(mu_{\overline{X}} = \mu\)</span>. No entando, o <strong>intervalo de variação</strong> é menor para amostras de tamanho <span class="math inline">\(n = 7\)</span>. Para esta figura, os valores estão mais concentrados ao redor da média. Portanto, à medida que aumenta o tamanhol amostral, diminui a dispersão das médias amostrais ao redor de <span class="math inline">\(\mu\)</span>. Assim, para amostras grandes torna-se mais <strong>improvável</strong> obter uma média amostral distante da média populacional. Dizemos então que Conforme aumenta o tamanho amostral, conseguimos estimativas mais precisas.</p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-260-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Se compararmos os histogramas com <span class="math inline">\(n = 5\)</span> e <span class="math inline">\(n = 7\)</span>, veremos que os dois resultam em estimadores acurados, pois <span class="math inline">\(\mu_{\overline{X}} = \mu\)</span>. No entando, o <strong>intervalo de variação</strong> é menor para amostras de tamanho <span class="math inline">\(n = 7\)</span>. Para esta figura, os valores estão mais concentrados ao redor da média. Portanto, à medida que aumenta o tamanho amostral, diminui a dispersão das médias amostrais ao redor de <span class="math inline">\(\mu\)</span>. Assim, para amostras grandes torna-se mais <strong>improvável</strong> obter uma média amostral distante da média populacional. Dizemos então que conforme aumenta o tamanho amostral, conseguimos estimativas mais precisas.</p>
 <p>A precisão de um estimador pode ser medida pelo <strong>Erro padrão da média</strong> (<span class="math inline">\(\sigma_{\overline{X}}\)</span>) que pode ser calculado por:</p>
 <p><span class="math display">\[\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>O erro padrão da média é o desvio padrão de <strong>todas</strong> as médias amostrais que poderiam ser obtidas de uma amostra com tamanho <span class="math inline">\(n\)</span>. Para nosso exemplo com <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(\sigma_{\overline{X}}\)</span> = 5.93, enquanto para <span class="math inline">\(n = 7\)</span>, <span class="math inline">\(\sigma_{\overline{X}}\)</span> = 5.01. Dizemos que o último exemplo provê estimativas <strong>mais precisas</strong>.</p>
+<p></br></p>
 <div class="blackbox">
 <div class="center">
 <p><strong>IMPORTANTE!</strong></p>

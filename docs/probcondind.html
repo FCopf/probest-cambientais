@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -553,7 +557,7 @@ div.csl-indent {
 <p>E <span class="math inline">\(B\)</span> <em>“encontar mais de 3 itens”</em>:</p>
 <p><span class="math inline">\(B = \{(F3), (F4), (F5), (F6), (G3), (G4)\}\)</span></p>
 <p>Representados no diagrama de Venn abaixo.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-410-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-416-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Nos capítulos anteriores obtivemos as probabilidades <span class="math inline">\(P(A)\)</span>, <span class="math inline">\(P(B)\)</span>, <span class="math inline">\(P(A \cup B)\)</span> e <span class="math inline">\(P(A \cap B)\)</span>. Digamos agora que, ao virar uma estrutura, <strong>sabemos</strong> que a estrutura era uma folha. A pergunta é:</p>
 <blockquote>
 <p>Qual a probabilidade de que tenham sido obtidos <strong>mais de 3 itens</strong>?</p>
@@ -574,7 +578,7 @@ div.csl-indent {
 <p><span class="math display">\[P(B \cap A) = P(A) \times P(B|A)\]</span></p>
 <p><em>Obs</em>: faça os cálculos para <span class="math inline">\(P(A \cap B)\)</span> utilizando a expressão acima e veja se coincide com o obtido no capítulo <a href="probregras.html#probregras">27</a>.</p>
 <p>Uma vez que probabilidade condicional se refere ao cálculo de probabilidades em eventos complexos <strong>sequenciais</strong>, podemos fazer a mesma representação de um experimento complexo utilizando um diagrama de árvore onde estão indicadas as probabilidades de ocorrência de cada evento, bem como as probabilidades condicionais.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-411-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-417-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Neste esquema, podemos ler as probabilidades de obtenção de cada resultado da seguinte forma. A primeira etapa do experimento, pode resultar na ocorrencia do evento <span class="math inline">\(A\)</span> com probabilidade <span class="math inline">\(P(A)\)</span>, ou de seu <strong>complemento</strong>, com probabilidade <span class="math inline">\(P(\overline{A})\)</span>. Na segunda etapa, os resultados podem ser dar da seguinte forma:</p>
 <ol style="list-style-type: decimal">
 <li>Dado que <span class="math inline">\(A\)</span> ocorreu:
@@ -674,7 +678,7 @@ Mais de 20
 <p>de modo que,</p>
 <p><span class="math inline">\(P(A \cup B) = P(A) \times P(B)\)</span></p>
 <p>Eventos mutuamente exclusivos são representados no diagrama de Venn abaixo.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-415-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-421-1.png" width="480" style="display: block; margin: auto;" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Quando dois eventos são independentes:</li>
 </ol>
@@ -690,7 +694,7 @@ Mais de 20
 <li>Finalmente, vamos associar a ideia de dependência com a ideia de eventos mutuamente exclusivos. Se sabemos que dois eventos são mutuamente exclusivos, então sabemos que ao ocorrer um deles, o outro <strong>não poderá</strong> ocorrer, ou seja, dado que <span class="math inline">\(A\)</span> ocorreu temos <strong>certeza</strong> de que <span class="math inline">\(B\)</span> não poderá ocorrer, de modo que <span class="math inline">\(P(B|A) = 0\)</span>.</li>
 </ol>
 <p>Representando eventos mutuamente exclusivos em um diagrama de árvore teremos:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-416-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-422-1.png" width="672" /></p>
 <p>Ao saber que <span class="math inline">\(A\)</span> ocorreu, veja que <span class="math inline">\(P(B|A)\)</span> tem probabilidade igual a zero, de modo que eventos mutuamente exclusivos são necessariamente <strong>dependentes</strong>.</p>
 <ol start="7" style="list-style-type: decimal">
 <li>O que ocorre se os eventos <strong>não são</strong> mutuamente exclusivos, ou seja, se <span class="math inline">\(P(A \cap B) \ne 0\)</span>? Neste caso <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> <strong>podem ou não ser</strong> independentes e a resposta dependerá se:</li>

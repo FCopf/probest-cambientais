@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -596,7 +600,7 @@ div.csl-indent {
 <p>O valor de <span class="math inline">\(z\)</span> calculado é chamado de <strong>estatitica do teste</strong>. Com o uso da Tabela <span class="math inline">\(Z\)</span>, esta estatística será utilizada para encontrar:</p>
 <p><span class="math display">\[P(Z \ge z) = P(\overline{X} \ge \mu)\]</span></p>
 <p>Como nossa pergunta se refere à <strong>distância</strong> entre <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(\mu\)</span>, devemos encontar também <span class="math inline">\(P(Z \le -z)\)</span>, de modo que a probabilidade que nos interessa será representada pela área destacada em vermelho na figura abaixo que nos dá <span class="math inline">\(P(Z \ge |z|)\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-318-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-324-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>A área destacada em vermelho será irá diminuir conforme <span class="math inline">\(\overline{X}\)</span> se distancia de <span class="math inline">\(\mu\)</span> e irá aumentar para valores de <span class="math inline">\(\overline{X}\)</span> muito próximos a <span class="math inline">\(\mu\)</span>. Como estamos falando de uma distribuição de probabilidade, esta área mede a probabilidade de encontrarmos <span class="math inline">\(\overline{X}\)</span> pelo menos a uma dada distância de <span class="math inline">\(\mu\)</span>, <strong>assumindo</strong> que <span class="math inline">\(H_0\)</span> seja verdadeiro. Se esta área for muito pequena, a probabilidade de que <span class="math inline">\(\overline{X}\)</span> seja condizente com <span class="math inline">\(H_0\)</span> diminui. Chamaremos este probabilidade de <strong>valor de p</strong>. Portanto, se <span class="math inline">\(p\)</span> for <strong>muito pequeno</strong> dizemos que é improvável que <span class="math inline">\(\overline{X}\)</span> seja condizente com <span class="math inline">\(H_0\)</span>, nos levando a <strong>rejeitar</strong> <span class="math inline">\(H_O\)</span> em favor de <span class="math inline">\(H_a\)</span>.</p>
 <p>A decisão do que é uma probabilidade foi <strong>muito pequena</strong> é feita com base no <strong>limite de rejeição</strong> <span class="math inline">\(\alpha\)</span>, tambṕem chamado de <strong>nivel crítico</strong> ou <strong>nível de significância</strong>. Deste modo, a conclusão de um teste estatístico se dá por:</p>
 <blockquote>
@@ -605,7 +609,7 @@ div.csl-indent {
 <blockquote>
 <p>Se <span class="math inline">\(p \le \alpha\)</span> –&gt; <strong>REJEITAMOS <span class="math inline">\(H_0\)</span></strong> (e assumimos <span class="math inline">\(H_a\)</span> como verdadeira)</p>
 </blockquote>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-319-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-325-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="exemplificando-um-teste-de-hipóteses-o-teste-z" class="section level2" number="17.2">
@@ -627,7 +631,7 @@ div.csl-indent {
 <p>Com estes resultados encontramos o valor correspondente de Z.</p>
 <p><span class="math inline">\(z = \frac{\overline{X} - \mu}{\sigma_{\mu}} = \frac{66.73 - 65}{2.32} = 0.75\)</span></p>
 <p>Utilizando a Tabela Z, encontramos a probabilidade de obtermos valores tão ou mais extremos que <span class="math inline">\(-0.75\)</span> e <span class="math inline">\(+0.75\)</span>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-321-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-327-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Com isto, a probabilidade de encontarmos valores tão ou mais extermos que <span class="math inline">\(\overline{X} = 66.73\)</span> foi calculada em <span class="math inline">\(0.227 + 0.227 =\)</span> <strong>0.453</strong>.</p>
 <p>Neste exemplo, a <strong>estatística do teste</strong> foi <span class="math inline">\(z = 0.75\)</span> o a probabilidade associada <span class="math inline">\(p = 0.453\)</span>.</p>
 <hr />
@@ -680,7 +684,7 @@ div.csl-indent {
 <p>Eventualmente, podemos rejeitar <span class="math inline">\(H_0\)</span>, ainda que ela seja verdadeira. O nivel de significância adotado, estabele que a probabilidade disto acontecer é <span class="math inline">\(\alpha\)</span>. Se rejeitarmos <span class="math inline">\(H_0\)</span> quando ela é verdadeira, estaremos incorrendo em um erro de decisão que denominamos de <strong>Erro Tipo I</strong>. Consequentemente, temos uma probabilidade de <span class="math inline">\(1 - \alpha\)</span> de aceitar corretamente <span class="math inline">\(H_0\)</span> quando ela é verdadeira. Estabelecer um <span class="math inline">\(\alpha = 0,05\)</span> nos garante que iremos incorrer no erro do tipo I em somente <span class="math inline">\(5\%\)</span> das vezes que o experimento for realizado.</p>
 <p>Um outra situação ocorre quando aceitamos erroneamente a hipótese nula que é <strong>falsa</strong>, incorrendo no <strong>Erro Tipo II</strong>. O erro do tipo II tem probabilidade <span class="math inline">\(\beta\)</span> de acontecer. O complementar desta probabilidade (<span class="math inline">\(1-\beta\)</span>) é denominado de <strong>Poder do Teste</strong>. Um teste poderoso é portanto, aquele que tem elevada probabilidade de rejeitar <span class="math inline">\(H_0\)</span> quando ela é falsa.</p>
 <p>As figuras abaixo representam as distribuições das médias amostrais e os erros do tipos I e II quando o <span class="math inline">\(H_0\)</span> é verdadeira (<span class="math inline">\(\mu_a = \mu\)</span>) e quando <span class="math inline">\(H_0\)</span> é falsa (<span class="math inline">\(\mu_a &gt; \mu\)</span>).</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-323-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-329-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Idealmente em um teste estatístico, seria interessante reduzir ao máximo os erros do tipo I e II. Ao reduzirmos o erro do tipo I, diminuindo <span class="math inline">\(\alpha\)</span> teremos um teste mais rigoroso que raramente iria errar ao rejeitar um <span class="math inline">\(H_0\)</span> verdadeiro (Figura A). Entretanto, este teste também <strong>raramente</strong> iria rejeitar <span class="math inline">\(H_0\)</span> ainda que ele seja falso (Figura B). Consequentemente, ao diminuir o valor de <span class="math inline">\(\alpha\)</span> ficamos menos propensos a cometer o erro do tipo I, porém <strong>mais propensos</strong> a incorrer no erro tipo II, isto é, não rejeitar uma <span class="math inline">\(H_0\)</span> falsa.</p>
 <p>Dadas estas características, o único modo que reduzir os dois tipos de erros <strong>simultaneamente</strong> é aumentando o tamanho amostral <span class="math inline">\(n\)</span> pois, neste caso, reduzimos o erro padrão (<span class="math inline">\(\sigma_{\overline{X}}\)</span>) e consequentemente a sobreposição entre as duas curvas acima.</p>
 </div>

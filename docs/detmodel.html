@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -569,7 +573,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb200-7"><a href="detmodel.html#cb200-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb200-8"><a href="detmodel.html#cb200-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb200-9"><a href="detmodel.html#cb200-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-437-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-443-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Na figura acima, temos cada um dos pontos em <span class="math inline">\(Y\)</span> como função linear de <span class="math inline">\(X\)</span>. Os comandos cima são entendidos como:</p>
 <ol style="list-style-type: decimal">
 <li><p>Determinamos os parâmetros <span class="math inline">\(\beta_0 = 0\)</span> e <span class="math inline">\(\beta_1 = 2\)</span>;</p></li>
@@ -581,7 +585,7 @@ Vamos a um exemplo no R.</p>
 <p>Vamos substituir com uma figura em formato de linha</p>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="detmodel.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb201-2"><a href="detmodel.html#cb201-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-438-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-444-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>No exemplo acima, temos os parâmetros <span class="math inline">\(\beta_0 = 0\)</span> e <span class="math inline">\(\beta_1 = 2\)</span>. Isto significa que para <span class="math inline">\(X = 0\)</span> o valor em <span class="math inline">\(Y = 0\)</span>. Conforme aumentamos <span class="math inline">\(X\)</span> em uma unidade, <span class="math inline">\(Y\)</span> aumenta em 2 unidades. No modelo linear, <span class="math inline">\(\beta_0\)</span> é interpretado portanto como a altura em <span class="math inline">\(Y\)</span> em que a reta cruza o eixo das ordenadas, enquanto <span class="math inline">\(\beta_1\)</span> representa a taxa de incremento em <span class="math inline">\(Y\)</span> para o aumento de <strong>uma unidade</strong> em <span class="math inline">\(X\)</span>.</p>
 <p>Vamos inserir duas outras curvas à figura anterior modificando os valores de <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>.</p>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="detmodel.html#cb202-1" aria-hidden="true" tabindex="-1"></a>b0_i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
@@ -611,7 +615,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb202-25"><a href="detmodel.html#cb202-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="fu">mean</span>(df<span class="sc">$</span>Y4) <span class="sc">+</span> <span class="dv">5</span>, </span>
 <span id="cb202-26"><a href="detmodel.html#cb202-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> .(b0_ii) <span class="sc">+</span> .(b1_ii) <span class="sc">*</span> X), <span class="at">col =</span> <span class="st">&#39;green&#39;</span>, <span class="at">angle =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
 <span id="cb202-27"><a href="detmodel.html#cb202-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Y&quot;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-439-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-445-1.png" width="384" style="display: block; margin: auto;" /></p>
 <hr />
 <div id="entendendo-os-comandos-em-r" class="section level4 unnumbered">
 <h4>Entendendo os comandos em R</h4>
@@ -661,7 +665,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb203-18"><a href="detmodel.html#cb203-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> beta[<span class="dv">0</span>] <span class="sc">+</span> beta[<span class="dv">1</span>]<span class="sc">*</span>X), <span class="at">angle =</span> <span class="dv">33</span>) <span class="sc">+</span></span>
 <span id="cb203-19"><a href="detmodel.html#cb203-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">35</span>, <span class="at">y =</span> <span class="dv">90</span>, </span>
 <span id="cb203-20"><a href="detmodel.html#cb203-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(Y <span class="sc">==</span> beta[<span class="dv">0</span>] <span class="sc">+</span> beta[<span class="dv">1</span>]<span class="sc">*</span>X <span class="sc">+</span> beta[<span class="dv">2</span>]<span class="sc">*</span>(X <span class="sc">-</span> alpha)), <span class="at">angle =</span> <span class="dv">58</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-440-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-446-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="função-potência" class="section level2" number="32.2">
@@ -678,7 +682,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb204-7"><a href="detmodel.html#cb204-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb204-8"><a href="detmodel.html#cb204-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb204-9"><a href="detmodel.html#cb204-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-441-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-447-1.png" width="384" style="display: block; margin: auto;" /></p>
 <div id="a-representação-linear-da-função-potência" class="section level4 unnumbered">
 <h4>A representação linear da função potência</h4>
 <p>Embora descreva uma relação funcional não-linear, a função potência têm sido historicamente ajustada por modelos lineares devido a seguinte relação:</p>
@@ -697,7 +701,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb205-7"><a href="detmodel.html#cb205-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb205-8"><a href="detmodel.html#cb205-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(X), <span class="at">y =</span> <span class="fu">log</span>(Y))) <span class="sc">+</span></span>
 <span id="cb205-9"><a href="detmodel.html#cb205-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-442-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-448-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="as-várias-formas-da-função-potência" class="section level4 unnumbered">
 <h4>As várias formas da função potência</h4>
@@ -733,7 +737,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb206-29"><a href="detmodel.html#cb206-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">bquote</span>(beta[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;e&quot;</span> <span class="sc">~</span> beta[<span class="dv">1</span>] <span class="sc">&lt;</span> <span class="dv">1</span>))</span>
 <span id="cb206-30"><a href="detmodel.html#cb206-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb206-31"><a href="detmodel.html#cb206-31" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g1, g2, g3, g4, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-443-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-449-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii" class="section level2" number="32.3">
@@ -755,7 +759,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb207-9"><a href="detmodel.html#cb207-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb207-10"><a href="detmodel.html#cb207-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
 <span id="cb207-11"><a href="detmodel.html#cb207-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-444-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-450-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="resposta-funcional-do-tipo-iii" class="section level2" number="32.4">
 <h2><span class="header-section-number">32.4</span> Resposta funcional do tipo III</h2>
@@ -773,7 +777,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb208-9"><a href="detmodel.html#cb208-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb208-10"><a href="detmodel.html#cb208-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
 <span id="cb208-11"><a href="detmodel.html#cb208-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-445-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-451-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="resposta-funcional-do-tipo-iv" class="section level2" number="32.5">
 <h2><span class="header-section-number">32.5</span> Resposta funcional do tipo IV</h2>
@@ -792,7 +796,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb209-9"><a href="detmodel.html#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb209-10"><a href="detmodel.html#cb209-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb209-11"><a href="detmodel.html#cb209-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-446-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-452-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="função-hiperbólica" class="section level2" number="32.6">
 <h2><span class="header-section-number">32.6</span> Função hiperbólica</h2>
@@ -808,7 +812,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb210-7"><a href="detmodel.html#cb210-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb210-8"><a href="detmodel.html#cb210-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb210-9"><a href="detmodel.html#cb210-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-447-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-453-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="função-exponencial" class="section level2" number="32.7">
 <h2><span class="header-section-number">32.7</span> Função exponencial</h2>
@@ -828,7 +832,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb211-13"><a href="detmodel.html#cb211-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Y2), <span class="at">col =</span> <span class="st">&#39;red&#39;</span>)</span>
 <span id="cb211-14"><a href="detmodel.html#cb211-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb211-15"><a href="detmodel.html#cb211-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g1, g2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-448-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-454-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="função-logística" class="section level2" number="32.8">
 <h2><span class="header-section-number">32.8</span> Função logística</h2>
@@ -845,7 +849,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb212-7"><a href="detmodel.html#cb212-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb212-8"><a href="detmodel.html#cb212-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb212-9"><a href="detmodel.html#cb212-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-449-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-455-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-monomolecular" class="section level2" number="32.9">
 <h2><span class="header-section-number">32.9</span> Modelo monomolecular</h2>
@@ -861,7 +865,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb213-8"><a href="detmodel.html#cb213-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb213-9"><a href="detmodel.html#cb213-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb213-10"><a href="detmodel.html#cb213-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-450-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-456-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-de-ricker" class="section level2" number="32.10">
 <h2><span class="header-section-number">32.10</span> Modelo de Ricker</h2>
@@ -876,7 +880,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb214-7"><a href="detmodel.html#cb214-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb214-8"><a href="detmodel.html#cb214-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb214-9"><a href="detmodel.html#cb214-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-451-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-457-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-de-gompertz" class="section level2" number="32.11">
 <h2><span class="header-section-number">32.11</span> Modelo de Gompertz</h2>
@@ -891,7 +895,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb215-7"><a href="detmodel.html#cb215-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb215-8"><a href="detmodel.html#cb215-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb215-9"><a href="detmodel.html#cb215-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-452-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-458-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelo-de-von-bertalanffy" class="section level2" number="32.12">
 <h2><span class="header-section-number">32.12</span> Modelo de von Bertalanffy</h2>
@@ -907,7 +911,7 @@ Vamos a um exemplo no R.</p>
 <span id="cb216-8"><a href="detmodel.html#cb216-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb216-9"><a href="detmodel.html#cb216-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb216-10"><a href="detmodel.html#cb216-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-453-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-459-1.png" width="384" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

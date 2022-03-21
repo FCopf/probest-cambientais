@@ -285,9 +285,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="12.1" data-path="popamostra.html"><a href="popamostra.html#população-amostra-e-unidade-amostral"><i class="fa fa-check"></i><b>12.1</b> População, amostra e unidade amostral</a></li>
 <li class="chapter" data-level="12.2" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-frequências-na-população-estatística"><i class="fa fa-check"></i><b>12.2</b> Distribuição de frequências na população estatística</a></li>
-<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.3</b> Distribuições de frequências na amostra</a></li>
-<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.4</b> Parâmetros e estimadores</a></li>
-<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.5</b> Amostragem e inferência</a></li>
+<li class="chapter" data-level="12.3" data-path="popamostra.html"><a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística"><i class="fa fa-check"></i><b>12.3</b> Distribuição de probabilidade da população estatística</a></li>
+<li class="chapter" data-level="12.4" data-path="popamostra.html"><a href="popamostra.html#distribuições-de-frequências-na-amostra"><i class="fa fa-check"></i><b>12.4</b> Distribuições de frequências na amostra</a></li>
+<li class="chapter" data-level="12.5" data-path="popamostra.html"><a href="popamostra.html#parâmetros-e-estimadores"><i class="fa fa-check"></i><b>12.5</b> Parâmetros e estimadores</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="popamostra.html"><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2"><i class="fa fa-check"></i><b>12.5.1</b> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="popamostra.html"><a href="popamostra.html#amostragem-e-inferência"><i class="fa fa-check"></i><b>12.6</b> Amostragem e inferência</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="amostrmedias.html"><a href="amostrmedias.html"><i class="fa fa-check"></i><b>13</b> Amostrando uma População Estatística</a>
 <ul>
@@ -298,7 +302,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="13.4.1" data-path="amostrmedias.html"><a href="amostrmedias.html#erro-amostral"><i class="fa fa-check"></i><b>13.4.1</b> Erro amostral</a></li>
 <li class="chapter" data-level="13.4.2" data-path="amostrmedias.html"><a href="amostrmedias.html#acurácia"><i class="fa fa-check"></i><b>13.4.2</b> Acurácia</a></li>
-<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigmaoverlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma^{\overline{X}}\)</span>)</a></li>
+<li class="chapter" data-level="13.4.3" data-path="amostrmedias.html"><a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex"><i class="fa fa-check"></i><b>13.4.3</b> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Inferência Estatística e Teste de Hipóteses</b></span></li>
@@ -563,7 +567,7 @@ div.csl-indent {
 <div id="partição-da-soma-dos-quadrados" class="section level2" number="20.2">
 <h2><span class="header-section-number">20.2</span> Partição da soma dos quadrados</h2>
 <p>A ANOVA consiste basicamente da <strong>partição da soma dos quadrados</strong> (Capítulo <a href="biquantquali.html#biquantquali">11</a>) seguida da construção de um teste estatístico apropriado (o teste <span class="math inline">\(F\)</span>) para verificar as plasibilidade de <span class="math inline">\(H_0\)</span>. Apresentaremos aqui um exemplo simples descrito na figura e na tabela abaixo para descrever o ajuste da ANOVA.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-343-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-349-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Para deixarmos claro as notações que iremos adotar adiante neste capítulo vamos definir que:</p>
 <ul>
 <li>Temos <span class="math inline">\(k = 3\)</span> grupos (<code>A</code>, <code>B</code> ou <code>C</code>) e para cada grupo <span class="math inline">\(n = 5\)</span> observações. Denotamos por <span class="math inline">\(n_{ij}\)</span> o número de observações dentro de cada grupo, em que <span class="math inline">\(i\)</span> é a <em>i-ésima</em> observação (<span class="math inline">\(i = 1\)</span> a <span class="math inline">\(5\)</span>) do <em>j-ésimo</em> grupo (<span class="math inline">\(j = 1\)</span> a <span class="math inline">\(3\)</span> - grupos <code>A</code> ao <code>C</code>). Neste exemplo, o número de observações em cada grupo é o mesmo (<span class="math inline">\(n_1 = n_2 = n_3 = n\)</span>), de modo que o total de observações é dado por:</li>
@@ -575,7 +579,7 @@ div.csl-indent {
 </ul>
 <p><span class="math display">\[\overline{\overline{Y}} = \sum_{j = 1}^{k}\sum_{i = 1}^{n}\frac{Y_{ij}}{N} = \frac{\overline{Y_1} + \overline{Y_2} + \overline{Y_3}}{3} = 20.5\]</span></p>
 <p>Podemos agora observar estes elementos no gráfico de dispersão.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-344-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-350-1.png" width="672" /></p>
 <p>Para ajustar o modelo de ANOVA a estes dados precisamos calcular <span class="math inline">\(3\)</span> quantias: i - a <strong>Soma dos Quadrados Totais</strong> (<span class="math inline">\(SQ_{Total}\)</span>), ii - a <strong>Soma dos Quadrados dos Tratamentos</strong> <span class="math inline">\(SQ_{Trat}\)</span> e iii - a <strong>Soma dos Quadrados dos Resíduos</strong> <span class="math inline">\(SQ_{Res}\)</span>.</p>
 <ol style="list-style-type: lower-roman">
 <li><strong>Soma dos Quadrados Totais</strong> <span class="math inline">\(SQ_{Total}\)</span>: mede as diferenças entre <span class="math inline">\(Y_{ij}\)</span> e <span class="math inline">\(\overline{\overline{Y}}\)</span>. Temos nesta expressão o somatório dos desvios ao quadrado de todas as observações com relação à grande média <strong>independente</strong> do grupo de origem de cada observação.</li>
@@ -603,7 +607,7 @@ div.csl-indent {
 <div id="medindo-a-associação-entre-y-e-x-1" class="section level3" number="20.2.2">
 <h3><span class="header-section-number">20.2.2</span> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></h3>
 <p>A característica aditiva das somas dos quadrados pode ser utilizada para mensurar o grau de dependência de <span class="math inline">\(Y_{ij}\)</span> com respeito aos diferentes tratamentos. Compare as duas figuras abaixo:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-346-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-352-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>A soma dos quadrados dentro dos grupos é a mesma nas duas figuras (<span class="math inline">\(SQ_{Res} = 362.6\)</span>). No entanto, na figura da esquerda, em que as médias dos tratamentos são similares (e consequentemente próximas à grande média), a soma dos quadrados entre os tratamentos é muito menor (<span class="math inline">\(SQ_{Trat}^{esquerda} = 15.8\)</span>) que na figura da direita, em que as médias dos tratamentos estão distantes entre si (<span class="math inline">\(SQ_{Trat}^{direita} = 680.8\)</span>). É desta forma que a partição das somas dos quadrados nos permite diferenciar situações em que: i - a média dos grupos <strong>depende</strong> dos níveis do tratamento (figura da direita); de situações em que ii - a média <strong>não depende</strong> dos níveis do tratamento (figura da esquerda).</p>
 </div>
 </div>
@@ -645,19 +649,19 @@ div.csl-indent {
 <blockquote>
 <p>Se <span class="math inline">\(p \le \alpha\)</span> –&gt; <strong>REJEITAMOS <span class="math inline">\(H_0\)</span></strong> (e assumimos <span class="math inline">\(H_a\)</span> como verdadeira)</p>
 </blockquote>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-347-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-353-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Tradicionalmente utiliza-se <span class="math inline">\(\alpha = 0.05\)</span>. Neste caso, <span class="math inline">\(H_0\)</span> seria rejeitada somente de <span class="math inline">\(p \le 0.05\)</span>. Algumas área da medicina por eoutro lado, são tradicionais por utilizar valores de <span class="math inline">\(\alpha = 0.01\)</span>, o que torna o experimento menos sujeito ao <strong>erro do tipo I</strong> (Capítulo <a href="th.html#th">17</a>). Portanto, outros valores de <span class="math inline">\(\alpha\)</span> diferentes de <span class="math inline">\(0.05\)</span> podem ser escolhidos. O fundamental é que esta decisão, isto é, sobre o nível de significância <span class="math inline">\(\alpha\)</span> a ser adotado, seja feita <strong>previamente</strong> à obtenção dos dados.</p>
 </div>
 </div>
 <div id="um-exemplo-de-anova" class="section level2" number="20.5">
 <h2><span class="header-section-number">20.5</span> Um exemplo de ANOVA</h2>
-<p>Vamos exemplificar o passo-a-passo de uma ANOVA utilizando nosso exemplo fictício. /o primeiro passo é definir as hipóteses estatpisticas e o nível de significância:</p>
+<p>Vamos exemplificar o passo-a-passo de uma ANOVA utilizando nosso exemplo fictício. O primeiro passo é definir as hipóteses estatpisticas e o nível de significância:</p>
 <hr />
 <p><span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3\)</span></p>
 <p><span class="math inline">\(H_a\)</span>: ao menos um <span class="math inline">\(\mu\)</span> é diferente</p>
 <p><span class="math inline">\(\alpha = 0.05\)</span></p>
 <hr />
-<p>Utilizando os tados da tabela abaixo podemos obetr todas as quantias necessárias para o cálculo da ANOVA, isto é, os somatórios dos quadrados, os graus de liberdade,os quadraos médios e finalmente o valor de <span class="math inline">\(F_{calculado}\)</span></p>
+<p>Utilizando os dados da tabela abaixo podemos obter todas as quantias necessárias para o cálculo da ANOVA, isto é, os somatórios dos quadrados, os graus de liberdade,os quadraos médios e finalmente o valor de <span class="math inline">\(F_{calculado}\)</span></p>
 <table>
 <thead>
 <tr>
@@ -884,7 +888,7 @@ NA
 <p>A primeira linha refere-se aos valores associados aos tratamentos e a segunda linha aos resíduos. Note que o cômputo de <span class="math inline">\(SQ_{Total}\)</span>, <span class="math inline">\(gl_{Total}\)</span> e <span class="math inline">\(QM_{Total}\)</span> não é realmente necessário.</p>
 <hr />
 <p>O valor de <span class="math inline">\(p = 11.265837\)</span> mostrado na tabela acima é aquele referência à área na distribuição <span class="math inline">\(F\)</span> que fica acima de <span class="math inline">\(F_{calculado}\)</span>. Poderíamos tentar observar representar este valor visualmente na distribuição <span class="math inline">\(F\)</span>, mas ele é tão pequeno, que a área em vermelho sequer aparece na figura.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-351-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-357-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Como conclusão temos que <span class="math inline">\(p \le \alpha\)</span> nos leva a <strong>REJEITAR <span class="math inline">\(H_0\)</span></strong>, pois <span class="math inline">\(F_{calculado}\)</span> é muito extremo para ser resultante da hipótese nula. Neste caso, assumimos que a <span class="math inline">\(H_a\)</span> é mais condizente com a estrutura dos dados, de modo que os tratamentos devem ser provenientes de populações estatísticas com diferentes médias <span class="math inline">\(\mu\)</span>.</p>
 </div>
 <div id="testes-a-posteriori-de-comparação-de-médias" class="section level2" number="20.6">
@@ -1014,7 +1018,7 @@ C
 <p>O resultado apresenta todas as comparações possíveis entre os grupos, mostrando as diferenças de médias, seus intervalos de confiança a <span class="math inline">\(95\%\)</span> e os valores de <span class="math inline">\(p\)</span>, indicando quais destas diferenças são significativas, isto é, <span class="math inline">\(p \le \alpha\)</span>. Estes resultados nos permitem concluir novamente que somente o par <code>C-B</code> difere entre si, pois <code>p adj &lt; 0.05</code>.</p>
 <p>Um gráfico facilita a visualização das comparações, sobretudo em situações com muitos pares de médias envolvidos:</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="anova.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(ajuste))</span></code></pre></div>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-357-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-363-1.png" width="672" /></p>
 <p>Neste gráfico, as comparações em que o intervalo de confiança <strong>não inclui o zero</strong>, são consideradas significativas. Novamente, vemos que somente o grupo <code>C-B</code> tem médias estatisticamente diferentes.</p>
 </div>
 <div id="pressupostos-da-anova" class="section level2" number="20.8">
@@ -1043,9 +1047,9 @@ C
 ##           5.052636</code></pre>
 <p>A maior variância foi 5.05 vezes maior que a menor variância e o test F sugere que esta diferença é <strong>não-significativa</strong> a <span class="math inline">\(5\%\)</span> (<span class="math inline">\(p &lt; 0.05\)</span>). Isto indica que as variâncias são homogêneas.</p>
 <p>A verificação visual de que as variâncias são homogêneas pode também ser inspecionada pelo <strong>gráfico de resíduos</strong>:</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-361-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-367-1.png" width="672" /></p>
 <p>Em seguida avaliamos o histograma dos resíduos e aplicamos um teste de normalidade (ex. teste de Shapiro-Wilk) para verificar se o pressuposto de normalidade pode ser aceito.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-362-1.png" width="672" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-368-1.png" width="672" /></p>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
