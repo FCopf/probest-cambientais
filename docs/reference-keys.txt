@@ -96,6 +96,7 @@ distribuições-de-frequências-na-amostra
 parâmetros-e-estimadores
 verificando-as-propriedades-de-overlinex-e-s2
 amostragem-e-inferência
+vídeo-aulas
 amostrmedias
 amostragem-aleatória-simples
 amostragem-aleatória-estratificada

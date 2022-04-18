@@ -346,6 +346,21 @@ image_read("figs/amostragem_inferencia.png") %>%
   image_scale('x1000')
 ```
 
+## Vídeo-aulas
+
+___
+
+<a href="https://youtu.be/_vXK0AeNWnc" target=_blank>
+    <img src="figs/Descreve_Populacoes_Amostras_capa.png" alt="Descrevendo e Populações Amostras - Parte 01">
+</a>
+
+___
+
+<a href="https://youtu.be/HsmnhAsXAWQ" target=_blank>
+    <img src="figs/Descreve_Populacoes_Amostras_notebook_capa.png" alt="Descrevendo e Populações Amostras - Parte 02">
+</a>
+
+___
 
 ```{r, echo=FALSE}
 rm(list = ls())

@@ -204,7 +204,7 @@ gp5
 ```
 
 
-Se calcularmos a **média das médias** ($mu_{\overline{X}}$), ou seja, somarmos todos estes valores e dividirmos por `r CT`, o resultado será `r mean(M_Allcomb)`, que é exatamente o valor da média populacional $\mu$. Isto têm uma implicação  central em inferência estatística. Significa que a média amostral $\overline{X}$ é um estimador **acurado** (= **não-viciado**), pois tende a estimar corretamente o valor da média populacional $\mu$. Ou seja, o histograma acima está centrado ao redor de $\mu$, o que significa que **em média** uma amostra particular tem maior probabilidade de expressar um $\overline{X}$ próximo ao valor populacional. 
+Se calcularmos a **média das médias** ($\mu_{\overline{X}}$), ou seja, somarmos todos estes valores e dividirmos por `r CT`, o resultado será `r mean(M_Allcomb)`, que é exatamente o valor da média populacional $\mu$. Isto têm uma implicação  central em inferência estatística. Significa que a média amostral $\overline{X}$ é um estimador **acurado** (= **não-viciado**), pois tende a estimar corretamente o valor da média populacional $\mu$. Ou seja, o histograma acima está centrado ao redor de $\mu$, o que significa que **em média** uma amostra particular tem maior probabilidade de expressar um $\overline{X}$ próximo ao valor populacional. 
 
 ### Precisão: o erro padrão da média (\(\sigma_{\overline{X}}\))
 
