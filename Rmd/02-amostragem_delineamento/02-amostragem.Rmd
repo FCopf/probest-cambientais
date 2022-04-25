@@ -278,6 +278,17 @@ em que $s_{\overline{X}}$ é denominado de **erro padrão amostral**
 ::::
 
 <br/>
+
+## Vídeo-aulas
+
+___
+
+<a href="https://youtu.be/iyzCGvlxN-o" target=_blank>
+    <img src="figs/Amostrado_populacao_capa.png" alt="Amostrando uma População Estatística">
+</a>
+
+___
+
 ```{r, echo=FALSE}
 rm(list = ls())
 ```

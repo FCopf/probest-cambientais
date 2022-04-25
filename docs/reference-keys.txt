@@ -105,6 +105,7 @@ erro-amostral-acurácia-e-precisão
 erro-amostral
 acurácia
 precisão-o-erro-padrão-da-média-sigma_overlinex
+vídeo-aulas-1
 normdist
 o-modelo-normal-de-probabilidades
 entendendo-a-função-normal-de-densidade-de-probabilidade
