@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 28 Probabilidade condicional e independência | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 28 Probabilidade condicional e independência | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 28 Probabilidade condicional e independência | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 28 Probabilidade condicional e independência | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="probregras.html"/>
 <link rel="next" href="tbayes.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probcondind" class="section level1" number="28">
-<h1><span class="header-section-number">Capítulo 28</span> Probabilidade condicional e independência</h1>
+<div id="probcondind" class="section level1 hasAnchor" number="28">
+<h1><span class="header-section-number">Capítulo 28</span> Probabilidade condicional e independência<a href="probcondind.html#probcondind" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Voltemos ao experimento <em>“virar uma estrutura e contar o número de itens”</em> com o espaço amostral:</p>
 <p><span class="math inline">\(\Omega = \{(F0), (F1), (F2), (F3), (F4), (F5), (F6), (G0), (G1), (G2), (G3), (G4)\}\)</span></p>
 <p>Os eventos <span class="math inline">\(A\)</span> <em>“virar uma folha”</em>:</p>
@@ -600,8 +600,8 @@ div.csl-indent {
 <p>REFAZER DIAGRAMA DE ÁRVORE. Função ‘bayes_probability_tree()’ desatualizada</p>
 </blockquote>
 <p><em>Obs.</em>: Refaça os cálculos e confira os resultados</p>
-<div id="eventos-independentes" class="section level2" number="28.1">
-<h2><span class="header-section-number">28.1</span> Eventos independentes</h2>
+<div id="eventos-independentes" class="section level2 hasAnchor" number="28.1">
+<h2><span class="header-section-number">28.1</span> Eventos independentes<a href="probcondind.html#eventos-independentes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vamos retomar todas as probabilidades do experimento deste capítulo: <em>“virar uma estrutura e contar o número de itens”</em>. As probabilidades de cada evento <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> e de seus complementos são:</p>
 <p><span class="math inline">\(P(A) = 0.58\)</span></p>
 <p><span class="math inline">\(P(\overline{A}) = 0.42\)</span></p>
@@ -609,8 +609,8 @@ div.csl-indent {
 <p><span class="math inline">\(P(\overline{B}) = 0.5\)</span></p>
 <p>Embora a probabilidade de ocorrencia de <span class="math inline">\(B\)</span> seja 0.5, a discussão sobre probabilidade condicional nos informa que ao sabermos que <span class="math inline">\(A\)</span> <strong>ocorreu</strong>, o conhecimento sobre <span class="math inline">\(B\)</span> deve ser <strong>atualizado</strong> para <span class="math inline">\(P(B|A)\)</span>, que em nosso exemplo será 0.57.</p>
 <p>Note que a nova estimativa da probabilidade de <span class="math inline">\(B\)</span> está <em>condicionada</em> ao conhecimento prévio sobre a ocorrência de <span class="math inline">\(A\)</span>. Portanto dizemos que <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são eventos <strong>dependentes</strong>, de modo que <span class="math inline">\(P(B) \neq P(B|A)\)</span>.</p>
-<div id="um-exemplo-de-eventos-independentes" class="section level3" number="28.1.1">
-<h3><span class="header-section-number">28.1.1</span> Um exemplo de eventos independentes</h3>
+<div id="um-exemplo-de-eventos-independentes" class="section level3 hasAnchor" number="28.1.1">
+<h3><span class="header-section-number">28.1.1</span> Um exemplo de eventos independentes<a href="probcondind.html#um-exemplo-de-eventos-independentes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Dois eventos são ditos <strong>independentes</strong> se a informação sobre a ocorrência de um <em>não altera</em> a probabilidade condicional da ocorrência do outro, de modo que <span class="math inline">\(P(B) = P(B|A)\)</span>.</p>
 <p>Suponha em um estudo sobre o perfil de visitação em uma área de preservação ambiental, tenham sido avaliados a idade (até 20 ou acima de 20 anos) e a região de origem do visitante (da própria cidade ou de outra cidade). Foram investigadas ao todo 600 pessoas com os seguintes perfis:</p>
 <table>
@@ -666,8 +666,8 @@ Mais de 20
 <p>Vemos que <span class="math inline">\(P(B) = P(B|A) = 0.85\)</span> de modo que informar se uma pessoa tem ou não mais de 20 anos não nos diz nada sobre se a pessoa é da cidade ou não. Portanto, a classe de idade neste caso é <strong>independente</strong> da origem do visitante.</p>
 </div>
 </div>
-<div id="eventos-independentes-vs-mutuamente-exclusivos" class="section level2" number="28.2">
-<h2><span class="header-section-number">28.2</span> Eventos independentes <em>vs</em> mutuamente exclusivos</h2>
+<div id="eventos-independentes-vs-mutuamente-exclusivos" class="section level2 hasAnchor" number="28.2">
+<h2><span class="header-section-number">28.2</span> Eventos independentes <em>vs</em> mutuamente exclusivos<a href="probcondind.html#eventos-independentes-vs-mutuamente-exclusivos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Uma questão comum em tópicos de probabilidade é a confusão entre os conceitos de eventos <em>mutuamente exclusivos</em> e de eventos <em>independentes</em>. Inicialmente vamos às definições:</p>
 <ol style="list-style-type: decimal">
 <li>A união de eventos é dada por:</li>
@@ -756,7 +756,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

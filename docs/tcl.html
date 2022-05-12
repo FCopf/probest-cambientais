@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 15 Distribuição das médias amostrais | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 15 Distribuição das médias amostrais | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 15 Distribuição das médias amostrais | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 15 Distribuição das médias amostrais | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="normdist.html"/>
 <link rel="next" href="inferenc.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,24 +550,24 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tcl" class="section level1" number="15">
-<h1><span class="header-section-number">Capítulo 15</span> Distribuição das médias amostrais</h1>
+<div id="tcl" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Capítulo 15</span> Distribuição das médias amostrais<a href="tcl.html#tcl" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Vamos retomar algumas ideias discutidas nos capítulos <a href="popamostra.html#popamostra">12</a> e <a href="amostrmedias.html#amostrmedias">13</a>, quando apresentamos a distribuição das médias amostrais e o ciclo de <em>amostragem</em> <span class="math inline">\(\Rightarrow\)</span> <em>inferência estatística</em>. Ao amostrar uma população estatística por meio de um experimento, seremos capazes de calcular estatísticas descritivas desta população. A média amostral <span class="math inline">\(\overline{X}\)</span> é uma destas estimativas, mas a mesma ideia vale para <strong>qualquer outra estatística <span class="math inline">\(\theta\)</span></strong>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-301"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-301-1.png" alt="Processo de amostragem e inferência estatística" width="750" />
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-301-1.png" alt="Processo de amostragem e inferência estatística"  />
 <p class="caption">
 Figure 15.1: Processo de amostragem e inferência estatística
 </p>
 </div>
 <p>Neste processo, o resultado de um experimento pode ser visto como uma observação particular de uma <strong>população de experimentos</strong> que podem ser reproduzidos sob as mesmas condições. A estimativa obtida deste experimento é portanto, somente uma entre uma <strong>população de estimativas</strong> que o experimento pode gerar. A inferência estatística é possível se pudermos entender o que é esperado como resultados possíveis desta população de experimentos.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-302"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-302-1.png" alt="Distribuição das médias amostrais provinientes de um experimento" width="750" />
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-302-1.png" alt="Distribuição das médias amostrais provinientes de um experimento"  />
 <p class="caption">
 Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 </p>
 </div>
-<div id="teorema-central-do-limite" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> Teorema Central do Limite</h2>
+<div id="teorema-central-do-limite" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Teorema Central do Limite<a href="tcl.html#teorema-central-do-limite" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>No capítulo <a href="amostrmedias.html#amostrmedias">13</a> apresentamos a distribuição de médias como uma distribuição normal, centrada na média populacional <span class="math inline">\(\mu\)</span> e com desvio padrão igual a <span class="math inline">\(\sigma_{\mu} = \frac{\sigma}{\sqrt{n}}\)</span>. Este resultado é previsto pelo <strong>Teorema Central do Limite (TCL)</strong> que fornece um <strong>modelo teórico</strong> para o comportamento esperado da média amostral de um experimento.</p>
 <p></br></p>
 <div class="blackbox">
@@ -581,26 +581,26 @@ Figure 15.2: Distribuição das médias amostrais provinientes de um experimento
 <p><span class="math display">\[\overline{X} \sim \mathcal{N}(\mu_{\overline{X}},\,\sigma^{2}_{\overline{X}})\]</span></p>
 <p>em que <span class="math inline">\(\mu_{\overline{X}} = \mu\)</span> <span class="math inline">\(\sigma^{2}_{\overline{X}} = \frac{\sigma^2}{n}\)</span></p>
 <p>Note que a variância de <span class="math inline">\(\overline{X}\)</span> depende do tamanho amostral <span class="math inline">\(n\)</span>. Isto justifica o que será discutido no tópico <strong>Introdução à suficiência amostral</strong> do capítulo <a href="inferenc.html#inferenc">16</a>.</p>
-<div id="probabilidades-na-amostra-original-e-na-distribuição-de-médias" class="section level3" number="15.1.1">
-<h3><span class="header-section-number">15.1.1</span> Probabilidades na amostra original e na distribuição de médias</h3>
+<div id="probabilidades-na-amostra-original-e-na-distribuição-de-médias" class="section level3 hasAnchor" number="15.1.1">
+<h3><span class="header-section-number">15.1.1</span> Probabilidades na amostra original e na distribuição de médias<a href="tcl.html#probabilidades-na-amostra-original-e-na-distribuição-de-médias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Seja uma variável <span class="math inline">\(X\)</span> qualquer com <span class="math inline">\(\mu = 50\)</span> e <span class="math inline">\(\sigma = 10\)</span>. As figuras abaixo comparam as probabilidades acima de <span class="math inline">\(x_1 = 55\)</span> para as observações originais e para as distribuições de médias amostrais de tamanho <span class="math inline">\(n_1 = 2\)</span> e <span class="math inline">\(n_2 = 10\)</span>.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-304-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Note que existe uma probabilidade razoável de que uma determinada observação em <span class="math inline">\(X\)</span> esteja acima de <span class="math inline">\(55\)</span>, <span class="math inline">\(P(X \leq 55) = 0.309\)</span>. No entando se tomarmos <em>ao acaso</em> uma amostra de tamanho <span class="math inline">\(n_1 = 2\)</span>, a probabilidade de que <strong>a média</strong> destas duas amostras esteja acima de <span class="math inline">\(55\)</span> diminui para <span class="math inline">\(P(\overline{X} \leq 55) = 0.24\)</span>. Se tormarmos uma amostra ainda maior (<span class="math inline">\(n_2 = 10\)</span>), a probabilidade se reduz ainda mais para <span class="math inline">\(P(\overline{X} \leq 55) = 0.057\)</span>.</p>
 <p>Vemos portanto, como mencionado no capítulo <a href="amostrmedias.html#amostrmedias">13</a>, que a precisão de um experimento aumenta à medida que aumentamos o tamanho amostral, pois para amostras grandes, a probabilidade de obtermos um <span class="math inline">\(\overline{X}\)</span> distante de <span class="math inline">\(\mu\)</span> torna-se cada vez menor.</p>
 </div>
-<div id="distribuições-não-normais" class="section level3" number="15.1.2">
-<h3><span class="header-section-number">15.1.2</span> Distribuições não-normais</h3>
+<div id="distribuições-não-normais" class="section level3 hasAnchor" number="15.1.2">
+<h3><span class="header-section-number">15.1.2</span> Distribuições não-normais<a href="tcl.html#distribuições-não-normais" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>O TCL é válido inclusive para distribuições não-normais. Isto torna a distribuição normal uma das mais importantes em inferência estatística, pois ainda que o resultado de um experimento particular seja descrito por <em>qualquer outro modelo de probabilidades</em>, as <strong>médias das amostras</strong> deste experimento seguirão uma distribuição normal, à medida que <span class="math inline">\(n\)</span> aumenta. Isto justifica muitos dos processos de análise e inferência estatística que serão descritos nos capítulos posteriores.</p>
 <p>A figura abaixo por exemplo, simula a distribuição de médias amostrais para variáveis com diferentes distribuições de probabiidades e tamanhos crescentes de <span class="math inline">\(n\)</span>. Podemos observar que <em>independente</em> do formato da distribuição original, a distribuição das médias amostrais <em>tende à normalidade</em>. O padrão normal aparece mais rápido se a distribuição original é <strong>simétrica</strong>. Por outro lado, para populações estatísticas com distribuições <strong>assimétricas</strong>, será necessário um tamanho amostral maior para que se alcance a normalidade.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-305-1.png" width="1152" /></p>
 </div>
 </div>
-<div id="exercícios-resolvidos-1" class="section level2" number="15.2">
-<h2><span class="header-section-number">15.2</span> Exercícios resolvidos:</h2>
-<div id="tamanho-médio-de-robalos-no-mercado-de-peixes" class="section level3" number="15.2.1">
-<h3><span class="header-section-number">15.2.1</span> Tamanho médio de robalos no mercado de peixes</h3>
+<div id="exercícios-resolvidos-1" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Exercícios resolvidos:<a href="tcl.html#exercícios-resolvidos-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tamanho-médio-de-robalos-no-mercado-de-peixes" class="section level3 hasAnchor" number="15.2.1">
+<h3><span class="header-section-number">15.2.1</span> Tamanho médio de robalos no mercado de peixes<a href="tcl.html#tamanho-médio-de-robalos-no-mercado-de-peixes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Em 2014 no estuário do rio Itanhaém - SP foi pescado o <em>“maior robalo já encontrado”</em> <a href="http://g1.globo.com/sp/santos-regiao/noticia/2014/11/pescador-fisga-em-itanhaem-o-maior-robalo-ja-encontrado-briguei-com-ele.html">(G1 Santos)</a>. O peixe tinha <span class="math inline">\(133\)</span> cm e <span class="math inline">\(27,8\)</span> kg . Em 2018 em Bertioga, também no litoral de SP <em>“Robalo ‘gigante’ quebra recordes e vira atração”</em> <a href="https://g1.globo.com/sp/santos-regiao/noticia/robalo-gigante-quebra-recordes-e-vira-atracao-durante-pescaria-em-sp.ghtml">(G1 Santos)</a> pesando <span class="math inline">\(33\)</span> kg. Em “<em>uma das salas da Colônia de Pesca Z2 de Atafona</em>” RJ está uma imagem de um robalo de <span class="math inline">\(28\)</span> kg capturado muitas décadas atrás <a href="http://ambientecult.blogspot.com/2010/10/ponto-de-memoria-foto-da-pesca.html">(Ambiente Cult)</a>.</p>
-<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-307-1.png" width="750" /></p>
+<p><img src="probest-cambientais_files/figure-html/unnamed-chunk-307-1.png" /><!-- --></p>
 <p>Estas capturas viram notícias pois são certamente inusitadas. Dados de desembarque sugerem que a distribuição de tamanho de robalos comumente capturados está muito abaixo destes limites <span class="citation">(<a href="#ref-ximanes-carvalo2006" role="doc-biblioref">Ximenes-Carvalho 2006</a>)</span> ( <a href="http://repositorio.ufc.br/bitstream/riufc/1312/1/2006_dis_moxcarvalho.pdf">Acesse aqui o trabalho completo</a> ).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-309"></span>
 <img src="probest-cambientais_files/figure-html/unnamed-chunk-309-1.png" alt="Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extraídos de XIMENES-CARVALHO, 2006." width="672" />
@@ -680,8 +680,8 @@ Figure 15.3: Dados de desembarque no Mercado de São Pedro (Niterói, RJ). Extra
 <pre><code>## [1] 57.23176</code></pre>
 </div>
 </div>
-<div id="exercícios-propostos-1" class="section level2" number="15.3">
-<h2><span class="header-section-number">15.3</span> Exercícios propostos</h2>
+<div id="exercícios-propostos-1" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Exercícios propostos<a href="tcl.html#exercícios-propostos-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Leia dos tópicos <strong>10.6 Estatísticas e Parâmetros</strong> a <strong>10.8 Distribuição Amostral da Média</strong> em <span class="citation">(<a href="#ref-bussabemoretin6a" role="doc-biblioref">Bussab and Morettin 2010</a>)</span> (pag. 271 a 281) e faça os exercícios 7 a 10 da página 281.</p>
 
 </div>
@@ -743,7 +743,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

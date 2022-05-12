@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 2 Processamento de dados | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 2 Processamento de dados | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 Processamento de dados | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 2 Processamento de dados | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="estrdados.html"/>
 <link rel="next" href="varqualit.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,19 +550,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="procdados" class="section level1" number="2">
-<h1><span class="header-section-number">Capítulo 2</span> Processamento de dados</h1>
+<div id="procdados" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Processamento de dados<a href="procdados.html#procdados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Tabelas de dados como a apresentada no capítulo <a href="estrdados.html#estrdados">1</a> são normalmente armazenadas em planilhas eletrônicas. Os formatos mais comuns para armazenamento são arquivos do tipo <code>.xlsx</code>, <code>.csv</code>, <code>.txt</code> e mais recentemente planilhas em nuvem (ex. google sheets). Os programas para visualização e destes tipos de arquivos são apropriados para inserção e armazenamendo de dados, mas apresentam limitações para o processamento, descrição e visualização.</p>
 <p>Neste capítulo iremos utilizar a linguagem estatística <a href="https://www.r-project.org/">R</a> e o ambiente de trabalho <a href="https://rstudio.com/">RStudio</a> para iniciar um projeto de análise de dados. Veremos como preparar um novo projeto na linguagem R, organizar as base de dados no diretório de trabalho, importá-las para o ambiente R e aplicar algumas ações comuns ao processamento de dados inicial. O objetivo é a base de dados original permaneça inalterada no diretório de trabalho e que todo o processamento seja feito em uma <em>versão da base de dados</em> que será importada para o ambiente R. Isto evita que sejam feitas alterações equivocadas diretamente na base de dados, resultando na perda da informação original.</p>
 <blockquote>
 <p>Para mais detalhes sobre programação e processamento de dados no R veja: <a href="https://fcopf.github.io/probest-introR/">Introdução ao Ambiente R de Programação</a>.</p>
 </blockquote>
-<div id="criando-o-diretório-de-trabalho" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Criando o diretório de trabalho</h2>
+<div id="criando-o-diretório-de-trabalho" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Criando o diretório de trabalho<a href="procdados.html#criando-o-diretório-de-trabalho" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Inicialmente, vamos criar um diretório de trabalho, um local em nosso computador onde iremos colocar todos os arquivos necessários ao projeto (ex. as tabelas de dados), bem como os arquivos gerados durante o projeto (planilhas, gráficos, figuras, slides, arquivos <code>.pdf</code>, etc.).</p>
 </div>
-<div id="iniciando-o-projeto-intro_estatistica" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Iniciando o projeto <code>Intro_estatistica</code></h2>
+<div id="iniciando-o-projeto-intro_estatistica" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Iniciando o projeto <code>Intro_estatistica</code><a href="procdados.html#iniciando-o-projeto-intro_estatistica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Na pasta <em>Documentos</em> crie um diretório denominado <code>Intro_estatistica</code>.</p></li>
 <li><p>Após criar o diretório copie para dentro dele a base de dados <code>Reservatorios_Parana_parcial.csv</code>. A base está disponível no link do <a href="https://github.com/FCopf/probest-cambientais/blob/master/datasets/Reservatorios_Parana_parcial.csv">GitHub</a>. Após entra no link, a janela de seu navegador irá mostrar um arquivo texto com os dados da planilha. Estes são os mesmo dados que apresentamod no capítulo <a href="estrdados.html#estrdados">1</a>.</p></li>
@@ -590,22 +590,22 @@ div.csl-indent {
 ##  [2] &quot;Reservatorios_Parana_parcial.csv&quot;</code></pre>
 <p>Se tudo estiver correto, o resultado deste comando deve listar os dois arquivos presentes em sua pasta de trabalho: <code>Intro_estatistica.Rproj</code> e <code>Reservatorios_Parana_parcial.csv</code>.</p>
 </div>
-<div id="instalação-de-pacotes" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Instalação de pacotes</h2>
+<div id="instalação-de-pacotes" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Instalação de pacotes<a href="procdados.html#instalação-de-pacotes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O R possui vários pacotes (ou bibliotecas) pré-instalados, porém é comum que tenhamos que utilizar alguns que não venham na instalação padrão. Neste projeto utilizaremos o pacote <code>tidyverse</code>. Para instalar o pacote, digite o seguinte comando no Console do RStudio:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="procdados.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>Para mais detalhes sobre o pacote, acesse a <a href="https://fcopf.github.io/probest-introR/tidy.html">apostila do R</a> e veja o <a href="https://www.tidyverse.org/">site oficial</a>.</p>
 <p>Um pacote necessita ser instalado somente uma vez em seu computador. Feito isto ele estará sempre disponível, bastando carregá-lo a cada vez que você abrir uma seção do R.</p>
 </div>
-<div id="carregando-os-pacotes" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Carregando os pacotes</h2>
+<div id="carregando-os-pacotes" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Carregando os pacotes<a href="procdados.html#carregando-os-pacotes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Antes de iniciar as análises, insira este comando em seu arquivo texto:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="procdados.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega pacotes</span></span>
 <span id="cb7-2"><a href="procdados.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>Ao rodar este comando você habilita as funções do pacote para serem utilizados em sua seção do R. Sempre que você iniciar uma nova seção do R você deverá carregar os pacotes necessários com o comando <code>library</code>.</p>
 </div>
-<div id="importanto-a-base-de-dados" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Importanto a base de dados</h2>
+<div id="importanto-a-base-de-dados" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Importanto a base de dados<a href="procdados.html#importanto-a-base-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A base de dados está disponível em nosso diretório, porém ainda não a importamos para o ambiente R. Para isto, utilize o comando <code>read_delim</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="procdados.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa base de dados </span></span>
 <span id="cb8-2"><a href="procdados.html#cb8-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">read_delim</span>(<span class="st">&#39;Reservatorios_Parana_parcial.csv&#39;</span>,</span>
@@ -640,8 +640,8 @@ div.csl-indent {
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="procdados.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(res)</span></code></pre></div>
 <p>A base de dados é simplesmente uma <strong>tabela</strong>, em que cada linha trás uma observação e cada coluna uma variável. Vamos realizar algumas operações para entender como explorar as informações na tabela.</p>
 </div>
-<div id="verificando-a-base-de-dados" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Verificando a base de dados</h2>
+<div id="verificando-a-base-de-dados" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Verificando a base de dados<a href="procdados.html#verificando-a-base-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O comando abaixo informa alguns detalhes sobre cada coluna da tabela e dos tipos de dados:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="procdados.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(res)</span></code></pre></div>
 <pre><code>## Rows: 31
@@ -659,8 +659,8 @@ div.csl-indent {
 ## $ CPUE          &lt;dbl&gt; 9.22, 28.73, 11.59, 30.76, 5.95, 7.75, 7.51, 4.01, 20.83…</code></pre>
 <p>Vemos dois tipos de dados: <code>chr</code> identificando que a coluna contém uma variável <strong>qualitativa</strong> e <code>dbl</code>, identificando que a coluna contém uma variável <strong>quantitativa</strong>.</p>
 </div>
-<div id="reorganizando-a-base-de-dados" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Reorganizando a base de dados</h2>
+<div id="reorganizando-a-base-de-dados" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Reorganizando a base de dados<a href="procdados.html#reorganizando-a-base-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A tabela contém uma coluna denominada <code>Fechamento</code>, que mostra o ano em que o reservatório foi formado. Vamos visualizar em ordem crescente do ano de formação, do mais antigo para o mais novo:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="procdados.html#cb14-1" aria-hidden="true" tabindex="-1"></a>res <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="procdados.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Fechamento) <span class="sc">%&gt;%</span> </span>
@@ -695,8 +695,8 @@ div.csl-indent {
 <span id="cb18-2"><a href="procdados.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Bacia) <span class="sc">%&gt;%</span> </span>
 <span id="cb18-3"><a href="procdados.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>()</span></code></pre></div>
 </div>
-<div id="selecionando-colunas-da-tabela" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Selecionando colunas da tabela</h2>
+<div id="selecionando-colunas-da-tabela" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Selecionando colunas da tabela<a href="procdados.html#selecionando-colunas-da-tabela" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>É interessante, sobretudo para grandes bases de dados, se pudermos selecionar sub-grupos de colunas, excluindo outras que não nos interessam. Podemos fazer isto facilmente utilizando a função <code>select()</code>.</p>
 <p>Por exemplo, para selecionar somente as colunas <code>Reservatório</code>, <code>Area</code> e <code>Riqueza</code>:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="procdados.html#cb19-1" aria-hidden="true" tabindex="-1"></a>res_new <span class="ot">=</span> res <span class="sc">%&gt;%</span> </span>
@@ -4896,8 +4896,8 @@ Oligotrófico
 </tbody>
 </table>
 </div>
-<div id="filtrando-linhas-da-tabela" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Filtrando linhas da tabela</h2>
+<div id="filtrando-linhas-da-tabela" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Filtrando linhas da tabela<a href="procdados.html#filtrando-linhas-da-tabela" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Podemos fazer algo similar com as linhas utilizando a função <code>filter()</code>.</p>
 <p>Se quisermos selecionar somente os reservatórios da bacia do rio Paranapanema podemos fazer:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="procdados.html#cb25-1" aria-hidden="true" tabindex="-1"></a>res_paranapanema <span class="ot">=</span> res <span class="sc">%&gt;%</span> </span>
@@ -6664,8 +6664,8 @@ Oligotrófico
 </tbody>
 </table>
 </div>
-<div id="adicionando-ou-modificando-colunas" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Adicionando ou modificando colunas</h2>
+<div id="adicionando-ou-modificando-colunas" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Adicionando ou modificando colunas<a href="procdados.html#adicionando-ou-modificando-colunas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Podemos adicionar novas colunas, assim como fazemos em uma planilha excel. Temos por exemplo, o ano de formação do reservatório. Assumindo que estes dados são de 2005, podemos criar uma coluna indicando a idade do reservatório no momento da tomada de dados. Para criar uma nova coluna usamos a função <code>mutate()</code>.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="procdados.html#cb29-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> res <span class="sc">%&gt;%</span> </span>
 <span id="cb29-2"><a href="procdados.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Idade =</span> <span class="dv">2005</span> <span class="sc">-</span> Fechamento)</span>
@@ -9121,8 +9121,8 @@ NA
 </tbody>
 </table>
 </div>
-<div id="renomeando-colunas" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> Renomeando colunas</h2>
+<div id="renomeando-colunas" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> Renomeando colunas<a href="procdados.html#renomeando-colunas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Finalmente, podemos renomear colunas para facilitar a leitura dos dados. A coluna <code>P.total</code>, por exemplo, indica a quantidade de fósforo total, enquanto a variável <code>CPUE</code> é a captura em kg. Podemos renomear estas colunas usando a função <code>rename</code>:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="procdados.html#cb31-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> res <span class="sc">%&gt;%</span> </span>
 <span id="cb31-2"><a href="procdados.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Fosforo_total =</span> P.total,</span>
@@ -10352,8 +10352,8 @@ NA
 </tbody>
 </table>
 </div>
-<div id="outras-operações-para-processamento-e-transformação-de-dados" class="section level2" number="2.12">
-<h2><span class="header-section-number">2.12</span> Outras operações para processamento e transformação de dados</h2>
+<div id="outras-operações-para-processamento-e-transformação-de-dados" class="section level2 hasAnchor" number="2.12">
+<h2><span class="header-section-number">2.12</span> Outras operações para processamento e transformação de dados<a href="procdados.html#outras-operações-para-processamento-e-transformação-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Existem muitas outras operações possíveis para processar conjuntos de dados. A maioria faz parte do conjunto de pacotes <code>tidyverse</code> (veja <a href="https://fcopf.github.io/probest-introR/format.html">aqui</a>).</p>
 <p>Neste capítulo vimos funções para:</p>
 <ul>
@@ -10417,7 +10417,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

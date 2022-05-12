@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 16 Estimando a média populacional | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="tcl.html"/>
 <link rel="next" href="th.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,16 +550,16 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="inferenc" class="section level1" number="16">
-<h1><span class="header-section-number">Capítulo 16</span> Estimando a média populacional</h1>
-<div id="estimação-pontual-e-estimação-intervalar" class="section level2" number="16.1">
-<h2><span class="header-section-number">16.1</span> Estimação pontual e estimação intervalar</h2>
+<div id="inferenc" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">Capítulo 16</span> Estimando a média populacional<a href="inferenc.html#inferenc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="estimação-pontual-e-estimação-intervalar" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> Estimação pontual e estimação intervalar<a href="inferenc.html#estimação-pontual-e-estimação-intervalar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A média <span class="math inline">\(\overline{X}\)</span> obtida a partir de uma determinada amostra varia em função das características das unidades amostrais que foram selecionadas (Capítulo <a href="amostrmedias.html#amostrmedias">13</a>). Portanto, <span class="math inline">\(\overline{X}\)</span> não será igual à média <span class="math inline">\(\mu\)</span>. No entanto, o TLC (Capítulo <a href="tcl.html#tcl">15</a>) nos garante que a distribuição esperada das médias amostrais terá uma distribuição normal e que a média das médias (<span class="math inline">\(\mu_{\overline{X}}\)</span>) será igual a <span class="math inline">\(\mu\)</span>. Vimos ainda que o desvio padrão da distribuição das médias amostrais (conhecido como <strong>erro padrão</strong> - <span class="math inline">\(\sigma_{\overline{X}}\)</span>) dependerá do tamanho da amostra <span class="math inline">\(n\)</span>, de acordo com a expressão:</p>
 <p><span class="math display">\[\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>Uma vez que não conhecemos <span class="math inline">\(\mu\)</span>, temos que <strong>estimá-lo</strong> a partir da amostra. Neste caso, <span class="math inline">\(\overline{X}\)</span> será nossa <strong>melhor estimativa</strong> da média populacional. Dizemos que <span class="math inline">\(\overline{X}\)</span> é o <strong>estimador pontual</strong> de <span class="math inline">\(\mu\)</span>.</p>
 <p>Como <span class="math inline">\(\overline{X}\)</span> varia em função de nossa amostra particular, devemos obter além da estimativa pontual, uma <strong>estimativa intervalar</strong> que nos é fornecida pelo <strong>intervalo de confiança</strong>.</p>
-<div id="intervalo-de-confiança" class="section level3" number="16.1.1">
-<h3><span class="header-section-number">16.1.1</span> Intervalo de confiança</h3>
+<div id="intervalo-de-confiança" class="section level3 hasAnchor" number="16.1.1">
+<h3><span class="header-section-number">16.1.1</span> Intervalo de confiança<a href="inferenc.html#intervalo-de-confiança" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="blackbox">
 <div class="center">
 <p><strong>DEFINIÇÃO DE INTERVALO DE CONFIANÇA</strong></p>
@@ -578,8 +578,8 @@ div.csl-indent {
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-317-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Para o cálculo do intervalo de confiança, estamos assumindo que as médias amostrais têm <strong>Distribuição Normal</strong> com média <span class="math inline">\(\mu\)</span> e desvio padrão <span class="math inline">\(\frac{\sigma}{\sqrt{n}}\)</span>. Fazendo isto, estamos no <strong>Teorema Central do Limite (TCL)</strong> (Capítulo <a href="tcl.html#tcl">15</a>). Geralmente não temos os valores de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>, de modo que utilizamos os valores de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s\)</span> calculados a partir de nossa amostra. Quando as amostras são grandes (<span class="math inline">\(n\ge{30}\)</span>) não há problema em utilizar o valor de <span class="math inline">\(z_{\alpha/2}\)</span>, e assim:</p>
 <p><span class="math display">\[IC_{1-\alpha} = \overline{X} \pm z_{\alpha/2} \times \frac{s}{\sqrt{n}}\]</span></p>
-<div id="distribuiçao-t-de-student-mu-e-sigma-desconhecidos" class="section level4" number="16.1.1.1">
-<h4><span class="header-section-number">16.1.1.1</span> Distribuiçao <span class="math inline">\(t\)</span> de Student: <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> desconhecidos</h4>
+<div id="distribuiçao-t-de-student-mu-e-sigma-desconhecidos" class="section level4 hasAnchor" number="16.1.1.1">
+<h4><span class="header-section-number">16.1.1.1</span> Distribuiçao <span class="math inline">\(t\)</span> de Student: <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> desconhecidos<a href="inferenc.html#distribuiçao-t-de-student-mu-e-sigma-desconhecidos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Quando não conhecemos <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e as amostras são pequenas (ex. <span class="math inline">\(n&lt;30\)</span>), a dsitribuição normal não é a melhor aproximação para o comportamento das médias amostrais. Nestes casos, substituímos a distribuição de <span class="math inline">\(z\)</span> pela <strong>Distribuição <span class="math inline">\(t\)</span> de Student</strong>, sendo o intervalo de confiança obtido por:</p>
 <p><span class="math display">\[IC_{1-\alpha} = \overline{X} \pm t_{\alpha/2, gl} \times \frac{s}{\sqrt{n}}\]</span></p>
 <p>Em que <span class="math inline">\(\alpha\)</span> continua sendo o nível de significância e <span class="math inline">\(gl\)</span> é definido como os <strong>graus de liberdade</strong>. Neste caso, os graus de liberdade são dados por:</p>
@@ -591,8 +591,8 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<div id="introdução-à-suficiência-amostral" class="section level2" number="16.2">
-<h2><span class="header-section-number">16.2</span> Introdução à suficiência amostral</h2>
+<div id="introdução-à-suficiência-amostral" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> Introdução à suficiência amostral<a href="inferenc.html#introdução-à-suficiência-amostral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Uma decisão central ao planejamento de um experimento é quanto recurso (ex. tempo, dinheiro, mão de obra) devem ser investidos para se obter <strong>boas estimativas</strong> dos parâmetros populacionais. Por boas estimativas, entendemos <strong>amostras precisas</strong>, ou seja, que podem ser definida por amostras com baixo erro padrão e <strong>acuradas</strong>, que em média apontem para o verdadeiro valor do parâmetro. Neste caso, uma das primeiras questões a ser feita é <strong>“Qual tamanho amostral aplicar em meu estudo?”</strong>.</p>
 <p>Vimos que aumentar o tamanho amostral resulta em estimativas mais precisas, isto é com menor erro padrão. Portanto, um bom delineamento amostral é aquele que permita, a um custo mínimo, obter estimativas com a precisão desejada. Uma pesquisa que resulte em estimativas demasiadamente imprecisas pode se mostrar inútil. O que dizer por exemplo, se um estudo conclui que o comprimento médios de uma espécie de pescado é de <span class="math inline">\(35\)</span> cm com uma incerteza a <span class="math inline">\(95\%\)</span> entre <span class="math inline">\(15\)</span> e <span class="math inline">\(55\)</span> cm? Uma estimativa com tal nível de imprecisão não terá qualquer implicação prática.</p>
 <p>Por outro lado, partir de um determinado tamanho amostral o ganho em precisão torna-se mínimo. Isto significa que amostras demasiadamente grandes podem ter um custo muto alto porém não serem capazes aumentar de forma relevante a precisão do experimento.</p>
@@ -600,8 +600,8 @@ div.csl-indent {
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-320-1.png" width="672" /></p>
 <p>Neste exemplo, para amostras de tamanho 1, <span class="math inline">\(\sigma_{\overline{X}} = 4\)</span>. Se tivermos agora amostras de tamanho 10, <span class="math inline">\(\sigma_{\overline{X}} = 1.2\)</span>, uma redução de mais de 50%. No entanto aumentarmos o tamanho amostral para 50 o erro padrão cai somente de <span class="math inline">\(1,2\)</span> para <span class="math inline">\(0,56\)</span>. Isto significa que a partir de determinado ponto (neste exemplo a partir de <span class="math inline">\(10\)</span> ou <span class="math inline">\(20\)</span> amostras), a redução no erro padrão torna-se mínima. Neste momento podemos podemos refletir sobre o custo de continuar aumentando o tamanho amostral para obter um ganho cada vez menor em precisão.</p>
 <p>Para encontrarmos o tamanho amostral desejado, devemos decidir sobre dois pontos: i - <em>que nível de acurácia desejado</em>, ou seja, quão distante do valor real (média populacional) queremos que nossa esimativa esteja; e ii - <em>qual o nível de confiança do resultado</em>, ou seja, com que precisão queremos fazer esta estimativa.</p>
-<div id="nível-de-acurácia-desejado-margem-de-erro-e-nível-de-confiança-na-estimativa" class="section level3" number="16.2.1">
-<h3><span class="header-section-number">16.2.1</span> Nível de acurácia desejado (margem de erro) e nível de confiança na estimativa</h3>
+<div id="nível-de-acurácia-desejado-margem-de-erro-e-nível-de-confiança-na-estimativa" class="section level3 hasAnchor" number="16.2.1">
+<h3><span class="header-section-number">16.2.1</span> Nível de acurácia desejado (margem de erro) e nível de confiança na estimativa<a href="inferenc.html#nível-de-acurácia-desejado-margem-de-erro-e-nível-de-confiança-na-estimativa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>O nível de acurácia desejado é comumente conhecido com <strong>margem de Erro (E)</strong>, definida como diferença máxima provável (com probabilidade <span class="math inline">\(1-\alpha\)</span>) entre a média amostral e a média populacional.</p>
 <p>A margem de erro para a média amostral pode ser obtida por (<em>compare esta expressão com a do intervalo de confiança</em>):</p>
 <p><span class="math display">\[E = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}\]</span></p>
@@ -610,8 +610,8 @@ div.csl-indent {
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-321-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>A definição da margem de erro e do nível de confiança depende de estimativas prévias dos parâmetros populacionais <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>. Estas estimativas podem ser obtidas na literatura, buscando estudos similares, ou por meio de um <strong>projeto piloto</strong>. Em um experimento piloto, o pesquisador irá conduzir seu plano de amostragem com um tamanho mínimo, justamente para avaliar a eficiência metodológica, adequabilidade dos resultados e prever o esforço amostral adequado. As informações de um pequeno estudo piloto, se bem aproveitadas, podem evitar erros simples de delineamento, além de invariavelmente, permitir economia de recusros e consequentemente ganho em qualidade.</p>
 </div>
-<div id="determinando-o-tamanho-de-uma-amostra" class="section level3" number="16.2.2">
-<h3><span class="header-section-number">16.2.2</span> Determinando o tamanho de uma amostra</h3>
+<div id="determinando-o-tamanho-de-uma-amostra" class="section level3 hasAnchor" number="16.2.2">
+<h3><span class="header-section-number">16.2.2</span> Determinando o tamanho de uma amostra<a href="inferenc.html#determinando-o-tamanho-de-uma-amostra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Podemos voltar a nossa questão anterior: <strong>“Qual tamanho amostral aplicar em meu estudo?”</strong>. Esta questão pode ser reformulada como sendo “Qual tamanho amostral aplicar para obter uma estimativa de <span class="math inline">\(\mu\)</span> que possua uma margem de erro <strong><span class="math inline">\(E\)</span></strong> e nivel de confiança <span class="math inline">\(1-\alpha\)</span> pré-determinados. Iniciando com a fórmula da margem de erro:</p>
 <p><span class="math display">\[E = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>isolamos a variável <span class="math inline">\(n\)</span> para obter:</p>
@@ -669,7 +669,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

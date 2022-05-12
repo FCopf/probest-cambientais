@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 32 Alguns modelos são determinísticos | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 32 Alguns modelos são determinísticos | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 32 Alguns modelos são determinísticos | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 32 Alguns modelos são determinísticos | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="vacont.html"/>
 <link rel="next" href="modelstat.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="detmodel" class="section level1" number="32">
-<h1><span class="header-section-number">Capítulo 32</span> Alguns modelos são determinísticos</h1>
+<div id="detmodel" class="section level1 hasAnchor" number="32">
+<h1><span class="header-section-number">Capítulo 32</span> Alguns modelos são determinísticos<a href="detmodel.html#detmodel" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <hr />
 <blockquote>
 <p>Neste capítulo iremos retornar às funções no R. Para tal, carregue os pacotes <code>ggplot2</code> e <code>gridExtra</code>.</p>
@@ -560,8 +560,8 @@ div.csl-indent {
 <span id="cb199-2"><a href="detmodel.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code></pre></div>
 <hr />
 <p>Como veremos no Capítulo <a href="modelstat.html#modelstat">33</a>, modelos estatísticos são compostaos por uma porção estocástica (ou aleatória) e uma porção determinística. Abaixo iremos analisar algumas funções determinísticas, a maioria delas apresentada no livro <a href="https://ms.mcmaster.ca/~bolker/emdbook/" target="_blank">Ecological Models and Data in R</a> <span class="citation">(<a href="#ref-bolker2008ecological" role="doc-biblioref">Bolker 2008</a>)</span>.</p>
-<div id="modelo-linear" class="section level2" number="32.1">
-<h2><span class="header-section-number">32.1</span> Modelo linear</h2>
+<div id="modelo-linear" class="section level2 hasAnchor" number="32.1">
+<h2><span class="header-section-number">32.1</span> Modelo linear<a href="detmodel.html#modelo-linear" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>É o modelo determinístico mais simples para descrever a a relação entre uma variável resposta <span class="math inline">\(Y\)</span> e uma variável preditora <span class="math inline">\(X\)</span> através dos parâmetros <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>, conforme a equação.</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X\]</span></p>
 <p>Falamos deste modelo no capítulo sobre <em>regressão linear</em> (Capítulo <a href="regressao.html#regressao">22</a>).
@@ -619,8 +619,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb202-27"><a href="detmodel.html#cb202-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Y&quot;</span>)</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-445-1.png" width="384" style="display: block; margin: auto;" /></p>
 <hr />
-<div id="entendendo-os-comandos-em-r" class="section level4 unnumbered">
-<h4>Entendendo os comandos em R</h4>
+<div id="entendendo-os-comandos-em-r" class="section level4 unnumbered hasAnchor">
+<h4>Entendendo os comandos em R<a href="detmodel.html#entendendo-os-comandos-em-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <blockquote>
 <ol style="list-style-type: decimal">
 <li>Nos comandos acima, criamos um <code>data.frame</code> com uma sequência em <span class="math inline">\(X\)</span>;</li>
@@ -638,8 +638,8 @@ Vamos a um exemplo no R.</p>
 </blockquote>
 <hr />
 </div>
-<div id="modelo-linear-segmentado" class="section level4 unnumbered">
-<h4>Modelo linear segmentado</h4>
+<div id="modelo-linear-segmentado" class="section level4 unnumbered hasAnchor">
+<h4>Modelo linear segmentado<a href="detmodel.html#modelo-linear-segmentado" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Eventualmente, podemos ter um modelo linear <em>segmentado</em>, em que a primeira parte da reta tem uma inclinação diferente da segunda parte. Este modelo pode ser escrito como:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X\]</span></p>
 <p>se <span class="math inline">\(X \le \alpha\)</span>;</p>
@@ -670,8 +670,8 @@ Vamos a um exemplo no R.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-446-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="função-potência" class="section level2" number="32.2">
-<h2><span class="header-section-number">32.2</span> Função potência</h2>
+<div id="função-potência" class="section level2 hasAnchor" number="32.2">
+<h2><span class="header-section-number">32.2</span> Função potência<a href="detmodel.html#função-potência" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As função potência têm um longo histórico de aplicações em ciências naturais em que diversas relações fisiológicas podem ser descritas por este tipo de relação funcional. Veja por exemplo livro o clássico <a href="https://www.cambridge.org/core/books/the-ecological-implications-of-body-size/4D86337571D7F26E76F885B2548FCBFB" target="_blank">The Ecological Implications of Body Size</a> <span class="citation">(<a href="#ref-peters1986ecological" role="doc-biblioref">Peters and Peters 1986</a>)</span>.</p>
 <p>Uma relação potência é exemplo de modelo <strong>não-linear</strong> descrito por:</p>
 <p><span class="math display">\[Y = \beta_{0}X^{\beta_{1}}\]</span></p>
@@ -685,8 +685,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb204-8"><a href="detmodel.html#cb204-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
 <span id="cb204-9"><a href="detmodel.html#cb204-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-447-1.png" width="384" style="display: block; margin: auto;" /></p>
-<div id="a-representação-linear-da-função-potência" class="section level4 unnumbered">
-<h4>A representação linear da função potência</h4>
+<div id="a-representação-linear-da-função-potência" class="section level4 unnumbered hasAnchor">
+<h4>A representação linear da função potência<a href="detmodel.html#a-representação-linear-da-função-potência" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Embora descreva uma relação funcional não-linear, a função potência têm sido historicamente ajustada por modelos lineares devido a seguinte relação:</p>
 <p><span class="math inline">\(Y = \beta_{0}X^{\beta_{1}}\)</span></p>
 <p><span class="math inline">\(log(Y) = log(\beta_{0}X^{\beta_{1}})\)</span></p>
@@ -705,8 +705,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb205-9"><a href="detmodel.html#cb205-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-448-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="as-várias-formas-da-função-potência" class="section level4 unnumbered">
-<h4>As várias formas da função potência</h4>
+<div id="as-várias-formas-da-função-potência" class="section level4 unnumbered hasAnchor">
+<h4>As várias formas da função potência<a href="detmodel.html#as-várias-formas-da-função-potência" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Na função potência temos diferentes formatos possíveis, dependendo dos valores de <span class="math inline">\(\beta_1\)</span>.</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="detmodel.html#cb206-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb206-2"><a href="detmodel.html#cb206-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -742,8 +742,8 @@ Vamos a um exemplo no R.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-449-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii" class="section level2" number="32.3">
-<h2><span class="header-section-number">32.3</span> Modelo de Michaelis-Menten (ou Resposta funcional do tipo II)</h2>
+<div id="modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii" class="section level2 hasAnchor" number="32.3">
+<h2><span class="header-section-number">32.3</span> Modelo de Michaelis-Menten (ou Resposta funcional do tipo II)<a href="detmodel.html#modelo-de-michaelis-menten-ou-resposta-funcional-do-tipo-ii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Leva este nome desde que foi proposta como um modelo matemático para descrever a velocidade (<span class="math inline">\(Y\)</span>) da reação enzimatica para um volume crescente de substrato (<span class="math inline">\(X\)</span>). A velocidade da reação aumenta gradativamente até atingir uma assíntota (em <span class="math inline">\(Y = \beta_0\)</span>), quando todas as enzimas já estão ligadas ao substrado.</p>
 <p>Este modelo é conhecido também em outras áreas. Em Ecologia decreve a relação funcional entre um predador e sua presa (Resposta funcional do tipo II). Neste caso, o modelo descreve a taxa de predação em função do número de presas, ou seja, o número de presas consumidas por um predador por unidade de tempo. O modelo prevê que à medida que o número de presas disponíveis aumenta os predadores são limitados pelo tempo de manuseio da presa. Portanto que há um limite na capacidade de um predador consumir as presas disponíveis mesmo em altas densidades. Em Pesca este modelo é conhecido como <em>Modelo de Beverton e Holt</em>, utilizado para prever o número de recrutas (peixes que entram para a pesca) em função do tamanho do estoque pesqueiro.</p>
 <p>O modelo é dado por:</p>
@@ -763,8 +763,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb207-11"><a href="detmodel.html#cb207-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-450-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="resposta-funcional-do-tipo-iii" class="section level2" number="32.4">
-<h2><span class="header-section-number">32.4</span> Resposta funcional do tipo III</h2>
+<div id="resposta-funcional-do-tipo-iii" class="section level2 hasAnchor" number="32.4">
+<h2><span class="header-section-number">32.4</span> Resposta funcional do tipo III<a href="detmodel.html#resposta-funcional-do-tipo-iii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Em situações de baixa densidade de presa, o aumento na taxa de predação pode ser manter reduzido devido à preferência do por outras presas mais abundante ou sua incapacidade de encontrar a vítima. Estas situações descrevem uma resposta Funcional do Tipo III. A padrão é uma curva sigmóide no início que atinge a assíntota no ponto em que <span class="math inline">\(Y = beta_0\)</span> assim como a curva de Michaelis-Menten. O formato deste modelo é:</p>
 <p><span class="math display">\[Y = \frac{\beta_0 X^2}{(\beta_1^2 + X^2)}\]</span></p>
 <p>Compare este modelo com o anterior modificando os valores para os parâmetros <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>.</p>
@@ -781,8 +781,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb208-11"><a href="detmodel.html#cb208-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">35</span>)</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-451-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="resposta-funcional-do-tipo-iv" class="section level2" number="32.5">
-<h2><span class="header-section-number">32.5</span> Resposta funcional do tipo IV</h2>
+<div id="resposta-funcional-do-tipo-iv" class="section level2 hasAnchor" number="32.5">
+<h2><span class="header-section-number">32.5</span> Resposta funcional do tipo IV<a href="detmodel.html#resposta-funcional-do-tipo-iv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O modelo anterior ainda pode ser extendido para um Resposta Funcional do Tipo IV pela adição de um parâmetro (<span class="math inline">\(\beta_2\)</span>) ao modelo. O formato do modelo varia de um padrão assintótico (<span class="math inline">\(\beta_2 &gt; 0\)</span>) para um padrão unimodal (<span class="math inline">\(\beta_2 \le 0\)</span>) com ponto máximo em <span class="math inline">\(X = \frac{-2\beta_1}{\beta_2}\)</span>.</p>
 <p>O modelo é dado por:</p>
 <p><span class="math display">\[Y = \frac{\beta_0 X^2}{(\beta_1 + \beta_2 X + X^2)}\]</span></p>
@@ -800,8 +800,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb209-11"><a href="detmodel.html#cb209-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-452-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="função-hiperbólica" class="section level2" number="32.6">
-<h2><span class="header-section-number">32.6</span> Função hiperbólica</h2>
+<div id="função-hiperbólica" class="section level2 hasAnchor" number="32.6">
+<h2><span class="header-section-number">32.6</span> Função hiperbólica<a href="detmodel.html#função-hiperbólica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Em ecologia a função hiperbólica pode ser utilizada para prever o resultado de um modelo de competição, assumindo que o recurso por unidade de área é constante e que o uso do recurso por indivíduo é proporcional ao inverso da densidade de organismos (<span class="math inline">\(X\)</span>) por unidade de área. O resultado é uma redução no número de descendentes por indivíduos (<span class="math inline">\(Y\)</span>) em função do aumento da densidade (<span class="math inline">\(X\)</span>) e o modelo é dado por:</p>
 <p><span class="math display">\[ Y = \frac{\beta_0}{\beta_1 + X}\]</span></p>
 <p>Que tem o formato de:</p>
@@ -816,8 +816,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb210-9"><a href="detmodel.html#cb210-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-453-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="função-exponencial" class="section level2" number="32.7">
-<h2><span class="header-section-number">32.7</span> Função exponencial</h2>
+<div id="função-exponencial" class="section level2 hasAnchor" number="32.7">
+<h2><span class="header-section-number">32.7</span> Função exponencial<a href="detmodel.html#função-exponencial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O modelo exponencial á amplamente utilizado em ecologia. As aplicações mais simples são o crescimento (<span class="math inline">\(Y = \beta_0 e^{\beta_1 X}\)</span>) e o decrescimento (<span class="math inline">\(Y = \beta_0 e^{-\beta_1 X}\)</span>) exponencial.</p>
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="detmodel.html#cb211-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb211-2"><a href="detmodel.html#cb211-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
@@ -836,8 +836,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb211-15"><a href="detmodel.html#cb211-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(g1, g2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-454-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
-<div id="função-logística" class="section level2" number="32.8">
-<h2><span class="header-section-number">32.8</span> Função logística</h2>
+<div id="função-logística" class="section level2 hasAnchor" number="32.8">
+<h2><span class="header-section-number">32.8</span> Função logística<a href="detmodel.html#função-logística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A função logística têm uma grande variedade de aplicações. Uma delas é o ajuste de modelo de <em>dose-resposta</em> para compreendermos por exemplo, o ponto em que um percentual da população sobrevive. Outra aplicação está no estudo da dinâmica de populações, onde o modelo prevê um aumento no número de indivíduos ao longo do tempo alcançando o equilíibrio. A função logística pode ser parametrizada de várias formas (<a href="https://www.cambridge.org/core/books/the-ecological-implications-of-body-size/4D86337571D7F26E76F885B2548FCBFB" target="_blank">Veja os exemplos</a>). Uma forma amplamente utilizada em modelos estatísticos é:</p>
 <p><span class="math display">\[Y = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}\]</span></p>
 <p>Neste formato, <span class="math inline">\(\beta_0\)</span> é um parâmetro de posição e <span class="math inline">\(\beta_1\)</span> controla a inclinação da curva. O ponto de meia saturação (<span class="math inline">\(Y = 0,5\)</span>) ocorre quando <span class="math inline">\(X = \frac{-\beta_0}{\beta_1}\)</span>.</p>
@@ -853,8 +853,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb212-9"><a href="detmodel.html#cb212-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-455-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="modelo-monomolecular" class="section level2" number="32.9">
-<h2><span class="header-section-number">32.9</span> Modelo monomolecular</h2>
+<div id="modelo-monomolecular" class="section level2 hasAnchor" number="32.9">
+<h2><span class="header-section-number">32.9</span> Modelo monomolecular<a href="detmodel.html#modelo-monomolecular" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tem um formato similar ao da função de Michaelis-Menten com assintota em <span class="math inline">\(\beta_0\)</span> e taxa de incremento dada pelo valor de <span class="math inline">\(\beta_1\)</span>. É função é dada por:</p>
 <p><span class="math display">\[Y = \beta_0 (1 - e^{-\beta_1 X})\]</span></p>
 <div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="detmodel.html#cb213-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">30</span></span>
@@ -869,8 +869,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb213-10"><a href="detmodel.html#cb213-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> b0, <span class="at">slope =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-456-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="modelo-de-ricker" class="section level2" number="32.10">
-<h2><span class="header-section-number">32.10</span> Modelo de Ricker</h2>
+<div id="modelo-de-ricker" class="section level2 hasAnchor" number="32.10">
+<h2><span class="header-section-number">32.10</span> Modelo de Ricker<a href="detmodel.html#modelo-de-ricker" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O modelo de Ricker é uma opção para descrever o crescimento populacional denso-dependente e portanto uma opção ao modelo Logístico. Em <span class="math inline">\(X = 0\)</span>, o modelo inicia com crescimento linear com inclinação dada pelo parâmetro <span class="math inline">\(\beta_0\)</span> e atinge um pico em <span class="math inline">\(X = \frac{1}{\beta_1}\)</span>. O modelo é dado por:</p>
 <p><span class="math display">\[Y = \beta_0 X e^{-\beta_1 X}\]</span></p>
 <div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="detmodel.html#cb214-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
@@ -884,8 +884,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb214-9"><a href="detmodel.html#cb214-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-457-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="modelo-de-gompertz" class="section level2" number="32.11">
-<h2><span class="header-section-number">32.11</span> Modelo de Gompertz</h2>
+<div id="modelo-de-gompertz" class="section level2 hasAnchor" number="32.11">
+<h2><span class="header-section-number">32.11</span> Modelo de Gompertz<a href="detmodel.html#modelo-de-gompertz" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O modelo de Gompertz é outra alternativa ao modelo Logístico. <span class="math inline">\(Y\)</span> se aproxima de 1 à medida que <span class="math inline">\(X\)</span> aumenta, entretanto, ao contrário do modelo logístico é assimétrico, e o ponto de inflecção ocorre a cerca de <span class="math inline">\(1/3\)</span> do caminho até a assíntota. O modelo é dado por:</p>
 <p><span class="math display">\[Y = e^{-\beta_0 e^{-\beta_1 X}}\]</span></p>
 <div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="detmodel.html#cb215-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
@@ -899,8 +899,8 @@ Vamos a um exemplo no R.</p>
 <span id="cb215-9"><a href="detmodel.html#cb215-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-458-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="modelo-de-von-bertalanffy" class="section level2" number="32.12">
-<h2><span class="header-section-number">32.12</span> Modelo de von Bertalanffy</h2>
+<div id="modelo-de-von-bertalanffy" class="section level2 hasAnchor" number="32.12">
+<h2><span class="header-section-number">32.12</span> Modelo de von Bertalanffy<a href="detmodel.html#modelo-de-von-bertalanffy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O modelo de von Bertalanffy é uma opção para modelar o <em>crescimento de organismos</em> com crescimento indeterminado. A expressão abaixo utiliza os símbolos comumente empregado nestas situações, onde <span class="math inline">\(L_{\infty}\)</span> é o ponto assintótico (tamanho máximo teórico do organismo), <span class="math inline">\(k\)</span> é a taxa de crescimento, <span class="math inline">\(t_0\)</span> o tempo em que o tamanho (<span class="math inline">\(Y\)</span>) está em zero. O modelo é dado por:</p>
 <p><span class="math display">\[Y = L_{\infty} (1 - e^{-k(X - t_0)})\]</span></p>
 <div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="detmodel.html#cb216-1" aria-hidden="true" tabindex="-1"></a>Linf <span class="ot">&lt;-</span> <span class="dv">30</span></span>
@@ -974,7 +974,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 26 O espaço de possibilidades de um experimento | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 26 O espaço de possibilidades de um experimento | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 26 O espaço de possibilidades de um experimento | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 26 O espaço de possibilidades de um experimento | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="repanova.html"/>
 <link rel="next" href="probregras.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="espacoamostral" class="section level1" number="26">
-<h1><span class="header-section-number">Capítulo 26</span> O espaço de possibilidades de um experimento</h1>
+<div id="espacoamostral" class="section level1 hasAnchor" number="26">
+<h1><span class="header-section-number">Capítulo 26</span> O espaço de possibilidades de um experimento<a href="espacoamostral.html#espacoamostral" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>O peixe acará, <em>Geophagus brasiliensis</em> é uma espécie de peixe comumente encontrada em rios e riachos de mata atlântica no siudeste do Brasil. Uma das táticas de forrageamento e alimentação recentemente descrita para a espécie é chamada de <em>virar para pegar</em> <span class="citation">(<a href="#ref-souza2019surprising" role="doc-biblioref">Souza, Sabino, and Garrone-Neto 2019</a>)</span> que envolve virar objetos presentes no substrato (folhas, galhos e cascas de árvores) para encontrar e capturar macroinvertebrados ocultos sob estes objetos. <a href="https://www.scielo.br/img/revistas/bn/v19n3/1676-0611-bn-19-03-e20180702-suppl1.mp4" width="90%">Veja o vídeo.</a></p>
 <p>Ao realizar o ato de virar uma estrutura o indivíduo não sabe se irá encontrar e capturar um alimento. Em probabilidade, podemos chamar esta ação de um <em>experimento aleatório</em>. Um experimento aleatório é aquele que produz um resultado que iremos conhecer somente <strong>após</strong> sua realização. No entanto, ainda que não saibamos o resultado que uma realização específica do experimento, sabemos quais são os <strong>possíveis resultados</strong>. Neste exemplo vamos assumir que existem <strong>unicamente</strong> dois resultados possíveis para o ato de <em>virar para pegar</em>:</p>
 <p><span class="math inline">\(\{(captura), (não-captura)\}\)</span></p>
@@ -566,8 +566,8 @@ div.csl-indent {
 <blockquote>
 <p><strong>Evento</strong>: cada resultado de um experimento aleatório.</p>
 </blockquote>
-<div id="probabilidades-de-um-evento" class="section level2" number="26.1">
-<h2><span class="header-section-number">26.1</span> Probabilidades de um evento</h2>
+<div id="probabilidades-de-um-evento" class="section level2 hasAnchor" number="26.1">
+<h2><span class="header-section-number">26.1</span> Probabilidades de um evento<a href="espacoamostral.html#probabilidades-de-um-evento" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Embora não saibamos qual será o resultado de um experimento particular, podemos nos perguntar sobre qual a <em>chance</em> de ocorrência de cada evento, neste caso, qual a chance de um alimento ser capturado. Em probabilidade perguntamos sobre qual a <strong>probabilidade de captura</strong> <span class="math inline">\(P(captura)\)</span>. Uma probabilidade <span class="math inline">\(P(captura) = 0\)</span> significa que o animal <em>jamais</em> irá capturar um alimento ao virar um objeto. Por outro lado, <span class="math inline">\(P(captura) = 1\)</span> significa que irá capturar um alimento <em>sempre</em> que virar um objeto. No mundo real, a probabilidade será alguma coisa <em>entre</em> estes dois extremos, ou seja, <span class="math inline">\(0 \le P(captura) \le 1\)</span>.</p>
 <blockquote>
 <p><strong>Como podemos estimar esta probabilidade?</strong></p>
@@ -582,8 +582,8 @@ div.csl-indent {
 Por evento mutuamente exclusivos entendemos que ambos não podem ocorrer ao mesmo tempo, ou seja, a ocorrência de um <strong>exclui</strong> a possibilidade da ocorrência do outro.</p>
 <p>A probabilidade de <span class="math inline">\((não-captura)\)</span> é conhecida como o <strong>complemento</strong> da probabilidade de <span class="math inline">\((captura)\)</span>. Utilizando uma notação comum à <strong>operações com conjuntos</strong>, também poderíamos escrevê-la como:</p>
 <p><span class="math display">\[P(não-captura) = P(\overline{captura})\]</span></p>
-<div id="estimando-as-probabilidades-de-um-evento-por-amostragem" class="section level3" number="26.1.1">
-<h3><span class="header-section-number">26.1.1</span> Estimando as probabilidades de um evento por amostragem</h3>
+<div id="estimando-as-probabilidades-de-um-evento-por-amostragem" class="section level3 hasAnchor" number="26.1.1">
+<h3><span class="header-section-number">26.1.1</span> Estimando as probabilidades de um evento por amostragem<a href="espacoamostral.html#estimando-as-probabilidades-de-um-evento-por-amostragem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>O valor acima descreve o resultado para a observação de um único indivíduo em um único dia. No entanto, esperamos que existam dias melhores e dias piores para os peixes e uma série de fatotres pode interferir nestes resultados. Por exemplo, como <em>Geophagus brasiliensis</em> é uma espécie visualmente orientada, poderíamos supor que em dias de água turva (como após uma chuva intensa) um indivíduo tenha menor sucesso de captura. Poderíamos supor ainda que o sucesso de captura pode depender da habilidade individual, tamanho do predador, do tamanho da presa, de locais com maior densidade de presas, ou de predadores, etc. Todas esta possíveis causas, <em>além do simples acaso</em>, podeam fazer o número relativos de capturas varie dia-a-dia. Para <em>estimarmos</em> a chance de captura devemos portanto repetir este experimento.</p>
 <p>Suponha então que o experimento seja repetido em 30 dias diferentes de observação e que os resultados fossem:</p>
 <div id="htmlwidget-f19834f138f1f523f820" style="width:100%;height:auto;" class="datatables html-widget"></div>
@@ -658,7 +658,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

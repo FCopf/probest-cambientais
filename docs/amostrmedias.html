@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 13 Amostrando uma População Estatística | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 13 Amostrando uma População Estatística | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 13 Amostrando uma População Estatística | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 13 Amostrando uma População Estatística | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="popamostra.html"/>
 <link rel="next" href="normdist.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,12 +550,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="amostrmedias" class="section level1" number="13">
-<h1><span class="header-section-number">Capítulo 13</span> Amostrando uma População Estatística</h1>
+<div id="amostrmedias" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Capítulo 13</span> Amostrando uma População Estatística<a href="amostrmedias.html#amostrmedias" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Como discutimos no capítulo <a href="popamostra.html#popamostra">12</a> o objetivo da amostragem é descrever características da <strong>população estatística</strong> por meio de características da <strong>amostra</strong>. E um estudo sobre o tamanho do pescado em uma determinada área de pesca, a população estatística são os diâmetros de todos os peixes que podem ser pescados na reião. A população estatística pode ser descrita por <strong>parâmetros</strong> que representam medidas de centro como o diâmetro médio (<span class="math inline">\(\mu\)</span>), ou por medidas de variação como o desvio padrão (<span class="math inline">\(\sigma\)</span>), que representam o grau de dispersão das unidades amostrais ao redor da média. Se amostramos <strong>n</strong> elementos desta população, a média amostral (<span class="math inline">\(\overline{X}\)</span>) e o desvio padrão amostral (<span class="math inline">\(s\)</span>) dos diâmetros serão os estimadores destas características.</p>
 <p>Dependendo da questão envolvida e do conhecimento prévio sobre a população, diferentes métodos de amostragem são apropriados. A <strong>teoria da amostragem</strong> é a área da ciência que estuda estes métodos. Neste capítulo vamos discutir três tipos de amostragem: <strong>aleatória simples</strong>, <strong>estratificada</strong> e <strong>sistemática</strong>.</p>
-<div id="amostragem-aleatória-simples" class="section level2" number="13.1">
-<h2><span class="header-section-number">13.1</span> Amostragem aleatória simples</h2>
+<div id="amostragem-aleatória-simples" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Amostragem aleatória simples<a href="amostrmedias.html#amostragem-aleatória-simples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>É aquela em que cada elemento da população tem a mesma probabilidade de ser selecionado para compor a amostra. Por exemplo, se a população consiste de <span class="math inline">\(1000\)</span> elementos, cada um terá uma probabilidade de <span class="math inline">\(\frac{1}{1000}\)</span> de ser escolhido. Isto isenta o pesquisador de tomar qualquer decisão com base em julgamentos pré-concebidos, sobre quais elementos devem ou não compor a amostra.</p>
 <p>Suponha uma população hipotética de somente <span class="math inline">\(10\)</span> elementos:</p>
 <p><strong>População</strong>: 3, 10, 14, 19, 27, 28, 29, 41, 42, 43</p>
@@ -567,8 +567,8 @@ div.csl-indent {
 No entanto, a importância central da amostragem aleatória em estatística está no fato de que a aleatoriedade produz, <strong>em média</strong>, amostras representativas da população. Deste modo, é esperado que na maioria das vezes, uma amostra aleatória gere médias amostrais próximas à média populacional. Por este motivo, é fundamental prezar pela aleatoriedade no processo amostral, pois de outro modo não poderemos garantir que a inferência seja válida com base nas leis de probabilidade.</p>
 <p>O modo mais direto de se obter uma amostra aleatória é por meio de sorteio. Após atribuir números de 1 a <span class="math inline">\(N\)</span> a cada unidade amostral, estas unidades são sorteadas até que seja atingido o tamanho <span class="math inline">\(n\)</span> desejado. Na prática, nem sempre é simples, ou mesmo possível obter uma amostra aleatória nestes moldes. Não seria possível enumerar todos os peixes de uma região para, após um sorteio, tomar as medidas somente dequeles selecionados. Entretanto, se empregarmos ummétodo de coleta variado em que indivíduos de todos os tamanhos sejam aproximadamente igualmente sujeitos a serem capturados poderíamos no <em>aproximar</em> do que seria uma amostra verdsadeiramente aleatória. Outras dificuldades práticas obviamente seriam possíveis neste procedimento, como garantir acesso irrestrito à toda a área de ocorrência da espécie ou tempo disponível para percorrer a toda região. Questões como estas não desmerecem o requisito básico de se obter uma amostra aleatória, mas devem nos auxiliar a decidir como conciliar a prática experimental com a necessidade de garantirmos uma amostra aleatória.</p>
 </div>
-<div id="amostragem-aleatória-estratificada" class="section level2" number="13.2">
-<h2><span class="header-section-number">13.2</span> Amostragem aleatória estratificada</h2>
+<div id="amostragem-aleatória-estratificada" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Amostragem aleatória estratificada<a href="amostrmedias.html#amostragem-aleatória-estratificada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Se tivermos algum conhecimento prévio de como a população está estruturada, a amostra aleatória simples, embora não esteja incorreta, pode não ser a estratégia mais eficiente. Se for possivel identificar <strong>estratos</strong> ou <strong>subgrupos</strong> dentro da população, podemos conduzir uma <strong>amostragem aleatória estatificada</strong>.</p>
 <p>Voltemos ao exemplo do comprimento do pescado. Suponha que existam duas áreas de ocorrência da espécie. Uma delas sujeita a intensa atividade pesqueira e oura sendo uma área protegida. Poderíamos supor que na área protegida estejam os maiores indivíduos, justamente porque nesta área não hpá atividade de pesca (que em geral busca indivíduos maiores). Dizemos que os comprimentos em cada uma das duas regiões compõem estratos da população estatística.</p>
 <p>Nesta situação, uma amostra puramente aleatória <strong>sem considerar</strong> a existência dos dois estratos pode fazer com que, puramente ao acaso, um deles se torne mais representados na amostra. Se por exemplo da maioria dos pontos selecionados estiverem na região intensamente pescada, o comprimento médio da amostra (<span class="math inline">\(\overline{X}\)</span>) tenderá a ficar consistentemente abaixo de <span class="math inline">\(\mu\)</span>. A chance disto ocorrer se torna maior principalmente se o tamanho amostral for pequeno.</p>
@@ -576,13 +576,13 @@ No entanto, a importância central da amostragem aleatória em estatística est�
 <p>Se tyemos conhecimento da existência dos dois estratos portanto, a amostragem aleatória <strong>estratificada</strong> seria a mais indicada. Neste tipo de amostragem, o esforço amostral é subdividito entre os estratos. O tamanho amostral em cada estrato será o mesmo, ou <strong>proporcional</strong> ao tamanho do estrato. Uma vez definirmos os tamanhos amostrais que será aplicado aos estratos, as unidades são selecionadas por meio de uma amostragem aleatória simples em cada um.</p>
 <p>A amostragem aleatória estratificada garante que <strong>todos</strong> os estratos estejam presentes na amostra conforme sua representatividade na população. Ao fazer isto, as estimativas da amostra tenderão a se concentrar mais próximas ao parâmetro da população. Deste modo, quando os estratos são identificados <strong>corretamente</strong>, a principal vantagem da amostra aleatória estratificada sobre a amostra aleatória simples está em aumentar a <strong>precisão</strong> das estimativas. Mais a frente iremos discutir os conceitos de precisão e acurácia e relacioná-los com as estratégias amostrais discutidas aqui.</p>
 </div>
-<div id="amostragem-sistemática" class="section level2" number="13.3">
-<h2><span class="header-section-number">13.3</span> Amostragem sistemática</h2>
+<div id="amostragem-sistemática" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> Amostragem sistemática<a href="amostrmedias.html#amostragem-sistemática" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Uma amostragem sistemática o pesquisador escolhe umelemento inicial e toma medidas a cada <span class="math inline">\(k\)</span> ocorrências, seguindo a ordem de observação. No caso do comprimento de pescado, para facilitar a tomada de dados, o pesquisador pode medir o primeiro peixe coletado e, em seguida, medir os peixes em intervalos regulares, por exemplo a cada <span class="math inline">\(10\)</span> observados.</p>
 <p>A escolha da amostragem sistemática ao invés de uma amostragem aleatória simples, deve-se à sua praticidade. Se a característica de interesse das unidades amostrais estiver disposta de forma aleatória ao longo da sequência escolhida, a amostragem aleatória e sistemática irão gerar resultados similares. Na maioria dos casos, é isto que o pesquisador assume (ainda que implicitamente) quando opta por uma amostragem sistemática. Por outro lado, se houver um gradiente justamente na direção do transecto, a variância amostral irá <strong>superestimar</strong> a variância populacional equanto, se houver uma periodicidade que coincida com o intervalo escolhido, a variância amostral irá <strong>subestimar</strong> a variância populacional.</p>
 </div>
-<div id="erro-amostral-acurácia-e-precisão" class="section level2" number="13.4">
-<h2><span class="header-section-number">13.4</span> Erro amostral, acurácia e precisão</h2>
+<div id="erro-amostral-acurácia-e-precisão" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> Erro amostral, acurácia e precisão<a href="amostrmedias.html#erro-amostral-acurácia-e-precisão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Como as estimativas são obtidas de um subconjunto da população (a amostra), é regra que o resultado obtido de uma amostra aleatória particular, não será igual ao verdadeiro valor da população (o parâmetro), embora exista uma grande probabilidade estar próximo.</p>
 <ul>
 <li><strong>Erro amostral</strong>: é a diferença entre uma estimativa em particular e o parâmetro na população e portanto, é inerente à variabilidade do processo de amostragem. Suponha que, puramente ao acaso, a amostra inclua os menores elementos da população. A média amostral (<span class="math inline">\(\overline{X}\)</span>) estará muito abaixo da média populacional (<span class="math inline">\(\mu\)</span>) e o erro amostral será grande. Se calcularmos a média (<span class="math inline">\(\overline{X}\)</span>) de uma amostra particular, o erro amostral será dado por:</li>
@@ -599,13 +599,13 @@ No entanto, a importância central da amostragem aleatória em estatística est�
 <p><span class="math display">\[\sigma_{\overline{X}} =\frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>A figura abaixo é comnmente utilizada para representar os conceitos de precição e acurácia. O centro do alvo é o valor do parâmetro populacional e os pontos em preto são as estimativas. Estimadores acurados geram, em média, estimativas ao redor do parâmetro populacional (viés <span class="math inline">\(= 0\)</span>). Estimadores <strong>não-acurados</strong> geram, em média, valores deslocados do parâmetro populacional (viés <span class="math inline">\(\ne 0\)</span>). Estimadores precisos resultam sempre em estimativas próximas entre si, enquanto estimadores não precisos resultam em estimativas distantes umas das outras.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-250"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-250-1.png" alt="Representação dos conceitos de precisão e acurácia." width="798" />
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-250-1.png" alt="Representação dos conceitos de precisão e acurácia."  />
 <p class="caption">
 Figure 13.1: Representação dos conceitos de precisão e acurácia.
 </p>
 </div>
-<div id="erro-amostral" class="section level3" number="13.4.1">
-<h3><span class="header-section-number">13.4.1</span> Erro amostral</h3>
+<div id="erro-amostral" class="section level3 hasAnchor" number="13.4.1">
+<h3><span class="header-section-number">13.4.1</span> Erro amostral<a href="amostrmedias.html#erro-amostral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Voltemos à nossa população fictícia com <span class="math inline">\(N = 10\)</span> elementos:</p>
 <p><strong>População</strong>: 3, 10, 14, 19, 27, 28, 29, 41, 42, 43</p>
 <p>Para esta população em particular nós conhecemos a média populacional (<span class="math inline">\(\mu\)</span> = 25.6), de modo que será possível compará-la com as estimativas amostrais.</p>
@@ -620,8 +620,8 @@ Figure 13.1: Representação dos conceitos de precisão e acurácia.
 <p><strong>Média amostral 2</strong>: <span class="math inline">\(\overline{X_2} = 19.8\)</span></p>
 <p><strong>Erro amostral 2</strong>: <span class="math inline">\(E_2 = 19.8 - 25.6 = -5.8\)</span></p>
 </div>
-<div id="acurácia" class="section level3" number="13.4.2">
-<h3><span class="header-section-number">13.4.2</span> Acurácia</h3>
+<div id="acurácia" class="section level3 hasAnchor" number="13.4.2">
+<h3><span class="header-section-number">13.4.2</span> Acurácia<a href="amostrmedias.html#acurácia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Até agora, analisamos duas amostras diferentes da população. Porém, quantas amostras distintas seriam possíveis? Para uma amostragem <strong>sem reposição</strong>, a teoria combinatória nos diz que são possíveis:</p>
 <p><span class="math display">\[{{10}\choose{5}} = \frac{10!}{(10-5)! \times 5!} = 252\]</span></p>
 <p>formas diferentes de combinarmos <span class="math inline">\(N = 10\)</span> elementos em amostras de tamanho <span class="math inline">\(n = 5\)</span>.</p>
@@ -1633,8 +1633,8 @@ Medias
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-257-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Se calcularmos a <strong>média das médias</strong> (<span class="math inline">\(\mu_{\overline{X}}\)</span>), ou seja, somarmos todos estes valores e dividirmos por 252, o resultado será 25.6, que é exatamente o valor da média populacional <span class="math inline">\(\mu\)</span>. Isto têm uma implicação central em inferência estatística. Significa que a média amostral <span class="math inline">\(\overline{X}\)</span> é um estimador <strong>acurado</strong> (= <strong>não-viciado</strong>), pois tende a estimar corretamente o valor da média populacional <span class="math inline">\(\mu\)</span>. Ou seja, o histograma acima está centrado ao redor de <span class="math inline">\(\mu\)</span>, o que significa que <strong>em média</strong> uma amostra particular tem maior probabilidade de expressar um <span class="math inline">\(\overline{X}\)</span> próximo ao valor populacional.</p>
 </div>
-<div id="precisão-o-erro-padrão-da-média-sigma_overlinex" class="section level3" number="13.4.3">
-<h3><span class="header-section-number">13.4.3</span> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)</h3>
+<div id="precisão-o-erro-padrão-da-média-sigma_overlinex" class="section level3 hasAnchor" number="13.4.3">
+<h3><span class="header-section-number">13.4.3</span> Precisão: o erro padrão da média (<span class="math inline">\(\sigma_{\overline{X}}\)</span>)<a href="amostrmedias.html#precisão-o-erro-padrão-da-média-sigma_overlinex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suponha agora que tomemos ao acaso amostras com <span class="math inline">\(n = 7\)</span> desta mesma população. Existem ao todo:</p>
 <p><span class="math display">\[{{10}\choose{7}} = \frac{10!}{(10-7)! \times 7!} = 120\]</span></p>
 <p>amostras diferentes de tamanho <span class="math inline">\(n = 7\)</span> que podem ser retiradas de uma população de tamanho <span class="math inline">\(n = 10\)</span>. Se tomarmos estas 120 amostras e calcularmos suas respectivas médias amostrais, teremos os resultados abaixo:</p>
@@ -2039,8 +2039,8 @@ Medias
 <p><br/></p>
 </div>
 </div>
-<div id="vídeo-aulas-1" class="section level2" number="13.5">
-<h2><span class="header-section-number">13.5</span> Vídeo-aulas</h2>
+<div id="vídeo-aulas-1" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">13.5</span> Vídeo-aulas<a href="amostrmedias.html#vídeo-aulas-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <p><a href="https://youtu.be/iyzCGvlxN-o" target=_blank>
 <img src="figs/Amostrado_populacao_capa.png" alt="Amostrando uma População Estatística">
@@ -2101,7 +2101,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

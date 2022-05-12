@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 5 Medidas de tendência central | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 5 Medidas de tendência central | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 5 Medidas de tendência central | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 5 Medidas de tendência central | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="varquant.html"/>
 <link rel="next" href="variacao.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,11 +550,11 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tendcentral" class="section level1" number="5">
-<h1><span class="header-section-number">Capítulo 5</span> Medidas de tendência central</h1>
+<div id="tendcentral" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Medidas de tendência central<a href="tendcentral.html#tendcentral" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Tabelas de frequência e histogramas (capítulo <a href="varquant.html#varquant">4</a>) permitem a visualização dos padrões de distribuição de uma variável quantitativa, evidenciando limites inferiores e superiores, faixas de valores mais ou menos frequentes etc. Neste capítulo, veremos medidas-resumo que possibilitam descrever a <strong>tendência central</strong> de um conjunto de dados. Estas medidas são a <strong>média aritmética</strong>, a <strong>mediana</strong>, a <strong>moda</strong> e o <strong>ponto médio</strong>.</p>
-<div id="média-aritmética" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Média aritmética</h2>
+<div id="média-aritmética" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Média aritmética<a href="tendcentral.html#média-aritmética" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Considere a variável <span class="math inline">\(X\)</span> com <span class="math inline">\(n\)</span> elementos <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, <span class="math inline">\(X_3\)</span>, <span class="math inline">\(\cdots, X_n\)</span>. A média aritmética (<span class="math inline">\(\overline{X}\)</span>) é dada por:</p>
 <p><span class="math display">\[\overline{X}=\frac{X_1+X_2+X_3+\cdots+X_n}{n}=\frac{\sum_{i=1}^n{X_i}}{n}\]</span></p>
 <p><strong>Exemplo</strong></p>
@@ -573,8 +573,8 @@ div.csl-indent {
 <p></br>
 </br></p>
 </div>
-<div id="mediana" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Mediana</h2>
+<div id="mediana" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Mediana<a href="tendcentral.html#mediana" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>É definida como o valor do meio de uma distribuição, de modo que metade dos valores estão abaixo e metade está acima da mediana. Se organizarmos a variável <span class="math inline">\(X\)</span> em ordem crescente teremos:</p>
 <p><span class="math inline">\(X =\)</span> {1,2 , 4 , 7,9}</p>
 <p>sendo a mediana igual a <span class="math inline">\(4\)</span>.</p>
@@ -586,8 +586,8 @@ div.csl-indent {
 <p>Neste caso, a mediana fica como sendo:</p>
 <p><span class="math inline">\(\frac{4 + 7}{2} = 5.5\)</span></p>
 </div>
-<div id="moda" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Moda</h2>
+<div id="moda" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Moda<a href="tendcentral.html#moda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>É definida como o valor mais frequente de uma distribuição.</p>
 <p>Para <span class="math inline">\(X =\)</span> {9, 4, 7, 1, 2, 7} a moda é 7, o valor que mais se repete na distribuição.</p>
 <ul>
@@ -595,15 +595,15 @@ div.csl-indent {
 <li><p>Se vários valores repetem-se igualmente, teremos mais de uma moda na distribuição.</p></li>
 </ul>
 </div>
-<div id="ponto-médio" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Ponto médio</h2>
+<div id="ponto-médio" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Ponto médio<a href="tendcentral.html#ponto-médio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>É calculado com base nos dois valores extremos da distribuição (mínimo e máximo), sendo obtido por:</p>
 <p><span class="math display">\[P_{medio}=\frac{X_{minimo} + X_{maximo}}{2}\]</span></p>
 <p>Para <span class="math inline">\(X =\)</span> {9, 4, 7, 1, 2, 7} o ponto médio é:</p>
 <p><span class="math inline">\(PM = \frac{1 + 9}{2} = \frac{10}{2} = 5\)</span></p>
 </div>
-<div id="efeito-da-assimetria-sobre-os-descritores-de-tendência-central" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Efeito da assimetria sobre os descritores de tendência central</h2>
+<div id="efeito-da-assimetria-sobre-os-descritores-de-tendência-central" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Efeito da assimetria sobre os descritores de tendência central<a href="tendcentral.html#efeito-da-assimetria-sobre-os-descritores-de-tendência-central" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Cada um dos drescitores de tendência central descritos acima é mais ou menos sensível ao grau de assimetria de uma distribuiçãol. Em uma distribuição <strong>perfeitamente simétrica</strong>, onde as observações estão igualmente dispersas acima e abaixo do ponto central, os valores da média, mediana, moda e ponto médio coincidem. Por outro lado, pode ocorrer da distribuição ser <strong>assimétrica</strong>. Neste caso, a posição relativa dos descritores irá depender se a assimetria é à <strong>direita</strong> ou à <strong>esquerda</strong>. Esta discrepância ocorre devido à sensibilidade destes descritores a valores <em>extremos</em> na distribuição. O ponto médio é o mais sensível à presença de pontos extremos, seguido da média, mediana e a moda.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-120"></span>
 <img src="probest-cambientais_files/figure-html/unnamed-chunk-120-1.png" alt="Efeito da assimetria de uma distribuição sobre o ponto médio, a média aritmética, a mediana e a moda" width="1152" />
@@ -626,8 +626,8 @@ Figure 5.1: Efeito da assimetria de uma distribuição sobre o ponto médio, a m
 </blockquote>
 <hr />
 </div>
-<div id="obtendo-medidas-de-uma-tabela-de-dados" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Obtendo medidas de uma tabela de dados</h2>
+<div id="obtendo-medidas-de-uma-tabela-de-dados" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Obtendo medidas de uma tabela de dados<a href="tendcentral.html#obtendo-medidas-de-uma-tabela-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Carregue o pacote <code>tidyverse</code> e importe novamente a base de dados <code>Reservatorios_Parana_parcial.csv</code>.</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="tendcentral.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega pacotes</span></span>
 <span id="cb76-2"><a href="tendcentral.html#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -835,7 +835,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 30 As variáveis são aleatórias, não imprevisíveis! - Modelos discretos | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 30 As variáveis são aleatórias, não imprevisíveis! - Modelos discretos | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 30 As variáveis são aleatórias, não imprevisíveis! - Modelos discretos | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 30 As variáveis são aleatórias, não imprevisíveis! - Modelos discretos | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="tbayes.html"/>
 <link rel="next" href="vacont.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,13 +550,13 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="va" class="section level1" number="30">
-<h1><span class="header-section-number">Capítulo 30</span> As variáveis são aleatórias, não imprevisíveis! - <em>Modelos discretos</em></h1>
+<div id="va" class="section level1 hasAnchor" number="30">
+<h1><span class="header-section-number">Capítulo 30</span> As variáveis são aleatórias, não imprevisíveis! - <em>Modelos discretos</em><a href="va.html#va" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Nos capítulos <a href="espacoamostral.html#espacoamostral">26</a> a <a href="tbayes.html#tbayes">29</a> apresentamos conceitos básicos que regem as leis de probabilidade aplicadas à ocorrência de eventos simples e complexos. No entanto, ao conduzir um experimento, muitas vezes não estamos interessados nos eventos em si, mas em <strong>quantias numéricas</strong> que expressam a ocorrência destes eventos. Definiremos estas quantias aqui como <strong>variáveis aleatórias</strong>.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-426-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Variáveis aleatórias são funções matemáticas que associam cada evento do espaço amostral a uma quantia numérica. Embora expressem resultados probabilísticos, as variáveis aleatórias como funções matemáticas, têm estruturas previssíveis como <strong>média</strong>, <strong>variância</strong>, <strong>grau de assimetria</strong>, etc. Estas estruturas são as utilizadas para fazermos predições sobre eventos futuros. Neste sentido, as variáveis aleatórias compõem os modelos probabilísticos sobre os quais nos baseamos para fazer predições sobre fenômenos naturais. Estas variáveis são subdivididas em variáveis aleatórias <strong>discretas</strong> e <strong>contínuas</strong>, a depender da natureza da informação que está sendo mensurada. As diferências entre dados discretos e contínuos é discutida no capítulo <a href="#descrit"><strong>??</strong></a>. A seguir serão exemplificados diferentes modelos de variáveis aleatórias associados a diferentes tipos de experimentos aleatórios.</p>
-<div id="experimento-1-sucessos-e-fracassos" class="section level2" number="30.1">
-<h2><span class="header-section-number">30.1</span> <em>Experimento 1</em>: Sucessos e fracassos</h2>
+<div id="experimento-1-sucessos-e-fracassos" class="section level2 hasAnchor" number="30.1">
+<h2><span class="header-section-number">30.1</span> <em>Experimento 1</em>: Sucessos e fracassos<a href="va.html#experimento-1-sucessos-e-fracassos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>Rhamdioglanis transfasciatus</em> é um peixe endêmico de riachos costeiros de Mata Atlântica do sudeste do Brasil, particularmente abundante em pequenos riachos, rasos, com boa cobertura vegetal e de fundo predregoso. A captura é feita buscando os indivíduos ocultos sob rochas e troncos, que são o micro-habitats que a espécie ocupa. Geralmente esta busca é feita percorrendo um trecho de algumas dezenas de metros de extensão em um dado riacho.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-427-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Suponha que a probabilidade de ocorrência da espécie em riachos da região seja de <span class="math inline">\(P(O) = 0.4\)</span>. Suponha também que não existam falsos positivos ou falsos negativos. Isto é, se a espécie estiver presente no trecho ela certamente será capturada e, se não estiver, não há a possibilidade de falso registro. Neste caso, se fizermos uma busca, é esperado que a captura seja feita em 40% dos riachos selecionados.</p>
@@ -572,8 +572,8 @@ div.csl-indent {
 <p>Estamos interessados aqui em uma representação numérica destes eventos (nossa <em>variável aleatória</em> <span class="math inline">\(Y\)</span>) que descreve no <strong>número de ocorrências</strong> após a seleção de <span class="math inline">\(4\)</span> riachos. A última coluna da tabela nos mostra todos os valores possíveis para <span class="math inline">\(Y\)</span>. Veja que, não encontrar a espécie em nenhum riacho equivale a dizer que <span class="math inline">\(Y = 0\)</span>, enquanto encontrá-la em todos os riachos resulta em <span class="math inline">\(Y = 0\)</span>. Para outros resultados temos mais de uma possibilidade. Por exemplo, <span class="math inline">\(Y = 2\)</span> ocorre em 6 situações diferentes, dependendo das combinações entre ocorrência e não-ocorrência para cada riacho.</p>
 <p>Assim, ao utilizar a variável aleatória <span class="math inline">\(Y\)</span> nosso novo espaço amostral consiste de 5 possibilidades numéricas distintas e mutuamente exclusivas, em que <span class="math inline">\(Y\)</span> pode ser <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, ou <span class="math inline">\(4\)</span>. Escrevemos que nosso espaço amostral é:</p>
 <p><span class="math display">\[\Omega = \left\{ y \in \mathbb{N}: 0 \le y \le 4 \right\}\]</span></p>
-<div id="a-distribuição-de-probabilidade-de-y" class="section level3 unnumbered">
-<h3>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></h3>
+<div id="a-distribuição-de-probabilidade-de-y" class="section level3 unnumbered hasAnchor">
+<h3>A distribuição de probabilidade de <span class="math inline">\(Y\)</span><a href="va.html#a-distribuição-de-probabilidade-de-y" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Qual a probabilidade de ocorrência de cada um dos 16 eventos possíveis? Se assumirmos que os resultados obtidos em cada riacho são <strong>independentes</strong>, a probabilidade do evento descrito na primeira linha por exemplo seria:</p>
 <p><span class="math inline">\(P(1^a linha) = P(Y = 0) = P(\overline{O}) \times P(\overline{O}) \times P(\overline{O}) \times P(\overline{O})\)</span></p>
 <p><span class="math inline">\(P(Y = 0) = 0.6 \times 0.6 \times 0.6 \times 0.6 = 0.1296\)</span></p>
@@ -588,8 +588,8 @@ div.csl-indent {
 <p><span class="math inline">\(P(Y = 4) = 1 \times (0.4 \times 0.4 \times 0.4 \times 0.4) = 0.0256\)</span></p>
 <p>A soma de <span class="math inline">\(P(Y = 0) + \cdots + P(Y = 4) = 1\)</span>, de modo que temos <span class="math inline">\(0 \le Y \le 4\)</span> como todos os valores possíveis desta variável aleatória.</p>
 </div>
-<div id="uma-expressão-geral-para-py-y" class="section level3 unnumbered">
-<h3>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></h3>
+<div id="uma-expressão-geral-para-py-y" class="section level3 unnumbered hasAnchor">
+<h3>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span><a href="va.html#uma-expressão-geral-para-py-y" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Vamos definir <span class="math inline">\(P(Y = y)\)</span> como a probabilidade da variável aleatória <span class="math inline">\(Y\)</span> (MAIÚSCULO) assumir um valor particular <span class="math inline">\(y\)</span> (minúsculo). Mais a frente, para simplificar as notações, iremos utilizar simplesmente <span class="math inline">\(p_{Y}(y)\)</span> ou <span class="math inline">\(p(y)\)</span> no lugar de <span class="math inline">\(P(Y = y)\)</span>. Vamos definir também <span class="math inline">\(P(O) = p\)</span>, <span class="math inline">\(P(\overline{O}) = 1 - p\)</span> e <span class="math inline">\(n\)</span> como o número de tentativas do experimentos (= número de riachos selecionados).</p>
 <p>Utilizando as regras de probabilidade para eventos independentes e regras de contagem, podemos encontrar a expressão que generaliza o cálculo de cada uma das probabilidades acima por:</p>
 <p><span class="math display">\[P(Y = y|n,p) = \left (\begin{array}{c}
@@ -597,8 +597,8 @@ n \\
 y
 \end{array}\right) \times p^y \times (1-p)^{(n-y)}\]</span></p>
 <p>Este modelo para é conhecido como <strong>Modelo Binomial</strong>, em que <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span> são denominados de <strong>parâmetros</strong>. A expressão é conhecida como a <strong>função de massa de probabilidade de <span class="math inline">\(Y\)</span></strong> ou simplesmente como <strong>distribuição de probabilidade de <span class="math inline">\(Y\)</span></strong> para o modelo binomial.</p>
-<div id="entendendo-a-expressão-do-modelo-binomial" class="section level4 unnumbered">
-<h4>Entendendo a expressão do modelo binomial</h4>
+<div id="entendendo-a-expressão-do-modelo-binomial" class="section level4 unnumbered hasAnchor">
+<h4>Entendendo a expressão do modelo binomial<a href="va.html#entendendo-a-expressão-do-modelo-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A porção <span class="math inline">\(p^y \times (1-p)^{(n-y)}\)</span> indica que o sucesso <strong>ocorreu</strong> <span class="math inline">\(y\)</span>, cada uma com probabilidade <span class="math inline">\(p\)</span>, enquanto o fracasso <strong>ocorreu</strong> <span class="math inline">\((n - y)\)</span> vezes, cada uma com probabilidade <span class="math inline">\((1-p)\)</span>.</p>
 <p>A expressão <span class="math inline">\(\left (\begin{array}{c} n \\ y \end{array}\right)\)</span> vem da teoria combinatória e nos diz quantas vezes podemos obter <span class="math inline">\(y\)</span> ocorrências dentro de <span class="math inline">\(n\)</span> possibilidades. Lembre-se que:</p>
 <p><span class="math display">\[\left (\begin{array}{c}
@@ -607,8 +607,8 @@ y
 \end{array}\right) = \frac{n!}{(n-y)! \times y!}\]</span></p>
 <p><span class="math inline">\(P(Y = y|n,p)\)</span> é lido como a probabilidade de <span class="math inline">\(Y\)</span> assumir o valor <span class="math inline">\(y\)</span> <strong>dados</strong> os valores dos parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, ou simplesmente, a probabilidade de obtermos <span class="math inline">\(y\)</span> sucessos em <span class="math inline">\(n\)</span> tentativas.</p>
 </div>
-<div id="exemplo-de-cálculo" class="section level4" number="30.1.0.1">
-<h4><span class="header-section-number">30.1.0.1</span> Exemplo de cálculo</h4>
+<div id="exemplo-de-cálculo" class="section level4 hasAnchor" number="30.1.0.1">
+<h4><span class="header-section-number">30.1.0.1</span> Exemplo de cálculo<a href="va.html#exemplo-de-cálculo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Vamos exemplificar o cálculo para <span class="math inline">\(Y = 3\)</span>, lembrando que em nosso exemplo <span class="math inline">\(n = 4\)</span> e <span class="math inline">\(p = 0,4\)</span>.</p>
 <p><span class="math inline">\(P(Y = 3|4,0.4) = \left (\begin{array}{c} 4 \\ 3 \end{array}\right) \times 0.4^3 \times (1-0.4)^{(4-3)}\)</span></p>
 <p><span class="math inline">\(P(Y = 3|4,0.4) = \frac{4!}{(4-3)!3!} \times 0.4^3 \times (0.6)^{1}\)</span></p>
@@ -619,16 +619,16 @@ y
 <p>Vemos que as probabilidades de selecionarmos 1 ou 2 riachos contendo a espécie são maiores que as probabilidades de que nenhum ou de que todos os riachos contenham a espécie.</p>
 </div>
 </div>
-<div id="função-de-distribuição-acumulada" class="section level3 unnumbered">
-<h3>Função de distribuição acumulada</h3>
+<div id="função-de-distribuição-acumulada" class="section level3 unnumbered hasAnchor">
+<h3>Função de distribuição acumulada<a href="va.html#função-de-distribuição-acumulada" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Obtida <span class="math inline">\(p_Y\)</span> para cada valor particular, podemos obter as probabilidades acumuladas para <span class="math inline">\(Y\)</span>. Vamos denotar esta função de <span class="math inline">\(F(y)\)</span>, que nos fornece a probabilidade de obtermos valores de <span class="math inline">\(Y\)</span> menores ou iguais a um limite particular <span class="math inline">\(y\)</span>. Deste modo temos que:</p>
 <p><span class="math display">\[F(y) = P(Y \le y)\]</span></p>
 <p>Se comparamos <span class="math inline">\(F(y)\)</span> e <span class="math inline">\(p(y)\)</span> graficamente teremos:</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-430-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>A barra laranja em 1 por exemplo, é o somatório das duas primeiras barras em azul da distribuição de <span class="math inline">\(p(y)\)</span>. Veja que <span class="math inline">\(F(Y)\)</span> necessariamente termina em <span class="math inline">\(1\)</span> expressando a soma de todos os valores possíveis de <span class="math inline">\(p(y)\)</span>.</p>
 </div>
-<div id="estruturas-previsíveis-para-um-experimento-aleatório" class="section level3 unnumbered">
-<h3>Estruturas previsíveis para um experimento aleatório</h3>
+<div id="estruturas-previsíveis-para-um-experimento-aleatório" class="section level3 unnumbered hasAnchor">
+<h3>Estruturas previsíveis para um experimento aleatório<a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ainda que não saibamos o resultado final de um experimento em particular, o modelo binomial que acabamos de construir nos diz que, ao repetí-lo um grande número de vezes, é mais provável encontrarmos a espécie em 1 ou 2 riachos que em nenhum ou nos 4 riachos. Consequentemente, o modelo nos permite fazer predições sobre o comportamento <strong>futuro</strong> de um experimento deste tipo. Assim, mesmo antes da execução do experimento, sabemos que será o <em>comportamento predito</em> no que diz respeito aos seus possíveis resultados. Esta capacidade de predição é fundamental se queremos comparar os resultados de experimentos com diferentes modelos teóricos, como veremos no capítulos <a href="emv.html#emv">34</a> e <a href="aic.html#aic">35</a>.</p>
 <p>Ao definirmos um modelo para nossa variável aleatória, uma forma simples de descrevê-la são por suas medidas de <em>tendência central</em> e de <em>variabilidade</em>.</p>
 <p>O <strong>valor esperado</strong> (ou <em>esperança</em>) de uma variável aleatória é dado por:</p>
@@ -642,15 +642,15 @@ y
 <p><span class="math display">\[VAR(Y) = n \times p \times (1-p)\]</span></p>
 <p>Em nosso exemplo, temos <span class="math inline">\(E(Y) = 4 \times 0.4 = 0.16\)</span> e <span class="math inline">\(VAR(Y) = 4 \times 0,4 \times 0.6 = 0.96\)</span>.</p>
 </div>
-<div id="alterando-os-parâmetros-do-modelo" class="section level3 unnumbered">
-<h3>Alterando os parâmetros do modelo</h3>
+<div id="alterando-os-parâmetros-do-modelo" class="section level3 unnumbered hasAnchor">
+<h3>Alterando os parâmetros do modelo<a href="va.html#alterando-os-parâmetros-do-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Em nosso exemplo, esperamos encontrar a espécie na maior parte das vezes em 1 ou 2. De fato, a esperança de <span class="math inline">\(Y\)</span> será <span class="math inline">\(E(Y) = 1.6\)</span>. O que aconteceria para outros valores de <span class="math inline">\(n\)</span> ou de <span class="math inline">\(p\)</span>. Veja as figuras abaixo:</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-431-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Na medida em que <span class="math inline">\(p\)</span> é baixo, a distribuição de probabilidade é assimétrica para a esquerda, denotando que é mais provável a ocorrência de um número baixo de sucessos. Para <span class="math inline">\(p = 0.5\)</span> a distribuição de probabilidade é simétrica ao redor do valor esperado, e as proporções de sucessos e fracassos são idênticas. Finalmente, para valores elevados de <span class="math inline">\(p\)</span> a distribuição é assimétrica para a direita e a probabilidade de obtermos um número elevado de sucessos aumenta.</p>
 </div>
 </div>
-<div id="experimento-2-o-custo-de-1-sucesso" class="section level2" number="30.2">
-<h2><span class="header-section-number">30.2</span> <em>Experimento 2</em>: O custo de 1 sucesso</h2>
+<div id="experimento-2-o-custo-de-1-sucesso" class="section level2 hasAnchor" number="30.2">
+<h2><span class="header-section-number">30.2</span> <em>Experimento 2</em>: O custo de 1 sucesso<a href="va.html#experimento-2-o-custo-de-1-sucesso" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suponha agora que ao chegar em uma determinada área, temos interesse em encontrar um único riacho que contenha a espécie. O experimento consistirá da amostragem de diferentes riachos até que encontremos a espécie pela primeira vez. Se soubermos que a probabilidade de ocorrência da espécie nos riachos da região é de <span class="math inline">\(p = 0,4\)</span> podemos nos questionar:</p>
 <blockquote>
 <p>Quantos riachos esperamos amostrar até encontrar a espécie?</p>
@@ -673,8 +673,8 @@ y
 <p><span class="math display">\[E(Y) = \frac{1}{p}\]</span></p>
 <p><span class="math display">\[VAR(Y) = \frac{1-p}{p^2}\]</span></p>
 </div>
-<div id="experimento-3-uma-sequência-de-sucessos" class="section level2" number="30.3">
-<h2><span class="header-section-number">30.3</span> <em>Experimento 3</em>: Uma sequência de sucessos</h2>
+<div id="experimento-3-uma-sequência-de-sucessos" class="section level2 hasAnchor" number="30.3">
+<h2><span class="header-section-number">30.3</span> <em>Experimento 3</em>: Uma sequência de sucessos<a href="va.html#experimento-3-uma-sequência-de-sucessos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Em muitos estudos, devemos selecionar um número pré-definido de ambientes com uma determinada característica. Suponha portanto uma modificação do experimento anterior. Desejamos agora encontrar a espécie em exatamente <span class="math inline">\(r = 3\)</span> riachos. Novamente, vamos supor que a probabilidade de ocorrência da espécie seja <span class="math inline">\(p = 0.05\)</span>. Uma pergunta importante é:</p>
 <blockquote>
 <p>Quantos riachos esperamos amostrar até que encontremos a espécies em exatamente <span class="math inline">\(r = 3\)</span> riachos?</p>
@@ -700,8 +700,8 @@ r - 1
 <p><span class="math display">\[E(Y) = \frac{r}{p}\]</span></p>
 <p><span class="math display">\[VAR(Y) = \frac{r \times (1-p)}{p^2}\]</span></p>
 </div>
-<div id="experimento-4-quantas-marcas-na-amostra" class="section level2" number="30.4">
-<h2><span class="header-section-number">30.4</span> <em>Experimento 4</em>: Quantas marcas na amostra!</h2>
+<div id="experimento-4-quantas-marcas-na-amostra" class="section level2 hasAnchor" number="30.4">
+<h2><span class="header-section-number">30.4</span> <em>Experimento 4</em>: Quantas marcas na amostra!<a href="va.html#experimento-4-quantas-marcas-na-amostra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Encontrado um riacho em que a espécie ocorre, desejamos estudar o padrão de abundância de sua população. Suponha que neste riacho existam <span class="math inline">\(N\)</span> indivíduos da população alvo. Esta população consiste de <span class="math inline">\(m\)</span> indivíduos <strong>marcados</strong> e <span class="math inline">\(N-m\)</span> <strong>não-marcados</strong>. A marcação foi feita anteriormente para diferenciarmos os dois grupos. O experimento consiste em amostrar <span class="math inline">\(n\)</span> indivíduos desta população e verificar quantos (<span class="math inline">\(y\)</span>) <strong>apresentam</strong> a marcação.</p>
 <p>Este experimento é comumente realizado para obtermos dados sobre manejo populacional, e descreve uma aplicação típica do <strong>Modelo Hipergeométrico</strong> em ecologia de populações. No modelo hipergeométrico a variável aleatória <span class="math inline">\(Y\)</span> representa o número de indivíduos com determinada característica na segunda amostra e a variável tem a seguinte distribuição de probabilidade:</p>
 <p><span class="math display">\[P(Y=y|N,m,n) = \frac{\left (\begin{array}{c} m \\ y \end{array}\right) \times \left (\begin{array}{c} N-m \\ n-y \end{array}\right)}{\left (\begin{array}{c} N \\ n \end{array}\right)}\]</span></p>
@@ -721,8 +721,8 @@ r - 1
 <p><span class="math display">\[E(Y) = \frac{n m}{N}\]</span></p>
 <p><span class="math display">\[VAR(Y) = \frac{n m}{N}(\frac{(n-1)(m-1)}{N-1}+1-\frac{n m}{N})\]</span></p>
 </div>
-<div id="experimento-5-contagem-por-unidade-de-área-tempo-.." class="section level2" number="30.5">
-<h2><span class="header-section-number">30.5</span> <em>Experimento 5</em>: Contagem por unidade de área, tempo, …..</h2>
+<div id="experimento-5-contagem-por-unidade-de-área-tempo-.." class="section level2 hasAnchor" number="30.5">
+<h2><span class="header-section-number">30.5</span> <em>Experimento 5</em>: Contagem por unidade de área, tempo, …..<a href="va.html#experimento-5-contagem-por-unidade-de-área-tempo-.." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Neste último experimento, o riacho foi subdividido em 30 unidades de <span class="math inline">\(1m^2\)</span>. Foram amostrados todos os indivíduos presentes nos trechos. Se o número de indivíduos em um determinado trecho for independente do número de indivíduos nos demais trechos, a contagem de organísmos por <span class="math inline">\(m^2\)</span> será uma variável aleatória descrita por um <strong>Modelo de Poisson</strong>. Neste modelo, temos um único parâmetro denominado <em>lambda</em> (<span class="math inline">\(\lambda\)</span>) e a distribuição de probabilidade será descrita por:</p>
 <p><span class="math display">\[P(Y = y|\lambda) =  \frac{e^{-\lambda} \lambda^y}{y!}\]</span></p>
 <p>O formato da distribuição é assimétrico para valores baixos de <span class="math inline">\(\lambda\)</span>, tornado-se simétrico ao redor da média à medida que <span class="math inline">\(\lambda\)</span> aumenta.</p>
@@ -781,7 +781,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

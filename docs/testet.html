@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 18 Teste t de Student | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 18 Teste t de Student | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 18 Teste t de Student | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 18 Teste t de Student | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="th.html"/>
 <link rel="next" href="modlinear.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="testet" class="section level1" number="18">
-<h1><span class="header-section-number">Capítulo 18</span> Teste t de Student</h1>
+<div id="testet" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Capítulo 18</span> Teste t de Student<a href="testet.html#testet" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>De acordo com o que discutimos no capítulo <a href="inferenc.html#inferenc">16</a>, o modelo normal de probabilidades não é a melhor aproximação para a distribuição das madias amostrais quando não conhecemos <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e/ou quando o tamanho amostral <span class="math inline">\(n\)</span> é pequeno. Nesta situação, apresentamos a <strong>distribuição t de Student</strong> como uma opção mais apropriada para o cálculo de um intervalo de confiança. Da mesma forma, o <strong>teste <span class="math inline">\(Z\)</span></strong> que introduzimos no capítulo <a href="th.html#th">17</a> assume que a distribuição das médias amostrais é normalmente distribuída e que a variância populacional <span class="math inline">\(\sigma\)</span> seja conhecida, uma informação que não temos na prática científica.</p>
 <p>Seguindo este raciocínio portanto, iremos apresentar o <strong>teste t</strong> para verificar uma hipótese sobre uma média populacional. Este teste é utilizado em substituição ao <strong>teste <span class="math inline">\(Z\)</span></strong> quando <span class="math inline">\(\sigma\)</span> é desconhecido e/ou o tamanho amostral é pequeno. O teste segue também a mesma lógica discutida no teste <span class="math inline">\(Z\)</span>, porém estabelece que a distribuição das médias amostrais é melhor descrita pela distribuição <span class="math inline">\(t\)</span> e não pela distribuição normal.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-333"></span>
@@ -560,8 +560,8 @@ div.csl-indent {
 Figure 18.1: Teste Z versus teste t. Estatística do teste e distribuição de probabilidades
 </p>
 </div>
-<div id="teste-t-para-uma-média-populacional" class="section level2" number="18.1">
-<h2><span class="header-section-number">18.1</span> Teste t para uma média populacional</h2>
+<div id="teste-t-para-uma-média-populacional" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Teste t para uma média populacional<a href="testet.html#teste-t-para-uma-média-populacional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Considere um exemplo simples. Dados do Banco Central do Brasil dizem que moedas de <span class="math inline">\(R\$ 0,10\)</span> da segunda geração pesam 4.8 gramas. Você tem <span class="math inline">\(8\)</span> moedas no bolso e resolve testar essa afirmação pesando cada moeda. Os pesos obtidos são: <span class="math inline">\(X = 5.1, 5, 4.8, 5, 5, 4.9, 4.9, 4.7\)</span>.</p>
 <p>Inicialmente, devemos estabelecer nossa hipótese nula (<span class="math inline">\(H_0\)</span>), nossa hipótese alternativa (<span class="math inline">\(H_a\)</span>) e o nível se significância <span class="math inline">\(\alpha\)</span>. Iremos estabelecer <span class="math inline">\(\alpha = 0,05\)</span> e as hipóteses como:</p>
 <p><span class="math inline">\(H_0: \mu = 4.8\)</span> gramas</p>
@@ -598,14 +598,14 @@ Figure 18.1: Teste Z versus teste t. Estatística do teste e distribuição de p
 </ul>
 <p>Podemos ver ainda o valor da média amostral (<span class="math inline">\(\overline{X} = 4.925\)</span>) e o intervalo de confiança a <span class="math inline">\(95\%\)</span> (<code>4.817844 - 5.032156</code>).</p>
 </div>
-<div id="graus-de-liberdade" class="section level2" number="18.2">
-<h2><span class="header-section-number">18.2</span> Graus de liberdade</h2>
+<div id="graus-de-liberdade" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Graus de liberdade<a href="testet.html#graus-de-liberdade" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A distribuição <span class="math inline">\(t\)</span> como várias outras distribuições amostrais utilizadas em inferência estatística, muda seu formato em função do que chamamos de <strong>graus de liberdade</strong> (<span class="math inline">\(gl\)</span>). Os graus de liberdade têm relação com o tamanho amostral. No caso do teste <span class="math inline">\(t\)</span> para <span class="math inline">\(1\)</span> amostra, esta relação é simplesmente: <span class="math inline">\(gl = n-1\)</span>.</p>
 <p>À medida que os graus de liberdade aumentam, o formato da distribuição <span class="math inline">\(t\)</span> se assemelha ao formato da distribuição Normal padronizada. De fato, para graus de liberdades altos (ex. <span class="math inline">\(n \ge 30\)</span>), os formatos das distribuições <span class="math inline">\(Z\)</span> e <span class="math inline">\(t\)</span> são praticamente indistinguíveis. Na prática, isto faz que as distribuição <span class="math inline">\(Z\)</span> <strong>raramente</strong> seja utilizada.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-336-1.png" width="672" /></p>
 </div>
-<div id="probabilidades-no-teste-t-de-student-a-tabela-t" class="section level2" number="18.3">
-<h2><span class="header-section-number">18.3</span> Probabilidades no teste <span class="math inline">\(t\)</span> de Student: a tabela <span class="math inline">\(t\)</span></h2>
+<div id="probabilidades-no-teste-t-de-student-a-tabela-t" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Probabilidades no teste <span class="math inline">\(t\)</span> de Student: a tabela <span class="math inline">\(t\)</span><a href="testet.html#probabilidades-no-teste-t-de-student-a-tabela-t" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A rejeição uo aceitação da hipótese nula em um teste <span class="math inline">\(t\)</span> pode ser feita por meio da obtenção do <em>valor de p</em> ou pela comparação do <span class="math inline">\(t\)</span> calculado com valores críticos de referência para determinado nível de significância. O primeiro caso foi o que apresentamos acima e depende de um software estatístico para obtermos valores exatos de <span class="math inline">\(p\)</span>. O segundo caso, pode ser feito com auxílio da Tabela <span class="math inline">\(t\)</span>, em que limites críticos de <span class="math inline">\(t\)</span> são disponibilizados para diferentes níveis de significância e graus de liberdade.</p>
 <p>Atualmente, o uso da tabela <span class="math inline">\(t\)</span> têm finalidade em grande parte didática e, por este motivo, vamos apresentá-lo aqui rapidamente. No entanto, fora da sala de aula, o teste <span class="math inline">\(t\)</span> será invariavelmente conduzido por meio de um software estatístico este método que permitirá a obtenção do valor exato de <span class="math inline">\(p\)</span>.</p>
 <p>Na tabela <span class="math inline">\(t\)</span> (<a href="https://github.com/FCopf/probest-cambientais/blob/master/figs/Tabela_t.pdf" target="_blank">acesse aqui</a>), a primeira coluna mostra os <em>graus de liberdade</em> de <span class="math inline">\(1\)</span> a <span class="math inline">\(120\)</span>. O cabeçalho da tabela de <span class="math inline">\(90\%\)</span> a <span class="math inline">\(0,1\%\)</span> mostra a área na distribuição de <span class="math inline">\(t\)</span> nas caldas inferior e superior.</p>
@@ -616,8 +616,8 @@ Figure 18.1: Teste Z versus teste t. Estatística do teste e distribuição de p
 </ul>
 <p>O resultado do teste estatístico em nosso exemplo foi <span class="math inline">\(t_c = 2.76\)</span> que é <strong>maior</strong> que <span class="math inline">\(2,3646\)</span>. Isto nos leva à mesma decisão anterior (<strong>rejeitar</strong> <span class="math inline">\(H_0\)</span>), ainda que por meio da tabela <span class="math inline">\(t\)</span> não tenhamos o valor exato de probabilidade.</p>
 </div>
-<div id="teste-t-para-comparação-de-duas-médias-independentes" class="section level2" number="18.4">
-<h2><span class="header-section-number">18.4</span> Teste t para comparação de duas médias independentes</h2>
+<div id="teste-t-para-comparação-de-duas-médias-independentes" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Teste t para comparação de duas médias independentes<a href="testet.html#teste-t-para-comparação-de-duas-médias-independentes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O que vimos no teste <span class="math inline">\(t\)</span> para uma amostra pode ser facilmente extendido para testarmos a diferenças entre duas amostras.</p>
 <p>Os dados abaixo mostram o tempo de coagulação sanguínea (em minutos) em ratos machos adultos tratados com dois tipos de drogas, retirado do livro Biostatistical Analysis <span class="citation">(<a href="#ref-zar2010biostatistical" role="doc-biblioref">Zar 2010</a>)</span>, pp. 130-134.</p>
 <table>
@@ -871,7 +871,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

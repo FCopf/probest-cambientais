@@ -121,6 +121,7 @@ distribuição-de-comprimento
 intervalos-em-uma-distribuição-normal
 quantos-desvios-padrões
 exercícios-propostos
+vídeo-aulas-2
 tcl
 teorema-central-do-limite
 probabilidades-na-amostra-original-e-na-distribuição-de-médias

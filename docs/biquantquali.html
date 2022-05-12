@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 11 Análise bidimensional: variáveis quantitativas e qualitativas | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 11 Análise bidimensional: variáveis quantitativas e qualitativas | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 11 Análise bidimensional: variáveis quantitativas e qualitativas | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 11 Análise bidimensional: variáveis quantitativas e qualitativas | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="biquant.html"/>
 <link rel="next" href="popamostra.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,12 +550,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="biquantquali" class="section level1" number="11">
-<h1><span class="header-section-number">Capítulo 11</span> Análise bidimensional: variáveis quantitativas e qualitativas</h1>
+<div id="biquantquali" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Capítulo 11</span> Análise bidimensional: variáveis quantitativas e qualitativas<a href="biquantquali.html#biquantquali" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Para finalizar a seção sobre estatística descritiva, vamos entender como podemos visualizar a relação entre uma variável <span class="math inline">\(Y\)</span> contínua e uma variável <span class="math inline">\(X\)</span> categórica e mensurar o grau de associação entre elas. Iremos nos referir a <span class="math inline">\(Y\)</span> como variável <strong>dependente</strong> (ou variável <strong>resposta</strong>) e a <span class="math inline">\(X\)</span> como variável <strong>independente</strong> (ou <strong>preditora</strong>). Assim, assumimos <em>explicitamente</em> que <span class="math inline">\(Y\)</span> é função (depende) de <span class="math inline">\(X\)</span> e não o contrário. O nome preditora vem do fato que, se <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span> estão associadas, ao conhecemos <span class="math inline">\(X\)</span> somos capazer de <em>prever</em> a resposta média em <span class="math inline">\(Y\)</span>.</p>
-<div id="visualizando-a-distribuição-de-y-em-diferentes-grupos" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos</h2>
-<p>Considere o conjunto de dados medley.csv (disponível também em <a href="https://users.monash.edu.au/~murray/BDAR/" target="_blank">Chapter 10 - Single factor classification - ANOVA</a>) que avalia o impacto da presença de metais pesados na diversidade de espécies de diatomácias em riachos (<span class="citation"><a href="#ref-medleyclements1998" role="doc-biblioref">Medley and Clements</a> (<a href="#ref-medleyclements1998" role="doc-biblioref">1998</a>)</span>; <span class="citation"><a href="#ref-queen2002experimental" role="doc-biblioref">Queen, Quinn, and Keough</a> (<a href="#ref-queen2002experimental" role="doc-biblioref">2002</a>)</span>; <span class="citation"><a href="#ref-logan2011biostatistical" role="doc-biblioref">Logan</a> (<a href="#ref-logan2011biostatistical" role="doc-biblioref">2011</a>)</span>).</p>
+<div id="visualizando-a-distribuição-de-y-em-diferentes-grupos" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Visualizando a distribuição de <span class="math inline">\(Y\)</span> em diferentes grupos<a href="biquantquali.html#visualizando-a-distribuição-de-y-em-diferentes-grupos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Considere o conjunto de dados medley.csv (disponível também em <a href="https://users.monash.edu.au/~murray/BDAR/" target="_blank">Chapter 10 - Single factor classification - ANOVA</a>) que avalia o impacto da presença de metais pesados na diversidade de espécies de diatomácias em riachos (<span class="citation">Medley and Clements (<a href="#ref-medleyclements1998" role="doc-biblioref">1998</a>)</span>; <span class="citation">Queen, Quinn, and Keough (<a href="#ref-queen2002experimental" role="doc-biblioref">2002</a>)</span>; <span class="citation">Logan (<a href="#ref-logan2011biostatistical" role="doc-biblioref">2011</a>)</span>).</p>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="biquantquali.html#cb126-1" aria-hidden="true" tabindex="-1"></a>medley <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;medley.csv&quot;</span>)</span>
 <span id="cb126-2"><a href="biquantquali.html#cb126-2" aria-hidden="true" tabindex="-1"></a>medley</span></code></pre></div>
 <table>
@@ -956,8 +956,8 @@ BACK
 <span id="cb127-3"><a href="biquantquali.html#cb127-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb127-4"><a href="biquantquali.html#cb127-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-215-1.png" width="672" /></p>
-<div id="boxplots-para-os-níveis-do-tratamento" class="section level3" number="11.1.1">
-<h3><span class="header-section-number">11.1.1</span> Boxplots para os níveis do tratamento</h3>
+<div id="boxplots-para-os-níveis-do-tratamento" class="section level3 hasAnchor" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Boxplots para os níveis do tratamento<a href="biquantquali.html#boxplots-para-os-níveis-do-tratamento" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Não há problema em apresentarmos um gráfico de dispersão. No entanto, em situações deste tipo estamos comumente interessados em representar medidas-resumo que nos permitam comparar os diferentes níveis do tratamento. A forma mais comum de representar esta situação é por meio de um boxplot (Capítulo <a href="quartis.html#quartis">7</a>) para cada nível do tratamento.</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="biquantquali.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(medley) <span class="sc">+</span></span>
 <span id="cb128-2"><a href="biquantquali.html#cb128-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> ZINC, <span class="at">y =</span> DIVERSITY) <span class="sc">+</span></span>
@@ -976,8 +976,8 @@ BACK
 <span id="cb130-3"><a href="biquantquali.html#cb130-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>() <span class="sc">+</span></span>
 <span id="cb130-4"><a href="biquantquali.html#cb130-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 </div>
-<div id="o-gráfico-de-erros" class="section level3" number="11.1.2">
-<h3><span class="header-section-number">11.1.2</span> O gráfico de erros</h3>
+<div id="o-gráfico-de-erros" class="section level3 hasAnchor" number="11.1.2">
+<h3><span class="header-section-number">11.1.2</span> O gráfico de erros<a href="biquantquali.html#o-gráfico-de-erros" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Nas figuras acima representamos os quartis das distribuições. Podemos estar interessados em apresentar somente <strong>os pontos médios</strong> (média aritimética) juntamente com <strong>barras de erro</strong> que representem alguma medida de dispersão (ex. desvio padrão). Para isto é necessário inicialmente criar um <code>data.frame</code> com estas medidas.</p>
 <table>
 <thead>
@@ -1061,8 +1061,8 @@ HIGH
 <span id="cb133-5"><a href="biquantquali.html#cb133-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 </div>
 </div>
-<div id="partição-das-soma-dos-quadrados" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> Partição das Soma dos Quadrados</h2>
+<div id="partição-das-soma-dos-quadrados" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Partição das Soma dos Quadrados<a href="biquantquali.html#partição-das-soma-dos-quadrados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ao representarmos a distribuição de uma variável <span class="math inline">\(Y\)</span> contínua em função de uma variável <span class="math inline">\(X\)</span> categórica, geralmente estamos interessados em determinar se os diferentes níveis de <span class="math inline">\(X\)</span> (diferentes grupos) têm médias similares ou se ao menos um dos níveis têm média diferente dosdemais. Queremos um métodos que nos permita diferenciar situações como as apresentadas abaixo:</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-224-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Na figura <span class="math inline">\(I\)</span> todos os grupos são provenientes da mesma distribuição e têm médias aproximadamente iguais (<span class="math inline">\(\overline{Y}_A \approx \overline{Y}_B \approx \overline{Y}_C \approx \overline{Y}_D\)</span>). Na figura <span class="math inline">\(II\)</span> o segundo grupo B tem média mais elevada que os demais e na da figura <span class="math inline">\(III\)</span>, todas as médias parecem ser diferentes entre si (<span class="math inline">\(\overline{Y}_A \ne \overline{Y}_B \ne \overline{Y}_C \ne \overline{Y}_D\)</span>).</p>
@@ -1093,8 +1093,8 @@ HIGH
 <li><strong>Soma dos Quadrados dos Resíduos</strong> <span class="math inline">\(SQ_{Res}\)</span>: mede as diferenças entre cada observação <span class="math inline">\(Y_{ij}\)</span> e a média de seu próprio grupo <span class="math inline">\(\overline{Y}_{j}\)</span>. <span class="math inline">\(SQ_{Res}\)</span> também é chamada de soma dos quadrados <strong>dentro dos grupos</strong> ou <strong>dentro dos tratamentos</strong></li>
 </ol>
 <p><span class="math display">\[SQ_{Res} = \sum_{j = 1}^{k}\sum_{i = 1}^{n_{j}}(Y_{ij} - \overline{Y}_{j})^2\]</span></p>
-<div id="a-característica-aditiva-das-somas-dos-quadrados" class="section level3" number="11.2.1">
-<h3><span class="header-section-number">11.2.1</span> A característica aditiva das somas dos quadrados</h3>
+<div id="a-característica-aditiva-das-somas-dos-quadrados" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> A característica aditiva das somas dos quadrados<a href="biquantquali.html#a-característica-aditiva-das-somas-dos-quadrados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A partição da soma dos quadrados consiste em decompor a <strong>variação total</strong> do experimento em uma parcela atribuída à variação <strong>entre tratamentos</strong> e outra parcela da variação <strong>dentro dos tratamentos</strong>. Isto é possível pois as somas dos quadrados definidas acima podem ser expressas de forma aditiva como:</p>
 <hr />
 <p><span class="math display">\[SQ_{Total} = SQ_{Trat} + SQ_{Res}\]</span></p>
@@ -1104,15 +1104,15 @@ HIGH
 <p><span class="math inline">\(\sum_{j = 1}^{k}\sum_{i = 1}^{n}(Y_{ij} - \overline{\overline{Y}})^2 = \sum_{j = 1}^{k}n_{j}(Y_{j} - \overline{\overline{Y}})^2 + \sum_{j = 1}^{k}\sum_{i = 1}^{n}(Y_{ij} - \overline{Y}_{j})^2\)</span></p>
 </blockquote>
 </div>
-<div id="medindo-a-associação-entre-y-e-x" class="section level3" number="11.2.2">
-<h3><span class="header-section-number">11.2.2</span> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></h3>
+<div id="medindo-a-associação-entre-y-e-x" class="section level3 hasAnchor" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Medindo a associação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span><a href="biquantquali.html#medindo-a-associação-entre-y-e-x" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A característica aditiva das somas dos quadrados pode ser utilizada para mensurar o grau de dependência de <span class="math inline">\(Y_{ij}\)</span> com respeito aos diferentes tratamentos. Compare as duas figuras abaixo:</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-229-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>A soma dos quadrados dentro dos grupos é a mesma nas duas figuras (<span class="math inline">\(SQ_{Res} = 362.6\)</span>). No entanto, na figura da esquerda, em que as médias dos tratamentos são similares (e consequentemente próximas à grande média), a soma dos quadrados entre os tratamentos é muito menor (<span class="math inline">\(SQ_{Trat}^{esquerda} = 15.8\)</span>) que na figura da direita, em que as médias dos tratamentos estão distantes entre si (<span class="math inline">\(SQ_{Trat}^{direita} = 680.8\)</span>). É desta forma que a partição das somas dos quadrados nos permite diferenciar situações em que: i - a média dos grupos <strong>depende</strong> dos níveis do tratamento (figura da direita); de situações em que ii - a média <strong>não depende</strong> dos níveis do tratamento (figura da esquerda).</p>
 <p>A compreensão desta ideia é central para entendermos os delineamentos de <strong>Análise de Variância</strong> (Capítulos <a href="anova.html#anova">20</a> a <a href="repanova.html#repanova">25</a>) e de <strong>Regressão linear</strong> (Capítulos <a href="regressao.html#regressao">22</a> e <a href="regresmultipla.html#regresmultipla">23</a>) que veremos nas próximas seções.</p>
 </div>
-<div id="o-coeficiente-de-determinação-r2" class="section level3" number="11.2.3">
-<h3><span class="header-section-number">11.2.3</span> O coeficiente de determinação (<span class="math inline">\(R^2\)</span>)</h3>
+<div id="o-coeficiente-de-determinação-r2" class="section level3 hasAnchor" number="11.2.3">
+<h3><span class="header-section-number">11.2.3</span> O coeficiente de determinação (<span class="math inline">\(R^2\)</span>)<a href="biquantquali.html#o-coeficiente-de-determinação-r2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Podemos expressar a relação entre <span class="math inline">\(SQ_{Trat}\)</span> e <span class="math inline">\(SQ_{Total}\)</span> pela expressão:</p>
 <hr />
 <p><span class="math display">\[R^2 = \frac{SQ_{Trat}}{SQ_{Trat} + SQ_{Res}} = \frac{SQ_{Trat}}{SQ_{Total}}\]</span></p>
@@ -1120,8 +1120,8 @@ HIGH
 <p><span class="math inline">\(R^2\)</span> é chamado de <strong>coeficiente de determinação</strong> e varia entre <span class="math inline">\(0\)</span> e <span class="math inline">\(1\)</span>. Se <span class="math inline">\(R^2 = 0\)</span> toda a variação em <span class="math inline">\(Y\)</span> é causada por <span class="math inline">\(SQ_{Res}\)</span> (<span class="math inline">\(\overline{\overline{Y}} = \overline{Y}_1 = \overline{Y}_2 = \cdots = \overline{Y}_k\)</span>). À medida que as médias dos tratamentos se distanciam umas das outras, <span class="math inline">\(R^2\)</span> se aproxima de <span class="math inline">\(1\)</span> pois a maior parte da variação em <span class="math inline">\(Y\)</span> é causada por <span class="math inline">\(SQ_{Trat}\)</span>. Voltaremos a falar do coeficiente de determinação nos capítulos <a href="regressao.html#regressao">22</a> e <a href="regresmultipla.html#regresmultipla">23</a>.</p>
 </div>
 </div>
-<div id="voltando-ao-conjundo-de-dados-medley.csv" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> Voltando ao conjundo de dados <code>medley.csv</code></h2>
+<div id="voltando-ao-conjundo-de-dados-medley.csv" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Voltando ao conjundo de dados <code>medley.csv</code><a href="biquantquali.html#voltando-ao-conjundo-de-dados-medley.csv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Existe uma série de formas de obtermos os somatórios dos quadrados no R, todos eles associados aos comandos utilizados em Análise de Variância e Regressão Linear. O comando <code>aov</code> por exemplo, pode ser utilizado da seguinte forma:</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="biquantquali.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(DIVERSITY <span class="sc">~</span> ZINC, <span class="at">data =</span> medley)</span></code></pre></div>
 <pre><code>## Call:
@@ -1205,7 +1205,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

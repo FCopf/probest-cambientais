@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 7 Medidas de posição: quartis | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 7 Medidas de posição: quartis | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 7 Medidas de posição: quartis | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 7 Medidas de posição: quartis | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="variacao.html"/>
 <link rel="next" href="escorez.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,13 +550,13 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="quartis" class="section level1" number="7">
-<h1><span class="header-section-number">Capítulo 7</span> Medidas de posição: quartis</h1>
+<div id="quartis" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Capítulo 7</span> Medidas de posição: quartis<a href="quartis.html#quartis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A média, mediana, moda e ponto médio são um tipo de <strong>medidas de posição</strong> que indicam uma posição particular, isto é, a posição central ao redor da qual os dados estão dispersos. Existem no entanto, outras medidas de posição como <strong>quartis</strong>, medidas comumente utilizadas na descrição, análise e interpretação de dados.</p>
 <p>Os quartis de uma distribuição de valores são obtidos após ordenarmos os dados em ordem crescente e em seguida agrupá-los em partes iguais, contendo cada uma 25% do número total de observações. Se temos 20 observações, cada parte conterá portanto cinco observações, <span class="math inline">\(20 \times 0.25 = 5\)</span> e os quartis são as posições que dividem estas partes.</p>
 <p>Os quartis podem ser indicados por <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> e <span class="math inline">\(Q_3\)</span>, conforme a figura abaixo.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-144"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-144-1.png" alt="Divisão de uma distribuição de valores em quartis" width="1254" />
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-144-1.png" alt="Divisão de uma distribuição de valores em quartis"  />
 <p class="caption">
 Figure 7.1: Divisão de uma distribuição de valores em quartis
 </p>
@@ -573,8 +573,8 @@ Figure 7.1: Divisão de uma distribuição de valores em quartis
 </blockquote>
 <hr />
 <p>Os quartis que veremos aqui são medidas <strong>empíricas</strong> dos limites indicados na figura acima. Calculamos estes limites a paritr de uma amostra de tamanho <span class="math inline">\(n\)</span>.</p>
-<div id="cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Cálculo dos quartis na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>, para <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(2\)</span> e <span class="math inline">\(3\)</span>)</h2>
+<div id="cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Cálculo dos quartis na posição <span class="math inline">\(j\)</span> (<span class="math inline">\(Q_j\)</span>, para <span class="math inline">\(j = 1\)</span>, <span class="math inline">\(2\)</span> e <span class="math inline">\(3\)</span>)<a href="quartis.html#cálculo-dos-quartis-na-posição-j-q_j-para-j-1-2-e-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Existem diferentes algorítmos possíveis para o cálculo dos quartis. Veremos um tipo de algoritmo. Para isto, siga os passos abaixo:</p>
 <ol style="list-style-type: decimal">
 <li><p>Re-organize <span class="math inline">\(X\)</span> em ordem crescente de <span class="math inline">\(k = 1\)</span> a <span class="math inline">\(k = n\)</span>. Seja <span class="math inline">\(n\)</span> o número de observações em <span class="math inline">\(X\)</span>, teremos portantro <span class="math inline">\(X_k\)</span> como o valor observado na posição <span class="math inline">\(k\)</span> em ordem crescente. Deste modo, para <span class="math inline">\(k = 1\)</span> teremos <span class="math inline">\(X_1\)</span> como o menor valor e para <span class="math inline">\(k = n\)</span> teremos <span class="math inline">\(X_n\)</span> como o maior valor.</p></li>
@@ -782,8 +782,8 @@ X ordenado
 <p><span class="math inline">\(Q_1 = 8.95\)</span></p>
 <p><strong>Exercício</strong>: Calcule agora os valores corrspondentes a <span class="math inline">\(Q_2\)</span> e <span class="math inline">\(Q_3\)</span> e verifique que os resultados são: <span class="math inline">\(Q_2 = 10.75\)</span> e <span class="math inline">\(Q_3 = 11.575\)</span></p>
 </div>
-<div id="cálculo-dos-quartis-no-r" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Cálculo dos quartis no R</h2>
+<div id="cálculo-dos-quartis-no-r" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Cálculo dos quartis no R<a href="quartis.html#cálculo-dos-quartis-no-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Podemos programar a sequência de funções acima utilizando o R:</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="quartis.html#cb84-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">8.7</span>, <span class="fl">10.4</span>, <span class="fl">8.3</span>, <span class="fl">13.2</span>, <span class="fl">10.7</span>, <span class="fl">8.4</span>, <span class="dv">11</span>, <span class="fl">11.5</span>, <span class="fl">11.2</span>, <span class="fl">9.4</span>, </span>
 <span id="cb84-2"><a href="quartis.html#cb84-2" aria-hidden="true" tabindex="-1"></a>      <span class="dv">13</span>, <span class="fl">10.8</span>, <span class="fl">8.8</span>, <span class="fl">5.6</span>, <span class="fl">12.2</span>, <span class="fl">9.9</span>, <span class="dv">10</span>, <span class="fl">11.9</span>, <span class="fl">11.6</span>, <span class="fl">11.2</span>)</span>
@@ -823,8 +823,8 @@ X ordenado
 </ul>
 <p><span class="math display">\[L = p \times (n+1)\]</span></p>
 </div>
-<div id="obtendo-os-quartis-a-partir-de-uma-tabela-de-dados" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Obtendo os quartis a partir de uma tabela de dados</h2>
+<div id="obtendo-os-quartis-a-partir-de-uma-tabela-de-dados" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Obtendo os quartis a partir de uma tabela de dados<a href="quartis.html#obtendo-os-quartis-a-partir-de-uma-tabela-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Carregue o pacote <code>tidyverse</code> e importe novamente a base de dados <code>Reservatorios_Parana_parcial.csv</code>.</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="quartis.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega pacotes</span></span>
 <span id="cb90-2"><a href="quartis.html#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -877,8 +877,8 @@ Limites
 </tbody>
 </table>
 </div>
-<div id="regresentação-gráfica-dos-quartis-boxplots" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Regresentação gráfica dos quartis: Boxplots</h2>
+<div id="regresentação-gráfica-dos-quartis-boxplots" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Regresentação gráfica dos quartis: Boxplots<a href="quartis.html#regresentação-gráfica-dos-quartis-boxplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Os quartis de uma distribuição no ajudam a entender o formato de uma distribuição. Uma das formas amplamemte estabelecidas de representarmos graficamente os quartis são por meio de um gráfico denominado de <strong>Boxplot</strong>. Para a variável acima, o boxplot será:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:boxquartis"></span>
 <img src="probest-cambientais_files/figure-html/boxquartis-1.png" alt="Divisão em quartis de um boxplot" width="384" />
@@ -945,7 +945,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

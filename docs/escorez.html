@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 8 Medidas de posição: índice Z | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 8 Medidas de posição: índice Z | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 8 Medidas de posição: índice Z | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 8 Medidas de posição: índice Z | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="quartis.html"/>
 <link rel="next" href="biquali.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="escorez" class="section level1" number="8">
-<h1><span class="header-section-number">Capítulo 8</span> Medidas de posição: índice Z</h1>
+<div id="escorez" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Capítulo 8</span> Medidas de posição: índice Z<a href="escorez.html#escorez" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>O <strong>Índice <span class="math inline">\(Z\)</span></strong> ou <strong>Escore <span class="math inline">\(Z\)</span></strong> indica a posição de uma observação particular (<span class="math inline">\(X_i\)</span>). O valor de <span class="math inline">\(Z\)</span> relaciona a posição de <span class="math inline">\(X_i\)</span> com a <strong>média</strong> e o <strong>desvio padrão</strong> da distribuição. Suponha uma variável com média <span class="math inline">\(\overline{X}\)</span> e desvio padrão <span class="math inline">\(s\)</span>. O índice de <span class="math inline">\(Z_i\)</span> para uma observação <span class="math inline">\(i\)</span> particular é calculado por:</p>
 <p><span class="math display">\[Z_i = \frac{X_i - \overline{X}}{s}\]</span></p>
 <p>Seja por exemplo a variável <span class="math inline">\(X\)</span></p>
@@ -559,8 +559,8 @@ div.csl-indent {
 <p>A média e o desvio padrão são respectivamente <span class="math inline">\(\overline{X} = 10.39\)</span> e <span class="math inline">\(s = 1.82\)</span>.</p>
 <p>O índice <span class="math inline">\(Z_i\)</span> para a observação <span class="math inline">\(X_i = 8.3\)</span></p>
 <p><span class="math inline">\(Z_i = \frac{8.3 - 10.39}{1.82} = -1.15\)</span></p>
-<div id="interpretando-o-valor-de-z" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Interpretando o valor de <span class="math inline">\(Z\)</span></h2>
+<div id="interpretando-o-valor-de-z" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Interpretando o valor de <span class="math inline">\(Z\)</span><a href="escorez.html#interpretando-o-valor-de-z" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ao calcularmos o valor de <span class="math inline">\(Z\)</span> estamos primeiro fazendo uma <strong>centralização</strong> da variável <span class="math inline">\(X\)</span> quando subtraímos cada observação <span class="math inline">\(X_i\)</span> de <span class="math inline">\(\overline{X}\)</span>. A porção <span class="math inline">\(X_i - \overline{X}\)</span> mede os <em>desvios</em> de cada observação, isto é, suas distâncias (positivas ou negativas) entre <span class="math inline">\(X_i\)</span> e <span class="math inline">\(\overline{X}\)</span>. Se calcularmos a média destes desvios por exemplo, veremos que o resultado será <strong>exatamente</strong> zero:</p>
 <p><span class="math inline">\(\sum_{i=1}^{n}\frac{(X_i - \overline{X})}{n} = 0\)</span></p>
 <p>Portanto, acabamos de <em>centralizar</em> a variável <span class="math inline">\(X\)</span> ao redor de sua média.</p>
@@ -836,8 +836,8 @@ Desvio padrão
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-161-1.png" width="960" style="display: block; margin: auto;" /></p>
 <p>Veja na tabela que conforme o valor de <span class="math inline">\(X_i\)</span> se distancia da média de <span class="math inline">\(X = 10.39\)</span>, mais distante de zero será o valor de <span class="math inline">\(Z_i\)</span>. Neste exemplo, as observações mais extremas de <span class="math inline">\(X\)</span> estão, respectivamente, a -2.63 desvios padrões abaixo e 1.54 desvios padrões acima da média. Como discutimos acima, a nova variável <span class="math inline">\(Z\)</span> tem média <span class="math inline">\(\overline{Z} = 0\)</span> (está centralizada) e desvio padrão <span class="math inline">\(1\)</span> (está padronizada).</p>
 </div>
-<div id="realizando-a-transformação-z-a-partir-de-uma-tabela-de-dados" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Realizando a transformação <span class="math inline">\(Z\)</span> a partir de uma tabela de dados</h2>
+<div id="realizando-a-transformação-z-a-partir-de-uma-tabela-de-dados" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Realizando a transformação <span class="math inline">\(Z\)</span> a partir de uma tabela de dados<a href="escorez.html#realizando-a-transformação-z-a-partir-de-uma-tabela-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Carregue o pacote <code>tidyverse</code> e importe novamente a base de dados <code>Reservatorios_Parana_parcial.csv</code>.</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="escorez.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega pacotes</span></span>
 <span id="cb92-2"><a href="escorez.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -1155,8 +1155,8 @@ CPUE_z_dp
 </tbody>
 </table>
 </div>
-<div id="valores-esperados-de-z-em-uma-distribuição-normal-padronizada" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Valores esperados de <span class="math inline">\(Z\)</span> em uma distribuição normal padronizada</h2>
+<div id="valores-esperados-de-z-em-uma-distribuição-normal-padronizada" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Valores esperados de <span class="math inline">\(Z\)</span> em uma distribuição normal padronizada<a href="escorez.html#valores-esperados-de-z-em-uma-distribuição-normal-padronizada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A interpretação de <span class="math inline">\(Z\)</span> faz sentido quando desejamos posicionar uma determinada observação <span class="math inline">\(X_i\)</span> como função da média e desvio padrão de seu grupo. Veremos nos capítulos <a href="normdist.html#normdist">14</a> e <a href="tcl.html#tcl">15</a> que se uma variável <span class="math inline">\(X\)</span> puder ser descrita adequadamente por uma <strong>Distribuição Normal de probabilidades</strong>, uma regra empírica nos permite determinar qual o percentual das observações está acima e abaixo de alguns limites conhecidos.</p>
 <p>Na figura abaixo vemos estes limites para uma distribuição normal teórica. Suponha que tomemos uma observação ao acaso desta distribuição. Existe uma probabilidade de aproximadamente <span class="math inline">\(68\%\)</span> de que esta observação esteja entre os limites de <span class="math inline">\(-1\)</span> e <span class="math inline">\(+1\)</span> desvios padrões da média. Ou ainda, existe uma probabilidade de aproximadamente <span class="math inline">\(95\%\)</span> de que esta observação esteja entre <span class="math inline">\(-2\)</span> e <span class="math inline">\(+2\)</span> desvio padrões da média. Por outro lado, que é muito <strong>improvável</strong> amostrarmos um valor a mais de <span class="math inline">\(3\)</span> desvios padrões distantes da média. Isto deverá ocorrer em somente de cerca de <span class="math inline">\(0,2\%\)</span> dos casos em que sortearmos uma amostra aleatoriamente.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-168-1.png" width="576" style="display: block; margin: auto;" /></p>
@@ -1218,7 +1218,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

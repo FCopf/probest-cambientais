@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 19 Modelos lineares | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 19 Modelos lineares | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 19 Modelos lineares | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 19 Modelos lineares | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="testet.html"/>
 <link rel="next" href="anova.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modlinear" class="section level1" number="19">
-<h1><span class="header-section-number">Capítulo 19</span> Modelos lineares</h1>
+<div id="modlinear" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">Capítulo 19</span> Modelos lineares<a href="modlinear.html#modlinear" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Até agora estávamos nos referindo à nossa variável de interesse principal como variável <span class="math inline">\(X\)</span>. Nesta seção (Capítulos <a href="modlinear.html#modlinear">19</a> a <a href="repanova.html#repanova">25</a>) iremos nos referir a uma variável resposta (ou variável dependente, <span class="math inline">\(Y\)</span>), que será nossa variável de interesse principal e que será descrita como função de uma ou mais variáveis preditoras (ou variáveis independentes, <span class="math inline">\(X\)</span>). Abordaremos novamente os conceitos de <strong>partição da soma dos quadrados</strong>, <strong>covariância</strong> e <strong>coeficiente de determinação</strong> no contexto do teste de hipóteses e ajuste de modelos. Neste sentido, esta seção tem relação direta com o que foi apresentado nos capítulos <a href="biquant.html#biquant">10</a> e <a href="biquantquali.html#biquantquali">11</a> e é interessante revê-los antes de continuar.</p>
 <p>Modelos lineares compõem os modelos estatísticos clássicos para descrevermos o comportamento de uma variável resposta <span class="math inline">\(Y\)</span> como função de uma ou mais variáveis preditoras <span class="math inline">\(X\)</span>´s quando esta relação é <strong>linear</strong>. O formato básico de um modelo linear é:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
@@ -563,6 +563,12 @@ div.csl-indent {
 <p>em que temos portanto <span class="math inline">\(p\)</span> variáveis preditoras envolvidas.</p>
 <p><span class="math inline">\(Y\)</span> consiste de uma variável contínua, enquanto as variáveis <span class="math inline">\(X\)</span> em um modelo linear podem ser todas quantitativas (contínuas ou discretas), todas qualitativas (categóricas ou ordinais) ou conter uma combinação destes tipos. Os modelos que veremos nos capítulos desta seção são casos particulares de modelos lineares que variam em função do número de variáveis preditoras envolvidas e da natureza destas variáveis (quantitativas ou qualitativas). Deste modo temos por exemplo:</p>
 <table>
+<colgroup>
+<col width="22%" />
+<col width="27%" />
+<col width="27%" />
+<col width="22%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Número de variáveis preditoras (<span class="math inline">\(X\)</span>)</th>
@@ -604,17 +610,17 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<div id="simulando-um-modelo-linear-no-r" class="section level2" number="19.1">
-<h2><span class="header-section-number">19.1</span> Simulando um modelo linear no R</h2>
+<div id="simulando-um-modelo-linear-no-r" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Simulando um modelo linear no R<a href="modlinear.html#simulando-um-modelo-linear-no-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vamos simular dois tipos de modelos lineares (o modelo de Regressão Linear e o modelo de Análise de Variância - ANOVA) utilizando uma notação comum. Nos capítulos seguintes cada um destes modelos será tratado de forma particular.</p>
-<div id="o-modelo-de-regressão" class="section level3" number="19.1.1">
-<h3><span class="header-section-number">19.1.1</span> O Modelo de Regressão</h3>
+<div id="o-modelo-de-regressão" class="section level3 hasAnchor" number="19.1.1">
+<h3><span class="header-section-number">19.1.1</span> O Modelo de Regressão<a href="modlinear.html#o-modelo-de-regressão" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Envolve uma única variável preditora contínua e três parâmetros desconhecidos, <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> e <span class="math inline">\(\sigma^2\)</span>.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-343-1.png" width="672" /></p>
 <p>Neste modelo, os pontos mostram o resultado do modelo estatístico e a linha descreve a parte sistemática. O parâmetro <span class="math inline">\(\beta_0\)</span> descreve a posição média em <span class="math inline">\(Y\)</span> para um valor de <span class="math inline">\(X = 0\)</span> e <span class="math inline">\(\beta_1\)</span> a taxa de incremento médio em <span class="math inline">\(Y\)</span> para a deferença de uma unidade em <span class="math inline">\(X\)</span>. O parâmetro <span class="math inline">\(\sigma\)</span> se refere ao desvio padrão do resíduo e define o grau de espalhamento dos pontos ao redor da reta média. Experimente diminuir e aumentar o valor de <span class="math inline">\(\sigma\)</span> e verifique o que ocorre com a dispersão dos pontos.</p>
 </div>
-<div id="modelo-de-anova" class="section level3" number="19.1.2">
-<h3><span class="header-section-number">19.1.2</span> Modelo de ANOVA</h3>
+<div id="modelo-de-anova" class="section level3 hasAnchor" number="19.1.2">
+<h3><span class="header-section-number">19.1.2</span> Modelo de ANOVA<a href="modlinear.html#modelo-de-anova" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Neste caso a variável preditora <span class="math inline">\(X\)</span> é categórica. Vamos criar uma variável <span class="math inline">\(X\)</span> com 4 níveis (<code>A</code>, <code>B</code>, <code>C</code> e <code>D</code>) em um experimento com <span class="math inline">\(8\)</span> repetições (<strong>réplicas</strong>) por nível, totalizando <span class="math inline">\(n = 8 \times 4 = 40\)</span> observações. Quando modelos de ANOVA são representados como modelos lineares, a variável categórica deve ser transformada em uma (no caso de dois níveis) ou mais variáveis indicadoras (ou variáveis <strong>dummy</strong>). Esta transformação é consiste basicamente em criar variáveis do tipo <span class="math inline">\(0/1\)</span> que indiquem todas as combinações de níveis do experimento. Para entender melhor, acesse o link: <a href="https://en.wikipedia.org/wiki/Dummy_variable_(statistics)" target="_blank">Dummy variable (statistic)</a>.</p>
 <p>Os comandos neste caso são mais complexos que na regressão simples, mas seguem a mesma lógica de criarmos as variáveis preditoras e somá-las ao ressíduo do modelo.</p>
 <p>Nestes comandos criamos uma variável preditora <span class="math inline">\(X\)</span> com <span class="math inline">\(4\)</span> níveis, as transformamos em uma variável indicadora e criamos os valores de <span class="math inline">\(\mu_A\)</span>, <span class="math inline">\(\mu_B\)</span>, <span class="math inline">\(\mu_C\)</span> e <span class="math inline">\(\mu_D\)</span>, de modo que:</p>
@@ -677,7 +683,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

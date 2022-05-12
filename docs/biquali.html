@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 9 Análise bidimensional: variáveis qualitativas | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 9 Análise bidimensional: variáveis qualitativas | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 9 Análise bidimensional: variáveis qualitativas | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 9 Análise bidimensional: variáveis qualitativas | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="escorez.html"/>
 <link rel="next" href="biquant.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="biquali" class="section level1" number="9">
-<h1><span class="header-section-number">Capítulo 9</span> Análise bidimensional: variáveis qualitativas</h1>
+<div id="biquali" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Capítulo 9</span> Análise bidimensional: variáveis qualitativas<a href="biquali.html#biquali" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Até agora exploramos formas de representar visualmente uma única variável por vez (Capítulos <a href="varqualit.html#varqualit">3</a> e <a href="varquant.html#varquant">4</a>) e discutimos medidas para descrever algumas propriedades desta variável (Capítulo <a href="tendcentral.html#tendcentral">5</a> a <a href="escorez.html#escorez">8</a>). A partir de agora veremos como representar e resumir <strong>padrões de associação</strong> entre pares de variáveis. Segundo a natureza dos dados envolvidos, estas associações podem ser entre:</p>
 <ul>
 <li><p>duas variáveis qualitativas (este capítulo);</p></li>
@@ -857,8 +857,8 @@ Residente
 <p>Será que moradores <code>Residentes</code> tendem ter uma opinião <strong>consistentemente</strong> diferente de moradores <code>Não-residentes</code> no que se refere a ser <code>A favor</code> ou <code>Contra</code> a obra?</p>
 </blockquote>
 <p>Para começar a entender esta questão vamos explorar a distribuição das variáveis conjuntamente.</p>
-<div id="tabelas-de-contingência" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> Tabelas de contingência</h2>
+<div id="tabelas-de-contingência" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Tabelas de contingência<a href="biquali.html#tabelas-de-contingência" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tabelas de contigência são organizadas para verificarmos a associação entre duas variáveis qualitativas. São conhecidas também como tabelas de <em>dupla entrada</em>. Nas colunas estão os níveis da variável <span class="math inline">\(X\)</span> e nas linhas os níveis da variável <span class="math inline">\(Y\)</span>.</p>
 <p>Para nosso exemplo, podemos fazer simplesmente:</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="biquali.html#cb99-1" aria-hidden="true" tabindex="-1"></a>tcont <span class="ot">=</span> <span class="fu">table</span>(mun<span class="sc">$</span>Opiniao, mun<span class="sc">$</span>Moradia)</span>
@@ -928,8 +928,8 @@ Residente
 <p>E indica os valores relativos de <code>Não-Residentes</code> e <code>Residentes</code>.</p>
 <p>Na tabela de frequência relativa conjunta, o somatório total da tabela deve ser igual a <span class="math inline">\(1\)</span>.</p>
 </div>
-<div id="o-gráfico-de-barras-para-duas-variáveis-qualitativas" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> O gráfico de barras para duas variáveis qualitativas</h2>
+<div id="o-gráfico-de-barras-para-duas-variáveis-qualitativas" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> O gráfico de barras para duas variáveis qualitativas<a href="biquali.html#o-gráfico-de-barras-para-duas-variáveis-qualitativas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Existem várias formas de gerar um gráfico de barras combinando as duas variáveis. Se quisermos utilizar a própria tabela de contingência obtida a partir do comando <code>table(mun$Opiniao, mun$Moradia)</code>, podemos utilizar o comando <code>barplot()</code>. Por outro lado, se quisermos utilizar a tabela original de dados (objeto <code>mun</code>) podemos fazer uso do pacote <code>ggplot2</code>:</p>
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="biquali.html#cb115-1" aria-hidden="true" tabindex="-1"></a>plt_bar1 <span class="ot">=</span> <span class="fu">ggplot</span>(mun) <span class="sc">+</span></span>
 <span id="cb115-2"><a href="biquali.html#cb115-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> Moradia, <span class="at">fill =</span> Opiniao) <span class="sc">+</span></span>
@@ -958,8 +958,8 @@ Residente
 <li><p>Figura D: Residentes tendem a ser <code>A favor</code>, enquanto não parece haver diferenças entre os Residentes;</p></li>
 </ul>
 </div>
-<div id="medindo-a-discrepância-com-o-índice-de-chi2-de-pearson" class="section level2" number="9.3">
-<h2><span class="header-section-number">9.3</span> Medindo a discrepância com o índice de <span class="math inline">\(\chi^2\)</span> de Pearson</h2>
+<div id="medindo-a-discrepância-com-o-índice-de-chi2-de-pearson" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Medindo a discrepância com o índice de <span class="math inline">\(\chi^2\)</span> de Pearson<a href="biquali.html#medindo-a-discrepância-com-o-índice-de-chi2-de-pearson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O índice de qui-quadrado (<span class="math inline">\(\chi^2\)</span>) mede a discrepância entre os valores <strong>observados</strong> e os valores <strong>esperados</strong> em uma tabela de contingência.</p>
 <p>Digamos que um município tenha <span class="math inline">\(20\%\)</span> de sua população morando em área Rural e os outros <span class="math inline">\(80\%\)</span> em área Urbana. Se fizermos uma amostragem <em>ao acaso</em> dos moradores é esperado que esta frequência relativa se reflita na amostra. Neste caso se sorteamos <span class="math inline">\(200\)</span> pessoas, seria esperado:</p>
 <ul>
@@ -970,7 +970,7 @@ Residente
 <thead>
 <tr>
 <th style="text-align:left;">
-Moradia
+Regiao
 </th>
 <th style="text-align:right;">
 Freq
@@ -1004,7 +1004,7 @@ Para uma tabela de frequências, devemos determinar portanto os valores de <span
 <thead>
 <tr>
 <th style="text-align:left;">
-Moradia_obs
+Regiao
 </th>
 <th style="text-align:right;">
 Freq
@@ -1044,11 +1044,21 @@ Urbana
 <p>De modo que o valor de <span class="math inline">\(\chi^2\)</span> será:</p>
 <p><span class="math inline">\(\chi^2 = \frac{(31 - 40)^2}{40} + \frac{(169 - 160)^2}{160} = \frac{(-9)^2}{40} + \frac{(9)^2}{160} = 2.025 + 0.50625 = 2.53125\)</span></p>
 </div>
-<div id="o-índice-de-chi2-em-uma-tabela-de-contigência" class="section level2" number="9.4">
-<h2><span class="header-section-number">9.4</span> O índice de <span class="math inline">\(\chi^2\)</span> em uma tabela de contigência</h2>
+<div id="o-índice-de-chi2-em-uma-tabela-de-contigência" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> O índice de <span class="math inline">\(\chi^2\)</span> em uma tabela de contigência<a href="biquali.html#o-índice-de-chi2-em-uma-tabela-de-contigência" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>No exemplo acima, as contagens esperadas foram definidas a partir de um modelo que dizia que as populações rurais e urbanas se dividiam nas proporções <span class="math inline">\(20\%:80\%\)</span>. Em uma tabela de contigência, a hipótese em verificação é a de que <strong>não há associação entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span></strong>. Se for assim, é esperado que as frequências conjuntas sejam <em>p</em>orporcionais às frequências marginais*. Vamos apresentar esta ideia utilizando uma notação geral para tabelas de contingência e em seguida discutir com um exemplo.</p>
 <p>A tabela abaixo apresenta <span class="math inline">\(r\)</span> linhas por <span class="math inline">\(s\)</span> colunas com as contagens de todas as combinações dos níveis da variável <span class="math inline">\(X\)</span> (Níveis <span class="math inline">\(A_{1}\)</span> a <span class="math inline">\(A_{r}\)</span>) e da variável <span class="math inline">\(Y\)</span> (Níveis <span class="math inline">\(B_{1}\)</span> a <span class="math inline">\(B_{s}\)</span>). Os totais marginais de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são expressos respectivamente na última coluna e na última linha.</p>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="10%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">X ⟍ Y</th>
@@ -1148,6 +1158,12 @@ Urbana
 <p><strong>Retornando ao exemplo das entrevistas</strong></p>
 <p>A tabela de contingência contendo os dados <strong>observados</strong> do início do capítulo pode ser escrita como:</p>
 <table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -1196,6 +1212,12 @@ Urbana
 <p><span class="math inline">\(n_{ii}^{e} = \frac{n_{2.} \times n_{.2}}{n} = \frac{56 \times 83}{200} = 23.24\)</span></p>
 <p>De modo que a tabela com os valores <strong>esperados</strong> será:</p>
 <table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -1228,8 +1250,8 @@ Urbana
 <p>Finalmente, o valor <span class="math inline">\(\chi^2\)</span> pode ser obtido por:</p>
 <p><span class="math inline">\(\chi^2 = \frac{(81 - 84.24)^2}{84.24} + \frac{(36 - 32.76)^2}{84.24} + \frac{(63 - 59.76)^2}{84.24} + \frac{(20 - 23.24)^2}{84.24} = 1.072\)</span></p>
 </div>
-<div id="valores-de-chi2-quando-existe-associação" class="section level2" number="9.5">
-<h2><span class="header-section-number">9.5</span> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação</h2>
+<div id="valores-de-chi2-quando-existe-associação" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Valores de <span class="math inline">\(\chi^2\)</span> quando existe associação<a href="biquali.html#valores-de-chi2-quando-existe-associação" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O valor de <span class="math inline">\(\chi^2\)</span> será zero somente se os valores observados forem <strong>exatamente</strong> igauis aos valores esperados. Pequenas discrepâncias irão gerar valores de <span class="math inline">\(\chi^2\)</span> acima de zero. Os valores se tornarão mais altos à medida que aumentam as diferenças entre <span class="math inline">\(n_{ij}\)</span> e <span class="math inline">\(n_{ij}^e\)</span>.</p>
 <p>Abaixo estão diferentes exemplos em que existe associação entre <code>Opinião</code> e <code>Moradia</code>. Compare os valores e os gráficos abaixo os que fizemos no exemplo do capítulo e veja que todos os valores de <span class="math inline">\(\chi^2\)</span> são mais elevados.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-196-1.png" width="672" style="display: block; margin: auto auto auto 0;" /></p>
@@ -1237,8 +1259,8 @@ Urbana
 <li>Tente aplicar a fórmula do <span class="math inline">\(\chi^2\)</span> para chegar aos resultados apresentados em cada exemplo.</li>
 </ul>
 </div>
-<div id="variações-do-índice-de-chi2" class="section level2" number="9.6">
-<h2><span class="header-section-number">9.6</span> Variações do índice de <span class="math inline">\(\chi^2\)</span></h2>
+<div id="variações-do-índice-de-chi2" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Variações do índice de <span class="math inline">\(\chi^2\)</span><a href="biquali.html#variações-do-índice-de-chi2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O valor de <span class="math inline">\(\chi^2\)</span> aumenta com o tamanho da amostra, o que torna difícil comparações entre diferentes estudos. Para corrigir este efeito existe o <strong>coeficiente de contigência de Pearson (<span class="math inline">\(C\)</span>)</strong> que é baseado no resultado de <span class="math inline">\(\chi^2\)</span></p>
 <p><span class="math display">\[C = \sqrt{\frac{\chi^2}{\chi^2 + n}}\]</span></p>
 <p>em que <span class="math inline">\(n\)</span> é o tamanho da amostra. O valor máximo de <span class="math inline">\(C\)</span> depende do número de linhas (<span class="math inline">\(r\)</span>) e de colunas (<span class="math inline">\(s\)</span>) na tabela de contingêcia, deste modo podemos ainda definir um outro coeficiente que varia entre <span class="math inline">\(0\)</span> e <span class="math inline">\(1\)</span>:</p>
@@ -1246,8 +1268,8 @@ Urbana
 O valor <span class="math inline">\(T = 0\)</span> ocorre quando não há associação (<span class="math inline">\(\chi^2 = 0\)</span>) e o valor máximo de <span class="math inline">\(T = 1\)</span> só será atingido quando houver associação e <span class="math inline">\(r = s\)</span></p>
 <p>Todos estes índices aumentam conforme aumenta o grau de associação entre as variáveis. Entretanto, não dissemos <strong>em que ponto</strong> passamos a aceitar a hipótese de associação as variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Iremos tratar deste assunto na seção sobre estatística inferencial. Ao tratarmos deste ponto é importante termos claro o que siginifica uma associação (ou dependêcia) entre duas variáveis qualitativas e como o índice de <span class="math inline">\(\chi^2\)</span> mede esta associação.</p>
 </div>
-<div id="obtendo-o-índice-de-chi2-de-uma-tabela-de-dados" class="section level2" number="9.7">
-<h2><span class="header-section-number">9.7</span> Obtendo o índice de <span class="math inline">\(\chi^2\)</span> de uma tabela de dados</h2>
+<div id="obtendo-o-índice-de-chi2-de-uma-tabela-de-dados" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> Obtendo o índice de <span class="math inline">\(\chi^2\)</span> de uma tabela de dados<a href="biquali.html#obtendo-o-índice-de-chi2-de-uma-tabela-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A função para o cálculo do <span class="math inline">\(\chi^2\)</span> no R é <code>chisq.test</code> e pode ser utilizada a partir da tabela de contigência gerada pela função <code>table</code>:</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="biquali.html#cb116-1" aria-hidden="true" tabindex="-1"></a>tcont <span class="ot">=</span> <span class="fu">table</span>(mun<span class="sc">$</span>Opiniao, mun<span class="sc">$</span>Moradia)</span>
 <span id="cb116-2"><a href="biquali.html#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tcont)</span></code></pre></div>
@@ -1318,7 +1340,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

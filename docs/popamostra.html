@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 12 Descrevendo populações e amostras | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 12 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 12 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 12 Descrevendo populações e amostras | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="biquantquali.html"/>
 <link rel="next" href="amostrmedias.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,10 +550,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="popamostra" class="section level1" number="12">
-<h1><span class="header-section-number">Capítulo 12</span> Descrevendo populações e amostras</h1>
-<div id="população-amostra-e-unidade-amostral" class="section level2" number="12.1">
-<h2><span class="header-section-number">12.1</span> População, amostra e unidade amostral</h2>
+<div id="popamostra" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Capítulo 12</span> Descrevendo populações e amostras<a href="popamostra.html#popamostra" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="população-amostra-e-unidade-amostral" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> População, amostra e unidade amostral<a href="popamostra.html#população-amostra-e-unidade-amostral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Uma <strong>população estatística</strong> são todos os elementos sobre os quais queremos tirar conclusões. Refere-se ao <strong>conjunto de medidas</strong> que <em>podem</em> ser mensuradas como resultado de um experimento. As medidas que compõem a população estatística podem ser pesos, temperaturas, velocidades, tempos de reação, entre outras, a depender das características de um estudo particular. Uma população estatística pode ser finita ou infinita. Quando é finita, o número de elementos é dado por <span class="math inline">\(N\)</span>. O termo <em>população</em> não pode ser confundido com seu uso do dia-a-dia, quando refere-se a conjuntos de pessoas ou de organismos, nem mesmo com os elementos físicos nos quais as variáveis foram mensuradas.</p>
 <p>A abrangência da população estatística depende do contexto e do escopo da pergunta que se pretende responder.</p>
 <ul>
@@ -575,8 +575,8 @@ div.csl-indent {
 <p><strong>Tamanho amostral</strong> (<em>n</em>): o número de elementos da amostra.</p>
 </div>
 </div>
-<div id="distribuição-de-frequências-na-população-estatística" class="section level2" number="12.2">
-<h2><span class="header-section-number">12.2</span> Distribuição de frequências na população estatística</h2>
+<div id="distribuição-de-frequências-na-população-estatística" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Distribuição de frequências na população estatística<a href="popamostra.html#distribuição-de-frequências-na-população-estatística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Os valores em uma população estatística não são idênticos, de modo que poderíamos descrevê-los por meio de uma <strong>distribuição de frequência</strong> em que algumas faixas de valores são mais frequentes que outras. Os comprimentos de <em>Deuterodon iguape</em> devem variar por exemplo de alguns milímetros (pós-larva) a cerca de 20 cm (adulto), em que nem todos os comprimentos são igualmente representados. Certamente, existem mais lambaris pequenos e médios do que lambaris grandes. De fato, animais muito grandes são os mais raros, de modo que se tivéssemos informação da população estatística, veríamos que faixas de valores muito elevados se tornariam cada vez menos frequentes.</p>
 <p>Se fosse possível observar todos os elementos da população estatística, saberíamos exatamente qual o formato de sua distribuição de frequências. Suponha por exemplo, a altura de adultos acima de 18 anos. Seria razoável supor que a maioria das alturas consiste de valores intermediários ao redor de, por exemplo, 170 centímetros. É razoável supor também que a frequência de pessoas muito altas ou muito baixas vai diminuindo gradativamente, de modo que é muito raro encontrarmos adultos muito altos (ex. acima de <span class="math inline">\(200\)</span> centímetros) ou muito baixos (ex. menores que <span class="math inline">\(150\)</span> centímetros). A figura abaixo, descreve uma distribuição de frequência de uma população fictícia de <strong>exatamente</strong> <span class="math inline">\(N = 1000\)</span> alturas.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-236"></span>
@@ -587,12 +587,12 @@ Figure 12.1: Distribuição em uma população estatística das alturas (emcent�
 </div>
 <p>Vemos que existem mais valores entre <span class="math inline">\(160\)</span> e <span class="math inline">\(180\)</span> e poucas observações extremas. Por exemplo, das <span class="math inline">\(1000\)</span> observações, apenas 27 mais extremas que <span class="math inline">\(190\)</span>cm, o que é condizente com nossa expectativa para a distribuição de frequências das alturas de indivíduos adultos.</p>
 </div>
-<div id="distribuição-de-probabilidade-da-população-estatística" class="section level2" number="12.3">
-<h2><span class="header-section-number">12.3</span> Distribuição de probabilidade da população estatística</h2>
+<div id="distribuição-de-probabilidade-da-população-estatística" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Distribuição de probabilidade da população estatística<a href="popamostra.html#distribuição-de-probabilidade-da-população-estatística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Este exemplo fictício segue uma <strong>distribuição normal</strong> de probabilidades (Capítulo <a href="normdist.html#normdist">14</a>). Como não temos acesso a toda a população estatística, não temos como visualizar toda a sua distribuição de frequência, deste modo, dizemos que conhecemos a população estatística quando conhecemos a <strong>função de probabilidades</strong> associada a variável que está sendo mensurada (Capítulos <a href="va.html#va">30</a> e <a href="vacont.html#vacont">31</a>). Neste exemplo, diríamos que a variável altura é normalmente distribuída. Quando descrevemos uma determinada distribuição de probabilidades, precisamos caracterizá-la por meio de certas quantidades, ou parâmetros da distribuição. Na distribuição normal, parâmetros de interesse são sua média <span class="math inline">\(\mu\)</span> e seu desvio padrão <span class="math inline">\(\sigma\)</span>. No exemplo das alturas, <span class="math inline">\(\mu = 170\)</span> e <span class="math inline">\(\sigma = 10\)</span>.</p>
 </div>
-<div id="distribuições-de-frequências-na-amostra" class="section level2" number="12.4">
-<h2><span class="header-section-number">12.4</span> Distribuições de frequências na amostra</h2>
+<div id="distribuições-de-frequências-na-amostra" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> Distribuições de frequências na amostra<a href="popamostra.html#distribuições-de-frequências-na-amostra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ainda que não tenhamos acesso a toda população estatística, gostaríamos de ter informações sobre a variável de interesse. No caso das alturas, há uma concentração de elementos entre <span class="math inline">\(160\)</span> e <span class="math inline">\(180\)</span>. A <strong>amostragem</strong> é o meio de se obter informações de interesse sobre a população. Suponha, uma amostra de <span class="math inline">\(n = 50\)</span> adultos.</p>
 <p>Se organizarmos esta amostra em valores crescentes teríamos:</p>
 <p>140.03, 151.5, 152.13, 152.91, 154.07, 158.14, 158.32, 159.59, 159.69, 160.14, 160.42, 160.46, 161.48, 161.89, 162.05, 163.11, 163.59, 163.77, 165.36, 166.11, 166.38, 166.69, 166.76, 167.03, 168.55, 169.72, 170.56, 172.17, 172.94, 173.8, 173.92, 174.34, 174.5, 175.24, 175.76, 175.95, 176.16, 177.13, 177.63, 177.66, 178.03, 178.48, 180.96, 180.97, 183.94, 184.17, 187.54, 187.64, 188.87, 191.69</p>
@@ -613,8 +613,8 @@ Figure 12.3: Amostras de tamanho n = 50 adultos
 <p>Cada amostra resulta em distribuições diferentes, mas em todas a frequência de observações na faixa intermediária é maior. O processo de amostragem nos forneceu portanto amostras <strong>representativas</strong> da população estatística, isto é, amostras em que a distribuição de frequências se <em>aproximou</em> da distribuição de frequências da população.</p>
 <p>Neste exemplo fictício, como conhecemos a população estatística é fácil verificar que as amostras foram representativas. Na prática científica não conhecemos a população estatística e, consequentemente, não temos como saber se a nossa amostra em particular foi ou não representativa. O que devemos é conduzir o processo de tal forma que a <strong>teoria da amostragem</strong> nos garanta que a amostra resultante de um determinado experimento seja, em média, representativa da população. Como veremos no Capítulo <a href="amostrmedias.html#amostrmedias">13</a>, o modo mais simples de garantir este comportamento é realizarmos uma <strong>amostra aleatória</strong> dos elementos da população estatística.</p>
 </div>
-<div id="parâmetros-e-estimadores" class="section level2" number="12.5">
-<h2><span class="header-section-number">12.5</span> Parâmetros e estimadores</h2>
+<div id="parâmetros-e-estimadores" class="section level2 hasAnchor" number="12.5">
+<h2><span class="header-section-number">12.5</span> Parâmetros e estimadores<a href="popamostra.html#parâmetros-e-estimadores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A população estatística tem determinadas quantias de interesse que definimos como <strong>parâmetros</strong> da população. Se fosse possível medir as alturas dos <span class="math inline">\(N = 1000\)</span> adultos, poderíamos calcular a média da população. Seja uma variável <span class="math inline">\(X\)</span> composta por <span class="math inline">\(X_1, X_2, X_3, \cdots , X_N,\)</span>, a média da população estatística é denominada de <span class="math inline">\(\mu\)</span> e definida por:</p>
 <p><span class="math display">\[\mu=\frac{X_1+X_2+X_3+\cdots+X_N}{N}=\frac{\sum_{i=1}^N{X_i}}{N}\]</span>
 Como não temos acesso a toda a população não podemos obter <span class="math inline">\(\mu\)</span>, mas podemos estimá-lo por meio de uma amostra. Neste caso, seja uma amostra de tamanho <span class="math inline">\(n\)</span> composta por <span class="math inline">\(X_1, X_2, X_3, \cdots, X_n\)</span>, a média da amosta é denominada de <span class="math inline">\(\overline{X}\)</span> e definida por:</p>
@@ -636,8 +636,8 @@ Como não temos acesso a toda a população não podemos obter <span class="math
 </div>
 <hr />
 <hr />
-<div id="verificando-as-propriedades-de-overlinex-e-s2" class="section level3" number="12.5.1">
-<h3><span class="header-section-number">12.5.1</span> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span></h3>
+<div id="verificando-as-propriedades-de-overlinex-e-s2" class="section level3 hasAnchor" number="12.5.1">
+<h3><span class="header-section-number">12.5.1</span> Verificando as propriedades de <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span><a href="popamostra.html#verificando-as-propriedades-de-overlinex-e-s2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Por meio de um exmplo, vamos verificar empiricamente que <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(s^2\)</span> são estimadores não viciados de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> respectivamente. Suponha uma população de somente <span class="math inline">\(5\)</span> elementos.</p>
 <p><strong><span class="math display">\[2 - 11 - 15 - 19 - 9\]</span></strong></p>
 <p>Desta população, tomemos amostras de tamanho <span class="math inline">\(n = 2\)</span> <strong>com reposição</strong>.</p>
@@ -1167,8 +1167,8 @@ Como não temos acesso a toda a população não podemos obter <span class="math
 <hr />
 </div>
 </div>
-<div id="amostragem-e-inferência" class="section level2" number="12.6">
-<h2><span class="header-section-number">12.6</span> Amostragem e inferência</h2>
+<div id="amostragem-e-inferência" class="section level2 hasAnchor" number="12.6">
+<h2><span class="header-section-number">12.6</span> Amostragem e inferência<a href="popamostra.html#amostragem-e-inferência" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O problema central com o qual iremos lidar em estatística é que:</p>
 <ol style="list-style-type: decimal">
 <li><p>Estamos interessados nas características da população, porém só temos informação sobre a amostra.</p></li>
@@ -1191,14 +1191,14 @@ Figure 12.4: Amostras de tamanho n = 50 adultos
 </ol>
 <p>Este processo pode ser resumido na figura abaixo e será discutido nos próximos capítulos.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-246"></span>
-<img src="probest-cambientais_files/figure-html/unnamed-chunk-246-1.png" alt="Processo de amostragem e inferência estatística" width="810" />
+<img src="probest-cambientais_files/figure-html/unnamed-chunk-246-1.png" alt="Processo de amostragem e inferência estatística"  />
 <p class="caption">
 Figure 12.5: Processo de amostragem e inferência estatística
 </p>
 </div>
 </div>
-<div id="vídeo-aulas" class="section level2" number="12.7">
-<h2><span class="header-section-number">12.7</span> Vídeo-aulas</h2>
+<div id="vídeo-aulas" class="section level2 hasAnchor" number="12.7">
+<h2><span class="header-section-number">12.7</span> Vídeo-aulas<a href="popamostra.html#vídeo-aulas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <p><a href="https://youtu.be/_vXK0AeNWnc" target=_blank>
 <img src="figs/Descreve_Populacoes_Amostras_capa.png" alt="Descrevendo e Populações Amostras - Parte 01">
@@ -1259,7 +1259,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

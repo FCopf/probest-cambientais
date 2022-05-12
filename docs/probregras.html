@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 27 Combinando as probabilidades de eventos | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 27 Combinando as probabilidades de eventos | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 27 Combinando as probabilidades de eventos | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 27 Combinando as probabilidades de eventos | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="espacoamostral.html"/>
 <link rel="next" href="probcondind.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,11 +550,11 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probregras" class="section level1" number="27">
-<h1><span class="header-section-number">Capítulo 27</span> Combinando as probabilidades de eventos</h1>
+<div id="probregras" class="section level1 hasAnchor" number="27">
+<h1><span class="header-section-number">Capítulo 27</span> Combinando as probabilidades de eventos<a href="probregras.html#probregras" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>No capítulo anterior, falamos sobre espaço amostral e a definição de probabilidade. Aqui vamos combinar eventos de um espaço amostral e calcular as probabilidades de eventos complexos.</p>
-<div id="eventos-complexos" class="section level2" number="27.1">
-<h2><span class="header-section-number">27.1</span> Eventos complexos</h2>
+<div id="eventos-complexos" class="section level2 hasAnchor" number="27.1">
+<h2><span class="header-section-number">27.1</span> Eventos complexos<a href="probregras.html#eventos-complexos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vamos assumir que o sucesso na capacidade de forrageamento de um organismo depende de uma série de fatores relacionados à densidade da presa, à capacidade sensorial do predador, de sua eficiência em capturar/manipular o alimento, entre outros fatores. Para exemplo do Acará (Capítulo <a href="espacoamostral.html#espacoamostral">26</a>), o sucesso depende de virar a estrutura certa, a que tenha maior número de presas disponíveis.</p>
 <p>Para simplificar consideremos a seguintes condições. Existem dois tipos de estruturas principais sobre as quais o acará forrageia: <em>folhas</em> e <em>galhos</em>. Folhas podem ter entre 0 e 6 itens enquanto galhos podem ter entre 0 e 4 itens. Uma vez que o predador vira uma estrutura ele se alimenta de <em>todos</em> os itens presentes. Certamente, esta é uma situação altamente hipotética, mas que facilita nossa discussão. A pergunta aqui é: ao virar uma estrutura, de quantos itens um predador poderá se alimentar?</p>
 <p>Vamos as possibilidades. Denominemos por <span class="math inline">\(F\)</span> ou <span class="math inline">\(G\)</span> o encontro de uma folha ou galho respectivamente e de <span class="math inline">\(0\)</span> a <span class="math inline">\(n\)</span>, o número de itens encontrados. O espaço amostral do experimento <em>virar uma estrutura e contar o número de itens</em> consiste de:</p>
@@ -562,8 +562,8 @@ div.csl-indent {
 <p>Neste experimento temos 12 eventos <strong>simples e mutuamente exclusivos</strong></p>
 <p>Considere agora o evento <span class="math inline">\(A\)</span> <em>“virar uma folha”</em>. que pode ocorrer pela observação de F0 ou F1 ou F2 ou F3 ou F4 ou F5 ou F6.</p>
 <p><span class="math inline">\(A = \{(F0), (F1), (F2), (F3), (F4), (F5), (F6)\}\)</span></p>
-<div id="representação-de-eventos-diagrama-de-venn" class="section level3" number="27.1.1">
-<h3><span class="header-section-number">27.1.1</span> Representação de eventos: diagrama de Venn</h3>
+<div id="representação-de-eventos-diagrama-de-venn" class="section level3 hasAnchor" number="27.1.1">
+<h3><span class="header-section-number">27.1.1</span> Representação de eventos: diagrama de Venn<a href="probregras.html#representação-de-eventos-diagrama-de-venn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Uma forma de visualizar o espaço amostral e eventos deste espaço é pela construção de <strong>diagramas de Venn</strong>. Para isto, vamos considerar também o evento <span class="math inline">\(B\)</span> <em>“encontrar mais de 3 itens”</em> que consiste de:</p>
 <p><span class="math inline">\(B = \{(F3), (F4), (F5), (F6), (G3), (G4)\}\)</span></p>
 <p>Observando os eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> em um <strong>Diagrama de Venn</strong> temos:</p>
@@ -574,8 +574,8 @@ div.csl-indent {
 <p>Considere agora o evento <span class="math inline">\(C\)</span> <em>virar uma folha mais de 3 itens</em>. <span class="math inline">\(C\)</span> pode ocorrer a partir de F3 ou F4 ou F5 ou F6. No diagrama de Venn, vemos que estas opções consistem da <strong>intersecção</strong> de <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>. Ou seja, as observações que satisfazem <span class="math inline">\(C\)</span> em <strong>ambos</strong> os eventos anteriores. Você verá em livros de probabilidade que o termo de união é representado pelo símbolo <span class="math inline">\(\cup\)</span>, enquanto o termo de intersecção é representado por <span class="math inline">\(\cap\)</span>.</p>
 <p>Assim, temos que <span class="math inline">\(C\)</span> pode ser excrito como <span class="math inline">\(A \cap B\)</span>.</p>
 </div>
-<div id="probabilidade-de-eventos-simples" class="section level3" number="27.1.2">
-<h3><span class="header-section-number">27.1.2</span> Probabilidade de eventos simples</h3>
+<div id="probabilidade-de-eventos-simples" class="section level3 hasAnchor" number="27.1.2">
+<h3><span class="header-section-number">27.1.2</span> Probabilidade de eventos simples<a href="probregras.html#probabilidade-de-eventos-simples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Considerando o experimento <em>virar uma estrutura e contar o número de itens</em>, qual seria a probabilidade da ocorrência de cada observação? Para isto, devemos inicialmente lembrar que:</p>
 <ol style="list-style-type: decimal">
 <li><p>O espaço amostral consiste de <span class="math inline">\(N = 12\)</span> observações e;</p></li>
@@ -592,8 +592,8 @@ div.csl-indent {
 e do evento <span class="math inline">\(C = A \cap B\)</span></p>
 <p><span class="math display">\[P(C) = P(A \cap B) = \frac{4}{12} = 0.33\]</span></p>
 </div>
-<div id="probabilidade-da-união-de-eventos" class="section level3" number="27.1.3">
-<h3><span class="header-section-number">27.1.3</span> Probabilidade da união de eventos</h3>
+<div id="probabilidade-da-união-de-eventos" class="section level3 hasAnchor" number="27.1.3">
+<h3><span class="header-section-number">27.1.3</span> Probabilidade da união de eventos<a href="probregras.html#probabilidade-da-união-de-eventos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Vamos ao evento <span class="math inline">\(A \cup B\)</span> que consiste de todas a observações que estejam em <span class="math inline">\(A\)</span> <strong>ou</strong> <span class="math inline">\(B\)</span>:</p>
 <p><span class="math inline">\(A \cup B = \{(F0),(F1),(F2),(F3),(F4),(F5),(F6),(G3),(G4) \}\)</span></p>
 <p>Temos então que esta união consiste de 9, de modo que:</p>
@@ -601,8 +601,8 @@ e do evento <span class="math inline">\(C = A \cap B\)</span></p>
 <p>Veja que <span class="math inline">\(P(A \cup B)\)</span> pode ser obtido por:</p>
 <p><span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></p>
 </div>
-<div id="representação-de-eventos-diagrama-de-árvore" class="section level3" number="27.1.4">
-<h3><span class="header-section-number">27.1.4</span> Representação de eventos: diagrama de árvore</h3>
+<div id="representação-de-eventos-diagrama-de-árvore" class="section level3 hasAnchor" number="27.1.4">
+<h3><span class="header-section-number">27.1.4</span> Representação de eventos: diagrama de árvore<a href="probregras.html#representação-de-eventos-diagrama-de-árvore" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Considere agora o experimento <em>“virar duas estruturas e verificar o tipo de estrutura”</em>. O espaço amostral deste experimento consiste de 4 observações:</p>
 <p><span class="math inline">\(\Omega = \{(galho, galho), (galho, folha), (folha, galho), (folha, folha)\}\)</span></p>
 <p>E pode ser representado visualmente por um diagrama de árvore.</p>
@@ -662,7 +662,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

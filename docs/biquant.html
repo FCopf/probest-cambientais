@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 10 Análise bidimensional: variáveis quantitativas | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 10 Análise bidimensional: variáveis quantitativas | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 10 Análise bidimensional: variáveis quantitativas | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 10 Análise bidimensional: variáveis quantitativas | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="biquali.html"/>
 <link rel="next" href="biquantquali.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,13 +550,13 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="biquant" class="section level1" number="10">
-<h1><span class="header-section-number">Capítulo 10</span> Análise bidimensional: variáveis quantitativas</h1>
+<div id="biquant" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Capítulo 10</span> Análise bidimensional: variáveis quantitativas<a href="biquant.html#biquant" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Neste capítulo iremos medir o grau de associação entre duas variáveis quantitativas denominadas de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Para isto falaremos dos conceitos de <strong>covariância</strong> e <strong>correlação</strong>. Não estamos interessados em verificar se <span class="math inline">\(Y\)</span> depende funcionalmente de <span class="math inline">\(X\)</span> ou vice-versa. Estamos interessados somente em medir a intensidade de associação entre as duas variáveis. Quando calcularmos a covariância entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span> (<span class="math inline">\(s_{YX}\)</span>), por exemplo, poderíamos inverter a ordem fazendo <span class="math inline">\(s_{XY}\)</span> e teríamos exatamente os mesmo resultados. O mesmo vale para o coeficiente de correlação (<span class="math inline">\(r_{YX} = r_{XY}\)</span>). Dizemos que existe uma simetria entre as variáveis quando calculamos a covariância ou correlação. Esta simetria <em>não vale</em> quando formos abordar o conceito de <strong>regressão linear</strong> (Capítulo <a href="regressao.html#regressao">22</a>), quando assumimos <em>explicitamente</em> que <span class="math inline">\(Y\)</span> é <strong>função</strong> de <span class="math inline">\(X\)</span>.</p>
 <p>Estamos interessados em diferenciar três situações que podem ser visualizadas nos gráficos de dispersão abaixo:</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-203-1.png" width="1440" style="display: block; margin: auto;" /></p>
-<div id="covariância-entre-y-e-x" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Covariância entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span></h2>
+<div id="covariância-entre-y-e-x" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Covariância entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span><a href="biquant.html#covariância-entre-y-e-x" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vamos retomar o conceito de <strong>variância amostral</strong> para em seguida introduzir o conceito de <strong>covariância amostral</strong>.</p>
 <p>A variância amostral de <span class="math inline">\(Y\)</span> por exemplo, pode ser obtida subtraindo cada observação em <span class="math inline">\(Y\)</span> de sua média (<span class="math inline">\(\overline{Y}\)</span>) e elevando esta subtração ao quadrado <span class="math inline">\((Y_i - \overline{Y})^2\)</span>. Ao somar para todos os valores de <span class="math inline">\(Y_i\)</span> teremos o <strong>somatório dos quadrados de <span class="math inline">\(Y\)</span></strong> (<span class="math inline">\(SQ_Y\)</span>).</p>
 <p><span class="math display">\[SQ_Y = \sum_{i-1}^{n} (Y_i - \overline{Y})^2 = \sum_{i-1}^{n}(Y_i - \overline{Y}) (Y_i - \overline{Y})\]</span></p>
@@ -574,12 +574,12 @@ div.csl-indent {
 <p><span class="math display">\[s_{YX} = \frac{\sum_{i-1}^{n}(Y_i - \overline{Y}) (X_i - \overline{X})}{n-1}\]</span></p>
 <hr />
 </div>
-<div id="coeficiente-de-correlação-linear-de-pearson-r" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Coeficiente de correlação linear de Pearson <span class="math inline">\(r\)</span></h2>
+<div id="coeficiente-de-correlação-linear-de-pearson-r" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Coeficiente de correlação linear de Pearson <span class="math inline">\(r\)</span><a href="biquant.html#coeficiente-de-correlação-linear-de-pearson-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Quando estamos interessados em medir o grau de correlação entre duas variáveis utilizamos o <strong>coeficiente de correlação de Pearson</strong> (<strong><span class="math inline">\(r\)</span></strong>). O coeficiente <span class="math inline">\(r\)</span> mede a intensidade da correlação linear entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span>. Vimos que a <strong>covariância amostral</strong> (<span class="math inline">\(s_{YX}\)</span>) mede a intensidade de uma associação linear entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span>. A covariância entretanto, não tem limite superior ou inferior, pois sua magnitude depende da ordem de grandeza das variáveis envolvidas. O coeficiente de correlação <span class="math inline">\(r\)</span> é calculado como a covariância entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span> padronizada pelo <strong>produto dos desvios padrões</strong> de <span class="math inline">\(Y\)</span> e de <span class="math inline">\(X\)</span>.</p>
-<p><span class="math display">\[r = \frac{s_{YX}}{s_Y s_X} = 
+<p><span class="math display">\[r = \frac{s_{YX}}{s_Y s_X} =
 \frac{\frac{\sum{(Y_i - \overline{Y})(X_i - \overline{X})}}{n-1}}
-{\sqrt{\frac{\sum{(Y_i - \overline{Y})^2}}{n-1}}  \times 
+{\sqrt{\frac{\sum{(Y_i - \overline{Y})^2}}{n-1}}  \times
 \sqrt{\frac{\sum{(X_i - \overline{X})^2}}{n-1}}}\]</span></p>
 <hr />
 <p><span class="math display">\[r = \frac{\sum{(Y_i - \overline{Y})(X_i - \overline{X})}}{\sqrt{\sum{(Y_i - \overline{Y})^2 \sum{(X_i - \overline{X})^2}}}}\]</span></p>
@@ -587,8 +587,8 @@ div.csl-indent {
 <p>Esta padronização garante que o índice pode variar entre <span class="math inline">\(-1\)</span> (correlação perfeitamente linear e <strong>negativa</strong>) e <span class="math inline">\(+1\)</span> (correlação perfeitamente linear e <strong>positiva</strong>), se aproximando de zero quando <strong>não existe</strong> correlação.</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-204-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
-<div id="exemplo" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Exemplo</h2>
+<div id="exemplo" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Exemplo<a href="biquant.html#exemplo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>No conjunto de dados abaixo <span class="citation">(<a href="#ref-haddon2010modelling" role="doc-biblioref">Haddon 2010</a>)</span> (disponível em <a href="https://github.com/FCopf/probest-cambientais/blob/master/datasets/ctigre_haddon.csv" target="_blank">ctigre_haddon.csv</a>) mostra dados da pesca do camarão tigre e do camarão rei entre nos anos de 1976 a 1987. O camarão tigre constitui a espécie alvo da pesca, enquanto o camarão rei aparece como uma espécie acidental.</p>
 <p>Importe a base de dados (Disponível em :):</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="biquant.html#cb120-1" aria-hidden="true" tabindex="-1"></a>tigre <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;ctigre_haddon.csv&quot;</span>)</span>
@@ -829,7 +829,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

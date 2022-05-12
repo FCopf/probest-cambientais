@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 3 Descrevendo variáveis qualitativas | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 3 Descrevendo variáveis qualitativas | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 3 Descrevendo variáveis qualitativas | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 3 Descrevendo variáveis qualitativas | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="procdados.html"/>
 <link rel="next" href="varquant.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,8 +550,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="varqualit" class="section level1" number="3">
-<h1><span class="header-section-number">Capítulo 3</span> Descrevendo variáveis qualitativas</h1>
+<div id="varqualit" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Descrevendo variáveis qualitativas<a href="varqualit.html#varqualit" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Variáveis qualitativas podem ser categóricas não-ordenadas ou categóricas ordenadas. A descrição de variáveis desta natureza se dá por meio da contagem e da representação dos níveis destas variáveis por meio da contagem total, pelos valores relativos ou percentuais.</p>
 <p>Carregue o pacote <code>tidyverse</code> e importe novamente a base de dados <code>Reservatorios_Parana_parcial.csv</code>.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="varqualit.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega pacotes</span></span>
@@ -562,8 +562,8 @@ div.csl-indent {
 <span id="cb32-6"><a href="varqualit.html#cb32-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">&#39;.&#39;</span>,</span>
 <span id="cb32-7"><a href="varqualit.html#cb32-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">encoding =</span> <span class="st">&#39;latin1&#39;</span>))</span></code></pre></div>
 <p>Na tabela, temos 3 variáveis categóricas: <code>Reservatorio</code>, <code>Bacia</code> e <code>Trofia</code>. A primeira identifica cada reservatório pelo seu nome. A segunda é uma variável categórica não-ordenada (nível de mensuração nominal) e a terceira uma variável categórica ordenada (nível de mensuração ordinal).</p>
-<div id="representação-em-tabelas-de-frequência" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Representação em tabelas de frequência</h2>
+<div id="representação-em-tabelas-de-frequência" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Representação em tabelas de frequência<a href="varqualit.html#representação-em-tabelas-de-frequência" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Como discutimos no capítulo <a href="estrdados.html#estrdados">1</a>, se uma variável é descrita no nível de mensuração nominal, como é o caso de <code>Bacia</code>, nossa única ação possível é a contagem da frequência com que cada um dos níveis aparece na variável. Essa contagem pode ser obtda por meio de uma <em>tabela de frequências</em>.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="varqualit.html#cb33-1" aria-hidden="true" tabindex="-1"></a>fbacia <span class="ot">=</span> res <span class="sc">%&gt;%</span> </span>
 <span id="cb33-2"><a href="varqualit.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bacia) <span class="sc">%&gt;%</span> </span>
@@ -794,8 +794,8 @@ Piriqui
 ##        &lt;int&gt;         &lt;dbl&gt;
 ## 1         31             1</code></pre>
 </div>
-<div id="tabelas-de-frequência-para-variáveis-categóricas-ordenadas" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Tabelas de frequência para variáveis categóricas ordenadas</h2>
+<div id="tabelas-de-frequência-para-variáveis-categóricas-ordenadas" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Tabelas de frequência para variáveis categóricas ordenadas<a href="varqualit.html#tabelas-de-frequência-para-variáveis-categóricas-ordenadas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A característica da variável <code>Trofia</code> difere da anterior unicamente por ser uma variável categórica ordenada que no caso, expressa o grau de eutrofização dos reservatórios. Neste sentido, a única mudança na representação da variável se deve ao fato de que existe uma sequência natural para representar os níveis. Podemos indicar que uma determinada variável é categórica ordenada fazendo uma pequena alteração na base de dados.</p>
 <p>Se montarmos uma tabela de frequência da variável trofia, teremos as linhas organizadas em ordem alfabética:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="varqualit.html#cb37-1" aria-hidden="true" tabindex="-1"></a>ftrofia <span class="ot">=</span> res <span class="sc">%&gt;%</span> </span>
@@ -1050,15 +1050,15 @@ Eutrófico
 </tbody>
 </table>
 </div>
-<div id="representação-gráfica" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Representação gráfica</h2>
+<div id="representação-gráfica" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Representação gráfica<a href="varqualit.html#representação-gráfica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Variáveis categóricas não-ordenadas ou ordenadas podem ser representadas por <strong>gráficos de barras</strong>.</p>
 <p>Utilizaremos o pacote <code>ggplot2</code> para representar graficamente as variáveis. O <code>ggplot2</code> é instalado e habilitado juntamente com o <code>tidyverse</code>, de modo que neste momento você já o tem habilitado em sua seção do R.</p>
 <blockquote>
 <p>Para uma rápida explicação do ggplot2 veja <a href="https://fcopf.github.io/probest-introR/ggplot2.html">aqui</a>. Para uma explicação detalhada veja o site oficial (<a href="https://ggplot2.tidyverse.org/">ggplot2</a>) e o livro <a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis</a>.</p>
 </blockquote>
-<div id="criando-um-gráfico-no-ggplot2" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Criando um gráfico no <code>ggplot2</code></h3>
+<div id="criando-um-gráfico-no-ggplot2" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Criando um gráfico no <code>ggplot2</code><a href="varqualit.html#criando-um-gráfico-no-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Um gráfico no <code>ggplot2</code> é feito em camadas que devem ter minimamente: a definição da tabela de dados, a estética gráfica (quais serão as variáveis envolvidas e suas posições no gráficos) e o formato (gráficos de pontos, linhas, barras, etc.). Esta abordagem permite que tenhamos um método consistente para construir diferentes tipos gráficos.</p>
 <p><strong>Gráfico de frequência</strong></p>
 <p>Um gráfico de barras da variável <code>Bacia</code> ficaria:</p>
@@ -1196,7 +1196,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

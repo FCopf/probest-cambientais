@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 33 As partes estocásticas e determinísticas de um modelo estatístico | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 33 As partes estocásticas e determinísticas de um modelo estatístico | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 33 As partes estocásticas e determinísticas de um modelo estatístico | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 33 As partes estocásticas e determinísticas de um modelo estatístico | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="detmodel.html"/>
 <link rel="next" href="emv.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,15 +550,15 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modelstat" class="section level1" number="33">
-<h1><span class="header-section-number">Capítulo 33</span> As partes estocásticas e determinísticas de um modelo estatístico</h1>
-<div id="a-parcela-aleatória" class="section level2" number="33.1">
-<h2><span class="header-section-number">33.1</span> A parcela aleatória</h2>
+<div id="modelstat" class="section level1 hasAnchor" number="33">
+<h1><span class="header-section-number">Capítulo 33</span> As partes estocásticas e determinísticas de um modelo estatístico<a href="modelstat.html#modelstat" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="a-parcela-aleatória" class="section level2 hasAnchor" number="33.1">
+<h2><span class="header-section-number">33.1</span> A parcela aleatória<a href="modelstat.html#a-parcela-aleatória" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Um modelo estatístico consiste de uma variável aleatória (<span class="math inline">\(Y\)</span>) modelada a partir de alguns dos modelos probabilísticos vistos nos capítulos <a href="va.html#va">30</a> e <a href="vacont.html#vacont">31</a>. Nestes, a função de probabilidade <span class="math inline">\(f(Y|\theta)\)</span> é dependente de um ou mais parâmetros. O símbolo <span class="math inline">\(\theta\)</span> é utilizado para fazer uma representação genérica dos parâmetros de um modelo estatístico. No modelo Binomial por exemplo, os parâmetros são <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, no modelo de Poisson é <span class="math inline">\(\lambda\)</span>, no modelo Normal são <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e assim por diante.</p>
 <p>Definido deste forma, o resultado de um experimento aleatório pode portanto ser entendido como a realização de uma observação de <span class="math inline">\(Y\)</span> de acordo com um modelo particular.</p>
 <p>Por exemplo, no experimento sobre a amostragem de 4 riachos, poderíamos ter como resultado a ocorrência de <em>Rhamdioglanis transfasciatus</em> em exatamente <span class="math inline">\(3\)</span> riachos. Entendemos esta observação como o resultado de um experimento em que o número de ocorrências segue um modelo Binomial com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>. O modelo Binomial é portanto o modelo estatístico que descreve a realizações deste tipo de experimento.</p>
-<div id="simulando-a-realização-de-um-modelo-estatístico" class="section level4 unnumbered">
-<h4>Simulando a realização de um modelo estatístico</h4>
+<div id="simulando-a-realização-de-um-modelo-estatístico" class="section level4 unnumbered hasAnchor">
+<h4>Simulando a realização de um modelo estatístico<a href="modelstat.html#simulando-a-realização-de-um-modelo-estatístico" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Vamos utilizar o R para simular uma observação deste tipo de experimento.</p>
 <div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="modelstat.html#cb217-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb217-2"><a href="modelstat.html#cb217-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
@@ -621,12 +621,12 @@ div.csl-indent {
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-462-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="a-parcela-determinística" class="section level2" number="33.2">
-<h2><span class="header-section-number">33.2</span> A parcela determinística</h2>
+<div id="a-parcela-determinística" class="section level2 hasAnchor" number="33.2">
+<h2><span class="header-section-number">33.2</span> A parcela determinística<a href="modelstat.html#a-parcela-determinística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>No exemplo anterior, temos um modelo estatístico descrito unicamente por uma variável aleatória, isto é, um modelo Binomial com <span class="math inline">\(p = 0,4\)</span>. Suponha agora que a ocorrência de <em>Rhmadioglanis transfasciatus</em> varie também como função da <em>elevação do riacho</em> (<span class="math inline">\(X\)</span>). A espécie é pouco frequente em riachos de baixas altitudes e torna-se mais frequente à medida que a elevação aumenta. Como no exemplo anterior a espécie da espécie deverá ser modelada através de uma distribuição binomial. Entretanto, o parâmetro <span class="math inline">\(p\)</span> não é mais constante e deverá ser modelado como uma função <span class="math inline">\(g(X)\)</span> que deverá expressar o aumento na probabilidade de ocorrência conforme a elevação do riacho.</p>
 <p>A função <span class="math inline">\(g(X)\)</span> deverá ser um dos modelos determinísticos vistos no capítulo <a href="detmodel.html#detmodel">32</a>, nos cabendo agora escolher um destes modelos é o mais apropriado para o experimento.</p>
-<div id="qual-modelo-determinístico-escolher" class="section level4 unnumbered">
-<h4>Qual modelo determinístico escolher?</h4>
+<div id="qual-modelo-determinístico-escolher" class="section level4 unnumbered hasAnchor">
+<h4>Qual modelo determinístico escolher?<a href="modelstat.html#qual-modelo-determinístico-escolher" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Se assumirmos que <span class="math inline">\(g(x)\)</span> deverá ser uma função crescente da elevação, poderíamos escolher por exemplo o modelo linear. Neste caso, estaríamos assumindo que o parâmetro <span class="math inline">\(p\)</span> seria modelado por:</p>
 <p><span class="math display">\[g(X) = p = \beta_0 + \beta_1 X\]</span></p>
 <div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="modelstat.html#cb222-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
@@ -665,8 +665,8 @@ div.csl-indent {
 <p>A realização desde modelo nos daria como resposta <span class="math inline">\(Y = 0\)</span> (a espécie não ocorre) ou <span class="math inline">\(Y = 1\)</span> (a espécie ocorre). Ao nos referirmos a <strong>cada riacho</strong>, o parâmetro <span class="math inline">\(n = 1\)</span> da distribuição binomial transforma este modelo em um <em>experimento de Bernoulli</em> em que a probabilidade de ocorrência <span class="math inline">\(p\)</span> varia de acordo com a elevação.</p>
 </div>
 </div>
-<div id="mais-um-modelo-binomial-taxa-de-mortalidade-em-testes-dose-resposta" class="section level2" number="33.3">
-<h2><span class="header-section-number">33.3</span> Mais um modelo Binomial: taxa de mortalidade em testes dose-resposta</h2>
+<div id="mais-um-modelo-binomial-taxa-de-mortalidade-em-testes-dose-resposta" class="section level2 hasAnchor" number="33.3">
+<h2><span class="header-section-number">33.3</span> Mais um modelo Binomial: taxa de mortalidade em testes dose-resposta<a href="modelstat.html#mais-um-modelo-binomial-taxa-de-mortalidade-em-testes-dose-resposta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O nosso próximo exemplo, fala sobre um teste de dose-resposta para o efeito de um poluente sobre um organismo modelo. O teste foi feito em 100 organismos, cada um exposto a diferentes doses do poluente. No gráfico abaixo, cada ponto é um organismo utilizado no teste. O valor em <span class="math inline">\(X\)</span> nos diz a que nível do poluente o organismo foi exposto e o valor em <span class="math inline">\(Y\)</span> se houve morte (<span class="math inline">\(1\)</span>) ou não (<span class="math inline">\(0\)</span>).</p>
 <blockquote>
 <p>INSERIR GRÁFICO</p>
@@ -682,8 +682,8 @@ div.csl-indent {
 </blockquote>
 <p>Em experimento deste tipo, um dos principais interesse é saber o nível de poluente em que a probabilidade de sobrevivência é de 50%, ou seja, o valor de <span class="math inline">\(X\)</span> em que <span class="math inline">\(p = 0,5\)</span>.</p>
 </div>
-<div id="o-modelo-estatístico-da-regressão-linear" class="section level2" number="33.4">
-<h2><span class="header-section-number">33.4</span> O modelo estatístico da regressão linear</h2>
+<div id="o-modelo-estatístico-da-regressão-linear" class="section level2 hasAnchor" number="33.4">
+<h2><span class="header-section-number">33.4</span> O modelo estatístico da regressão linear<a href="modelstat.html#o-modelo-estatístico-da-regressão-linear" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-466-1.png" width="480" style="display: block; margin: auto;" /></p>
 
 </div>
@@ -736,7 +736,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null

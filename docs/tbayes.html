@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 29 Teorema de Bayes: atualizando o conhecimento | Estatística nas Ciências Ambientais</title>
   <meta name="description" content="Capítulo 29 Teorema de Bayes: atualizando o conhecimento | Estatística nas Ciências Ambientais" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 29 Teorema de Bayes: atualizando o conhecimento | Estatística nas Ciências Ambientais" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Capítulo 29 Teorema de Bayes: atualizando o conhecimento | Estatística nas Ciências Ambientais" />
   
@@ -34,7 +33,6 @@
   
 <link rel="prev" href="probcondind.html"/>
 <link rel="next" href="va.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,13 +50,14 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
@@ -331,6 +330,7 @@ div.csl-indent {
 <li class="chapter" data-level="14.5.3" data-path="normdist.html"><a href="normdist.html#quantos-desvios-padrões"><i class="fa fa-check"></i><b>14.5.3</b> Quantos desvios padrões?</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="normdist.html"><a href="normdist.html#exercícios-propostos"><i class="fa fa-check"></i><b>14.6</b> Exercícios propostos</a></li>
+<li class="chapter" data-level="14.7" data-path="normdist.html"><a href="normdist.html#vídeo-aulas-2"><i class="fa fa-check"></i><b>14.7</b> Vídeo-aulas</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tcl.html"><a href="tcl.html"><i class="fa fa-check"></i><b>15</b> Distribuição das médias amostrais</a>
 <ul>
@@ -487,8 +487,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="30.1" data-path="va.html"><a href="va.html#experimento-1-sucessos-e-fracassos"><i class="fa fa-check"></i><b>30.1</b> <em>Experimento 1</em>: Sucessos e fracassos</a>
 <ul>
-<li><a href="va.html#a-distribuição-de-probabilidade-de-y">A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
-<li><a href="va.html#uma-expressão-geral-para-py-y">Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#a-distribuição-de-probabilidade-de-y"><i class="fa fa-check"></i>A distribuição de probabilidade de <span class="math inline">\(Y\)</span></a></li>
+<li class="chapter" data-level="" data-path="va.html"><a href="va.html#uma-expressão-geral-para-py-y"><i class="fa fa-check"></i>Uma expressão geral para <span class="math inline">\(P(Y = y)\)</span></a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i>Função de distribuição acumulada</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#estruturas-previsíveis-para-um-experimento-aleatório"><i class="fa fa-check"></i>Estruturas previsíveis para um experimento aleatório</a></li>
 <li class="chapter" data-level="" data-path="va.html"><a href="va.html#alterando-os-parâmetros-do-modelo"><i class="fa fa-check"></i>Alterando os parâmetros do modelo</a></li>
@@ -550,10 +550,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tbayes" class="section level1" number="29">
-<h1><span class="header-section-number">Capítulo 29</span> Teorema de Bayes: atualizando o conhecimento</h1>
-<div id="teorema-de-bayes" class="section level2" number="29.1">
-<h2><span class="header-section-number">29.1</span> Teorema de Bayes</h2>
+<div id="tbayes" class="section level1 hasAnchor" number="29">
+<h1><span class="header-section-number">Capítulo 29</span> Teorema de Bayes: atualizando o conhecimento<a href="tbayes.html#tbayes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="teorema-de-bayes" class="section level2 hasAnchor" number="29.1">
+<h2><span class="header-section-number">29.1</span> Teorema de Bayes<a href="tbayes.html#teorema-de-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O teorema de Bayes decorre de nossa definição de probabilidade condicional em que:</p>
 <p><span class="math display">\[P(B|A) = \frac{P(A \cap B)}{P(A)}\]</span></p>
 <p>o que implica em:</p>
@@ -568,8 +568,8 @@ e</p>
 <p>o que nos leva à expressão que define o <strong>Teorema de Bayes</strong> e nos fornece a probabilidade condicional de <span class="math inline">\(P(B|A)\)</span> uma vez que conhecemos <span class="math inline">\(P(A|B)\)</span>.</p>
 <p><span class="math display">\[P(B|A) = \frac{P(B) \times P(A|B)}{P(A)}\]</span></p>
 </div>
-<div id="teorema-da-probabilidade-total" class="section level2" number="29.2">
-<h2><span class="header-section-number">29.2</span> Teorema da probabilidade total</h2>
+<div id="teorema-da-probabilidade-total" class="section level2 hasAnchor" number="29.2">
+<h2><span class="header-section-number">29.2</span> Teorema da probabilidade total<a href="tbayes.html#teorema-da-probabilidade-total" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Veja novamente a esquema concentual de um diagrama de árvore:</p>
 <p><img src="probest-cambientais_files/figure-html/unnamed-chunk-424-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Podemos perceber que dois caminhos nos levam à ocorrência de <span class="math inline">\(A\)</span>. Um caminho em que <span class="math inline">\(B\)</span> <strong>também ocorre</strong> - com probabilidade <span class="math inline">\(P(A \cap B)\)</span> - <strong>ou</strong> um caminho em que <span class="math inline">\(B\)</span> <em>não ocorre</em> - com probabilidade <span class="math inline">\(P(A \cap \overline{B})\)</span>. Uma vez que estas rotas são mutuamente exclusivas, <span class="math inline">\(P(A)\)</span> pode ser calculado por:</p>
@@ -579,8 +579,8 @@ e</p>
 <p>Esta última expressão é conhecida como <strong>Teorema da probabilidade total</strong>. Ao utilizá-la, o Teorema de Bayes pode ser re-escrito como:</p>
 <p><span class="math display">\[P(B|A) = \frac{P(B) \times P(A|B)}{P(B) \times P(A|B) + P(\overline{B}) \times P(A|\overline{B})}\]</span></p>
 </div>
-<div id="o-problema-da-detecção-de-espécies" class="section level2" number="29.3">
-<h2><span class="header-section-number">29.3</span> O problema da detecção de espécies</h2>
+<div id="o-problema-da-detecção-de-espécies" class="section level2 hasAnchor" number="29.3">
+<h2><span class="header-section-number">29.3</span> O problema da detecção de espécies<a href="tbayes.html#o-problema-da-detecção-de-espécies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suponha um estudo sobre a distribuição de uma espécie de peixe em uma área de restinga da Mata Atlântica. A espécie ocorre em poças formadas pela água da chuva e está presente em 5% das poças na região. Isto denota uma espécie <em>rara</em>, pois ao investigarmos uma poça em particular, sua probabilidade de ocorrência será de <span class="math inline">\(P(O) = 0,05\)</span>.</p>
 <p>A detecção desta espécie é feita pela captura e identificação taxonômica. Dado que esteja presente em uma poça, sua probabilidade de ser capturada é de <span class="math inline">\(0,99\)</span>. Consequentemente, existe uma probabilidade de <span class="math inline">\(0,01\)</span> de que, mesmo estando presente, a espécie não seja capturada, o que é conhecido como <strong>falso negativo</strong>. Um falso negativo pode acontecer por exemplo se os indivíduos permanecem escondidos sob o substrato e não são capturados.</p>
 <p>Sabe-se também que existe na região uma espécie muito similar e, por vezes, ocorre um erro de identificação. Desta forma, mesmo nas poças em que a espécie não está presente, existe uma possibilidade de que seja registrada erroneamente, o que pode ocorrer com probabilidade de <span class="math inline">\(0,10\)</span>. Chamamos esta possibilidade de <strong>falso positivo</strong>. O problema da não-detecção ou da falsa-detecção, longe de ser somente um exemplo, é comum em levantamentos de fauna e flora ainda que raramente seja considerado.</p>
@@ -608,15 +608,15 @@ Figure 29.1: Diagrama de árvore representando as probabilidades de ocorrência 
 <p>De acordo com o Teorema da probabilidade total, <span class="math inline">\(P(D)\)</span> pode ser calculada:</p>
 <p><span class="math display">\[P(D) = P(O \cap D) + P(\bar{O} \cap D) = 0,0495 + 0,095 = 0,1445\]</span></p>
 <p>pois o registro de detecção pode ocorrer quando a espécie está ou não está presente na poça.</p>
-<div id="razão-de-verossimilhança-inferência-bayesiana-e-teste-de-hipóteses" class="section level3" number="29.3.1">
-<h3><span class="header-section-number">29.3.1</span> Razão de verossimilhança, inferência bayesiana e teste de hipóteses</h3>
+<div id="razão-de-verossimilhança-inferência-bayesiana-e-teste-de-hipóteses" class="section level3 hasAnchor" number="29.3.1">
+<h3><span class="header-section-number">29.3.1</span> Razão de verossimilhança, inferência bayesiana e teste de hipóteses<a href="tbayes.html#razão-de-verossimilhança-inferência-bayesiana-e-teste-de-hipóteses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Um questão relevante neste problema é:</p>
 <blockquote>
 <p>Ao recebermos a notícia de uma possível detecção, deveríamos ficar completamente convencidos sobre a ocorrência desta espécie em uma determinada poça?</p>
 </blockquote>
 <p>Esta questão é importante pois nos permite tomar uma decisão sobre um fenômeno que não conhemos (a ocorrência da espécie na poça), com base na informação sobre uma <em>possível</em> detecção. A tomar esta decisão, entramos no campo da <em>inferência estatística</em>. Nos capítulos <a href="inferenc.html#inferenc">16</a> e <a href="th.html#th">17</a> discutimos a ideia da inferência estatística clássica, onde introduzomos conceitos como Erro do Tipo I, do Tipo II e poder do teste. Ńesta seção iremos introduzir outras duas abordagens, a inferência por <em>verossimilhança</em> e a inferência <em>bayesiana</em>. Ambas serão tratadas mais detalhadamente nos capítulos <a href="emv.html#emv">34</a> a <a href="statbayes.html#statbayes">36</a>.</p>
-<div id="verossimilhança-uma-medida-indireta-para-pod" class="section level4 unnumbered">
-<h4>Verossimilhança: uma medida indireta para <span class="math inline">\(P(O|D)\)</span></h4>
+<div id="verossimilhança-uma-medida-indireta-para-pod" class="section level4 unnumbered hasAnchor">
+<h4>Verossimilhança: uma medida indireta para <span class="math inline">\(P(O|D)\)</span><a href="tbayes.html#verossimilhança-uma-medida-indireta-para-pod" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Veja que, ao existir a possibilidade de um falso negativo, a ocorrência da espécie deve ser tomada como uma <strong>hipótese</strong> a ser confirmada. Caso <span class="math inline">\(P(D|O)\)</span> seja elevado, deveríamos estar bastante confiantes sobre a ocorrência da espécie, pois a probabilidade de detectá-la seria alta quando ela, de fato, ocorre. Por outro lado, caso <span class="math inline">\(P(D|\overline{O})\)</span> seja elevado, deveríamos estar mais confiantes da <strong>não-ocorrência</strong> da espécie, pois sua probabilidade de detecção seria alta mesmo nas situações em que não esteja presente (falso positivo).</p>
 <p>Em inferência estatística, <span class="math inline">\(P(D|O)\)</span> pode ser tomada como uma medida de <strong>verossimilhança</strong> para a hipótese de ocorrência da espécie condicional ao evento de detecção. Como discutimos ao longo deste capítulo, <span class="math inline">\(P(D|O)\)</span> não é igual a <span class="math inline">\(P(O|D)\)</span>, porém as duas medidas são positivamente relacionadas, uma vez que <span class="math inline">\(P(O|D)\)</span> é uma <em>função positiva crescente</em> de <span class="math inline">\(P(D|O)\)</span>.</p>
 <blockquote>
@@ -631,8 +631,8 @@ Figure 29.1: Diagrama de árvore representando as probabilidades de ocorrência 
 <p><span class="math display">\[RV = \frac{P(D|O)}{P(D|\overline{O})} = \frac{0,99}{0,10} = 9,9\]</span></p>
 <p>Interpretamos o resultado acima dizendo que a hipótese da ocorrência (hipótese 1) é cerca de 10 vezes mais <em>verossímil</em> que a hipótese da não-ocorrência. <span class="math inline">\(RV\)</span> nos fornece portanto, uma medida <em>indireta</em> sobre a expectativa de ocorrência da espécie, uma vez registrada sua detecção. Neste caso, o resultado foi favorável à <em>Hipótese 1</em>.</p>
 </div>
-<div id="inferência-bayesiana-o-conhecimento-a-priori-é-importante" class="section level4 unnumbered">
-<h4>Inferência bayesiana: o conhecimento <em>a priori</em> é importante?</h4>
+<div id="inferência-bayesiana-o-conhecimento-a-priori-é-importante" class="section level4 unnumbered hasAnchor">
+<h4>Inferência bayesiana: o conhecimento <em>a priori</em> é importante?<a href="tbayes.html#inferência-bayesiana-o-conhecimento-a-priori-é-importante" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A ideia da verossimilhança parte <em>unicamente</em> do resultado obtido no experimento e de nosso pressoposto sobre a probabilidade do evento <span class="math inline">\(D\)</span> condicional aos eventos <span class="math inline">\(O\)</span> e <span class="math inline">\(\overline{O}\)</span>. Não utilizamos no entanto, a informação sobre <span class="math inline">\(P(O)\)</span> que nos é fornecida no início do problema.</p>
 <p>Ao utilizarmos <span class="math inline">\(P(O)\)</span>, entramos no campo da <strong>inferência bayesiana</strong>. Note que <span class="math inline">\(P(O)\)</span> foi uma informação fornecida no início do experimento, <strong>antes</strong> da informação sobre uma possível detecção. Em inferência bayesiana, esta medida é conhecida como a probabilidade <strong>a priori</strong> para a ocorrência da espécie. Esta probabilidade foi obtida <em>antes</em> do evento de detecção, e geralmente parte de um conhecimento prévio que pode ser obtido a partir da literatura, de experimentos piloto ou do conhecimento empírico de especialistas.</p>
 <p>Ao obtermos uma informação sobre uma possível detecção, devemos <em>atualizar</em> nossa hipótese sobre a ocorrência, que agora será <strong>condicional</strong> à observação do evento <span class="math inline">\(D\)</span>. Deste modo, em inferência bayesiana temos como informações de entrada:</p>
@@ -650,8 +650,8 @@ Figure 29.1: Diagrama de árvore representando as probabilidades de ocorrência 
 <p><span class="math display">\[P(\bar{O}|D) = \frac{0,98 \times 0,10}{0,02 \times 0,99 + 0,98 \times 0,10} \approx 0.83\]</span></p>
 <p>Estes resultados nos dizem que, mesmo ao ser informados sobre uma possível detecção, a chance de <strong>não-ocorrência</strong> da espécie em uma determinada poça ainda é cerca de 5 vezes maior que a chance de ocorrência, o que é favorável à <em>Hipótese 2</em>.</p>
 </div>
-<div id="entendendo-as-diferênças-entre-as-duas-abordagens" class="section level4 unnumbered">
-<h4>Entendendo as diferênças entre as duas abordagens</h4>
+<div id="entendendo-as-diferênças-entre-as-duas-abordagens" class="section level4 unnumbered hasAnchor">
+<h4>Entendendo as diferênças entre as duas abordagens<a href="tbayes.html#entendendo-as-diferênças-entre-as-duas-abordagens" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>As conclusões das duas abordagens foram distintas. Desta forma, é necessário entendermos melhor em quais causas destas diferenças, ou seja, em quais informações cada abordagem está baseada.</p>
 <p>Enquanto a abordagem por verossimilhança utiliza <span class="math inline">\(P(D|O)\)</span> para nos auxiliar <em>indiretamente</em> no julgamento das hipóteses 1 e 2, a inferência bayesiana utiliza o Teorema de Bayes para calcular <em>diretamente</em> <span class="math inline">\(P(O|D)\)</span>. Nesta última, <span class="math inline">\(P(O|D)\)</span> pode ser entendida como uma <em>média ponderada</em> de <span class="math inline">\(P(D|O)\)</span>, em que os fatores de ponderação são as probabilidades <em>a priori</em> <span class="math inline">\(P(O)\)</span> e <span class="math inline">\(P(\overline{O})\)</span>.</p>
 <p>Temos portanto, que a ideia da probabilidade <em>a priori</em> é central e inferência bayesiana, porém irrelevante na inferência por verossimilhança. Vejam por exemplo o que ocorreria se as probabilidades <em>a priori</em> fossem <span class="math inline">\(P(O) = P(\overline{O}) = 0,5\)</span>.</p>
@@ -721,7 +721,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["probest-cambientais.epub"],
+"download": ["probest-cambientais.pdf", "probest-cambientais.epub"],
 "search": {
 "engine": "fuse",
 "options": null
